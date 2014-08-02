@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How it all started
+title: How it All Started
 ---
 
 I've been a software engineer or technical leader for most of my career, which approaches on 20 years (I just recently hit 40 earlier this year). I started coding when
