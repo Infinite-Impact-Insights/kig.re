@@ -25,7 +25,7 @@ ___
 Shortly after that I discovered Arduino, Arduino programming environment, Eclipse plugin for Arduino, Beaglebone Black running Debian Linux, sensors, robots, wheels,
 chassis, ... the list goes on. As I write this my obsession is exactly six weeks old, and on my desk I have exactly five robots, three of them assembled and in the full
 working condition, able to move around, avoid obstacles, and drive anywhere from very very slow (Sparki I am looking at you!), to very very fast (4 DC Motors with a
-3000mAh battery). I purchased about 7 books, 4 on Arduino, 2 on BeagleBone, and one on general electronics ("Make: Electronics" – it's fantastic!).
+3000mAh battery). I purchased about 7 books, 4 on Arduino, 2 on BeagleBone, and one on general electronics.
 
 In the meantime I realized that despite a ton of information everywhere online, it is actually rather difficult to find the _right_ stuff to build things when
 you are just starting out, but not as a typical complete beginner, but as an experienced software engineer. It's hard to find well written examples of
