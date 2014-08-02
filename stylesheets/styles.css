@@ -41,6 +41,10 @@ a {
   color: #069;
   text-decoration: none;
 }
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
 
 p {
   margin: 0 0 20px;
@@ -286,7 +290,7 @@ hr {
 }
 
 footer {
-  width: 640px;
+  width: 300px;
   margin: 0 auto;
   padding: 20px 0 0;
   color: #ccc;
