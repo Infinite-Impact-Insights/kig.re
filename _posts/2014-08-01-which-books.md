@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Books I am Reading
+title: Books I Am Reading
 ---
 This post is about the books I am reading right now, with short reviews.
 
