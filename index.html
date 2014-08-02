@@ -13,7 +13,8 @@ layout: default
       <p><span class="date">Posted on {{post.date |  date: "%A, %d %b %Y" }}</span></p>
     </header>
     <section>
-        {{ post.content }}
+       {{ post.excerpt }}
+       <a class="read-more" href="{{ post.url }}">…continue reading &LongRightArrow;</a>
     </section>
 </div>
     {% endif %}

@@ -19,6 +19,7 @@ In the end I was not successful in my quest. I've assembled the subwoofer back t
 someone with trained hands at JK Sound SF, someone who can _actually_ fix it. But in the meantime, I signed up for a soldering class at the TechShop, and
 purchased a "pro" level soldering iron – Weller WES51 on Amazon. This is how it all began.
 
+
 ___
 
 Shortly after that I discovered Arduino, Arduino programming environment, Eclipse plugin for Arduino, Beaglebone Black running Debian Linux, sensors, robots, wheels,
@@ -38,6 +39,10 @@ Given that most folks at work call me "KIG", after my initials, it only was a ma
 to any of the projects or code I am working on. You know why? Because this is really fun. After decades of writing software and staring at the computer screen, I am
 working with my hands, dropping shit on the floor, swearing (although that part is common with software), and making real objects from atoms and molecules. It's a fascinating process and I am just a little bit obsessed.
 Perhaps you are too?
+
+![Small Robot Army on my desk](/images/robo-mania.jpg)
+
+
 
 <blockquote>
 Friday, August 1st, 2014, –– Konstantin.
