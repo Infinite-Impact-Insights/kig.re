@@ -17,7 +17,7 @@ together, and more importantly: how was I going to fix this thing.
 
 In the end I was not successful in my quest. I've assembled the subwoofer back to it's original form, and it's currently sitting in my garage waiting to be delivered
 someone with trained hands at JK Sound SF, someone who can _actually_ fix it. But in the meantime, I signed up for a soldering class at the TechShop, and
-purchased a "pro" level soldering iron – Weller WES51 on Amazon. This is how it all began.
+purchased a "pro" level soldering iron – [Weller WES51](http://amzn.to/1ndGWXi) on Amazon. This is how it all began.
 
 
 ___
