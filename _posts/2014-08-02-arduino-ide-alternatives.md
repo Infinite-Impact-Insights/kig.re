@@ -14,7 +14,7 @@ It is commonly used to introduce many folks to programming electronics, and just
 notably in C/C++.  As such, this tool is pretty limited, and limiting too. Very quickly I found
 myself very stuck unable to browse through external symbols by clicking through them, using auto-complete
 features, refactor code, and so on: all the "basic" features I so got spoiled with, by tools such as
-IntelliJ's RubyMine, IDEA, Eclipse and even XCode.
+JetBrain's [RubyMine](http://www.jetbrains.com/ruby/), [AppCode](http://www.jetbrains.com/objc/), [IDEA](http://www.jetbrains.com/idea/), [Eclipse](https://www.eclipse.org/) and even [XCode](https://developer.apple.com/xcode/).
 
 ![Arduino IDE](/images/ide-arduino-arduino.jpg)
 
@@ -51,6 +51,8 @@ me, I would list the following features:
 - refactor (extract method, etc)
 - symbol rename (automatic renaming of functions, class names with file name change, variables, etc across many files)
 - debugger
+- automated test integration
+- arguably less important are global project search, global find and replace, project-level symbol lookup.
 
 My absolute favorite over the years have been the series of IDEs for all popular languages produced by
 [JetBrains](http://www.jetbrains.com/idea/) –– a company that singlehandedly dominated the IDE nitche
