@@ -101,7 +101,7 @@ relatively easy to get setup with the environment where I imported the entire pl
 IDEA (haha, sorry Eclipse! You are still number two :) and was able to diagnose and fix the issue with
 the timing of opening serial port and uploading the sketch.  A few hours later [my pull request was
 merged](https://github.com/jantje/arduino-eclipse-plugin/commit/fd0f6de12ebf41a0ba484d3007bfed77c67380ec),
-and the nightly build of Eclipse Plugin started working for everyone with Arduino Eslpora! That, my friends,
+and the nightly build of Eclipse Plugin started working for everyone with Arduino Esplora! That, my friends,
 is the true power of open source.
 
 While I was at it, I also [updated the README](https://github.com/jantje/arduino-eclipse-plugin/commit/ed794f8ed6d89a1a3c0cb0354bbc162de81bf821)
@@ -109,7 +109,7 @@ with proper markdown and (perhaps) slightly better English. And of course I coul
 and continued going slightly crazy, massively refactoring serial communications of the plugin deep into the night,
 and then submitting a [beautiful pull request](https://github.com/jantje/arduino-eclipse-plugin/pull/179). However, at that
 point the plugin author probably had gotten pretty annoyed that I was making his code look and work
-a bit better, and sadly rejected the PR, explaning that another rewrite of serial comms is happening.
+a bit better, and sadly rejected the PR, explaining that another rewrite of serial comms is happening.
 Oh well, at least I can keep using my fork on my own machine, where I get to see pretty error messages that actually
 explain what's going on :)
 
@@ -117,9 +117,9 @@ But I digress.
 
 ### Installing Eclipse Plugin for Arduino
 
-Option 1: probably the simplest way to get started is by [downloading the nightly build](http://www.baeyens.it/eclipse/download.php), in my experience they've been pretty stable.
-The single-file download will already contain a compiled binary (called something like "arduinoEclipse.app" or similar),
-and you can just run it.
+Option 1: probably the simplest way to get started is by [downloading the nightly build](http://www.baeyens.it/eclipse/download.php),
+in my experience they've been pretty stable. The single-file download will already contain a compiled binary
+(called something like "arduinoEclipse.app" or similar), and you can just run it.
 
 Option 2: But my preferred way to install the plugin is to first install a full version of Eclipse Luna for C/C++,
 and then add Arduino plugin to it via software installer.
@@ -154,7 +154,7 @@ Here I'd like to share some simple but powerful tidbits about how I use Eclipse,
 * Focus cursor on a symbol (like a function call) and press F2.  This will pop up a dialog that shows function
   declaration. Super convenient!
 * Instead of pressing F2, press F3 (or Command-Click) to go to the source file where the symbol is defined.
-* Click on the tab above the editor window, and start draging it around, creating split screen horizontally or vertically.
+* Click on the tab above the editor window, and start dragging it around, creating split screen horizontally or vertically.
   Grab another tab and split more tabs into two or throw the selected tab behind other tabs in a given window. How great is that?
 * And I am not even mentioning (oh yes I am) the beautiful syntax highlighting, although I had to tweak this one
   because none of the themes were good enough :)
@@ -167,7 +167,7 @@ infinitely easier with it.
 But this post has become way too long, and it's time to wrap up.  Next time I'll talk about my robot movement library,
 and discuss using Eclipse for it's development in more details.
 
-I leave you with this beuatiful screenshot of the Eclipse open with my library work in progress....
+I leave you with this beautiful screenshot of the Eclipse open with my library work in progress....
 
 ![Eclipse IDE (Luna) with C/C++ and Arduino Plugin](/images/ide-arduino-eclipse.jpg)
 
