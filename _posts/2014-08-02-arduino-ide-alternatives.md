@@ -14,7 +14,9 @@ It is commonly used to introduce many folks to programming electronics, and just
 notably in C/C++.  As such, this tool is pretty limited, and limiting too. Very quickly I found
 myself very stuck unable to browse through external symbols by clicking through them, using auto-complete
 features, refactor code, and so on: all the "basic" features I so got spoiled with, by tools such as
-JetBrain's [RubyMine](http://www.jetbrains.com/ruby/), [AppCode](http://www.jetbrains.com/objc/), [IDEA](http://www.jetbrains.com/idea/), [Eclipse](https://www.eclipse.org/) and even [XCode](https://developer.apple.com/xcode/).
+JetBrain's [RubyMine](http://www.jetbrains.com/ruby/), [AppCode](http://www.jetbrains.com/objc/), [IDEA](http://www.jetbrains.com/idea/),
+and then open source (although originally IBM's) [Eclipse](https://www.eclipse.org/), and not to
+mention Apple's [XCode](https://developer.apple.com/xcode/).
 
 ![Arduino IDE](/images/ide-arduino-arduino.jpg)
 
