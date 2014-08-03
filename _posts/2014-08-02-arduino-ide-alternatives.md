@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Choosing The Right Arduino IDE
+title: Choosing The Right Arduino IDE (And The Winner… Is Eclipse!)
 ---
 
 As a relative late comer to Arduino world, I went through the beginner tutorials and examples
