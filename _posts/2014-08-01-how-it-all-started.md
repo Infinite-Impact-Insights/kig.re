@@ -20,6 +20,7 @@ someone with trained hands at JK Sound SF, someone who can _actually_ fix it. Bu
 purchased a "pro" level soldering iron – [Weller WES51](http://amzn.to/1ndGWXi) on Amazon. This is how it all began.
 
 
+{{site.data.macros.continue}}
 ___
 
 Shortly after that I discovered Arduino, Arduino programming environment, Eclipse plugin for Arduino, Beaglebone Black running Debian Linux, sensors, robots, wheels,

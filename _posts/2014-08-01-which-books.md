@@ -5,7 +5,6 @@ title: Books I Am Reading
 This post is about the books I am reading right now, with short reviews.
 
 
-
 ![Books](/images/books-to-read.jpg)
 #### [Zero to Maker: Learn (Just Enough) to make (Just About) Anything by _David Lang_](http://amzn.to/1ks3Tvc)
 
