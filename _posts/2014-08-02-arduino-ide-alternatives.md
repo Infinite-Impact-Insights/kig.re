@@ -25,7 +25,7 @@ make life easier.
 For example,
 
 * How do I explore the source code of the included libraries that are being used by my sketch?
-* Why does "Import Library" insert a new ```c++#include``` into my sketch when I already have one?
+* Why does "Import Library" insert a new ```#include``` into my sketch when I already have one?
 * Why is tab indentation not maintained as you move to the next line while editing?
 * Why is the board and port selection remain global, and are not assigned to each sketch?  Can't I be working on multiple boards at the same time, especially, say, when they talk to each other?
 * And of course... why can't I change the goddamn colors :)
