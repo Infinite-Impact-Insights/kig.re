@@ -88,8 +88,8 @@ as the final destination:
 
  * This brings us to the last contender: [Eclipse](https://www.eclipse.org/ide/).  Eclipse has been
    around for a long time, and is an amazing platform for so many things, including software development.
-   Having used Eclipse on several Java projects in the past, it seemed the most natural fit. So
-   download the [Eclipse Arduino Plugin](http://www.baeyens.it/eclipse/), and that's what the
+   Having used Eclipse on several Java projects in the past, it seemed the most natural fit. So I
+   downloaded the [Eclipse Arduino Plugin](http://www.baeyens.it/eclipse/), and that's what the
    rest of this post is about.
 
 ## Eclipse Arduino Plugin Saves the Day
@@ -100,8 +100,8 @@ quite nice :)
 
 ### The Case for Open Source
 
-One of the first things I bumped into with my Arduino Esplora board, was a pretty major problem: I couldn't
-upload any sketches.  So I posted a bug report on GitHub, and author replied with a quick note on how
+One of the first things I bumped into, with the nightly build of the plugin and with my Arduino Esplora board,
+was a pretty major problem: I couldn't upload any sketches.  So I posted a bug report on GitHub, and author replied with a quick note on how
 to get the source of the plugin, and which class to look at, so that *I* could fix the problem. It sounded
 like a challenge. Of course I took it.
 
