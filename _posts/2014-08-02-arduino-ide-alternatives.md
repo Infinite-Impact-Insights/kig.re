@@ -46,11 +46,12 @@ I prefer to actually _write code_ in a true IDE.  If I had to define what _true_
 me, I would list the following features:
 
 - full indexing with ability to click on a symbol or use a key shortcut to go to the definition or source file where that symbol is defined
+- in-place documentation lookup for APIs
 - code auto-complete (configurable, and not automatic – key press invoked)
 - code auto-format with automatic tab positioning while editing
 - refactor (extract method, etc)
 - symbol rename (automatic renaming of functions, class names with file name change, variables, etc across many files)
-- debugger
+- built-in debugger
 - automated test integration
 - arguably less important are global project search, global find and replace, project-level symbol lookup.
 
