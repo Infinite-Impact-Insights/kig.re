@@ -86,20 +86,23 @@ as the final destination:
 ## Eclipse Arduino Plugin Saves the Day
 
 Having now used this IDE for several weeks straight, I am pretty happy with the Eclipse Arduino Plugin.
-The project is [pretty active](https://github.com/jantje/arduino-eclipse-plugin), and the author is also
+The project is [pretty active on GitHub](https://github.com/jantje/arduino-eclipse-plugin), and the author is also
 quite nice :)
 
 ### The Case for Open Source
 
 One of the first things I bumped into with my Arduino Esplora board, was a pretty major problem: I couldn't
 upload any sketches.  So I posted a bug report on GitHub, and author replied with a quick note on how
-to get the source of the plugin, and which class to look at.   I took the challenge.   For the next few
-hours instead of working on my Arduino sketch I was fixing the Eclipse plugin.  To my surprise, it was
+to get the source of the plugin, and which class to look at, so that *I* could fix the problem. It sounded
+like a challenge. Of course I took it.
+
+For the next few hours instead of working on my Arduino sketch I was fixing the Eclipse plugin.  To my surprise, it was
 relatively easy to get setup with the environment where I imported the entire plugin source into JetBrains
 IDEA (haha, sorry Eclipse! You are still number two :) and was able to diagnose and fix the issue with
 the timing of opening serial port and uploading the sketch.  A few hours later [my pull request was
-merged](https://github.com/jantje/arduino-eclipse-plugin/commit/fd0f6de12ebf41a0ba484d3007bfed77c67380ec)
-and Eclipse Plugin worked for everyone using Eslpora! That, my friends, is the true power of open source.
+merged](https://github.com/jantje/arduino-eclipse-plugin/commit/fd0f6de12ebf41a0ba484d3007bfed77c67380ec),
+and the nightly build of Eclipse Plugin started working for everyone with Arduino Eslpora! That, my friends,
+is the true power of open source.
 
 While I was at it, I also [updated the README](https://github.com/jantje/arduino-eclipse-plugin/commit/ed794f8ed6d89a1a3c0cb0354bbc162de81bf821)
 with proper markdown and (perhaps) slightly better English. And of course I couldn't stop there either,
@@ -108,10 +111,9 @@ and then submitting a [beautiful pull request](https://github.com/jantje/arduino
 point the plugin author probably had gotten pretty annoyed that I was making his code look and work
 a bit better, and sadly rejected the PR, explaning that another rewrite of serial comms is happening.
 Oh well, at least I can keep using my fork on my own machine, where I get to see pretty error messages that actually
-explain what's going on :)  Yes, [@jantje](https://github.com/jantje)
-I am looking at you, my friend :)
+explain what's going on :)
 
-But we digress.
+But I digress.
 
 ### Installing Eclipse Plugin for Arduino
 
