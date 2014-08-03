@@ -153,6 +153,9 @@ Here I'd like to share some simple but powerful tidbits about how I use Eclipse,
   type in the new name. Eclipse does the rest.
 * Focus cursor on a symbol (like a function call) and press F2.  This will pop up a dialog that shows function
   declaration. Super convenient!
+* Instead of pressing F2, press F3 (or Command-Click) to go to the source file where the symbol is defined.
+* Click on the tab above the editor window, and start draging it around, creating split screen horizontally or vertically.
+  Grab another tab and split more tabs into two or throw the selected tab behind other tabs in a given window. How great is that?
 * And I am not even mentioning (oh yes I am) the beautiful syntax highlighting, although I had to tweak this one
   because none of the themes were good enough :)
 
