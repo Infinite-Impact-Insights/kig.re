@@ -40,6 +40,10 @@ programming alternative, and so I started exploring.
 
 ## Arduino IDE Alternatives
 
+> First off – a tiny disclaimer: this is not a feature by feature comparison of Arduino-capable IDEs.
+> It's a personal opinion of an experienced software engineer, who recently entered this domain. I work
+> on Mac OSX, and so I only briefly mention the Windows options. But on a Mac I did end up trying most of the options listed here.
+
 When I talk about software IDE, I generally *do not* mean a fancy text editor. While I know
 that plenty of great developers love and use text editors on complicated software projects,
 the convenience of a true IDE on a small to mid-sized software project is hard to dispute.
