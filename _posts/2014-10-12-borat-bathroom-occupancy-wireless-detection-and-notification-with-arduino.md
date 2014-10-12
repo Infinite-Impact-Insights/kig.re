@@ -25,7 +25,7 @@ ___
 
 ### Broadcasting Occupancy Status
 
-First question on my mind was: *"How would I let everyone know, if one or both bathrooms are occupied?"*. I decided to follow a familiar airplane concept, and introduce a display unit, which would be large enough, and bright enough, to be visible from most parts of our office. Luckily we have an open plan, so placement was not an issue.
+The first question on my mind was: *"How would I let everyone know, if one or both bathrooms are occupied?"*. I decided to follow a familiar airplane concept, and introduce a display unit, which would be large enough, and bright enough, to be visible from most parts of our office. Luckily we have an open plan, so placement was not an issue.
 
 By that time I was playing with a couple of
 [Rainbowduinos](http://www.amazon.com/Rainbowduino-LED-Driver-Platform-Atmega328/dp/B0068JYK0I?_encoding=UTF8&tag=kiguino-20)
@@ -44,7 +44,7 @@ which were driving
 
 ### Communication
 
-Next question was – how would the display unit receive information about each bathroom status?
+The next question was – how would the display unit receive information about each bathroom status?
 
 This part was easy – I picked up a few [nRF24L01+ radios](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20) for very cheap. Most excellent [RF24 communications library](http://maniacbug.github.io/RF24/) has some of the best Arduino C++ code I've seen, and so it instilled confidence in this approach.  Quick test of the radios at work showed that they are more than capable of reaching through the walls.
 
