@@ -148,7 +148,7 @@ To make changes visible to the user of the Observer module, one must have a Seri
 Here is a picture of one of the observer units attached to the debugging LCD, which is communicates via a serial cable. The LCD is optional and can be plugged in or out at any time.
 
 <div class="small">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" data-lightbox="enclosures" data-title="Configuring Observer">
+<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" data-lightbox="enclosures" data-title="Configuring Observer. Legend: D = Sonar, M = Motion, L = Light. + next to it means it's been trigger (motion), or above threshold (sonar and light). First numeric value in brackets is the sensor reading, second is the threshold.">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" alt="Configuring a Sensor" title="">
 </a>
 
