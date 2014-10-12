@@ -233,13 +233,16 @@ The _Display_ unit can be implemented in a variety of ways. I chose to use:
 * 2 x [Rainbowduinos](http://www.amazon.com/gp/product/B0068JYK0I?ie=UTF8&camp=1789&creativeASIN=B0068JYK0I&linkCode=xm2&tag=kiguino-20), programmed with the _DisplayLED_ sketch
 * 1 x [Primary Arduino Uno](http://www.amazon.com/gp/product/B006H06TVG?ie=UTF8&camp=1789&creativeASIN=B006H06TVG&linkCode=xm2&tag=kiguino-20) which acts as the master for the Rainbowduinos. It listens to the wireless network notifications, and based on this data, it sends one of three possible states to the Rainbowduino units, each of which are assigned to rooms
 * 1 x [Arduino Prototyping Shield](http://www.amazon.com/gp/product/B007QXTRNA?ie=UTF8&camp=1789&creativeASIN=B007QXTRNA&linkCode=xm2&tag=kiguino-20)
-* 1 x [RGB LED](http://www.amazon.com/gp/product/B005VMDROS?ie=UTF8&camp=1789&creativeASIN=B005VMDROS&linkCode=xm2&tag=kiguino-20) for status
 * 1 x [Ethernet Shield](http://www.amazon.com/gp/product/B006UT97FE?ie=UTF8&camp=1789&creativeASIN=B006UT97FE&linkCode=xm2&tag=kiguino-20) for JSON server
+* 2 x [RGB LED](http://www.amazon.com/gp/product/B005VMDROS?ie=UTF8&camp=1789&creativeASIN=B005VMDROS&linkCode=xm2&tag=kiguino-20) for status
+* 1 x [Female port for JST 3-wire serial cable](http://www.amazon.com/gp/product/B007R9TUUS?ie=UTF8&camp=1789&creativeASIN=B007R9TUUS&linkCode=xm2&tag=kiguino-20)
 * Several patch cables
 * Custom made laser-cut enclosure
 * Spacers, #4-40 nuts and bolts
 
-The primary way the display unit informs users is via two sets of LED Matrices, shown below.
+I then glued 4 plastic spacers to the back of the two Rainbowduinos (2 per each), so that I could screw the Uno on top. The spacers were aligned to Uno's mounting holes (in fact I had them screwed *when* I glued them to ensure they were perfect).  This created a system where Uno was also acting as a brace, and enforcing the connection between two Rainbowduinos, making the entire structure rigid.
+
+Tall spacers filled the box all the way to the top, pushed LED matrices flush with the front side of the enclosure. This approach allowed me to avoid screwing or glueing things inside of the box altogether: everything was held up by the pressure of the box.  I did put a couple of foamy pieces in a few places to ensure the internals do not bounce in any dimension.
 
 <div class="small">
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg" data-lightbox="enclosures" data-title="Display Assembly">
@@ -262,11 +265,15 @@ The primary way the display unit informs users is via two sets of LED Matrices, 
 
 ## Conclusion
 
-What's the moral of the story?  Who am I kidding. It sure is nice to know without having to get up from your desk if you can or can't use the restroom, especially when they're in such limited supply.
+What's the moral of the story?  Who am I kidding.
 
-Could have this been done cheaper?  Absolutely!  Smaller?  Definitely!
+__It sure is nice to know if you can or can't use the restroom, without having to get up from your desk.__
 
-Want to help me design PCB board to make the next Observer Unit?  Please get in touch!  [Create an issue on GitHub](https://github.com/kigster/Borat/issues/new), and describe your idea, and I'll make sure to respond asap.
+Could have this been done cheaper?  Absolutely!  Smaller?  Definitely!  Neater, prettier, faster, etc?  You bet.
+
+But I had a lot of fun along the way, and it's been such a pleasure to work with "atoms", not "bits" for a change (although you could say this project required a good deal of bits too :-)
+
+Do you want to help me design a PCB board to make the next Observer Unit?  Please get in touch!  [Create an issue on GitHub](https://github.com/kigster/Borat/issues/new), and describe your idea, and I'll make sure to respond asap.
 
 Also – please leave comments, feedback, and suggestions. All of those nice things.
 
