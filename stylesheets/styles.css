@@ -247,15 +247,17 @@ blockquote {
 }
 
 .small img {
-  max-width: 200px;
+  max-width: 240px;
   border: 1px solid black;
   float: left;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+
   margin-bottom: 20px;
 }
 
 img.small-right, img.small-left {
-  max-width: 150px;
+  max-width: 200px;
   margin-left: 20px;
   float: right;
   border: 1px solid black;
