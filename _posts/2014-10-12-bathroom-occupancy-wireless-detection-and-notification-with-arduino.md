@@ -3,67 +3,127 @@ layout: default
 title: Bathroom Occupancy Remote Awareness Technology with Arduino
 ---
 
-## Problem
+My company, with all of it's 35 people, recently moved into a new office which was equipped with only two private bathrooms, separated by a floor.
 
-My company, which has 35 people, recently moved into a new office which was equipped with only two private bathrooms, separated by a floor.  So you would have to go to one bathroom, find it locked, then go upstairs, find the other one locked too.. come back down, only find someone else just took the lower one.  You can see how this can get pretty inefficient and frustrating, especially since bathrooms are separated.
+A few times a day, when I'd really have to go, I would go to one of the bathrooms, find it's door locked, then run upstairs, find the other one locked too.. Damn! Come back down, only find someone that else just took the first bathroom, while I was upstairs knocking.
 
-Given my foray into Arduino over the last few months, I knew there was a solution.
+You can see how this can get pretty inefficient and frustrating once or twice, but now multiply this by every work day, and 35 employees, and you have a problem.
+
+Given my foray into Arduino over the last few months, I knew I could probably come up with a solution. I got approved for a small budget of about $200, and started looking around.
+
+### Formulating the Problem
+
+The problem was very simple: people needed to know when each bathroom was occupied, or not.  Just like on the airplane you see bathroom light on/off, I wanted something like that for our two bathrooms. Something everyone could see.
+
+#### Communicating Occupancy Status
+
+<div style="width: 100%; text-align: center">
+    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg"
+        alt="Bathroom Occupancy Wireless Notification Arduino-based System" title="Live on the wall at work" style="border: 1px solid black; max-width: 500px; text-align: center;" />
+</div>
+<br />
+
+By that time I was playing with a couple of [Rainbowduinos](http://www.amazon.com/Rainbowduino-LED-Driver-Platform-Atmega328/dp/B0068JYK0I?_encoding=UTF8&tag=kiguino-20),
+which were driving one [8x8 LED Matrix displays](http://www.amazon.com/Super-Bright-RGB-LED-matrix/dp/B0068K01QE/?_encoding=UTF8&tag=kiguino-20), and I was pretty impressed with the results. I almost immediately knew I wanted to use these to indicate the status of occupancy. Initially I thought – green matrix means bathroom is available, red means occupied.  I pretty much went with this for the final version, although I added some
+[lava-lamp like animations](https://github.com/kigster/Borat/blob/master/firmware/DisplayLED/DisplayLED.ino) to make things more interesting :)
+
+#### Detecting Occupancy Status
+
+This is where things got more tricky.
+
+I brainstormed with a few folks many-o-options. We talked about:
+
+* Detecting status of door lock – which would have been great, but required changing/munging door locks in a rented building, and possibly running electric wire to/from door handle. Possible fire danger, or electrocuting people while they grab handle, are just some of the undesired side-effects.
+* I saw some projects online where people used magnetic strips to detect if the door is simply closed or open.  But this requires everyone to leave the door open when they leave – not realistic!
+* Same is relying on the light sensor alone: easy/cheap – yes, reliable no!  Not only that, but our exhaust is connected to the light, so people often leave light on deliberately to keep the fan going.
+
+It was clear to me that a combination system was needed: something that not only relied on light, or motion sensor, for example, but a combination of sensors.  Pretty soon, I settled on using just these three:
+
+* Light sensor
+* Motion sensor
+* Sonar distance sensor
+
+#### Communication
+
+This part was easy – I picked up a few [nRF24L01+ radios](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20) for very cheap. An excellent [communications library](http://maniacbug.github.io/RF24/) was some of the best Arduino C++ code I've seen so far, and instilled confidence.
+
+At this point I had my pieces and was ready to proceed with the implementation.
+
+{{site.data.macros.continue}}
+___
+
 
 ## Solution
 
-Enter [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system, that uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms, to the main display unit, which would be typically located in a common highly visible area.
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title=""
+style="height: 250px; margin-left: 30px; float: right; border: 1px solid black;">
 
-Here is how it looks on our wall – the LED matrices are so bright you can see it from any part of the office.
-
-<div style="width: 100%; text-align: center">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg" alt="Bathroom Occupancy Wireless Notification Arduino-based System" title="Live on the wall at work" style="border: 1px solid black; max-width: 500px; text-align: center;">
-</div><br />
+Enter the project (all of which is open sourced under MIT License), that took good month over a few nights and weekends this summer: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system, that uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms, to the main display unit located in a highly visible area.
 
 You may be asking – why in hell does the observer unit (which determines occupancy) need a sonar?  Well, if you are like me, you like to take your time when you are .. you know..  Perhaps I don't move very much, maybe I am reading my phone, and so the motion sensor would eventually give up and give green light.  This is where Sonar comes in.  Aimed directly at someone sitting on the toilet, Sonar will read a different distance with a person there, versus without.  You can configure the threshold after installing Observer, and vola!  Near 100% accuracy!  Is it creepy, to have a 2-eyed robot staring at you in the bathroom? I'll leave that to the reader :)
 
-My company can't live without this technology now.  I took a unit home one night to fix it, and forgot to bring it back.. Ugh.  I won't do *that* again! :)
+My company can't live without this technology now.  I took a unit home one night to fix it, and forgot to bring it back.. The next day everyone I'd bump into was asking "Where is BORAT?.. What happened?".  Hilarious, and amazing how quickly humans get used to things that are actually useful.
 
-## Deep Dive
+### Deep Dive
 
 BORAT consists of two logical units:
 
-1. __Observer Unit__, installed in each bathroom, is based on the set of three sensors, a knob and an LCD serial port for on-premises configuration of the unit, and a wireless nRF24L01+ radio card.  Up to 5 observer units are supported (this is a limitation of the radio).
+1. Multiple __Observer Units__, installed in each bathroom, each is based on the set of three sensors, a knob and an LCD serial port for on-premises configuration of the unit, and a wireless nRF24L01+ radio card.  Up to 5 observer units are supported (this is a limitation of the radio).
 
 2. The __Display Unit__, which uses LED Matrices to display status of each bathroom occupancy. This unit can be additionally (and optionally) equipped with an Ethernet shield, in which case a small HTTP web server is started, and reports occupancy status over a simple JSON API.
 
-Here is a diagram that explains overall placement and concept.
+Here is a diagram that explains various placement options and overall concept.
 
 <div style="width: 100%; text-align: center">
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png" alt="Concept Diagram" title="Concept Diagram" style="border: 1px solid black; max-width: 600px; text-align: center;">
-</div><br />
+</div>
+<br />
 
-### Sensor Logic of the Observers
+Remember, communication is wireless.  These little cards are pretty damn impressive, they get through several walls, or pretty good distances (50-100feet) when used across line of sight.  I did have to move the display unit once, from a place that had 3 walls separating it from the Observers, to 2 walls, and now it's flawless. With 3 walls in between it was spotty.
 
-How do Observers determine if the bathroom is occupied? Here's how.
+## Observer Units
 
-1. If the light is off, bathroom is unoccupied
-2. If the light is on, we look at the motion sensor - if it detected movement within the last 15 seconds, we consider bathroom occupied.
-3. If the motion sensor did not pick up any activity in the last 15 seconds, we then look at Sonar reading. If Sonar (which is meant to be pointed at the toilet) is reading distance above a given threshold, that means nobody is sitting there, and so the bathroom is occupied. Otherwise it's available.
+### Logic
+
+Observers are responsible for communicating a binary status to the display unit: either __occupied__, or __available__.  Display unit also has third status: __disconnected__, for each observer unit. But Observers don't have that.
+
+How do Observers determine if the bathroom is occupied? Based on the following logic:
+
+1. If the light is off, the bathroom is available
+2. If the light is on, we look at the motion sensor - if it detected movement within the last 15 seconds, we consider bathroom occupied
+3. If the motion sensor did not pick up any activity in the last 15 seconds, we then look at Sonar reading.
+  * If Sonar (which is meant to be pointed at the toilet) is reading distance above a given threshold, that means nobody is sitting there, and so the bathroom is occupied.
+  * Otherwise it's available.
 
 That's it!
 
-All settings and thresholds, including timeouts, are meant to be tweaked individually for each bathroom. This is why Observer unit contains a rotary encoder knob, and a connector for external serial port, meant to be a Serial LCD Display used only to configure the device, but not after.
+All settings and thresholds, including timeouts, are meant to be tweaked individually for each bathroom. This is why Observer unit contains a [rotary encoder knob](http://www.amazon.com/Rotary-Encoder-Development-Arduino-Compatible/dp/B00HSWXMDK/?_encoding=UTF8&tag=kiguino-20), and a connector for external serial port, meant to be a Serial LCD Display used only to configure the device, but not after.
 
 Below diagram shows components used in the Observer unit installed in each bathroom.
 
 <div style="width: 100%; text-align: center">
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg" alt="Observer Components" title="Observer Components" style="border: 1px solid black; max-width: 600px; text-align: center;">
-</div><br />
+</div>
+<br />
+
+They are, for reference:
+
+__Observer Unit__ (quantities per unit):
+
+* 1 x [Arduino Nano](http://www.amazon.com/gp/product/B00761NDHI?ie=UTF8&camp=1789&creativeASIN=B00761NDHI&linkCode=xm2&tag=kiguino-20) (I chose older Nano because of the Nano IO Shield that saved me wiring up the RF24 radio, as well as had breakouts for sensors – very convenient)
+* 1 x [Arduino Nano IO Shield](http://www.amazon.com/gp/product/B00BD6KEYC?ie=UTF8&camp=1789&creativeASIN=B00BD6KEYC&linkCode=xm2&tag=kiguino-20)
+* 1 x [nRF24L01+ radio](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20)
+* 1 x [Sonar HC-SR04 Distance Sensor](http://www.amazon.com/gp/product/B00E0NXTJW?ie=UTF8&camp=1789&creativeASIN=B00E0NXTJW&linkCode=xm2&tag=kiguino-20)
+* 1 x [Photo Resistor](http://www.amazon.com/gp/product/B00AQVYWA2?ie=UTF8&camp=1789&creativeASIN=B00AQVYWA2&linkCode=xm2&tag=kiguino-20)
+* 1 x [Infrared PIR Motion Sensors](http://www.amazon.com/gp/product/B008AESDSY?ie=UTF8&camp=1789&creativeASIN=B008AESDSY&linkCode=xm2&tag=kiguino-20)
+* 1 x [Rotary Encoder Knob](http://www.amazon.com/Rotary-Encoder-Development-Arduino-Compatible/dp/B00HSWXMDK/?_encoding=UTF8&tag=kiguino-20)
+* 1 x [RGB LEDs](http://www.amazon.com/gp/product/B005VMDROS?ie=UTF8&camp=1789&creativeASIN=B005VMDROS&linkCode=xm2&tag=kiguino-20) for status communication
+* 1 x [Microtivity Prototyping Board, 5x7cm](http://www.amazon.com/gp/product/B007K7I8CI?ie=UTF8&camp=1789&creativeASIN=B007K7I8CI&linkCode=xm2&tag=kiguino-20)
+* 1 x [Female port for JST 3-wire cable](http://www.amazon.com/gp/product/B007R9TUUS?ie=UTF8&camp=1789&creativeASIN=B007R9TUUS&linkCode=xm2&tag=kiguino-20)
+* Many spacers, [# 4-40 nut](http://www.amazon.com/gp/product/B000FK9HH2?ie=UTF8&camp=1789&creativeASIN=B000FK9HH2&linkCode=xm2&tag=kiguino-20) and [#4-40 screws](http://www.amazon.com/dp/B00DD4AUE6/?ie=UTF8&camp=1789&creativeASIN=B000MN6RAM&linkCode=xm2&tag=kiguino-20), also [M2 sizes](http://www.amazon.com/gp/product/B000FN1XDA?ie=UTF8&camp=1789&creativeASIN=B000FN1XDA&linkCode=xm2&tag=kiguino-20)
 
 
-### Display Unit
-
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title=""
-style="height: 250px; margin-left: 30px; float: right; border: 1px solid black;">
-
-The _Display_ unit can be certainly implemented in a variety of ways. I chose to use 2 sets of 8x8 LED Matrices, each attached to a Rainbowduino, programmed with _DisplayLED_ sketch.  Additional Arduino Uno (which acts as the master for the Rainbowduinos) listens on the wireless network notifications, and based on this information sends one of three possible states to each of the Rainbowduino units (which are assigned to rooms).
-
-#### Configuration
+### Configuring using LCD and Rotary Encoder Knob
 
 To make changes visible to the user of the Observer module, one must have a Serial LCD display to show the feedback and new values. I found Sparkfun LCD to be very easy to use and reliable, and I have been converting most of my Arduino projects to report status data on that serial port.  Very useful!
 
@@ -89,6 +149,8 @@ The settings that can be changed are (and are cycled through by pressing the but
 
 Over the last few months I built three separate Observer modules, the first two of them had Sonar built into the laser-cut enclosure, so to aim Sonar you would have to move the entire enclosure.
 
+By the way, need to make some laser-cut boxes?  Check out [MakerBox.io](http://makerbox.io) – the tool I built after getting frustrated with the crowd favorite – BoxMaker. BoxMaker has so many bugs,
+
 Since it is not practical to be tilting or leaning the enclosure itself to aim at the toilet, I updated the design, and moved the Sonar sensor to the top of the box, using an arm I designed.  It's incredible what can be done in 2D, and then turned into a 3D object!
 
 <img src="/images/laser-cut-johnny5.jpg" alt="" title=""
@@ -98,9 +160,9 @@ The new arm allows movement using three degrees of freedom. This design is clear
 
 The template files inside the enclosure folder of the project contain designs for the boxes, as well as the arm. Feel free to use them! By laser-cutting these parts you too can assemble BORAT boxes and the Sonar ARM.
 
-In fact, I had a little fun and made this [Johnny Five](http://en.wikipedia.org/wiki/Short_Circuit) looking dude :)
+In fact, I had a little fun and made this [Johnny Five](http://en.wikipedia.org/wiki/Short_Circuit) looking dude, but this has *absolutely nothing to do with this project* :)  It is cute though, you must agree. Helpless, but cute.
 
-<p style="clear:both; margin-bottom: 30px;">
+<div style="clear:both; margin-bottom: 30px;"></div>
 
 #### Early Boxes with Fixed Sonar
 
@@ -124,11 +186,21 @@ style="height: 200px; margin-right: 20px; float: left;">
 
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg" alt="" title=""
 style="height: 200px; margin-right: 20px; float: left;">
-
-<p style="clear:both;">
-
+<div style="clear:both; margin-bottom: 40px;"></div>
 
 ## Display Module
+
+The _Display_ unit can be certainly implemented in a variety of ways. I chose to use:
+
+* 2 x 8x8 LED Matrices
+* 2 x Rainbowduinos, programmed with the _DisplayLED_ sketch
+* 1 x Primary Arduino Uno (which acts as the master for the Rainbowduinos) listens on the wireless network notifications, and based on this information sends one of three possible states to each of the Rainbowduino units (which are assigned to rooms)
+* 1 x Arduino Prototyping Shield
+* 1 x RGB LED for status
+* 1 x Ethernet Shield for JSON server
+* Several patch cables
+* Custom made laser-cut enclosure
+* Spacers, #4-40 nuts and bolts
 
 Primary way the display unit informs users is via two sets of LED Matrices, shown below.
 
@@ -136,15 +208,35 @@ Primary way the display unit informs users is via two sets of LED Matrices, show
 style="height: 170px; margin-right: 20px; float: left;">
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg" alt="" title=""
 style="height: 170px; margin-right: 20px; float: left;">
-
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg" alt="" title=""
 style="height: 170px; margin-right: 20px; float: left;">
-
 <p style="clear:both; margin-bottom: 40px;">
-
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg" alt="" title=""
 style="height: 170px; margin-right: 20px; float: left;">
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" alt="" title=""
 style="height: 170px; margin-right: 20px; float: left;">
-<p style="clear:both; margin-bottom: 40px;">
+<div style="clear:both; margin-bottom: 40px;"></div>
+
+## Conclusion
+
+What's the morale of the story?  Who am I kidding.
+
+It sure is nice to know without getting up from your desk, if you can or can not use the restroom, when they are in limited supply.
+
+Could have this been done cheaper?  Absolutely!  Smaller?  Definitely!
+
+Want to help me design PCB board to make the next Observer Unit?  Please get in touch!  [Create an issue on GitHub](https://github.com/kigster/Borat/issues/new), and describe your idea, and I'll make sure to respond asap.
+
+Also – please leave comments, feedback, suggestions.. All of those nice things.
+
+<p>Thanks for reading,<br />
+–– Konstantin.
+</p>
+
+
+
+
+
+
+
 
