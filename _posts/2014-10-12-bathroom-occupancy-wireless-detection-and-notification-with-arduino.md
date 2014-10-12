@@ -17,9 +17,9 @@ The problem was very simple: people needed to know when each bathroom was occupi
 
 #### Communicating Occupancy Status
 
-<div style="width: 100%; text-align: center">
+<div class="full">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg"
-        alt="Bathroom Occupancy Wireless Notification Arduino-based System" title="Live on the wall at work" style="border: 1px solid black; max-width: 500px; text-align: center;" />
+        alt="Bathroom Occupancy Wireless Notification Arduino-based System" title="Live on the wall at work"/>
 </div>
 <br />
 
@@ -56,7 +56,7 @@ ___
 ## Solution
 
 <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title=""
-style="height: 250px; margin-left: 30px; float: right; border: 1px solid black;">
+class="small-right">
 
 Enter the project (all of which is open sourced under MIT License), that took good month over a few nights and weekends this summer: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system, that uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms, to the main display unit located in a highly visible area.
 
@@ -74,8 +74,8 @@ BORAT consists of two logical units:
 
 Here is a diagram that explains various placement options and overall concept.
 
-<div style="width: 100%; text-align: center">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png" alt="Concept Diagram" title="Concept Diagram" style="border: 1px solid black; max-width: 600px; text-align: center;">
+<div class="full">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png" alt="Concept Diagram" title="Concept Diagram">
 </div>
 <br />
 
@@ -101,8 +101,8 @@ All settings and thresholds, including timeouts, are meant to be tweaked individ
 
 Below diagram shows components used in the Observer unit installed in each bathroom.
 
-<div style="width: 100%; text-align: center">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg" alt="Observer Components" title="Observer Components" style="border: 1px solid black; max-width: 600px; text-align: center;">
+<div class="full">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg" alt="Observer Components" title="Observer Components">
 </div>
 <br />
 
@@ -129,12 +129,12 @@ To make changes visible to the user of the Observer module, one must have a Seri
 
 Here is a picture of one of the observer units attached to a debugging console (16x2 LCD Display), which is communicated with via a Serial cable.  The LCD is optional and can be plugged in/out at any time.
 
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" alt="Configuring a Sensor" title=""
-style="width: 370px; float: left; border: 1px solid black;">
+<div class="small">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" alt="Configuring a Sensor" title="">
 
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Knob.jpg" alt="Configuring a Sensor" title=""
-style="width: 370px; float: right; border: 1px solid black;">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Knob.jpg" alt="Configuring a Sensor" title="">
 <p style="clear:both;">
+</div>
 
 The settings that can be changed are (and are cycled through by pressing the button):
 
@@ -149,12 +149,11 @@ The settings that can be changed are (and are cycled through by pressing the but
 
 Over the last few months I built three separate Observer modules, the first two of them had Sonar built into the laser-cut enclosure, so to aim Sonar you would have to move the entire enclosure.
 
-By the way, need to make some laser-cut boxes?  Check out [MakerBox.io](http://makerbox.io) – the tool I built after getting frustrated with the crowd favorite – BoxMaker. BoxMaker has so many bugs,
+By the way, need to make some laser-cut boxes?  Check out [MakerBox.io](http://makerbox.io) – the tool I built after getting frustrated with the crowd favorite – BoxMaker. But that's another blog post.
 
 Since it is not practical to be tilting or leaning the enclosure itself to aim at the toilet, I updated the design, and moved the Sonar sensor to the top of the box, using an arm I designed.  It's incredible what can be done in 2D, and then turned into a 3D object!
 
-<img src="/images/laser-cut-johnny5.jpg" alt="" title=""
-style="height: 400px; margin-left: 40px; float: right;">
+<img src="/images/laser-cut-johnny5.jpg" alt="" title="" class="small-right">
 
 The new arm allows movement using three degrees of freedom. This design is clearly more flexible and can adapt to various locations much better then the previous ones.
 
@@ -166,56 +165,46 @@ In fact, I had a little fun and made this [Johnny Five](http://en.wikipedia.org/
 
 #### Early Boxes with Fixed Sonar
 
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg" alt="" title=""
-style="height: 200px; margin-right: 20px; float: left;">
-
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-Nano-Shield.jpg" alt="" title=""
-style="height: 200px; margin-right: 20px; float: left;">
-
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg" alt="Configuring a Sensor" title=""
-style="height: 200px; margin-right: 20px; float: left;">
-<p style="clear:both; margin-bottom: 30px;">
+<div class="small">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-Nano-Shield.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg" alt="Configuring a Sensor">
+<p style="clear:both; margin-bottom: 20px;">
+</div>
 
 #### Flexible Arm Designs
 
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Front.jpg" alt="" title=""
-style="height: 200px; margin-right: 20px; float: left;">
-
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3.jpg" alt="" title=""
-style="height: 200px; margin-right: 20px; float: left;">
-
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg" alt="" title=""
-style="height: 200px; margin-right: 20px; float: left;">
-<div style="clear:both; margin-bottom: 40px;"></div>
+<div class="small">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Front.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg">
+<p style="clear:both; margin-bottom: 20px;">
+</div>
 
 ## Display Module
 
 The _Display_ unit can be certainly implemented in a variety of ways. I chose to use:
 
-* 2 x 8x8 LED Matrices
-* 2 x Rainbowduinos, programmed with the _DisplayLED_ sketch
-* 1 x Primary Arduino Uno (which acts as the master for the Rainbowduinos) listens on the wireless network notifications, and based on this information sends one of three possible states to each of the Rainbowduino units (which are assigned to rooms)
-* 1 x Arduino Prototyping Shield
-* 1 x RGB LED for status
-* 1 x Ethernet Shield for JSON server
+* 2 x [8x8 LED Matrices](http://www.amazon.com/gp/product/B007ZK4I10?ie=UTF8&camp=1789&creativeASIN=B007ZK4I10&linkCode=xm2&tag=kiguino-20)
+* 2 x [Rainbowduinos](http://www.amazon.com/gp/product/B0068JYK0I?ie=UTF8&camp=1789&creativeASIN=B0068JYK0I&linkCode=xm2&tag=kiguino-20), programmed with the _DisplayLED_ sketch
+* 1 x [Primary Arduino Uno](http://www.amazon.com/gp/product/B006H06TVG?ie=UTF8&camp=1789&creativeASIN=B006H06TVG&linkCode=xm2&tag=kiguino-20) (which acts as the master for the Rainbowduinos) listens on the wireless network notifications, and based on this information sends one of three possible states to each of the Rainbowduino units (which are assigned to rooms)
+* 1 x [Arduino Prototyping Shield](http://www.amazon.com/gp/product/B007QXTRNA?ie=UTF8&camp=1789&creativeASIN=B007QXTRNA&linkCode=xm2&tag=kiguino-20)
+* 1 x [RGB LED](http://www.amazon.com/gp/product/B005VMDROS?ie=UTF8&camp=1789&creativeASIN=B005VMDROS&linkCode=xm2&tag=kiguino-20) for status
+* 1 x [Ethernet Shield](http://www.amazon.com/gp/product/B006UT97FE?ie=UTF8&camp=1789&creativeASIN=B006UT97FE&linkCode=xm2&tag=kiguino-20) for JSON server
 * Several patch cables
 * Custom made laser-cut enclosure
 * Spacers, #4-40 nuts and bolts
 
 Primary way the display unit informs users is via two sets of LED Matrices, shown below.
 
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg" alt="" title=""
-style="height: 170px; margin-right: 20px; float: left;">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg" alt="" title=""
-style="height: 170px; margin-right: 20px; float: left;">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg" alt="" title=""
-style="height: 170px; margin-right: 20px; float: left;">
-<p style="clear:both; margin-bottom: 40px;">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg" alt="" title=""
-style="height: 170px; margin-right: 20px; float: left;">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" alt="" title=""
-style="height: 170px; margin-right: 20px; float: left;">
-<div style="clear:both; margin-bottom: 40px;"></div>
+<div class="small">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg">
+<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg">
+<div style="clear:both; margin-bottom: 20px;"></div>
+</div>
 
 ## Conclusion
 
