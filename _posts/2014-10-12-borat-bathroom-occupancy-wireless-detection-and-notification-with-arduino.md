@@ -3,7 +3,7 @@ layout: default
 title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
 ---
 
-My company Wanelo, with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.
+A great company where I work, [Wanelo](http://wanelo.com/), with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.
 
 A few times a day, when the need was strong, I'd go to the downstairs bathroom only to find its door locked. I'd then run upstairs and find the other one locked too... Damn! I'd come back down only find out that someone else grabbed the first bathroom while I was upstairs. Argh!
 
