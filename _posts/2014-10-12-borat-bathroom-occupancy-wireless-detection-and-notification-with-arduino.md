@@ -11,8 +11,6 @@ You can likely see how this could be a frustrating and disruptive experience eve
 
 Given my foray into Arduino over the last few months, I knew I could come up with a solution. I got approved for a small budget of about $200, and started looking around.
 
-### Formulating the Problem
-
 <div class="full">
     <img src="/images/bathroom-occupied-calm-technology.jpg"/>
 </div>
@@ -25,7 +23,9 @@ Given my foray into Arduino over the last few months, I knew I could come up wit
 ___
 
 
-#### Communicating Occupancy Status
+### Broadcasting Occupancy Status
+
+First question on my mind was: *"How would I let everyone know, if one or both bathrooms are occupied?"*. I decided to follow a familiar airplane concept, and introduce a display unit, which would be large enough, and bright enough, to be visible from most parts of our office. Luckily we have an open plan, so placement was not an issue.
 
 By that time I was playing with a couple of
 [Rainbowduinos](http://www.amazon.com/Rainbowduino-LED-Driver-Platform-Atmega328/dp/B0068JYK0I?_encoding=UTF8&tag=kiguino-20)
@@ -42,20 +42,24 @@ which were driving
 </div>
 <br />
 
-#### Communication
+### Communication
 
-This part was easy – I picked up a few [nRF24L01+ radios](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20) for very cheap. An excellent [communications library](http://maniacbug.github.io/RF24/) has some of the best Arduino C++ code I've seen, and instilled confidence.
+Next question was – how would the display unit receive information about each bathroom status?
 
-#### Detecting Occupancy Status
+This part was easy – I picked up a few [nRF24L01+ radios](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20) for very cheap. Most excellent [RF24 communications library](http://maniacbug.github.io/RF24/) has some of the best Arduino C++ code I've seen, and so it instilled confidence in this approach.  Quick test of the radios at work showed that they are more than capable of reaching through the walls.
 
-This is where things got more tricky.
+### Detecting Occupancy Status
+
+The last problem was about actual occupancy detection.
+
+And *this* is where things got quite a bit more tricky.
 
 I brainstormed with a few folks on many an option. We discussed:
 
-* Detecting the status of the door's lock. This would have been great, but required changing the locks in a rented building, which was not allowed. There are additional issues with this solution, but I won't go into that here.
-* I saw some projects online where people used magnetic strips to detect if the door is simply closed or open.  However, this requires everyone to leave the door open when they leave – not realistic!
-* Some suggested relying on light detection alone. Easy and cheap? Yes. Reliable? No. Not only that, but the bathroom fan is connected to the light switch, so people often leave the light on deliberately to keep the fan going.
-* Another simple option would be to use a motion sensor. However this alone is simply not sufficient, as we'll see in a moment.
+* __Detecting the status of the door's lock__. This would have been great, but required changing the locks in a rented building, which was not allowed. There are additional issues with this solution, but I won't go into that here.
+* I saw some projects online where people used __magnetic strips__ to detect if the door is simply closed or open.  However, this requires everyone to leave the door open when they leave – not realistic!
+* Some suggested relying on __light detection__ alone. Easy and cheap? Yes. Reliable? No. Not only that, but the bathroom fan is connected to the light switch, so people often leave the light on deliberately to keep the fan going.
+* Another simple option would be to use a __motion sensor__. However this alone is simply not sufficient, as we'll see in a moment.
 
 It was clear to me that a combination system was needed. Something that not only relies on light or motion detection alone, but uses a combination of multiple sensors. Pretty soon, I settled on using just these three:
 
@@ -63,9 +67,9 @@ It was clear to me that a combination system was needed. Something that not only
 * Motion sensor
 * Sonar distance sensor
 
-At this point I had my pieces and was ready to proceed with the implementation.
+Shortly after, I received all the pieces in the mail, had a plan in my head, and was ready to proceed with the implementation.
 
-## Solution
+## The Solution
 
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" data-lightbox="enclosures" data-title="Display Unit">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title="" class="small-right">
@@ -77,7 +81,7 @@ You may be asking – why in the hell does the observer unit (which determines o
 
 My company can't live without this technology now. I took a unit home one night to fix it, and forgot to bring it back. The next day everyone I'd bump into was asking "Where is BORAT? What happened?" It's amazing how quickly humans get used to things that are actually useful.
 
-### Deep Dive
+### Building Blocks
 
 BORAT consists of two logical units:
 
@@ -96,9 +100,7 @@ Here is a diagram that explains various placement options and the overall concep
 
 Remember, communication is wireless. These little cards are pretty damn impressive. They get through walls and significant distances (50-100 feet) when used across line of sight. I did have to move the display unit once from a place that had three walls separating it from the Observers, which made for spotty connection. Its new location has only two walls of separation, and it works flawlessly.
 
-## Observer Units
-
-### Logic
+### Observer Unit Logic
 
 Observers are responsible for communicating a binary status to the display unit: either __occupied__ or __available__. The display unit also has third status: __disconnected__, for each observer unit. But Observers don't have that.
 
@@ -139,7 +141,6 @@ __Observer Unit__ (quantities per unit):
 * 1 x [Female port for JST 3-wire cable](http://www.amazon.com/gp/product/B007R9TUUS?ie=UTF8&camp=1789&creativeASIN=B007R9TUUS&linkCode=xm2&tag=kiguino-20)
 * Many spacers, [# 4-40 nut](http://www.amazon.com/gp/product/B000FK9HH2?ie=UTF8&camp=1789&creativeASIN=B000FK9HH2&linkCode=xm2&tag=kiguino-20) and [#4-40 screws](http://www.amazon.com/dp/B00DD4AUE6/?ie=UTF8&camp=1789&creativeASIN=B000MN6RAM&linkCode=xm2&tag=kiguino-20), also [M2 sizes](http://www.amazon.com/gp/product/B000FN1XDA?ie=UTF8&camp=1789&creativeASIN=B000FN1XDA&linkCode=xm2&tag=kiguino-20)
 
-
 ### Configuration using LCD and Rotary Encoder Knob
 
 To make changes visible to the user of the Observer module, one must have a Serial LCD display to show the feedback and new values. I found [Sparkfun Serial 16x2 LCDs](http://www.amazon.com/gp/product/B004G4ZLQO?ie=UTF8&camp=1789&creativeASIN=B004G4ZLQO&linkCode=xm2&tag=kiguino-20) to be reliable and easy to use, and I have been converting most of my Arduino projects to report status data on that serial port.
@@ -166,7 +167,7 @@ The settings that can be changed are (and are cycled through by pressing the but
 5. _Save Settings?_ Defaults to NO, but if YES is chosen, parameters are saved to EEPROM, so even if the unit reboots they persist and are used moving forward by that unit.
 6. _Disable Radio?_ Sometimes it's convenient to configure the sensors alone, without the unit attempting to connect to the mothership (the display unit).  Set that to YES and radio will temporarily deactivate. This is not saved to EEPROM.
 
-#### Observer Module Design and Enclosure
+### Observer Module Designs and Enclosures
 
 Over the last few months, I built three separate Observer modules. The first two had sonar built into the laser-cut enclosure, so to aim it properly, you'd have to move the entire enclosure.
 
@@ -212,7 +213,19 @@ The template files inside the enclosure folder of the project contain designs fo
 <p style="clear:both; margin-bottom: 20px;">
 </div>
 
-## Display Module
+#### On the Inside
+
+Finally, here is the unit opened up so you can see how it's put together. I am a big fan of spacers, and mounting items to the enclosure, so I use a lot of cables to connect things up.  Plus, this way you could always replace faulty components over time.
+
+<div class="full">
+<a href="/images/observer-module-open.jpg" data-lightbox="enclosures" data-title="Observer Module on the Inside">
+    <img src="/images/observer-module-open.jpg" alt="Observer Module inside">
+</a>
+</div>
+<br />
+
+
+### Display Module
 
 The _Display_ unit can be implemented in a variety of ways. I chose to use:
 

@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #333;
   padding: 0;
   margin: 0 0 20px;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 h1 {
@@ -292,9 +292,14 @@ blockquote {
 }
 
 blockquote strong {
-  font-family: "HelveticaNeue-Thin",  "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif !important;
+  font-family: "HelveticaNeue",  "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif !important;
   font-weight: normal;
   color: white;
+}
+
+blockquote a {
+  color: white;
+  font-weight: bold;
 }
 
 .full {
@@ -409,11 +414,8 @@ footer p + p {
 	  width: 100%;
 	}
 
-
-
 	img.small-right {
 	}
-
 
   .wrapper {
     -webkit-border-radius: 0;
@@ -445,6 +447,10 @@ footer p + p {
   }
 }
 @media print, screen and (max-width:580px) {
+	h1, h2, h3, h4, h5 {
+		line-height: 1.4;
+	}
+
   header ul {
     display: none;
   }
@@ -454,6 +460,21 @@ footer p + p {
 	 margin-right: 1%;
 	 margin-left: 1%;
   }
+
+
+	img.small-right, img.small-left {
+	  max-width: 50%;
+	  margin-left: 10px;
+	  float: right;
+	  border: 1px solid black;
+	}
+
+img.small-left {
+	margin-left: 0px;
+	margin-right: 20px;
+	float: left;
+}
+
 
   header p.view {
     display: block;
