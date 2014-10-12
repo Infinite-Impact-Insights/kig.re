@@ -222,6 +222,11 @@ a:hover {
   color: #222;
 }
 
+a.read-more {
+  font-weight: bold;
+  font-family: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+
+}
 
 header.without-description h1 {
   margin: 10px 0;
@@ -279,7 +284,7 @@ blockquote {
   padding: 20px 20px 4px 20px;
   background-color: #555 !important;
   background: rgba(0, 0, 0, 0.06);
-  color: #aaa;
+  color: #bbb;
   border-bottom: 1px solid #aaa;
   border-top: 1px solid #eee;
   font-size: 12pt;
