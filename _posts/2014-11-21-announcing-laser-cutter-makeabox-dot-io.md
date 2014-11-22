@@ -3,21 +3,16 @@ layout: default
 title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
 ---
 
+
 <div class="small" style="float:right;">
-<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
-	<img src="/images/laser-cutter.jpg"/>
+<a href="/images/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made using MakeABox.IO">
+	<img src="/images/omnipix-enclosure.jpg"/>
 </a>
 </div>
 
 I've been so damn busy with life, the universe, and everything (although mostly Work, The Wife, and The Cat), that I forgot to mention and properly introduce to the world [LaserCutter](https://github.com/kigster/laser-cutter) –– a ruby gem for generating notched box designs, saved as PDF, and meant to be used on a laser cutter.  The gem provides a command line tool that will generate a pretty PDFs based on your desired box dimensions.
 
 In addition to the ruby gem, I put together a simple web front-end, called  [MakeABox.IO](http://makeabox.io/), which allows you and me to generate boxes without installing any gem, or running anything on the command line.  
-
-<div class="small" style="float:right;">
-<a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
-	<img src="/images/makeabox.jpg"/>
-</a>
-</div>
 
 If you've made any enclosures of your own, you probably used one of the existing / free tools out there. I did not find them all at once, but over the time the choice seemed to come down to:
 
@@ -27,10 +22,17 @@ If you've made any enclosures of your own, you probably used one of the existing
 
 * [Tabbed Box Maker – A plugin for InkScape](http://www.keppel.demon.co.uk/111000/111000.html) – I tried this beast on a Mac, and OMG – it takes foreeeeeeeeeeeeever to start and do anything.  It also looks.... sort of like MS Paint, or something built for Linux GUI a decade ago. I don't want to hurt anyone's feelings, but seriously, it took about 2 minutes to start on my iMac that's about a year old, maxed out build.  Srsly?
 
-###  So, why a new library?
+##  So, why a new library?
 {{site.data.macros.continue}}
 
 
+
+
+<div class="small" style="float:right;">
+<a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
+	<img src="/images/makeabox.jpg"/>
+</a>
+</div>
 
 It came down to a simple fact that I was not at all happy with BoxMaker, or the alternatives.  Boxmaker had lots of features, but also some bugs; it's source code was difficult to read and modify, it produced asymmetric box designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests. The last part made it difficult to think about contributing fixes.
 
@@ -66,15 +68,16 @@ One of the key components of laser cut boxes is the tabs that make two sides sna
 
 When laser cuts the material it usually burns a small portion of it.  This creates a cut with a non-zero width, called __[kerf](http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf)__. If your box design does not account for kerf, your box will fit loose.  The stronger the laser, the bigger the cut, the looser the fit.
 
-To fix this issue, I added support for *kerf*. To my surprise it ended up a much larger project than I aniticipated. It was really hard to get Kerf work, because for tabs sticking out it has to add to them, but for the ones sticking in: substract. Long story short, this is now supported, and there is a default kerf value  that's applied to all boxes, unless overridden.
+To fix this issue, I added support for *kerf*. To my surprise it ended up a much more difficult feature than I aniticipated. I had to add extra to the tabs sticking out, and I especially was stuck for a while on the corner pieces.  Long story short, Kerf is now fully supported, and there is a minimum default kerf value that's applied to all boxes, unless overridden. I've tested it on both acryllic and wood cuts, up to 1/4 inch thick.
 
-### Developing Enclosures
+## Developing Enclosures
 
 <div class="small" style="float:right;">
-<a href="/images/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made using MakeABox.IO">
-	<img src="/images/omnipix-enclosure.jpg"/>
+<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
+	<img src="/images/laser-cutter.jpg"/>
 </a>
 </div>
+
 
 My process typically revolves around the following steps:
 
@@ -82,10 +85,37 @@ My process typically revolves around the following steps:
 2. Generate the box using http://MakeABox.IO
 3. Import the PDF into Adobe Illustrator
 4. Add holes, joins, openings for switches, screens, knobs, power, etc. 
-5. Sometimes I expand a two opposite facing sides to grow larger than the box in both dimensions, so that they end up "squeezing" the contents between them. The picture on the right is using this model: I build this enclosure for the [Adafruit 32x32 LED Matrix](https://www.adafruit.com/products/2026) powered by [SmartMatrix](http://docs.pixelmatix.com/SmartMatrix/) and [Teensy 3.1](https://www.pjrc.com/teensy/teensy31.html). 
+5. Sometimes I expand a two opposite facing sides to grow larger than the box in both dimensions, so that they end up "squeezing" the contents between them. The picture at the top of the post is using this method: I built this enclosure for the [Adafruit 32x32 LED Matrix](https://www.adafruit.com/products/2026) powered by [SmartMatrix](http://docs.pixelmatix.com/SmartMatrix/) and [Teensy 3.1](https://www.pjrc.com/teensy/teensy31.html). 
 6. Sometimes I make legs and a stand (you can see that on the speakers above – who likes to have speakers that can not aim in your direction? :) 
 
 I've gotten pretty good at Illustrator, and these days it takes me anything from 10 minutes, to a couple of hours (for a complex project) to design an enclosure. Then of course I haul to Techshop and print it on their Epolog Laser Cutter, while swearing profusely. 
+
+__Perfect Thickness__
+
+Having tried nearly all thicknesses at the thinner range of the imperial scale, such as 1/8, 1/4, 3/16 of an inch, I decided that for plastic 3/16 is really the sweet spot: it does not bend as much as 1/8, but is not as heavy as 1/4.
+
+### Command Line
+
+LaserCutter comes with rich command line (CLI) interface, shown to the right.
+
+Notably, ```--help, --examples``` is a good place to start.  
+
+For example, to create a box defined in inches, set kerf to 0.008" and open PDF in preview right after it's generated, run the following:
+
+```bash
+> gem install laser-cutter
+> laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
+```
+
+### Getting Creative
+
+<div class="small" style="float:right;">
+<a href="/images/pen-holder.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
+	<img src="/images/pen-holder.jpg"/>
+</a>
+</div>
+
+The image on the right is supposed to be a pen holder. I started with a box generated on MakeABox.io, and then added circles and other decoratons in Illustrator. 
 
 ### Next Steps
 
@@ -96,7 +126,7 @@ I am planning on adding a few key features, namely:
 * Lids and support for hinges and locks
 * Your great idea here? :) 
 
-### Open Source
+### Contributing
 
 My library, like most of the projects I am working on, are under MIT Open Source license.  I would love for you to fork it, fix it, add features to it, and submit a pull request!  I promise I will consider it in a timely fashion.
 
