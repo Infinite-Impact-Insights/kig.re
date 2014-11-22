@@ -13,8 +13,6 @@ I've been so damn busy with life, the universe, and everything (although mostly 
 
 In addition to the ruby gem, I put together a simple web front-end, called  [MakeABox.IO](http://makeabox.io/), which allows you and me to generate boxes without installing any gem, or running anything on the command line.  
 
-*NOTE: The site may be a bit slow to load as it's running on a free tier on Heroku. If it gets good use, I'll throw in some extra dynos :)*
-
 <div class="small" style="float:right;">
 <a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
 	<img src="/images/makeabox.jpg"/>
@@ -25,16 +23,16 @@ If you've made any enclosures of your own, you probably used one of the existing
 
 * [Rahulbotics BoxMaker](https://github.com/rahulbot/boxmaker) –– Since I last checked, it seems it's been taken down, though the source code remains.  I used this tool to create about a dozen of my first laser-cut boxes ever.  Note that [Adam Phelps](https://github.com/aphelps) has a [sligtly better fork](https://github.com/aphelps/boxmaker).
 
-* [MakerCase](http://www.makercase.com/) – Probably the most advanced online tool I've seen, even with visual preview, but I have not actually made any boxes using it.
+* [MakerCase](http://www.makercase.com/) – Probably the most advanced online tool I've seen, even with visual preview, but I have not actually made any boxes using it.  It just wasn't exciting. It is full of features, but the resulting boxes just didn't look that awesome, in my opinion.
 
-* [Tabbed Box Maker – A plugin for InkScape](http://www.keppel.demon.co.uk/111000/111000.html) 
+* [Tabbed Box Maker – A plugin for InkScape](http://www.keppel.demon.co.uk/111000/111000.html) – I tried this beast on a Mac, and OMG – it takes foreeeeeeeeeeeeever to start and do anything.  It also looks.... sort of like MS Paint, or something built for Linux GUI a decade ago. I don't want to hurt anyone's feelings, but seriously, it took about 2 minutes to start on my iMac that's about a year old, maxed out build.  Srsly?
 
 ###  So, why a new library?
 {{site.data.macros.continue}}
 
 
 
-It came down to a simple fact that I was not at all happy with BoxMaker. It had lots of bugs; it's source code was difficult to read and modify, it produced non-symmetric designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests!  
+It came down to a simple fact that I was not at all happy with BoxMaker, or the alternatives.  Boxmaker had lots of features, but also some bugs; it's source code was difficult to read and modify, it produced asymmetric box designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests. The last part made it difficult to think about contributing fixes.
 
 To top it off it was written in Java, which was the right choice back in 2001.. but we are not there anymore.
 
@@ -96,7 +94,7 @@ I am planning on adding a few key features, namely:
 * T-Slot joins support with a configurable screw size
 * Oversized front/back panel that hide some of the notches (as on the picture above)
 * Lids and support for hinges and locks
-* Your great idea? :) 
+* Your great idea here? :) 
 
 ### Open Source
 
