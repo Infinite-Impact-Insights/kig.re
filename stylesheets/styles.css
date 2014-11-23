@@ -312,14 +312,20 @@ blockquote a {
   border: 1px solid black;
 }
 
-.small img {
+.small img, .small-right img, .small-left img {
   max-width: 240px;
   border: 1px solid black;
-  float: left;
-  margin-right: 10px;
-  margin-left: 10px;
-
   margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;		
+}
+
+.small img, .small-left img {
+    float: left;
+}
+
+.small-right img {
+	float: right;
 }
 
 img.small-right, img.small-left {
@@ -462,7 +468,7 @@ footer p + p {
   }
 
 
-	img.small-right, img.small-left {
+	.small-right img, .small-left img {
 	  max-width: 50%;
 	  margin-left: 10px;
 	  float: right;

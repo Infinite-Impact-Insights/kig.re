@@ -3,7 +3,7 @@ layout: default
 title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
 ---
 
-<div class="small" style="float:right;">
+<div class="small-right">
 <a href="/images/pen-holder.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
 	<img src="/images/pen-holder.jpg"/>
 </a>
@@ -18,7 +18,7 @@ In addition to the ruby gem, there is also simple web front-end, called  [MakeAB
 If you've made any enclosures of your own, like either for your electronics gear, or a lighting show, or your cat auto-flushable toilet, you probably used one of the existing and free tools out there. I did not find them all when I started making boxes, but over time the choice seemed to come down to three options:
 
 
-<div class="small" style="float:right;">
+<div class="small-right">
 <a href="/images/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made using MakeABox.IO">
 	<img src="/images/omnipix-enclosure.jpg"/>
 </a>
@@ -36,7 +36,7 @@ If you've made any enclosures of your own, like either for your electronics gear
 
 
 
-<div class="small" style="float:right;">
+<div class="small-right">
 <a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
 	<img src="/images/makeabox.jpg"/>
 </a>
@@ -46,7 +46,7 @@ It came down to a simple fact that I was not at all happy with BoxMaker, or the 
 
 To top it off it was written in Java, which was the right choice back in 2001.. but we are not there anymore. I think.
 
-<div class="small" style="float:right;">
+<div class="small-right">
 <a href="/images/makeabox-pdf.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
 	<img src="/images/makeabox-pdf.jpg"/>
 </a>
@@ -63,7 +63,7 @@ Yes tests.  We, in the ruby world, can't take a shit without writing a test for 
 
 ### Tab (aka "notch") Geometry
 
-<div class="small" style="float:right;">
+<div class="small-right">
 <a href="/images/box-speakers.jpg" data-lightbox="makeabox" data-title="Speaker boxes made with MakeABox.io">
 	<img src="/images/box-speakers.jpg"/>
 </a>
@@ -80,7 +80,7 @@ To fix this issue, I added support for *kerf*. To my surprise it ended up a much
 
 ## Developing Enclosures
 
-<div class="small" style="float:right;">
+<div class="small-right">
 <a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
 	<img src="/images/laser-cutter.jpg"/>
 </a>
