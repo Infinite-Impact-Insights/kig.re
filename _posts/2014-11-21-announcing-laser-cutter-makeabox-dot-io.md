@@ -4,7 +4,7 @@ title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
 ---
 
 <div class="small-right">
-<a href="/images/pen-holder.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
+<a href="/images/pen-holder.jpg" data-lightbox="makeabox" data-title="Pen-Holder box made by starting with a box design from makeabox.io">
 	<img src="/images/pen-holder.jpg"/>
 </a>
 </div>
@@ -19,7 +19,7 @@ If you've made any enclosures of your own, like either for your electronics gear
 
 
 <div class="small-right">
-<a href="/images/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made using MakeABox.IO">
+<a href="/images/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made by starting with MakeABox.IO">
 	<img src="/images/omnipix-enclosure.jpg"/>
 </a>
 </div>
@@ -37,7 +37,7 @@ If you've made any enclosures of your own, like either for your electronics gear
 
 
 <div class="small-right">
-<a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
+<a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io screen shot. It's very easy to use.">
 	<img src="/images/makeabox.jpg"/>
 </a>
 </div>
@@ -47,7 +47,7 @@ It came down to a simple fact that I was not at all happy with BoxMaker, or the 
 To top it off it was written in Java, which was the right choice back in 2001.. but we are not there anymore. I think.
 
 <div class="small-right">
-<a href="/images/makeabox-pdf.jpg" data-lightbox="makeabox" data-title="MakeABox.io">
+<a href="/images/makeabox-pdf.jpg" data-lightbox="makeabox" data-title="An example of PDF layout for one of the box designs at MakeABox.io">
 	<img src="/images/makeabox-pdf.jpg"/>
 </a>
 </div>
@@ -81,7 +81,7 @@ To fix this issue, I added support for *kerf*. To my surprise it ended up a much
 ## Developing Enclosures
 
 <div class="small-right">
-<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter via the command line">
+<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter accessed via the rich CLI interface">
 	<img src="/images/laser-cutter.jpg"/>
 </a>
 </div>
@@ -118,7 +118,7 @@ For example, to create a box defined in inches, set kerf to 0.008" and open PDF 
 ### Getting Creative
 
 
-The image on the right is supposed to be a pen holder. I started with a box generated on MakeABox.io, and then added circles and other decorations in Illustrator. 
+The image in the very beginning of the post, is supposed to be a pen holder. I started with a box generated on MakeABox.io, and then added circles and other decorations in Illustrator until it looked... well, decorated :)
 
 ### Next Steps
 
