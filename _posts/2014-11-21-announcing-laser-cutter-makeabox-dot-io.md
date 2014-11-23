@@ -108,7 +108,7 @@ LaserCutter comes with rich command line (CLI) interface, shown to the right.
 
 Notably, ```--help, --examples``` is a good place to start.  
 
-For example, to create a box defined in inches, set kerf to 0.008" and open PDF in preview right after it's generated, run the following:
+For example, to create a box defined in inches, set kerf to 0.008" and open PDF in preview right after it is generated, run the following:
 
 ```bash
 > gem install laser-cutter
