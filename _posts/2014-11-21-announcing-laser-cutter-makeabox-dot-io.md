@@ -9,7 +9,7 @@ title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
 </a>
 </div>
 
-My day job, @ Wanelo, requires cranking on all cylinders, and so I've been pretty busy with life, the universe, and everything, although it mostly means Work, the Wife, and the Cat). In all this constructive chaos, I totally forgot to mention and properly introduce to the world. 
+My day job, @ Wanelo, requires cranking on all cylinders, and so I've been pretty busy with life, the universe, and everything, although it mostly means Work, the Wife, and the Cat). In all this constructive chaos, I totally forgot to mention, and properly introduce to the world something I've been working on during many sleepless nights this September :) 
 
 > So without further ado, [LaserCutter](https://github.com/kigster/laser-cutter) –– ruby gem (a library and a CLI) for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting.
 
