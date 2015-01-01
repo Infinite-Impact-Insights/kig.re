@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How to use cheap Chineese Arduinos that come with with CH340G / CH341G Serial/USB chip
+title: How to use cheap Chinese Arduinos that come with with CH340G / CH341G Serial/USB chip
 ---
 
 My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
@@ -13,14 +13,14 @@ My golden rule is that if something took me longer than 15 minutes to figure out
 </a>
 </div>
 
-Recent versions of Chineese cheap [clones of Arduino boards](http://www.ebay.com/itm/381019048475) have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
+Recent versions of Chinese cheap [clones of Arduino boards](http://www.ebay.com/itm/381019048475) have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
 
-## Dowload the driver
+## Download the driver
 
 
 There are two main sites that people mention in the discussions about the driver:
 
-* Chineese company that developed it: http://www.wch.cn/downloads.php?name=pro&proid=178
+* Chinese company that developed it: http://www.wch.cn/downloads.php?name=pro&proid=178
   * This driver appears newer than on the second link, and is from Dec 2013.
   * Note: for me that site took a long long time to load, and then it took forever to download this tiny driver, so I put up a copy here [CH341SER_MAC.ZIP (256Kb)](/downloads/CH341SER_MAC.ZIP), so that you don't have to wait. Hopefully they won't go after me for mirroring their driver :) 
 * Second site is the Russian company that sells the USB programmer based on this chip: http://www.5v.ru/ch340g.htm but this site only has an older version of the driver, from 2012, so I do not recommend downloading it.
@@ -50,16 +50,16 @@ There are two main sites that people mention in the discussions about the driver
 
 If the driver properly loaded, you should see the device in you /dev folder (this is for advanced command-line users of OSX only).  On my machine it was called ```/dev/cu.wchusbserial1441140```
 
-This port is showing up correctly in Arduino 1.0.6 and Ardino 1.5.8.
+This port is showing up correctly in Arduino 1.0.6 and Arduino 1.5.8.
 
-However, if you are using the Eclipse Plugin, it is not smart enough to list this port in the list of available serial ports (either in project properties, or in the serial monitor).  You will have to type the entire thing youself: ```/dev/cu.wchusbserial1441140``` and then Eclipse can upload your sketch.
+However, if you are using the Eclipse Plugin, it is not smart enough to list this port in the list of available serial ports (either in project properties, or in the serial monitor).  You will have to type the entire thing yourself: ```/dev/cu.wchusbserial1441140``` and then Eclipse can upload your sketch.
 
 That's it! You should be ready to use the drivers and the board.
 
 
 ## Some Time Savers
 
-Now, this is technically not related to the Chineese USB driver, I wanted to share a method that I use to connect to a Serial port of any Arduino I am using at any given moment.  This method has a caveat, in that if you have more than one arduino connected, it will pick one of them at random.
+Now, this is technically not related to the Chinese USB driver, I wanted to share a method that I use to connect to a Serial port of any Arduino I am using at any given moment.  This method has a caveat, in that if you have more than one Arduino connected, it will pick one of them at random.
 
 ### Motivation
 
@@ -68,7 +68,7 @@ I always hate Serial port windows.  They do not automatically reconnect, and if 
 I found it! It's called minicom! 
 
 * If you are command-line savvy, then install or use [HomeBrew](http://brew.sh/), then ```brew install minicom```
-* Alternatively, [Dowload Minicom Here](http://mac.softpedia.com/get/Developer-Tools/Minicom.shtml#download)
+* Alternatively, [Download Minicom Here](http://mac.softpedia.com/get/Developer-Tools/Minicom.shtml#download)
 * In Terminal (or iTerm2 if you are awesome) test running ```minicom --version```
 
 This is what I get:
