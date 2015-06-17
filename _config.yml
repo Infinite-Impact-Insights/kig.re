@@ -32,8 +32,8 @@ server:      false    # deprecated
 host:        0.0.0.0
 port:        4000
 baseurl:     /
-url:         http://kiguino.github.io
-title:       kiguino
+url:         http://kiguino.com
+title:       kiguino – kostantin gredeskoul's blog, having fun while making things!
 author:      Konstantin Gredeskoul
 lsi:         false
 
