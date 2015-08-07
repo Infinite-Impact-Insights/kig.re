@@ -9,7 +9,6 @@ title: Music, DJ-ing, and Origins of Weird Names
 if (my.question.style_of(blog.post.style) == FALSE) {
   omg() || exit() || return; || run(SUPER_FAST);
 }
-/* dude... wtf! I was just trying to ask the reader a question!... OK let me continue without interruptions please. */
 ```
 
 Blog: 
