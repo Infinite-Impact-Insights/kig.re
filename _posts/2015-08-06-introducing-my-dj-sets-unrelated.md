@@ -11,16 +11,16 @@ if (my.question.style_of(blog.post.style) == FALSE) {
 }
 ```
 
-Blog: 
-– "So, are you prepare to listen to some music?"
+Me: 
+– "So, are you prepared to listen to some music?"
 
 You:
-– "What the hell are you talking about, this is an electronics blog, and I came here to read about my goddamn chip that's not working... You are breaking my brain!!!"
+– "What the hell are you talking about, this is Electronics Blog, and I came here to read about my goddamn chip that's not working... You are breaking my brain!!!"
 
-Blog:
+Me:
 – "I knew you would love it! Then let's begin :)"
 
-You (or someone else, who knows...)
+You:
 – "Grrrrr...."
 
 ```c++
@@ -48,7 +48,8 @@ In addition to the __kig__ (my initials in __Kiguino__, the name of the blog), I
   3. Finally, I wrote and produced a bunch of tracks... 
      * First the stage name was ["PolyVinyl"](https://soundcloud.com/polygroovers/without-polyvinyl?in=polygroovers/sets/the-best-of-polygroovers), and produced a single album "Inward Journeys", unreleased.
      * Following me meeting my second wife, together we produced enough tracks for [two downtempo albums as PolyGroovers](https://itunes.apple.com/us/artist/polygroovers/id160976572), also available on [SoundCloud](https://soundcloud.com/polygroovers). So, my wife at the time – Telene – sang on most of the vocal tracks with two exceptions, and is also a fantastic DJ with her own SoundCloud page – [Telene](https://soundcloud.com/telene).
-  
+
+And, thanks to SoundCloud embedded widgets, I can now put them all into this thing called *embed*. What that means, I have no idea, but I am guessing they are just sticking it in. Somewhere. Somehow ;-)  
 
 -------------
 ### DJ LeftCtrl (years active: 2005 – now)
