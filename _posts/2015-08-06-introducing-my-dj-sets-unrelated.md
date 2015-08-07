@@ -45,7 +45,9 @@ In addition to the __kig__ (my initials in __Kiguino__, the name of the blog), I
 
   1. One is called __[LeftCtrl](https://soundcloud.com/leftctrl)__ and is my DJ name.  Anytime I DJ at a party, this is what I use.  
   2. My very old DJ name used to be __djzeel__ about 15 years ago (famous in Australia, where I played a string of gigs across most clubs, having been DJ-ing only for about 2 months total at the time LOL)
-  3. Finally, I wrote and produced a bunch of tracks, enough for [two downtempo albums as PolyGroovers](https://itunes.apple.com/us/artist/polygroovers/id160976572), also available on [SoundCloud – PolyGroovers]. PolyGroovers are technically a band consisting of myself and my wife, at the time [Telene Johnston](https://soundcloud.com/telene), who sang on some of the tracks.
+  3. Finally, I wrote and produced a bunch of tracks... 
+     * First the stage name was ["PolyVinyl"](https://soundcloud.com/polygroovers/without-polyvinyl?in=polygroovers/sets/the-best-of-polygroovers), and produced a single album "Inward Journeys", unreleased.
+     * Following me meeting my second wife, together we produced enough tracks for [two downtempo albums as PolyGroovers](https://itunes.apple.com/us/artist/polygroovers/id160976572), also available on [SoundCloud](https://soundcloud.com/polygroovers). So, my wife at the time – Telene – sang on most of the vocal tracks with two exceptions, and is also a fantastic DJ with her own SoundCloud page – [Telene](https://soundcloud.com/telene).
   
 
 -------------
