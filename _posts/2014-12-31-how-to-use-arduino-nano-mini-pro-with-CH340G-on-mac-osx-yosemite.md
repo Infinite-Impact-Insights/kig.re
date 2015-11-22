@@ -2,6 +2,7 @@
 layout: default
 title: How to use cheap Chinese Arduinos that come with with CH340G / CH341G Serial/USB chip
 ---
+_Updated Nov 22, 2015 for El Capitan_
 
 My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
 
@@ -17,7 +18,6 @@ Recent versions of Chinese cheap [clones of Arduino boards](http://www.ebay.com/
 
 ## Download the driver
 
-
 There are two main sites that people mention in the discussions about the driver:
 
 * Chinese company that developed it: http://www.wch.cn/downloads.php?name=pro&proid=178
@@ -31,20 +31,32 @@ There are two main sites that people mention in the discussions about the driver
 </a>
 </div>
 
-## Install it
+## Installation
 
+### OS-X El Capitan Steps
 
-* Download the driver (see above)
-* Double click the ZIP file do unzip it
-* Open the folder ~/Downloads/CH341SER_MAC
-* Run installer found in that folder
-* If asked to restart, do not restart just yet.
-* This next step is only needed if you are on OS-X Yosemite. For older versions of OS-X you do not need it:
-  * Open Terminal Application (it's located in /Application/Utilities) and type this command once you see a prompt: 
+* Reboot and press  immediately after the chime to enter Recovery Mode
+* Open Terminal from Recovery mode
+* run the command ```csrutil enable --without kext```
+* Reboot.
+
+<div style="font-size: 7pt; padding-left: 40px; font-decorations: italic;">Acknowledgements: thanks to [http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/](this post) for these instructions.</div>
+
+### OS-X Yosemite Steps
+
+* Open Terminal Application (it's located in /Application/Utilities) and type this command once you see a prompt: 
   * ```sudo nvram boot-args="kext-dev-mode=1"```
   * See [this post](http://www.cindori.org/enabling-trim-on-os-x-yosemite/) if you 
     wish to know why we need to run this command.  I believe you need to do this because the driver is not signed properly, or is simply too old for Yosemite. Hopefully newer versions won't require this step and will automatically become enabled.
-* Now restart your Mac
+* Reboot.
+
+### All Versions of OS-X Including Yosemite and El Capitan
+
+* Download the driver from here: [CH341SER_MAC.ZIP (256Kb)](/downloads/CH341SER_MAC.ZIP)
+* Double click the ZIP file do unzip it
+* Open the folder ~/Downloads/CH341SER_MAC
+* Run installer found in that folder
+* Restart when asked.
 
 ## Usage
 
