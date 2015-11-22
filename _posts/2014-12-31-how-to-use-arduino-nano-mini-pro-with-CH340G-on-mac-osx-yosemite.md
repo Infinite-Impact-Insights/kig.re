@@ -40,7 +40,7 @@ There are two main sites that people mention in the discussions about the driver
 * run the command ```csrutil enable --without kext```
 * Reboot.
 
-<div style="font-size: 7pt; padding-left: 40px; font-decorations: italic;">Acknowledgements: thanks to [http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/](this post) for these instructions.</div>
+<div style="font-size: 8pt; margin: 20px; padding: 20px; border: 1px solid black; font-decorations: italic;">Acknowledgements: thanks to <a href="http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/" target="_blank">this post</a> for these instructions.</div>
 
 ### OS-X Yosemite Steps
 
