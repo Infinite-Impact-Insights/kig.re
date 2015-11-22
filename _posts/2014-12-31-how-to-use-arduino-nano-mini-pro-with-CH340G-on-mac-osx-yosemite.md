@@ -38,8 +38,8 @@ Note: the following pre-installation steps are only required on the two most rec
 
 ### OS-X El Capitan Steps
 
-* Reboot and press  immediately after the chime to enter Recovery Mode
-* Open Terminal from Recovery mode
+* Reboot and press **⌘-R** immediately after the chime to enter Recovery Mode
+* Open Terminal from the recovery mode
 * run the command ```csrutil enable --without kext```
 * Reboot.
 
