@@ -35,6 +35,7 @@ if (!curtains.open()) {
 
 {{site.data.macros.continue}}
 
+
 If you've been reading this blog for a while, you know it's a personal blog of Konstantin Gredeskoul, the guy with the longest name ever. Why do I have such a name? Well, I was born in Ukraine, but in the western side that spoke Russian as the daily language. Konstantin, often shortened as "Kostya", is a popular name in Russia and Ukraine, so that's not a surprise that I have that first name. However, Gredeskoul, is a rather unique last name, with only a few surviving Gredeskouls in Russia and Ukraine, and only a couple living outside (me and my mom). __Gredeskoul__ is a last name with origins in Moldova, which culturally is closest to Romania.  And if you try to think of a few famous Romanian last names, perhaps you will come up with a list of folks such as Popescu, Dumitrescu, Paulescu, Constantinescu, etc – they do have some similarity in sound.  So I believe that Gredeskoul is a bastardized version of some Romanian name, something like Gredescu, which happens to exist. See, for example [this football player](http://www.maxpreps.com/athlete/vladimir-gredescu/tB3mwfTtEeKZ5AAmVebBJg/default.htm).
 
 So, now you see that having such a long name for quite some time now, I welcome any opportunity to shorten it. 
