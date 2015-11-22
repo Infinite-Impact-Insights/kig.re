@@ -31,7 +31,10 @@ There are two main sites that people mention in the discussions about the driver
 </a>
 </div>
 
-## Installation
+
+## Pre-Installation
+
+Note: the following pre-installation steps are only required on the two most recent versions of OS-X Yosemite and El Capitan. It is because the driver is not signed properly from Apple's perspective. We are waiting on the developer to update the driver so that these pre-installation steps are no longer needed.
 
 ### OS-X El Capitan Steps
 
@@ -45,12 +48,14 @@ There are two main sites that people mention in the discussions about the driver
 ### OS-X Yosemite Steps
 
 * Open Terminal Application (it's located in /Application/Utilities) and type this command once you see a prompt: 
-  * ```sudo nvram boot-args="kext-dev-mode=1"```
-  * See [this post](http://www.cindori.org/enabling-trim-on-os-x-yosemite/) if you 
-    wish to know why we need to run this command.  I believe you need to do this because the driver is not signed properly, or is simply too old for Yosemite. Hopefully newer versions won't require this step and will automatically become enabled.
+* ```sudo nvram boot-args="kext-dev-mode=1"```
 * Reboot.
 
-### All Versions of OS-X Including Yosemite and El Capitan
+<div style="font-size: 8pt; margin: 20px; padding: 20px; border: 1px solid black; font-decorations: italic;">
+Acknowledgements: see <a href="http://www.cindori.org/enabling-trim-on-os-x-yosemite/" target="_blank">this post</a> if you 
+wish to know more details.</div>
+
+## Installation
 
 * Download the driver from here: [CH341SER_MAC.ZIP (256Kb)](/downloads/CH341SER_MAC.ZIP)
 * Double click the ZIP file do unzip it
