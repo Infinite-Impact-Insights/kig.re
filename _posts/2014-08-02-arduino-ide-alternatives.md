@@ -18,6 +18,12 @@ JetBrain's [RubyMine](http://www.jetbrains.com/ruby/), [AppCode](http://www.jetb
 open source (but originally IBM's) [Eclipse](https://www.eclipse.org/), and not to
 mention Apple's [XCode](https://developer.apple.com/xcode/).
 
+
+
+{{site.data.macros.continue}}
+
+
+
 ![Arduino IDE](/images/ide-arduino-arduino.jpg)
 
 After going through several example projects using the IDE I became more and more frustrated with
@@ -34,9 +40,6 @@ For example,
 
 So I became worried that my foray into electronics would die young if I didn't find a more capable
 programming alternative, and so I started exploring.
-
-
-{{site.data.macros.continue}}
 
 ## Arduino IDE Alternatives
 
