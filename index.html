@@ -14,7 +14,7 @@ title: Home
             </a>
         </h1>
 
-        <span class="post-date">Posted on {{post.date | long_date }}</span>
+        <span class="post-date">Posted on {{post.date | date: "%A, %d %b %Y" }}</span>
         {{ post.excerpt }}
         <a class="read-more" href="{{ post.url }}#continue">[ …continue reading &LongRightArrow; ]</a>
 
