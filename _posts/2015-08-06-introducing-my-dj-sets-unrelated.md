@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Music, DJ-ing, and Origins of Weird Names
 ---
 

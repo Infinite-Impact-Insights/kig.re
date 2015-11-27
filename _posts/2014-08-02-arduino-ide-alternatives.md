@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Choosing The Right Arduino IDE (And The Winner… Is Eclipse!)
 ---
 

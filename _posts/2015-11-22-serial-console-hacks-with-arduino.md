@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Serial Console Hacks with Arduino
 ---
 
@@ -25,15 +25,15 @@ I found it! It's called minicom!
 
 This is what I get:
 
-```bash
+{% highlight bash linenos %}
 minicom version 2.7 (compiled Oct 20 2014)
-```
+{% endhighlight %}
 
 ### BASH Magic
 
 Now add the following [BASH function](http://tldp.org/LDP/abs/html/complexfunct.html) to your ```~/.bashrc``` or ```~/.bash_profile``` files:
 
-```bash
+{% highlight bash linenos %}
 function console {
   modem=`ls -1 /dev/cu.* | grep -vi bluetooth | tail -1`
   baud=${1:-9600}
@@ -43,7 +43,7 @@ function console {
     echo "No USB modem device found in /dev"
   fi
 }
-```
+{% endhighlight %}
 
 Then you can use it as follows – in Terminal type:
 

@@ -1,22 +1,41 @@
 ---
 layout: default
+title: Home
 ---
 
-{% include how-it-started.html %}
+<img src="/images/robo-mania-header.jpg" width="800" alt="Robot Mania">
+<div class="vspacer20"></div>
+<div class="posts">
+    {% for post in paginator.posts %}
+    <div class="post">
+        <h1 class="post-title">
+            <a href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </h1>
 
-    {% for post in site.posts %}
-    {% if post.title %}
+        <span class="post-date">{{ post.date | long_date }}</span>
 
-<div class="wrapper">
-    <header>
-      <h1><a href="{{post.url}}">{{post.title}}</a></h1>
-      <p><span class="date">Posted on {{post.date |  date: "%A, %d %b %Y" }}</span></p>
-    </header>
-    <section>
-       {{ post.excerpt }}
-       <a class="read-more" href="{{ post.url }}#continue">[ …continue reading &LongRightArrow; ]</a>
-    </section>
-</div>
-    {% endif %}
+        {{ post.excerpt }}
+        <a class="read-more" href="{{ post.url }}#continue">[ …continue reading &LongRightArrow; ]</a>
 
+    </div>
     {% endfor %}
+</div>
+
+<div class="pagination">
+    {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+    {% else %}
+    <span class="pagination-item older">Older</span>
+    {% endif %}
+    {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+    <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+    <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+    {% else %}
+    <span class="pagination-item newer">Newer</span>
+    {% endif %}
+</div>

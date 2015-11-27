@@ -1,0 +1,155 @@
+/*
+ * Contents
+ *
+ * Custom.
+ */
+
+/*
+ * Color scheme overrides
+ */
+
+/* Brown */
+.theme-base-0f .sidebar {
+  background-color: #7f4526;
+}
+body.theme-base-0f  {
+  background-color: #fed;
+}
+.theme-base-0f .content a,
+.theme-base-0f .related-posts li a:hover {
+  color: #7f4526;
+}
+
+.theme-base-0f .sidebar a,
+.theme-base-0f .sidebar a:hover {
+  color: #ffcc7f;
+}
+
+.github-repos {
+  padding-left: 80px;
+  width: 320px;
+  height: 30px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+@media (min-width: 48em) {
+  html { font-size: 16px;  }
+  pre {  font-size:10px; }
+  .github-repos { padding-left:0px; font-size: 14px;}
+}
+@media (min-width: 58em) {
+  html { font-size: 20px; }
+  pre { font-size:12px; }
+  .github-repos { padding-left:0px; font-size: 16px;}
+}
+
+
+pre {
+  /*background-color: #fff9f4;*/
+  background-color: #5e3e1e;
+  border: 1px solid #1e1e1e;
+  font-family: "Consolas", "Inconsolata", "Monaco", Courier, sans-serif !important;
+}
+
+.float-left {
+  float:left;
+}
+.float-right {
+  float:right;
+}
+/*
+ * Box overrides
+ */
+
+div.container {
+  padding-top: 40px;
+}
+
+div.sidebar-sticky {
+  top: 0px;
+}
+
+/*
+ * The rest
+ */
+
+html {
+  font-family: "Roboto Condensed", "HelveticaNeue-Light", Arial, sans-serif !important;
+  font-weight: 400;
+
+}
+
+.lead {
+  color: #fff;
+  line-height: 15pt;
+  font-size: 14pt;
+  text-transform: uppercase;
+  font-family: "HelveticaNeue-CondensedBold", Arial, sans-serif !important;
+}
+
+.lead a {
+  font-color: white;
+}
+
+ul.sidebar-nav {
+  padding-left: 0px;
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ul.sidebar-nav li a {
+  line-height: 15pt;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+ul.sidebar-nav li {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.sidebar-about h1 {
+  color: #fff;
+  margin-top: 0;
+  font-family: inherit;
+  font-size: 3.25rem;
+}
+
+/*
+ * Main News Feed
+ */
+
+.lineno {
+  display: inline-block;
+  padding-right: 10px;
+  border-right: 1px solid white;
+}
+
+a.read-more {
+  font-weight: bold;
+}
+
+.related {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+div.vspacer {
+  height: 50px;
+}
+div.vspacer20 {
+  height: 20px;
+}
+div.clear {
+  clear: both;
+}
+
+a.active {
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}

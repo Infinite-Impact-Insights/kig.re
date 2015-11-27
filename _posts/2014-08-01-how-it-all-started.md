@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How It All Started
 ---
 

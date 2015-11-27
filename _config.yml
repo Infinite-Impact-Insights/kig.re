@@ -1,71 +1,52 @@
-source:      .
-destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
-include:     ['.htaccess']
-exclude:     []
-keep_files:  ['.git','.svn']
-gems:        []
-timezone:    nil
-encoding:    utf-8
+source:         .
+destination:    ./_site
+plugins:        ./_plugins
+layouts:        ./_layouts
+include:        ['.htaccess']
+exclude:        []
+keep_files:     ['.git','.svn']
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - redcarpet
 
-future:      true
-show_drafts: false
-limit_posts: 0
-highlighter: pygments
+timezone:       nil
+encoding:       utf-8
+future:         true
+show_drafts:    false
+limit_posts:    0
 
-relative_permalinks: true
+permalink:      date
+paginate:       5
 
-permalink:     date
-paginate_path: 'page:num'
-paginate:      nil
-
-markdown:      redcarpet
-markdown_ext:  markdown,mkdown,mkdn,mkd,md
-textile_ext:   textile
+highlighter:    pygments
+markdown:       redcarpet
+markdown_ext:   markdown,mkdown,mkdn,mkd,md
 
 excerpt_separator: "\n\n\n"
 
-safe:        false
-watch:       false    # deprecated
-server:      false    # deprecated
-host:        0.0.0.0
-port:        4000
-baseurl:     /
-url:         http://kiguino.com
-title:       kiguino – kostantin gredeskoul's blog, having fun while making things!
-author:      Konstantin Gredeskoul
-lsi:         false
+curly_open:     "{"
+curly_close:    "}"
 
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
-  fenced_code_blocks: true
+host:           0.0.0.0
+port:           4000
+baseurl:        /
+url:            http://kiguino.com
+title:          KIGUINO
+description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="https://twitter.com/kig">Konstantin Gredeskoul</a>.'
+author:      
+  name:       Konstantin Gredeskoul
+  url:        https://twitter.com/kig
 
-rdiscount:
-  extensions: []
+github_username: kigster
+github_repos:
+  - ventable
+  - laser-cutter
+  - occupus
+
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
-
-redcloth:
-  hard_breaks: true
+github:
+  repo:      https://github.com/kigster/kiguino.github.io

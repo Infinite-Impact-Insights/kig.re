@@ -1,0 +1,50 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}">
+          {{ site.title }}
+        </a>
+      </h1>
+    </div>
+    <p class="lead">{{ site.description }}</p>
+
+    <div class="github-repos">
+      {% assign repos_list = site.github_repos %}
+      {% for repo in repos_list %}
+        <iframe class="float-left"
+                src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ repo }}&type=watch&count=true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+        <a class="float-left"
+           title="Github Repo by {{ site.github_username }} – {{ repo }}"
+            href="https://github.com/{{ site.github_username }}/{{repo}}">{{ repo }}</a>
+      <br />
+      {% endfor %}
+    </div>
+    <div class="clear"></div>
+
+    <nav class="sidebar-nav">
+      {% assign pages_list = site.posts %}
+      <ul class="sidebar-nav">
+      {% for node in pages_list %}
+          {% if node.title != null %}
+              {% if node.layout == "page" %}
+                  <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+                     href="{{ node.url }}"
+                     title="{{ node.title }}"
+                  >{{ node.title }}</a></li>
+              {% endif %}
+          {% endif %}
+      {% endfor %}
+      </ul>
+
+      <div class="vspacer20"></div>
+      <a class="sidebar-nav-item" href="https://soundcloud.com/polygroovers">My Original Music</a>
+      <a class="sidebar-nav-item" href="https://slideshare.net/kigster">My Conference Slides</a>
+      <div class="vspacer20"></div>
+
+
+    </nav>
+
+    <p>&copy; {{ site.time | date: '%Y' }}, all rights reserved.</p>
+  </div>
+</div>
