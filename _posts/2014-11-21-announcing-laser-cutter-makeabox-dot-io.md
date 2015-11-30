@@ -35,6 +35,7 @@ If you've made any enclosures of your own, like either for your electronics gear
 
 
 
+It came down to a simple fact that I was not at all happy with BoxMaker, or the alternatives.  Boxmaker had lots of features, but also some bugs; it's source code was difficult to read and modify, it produced asymmetric box designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests. The last part made it difficult to think about contributing fixes.
 
 <div class="small-right">
 <a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io screen shot. It's very easy to use.">
@@ -42,9 +43,12 @@ If you've made any enclosures of your own, like either for your electronics gear
 </a>
 </div>
 
-It came down to a simple fact that I was not at all happy with BoxMaker, or the alternatives.  Boxmaker had lots of features, but also some bugs; it's source code was difficult to read and modify, it produced asymmetric box designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests. The last part made it difficult to think about contributing fixes.
 
 To top it off it was written in Java, which was the right choice back in 2001.. but we are not there anymore. I think.
+
+So I embarked on writing my own, and as of a few weeks ago, the beast is now feature complete, as far as basic box making is concerned.  It's written in pure __ruby__ with the __Prawn__ library, it has a __beautiful command line interface__, it's box cut out designs are __handsomly symmetric__, and all  of my recent boxes have been made using it. And yet, there is so much more that I want to do more with it in the future.
+
+To the coders reading this, I will shamefully admit that the current incarnation of this library (version 1.0.3) contains a number of hacks, and there is a consistent lack of clean intentional software design. I've sort of taken a brute force approach in a couple o places, and consequently been awarded a pretty low Code Clime score.  (Although who are they to judge! Some computers, dammit :P)  But on the bright side, I am planning a refactor before I do more with it.  The algorithmic part of this ended up being a bit tricky (surprise!), but the kinks are ironed out and the tests are there to prove it.
 
 <div class="small-right">
 <a href="/images/makeabox-pdf.jpg" data-lightbox="makeabox" data-title="An example of PDF layout for one of the box designs at MakeABox.io">
@@ -53,39 +57,28 @@ To top it off it was written in Java, which was the right choice back in 2001.. 
 </div>
 
 
-So I embarked on writing my own, and as of a few weeks ago, the beast is now feature complete, as far as basic box making is concerned.  It's written in pure __ruby__ with the __Prawn__ library, it has a __beautiful command line interface__, it's box cut out designs are __handsomly symmetric__, and all  of my recent boxes have been made using it. And yet, there is so much more that I want to do more with it in the future.
-
-To the coders reading this, I will shamefully admit that the current incarnation of this library (version 1.0.3) contains a number of hacks, and there is a consistent lack of clean intentional software design. I've sort of taken a brute force approach in a couple o places, and consequently been awarded a pretty low Code Clime score.  (Although who are they to judge! Some computers, dammit :P)  But on the bright side, I am planning a refactor before I do more with it.  The algorithmic part of this ended up being a bit tricky (surprise!), but the kinks are ironed out and the tests are there to prove it.
-
 ### Wait, you said "tests"? WTF!
 
 Yes tests.  We, in the ruby world, can't take a shit without writing a test for it. Ruby is a dynamic language and makes test writing both fun and necessary. With tests, someone else can come and contribute to my library, because of the confidence tests provide that they won't break anything.  Well, *nearly* anything.  Not everything is as well tested as it should be, and I'll slap my own wrists sometime before bed. But some tests are infinitely better than none :)
 
 ### Tab (aka "notch") Geometry
 
-<div class="small-right">
-<a href="/images/box-speakers.jpg" data-lightbox="makeabox" data-title="Speaker boxes made with MakeABox.io">
-	<img src="/images/box-speakers.jpg"/>
-</a>
-</div>
 
 
 One of the key components of laser cut boxes is the tabs that make two sides snap into each other, by using alternative in/out tabs on each side. The width of this tab has a lot to do with the way the box will ultimately look.  The default is to use 3 x material thickness, but feel free to experiment with other values. Note that notch width input field is treated as a guideline, and not a promised value. 
 
 ### Kerfing
 
+<div class="small-right">
+<a href="/images/box-speakers.jpg" data-lightbox="makeabox" data-title="Speaker boxes made with MakeABox.io">
+	<img src="/images/box-speakers.jpg"/>
+</a>
+</div>
 When laser cuts the material it usually burns a small portion of it.  This creates a cut with a non-zero width, called __[kerf](http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf)__. If your box design does not account for kerf, your box will fit loose.  The stronger the laser, the bigger the cut, the looser the fit.
 
 To fix this issue, I added support for *kerf*. To my surprise it ended up a much more difficult feature than I anticipated. I had to add extra to the tabs sticking out, and I especially was stuck for a while on the corner pieces.  Long story short, Kerf is now fully supported, and there is a minimum default kerf value that's applied to all boxes, unless overridden. I've tested it on both acrylic and wood cuts, up to 1/4 inch thick.
 
 ## Developing Enclosures
-
-<div class="small-right">
-<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter accessed via the rich CLI interface">
-	<img src="/images/laser-cutter.jpg"/>
-</a>
-</div>
-
 
 My process typically revolves around the following steps:
 
@@ -114,6 +107,12 @@ For example, to create a box defined in inches, set kerf to 0.008" and open PDF 
 > gem install laser-cutter
 > laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
 ```
+
+<div class="small-right">
+<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter accessed via the rich CLI interface">
+	<img src="/images/laser-cutter.jpg"/>
+</a>
+</div>
 
 ### Getting Creative
 

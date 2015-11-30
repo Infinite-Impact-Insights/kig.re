@@ -20,7 +20,7 @@ Recent versions of Chinese cheap [clones of Arduino boards](http://www.ebay.com/
 
 Many instructions farther down below were written for the old driver, which was not signed, and therefore was not working out of the box on OS-X Yosemite and El Capitan. The latest driver appears to be signed, and should work out the box. The new driver is here: [CH34x_Install.zip (111Kb)](/downloads/CH34x_Install.zip).
 
-<div style="font-size: 8pt; margin: 20px; padding: 20px; border: 1px solid black; font-decorations: italic;">Acknowledgements: thanks to <a href="[http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="_blank">Björn's Techblog</a> for posting the driver.</div>
+<div class="external-reference"">Acknowledgements: thanks to <a href="[http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="_blank">Björn's Techblog</a> for posting the driver.</div>
 
 Inside the driver is a brief README with the following instructions:
 
@@ -87,7 +87,7 @@ Note: the following pre-installation steps are only required on the two most rec
 * run the command ```csrutil enable --without kext```
 * Reboot.
 
-<div style="font-size: 8pt; margin: 20px; padding: 20px; border: 1px solid black; font-decorations: italic;">Acknowledgements: thanks to <a href="http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/" target="_blank">this post</a> for these instructions.</div>
+<div class="external-reference"">Acknowledgements: thanks to <a href="http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/" target="_blank">this post</a> for these instructions.</div>
 
 #### OS-X Yosemite Steps
 
@@ -95,7 +95,7 @@ Note: the following pre-installation steps are only required on the two most rec
 * ```sudo nvram boot-args="kext-dev-mode=1"```
 * Reboot.
 
-<div style="font-size: 8pt; margin: 20px; padding: 20px; border: 1px solid black; font-decorations: italic;">
+<div class="external-reference"">
 Acknowledgements: see <a href="http://www.cindori.org/enabling-trim-on-os-x-yosemite/" target="_blank">this post</a> if you 
 wish to know more details.</div>
 

@@ -3,9 +3,7 @@ layout: default
 title: Home
 ---
 
-<img src="/images/robo-mania-header.jpg" width="800" alt="Robot Mania">
-<div class="vspacer20"></div>
-<div class="posts">
+    <img src="/images/robo-mania-header.jpg" width="800" alt="Robot Mania" class="hero-image"/>
     {% for post in paginator.posts %}
     <div class="post">
         <h1 class="post-title">
@@ -20,7 +18,6 @@ title: Home
 
     </div>
     {% endfor %}
-</div>
 
 <div class="pagination">
     {% if paginator.next_page %}
