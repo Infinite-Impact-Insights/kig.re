@@ -5,11 +5,15 @@ title: 'Scaling Web Applications on PostgreSQL pgConfSV 2015 presentation.'
 
 ## pgConf 2015 PostgreSQL Developer Conference in the Bay Area
 
-I was very happy to have my submission accepted at the recent pgConfSV conference (where SV is for Sillicon Valley). For various reasons I did not cover everything I wanted, which is a note to self for any future public speaking engagement :).  Anyhow, below is an updated version of that presentation, which presents an incremental path to scaling multi-user concurrent web applications using PostgreSQL, while covering a very wide set of material.  
+I was very happy to have my submission accepted at the recent pgConfSV conference (where SV is for Sillicon Valley). For various reasons I was unable to cover everything I wanted during the talk, which is a note to self for future public speaking engagements! Time your talk! :). Well, below is an updated version of that presentation, which shows an incremental and methodical path to scaling web applications to millions of users using PostgreSQL, all the while covering a very range of material.  
 
 ### Audience
 
-I was intending for this prezo to be helpful for anyone trying to get a grasp on how to evolve a web application to where it's able to server 3-5K requests per second. This number is still far below what presumable the "giants" such as Facebook, Google, or Twitter get, but it is also far from a beginner application with just a few users.  Turns out it *is* possible to achieve high scalability on the cheap, and using PostgreSQL, which is what we did at Wanelo, and it turned out great.
+In general, the ideal audience for this is operationally and architecturally minded full stack engineers, building web apps that either are already serving a ton of traffic, or will be soon.
+
+But on the broader scale, I was intending for this presentation to be helpful to anyone trying to get a grasp on how to evolve their web application to where it's able to serve a rather high throughput of 5K-50K requests per second. This range is still far below what the internet "giants" such as Facebook, Google, or Twitter get (if I had to guess, it would be in 1M/sec). But, it is also far from an early naive web application with just a few users.  
+
+Turns out it *is* possible to achieve high scalability on the cheap, and using PostgreSQL, which is what we did at Wanelo, and it turned out great.
 
 ### Presentation
 
