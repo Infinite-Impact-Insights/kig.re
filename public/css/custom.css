@@ -141,7 +141,9 @@ body.theme-base-0f {
 
 .theme-base-0f .content .small-right img {
   padding-left: 20px 10px 10px 0;
-  border: 10px solid black;
+  margin:10px;
+  margin-right: 0;
+  border: 1px solid #903232;
 
 }
 .theme-base-0f .content a,
@@ -218,6 +220,11 @@ body.theme-base-0f {
   color: black !important;
 }
 
+.theme-base-0f .content img.hero-image {
+  width:120%;
+  margin-left:-10%;
+  margin-right: -10%;
+}
 
 navbar {}
 
