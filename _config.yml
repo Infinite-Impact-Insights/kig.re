@@ -31,7 +31,7 @@ curly_close:    "}"
 
 host:           kmac.moos.io
 port:           4000
-baseurl:        /
+baseurl:        http://kiguino.moos.io
 url:            http://kiguino.com
 title:          Personal blog by Konstantin Gredeskoul
 description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="https://twitter.com/kig">Konstantin Gredeskoul</a>.'
