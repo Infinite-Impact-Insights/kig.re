@@ -2,6 +2,7 @@ source:         .
 destination:    ./_site
 plugins:        ./_plugins
 layouts:        ./_layouts
+pages:          ./_pages
 include:        ['.htaccess']
 exclude:        []
 keep_files:     ['.git','.svn']
@@ -28,13 +29,13 @@ excerpt_separator: "\n\n\n"
 curly_open:     "{"
 curly_close:    "}"
 
-host:           0.0.0.0
+host:           kmac.moos.io
 port:           4000
 baseurl:        /
 url:            http://kiguino.com
-title:          KIGUINO
+title:          Personal blog by Konstantin Gredeskoul
 description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="https://twitter.com/kig">Konstantin Gredeskoul</a>.'
-author:      
+author:
   name:       Konstantin Gredeskoul
   url:        https://twitter.com/kig
 

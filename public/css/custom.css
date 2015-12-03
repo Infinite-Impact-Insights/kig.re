@@ -31,26 +31,12 @@
   }
 }
 
-/* Color scheme from Paletton. */
-/* http://paletton.com/#uid=2000u0kg9tsaUCadwvZiGqOkZoe */
-/* these classes are not directly used anywhere. They are just for reference of the values */
+/* ____________________________________________________ */
 
-.color-primary-0 { color: #EB7474 }	/* Main Primary color */
-.color-primary-1 { color: #FFA8A8 }
-.color-primary-2 { color: #FF9393 }
-.color-primary-3 { color: #D65959 }
-.color-primary-4 { color: #C14343 }
-
-.color-complement-0 { color: #5DBC5D }	/* Main Complement color */
-.color-complement-1 { color: #8ED78E }
-.color-complement-2 { color: #76CC76 }
-.color-complement-3 { color: #47AB47 }
-.color-complement-4 { color: #359A35 }
-.color-complement-5 { color: #3C523C }
-/*___________________________________________________________________________________________________
-  Sidebar */
+/*
+/* Sidebar */
 .theme-base-0f .sidebar {
-  background-color: #3C523C;
+  background-color: #D9CEB2;
   padding-left:0;
   padding-right: 0;
   border: 0px;
@@ -58,20 +44,17 @@
 .theme-base-0f .sidebar .sidebar-about {
   padding-left: 15px;
   padding-right: 15px;
-  color: #eee;
+  color: #948C75;
   font-family: "Roboto Condensed", "HelveticaNeue-Light", Arial, sans-serif;
   font-weight: 400;
-  text-transform:uppercase;
-  text-shadow: 1px 1px 3px #444;
 }
 .theme-base-0f .sidebar .sidebar-about p {
   display: block;
 }
 
 .theme-base-0f .sidebar .sidebar-about h1 a {
-  color: #47AB47 !important;
-  font-size: 38pt;
-  text-shadow: 5px 5px 10px #000;
+  color: #5A4A33 !important;
+  font-size: 15pt;
   font-family: "HelveticaNeue-CondensedBold", Arial, sans-serif;
 }
 .theme-base-0f .sidebar .sidebar-about h1 a:hover {
@@ -83,9 +66,9 @@
   margin-top: 12px;
 }
 /* Regular links in sidebar */
+.theme-base-0f .sidebar .nav li a,
 .theme-base-0f .sidebar a {
-  color: #D3FFD9;
-  text-shadow: 1px 1px 3px #444;
+  color: #7A6A53;
   /*font-weight:700;*/
 }
 .theme-base-0f .sidebar a:hover,
@@ -106,17 +89,14 @@
 }
 /* Selected nav */
 .theme-base-0f .sidebar .nav li a.active {
-  background-color: #FFCDCB;
-  color: #FF6158;
-  text-shadow: none;
-  font-weight: 700;
+  background-color: #D5DED9;
+  color: #7A6A53;
 }
 /* Navigation links in the sidebar under the mouse  */
 .theme-base-0f .sidebar .nav li a:hover,
 .theme-base-0f .sidebar .nav li a:focus {
-  background-color: #359A35;
-  color: #111;
-  text-shadow: none;
+  background-color: #99B2B7;
+  color: #D5DED9;
 }
 .theme-base-0f .sidebar .github-repos {
   padding-left: 15px;
@@ -134,7 +114,8 @@
   Content */
 
 body.theme-base-0f {
-  background-color: #FFCDCB;
+  background-color: #D5DED9;
+  color: #598287;
   font-family: "Roboto Condensed", "HelveticaNeue-Light", Arial, sans-serif;
   font-size:12pt;
 }
@@ -143,12 +124,12 @@ body.theme-base-0f {
   padding-left: 20px 10px 10px 0;
   margin:10px;
   margin-right: 0;
-  border: 1px solid #903232;
+  border: 1px solid #99B2B7;
 
 }
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
-  color: #336139;
+  color: #948C75;
   font-weight: 700;
 }
 
@@ -156,15 +137,14 @@ body.theme-base-0f {
 .theme-base-0f .content h3,
 .theme-base-0f .content h4,
 .theme-base-0f .content h5 {
-  color: #FF6158;
+  color: #7A6A53;
   font-weight: 700;
   font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
   text-transform: capitalize;
-  text-shadow: 1px 1px 1px #1e1e1e;
 }
 
 .theme-base-0f .content h1 {
-  color: #111;
+  color: #444;
   font-size:29pt;
   font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
 }
@@ -207,9 +187,9 @@ body.theme-base-0f {
 
 
 .theme-base-0f .content div.external-reference {
-  background-color: #8ED78E;
-  color: #black;
-  border: 1px solid #359A35;
+  background-color: #D9CEB2;
+  color: black;
+  border: 1px solid #7A6A53;
   font-size: 10pt;
   margin: 15px 15px;
   padding: 10px;
@@ -286,5 +266,3 @@ a.read-more {
   border: 1px solid #1e0010;
   box-shadow: 2px 2px 4px #B5443E;
 }
-
-
