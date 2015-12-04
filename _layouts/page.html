@@ -2,13 +2,19 @@
 layout: default
 ---
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
+  <a id="anchor" name="content">&nbsp;</a>
+  <h1 class="post-title" id="title">{{ page.title }}</h1>
+  {% if page.date %}
+    <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
+  {% endif %}
   {{ content }}
   <div class="vspacer"></div>
-  <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
+  {% if page.date %}
+    <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
+  {% endif %}
 </div>
 
+{% if site.related_posts %}
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
@@ -22,8 +28,10 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+{% endif %}
 
-{% if page.title %}
+{% unless page.disqus == "disable" %}
+<div class="vspacer"></div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -47,4 +55,4 @@ layout: default
   ga('send', 'pageview');
 
 </script>
-{% endif %}
+{% endunless %}

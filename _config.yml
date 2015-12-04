@@ -34,7 +34,7 @@ port:           4000
 baseurl:        http://kiguino.moos.io
 url:            http://kiguino.com
 title:          Personal blog by Konstantin Gredeskoul
-description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="https://twitter.com/kig">Konstantin Gredeskoul</a>.'
+description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="/professional/summary">Konstantin Gredeskoul</a>.'
 author:
   name:       Konstantin Gredeskoul
   url:        https://twitter.com/kig
