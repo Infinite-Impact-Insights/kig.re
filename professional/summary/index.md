@@ -10,7 +10,11 @@ This is a sort of a summary section from a resume, without giving super complete
 
 I am currently looking for a part-time engagement, three days a week, within San Francisco City limits (or telecommuting).
 
-## Background
+### Schedule Time
+
+Please feel free to schedule a meeting time with me using this wonderful tool: <a href="https://kig.youcanbook.me">https://kig.youcanbook.me</a>.
+
+### Background
 
 I am a seasoned technology executive, software architect, entrepreneur, and a former CTO of three VC funded companies. As a technology leader for nearly ten years, I drove vision, culture, process, and strategy within engineering organizations. My teams learn to focus on business value, amplifying the bottom line and continually increasing product value.
 
