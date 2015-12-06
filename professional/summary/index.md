@@ -2,9 +2,9 @@
 layout: page
 title: Konstantin Gredeskoul
 disqus: disable
-sidebar: disable
+sidebar: top
 ---
-This is a sort of a summary section from a resume, without giving super complete details. However, the full details are a click away on Linked In (see below).
+This is a sort of a summary section from a resume, without giving super complete details. However, the full details are a click away on LinkedIn (see below).
 
 ### Availability
 
