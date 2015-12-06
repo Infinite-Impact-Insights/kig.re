@@ -208,10 +208,9 @@ body.theme-ltec {
 
 .theme-ltec .content h1,
 .theme-ltec .content h1 a {
-  color: #E08E79;
+  color: #572F18;
   font-size:25pt;
   font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
-  text-shadow: 1px 1px 2px black;
 }
 
 .theme-ltec .content .panel-heading {
