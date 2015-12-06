@@ -23,6 +23,9 @@
     margin-right: -15px;
     margin-top: -15px;
   }
+  .theme-ltec  .post {
+    padding: 15px;
+  }
 }
 
 @media (min-width: 48em) {
@@ -189,6 +192,8 @@ body.theme-ltec {
   border: 1px solid #99B2B7;
 
 }
+
+
 .theme-ltec .content a,
 .theme-ltec .related-posts li a:hover {
   color: #948C75;
@@ -208,9 +213,10 @@ body.theme-ltec {
 
 .theme-ltec .content h1,
 .theme-ltec .content h1 a {
-  color: #572F18;
-  font-size:25pt;
+  color: #E08E79;
+  font-size:28pt;
   font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
+  text-shadow: 1px 1px 2px #471F08;
 }
 
 .theme-ltec .content .panel-heading {
@@ -333,4 +339,14 @@ p.lead {
 
 #anchor {
   float: left;
+}
+
+p.about-footer {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  border-top: 1px solid #E08E79;
+  background: #F1D4AF;
+  font-size:10pt;
 }
