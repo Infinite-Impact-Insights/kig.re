@@ -26,7 +26,7 @@
               {% if node.title != null %}
                 {% if node.layout == "page" %}
                 <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-                       href="{{ node.url }}#content"
+                       href="{{ node.url }}"
                        title="{{ node.title }}"
                 >{{node.date | date: "%m/%d/%Y" }}: {{ node.title }}</a></li>
                 {% endif %}
