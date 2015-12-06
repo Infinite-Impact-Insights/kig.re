@@ -6,7 +6,7 @@ _Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemit
 
 My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
 
-# Why This Exists?
+## What's the issue?
 
 <div class="small-right">
 <a href="/images/nano-ch340g-bottom.jpg" data-lightbox="kiguino" data-title="Bottom of the Arduino Nano clone with the CH340G chip">
@@ -16,7 +16,9 @@ My golden rule is that if something took me longer than 15 minutes to figure out
 
 Recent versions of Chinese cheap [clones of Arduino boards](http://www.ebay.com/itm/381019048475) have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
 
-# New Driver! 
+## Whoohoo! New driver!
+
+_(Added: Nov 22, 2015)_
 
 Many instructions farther down below were written for the old driver, which was not signed, and therefore was not working out of the box on OS-X Yosemite and El Capitan. The latest driver appears to be signed, and should work out the box. The new driver is here: [CH34x_Install.zip (111Kb)](/downloads/CH34x_Install.zip).
 
@@ -24,9 +26,7 @@ Many instructions farther down below were written for the old driver, which was 
 
 Inside the driver is a brief README with the following instructions:
 
-
 {{site.data.macros.continue}}
-
 
 #### README
 
