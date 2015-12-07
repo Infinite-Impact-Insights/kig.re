@@ -94,10 +94,10 @@
   padding: 0;
   margin: auto -15px;
   background-color: #E08E79;
-  color: white;
+  color: #ECE5CE;
   font-size:8pt;
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .theme-ltec .navbar .site-description a {
