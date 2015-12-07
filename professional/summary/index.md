@@ -41,13 +41,6 @@ Please feel free to schedule a meeting time with me using this wonderful tool: <
  * Java
  * SQL
 
-*A bit dated, and possibly incomplete, but can catch up quickly:*
- 
- * C/C++
- * Objective-C
- * Modern JavaScript libraries
- * React-based evented design
-
 *Open source tools I can fluently use on any project:*
 
  * Redis, Nginx, Haproxy, pgBouncer, twemproxy
@@ -60,6 +53,14 @@ Please feel free to schedule a meeting time with me using this wonderful tool: <
  * git, gitX, github
  * RubyMine, vim, Atom, TextMate
  * shiftIt
+ 
+*A bit dated, possibly incomplete, but can catch up if needed:*
+ 
+ * C/C++
+ * Objective-C
+ * Modern JavaScript libraries
+ * React-based evented design
+
  
 ### Professional Summary
 
