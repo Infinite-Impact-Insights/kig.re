@@ -6,6 +6,16 @@ sidebar: top
 ---
 This is a sort of a summary section from a resume, without giving super complete details. However, the full details are a click away on LinkedIn (see below).
 
+### Desired Positions
+
+The following are the various areas where I am looking for a part-time 3d/week engagements.
+
+ * senior contributor & mentor – ruby/rails
+ * senior contributor – cloud automation (Chef)
+ * substitute/temp CTO/VP Eng/Director of Engineering
+ * substitute/temp Director/VP of Operations
+ * special interest: hardware development, industrial design, Arduino
+
 ### Availability
 
 I am currently looking for a part-time engagement, three days a week, within San Francisco City limits (or telecommuting).
@@ -14,7 +24,44 @@ I am currently looking for a part-time engagement, three days a week, within San
 
 Please feel free to schedule a meeting time with me using this wonderful tool: <a href="https://kig.youcanbook.me">https://kig.youcanbook.me</a>.
 
-### Background
+### Skills
+
+*Fluent, expert level*
+
+ * Ruby
+ * Ruby on Rails
+ * CSS, JavaScript
+ * RSpec, Sinatra, Capistrano, Devise, etc
+ * Chef
+ * Performance tuning code
+ * Performance tuning PostgreSQL
+ * Identifying bottlenecks in the system using USE method
+ * Database schema design (for performance or scale)
+ * Object oriented design, SOLID design
+ * Java
+ * SQL
+
+*A bit dated, and possibly incomplete, but can catch up quickly:*
+ 
+ * C/C++
+ * Objective-C
+ * Modern JavaScript libraries
+ * React-based evented design
+
+*Open source tools I can fluently use on any project:*
+
+ * Redis, Nginx, Haproxy, pgBouncer, twemproxy
+ * Solr, Memcached, RabbitMQ, Chef, Sidekiq, ElasticSearch
+ * Linux, SmartOS, dTrace, statsd
+ * NewRelic, Boundary
+ 
+*Development environment:*
+
+ * git, gitX, github
+ * RubyMine, vim, Atom, TextMate
+ * shiftIt
+ 
+### Professional Summary
 
 I am a seasoned technology executive, software architect, entrepreneur, and a former CTO of three VC funded companies. As a technology leader for nearly ten years, I drove vision, culture, process, and strategy within engineering organizations. My teams learn to focus on business value, amplifying the bottom line and continually increasing product value.
 
@@ -24,19 +71,6 @@ The concepts of micro-services architectures and DevOps have been my focus for o
 
 I advocate for incremental but continuing investment in making software adaptable, (i.e. easy to change and maintain), highly performant, and possible to scale horizontally across commodity hardware (or a cloud). I love operational transparency in the production, powered by full automation, comprehensive monitoring, and intelligent alerting that uses business metrics to decide if an alert is worth sending, thus resulting in just a few alerts a week. This approach enables small teams to manage large cloud deployments across any low-cost horizontally scalable infrastructure.
 
-### Current Interests
-
-The following are the areas where my contribution will be most impactful, sorted by how much impact I predict it will be,  highest impact first.
-
- * substitute/temp CTO/VP Eng/Director of Engineering
- * substitute/temp Director/VP of Operations
- * senior contributor – cloud automation (Chef)
- * senior contributor – software engineering
-   * architect/implementer: distributed systems architecture & design
-   * ruby/rails (expert level)
-   * javascript/nodejs (intermediate)
-   * C/C++, ObjectiveC, Closure (rusty/beginner/beginner)
- * Special Interest: Hardware development, industrial design, Arduino
 
 ### Linked In
 
