@@ -1,16 +1,12 @@
 source:         .
 destination:    ./_site
-plugins:        ./_plugins
-layouts:        ./_layouts
-pages:          ./_pages
+plugins_dir:    ./_plugins
+layouts_dir:    ./_layouts
+pages_dir:      ./_pages
+sass_path:      ./_compass
 include:        ['.htaccess']
 exclude:        []
 keep_files:     ['.git','.svn']
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-  - redcarpet
-
 timezone:       nil
 encoding:       utf-8
 future:         true
