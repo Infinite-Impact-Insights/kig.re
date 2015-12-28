@@ -1,0 +1,389 @@
+/*
+ * Custom CSS
+ */
+
+/*
+ * Theme: Let Them Eat Cake
+ *    By: lunaleim
+ *        http://www.colourlovers.com/palette/49963/let_them_eat_cake
+ *
+ * Left to right:
+ *
+ * #774F38   brown
+ * #E08E79   pinkish
+ * #F1D4AF   yellowish/pinkish
+ * #ECE5CE   very light yellow
+ * #C5E0DC   light blue
+ *
+ */
+
+@media (max-width: 48em) {
+  .sidebar {
+    margin-right: -15px;
+    margin-top: -15px;
+  }
+  .theme-ltec .post {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+  pre {
+    font-size: 10px;
+  }
+  .github-repos {
+    padding-left: 0px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 58em) {
+  html {
+    font-size: 20px;
+  }
+  pre {
+    font-size: 12px;
+  }
+  .github-repos {
+    padding-left: 0px;
+    font-size: 16px;
+  }
+}
+
+/* ____________________________________________________ */
+/*
+/* Top Navbar */
+
+.theme-ltec {
+  .container-fluid .row .kg-dropdown-top {
+    background: #F1D4AF;
+    color: #774F38;
+    border-bottom: 1px solid #E08E79;
+    box-shadow: 1px 2px 5px #E08E79;
+    font-size: 14pt;
+    .dropdown-menu {
+      background: #F1D4AF;
+      color: #774F38;
+      border-bottom: 1px solid #E08E79;
+      box-shadow: 1px 2px 5px #E08E79;
+      font-size: 14pt;
+    }
+    a {
+      color: #774F38;
+      &:active, &:hover {
+        color: #774F38;
+        background: #ECE5CE;
+      }
+      &.active {
+        font-weight: 700;
+      }
+    }
+    li.open {
+      > a {
+        background-color: #ECE5CE;
+        background: #ECE5CE;
+        border-size: 0;
+      }
+      ul.dropdown-menu {
+        border-top: 0;
+      }
+    }
+  }
+  .navbar .site-description {
+    padding: 0;
+    margin: auto -15px;
+    background-color: #E08E79;
+    color: #ECE5CE;
+    font-size: 8pt;
+    text-align: center;
+    font-weight: 400;
+    a {
+      font-weight: 400;
+      color: #ECE5CE !important;
+    }
+  }
+  .sidebar {
+    background-color: #F1D4AF;
+    color: #774F38;
+    margin-left: -15px;
+    padding-left: 0;
+    padding-right: 0;
+    border: 0px;
+    .sidebar-about {
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #774F38;
+      font-family: "Roboto Condensed", "HelveticaNeue-Light", Arial, sans-serif;
+      font-weight: 400;
+      p {
+        display: block;
+      }
+      h1 {
+        a {
+          color: #774F38 !important;
+          font-size: 15pt;
+          font-family: "HelveticaNeue-CondensedBold", Arial, sans-serif;
+          &:hover {
+            text-decoration: none;
+            color: white;
+          }
+        }
+        margin-top: 12px;
+      }
+    }
+    .nav li a {
+      color: #774F38;
+      /*font-weight:700;*/
+    }
+    a {
+      color: #774F38;
+      /*font-weight:700;*/
+      &:hover, &:focus {
+        color: white;
+      }
+    }
+    ul.nav, nav li {
+      font-family: "Roboto Condensed", "HelveticaNeue-CondensedBold", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      margin-right: -1px;
+    }
+    .nav li a {
+      &.active {
+        background-color: #ECE5CE;
+        color: #774F38;
+      }
+      &:hover, &:focus {
+        background: #E08E79;
+        color: #ECE5CE;
+      }
+    }
+    .github-repos {
+      padding-left: 15px;
+      width: 200px;
+      overflow: hidden;
+      height: 60px;
+      margin: 0px auto;
+      text-transform: uppercase;
+      font-size: 9pt;
+      line-height: 10pt;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* Sidebar */
+
+/* Regular links in sidebar */
+
+/* Regular Nav */
+/*.theme-ltec .sidebar ul.nav {*/
+/*overflow-y: scroll;*/
+/*max-height: 400px;*/
+/*}*/
+
+/* Selected nav */
+
+/* Navigation links in the sidebar under the mouse  */
+
+/*___________________________________________________________________________________________________
+  Content */
+
+body.theme-ltec {
+  background-color: #ECE5CE;
+  color: #774F38;
+  font-family: "Roboto Condensed", "HelveticaNeue-Light", Arial, sans-serif;
+  font-size: 14pt;
+}
+
+.theme-ltec {
+  .content {
+    .small-right img {
+      padding-left: 20px 10px 10px 0;
+      margin: 10px;
+      margin-right: 0;
+      border: 1px solid #99B2B7;
+    }
+    a {
+      color: #D07E69;
+      font-weight: 400;
+    }
+  }
+  .related-posts li a:hover {
+    color: #D07E69;
+    font-weight: 400;
+  }
+  .content {
+    h1, h2, h3, h4, h5 {
+      color: #673F28;
+      font-weight: 700;
+      font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
+      text-transform: capitalize;
+    }
+    h1 {
+      color: #E08E79;
+      font-size: 28pt;
+      font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
+      text-shadow: 1px 1px 2px #471F08;
+      a {
+        color: #E08E79;
+        font-size: 28pt;
+        font-family: "HelveticaNeue-CondensedBold", "Robodo Condensed", Arial, sans-serif !important;
+        text-shadow: 1px 1px 2px #471F08;
+      }
+    }
+    .panel-heading {
+      padding: 0;
+      margin: 0;
+    }
+    .panel-code {
+      padding-top: 10px !important;
+      background-color: #333;
+      padding: 0px;
+    }
+    code {
+      border: 1px solid #111;
+      color: #111 !important;
+    }
+    pre {
+      code {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        color: #eee !important;
+      }
+      color: white;
+      /*background-color: #fff9f4;*/
+      font-family: "Consolas", "Inconsolata", "Monaco", Courier, sans-serif !important;
+    }
+    code {
+      color: white;
+      /*background-color: #fff9f4;*/
+      font-family: "Consolas", "Inconsolata", "Monaco", Courier, sans-serif !important;
+    }
+    pre, code .lineno {
+      /*background-color: #fff9f4;*/
+      background-color: #333;
+      border: 0px solid #1e1e1e;
+      font-family: "Consolas", "Inconsolata", "Monaco", Courier, sans-serif !important;
+    }
+    div.external-reference {
+      background-color: #D9CEB2;
+      color: black;
+      border: 1px solid #7A6A53;
+      font-size: 10pt;
+      margin: 15px 15px;
+      padding: 10px;
+      font-decorations: none;
+      box-shadow: 2px 2px 10px #333;
+      a {
+        color: black !important;
+      }
+    }
+    img.hero-image {
+      width: 120%;
+      margin-left: -10%;
+      margin-right: -10%;
+    }
+  }
+  .pagination {
+    border: 1px solid #E08E79;
+    padding: 0 25px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    .pagination-item {
+      padding: 5px;
+    }
+  }
+}
+
+/* Pagination */
+
+/*=========================================*/
+
+/*
+ * Quick tools
+ */
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+div {
+  &.vspacer {
+    height: 50px;
+  }
+  &.vspacer20 {
+    height: 20px;
+  }
+  &.container {
+    padding-top: 0;
+    margin: 0;
+  }
+}
+
+html {
+  font-family: "Roboto Condensed", "HelveticaNeue-Light", Arial, sans-serif !important;
+  font-weight: 400;
+}
+
+p.lead {
+  color: #fff;
+  /*line-height: 15pt;*/
+  font-size: 12pt;
+  text-transform: uppercase;
+  font-family: "HelveticaNeue-CondensedBold", Arial, sans-serif !important;
+}
+
+.lead a {
+  font-color: white;
+}
+
+/*
+ * Main News Feed
+ */
+
+.theme-ltec .content a.read-more {
+  display: block;
+  padding-bottom: 50px;
+  color: #E08E79;
+  font-weight: 400;
+}
+
+.related {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.small-right a img {
+  float: right;
+  width: 200px;
+  border: 1px solid #1e0010;
+  box-shadow: 2px 2px 4px #B5443E;
+}
+
+img {
+  &#google-plus-icon, &.external-service-logo {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    display: inline-block;
+  }
+}
+
+p.about-footer {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  border-top: 1px solid #E08E79;
+  background: #F1D4AF;
+  font-size: 10pt;
+}

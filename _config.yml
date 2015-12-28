@@ -6,7 +6,7 @@ pages_dir:      ./_pages
 sass_path:      ./_compass
 include:        ['.htaccess']
 exclude:        []
-keep_files:     ['.git','.svn']
+keep_files:     ['.git']
 timezone:       nil
 encoding:       utf-8
 future:         true
@@ -14,9 +14,8 @@ show_drafts:    false
 limit_posts:    0
 
 permalink:      date
-paginate:       5
+paginate:       10
 
-highlighter:    pygments
 markdown:       redcarpet
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
 
@@ -25,9 +24,9 @@ excerpt_separator: "\n\n\n"
 curly_open:     "{"
 curly_close:    "}"
 
-host:           kmac.moos.io
+host:           0.0.0.0
 port:           4000
-baseurl:        http://kiguino.moos.io
+baseurl:
 url:            http://kiguino.com
 title:          Personal blog by Konstantin Gredeskoul
 description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="/professional/summary">Konstantin Gredeskoul</a>.'
@@ -40,7 +39,6 @@ github_repos:
   - ventable
   - laser-cutter
   - occupus
-
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
