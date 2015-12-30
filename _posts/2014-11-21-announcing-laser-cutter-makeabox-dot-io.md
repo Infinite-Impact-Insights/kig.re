@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
+title: "Announcing LaserCutter ruby gem and MakeABox.IO web site!"
 ---
 
 <div class="small-right">
