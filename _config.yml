@@ -5,7 +5,7 @@ layouts_dir:    ./_layouts
 pages_dir:      ./_pages
 sass_path:      ./_compass
 include:        ['.htaccess']
-exclude:        []
+exclude:        ['./_docker', 'Gemfile', 'Gemfile.lock', 'README.md', 'Rakefile']
 keep_files:     ['.git']
 timezone:       nil
 encoding:       utf-8
