@@ -22,6 +22,10 @@ end
 Config = Struct.new(:image_name, :container_name)
 @config = Config.new('kiguino-nginx', 'kiguino-nginx-container')
 
+def s title
+  puts "\n#{title.upcase.yellow.bold}\n"
+end
+
 namespace :docker do
   task :build => [ 'jekyll:build' ] do
     sh 'cp _docker/Dockerfile.static-only _site/Dockerfile'
@@ -48,11 +52,15 @@ namespace :docker do
     end
   end
   task :status do
-    images = %x(docker images | grep #{@config.image_name})
-    puts "IMAGES:"
-    puts images unless images.empty?
-    containers = %x(docker ps | grep #{@config.container_name})
-    puts "CONTAINERS:"
-    puts containers unless containers.empty?
+    images = %x(docker images | egrep 'REPOSI|#{@config.image_name}')
+    unless images.empty?
+      s 'Docker Images'
+      puts images.green.bold
+    end
+    containers = %x(docker ps | egrep 'CONTAIN|#{@config.container_name}')
+    unless containers.empty?
+      s 'Docker Containers'
+      puts containers.cyan.bold
+    end
   end
 end
