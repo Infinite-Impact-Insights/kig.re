@@ -3,6 +3,8 @@ layout: page
 title: How to use cheap Chinese Arduinos that come with with CH340G / CH341G Serial/USB chip (Windows & Mac OS-X)
 ---
 
+<br />
+
  * _Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite_.
  * _Updated Jan 9, 2016 with Windows Drivers_.
 
