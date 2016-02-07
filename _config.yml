@@ -24,9 +24,6 @@ excerpt_separator: "\n\n\n"
 curly_open:     "{"
 curly_close:    "}"
 
-host:           0.0.0.0
-port:           4000
-baseurl:
 url:            http://kiguino.com
 title:          Personal blog by Konstantin Gredeskoul
 description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="/professional/summary">Konstantin Gredeskoul</a>.'
