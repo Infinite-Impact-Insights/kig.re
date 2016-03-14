@@ -1,4 +1,4 @@
-require 'colorize'
+require 'colored2'
 require 'rake'
 task :default => 'jekyll:preview'
 namespace :jekyll do

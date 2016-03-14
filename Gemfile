@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'jekyll'
-gem 'colorize'
+gem 'colored2'
+gem 'rake'
 group :jekyll_plugins do
   gem 'redcarpet'
   gem 'jekyll-coffeescript'
