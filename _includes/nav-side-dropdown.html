@@ -1,0 +1,68 @@
+{% assign pages_list = site.posts %}
+<div class="sidebar">
+  <nav class="navbar">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="/">Home</a></li>
+          <li><a href="{{ pages_list.first.url }}">Most Recent</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {% for node in pages_list %}
+                {% if node.title != null %}
+                  {% if node.layout == "page" %}
+                  <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+                    href="{{ node.url }}"
+                    title="{{ node.title }}"
+                    >{{node.date | date: "%m/%d/%Y" }}: {{ node.title }}</a></li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a target="_blank" href="/professional/summary">Hire Me</a>
+              <li><a target="_blank" href="/downloads/konstantin-gredeskoul-resume.pdf">Resume</a>
+              <li role="separator" class="divider"></li>
+              <li><a target="_blank" href="https://linkedin.com/in/kigster" >@kigster on LinkedIn</a></li>
+              <li><a target="_blank" href="https://github.com/kigster" >@kigster on Github</a></li>
+              <li><a target="_blank" href="https://slideshare.net/kigster">@kigster on SlideShare</a></li>
+              <li><a target="_blank" href="https://slideshare.net/kig">@kig on Twitter</a></li>
+              <li><a target="_blank" href="https://angel.co/kig">@kig on Angel.co</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a target="_blank" href="https://plus.google.com/+KonstantinGredeskoul/posts/p/pub?fd=1&hl=en" target="_blank">Maker Projects on
+                <img src="https://ssl.gstatic.com/images/icons/gplus-64.png" id="google-plus-icon" class="external-service-logo"></a>
+              </li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers" target="_blank">Original Music – "PolyGroovers"</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers" target="_blank">DJ Sets – "DJ LeftCtrl"</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="vspacer"></div>
+        <form role="search" action="https://www.google.com/" onsubmit='window.open("http://google.com/?site=kig.re&q=" + $("#search-query")[0].value + "&gws_rd=ssl#q=" + $("#search-query")[0].value + "+site:kig.re", "_blank", "width=1000,height=700,toolbar=1,resizable=1"); return false'>
+          <div class="form-group">
+            <input type="hidden" name="q" value="site:kig.re"/>
+            <input id="search-query" type="text" class="form-control" placeholder="Search this site" name="q" >
+          </div>
+        </form>
+        <div class="vspacer"></div>
+
+        <div class="tweets">
+          <a class="twitter-timeline" href="https://twitter.com/kig" data-widget-id="673740947461566464">Tweets by @kig</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+      </div><!-- /.navbar-collapse -->
+  </nav>
+</div>

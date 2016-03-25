@@ -5,8 +5,10 @@ title: How to use cheap Chinese Arduinos that come with with CH340G / CH341G Ser
 
 <br />
 
- * _Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite_.
- * _Updated Jan 9, 2016 with Windows Drivers_.
+<blockquote>
+  _Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite_.
+  _Updated Jan 9, 2016 with Windows Drivers_.
+</blockquote>
 
 My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
 
@@ -28,7 +30,6 @@ A fully signed drivers for Windows can be found below:
 
  * [2011 Driver version 3.3.2011.11 for Windows 7](http://catalog.update.microsoft.com/v7/site/ScopedViewRedirect.aspx?updateid=032a878e-8ca0-40d2-b7b1-936640b0eecb)
  * [2014 Driver version 3.4.2014.8 for Windows 8+](http://www.arduined.eu/ch340-windows-8-driver-download/)
-
 
 # Mac OS-X
 
