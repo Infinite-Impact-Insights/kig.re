@@ -8,6 +8,8 @@ sidebar: top
 
 I was very happy to have my submission accepted at the recent pgConfSV conference (where SV is for Sillicon Valley). For various reasons I was unable to cover everything I wanted during the talk, which is a note to self for future public speaking engagements! Time your talk! :). Well, below is an updated version of that presentation, which shows an incremental and methodical path to scaling web applications to millions of users using PostgreSQL, all the while covering a very range of material.  
 
+
+
 ### Audience
 
 In general, the ideal audience for this is operationally and architecturally minded full stack engineers, building web apps that either are already serving a ton of traffic, or will be soon.

@@ -9,13 +9,12 @@
    -->
   <body class="theme-ltec">
     <div class="container-fluid">
-
-      {% unless page.sidebar %}
+      <!-- {% unless page.sidebar %}
         {% capture sidebar_file %}sidebar-top.html{% endcapture %}
       {% else %}
         {% capture sidebar_file %}sidebar-{{ page.sidebar }}.html{% endcapture %}
-      {% endunless %}
-
+      {% endunless %} -->
+      {% capture sidebar_file %}sidebar-side-dropdown.html{% endcapture %}
       {% include {{sidebar_file}} %}
 
     </div>

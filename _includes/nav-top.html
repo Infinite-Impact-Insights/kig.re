@@ -1,9 +1,6 @@
 {% assign pages_list = site.posts %}
-
-<nav class="navbar kg-dropdown-top">
-  <div class="container-fluid navbar-default navbar-fixed-top kg-dropdown-top" >
-    <div class="site-description">{{ site.description }}</div>
-
+<nav class="navbar navbar-default navbar-fixed-top navbar-top ">
+  <div class="container-fluid" >
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -15,7 +12,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <li class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
         <li><a href="{{ pages_list.first.url }}">Most Recent</a></li>
@@ -26,9 +23,9 @@
               {% if node.title != null %}
                 {% if node.layout == "page" %}
                 <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-                       href="{{ node.url }}"
-                       title="{{ node.title }}"
-                >{{node.date | date: "%m/%d/%Y" }}: {{ node.title }}</a></li>
+                  href="{{ node.url }}"
+                  title="{{ node.title }}"
+                  >{{node.date | date: "%m/%d/%Y" }}: {{ node.title }}</a></li>
                 {% endif %}
               {% endif %}
             {% endfor %}
@@ -47,15 +44,14 @@
             <li><a target="_blank" href="https://angel.co/kig">@kig on Angel.co</a></li>
             <li role="separator" class="divider"></li>
             <li><a target="_blank" href="https://plus.google.com/+KonstantinGredeskoul/posts/p/pub?fd=1&hl=en" target="_blank">Maker Projects on
-              <img src="https://ssl.gstatic.com/images/icons/gplus-64.png" id="google-plus-icon" class="external-service-logo"></a></li>
+              <img src="https://ssl.gstatic.com/images/icons/gplus-64.png" id="google-plus-icon" class="external-service-logo"></a>
+            </li>
             <li><a target="_blank" href="https://soundcloud.com/polygroovers" target="_blank">Original Music – "PolyGroovers"</a></li>
             <li><a target="_blank" href="https://soundcloud.com/polygroovers" target="_blank">DJ Sets – "DJ LeftCtrl"</a></li>
           </ul>
         </li>
       </ul>
-
-      <form class="navbar-form navbar-right" role="search"
-        action="https://www.google.com/webhp">
+      <form class="navbar-form navbar-right" role="search" action="https://www.google.com/webhp">
         <div class="form-group">
           <input type="hidden" name="q" value="site:kiguino.moos.io"/>
           <input type="text" class="form-control" placeholder="Search" name="q">
@@ -65,4 +61,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
