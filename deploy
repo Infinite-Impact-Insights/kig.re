@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+git reset --hard 
+git pull --rebase
+bundle
+bundle exec jekyll build
+chmod -R 755 .
+
