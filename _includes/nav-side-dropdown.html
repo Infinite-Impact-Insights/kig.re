@@ -50,9 +50,9 @@
         </ul>
         <div class="vspacer"></div>
 
-        <form role="search" action="https://www.google.com/" onsubmit='window.open("http://google.com/?site=kig.re&q=" + $("#search-query")[0].value + "&gws_rd=ssl#q=" + $("#search-query")[0].value + "+site:kig.re", "_blank", "width=1000,height=700,toolbar=1,resizable=1"); return false'>
+        <form role="search" id="search-form">
           <fieldset class="form-group">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true" id="search-icon"></span>
             <label for="search-query">Search in this blog:</label>
             <input id="search-query" type="text" class="form-control"  placeholder="" name="q" />
             <small class="text-muted">Type your query and press ENTER.</small>

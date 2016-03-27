@@ -261,6 +261,9 @@ body.theme-ltec {
         position: absolute;
         top: 35px;
         right: 10px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
