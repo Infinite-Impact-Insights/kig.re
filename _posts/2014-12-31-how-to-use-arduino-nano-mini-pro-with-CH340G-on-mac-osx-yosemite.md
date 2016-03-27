@@ -6,19 +6,27 @@ title: How to use cheap Chinese Arduinos that come with with CH340G / CH341G Ser
 <br />
 
 <blockquote>
-  _Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite_.
-  _Updated Jan 9, 2016 with Windows Drivers_.
+  <ul>
+     <li>Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite</li>
+     <li>Updated Jan 9, 2016 with Windows Drivers</li>
+  </ul>
 </blockquote>
 
 My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
 
 ## Introduction – What is CH340G?
 
+
+{{site.data.macros.continue}}
+
+
+
 <div class="small-right">
 <a href="/images/nano-ch340g-bottom.jpg" data-lightbox="kiguino" data-title="Bottom of the Arduino Nano clone with the CH340G chip">
 	<img src="/images/nano-ch340g-bottom.jpg"/>
 </a>
 </div>
+
 
 Recent versions of cheap Chinese [clones of Arduino boards](http://www.ebay.com/itm/381019048475) have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
 

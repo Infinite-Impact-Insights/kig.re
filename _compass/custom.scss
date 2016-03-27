@@ -11,6 +11,12 @@ $nav-bg: rgba(#947d80, 0.97);
 $nav-border: #1b253c;
 $nav-shadow: rgba(#1d2732, 0.96);
 
+$form-input-bg: rgb(29, 18, 28);
+$form-input-fg: rgb(114, 181, 230);
+$form-input-border: rgb(26, 14, 22);
+$form-input-shadow: rgba(255, 126, 108, 0.89);
+
+
 $nav-active-fg: $nav-fg;
 $nav-active-bg: rgba(#9e697b, 0.72);
 $nav-active-shadow: #28241d;
@@ -54,8 +60,12 @@ hr {
 
 @media (max-width: 48em) {
   .navbar {
+    .navbar-header {
+            height: 40px;
+
+    }
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     li a {
       font-size: 11pt;
       border-bottom: 1px solid $nav-border;
@@ -96,17 +106,58 @@ hr {
 .theme-ltec {
   .sidebar {
     color: $nav-fg;
-  }
-  .sidebar {
     margin: 0;
-    padding: 20px;
+    padding: 0px;
+    padding-top: 25px;
     li a {
       font-size: 11pt;
     }
+    .collapse {
+      overflow-x: hidden;
+      overflow-y: scroll;;
+    }
   }
-  .navbar {
+  nav.navbar {
+    padding: 0;
+    margin: 0;
+    .navbar-header {
+      margin: 0;
+      padding: 0;
+      padding-top: 20px;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      position: relative;
+      button {
+        padding: 0;
+        margin: 0;
+        left: 10px;
+        top: -10px;
+        position: absolute;
+        span.glyphicon-menu-hamburger {
+          color: $primary-fg - 50;
+          font-size: 30pt;
+          visibility: visible;
+          &:hover {
+            color: $primary-fg + 20;
+          }
+          &:active {
+            color: white;
+          }
+        }
+      }
+    }
   }
   .nav {
+    code {
+      background-color: $form-input-bg + 30;
+      color: white;
+      margin-right: 10px;
+      font-size: 9pt;
+      text-shadow: 1px 1px 2px black;
+      font-weight: 100;
+    }
+
     > li a, li.open > a {
       background-color: $nav-bg;
     }
@@ -117,7 +168,6 @@ hr {
         padding-bottom: 5px;
       }
     }
-
     a, .open > a {
       background-image: none !important;
       display: block;
@@ -153,6 +203,7 @@ hr {
       background-color: rgba(255, 255, 255, 0)
     }
 
+
     .sidebar-about {
       color: $primary-fg;
       font-family: $base-font-family;
@@ -184,18 +235,48 @@ body.theme-ltec {
   background-color: $primary-bg;
   color: $primary-fg;
   text-shadow: 1px 1px 1px $h1-shadow;
-
   font-family: $base-font-family !important;
   font-weight: 100;
   font-size: 11pt;
   line-height: 15pt;
 
-  .post {
-    img.hero-image {
-      width: 120%;
-      margin-left: -10%;
-      margin-right: -10%;
+  .tweets {
+    boder: 1px solid $nav-border;
+    border-radius: 3px;
+    color: $nav-hover-fg;
+    background-color: $nav-bg;
+    box-shadow: 0px 0px 8px $primary-bg - 10;
+  }
+
+  form {
+    input {
+      background-color: $form-input-bg;
+      color: white !important;
+      border-color: $form-input-border;
+      box-shadow: 0 0 5px $form-input-shadow;
     }
+    fieldset {
+      position: relative;
+      span.glyphicon-search {
+        position: absolute;
+        top: 35px;
+        right: 10px;
+      }
+    }
+  }
+
+  a {
+    font-weight: 400;
+    margin: 0;
+    color: $link-fg - 50;
+    text-shadow: 1px 1px 5px $primary-bg - 20;
+  }
+  .text-muted, label {
+    color: $primary-fg - 40;
+    font-family: HelveticaNeue-CondensedBold;
+  }
+
+  .post {
     a {
       color: $link-fg;
       font-weight: 400;
@@ -206,6 +287,7 @@ body.theme-ltec {
     }
     text-align: left;
     blockquote {
+      clear: both;
       background-color: $blockquote-bg;
       color: $blockquote-fg;
       border: 2px solid $blockquote-bg - 50 !important;
@@ -214,8 +296,18 @@ body.theme-ltec {
       text-shadow: none;
       box-shadow: 0 0 15px $blockquote-border;
       font-weight: 100;
-      font-size: 11pt;
+      font-size: 10pt;
+      line-height: 12pt;
 
+      ul {
+        padding: 10px;
+        li {
+          margin-bottom: 10px;
+        }
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     h1, h2, h3, h4, h5 {
       color: $h1-fg;
@@ -378,6 +470,7 @@ p.lead {
   padding-bottom: 50px;
   color: $primary-border;
   font-weight: 400;
+  text-align: right;
 }
 
 .related {
@@ -385,11 +478,23 @@ p.lead {
   font-size: inherit;
 }
 
-a img {
+img {
   border: 1px solid $widgets-border;
   box-shadow: 1px 1px 6px $image-shadow;
   margin-right: 10px;
   width: 100%;
+}
+
+.small-right {
+  a {
+    img {
+      float: right;
+      width: 32%;
+      margin-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .small a img {
