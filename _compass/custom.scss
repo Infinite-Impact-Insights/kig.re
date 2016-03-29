@@ -16,7 +16,6 @@ $form-input-fg: rgb(114, 181, 230);
 $form-input-border: rgb(26, 14, 22);
 $form-input-shadow: rgba(255, 126, 108, 0.89);
 
-
 $nav-active-fg: $nav-fg;
 $nav-active-bg: rgba(#9e697b, 0.72);
 $nav-active-shadow: #28241d;
@@ -50,9 +49,9 @@ $quote-shadow: #ffdede;
 $transparent: rgba(0, 0, 0, 0);
 
 $base-font-family: 'Averia Sans Libre', cursive;
-$header-font-family: 'Fjalla One', sans-serif;
-$fixed-font-family: 'Share Tech Mono', 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif ;
 $nav-font-family: 'Averia Sans Libre', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
+$header-font-family: 'Fjalla One', sans-serif;
+$fixed-font-family: 'Fira Mono', 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif;
 
 hr {
   border-top: 2px dotted $primary-bg !important;
@@ -61,27 +60,36 @@ hr {
 @media (max-width: 48em) {
   .navbar {
     .navbar-header {
-            height: 40px;
-
+      height: 40px;
     }
     margin: 0;
     padding: 0px;
     li a {
-      font-size: 11pt;
+      font-size: 9pt;
       border-bottom: 1px solid $nav-border;
     }
   }
-  .theme-ltec .post {
-    padding: 15px;
+  body.theme-ltec {
+    font-size: 12pt;
+    line-height: 15pt;
+    .post {
+      padding: 15px;
+    }
+    code, pre {
+      font-size: 10pt;
+    }
   }
 }
 
 @media (min-width: 48em) {
   html {
-    font-size: 16px;
-  }
-  pre {
-    font-size: 10px;
+    body.theme-ltec {
+      font-size: 12pt;
+      line-height: 17pt;
+      code, pre {
+        font-size: 11pt;
+      }
+    }
   }
   .github-repos {
     padding-left: 0px;
@@ -91,24 +99,30 @@ hr {
 
 @media (min-width: 58em) {
   html {
-    font-size: 20px;
-  }
-  pre {
-    font-size: 12px;
-  }
-  .github-repos {
-    padding-left: 0px;
-    font-size: 16px;
+    body.theme-ltec {
+      font-size: 13pt;
+      line-height: 17pt;
+      code, pre {
+        font-size: 11pt;
+      }
+    }
+    .github-repos {
+      padding-left: 0px;
+      font-size: 16px;
+    }
   }
 }
 
+html {
+  font-family: $base-font-family !important;
+  font-weight: 400;
+}
 
-.theme-ltec {
+body.theme-ltec {
   .sidebar {
     color: $nav-fg;
     margin: 0;
-    padding: 0px;
-    padding-top: 25px;
+    padding: 25px 0px 0px;
     li a {
       font-size: 11pt;
     }
@@ -194,7 +208,7 @@ hr {
         font-weight: 700;
       }
     }
-    .open  a {
+    .open a {
       &:hover {
         background-color: $nav-hover-bg - 40;
       }
@@ -202,7 +216,6 @@ hr {
     .dropdown-menu a {
       background-color: rgba(255, 255, 255, 0)
     }
-
 
     .sidebar-about {
       color: $primary-fg;
@@ -222,22 +235,12 @@ hr {
       }
     }
   }
-}
 
-.tweets .timeline-Widget {
-  .timeline-Header, .timeline-TweetList, .timeline-Viewport {
-    background-color: $nav-bg;
-    color: $nav-fg;
-  }
-}
-
-body.theme-ltec {
   background-color: $primary-bg;
   color: $primary-fg;
   text-shadow: 1px 1px 1px $h1-shadow;
   font-family: $base-font-family !important;
   font-weight: 100;
-  font-size: 11pt;
   line-height: 15pt;
 
   .tweets {
@@ -333,20 +336,21 @@ body.theme-ltec {
       background-color: $transparent;
     }
     pre {
-      background-color: $primary-bg;
-      border: 1px solid $code-bg - 20;
+      background-color: transparent;
       box-shadow: 1px 1px 2px $code-bg - 50;
+      overflow: hidden;
+      margin: 0px;
     }
     code {
-              background-color: $primary-bg;
-
+      border: 1px solid $code-bg - 20;
+      background-color: $primary-bg;
       color: $code-fg;
       display: inline-block;
       font-family: $fixed-font-family !important;
       margin-bottom: 2px;
       margin-top: 2px;
-      padding: 1px 5px;
-      text-shadow: 0 0 0;
+      padding: 2px 5px;
+      text-shadow: 1px 1px 1px $primary-bg - 40;
     }
     .panel-heading {
       padding: 0;
@@ -365,9 +369,9 @@ body.theme-ltec {
       padding: 0px;
       code, pre {
         background-color: $transparent;
-        color: $code-fg !important;
+        color: $code-fg - 20 !important;
         border: 0;
-        box-shadow: 0 0 0 ;
+        box-shadow: 0 0 0;
       }
       .gutter {
         border-size: 0px;
@@ -375,7 +379,7 @@ body.theme-ltec {
       pre, code .lineno, td.gutter {
         background-color: $transparent;
         border: 0;
-        box-shadow: 0 0 0 ;
+        box-shadow: 0 0 0;
         font-family: $fixed-font-family !important;
       }
       td.gutter pre, td.code pre {
@@ -384,7 +388,7 @@ body.theme-ltec {
       }
     }
 
-    .panel .panel-heading figure > pre   {
+    .panel .panel-heading figure > pre {
       padding: 0;
       border: 1px solid $code-bg - 20;
       box-shadow: 0 0 15px black;
@@ -402,9 +406,6 @@ body.theme-ltec {
       padding: 5px 15px;
       margin-top: 15px;
       margin-bottom: 15px;
-
-      a {
-      }
     }
 
     .pagination {
@@ -417,14 +418,104 @@ body.theme-ltec {
       }
     }
   }
+
+  p.lead {
+    color: $code-fg;
+    /*line-height: 15pt;*/
+    font-size: 12pt;
+    text-transform: uppercase;
+    font-family: $base-font-family !important;
+  }
+
+  .lead a {
+    font-color: $code-fg;
+  }
+
+  a.read-more {
+    display: block;
+    padding-bottom: 50px;
+    color: $primary-border;
+    font-weight: 400;
+    text-align: right;
+  }
+
+  .related {
+    font-family: $base-font-family;
+    font-size: inherit;
+  }
+
+  img {
+    border: 1px solid $widgets-border;
+    box-shadow: 1px 1px 6px $image-shadow;
+    margin-right: 10px;
+    width: 100%;
+
+  }
+
+  a.command-line {
+    display: inline-block;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid $widgets-border;
+    box-shadow: 1px 1px 6px $image-shadow;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    img {
+      border: 0px solid black;
+      box-shadow: 0 0 0 !important;
+    }
+  }
+
+  .small-right {
+    a {
+      float: right;
+      width: 32%;
+      margin-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      img {
+      }
+    }
+  }
+
+  .small a img {
+    float: left;
+    width: 31%;
+  }
+
+  img {
+    &#google-plus-icon, &.external-service-logo {
+      width: 25px;
+      height: 25px;
+      margin-left: 4px;
+      margin-top: -4px;
+      display: inline-block;
+      border: 0px solid transparent;
+      box-shadow: 0 0 0;
+    }
+  }
+
+  p.about-footer {
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    border-top: 1px solid $primary-border;
+    background: $nav-bg;
+    font-size: 10pt;
+  }
+
+  .tweets {
+    padding: 15px;
+    .timeline-Widget {
+      .timeline-Header, .timeline-TweetList, .timeline-Viewport {
+        background-color: $nav-bg;
+        color: $nav-fg;
+      }
+    }
+  }
 }
-/* Pagination */
-
-/*=========================================*/
-
-/*
-* Quick tools
-*/
 
 .float-left {
   float: left;
@@ -445,81 +536,8 @@ div {
     padding-top: 0;
     margin: 0;
   }
-}
-
-html {
-  font-family: $base-font-family !important;
-  font-weight: 400;
-}
-
-p.lead {
-  color: $code-fg;
-  /*line-height: 15pt;*/
-  font-size: 12pt;
-  text-transform: uppercase;
-  font-family: $base-font-family !important;
-}
-
-.lead a {
-  font-color: $code-fg;
-}
-
-/*
-* Main News Feed
-*/
-
-.theme-ltec .content a.read-more {
-  display: block;
-  padding-bottom: 50px;
-  color: $primary-border;
-  font-weight: 400;
-  text-align: right;
-}
-
-.related {
-  font-family: $base-font-family;
-  font-size: inherit;
-}
-
-img {
-  border: 1px solid $widgets-border;
-  box-shadow: 1px 1px 6px $image-shadow;
-  margin-right: 10px;
-  width: 100%;
-}
-
-.small-right {
-  a {
-    img {
-      float: right;
-      width: 32%;
-      margin-left: 20px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-    }
+  &.clear-fix {
+    clear: both;
+    margin-bottom: 20px;
   }
-}
-
-.small a img {
-  float: left;
-  width: 31%;
-}
-
-img {
-  &#google-plus-icon, &.external-service-logo {
-    width: 16px;
-    height: 16px;
-    margin-left: 4px;
-    display: inline-block;
-  }
-}
-
-p.about-footer {
-  width: 100%;
-  padding: 5px;
-  margin: 0;
-  text-align: center;
-  border-top: 1px solid $primary-border;
-  background: $nav-bg;
-  font-size: 10pt;
 }

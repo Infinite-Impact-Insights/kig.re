@@ -195,7 +195,7 @@ The template files inside the enclosure folder of the project contain designs fo
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg" data-lightbox="enclosures" data-title="Retro Look">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg">
 </a>
-<p style="clear:both; margin-bottom: 20px;">
+{{ clearfix }}
 </div>
 
 #### Flexible Arm Designs
@@ -210,7 +210,7 @@ The template files inside the enclosure folder of the project contain designs fo
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg" data-lightbox="enclosures" data-title="Third Module with Flexible Arm">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg">
 </a>
-<p style="clear:both; margin-bottom: 20px;">
+<div class="clear-fix"></div>
 </div>
 
 #### On the Inside
@@ -260,7 +260,7 @@ Tall spacers filled the box all the way to the top, pushed LED matrices flush wi
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" data-lightbox="enclosures" data-title="Display Assembly">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg">
 </a>
-<div style="clear:both; margin-bottom: 20px;"></div>
+<div class="clear-fix"></div>
 </div>
 
 ## Conclusion
