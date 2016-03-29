@@ -25,8 +25,8 @@ curly_open:     "{"
 curly_close:    "}"
 
 url:            http://kiguino.com
-title:          Personal blog by Konstantin Gredeskoul
-description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="/professional/summary">Konstantin Gredeskoul</a>.'
+title:          by Konstantin Gredeskoul (@kig)
+description:    'Stories from the frontlines of software engineers, hardware tinkering, general technology, DIY and makers, hacking and about life in general &mdash; by a veteran software engineer, three-times CTO, inventor, hacker, mentor <a href="/about">Konstantin Gredeskoul</a>.'
 author:
   name:       Konstantin Gredeskoul
   url:        https://twitter.com/kig

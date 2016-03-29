@@ -3,6 +3,7 @@ layout: page
 title: Konstantin Gredeskoul
 disqus: disable
 ---
+
 ## What Have I Done Before?
 
 During the last four years, I worked as a CTO at Wanelo.com. There, I had the honor of forming and leading my dream engineering team, infused with the culture of collaboration, optimism, mastery, high quality, and care. Best practices such as pair programming and test-driven development, continuous deployment and complete automation were supportive of that culture, which ultimately cultivated work environment with a phenomenally high productivity, low defect rate, and a happy, self-managing team. 

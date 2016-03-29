@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 'Scaling Web Applications on PostgreSQL pgConfSV 2015 presentation'
-sidebar: top
 ---
 
 ## pgConf 2015 PostgreSQL Developer Conference in the Bay Area
