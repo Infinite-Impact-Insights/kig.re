@@ -1,4 +1,10 @@
-{% assign pages_list = site.posts %}
+{% assign published_posts = site.posts | where: 'draft', false %}
+{% assign draft_posts = site.posts | where: 'draft', true %}
+{% if page.draft == true %}
+  {% assign post_list = draft_posts %}
+{% else %}
+  {% assign post_list = published_posts %}
+{% endif %}
 <div class="sidebar">
   <nav class="navbar">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,17 +18,17 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav nav-pills nav-stacked">
           <li><a href="/">Home</a></li>
-          <li><a href="{{ pages_list.first.url }}">Most Recent</a></li>
+          <li><a href="{{ post_list.first.url }}">Most Recent</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              {% for node in pages_list %}
+              {% for node in post_list %}
                 {% if node.title != null %}
                   {% if node.layout == "page" %}
                   <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-                    href="{{ node.url }}"
-                    title="{{ node.title }}"
-                    ><code>{{node.date | date: "%Y.%m" }}</code> {{ node.title | truncate 100] }}</a></li>
+                         href="{{ node.url }}"
+                         title="{{ node.title }}"
+                  ><code>{{node.date | date: "%Y.%m" }}</code> {{ node.title | truncate 100] }}</a></li>
                   {% endif %}
                 {% endif %}
               {% endfor %}
