@@ -1,5 +1,6 @@
 ---
 layout: page
+draft: false
 title: Books I Am Reading
 ---
 This post is about the books I am reading right now, with short reviews.

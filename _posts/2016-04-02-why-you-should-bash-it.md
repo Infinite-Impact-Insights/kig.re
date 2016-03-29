@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 'How to Bash Your Terminal, and Bash-It Good...'
+draft: true
 ---
 
 Those of us who work on building software inevitably spend a portion of our time typing various commands on the command line.

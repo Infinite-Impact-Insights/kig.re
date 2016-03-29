@@ -1,5 +1,6 @@
 ---
 layout: page
+draft: false
 title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
 ---
 

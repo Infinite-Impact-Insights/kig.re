@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 'DevOps Guide to Docker: Why, How and Wow.'
-sidebar: top
+draft: true
 ---
 
 ---
