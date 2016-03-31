@@ -26,10 +26,10 @@ $blockquote-border: rgba(255, 229, 135, 0.87);
 
 $nav-h1: #ffffff;
 $nav-hover-fg: #ffffff;
-$nav-hover-bg: rgba(#9ef0ff, 0.74);
+$nav-hover-bg: rgba(#ffc794, .7);
 $nav-hover-shadow: rgba(#fffadb, 0.61);
 
-$h1-title-fg: rgba(168, 223, 255, 0.9);
+$h1-title-fg: rgba(195, 227, 117, 0.9);
 $h1-fg: rgba(219, 198, 240, 0.78);
 $h1-shadow: rgba(0, 0, 0, 0.8);
 
@@ -66,8 +66,13 @@ hr {
     padding: 0px;
     li a {
       font-size: 9pt;
-      border-bottom: 1px solid $nav-border;
     }
+  }
+  .share-buttons {
+    display: none;
+  }
+  .tweets {
+    display: none;
   }
   body.theme-ltec {
     font-size: 12pt;
@@ -89,7 +94,14 @@ hr {
       code, pre {
         font-size: 11pt;
       }
+      .post {
+        max-width: 600px;
+      }
     }
+    .tweets {
+      display: none;
+    }
+
   }
   .github-repos {
     padding-left: 0px;
@@ -112,6 +124,15 @@ hr {
     }
   }
 }
+
+@media (min-width: 85em) {
+  html {
+    .tweets {
+      display: block;
+    }
+  }
+}
+
 
 html {
   font-family: $base-font-family !important;
@@ -173,7 +194,31 @@ body.theme-ltec {
     > li a, li.open > a {
       background-color: $nav-bg;
     }
+    span.caret {
+      float: right;
+      margin: 10px;
+    }
     .dropdown-menu {
+      .intro {
+        padding-left: 10px;
+        color: $nav-fg - 80;
+      }
+      h1, h2, h3, h4, h5 {
+        color: $nav-fg - 80;
+        padding-left: 10px;
+        font-weight: 100 !important;
+        line-height: 120%;
+        font-family: $header-font-family !important;
+        text-transform: capitalize;
+        text-shadow: 1px 1px 4px $h1-shadow;
+      }
+
+      .divider {
+        background-color: $nav-bg;
+        height: 2px;
+        border-top: 1px solid $nav-bg - 20;
+        border-bottom: 1px solid $nav-bg + 20;
+      }
       background-color: $nav-bg - 50;
       a {
         padding-top: 5px;
@@ -240,14 +285,6 @@ body.theme-ltec {
   font-family: $base-font-family !important;
   font-weight: 100;
   line-height: 15pt;
-
-  .tweets {
-    boder: 1px solid $nav-border;
-    border-radius: 3px;
-    color: $nav-hover-fg;
-    background-color: $nav-bg;
-    box-shadow: 0px 0px 8px $primary-bg - 10;
-  }
 
   form {
     input {
@@ -527,17 +564,58 @@ body.theme-ltec {
     background: $nav-bg;
     font-size: 10pt;
   }
+}
 
-  .tweets {
-    padding: 15px;
-    .timeline-Widget {
-      .timeline-Header, .timeline-TweetList, .timeline-Viewport {
-        background-color: $nav-bg;
-        color: $nav-fg;
-      }
+
+
+.tweets {
+  margin-top: 25px;
+  width: 200px;
+  border: 1px solid $nav-border;
+  border-radius: 3px;
+  color: $nav-hover-fg;
+  background-color: $nav-bg;
+  box-shadow: 0px 0px 8px $primary-bg - 10;
+  padding: 5px;
+  margin-right: 20px;
+  .timeline-Widget {
+    .timeline-Header, .timeline-TweetList, .timeline-Viewport {
+      background-color: $nav-bg;
+      color: $nav-fg;
     }
   }
 }
+
+
+
+ul.share-buttons{
+  position: fixed;
+  left: 0px;
+  top: 150px;
+  list-style: none;
+  padding: 5px;
+  img {
+    opacity: 0.7;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    padding: 2px 2px;
+    border-width: 0;
+    box-shadow: 0 0 0;
+    margin-bottom: 5px;
+    width: 36px;
+    height: 36px;
+    &:hover {
+      background-color: $nav-fg;
+      border-radius: 16px;
+    }
+  }
+  .share-buttons-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(38, 30, 30, 0.28);
+  }
+}
+
 
 .float-left {
   float: left;
