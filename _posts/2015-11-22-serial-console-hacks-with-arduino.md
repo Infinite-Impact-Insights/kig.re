@@ -26,22 +26,16 @@ I found it! It's called minicom!
 
 This is what I get:
 
-<div class="panel panel-code"><div class="panel-heading">
-     
-{% highlight bash linenos %}
+```
 minicom version 2.7 (compiled Oct 20 2014)
-{% endhighlight %}
-
-</div></div>
-
+```
 
 ### BASH Magic
 
 Now add the following [BASH function](http://tldp.org/LDP/abs/html/complexfunct.html) to your ```~/.bashrc``` or ```~/.bash_profile``` files:
 
 
-<div class="panel panel-code"><div class="panel-heading">
-{% highlight bash linenos %}
+```bash
 function console {
   modem=`ls -1 /dev/cu.* | grep -vi bluetooth | tail -1`
   baud=${1:-9600}
@@ -51,8 +45,7 @@ function console {
     echo "No USB modem device found in /dev"
   fi
 }
-{% endhighlight %}
-</div></div>
+```
 
 Then you can use it as follows – in Terminal type `console` and it will automatically launch minicom, on the first found USB port.
 

@@ -105,8 +105,8 @@ Notably, ```--help, --examples``` is a good place to start.
 For example, to create a box defined in inches, set kerf to 0.008" and open PDF in preview right after it is generated, run the following:
 
 ```bash
-> gem install laser-cutter
-> laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
+ $ gem install laser-cutter
+ $ laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
 ```
 
 <div class="small-right">

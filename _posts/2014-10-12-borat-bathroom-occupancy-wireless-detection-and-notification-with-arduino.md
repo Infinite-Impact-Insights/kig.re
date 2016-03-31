@@ -72,9 +72,11 @@ Shortly after, I received all the pieces in the mail, had a plan in my head, and
 
 ## The Solution
 
+<div class="small-right">
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" data-lightbox="enclosures" data-title="Display Unit">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title="" class="small-right">
 </a>
+</div>
 
 Enter the project (all of which is open sourced under an MIT License), which took good month working some nights and weekends this summer to complete: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system. It uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms to the main display unit located in a highly visible area.
 
@@ -196,8 +198,8 @@ The template files inside the enclosure folder of the project contain designs fo
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg" data-lightbox="enclosures" data-title="Retro Look">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg">
 </a>
-{{ clearfix }}
 </div>
+{% macro clearfix %}
 
 #### Flexible Arm Designs
 
