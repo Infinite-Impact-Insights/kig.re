@@ -18,11 +18,16 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav nav-pills nav-stacked">
           <li><a href="/">Home</a></li>
-          <li><a href="{{ post_list.first.url }}">Most Recent</a></li>
+          <li><a href="{{ post_list.first.url }}">Latest Post</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts<span class="caret"></span></a>
             <ul class="dropdown-menu">
+              {% assign last_post_year = post_list.first.date | date: "%Y" %}
               {% for node in post_list %}
+                {% assign this_post_year = node.date | date: "%Y" %}
+                {% if last_post_year != '' and this_post_year != last_post_year %}
+                  <li role="separator" class="divider"></li>
+                {% endif %}
                 {% if node.title != null %}
                   {% if node.layout == "page" %}
                   <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
@@ -31,6 +36,7 @@
                   ><code>{{node.date | date: "%Y.%m" }}</code> {{ node.title | truncate 100] }}</a></li>
                   {% endif %}
                 {% endif %}
+                {% assign last_post_year = node.date | date: "%Y" %}
               {% endfor %}
             </ul>
           </li>
@@ -38,26 +44,50 @@
           <div class="vspacer"></div>
           <li><a href="/about">About Me</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects&hellip;<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tech Projects <span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li><h4>Ruby</h4></li>
+              <li><a target="_blank" href="https://github.com/kigster/laser-cutter"><code>Laser-Cutter</code> generate a PDF cut-template for box enclosures</a></li>
+              <li><a target="_blank" href="https://github.com/kigster/warp-dir"><code>Warp-Dir</code> bookmark folders and jump between them</a></li>
+              <li><a target="_blank" href="https://github.com/kigster/ventable"><code>Ventable</code> Observer design pattern with a twist</a></li>
+              <li role="separator" class="divider"></li>
+              <li><h4>C/C++/Objective-C</h4></li>
+              <li><a target="_blank" href="https://github.com/kigster/librgb"><code>librgb</code> simple RGB color manipulation lib</a></li>
+              <li><a target="_blank" href="https://github.com/kigster/kigomoku-ios"><code>Gomoku</code> game for iOS</a></li>
+              <li role="separator" class="divider"></li>
+              <li><h4>Arduino/Hardware</h4></li>
+              <li><a target="_blank" href="https://github.com/kigster/back-seat-driver"><code>Back-seat Driver</code> motor control library for Arduino</a></li>
+              <li><a target="_blank" href="https://github.com/kigster/flix-capacitor"><code>FlixCapacitor</code> music box with photos and lights</a></li>
+              <li><a target="_blank" href="https://github.com/kigster/auto-dimming-clock"><code>Auto-Dimming Clock</code> bedside clock smart enough to auto-dim</a></li>
               <li><a target="_blank" href="https://plus.google.com/+KonstantinGredeskoul/posts/p/pub?fd=1&hl=en" target="_blank">Maker Projects
                 <img src="https://ssl.gstatic.com/images/icons/gplus-64.png" id="google-plus-icon" class="external-service-logo"></a>
               </li>
-              <li><a target="_blank" href="https://soundcloud.com/polygroovers" target="_blank">Original Music &mdash; as "PolyGroovers"</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/leftctrl" target="_blank">DJ Mixes &mdash; as "DJ LeftCtrl"</a></li>
               <li role="separator" class="divider"></li>
-              <li><a target="_blank" href="https://github.com/kigster/warp-dir">Warp-Dir (ruby/bash) &mdash; bookmark folders and jump between them</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/ventable">Ventable (ruby) &mdash; eventing design pattern</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/pullulant">Pullulant (bash) &mdash; modular install of dev-environment on OS-X</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/laser-cutter">Laser-Cutter (ruby) &mdash; generate PDF of enclosures for laser cutter</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/librgb">librgb (C++) &mdash; simple RGB color manipulation lib</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/kigomoku-ios">Gomoku (Objective-C) &mdash; game of Gomoku for iOS</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/flix-capacitor">FlixCapacitor (Arduino/C++) &mdash; music box with photos and lights</a></li>
-              <li><a target="_blank" href="https://github.com/kigster/auto-dimming-clock">Auto-Dimming Clock (Arduino/C++) &mdash; bedside clock smart enough to auto-dim</a></li>
+              <li><h4>BASH</h4></li>
+              <li><a target="_blank" href="https://github.com/kigster/pullulant"><code>Pullulant</code> modular install of dev-environment on OS-X</a></li>
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links&hellip;<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Music <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><h4>Original Music &mdash; as "PolyGroovers"</h4></li>
+              <li><p class="intro">All originally composed, produced and recorded electronica, classified as "downtempo", with frequent female vocals, poly-rhythms, phat basslines and latin-inspired grooves.</li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/the-best-of-polygroovers"         target="_blank"><code>2016</code> The Best Of PolyGroovers</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/ticks-and-trips-2009"             target="_blank"><code>2009</code> Ticks and Trips</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/moods-for-take-out-2006"          target="_blank"><code>2006</code> Moods for Take Out</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/polyvinyl-inward-journeys-2001"   target="_blank"><code>2001</code> Inward Journeys</a></li>
+              <li role="separator" class="divider"></li>
+              <li><h4>DJ Mixes &mdash; as "DJ LeftCtrl"</h4></li>
+              <li><p class="intro">Most recent sets from a DJ who started spinning records in 1998 in San Francisco. Having played techno and trance back then, LeftCtrl spins mostly house – deep, electro-swing, funky, tech and progressive.</li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/leftctrl-time-travelers-2016"              target="_blank"><code>2016</code> <code> Deep House</code> Time Travellers</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/leftctrl-live-frolic-campout-2015-yokayo-ranch"
+                                                                                                                      target="_blank"><code>2015</code> <code> Deep House</code> Live @ Frolic Campout</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/swingophrenia-oh-forty"                    target="_blank"><code>2014</code> <code> Swing House</code> Swingophrenia-Oh-Forty!</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/packit-sunset-tagteam-sessions"            target="_blank"><code>2013</code> <code> Deep House</code> Packit Sunset Tagteam Sessions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a target="_blank" href="https://linkedin.com/in/kigster" >@kigster on LinkedIn</a></li>
               <li><a target="_blank" href="https://github.com/kigster" >@kigster on Github</a></li>
@@ -78,20 +108,6 @@
           </fieldset>
         </form>
         <div class="vspacer"></div>
-
-
-        {% if page.show_twitter %}
-        <div class="tweets">
-          <a class="twitter-timeline"
-            data-chrome="noheader nofooter noborders noscrollbar transparent"
-            data-dnt="true"
-            width="100%"
-            href="https://twitter.com/kig"
-            data-widget-id="673740947461566464">Tweets by @kig
-          </a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-        {% endif %}
 
       </div><!-- /.navbar-collapse -->
   </nav>
