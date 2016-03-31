@@ -3,20 +3,9 @@
 
   {% include head.html %}
 
-  <!-- This color scheme is borrowed from the pallet "Let Them Eat Cake"
-       by the gorgeous lunalein
-       http://www.colourlovers.com/palette/49963/let_them_eat_cake
-   -->
   <body class="theme-ltec">
     <div class="container-fluid">
-      <!-- {% unless page.sidebar %}
-        {% capture sidebar_file %}sidebar-top.html{% endcapture %}
-      {% else %}
-        {% capture sidebar_file %}sidebar-{{ page.sidebar }}.html{% endcapture %}
-      {% endunless %} -->
-      {% capture sidebar_file %}sidebar-side-dropdown.html{% endcapture %}
-      {% include {{sidebar_file}} %}
-
+      {% include nav-sidebar.html %}
     </div>
 
     <p class="about-footer">All original material &copy; {{ site.time | date: '%Y' }} by Konstantin Gredeskoul, all rights reserved.</p>
