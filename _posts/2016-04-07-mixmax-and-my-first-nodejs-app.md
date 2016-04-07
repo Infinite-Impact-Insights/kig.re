@@ -37,7 +37,7 @@ I embarked on an adventure of building a simple link resolver for [Wanelo](https
 the fantastic product discovery site, and a social network where I worked until
 pretty recently.
 
-### Using an IDE
+## Using an IDE
 
 I will admit that I am a big sucker for [JetBrains](http://jetbrains.net) series
 of IDEs. Having learned one (the Java IDE [JetBrains IDEA](https://www.jetbrains.com/idea/)
@@ -50,7 +50,7 @@ I love them so much that I recently purchased a two-year long [All Products Pack
 all of their IDEs! It's actually a pretty damn amazing deal. And no, I do not
 receive commissions from JetBrains, I am simply a very enthusiastic user.
 
-#### WebStorm
+### WebStorm
 
 The IDE for building JavaScript and node applications is [WebStorm](https://www.jetbrains.com/webstorm/).
 
@@ -61,3 +61,26 @@ try to comprehend just how much is going on there on my screen, all within the
 confines of my development environment.
 
 {% lightbox_image { "url" : "/images/mixmax/webstorm-mixmax-resolver.png",  "title": "WebStorm IDE with MixMax project loaded", "group":"mixmax" } %}
+
+## Project 'wanelo-mixmax-link-resolver'
+
+To cut the long story pretty damn short, [I built a small project](https://github.com/kigster/wanelo-mixmax-link-resolver)
+to resolve Wanelo product URLs into a small widget that looks like this:
+
+{% lightbox_image { "url" : "/images/mixmax/mixmax-wanelo-preview.png",  "title": "Preview of the Widget I built", "group":"mixmax" } %}
+
+Along the way I had to figure out how to
+
+  * actually organize code in a Node.JS projec
+  * how to add runtime and development dependencies
+  * how to setup automated unit testing
+  * and how to deploy it all on Heroku.
+
+I will add all these details in a follow-up blog post, but for the time being,
+[please checkout the GitHub Repo](https://github.com/kigster/wanelo-mixmax-link-resolver) – note that it contains instructions, should
+you choose to install this resolver for yourself.
+
+
+Thanks for reading!
+
+/signoff
