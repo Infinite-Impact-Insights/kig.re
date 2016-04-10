@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 'MixMax your email like a Pro'
+draft: true
 ---
 
 ## MixMax
