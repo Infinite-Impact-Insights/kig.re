@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'MixMax link resolvers, and my first node.js application'
+title: 'MixMax your email like a Pro'
 ---
 
 ## MixMax
@@ -13,20 +13,59 @@ A few days ago I was blown away but what a (still) little-known startup called [
 nothing short of revolutionizing it! If you haven't see it yet, do check it out, especially if you often find yourself scheduling
 meetings or lunches over email, asking for feedback, conducting polls or sharing rich media with others.
 
-MixMax "decorates" (a software term for "enhances") standard Gmail functionality with a lot of goodies, which are accessible from
-both the GUI as well as via the "slash" commands, like is often seen in infamous [IRC](http://www.irc.org) clients (which, perhaps, pioneered this approach), or a more recent app [Slack](https://slack.com), or any multi-player online video game. Slashes are just the way of commanding the computer, and we are pretty used to that.
+MixMax enhances, enriches, extends (EEE!) the standard Gmail functionality with a lot of goodies, accessible from
+both the GUI as well as via the "slash" commands while composing an email.
+
+> Slash commands have been used for a very long time, to send "commands", like in age-old [IRC](http://www.irc.org), as well as the much more recent app [Slack](https://slack.com), or even, any multi-player online video games.
 
 
 {{site.data.macros.continue}}
 
 
-<div class="small-right">
-{% lightbox_image { "url" : "/images/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
-</div>
 
 So imagine my joy, when I realized that with a simple `/cal` I can now insert a few
 available time slot options in my email, and request the recipient to choose one.
 Once they do, the event is inserted into my calendar right away. This is magic!
+
+## Features
+
+<div class="small-right">
+{% lightbox_image { "url" : "/images/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
+</div>
+
+
+I haven't gone through an exhaustive list of the features MixMax offers at this time,
+but a few stand out and are certainly going to be in my daily use.
+
+### Calendar Integration
+`/cal`
+
+Like I said – my favorite feature at the moment. I love how easy it is to pick the time slot, and how you can integrate with your calendar.
+
+### Formatted Code
+
+<div class="small-right">
+{% lightbox_image { "url" : "/images/mixmax/mixmax-code-blocks.png",  "title": "MixMax Code Blocks", "group":"mixmax" } %}
+</div>
+
+Another awesome feature – how often have I gone to GitHub to create a temporary gist just to provide syntax highlighting in my emails? Not every day (thank god!) but quite often.
+
+Just type `/code` and you can pick from a bunch of languages and themes.  What's great, is that they didn't skimp this feature – both language and theme are remembered for the next time. Nice work!
+
+### Groups
+
+There are several very useful features for dealing with groups of folks. I've listed some of them here, but I've only tried the poll and yes/no.
+
+ * Yes/No (with an optional Maybe) are inserted into your email
+ * You create a poll, and the recipients vote
+ * Group scheduling / planning.
+ * Email open tracking
+
+ My one complaint with yes/no functionality, is that when someone clicks on the response, you simply get an email.  I would have loved to see a summarized results view, perhaps I am thinking of this more like a poll. Me receiving automatic emails is good for my group (less typing), but I still have to sort through a ton of email.
+
+## Limitations and Feature Requests
+
+Right now MixMax connects to one gmail account, so if you are using multiple, you'll need to setup and connect two separate MixMax accounts. Not a huge deal, but maybe it would been nicer to have a single "umbrella" account there, that can see all of your email accounts.
 
 ## Extending MixMax
 
