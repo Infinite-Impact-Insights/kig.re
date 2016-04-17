@@ -58,4 +58,3 @@ details.
 
 This is a better "short" introduction than Arduino, and uses JavaScript (since BeagleBone now comes with Cloud9 + node.js).
 I read about a half, since I am not currently working on BeagleBone yet, I am waiting for another moment.
-

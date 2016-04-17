@@ -19,11 +19,7 @@ JetBrain's [RubyMine](http://www.jetbrains.com/ruby/), [AppCode](http://www.jetb
 open source (but originally IBM's) [Eclipse](https://www.eclipse.org/), and not to
 mention Apple's [XCode](https://developer.apple.com/xcode/).
 
-
-
 {{site.data.macros.continue}}
-
-
 
 ![Arduino IDE](/images/ide-arduino-arduino.jpg)
 
@@ -183,49 +179,3 @@ and discuss using Eclipse for it's development in more details.
 I leave you with this beautiful screenshot of the Eclipse open with my library work in progress....
 
 ![Eclipse IDE (Luna) with C/C++ and Arduino Plugin](/images/ide-arduino-eclipse.jpg)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

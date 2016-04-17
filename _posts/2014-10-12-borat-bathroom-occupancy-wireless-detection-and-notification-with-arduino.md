@@ -17,8 +17,7 @@ Given my foray into Arduino over the last few months, I knew I could come up wit
 </div>
 <br />
 
->The problem was very simple: __people needed to know when each bathroom was occupied, or not__.  Just like on an airplane you can see bathroom light on/off, I wanted something similar for our two bathrooms. Something everyone could see.
-
+> The problem was very simple: __people needed to know when each bathroom was occupied, or not__.  Just like on an airplane you can see bathroom light on/off, I wanted something similar for our two bathrooms. Something everyone could see.
 
 {{site.data.macros.continue}}
 ___
@@ -283,11 +282,3 @@ Also – please leave comments, feedback, and suggestions. All of those nice thi
 <p>Thanks for reading,<br />
 –– Konstantin.
 </p>
-
-
-
-
-
-
-
-
