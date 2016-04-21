@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 'Reach discoverability and high availability this afternoon despite your containers trying to bring you down...'
+draft: true
 ---
 
 #### (aka. the lightning talk I did NOT give at the ContainerCamp)
@@ -60,7 +61,7 @@ Also, together the above problems can be summed up quite simply. We are concerne
 
 The issue of failing hardware, especially in a large cloud deployment, is so ubiquitous that Netflix even popularized it. The __Netflix Mantra__ encourages us to expect and anticipate failures at every level, and to practice recovery. See [ChaosMonkey](https://en.wikipedia.org/wiki/Chaos_Monkey), aka [Simian Army](https://github.com/Netflix/SimianArmy).
 
-It's nearly the same as, 
+It's nearly the same as,
 
 > The __Konstantin's Model__: Which states that any SRE of any kind is completely justified to ignore all alerts between 1am and 7am in the morning because sleep is just too important for your health.
 
