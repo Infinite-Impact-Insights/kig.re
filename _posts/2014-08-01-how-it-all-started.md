@@ -49,4 +49,3 @@ Perhaps you are too?
 <blockquote>
 Friday, August 1st, 2014, –– Konstantin.
 </blockquote>
-

@@ -9,7 +9,9 @@
               col-md-3
               col-lg-2
               ">
-              {% include nav-sidebar-content.html %}
+              {% unless page.sidebar == 'hidden' %}
+                {% include nav-sidebar-content.html %}
+              {% endunless %}
   </div>
   <div class="col-sm-7 col-sm-offset-0
               col-md-7 col-md-offset-0
