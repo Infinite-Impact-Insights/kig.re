@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-git reset --hard 
+project_home=$(dirname $0)
+cd $project_home && pwd
+git reset --hard
 git pull --rebase
 bundle
 bundle exec jekyll build
-chmod -R 755 .
-
+find . -type d -exec chmod 755 {} \;
+find . -type f -exec chmod o+r {} \;
+cd -
