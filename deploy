@@ -2,6 +2,7 @@
 
 project_home=$(dirname $0)
 cd $project_home && pwd
+eval "$(rbenv init .)"
 git reset --hard
 git pull --rebase
 bundle
