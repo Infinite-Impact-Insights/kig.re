@@ -12,7 +12,6 @@ module Jekyll
         "#{@text} #{Time.now}"
       end
     end
-
     class MacroTag < Liquid::Tag
       MACROS = {
         continue: %Q{<a href="#" name="continue"></a>},

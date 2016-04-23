@@ -1,39 +1,14 @@
 ---
 layout: page
-title: 'Reach discoverability and high availability this afternoon despite your containers trying to bring you down...'
+title: 'Service Discovery, High Availability, and Fault Tolerance – This Afternoon'
 draft: true
 ---
 
-#### (aka. the lightning talk I did NOT give at the ContainerCamp)
+Maybe you are running one or more distributed multi-part, a.k.a. micro-services applications in production. Good for you!
 
-> 5 minutes read.
+<img src="/images/haproxy/microservices-hell.png" class="clear-image"/>
 
-This is an extended version of the talk I wanted to give as a Lightning Talk here at ContainerCamp SF, but unfortunately the rules by which this game was played precluded me from doing so in favor of a yet another PaaS software pitch. So here I present you the "what would have been a much shorter talk" as a short length blog post.
-
-{{site.data.macros.continue}}
-
-
-###  Me:
-
- * I am a software developer, deployer, and an operator of large distributed web-ish applications (20+yrs).
-
- * Recent hardware hobbyist, and an arduinoist (or, "dunist" not to be confused with it's anagram)
-
- * An architect, thought leader, CTO – most recently at Wanelo.com: ruby stack, traffic peaking at 10K reqs/sec, hosted on Joyent/SmartOS, automated with Chef, 99.98% uptime over 3.5 years.
-
- * A founder of a hardware startup [ReinventONE](http://reinvent.one), hoping to help you save time during your bathroom breaks.
-
-	* blog: [kig.re](http://kig.re)
-	* company: [reinvent.one/pitch/](http://reinvent.one/pitch/)
-	* [@kig](http://twitter.com/kig) on Twitter, user id 338
-	* [@kigster](http://github.com/kigster) on Github
-	* [@kigster](http://linked.com/in/kigster) on LinkedIn
-
-### You:
-
-Maybe you are running one or more distributed multi-part (micro-services) applications in production.
-
-Perhaps you are struggling with _high availability_, such as tolerating hardware outages, rebooting servers, etc.
+Perhaps you are struggling with _high availability_, such as tolerating hardware outages, maybe when your cloud provider is  rebooting servers, etc.
 
 Perhaps you may be seeing an error known as __"too many clients"__, or __"max connections reached"__, or __"what, you think you really need another one!!??"__ – coming from one or more of your services (or your coffee shop barista)...
 
@@ -47,39 +22,50 @@ Or maybe, within your micro-services architecture, you are struggling with servi
 * your message bus
 * cat feeder
 
-### Together
+
+### You and Me
 
 We have a lot in common.
 
-I too wanted a solution to all of the above, but I wanted the solution _yesterday_ – because I am impatient, and I needed it to be _cheap_ – because startup, _simple to understand and manager_  – because small team, _reliable_  –because what is the worth of a reliability tool that's unreliable itself? Would that be like a snake eating it's own head? Yeeeck!
+I too wanted a solution to all of the above, but I wanted the solution _yesterday_ – because I am impatient, and I needed it to be _cheap_ – because startup, _simple to understand and manage_  – because tiny team, _reliable_  – because sleep!
 
-Also, together the above problems can be summed up quite simply. We are concerned and want to improve the state of:
+Also, together the above problems can be summed up quite simply. We sincerely want to improve the state of:
 
-1. hardware (or server) failure tolerance
-2. too many clients problem
-3. service discovery problem, ie – every component must know about the other.
+1. _hardware (or server) failure tolerance_, such as, for example – instances bouncing up and down
+2. _too many clients problem_ – when the share number of connections overwhelm the underlying service
+3. _service discovery_, i.e. – how do we move routing information (read: every single IP address) __out of our application configuration__?
 
-The issue of failing hardware, especially in a large cloud deployment, is so ubiquitous that Netflix even popularized it. The __Netflix Mantra__ encourages us to expect and anticipate failures at every level, and to practice recovery. See [ChaosMonkey](https://en.wikipedia.org/wiki/Chaos_Monkey), aka [Simian Army](https://github.com/Netflix/SimianArmy).
+The issue of failing hardware, especially in a large cloud deployment, is so ubiquitous that Netflix even wrote a tool to simulate it. The __Netflix Mantra__ encourages us to expect and anticipate failures at every level, and to practice swift recovery. See [ChaosMonkey](https://en.wikipedia.org/wiki/Chaos_Monkey), aka [Simian Army](https://github.com/Netflix/SimianArmy).
 
-It's nearly the same as,
+Whether this is your motivation, or if you, like me, feel that any self-respecting SRE (site reliability engineer) should take care of their (mental) health first, and that means – zero alerts at night, most of the time, all the time.
 
-> The __Konstantin's Model__: Which states that any SRE of any kind is completely justified to ignore all alerts between 1am and 7am in the morning because sleep is just too important for your health.
+# So, how do we get there?
 
-Ok, fine, don't get me wrong, I do care about the application, and of course I will get up at night when there is a real problem requiring my attention. But this last sentence, is where things can get complex.
+But before we discuss the solution, I'd like to pose it to you that there are three important questions that need to be formulated for any of this to make sense:
 
-There are three questions that need to be defined for any of this to make sense:
+ 1. What is a _real problem_ worth waking up for at night, and how is it different from a problem that can wait until the morning?
+ 2. How do I get alerted (at night) only about the "real problem", but not be spammed by the other less important ones?
+ 3. Is there such as thing, as an "ignorable problem"?
 
- 1. What is a "real problem" and how is it different from an "ignorable problem"?'
- 2. How do I discover in real time about the "real problem", but not be bugged about the others?
- 3. How can there be an "ignorable problem"?
+Below, I offer to you my answers. As with everything, your mileage may vary. Very.
 
-Below, I offer to you my answers. As with everything, your answers may differ.
+## Defining the Real Problem
 
-### Defining the Real Problem
+In my mind
 
-In my mind the **real problem** can almost always be defined as a _rapid change in one or more critical business metrics_.  What business metrics?
+> The _real problem_ can almost always be defined as a rapid change (often downward) in at least one critical business metric.
 
-On any application with an uptime requirement I would want to track, in real time, bunsiness metrics such as a rate of sales per second, rate of new user registrations, commenting, etc. If I was building another __Twitter__, it would be the rate of tweets coming in, __Wanelo__ – saves, __Pinterest__ - pins.  A good way to think about primary critical metrics for your business is in terms of some of the most valuable __write__ operation (on your datastore) that users perform on your site/app/platform.
+#### What business metric?
+
+On any application with an uptime requirement I would want to track, in real time, key business metrics that represent the "heartbeat" of the business: such as a the rate of sales per second, rate of new user registrations, rate of saving a product (Wanelo) or pinning a pin (Pinterest), or tweeting a tweat (Twitter) or submitting a post (Tumblr), or committing the code (Github), the list goes on.
+
+Give me a company name I am familiar with, and I can guarantee you that both you and I can instantly write down 2-3 definitive metrics, that _if the metrics stay at the expected value_ chances are the underlying software is functioning __good enough__ to support these critical functions.
+
+A good way to think about the primary critical metrics for your business is in terms of some of the most valuable __write__ operation – in computer terms –  that users perform on your site/app/platform.  Why? Most businesses are defined by data they collect.  Take away that data and the business may need to start from scratch or fold. Read operations don't seem to have the same critical impact on the business, although they sure affect the end users.
+
+Ultimately, both read and write metrics are important, but what is most important is that they are tracked in near-real time, shown on the dashboards.
+
+> But what's most important, is that your Severity 1 Alerts are based on the critical metrics rapidly changing for the worse, and nothing else.
 
 ### Detecting the Real Problem
 
@@ -91,42 +77,39 @@ If you are not sure how you could add this functionality, I would point you in t
 
 If you've been building websites with Rails, it is very likely that you have __not__ seen this pattern closely in action, and may not realize why you even need it.
 
-In fact, what is true is that every web application is necessarily an [Event Based System](https://en.wikipedia.org/wiki/Event_(computing) that generates and consumes events, including the critical  business metrics that we care about. It is just that events are not universally implemented as such in software.
+In fact, what is true is that every web application is necessarily an [Event Based System](https://en.wikipedia.org/wiki/Event_(computing) that generates and consumes events, including the critical  business metrics that we care about. It is just that events are not universally implemented [as they ought to be in software](http://www.martinfowler.com/eaaDev/EventSourcing.html).
 
-But doing so offers great many benefits. When we just started building the new [Wanelo](https://wanelo.com), I knew early on that I had to buckle down and create a basis for our future eventing model before much of the business logic had been written in an _eventless_ manner.  The result of that effort is the open source ruby library [Ventable](https://github.com/kigster/ventable), and a related [blog post](http://building.wanelo.com/2013/08/05/detangling-business-logic-in-rails-apps-with-poro-events-and-observers.html).
+But doing so offers great many benefits. When we started building the new [Wanelo](https://wanelo.com), I knew early on that I had to buckle down and create the basis for our future eventing model before much of the business logic had been written in an __eventless__ manner.  The result of that effort is the open source ruby library [Ventable](https://github.com/kigster/ventable), and a related [blog post](/2013/08/05/detangling-business-logic-in-rails-apps-with-poro-events-and-observers.html).
 
-This can be typically very easily implemented into an application by do
+This can be typically very easily implemented into an application by do as can be measured by detecting that a *derivative* function of said metric is a negative constant. Value lower than -3 or -4 represents a __very steep decline__ in the business metric. In summary:
 
-as can be measured by detecting that a *derivative* function of said metric is a negative constant. Value lower than -3 or -4 represents a __very steep decline__ in the business metric.
+> Real time data collection of critical business metrics is easier in systems that natively implement and handle events, and dispatch them to the interested parties, including real-time data collection and monitoring systems.
 
+One such third-party software that I really like using is [Circonus](https://circonus.com/).
 
-##  The Answer.
+# The Solution
 
-If you are thinking "Docker", without offending anyone, I'd like to compare Docker with the financial products of early 2008 – namely, real eastate securities. What could possibly go wrong with these shiny new products that everyone is buying?
+If you are thinking "Docker" because that's what everyone is saying, I would like to politely remind you what people were saying in early 2008 – namely that Lehman Brothers can not fail. Any time you have mass mania, it is bound to have an explosive ending.
 
-In fact, Docker only makes this problem worse: we have MORE hosts, except now they are virtual hosts, which are all runnin services and data stores in containers, because everything is now containerized, and can run side by side another container just like those "lego blocks" on the cargo train. Or at least that's the dream :)
+In fact, Docker only makes this problem worse: we have MORE virtual hosts, which are all running services, databases and caches in containers, because everything is now containerized, and can run side by side another container just like those "lego blocks" on the cargo train. Or at least that's the dream :)
 
-But – __I really shouldn't be beating on Docker,__ – it's a good technology. I just have a strong allergy to mass obsessions. But I digress.
+__I really shouldn't be beating on Docker,__ – it's a good technology. I just have a strong allergy to mass manias and obsessions. But I digress.
 
-#### How did I arrive at this answer?
-
-There are likely many answers to this problem, some new and some just up and coming, some older and more mature, some proprietary, and some open source.  But what I am talking about it something I, as a developer, did not have in very high regard for a long time, but something that grew on me during my days at [ModCloth](https://modcloth.com) and [Wanelo](https://wanelo.com), and now I can not live without it.
+What I am talking about, is something I, as a developer, did not have in very high regard for a longest time, but something that grew on rapidly me during my days at [ModCloth](https://modcloth.com) and [Wanelo](https://wanelo.com), and now I can not live without it.
 
 It is a simple thing, known as .... (drumroll....)....
 
-# The answer to life, universe and everything – Proxy.
+### The answer to life, universe and everything....
 
-In case you were wondering, it's – the boring old chap – proxy.
+> A Proxy
 
-> "...Proxy husband, proxy wife, proxy father, proxy life. " –– IT Folk Song.
+Yes, the panacea is an old friend from the old days. Except it's younger than ever.
 
-Proxies are easy, reliable, easy to setup and run, and they solve all of the above! Holy sh... mokes, REALLY!??!
+So how can I claim that a simple proxy can solve all of the above?
 
-#### HAPROXY
+Let's start with the actual software: _HAProxy is a HTTP/HTTPS/TCP proxy and connection pooling_ software that is built on top of `libevent`, typically runs in a single process and is incredibly efficient. It is also some of the best software ever written in C. Seriously!
 
-HAProxy is a HTTP/HTTPS/TCP proxy and connection pooling software that is built on top of `libevent`, typically runs in a single process and is incredibly efficient.
-
-It is also some of the best software ever written in C. Seriously! At the RubyConf Australia conference I recommended that you put haproxy in front of your MOM. Let me clarify this point – it was mainly so that your MOM can failover to another you in case you are too busy :)
+At the RubyConf Australia conference I [recommended that you put `haproxy` in front of your MOM](https://rubyconf.eventer.com/rubyconf-australia-2015-1223/devops-without-the-ops-a-fallacy-a-dream-or-both-by-konstantin-gredeskoul-1724). Let me clarify this point – it was mainly so that your MOM can failover to another you (or your sibling) in case you are too busy :)  It's not so that you have two moms. Or is it?
 
 `haproxy` Does the following:
 
@@ -136,49 +119,34 @@ It is also some of the best software ever written in C. Seriously! At the RubyCo
 
  * use in HTTP mode, or TCP mode – to failover redis, memcached, postgresql, etc.
 
+`pgBouncer`
 
-#### pgBouncer
+ * This one is a specialized proxy, meant to be used with PostgreSQL database, and this thing rocks!
+ * We chose _transaction_ mode, and were able to reduce the number of connections from our application by a factor of 10 without any noticeable latency added.
 
-This thing rocks! We chose `transaction` mode, and were able to reduce # of connections from our application by a factor of x10 without any noticeable latency added.
+`Twemproxy`
 
-#### Twemproxy
+ * Redis / Memcached connection pooling proxy with automatic key-based sharding implemented.
+ * We sharded our redis cluster into 256 redis nodes, and application talked to it through haproxy first, then six twemproxy servers, talking to the actual redis servers.
+ * Need to failover to another Redis? Haproxy does that – switches to another twemproxy cluster or port.
 
-Redis / Memcached connection pooling proxy with automatic key-based sharding implemented. We sharded our redis cluster into 256 redis nodes, and application talked to it through haproxy first, then six twemproxy servers, , behind 6 twemproxy "balancers",
 
-### Some Examples
+So how do we solve each problem we listed upfront?
 
-```bash
-app server ⇢ haproxy ──── twemproxy ──── redis-server
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-app server ⇢ haproxy ──── twemproxy ────    memcached
+## High availability
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<img src="/images/haproxy/haproxy-frontend.png" class="clear-image"/>
 
-app server ⇢ haproxy ─────────────────── micro-service
+## Fault Tolerance
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<img src="/images/haproxy/haproxy-backend.png" class="clear-image"/>
 
-nginx ⇢ haproxy  ────────────────────────   app server
+## Service Discovery or Routing Encapsulation
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-app server ⇢ haproxy  ────────── search 1 | provider 2
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-app server ⇢ pgBouncer  ─────────────────── postgresql
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-app server ⇢ pgBouncer  ────── pgBouncer ⇢ postgresql
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-app server ⇢ haproxy ────────  pgBouncer ⇢ postgresql
-```
+<img src="/images/haproxy/haproxy-router.png" class="clear-image"/>
 
 ## Conclusion
 
-My strong recommendation is to invest into building haproxy into your application stay, to serve as a "glue" or as a high-availability router.
+My strong recommendation is to invest into building haproxy into your application stay, to serve as a "glue" or as a high-availability router. If you are using PostgreSQL you will do yourself a favor if you start using pgBouncer running on your application servers, so that you can collapse the crazy number of database connections that Rails likes to create into a much more reasonable set. Similarly, with Twemproxy – it's a fantastic piece of software that, in addition, will allow you to shard your redis or memcached backend by key.
