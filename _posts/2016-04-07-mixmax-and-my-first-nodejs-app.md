@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 'MixMax your email like a Pro'
-draft: true
 ---
 
 ## MixMax
@@ -21,7 +20,6 @@ both the GUI as well as via the "slash" commands while composing an email.
 
 
 {{site.data.macros.continue}}
-
 
 
 So imagine my joy, when I realized that with a simple `/cal` I can now insert a few
@@ -119,7 +117,6 @@ Along the way I had to figure out how to
 I will add all these details in a follow-up blog post, but for the time being,
 [please checkout the GitHub Repo](https://github.com/kigster/wanelo-mixmax-link-resolver) – note that it contains instructions, should
 you choose to install this resolver for yourself.
-
 
 Thanks for reading!
 
