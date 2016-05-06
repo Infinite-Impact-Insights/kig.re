@@ -140,7 +140,14 @@ html {
 }
 
 body.theme-ltec {
-
+  
+  .lb-container {
+    padding: 0;
+    img.lb-image { 
+      border-width: 0;
+      box-shadow: 0 0 0;
+    }
+  }
 
   em {
     color: $primary-fg + 80;
