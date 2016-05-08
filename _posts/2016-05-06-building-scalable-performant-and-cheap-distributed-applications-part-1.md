@@ -4,15 +4,15 @@ title: 'Building Modern Web Apps — Six Key Points to avoid DevOops'
 tags:
 ---
 
-With this post, I'd like to begin a series of __DevOps__-related conversations about building distributed applications (read: common web-apps). I'd love to cover topics that are not only on my mind, but are also being asked on forums, during local meetups, at conferences, where I exchange tips with folks running applications of all sizes across multiple clouds, different technologies, but often feeling the same problems. I met dev-ops engineers running successful and profitable businesses, who are seriously confused and completely overwhelmed by the new tools coming out every week.
+With this post, I'd like to begin a series of __DevOps__-related conversations about building distributed applications (read: common web-apps). I'd love to cover topics that are not only on my mind, but are also being asked on forums, during local meetups, at conferences, where I exchange tips with folks running applications of all sizes, and across multiple clouds. We all use different technologies, but are often bumping into the same problems. I met dev-ops engineers running successful and profitable businesses, who are seriously confused and completely overwhelmed by the new tools coming out, seemingly every week.
 
-Then there is another group – the preachers – aka "early adopters" – who are proud to have found a panacea that solves all worlds problems, and preach it to everyone.
+Then there is another group – the preachers – aka the "early adopters" – who are proud to have found a panacea that solves all worlds problems, and preach it to everyone. Perhaps "Docker" comes to mind.
 
 And some folks are just starting, and those are the most overwhelmed bunch. And I don't blame them!
 
 > We've created a maze! Some call it "Micro Services Hell™"
 
-So which group do I belong? Well, the thing is – that I am a skeptical outsider. I try things on, see if they fit, and use what I like. And I am both overwhelmed, and excited about what lies ahead. Humans are great at classifying a ton of complexity, and that is exactly what I plan on doing here.
+So which group do I, Konstantin, personally belong? Funny you should ask. The thing is – I am a __skeptical outsider__, and always have been. I try things on, see if they fit, and use what I like. And I am also a bit overwhelmed, and very excited about what lies ahead. Humans are great at classifying a ton of complexity, and that is exactly what I plan on doing here. Because complete mayhem.
 
 <a href="/images/haproxy/microservices-hell.png" data-lightbox="devoops1" data-title="Example Distributed Architecture Hell">
 <div class="full"><img src="/images/haproxy/microservices-hell.png" class="clear-image"/></div></a>
