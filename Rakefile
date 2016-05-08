@@ -20,6 +20,11 @@ namespace :jekyll do
   task :preview => [ :browser, :serve ]
 end
 
+desc 'Deploy the HEAD to production'
+task :deploy do
+  sh 'ssh kig@kig.re -t -- bash -l -c /home/kig/workspace/kiguino.github.io/deploy'
+end
+
 def s title
   puts "\n#{title.upcase.yellow.bold}\n"
 end
