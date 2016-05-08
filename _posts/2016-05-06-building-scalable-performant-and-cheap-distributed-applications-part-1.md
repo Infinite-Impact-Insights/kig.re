@@ -1,25 +1,47 @@
 ---
 layout: page
-title: 'DevOops Series Part I: Key Principles of Modern Distributed Applications.'
+title: 'Building Modern Web Apps — Six Key Points to avoid DevOops'
+tags:
 ---
 
-Hi. With this post, I'd like to start a series of __DevOps__ related conversations covering topics that are not only on my mind but are also being asked by people I meet, running applications of all sizes across multiple clouds, all different technologies.
+With this post, I'd like to begin a series of __DevOps__-related conversations about building distributed applications (read: common web-apps). I'd love to cover topics that are not only on my mind, but are also being asked on forums, during local meetups, at conferences, where I exchange tips with folks running applications of all sizes across multiple clouds, different technologies, but often feeling the same problems. I met dev-ops engineers running successful and profitable businesses, who are seriously confused and completely overwhelmed by the new tools coming out every week.
+
+Then there is another group – the preachers – aka "early adopters" – who are proud to have found a panacea that solves all worlds problems, and preach it to everyone.
+
+And some folks are just starting, and those are the most overwhelmed bunch. And I don't blame them!
+
+> We've created a maze! Some call it "Micro Services Hell™"
+
+So which group do I belong? Well, the thing is – that I am a skeptical outsider. I try things on, see if they fit, and use what I like. And I am both overwhelmed, and excited about what lies ahead. Humans are great at classifying a ton of complexity, and that is exactly what I plan on doing here.
 
 <a href="/images/haproxy/microservices-hell.png" data-lightbox="devoops1" data-title="Example Distributed Architecture Hell">
 <div class="full"><img src="/images/haproxy/microservices-hell.png" class="clear-image"/></div></a>
 
-In this post we'll explore –
+As can be see from the (fictional), but multi-color diagram above, building todays application requires connecting things to other things in many different ways. This requires things to know about other things, to be able to talk to them, and listen. Just like people. We would be worthless without these basic properties.
 
-# Building Highly Available, Scalable & Performant Applications On The Cheap
+> And yet, too often when a new application is conceived, broken down to the features, stories, mockups – we often forget to define the fundamental assumptions of our problem domain. Unfortunately, this deprives the collective brain of product development of the highly critical information. Information that typically informs software design decisions, systems architecture decisions, application cost, and not to mention — hiring.
 
-We start with a bit of history.
+While I do not propose that every entrepreneur immediately freak out and run in circles while thinking about high availability of yet-to-be-built applications, I merely suggest that __having a conversation__ about these topics early on is fantastic.  Because while creating innovation is intoxicating, eventually everyone wants that innovation to run smoothly, grow smoothly, and be there for you to use whenever you need it.
+
 
 
 {{site.data.macros.continue}}
 
+When applications like Chef, Puppet and Ansible came to rescue when it comes to configuring servers, we finally reached a point of full automation (well, maybe not all of us, but some did). And now Docker and light-weight containers, [ability to run the on bare metal](https://www.joyent.com/blog/how-to-dockerize-a-complete-application) – all of this is changing so rapidly. What to use? What to apply? What are the best practices? Oh, these are already __yesterday's best practices?__ Well, who has the ones that will still be *best* tomorrow?
+
+____
+
+I want to start this series to document the key tenets of applications that do not change whether or not you are running on Docker or AWS or in Mike's garage. And yet we often forget to address these big questions early on.  Let's dig into this, and once we address "cross-cutting" concerns of distributed applications, we will turn to the tools we have at our disposal – in the following chapters of the "DevOops" blog series.
+
+Let's begin! In this post we'll explore –
+
+# Building Highly Available, Scalable & Performant Distributed (Web-) Applications
+
+I start with a bit of a personal history.
+
 ## Down Under, But Above the Ground
 
-I started building distributed applications in 1996 when I was placed as a junior contractor in the operations group managing a very large-scale project. The goal was to rebuild the entire messaging and cargo tracking software for the Australian Railway Corporation named aptly [National Rail Corporation](https://en.wikipedia.org/wiki/National_Rail_Corporation).  Back then, we used this fascinating commercial software called [Tuxedo](https://en.wikipedia.org/wiki/Tuxedo_(software))  as middleware, transaction manager, a queueing system, and so much more. Tuxedo has a fascinating history – which could be a subject of an entirely separate post, but suffice it to say that it was developed by AT&T in the late 1970s, in a practically the same lab as UNIX itself! At some point in the 80s, it was then sold to Novell, then to BEA – which eventually used it to build it's flagship product [WebLogic](http://www.oracle.com/technetwork/middleware/weblogic/overview/index-085209.html) that now belongs to Oracle. I was told that there was a time where British Airways used Tuxedo to network over 20,000 stations together. 
+I started building distributed applications in 1996 when I was placed as a junior contractor in the operations group managing a very large-scale project. The goal was to rebuild the entire messaging and cargo tracking software for the Australian Railway Corporation named aptly [National Rail Corporation](https://en.wikipedia.org/wiki/National_Rail_Corporation).  Back then, we used this fascinating commercial software called [Tuxedo](https://en.wikipedia.org/wiki/Tuxedo_(software))  as middleware, transaction manager, a queueing system, and so much more. Tuxedo has a fascinating history – which could be a subject of an entirely separate post, but suffice it to say that it was developed by AT&T in the late 1970s, in a practically the same lab as UNIX itself! At some point in the 80s, it was then sold to Novell, then to BEA – which eventually used it to build it's flagship product [WebLogic](http://www.oracle.com/technetwork/middleware/weblogic/overview/index-085209.html) that now belongs to Oracle. I was told that there was a time where British Airways used Tuxedo to network over 20,000 stations together.
 
 This is where I learned how to build distributed applications – with tenets such as *high availability, fault tolerance, load balancing, transactional queueing, distributed transactions* spanning several databases, plus several queues. Oh my gosh, if it sounds complicated — it' because it was! But once you get the main concepts behind how Tuxedo was constructed: each node had a server process that communicated with other nodes, and managed a local pool of services – it sounds very reasonable. I stayed on this project for about a year and a half, long enough that all of the most senior people who understood the messaging component had left, leaving me – 23-year-old junior programmer, the only person understanding the architecture and operational aspect of that system. That part of the waterfall was not predicted by their project managers ☺.  
 
@@ -32,30 +54,30 @@ Now, close your eyes and imagine being flown on a corporate helicopter across th
 
 I took my knowledge of distributed systems to the US, where I was hired to build Topica, a hot new startup in San Francisco creating a new generation of listservs, or email groups (aka. mailing lists). The year was 1998, and there sure wasn't any open source distributed networking software that gave us the incredible reliability and versatility that the middleware like Tuxedo provided, so we bought a license. Whether this was the right choice for the company as at time is not for me to judge. But the system we built ended up using Tuxedo (ANSI C with Tuxedo SDK), Perl (with native bindings for C), and horizontally distributed Oracle databases. This beast ended up being so damn scalable that at a point in time someone mentioned Topica as a source of more than 1% of __all daily internet__ at that time! And sure enough, we were sending several hundred million messages per day.  
 
-And here is a kicker: if you open [https://app.topica.com/](https://app.topica.com/) you will see the login screen from the app we built – it's functionality is most similar to that of [Constant Contact](http://www.constantcontact.com/). The Topica app has been running untouched, seemingly unmodified, since 2004! – Twelve years! They stopped developing the app shortly after I left in 2004, mostly for business reasons. But the software endured. And it's still running, 12 years later.  It was built to be reliable. It was scalable. It was transactional. What it wasn't – is simple. 
+And here is a kicker: if you open [https://app.topica.com/](https://app.topica.com/) you will see the login screen from the app we built – it's functionality is most similar to that of [Constant Contact](http://www.constantcontact.com/). The Topica app has been running untouched, seemingly unmodified, since 2004! – Twelve years! They stopped developing the app shortly after I left in 2004, mostly for business reasons. But the software endured. And it's still running, 12 years later.  It was built to be reliable. It was scalable. It was transactional. What it wasn't – is simple.
 
 This second experience with Tuxedo forever changed the way I approach distributed application development.
 
 ## New Startup!
 
-This part is hypothetical (and a bit sarcastic, for which, I hope, you can forgive me). 
+This part is hypothetical (and a bit sarcastic, for which, I hope, you can forgive me).
 
-Say we are building a brand new web application that will do *this and that * in a very *particularly special way*, and the investors are flocking, giving us money, and so we get funded.  W00T! 
+Say we are building a brand new web application that will do *this and that * in a very *particularly special way*, and the investors are flocking, giving us money, and so we get funded.  W00T!
 
 > If I am an early engineer, or even a CTO, on this new project, *I would not be doing my job if I am not asking the founders a lot of questions that affect hugely the ways we are going to build the software supporting the business. And how soon.*
 
-So I pull the founder into a quiet room, hide their cell phone from them, and unload onto them with questions for an hour. 
+So I pull the founder into a quiet room, hide their cell phone from them, and unload onto them with questions for an hour.
 
 The *best hour spent in the history of this startup*. Promise.
 
 ## Six Questions Every Technology Entrepreneur Should be Able to Answer.
 
-1. How reliable should this application be? What is the cost of one hour of downtime? What's the cost of one-hour downtime now, six months from now, a year from now? What is the cost of many small downtimes?  What about nightly maintenance? 
+1. How reliable should this application be? What is the cost of one hour of downtime? What's the cost of one-hour downtime now, six months from now, a year from now? What is the cost of many small downtimes?  What about nightly maintenance?
 2. How likely is it that we'll get a spike of traffic that will be very important or even critical for the app to withstand? Perhaps we were mentioned on TV.  Or someone twitted about us. How truly bad for our business will it be, if the app goes down during this type of event because it just can't handle the traffic? And even if the spike of death happens, how important it is that the team can scale the service right up with traffic within a reasonable amount of time?  What *is* a reasonable amount of time?
 3. How important is it that the application interactions are fast? Or that the users don't have to wait three seconds for each page to load? How important is it that the application performance is not just "good" (say, 300ms average server latency), but outstanding (say, 50ms server average latency)?
-4. How important it the core application data is to the survival of the business? For example, a financial startup that deals with people's money, data integrity is paramount.  For a social network that's merely collecting bookmarks, it's only vaguely significant. Large data losses are never fun, but a social network might recover, while a financial service will not. 
+4. How important it the core application data is to the survival of the business? For example, a financial startup that deals with people's money, data integrity is paramount.  For a social network that's merely collecting bookmarks, it's only vaguely significant. Large data losses are never fun, but a social network might recover, while a financial service will not.
 5. How important it is that the application is secure? This question should be viewed from the point of view of being hacked into – once you are hacked, can you recover? If the answer is "no", you better not get hacked. Right?
-6. The last bucket will deal with the engineering effort. Things like **cost,  productivity, ability to release often, hire and grow the team easily**, etc. What's the cost of maintenance, how big is the Ops team, how big and how senior must be the development team? 
+6. The last bucket will deal with the engineering effort. Things like **cost,  productivity, ability to release often, hire and grow the team easily**, etc. What's the cost of maintenance, how big is the Ops team, how big and how senior must be the development team?
 
 ## Oh, I hear you say the word: **catastrophic**.  
 
@@ -64,14 +86,16 @@ Now, how bad is it for your business, if, say, [you are hosted on AWS, and a gre
 But then, in between "oh, it hurts, but it's ok" and "we are finished" there lies a whole other category of: "our users are pissed", "we lost 20% MOU", "[everyone is switching to another social network](https://www.technologyreview.com/s/511846/an-autopsy-of-a-dead-social-network/)", "did you hear so and so got broken into and got their user data stolen? They've asked for my social security number, and I am furious!..."  
 
 > This may not be The Catastrophy just yet, but your technology is either not scaling, not reliable, or not secure. The Catastrophy may be right around the corner.
- 
+
 Given that I've been building almost exclusively applications that most certainly did not want to die because of scalability, reliability or security concerns, I've applied the same patterns over and over again, and results speak for themselves. I don't like bragging, and I wouldn't say this – but for those of you still skeptical – [I refer you to the uptime and scalability numbers mentioned in this presentation](https://rubyconf.eventer.com/rubyconf-australia-2015-1223/devops-without-the-ops-a-fallacy-a-dream-or-both-by-konstantin-gredeskoul-1724).
 
-Which brings me to the conclusion of this blog post. 
+Which brings me to the conclusion of this blog post.
 
-# Six Tenets of Modern Apps
+# Six Critical Dimensions of Modern Apps
 
-The topics and scenarios above, distil down to the following principles the apply to the vast majority of applications built today.
+The topics and scenarios above, distill down to the following principles the apply to the vast majority of applications built today.
+
+
 
 > As a simple exercise, feel free to write down – for your company, or application – how important, on a scale from 0 (not important), to 10 (critical/catastrophic if happens), are the following:
 
@@ -102,4 +126,4 @@ In the next blog post, I will discuss specific solutions to:
 * How to do this all at a fraction of a cost that it used to be just a few years ago...
 * How to stay vendor independent and why would you want to.
 
-Thanks for reading! 
+Thanks for reading!
