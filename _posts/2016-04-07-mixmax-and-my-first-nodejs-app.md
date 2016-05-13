@@ -1,9 +1,7 @@
 ---
 layout: page
-title: 'MixMax your email like a Pro'
+title: 'Super-charge your email like a Pro with MixMax'
 ---
-
-## MixMax
 
 <div class="small-right">
 {% lightbox_image { "url" : "/images/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
@@ -20,7 +18,6 @@ both the GUI as well as via the "slash" commands while composing an email.
 
 
 {{site.data.macros.continue}}
-
 
 So imagine my joy, when I realized that with a simple `/cal` I can now insert a few
 available time slot options in my email, and request the recipient to choose one.
