@@ -5,6 +5,7 @@ namespace :jekyll do
   task :clean do
     sh 'rm -rf _site'
   end
+  desc 'Generate all static pages into _site folder'
   task :build => :clean do
     sh 'bundle exec jekyll build'
     sh 'chmod -R 755 _site/'
@@ -15,18 +16,23 @@ namespace :jekyll do
   task :browser do
     spawn 'sleep 2 && open http://localhost:4000'
   end
-  desc 'Starts Jekyll in watch mode and opens the browser'
+  desc 'Starts Jekyll in serve --watch mode and opens the browser'
   task :preview => [ :browser, :serve ]
 end
 
-Config = Struct.new(:image_name, :container_name)
-@config = Config.new('kiguino-nginx', 'kiguino-nginx-container')
+desc 'Deploy the HEAD to production'
+task :deploy do
+  sh 'ssh kig@kig.re -t -- bash -l -c /home/kig/workspace/kiguino.github.io/deploy'
+end
 
 def s title
   puts "\n#{title.upcase.yellow.bold}\n"
 end
 
 namespace :docker do
+  Config = Struct.new(:image_name, :container_name)
+  @config = Config.new('reinventone/kigre', 'kigre')
+
   task :build => [ 'jekyll:build' ] do
     sh 'cp _docker/Dockerfile.static-only _site/Dockerfile'
     sh "cd _site && docker build -t #{@config.image_name} ."
