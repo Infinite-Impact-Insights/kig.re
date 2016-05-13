@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gem 'jekyll'
 gem 'colored2'
 gem 'rake'
+gem 'nokogiri'
 group :jekyll_plugins do
   gem 'redcarpet'
   gem 'jekyll-coffeescript'

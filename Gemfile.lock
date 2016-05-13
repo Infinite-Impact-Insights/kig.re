@@ -62,8 +62,11 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     mercenary (0.3.5)
+    mini_portile2 (2.0.0)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
     octokit (4.3.0)
       sawyer (~> 0.7.0, >= 0.5.3)
     rack (1.6.4)
@@ -98,8 +101,9 @@ DEPENDENCIES
   jekyll-gist
   jekyll-paginate
   jekyll-watch
+  nokogiri
   rake
   redcarpet
 
 BUNDLED WITH
-   1.11.2
+   1.12.3
