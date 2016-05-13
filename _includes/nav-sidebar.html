@@ -12,10 +12,26 @@
               {% unless page.sidebar == 'hidden' %}
                 {% include nav-sidebar-content.html %}
               {% endunless %}
+
+              <div class="vspacer"></div>
+
+              {% if false || page.show_twitter %}
+              <div class="tweets">
+                <a class="twitter-timeline"
+                  data-chrome="noheader nofooter noborders noscrollbar transparent"
+                  data-dnt="true"
+                  width="100%"
+                  href="https://twitter.com/kig"
+                  data-widget-id="673740947461566464">Tweets by @kig
+                </a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+              {% endif %}
+
   </div>
   <div class="col-sm-7 col-sm-offset-0
               col-md-7 col-md-offset-0
-              col-lg-6 col-lg-offset-0
+              col-lg-7 col-lg-offset-0
               main">
               {{ content }}
   </div>
@@ -24,17 +40,5 @@
               col-md-1
               col-lg-1"
   >
-    {% if page.show_twitter %}
-    <div class="tweets">
-      <a class="twitter-timeline"
-        data-chrome="noheader nofooter noborders noscrollbar transparent"
-        data-dnt="true"
-        width="100%"
-        href="https://twitter.com/kig"
-        data-widget-id="673740947461566464">Tweets by @kig
-      </a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
-    {% endif %}
   </div>
 </div>

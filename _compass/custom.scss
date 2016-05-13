@@ -48,10 +48,21 @@ $quote-shadow: #ffdede;
 
 $transparent: rgba(0, 0, 0, 0);
 
+$toc-level-1: rgba(#8e5f9c, 0.71);
+$toc-level-2: rgba(#6990ac, 0.8);
+
+
 $base-font-family: 'Averia Sans Libre', cursive;
+$base-font-size: 18pt;
+
 $nav-font-family: 'Averia Sans Libre', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
+$nav-font-size: 14pt;
+
 $header-font-family: 'Fjalla One', sans-serif;
+$header-font-size-h1: 28pt;
+
 $fixed-font-family: 'Fira Mono', 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif;
+$fixed-font-size: 14pt;
 
 hr {
   border-top: 2px dotted $primary-bg !important;
@@ -65,7 +76,7 @@ hr {
     margin: 0;
     padding: 0px;
     li a {
-      font-size: 9pt;
+      font-size: $nav-font-size;
     }
   }
   .share-buttons {
@@ -75,13 +86,13 @@ hr {
     display: none;
   }
   body.theme-ltec {
-    font-size: 12pt;
-    line-height: 15pt;
+    font-size: $base-font-size;
+    line-height: $base-font-size + 3;
     .post {
       padding: 15px;
     }
     code, pre {
-      font-size: 10pt;
+      font-size: $fixed-font-size;
     }
   }
 }
@@ -89,13 +100,13 @@ hr {
 @media (min-width: 48em) {
   html {
     body.theme-ltec {
-      font-size: 12pt;
-      line-height: 17pt;
+      font-size: $base-font-size - 3;
+      line-height: $base-font-size;
       code, pre {
-        font-size: 11pt;
+        font-size: $fixed-font-size - 3;
       }
       .post {
-        max-width: 600px;
+        max-width: 900px;
       }
     }
     .tweets {
@@ -105,22 +116,22 @@ hr {
   }
   .github-repos {
     padding-left: 0px;
-    font-size: 14px;
+    font-size: $base-font-size - 2;
   }
 }
 
 @media (min-width: 58em) {
   html {
     body.theme-ltec {
-      font-size: 13pt;
-      line-height: 17pt;
+      font-size: $base-font-size - 2;
+      line-height: $base-font-size + 1;
       code, pre {
-        font-size: 11pt;
+        font-size: $fixed-font-size - 2;
       }
     }
     .github-repos {
       padding-left: 0px;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }
@@ -140,10 +151,10 @@ html {
 }
 
 body.theme-ltec {
-  
+
   .lb-container {
     padding: 0;
-    img.lb-image { 
+    img.lb-image {
       border-width: 0;
       box-shadow: 0 0 0;
     }
@@ -164,7 +175,7 @@ body.theme-ltec {
     margin: 0;
     padding: 25px 0px 0px;
     li a {
-      font-size: 11pt;
+      font-size: $nav-font-size;
     }
     .collapse {
       overflow-x: hidden;
@@ -205,7 +216,7 @@ body.theme-ltec {
       background-color: $form-input-bg + 30;
       color: white;
       margin-right: 10px;
-      font-size: 9pt;
+      font-size: $nav-font-size - 4;
       text-shadow: 1px 1px 2px black;
       font-weight: 100;
     }
@@ -279,23 +290,23 @@ body.theme-ltec {
       background-color: rgba(255, 255, 255, 0)
     }
 
-    .sidebar-about {
-      color: $primary-fg;
-      font-family: $base-font-family;
-      font-weight: 700;
-      h1 {
-        a {
-          color: $primary-fg !important;
-          font-size: 15pt;
-          font-family: $header-font-family;
-          &:hover {
-            text-decoration: none;
-            color: $code-fg;
-          }
-        }
-        margin-top: 12px;
-      }
-    }
+    // .sidebar-about {
+    //   color: $primary-fg;
+    //   font-family: $base-font-family;
+    //   font-weight: 700;
+    //   h1 {
+    //     a {
+    //       color: $primary-fg !important;
+    //       font-size: 15pt;
+    //       font-family: $header-font-family;
+    //       &:hover {
+    //         text-decoration: none;
+    //         color: $code-fg;
+    //       }
+    //     }
+    //     margin-top: 12px;
+    //   }
+    // }
   }
 
   background-color: $primary-bg;
@@ -361,8 +372,8 @@ body.theme-ltec {
       text-shadow: none;
       box-shadow: 0 0 15px $blockquote-border;
       font-weight: 100;
-      font-size: 16pt;
-      line-height: 19pt;
+      font-size: $base-font-size - 1;
+      line-height: $base-font-size + 3;
       margin: 30px 0;
       ul {
         padding: 10px;
@@ -386,13 +397,27 @@ body.theme-ltec {
     }
     h1, h1.post-title {
       color: $h1-fg !important;
-      font-size: 28pt;
+      font-size: $header-font-size-h1;
       font-family: $header-font-family !important;
       text-shadow: 1px 1px 4px $h1-shadow;
     }
     h1.post-title {
       color: $h1-title-fg !important;
     }
+    h2 {
+      font-size: $header-font-size-h1 - 3;
+    }
+    h3 {
+      font-size: $header-font-size-h1 - 6;
+    }
+    h4 {
+      font-size: $header-font-size-h1 - 8;
+    }
+    h5 {
+      font-size: $base-font-size + 2;
+    }
+
+
     figure {
       background-color: $transparent;
     }
@@ -432,18 +457,18 @@ body.theme-ltec {
         code {
           box-shadow: 2px 2px 10px $primary-bg - 50;
           background-color: $primary-bg;
-            border-radius: 20px/20px !important;
-            overflow: hidden;
-            background-clip: padding-box;
-            border: 1px solid $code-bg - 20;
-            color: $code-fg;
-            display: inline-block;
-            font-family: $fixed-font-family !important;
-            margin-bottom: 2px;
-            margin-top: 2px;
-            padding: 20px;
-            width: 100%;
-            text-shadow: 1px 1px 1px $primary-bg - 40;
+          border-radius: 20px/20px !important;
+          overflow: hidden;
+          background-clip: padding-box;
+          border: 1px solid $code-bg - 20;
+          color: $code-fg;
+          display: inline-block;
+          font-family: $fixed-font-family !important;
+          margin-bottom: 2px;
+          margin-top: 2px;
+          padding: 20px;
+          width: 100%;
+          text-shadow: 1px 1px 1px $primary-bg - 40;
         }
       }
       code, pre {
@@ -481,7 +506,7 @@ body.theme-ltec {
       text-shadow: none;
       box-shadow: 0 0 15px $quote-shadow;
       font-weight: 100;
-      font-size: 9pt;
+      font-size: $base-font-size - 4;
       padding: 5px 15px;
       margin-top: 15px;
       margin-bottom: 15px;
@@ -508,7 +533,7 @@ body.theme-ltec {
   p.lead {
     color: $code-fg;
     /*line-height: 15pt;*/
-    font-size: 12pt;
+    font-size: $base-font-size - 3;
     text-transform: uppercase;
     font-family: $base-font-family !important;
   }
@@ -527,7 +552,6 @@ body.theme-ltec {
 
   .related {
     font-family: $base-font-family;
-    font-size: inherit;
   }
 
   img {
@@ -600,22 +624,24 @@ body.theme-ltec {
     text-align: center;
     border-top: 1px solid $primary-border;
     background: $nav-bg;
-    font-size: 10pt;
+    font-size: $base-font-size - 2;
   }
 }
 
 
 
 .tweets {
-  margin-top: 25px;
-  width: 200px;
+  display: none;
+  margin-top: 300px;
+  width: 90%;
   border: 1px solid $nav-border;
   border-radius: 3px;
   color: $nav-hover-fg;
   background-color: $nav-bg;
   box-shadow: 0px 0px 8px $primary-bg - 10;
   padding: 5px;
-  margin-right: 20px;
+  margin-right: 0px;
+  margin-left: 10px;
   .timeline-Widget {
     .timeline-Header, .timeline-TweetList, .timeline-Viewport {
       background-color: $nav-bg;
@@ -632,6 +658,8 @@ ul.share-buttons{
   top: 150px;
   list-style: none;
   padding: 5px;
+  width: 36px;
+  overflow: hidden;
   img {
     opacity: 0.7;
     filter: alpha(opacity=40); /* For IE8 and earlier */
@@ -655,51 +683,62 @@ ul.share-buttons{
 }
 
 
-#toc, .toc, .mw-warning {
-    background-color: #F9F9F9;
-    border: 1px solid #AAAAAA;
-    font-size: 95%;
-    padding: 5px;
-}
-#toc h2, .toc h2 {
+#toc {
+  font-family: $header-font-family;
+  .toc, .mw-warning {
+    font-size: $base-font-size + 4;
+    padding: 0;
+  }
+  h2, .toc h2 {
     border: medium none;
     display: inline;
-    font-size: 100%;
-    font-weight: bold;
     padding: 0;
-}
-#toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle {
-    text-align: center;
-    margin:0 8px 4px 14px;
-    padding-top:8px;
+  }
+  #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle {
+    text-align: left;
+    margin: 0;
+    padding-top: 8px;
     line-height: 1.5;
-    overflow:hidden;
-}
-
-
-#toc ul, .toc ul {
+    overflow: hidden;
+  }
+  ul, .toc ul {
     list-style-image: none;
     list-style-type: none;
-    margin:0 8px 7px 14px;
+    margin: 20px 10px;
     padding-left: 0;
     text-align: left;
-}
-#toc ul ul, .toc ul ul {
-    margin: 0 0 0 2em;
-}
-#toc .toctoggle, .toc .toctoggle {
-    font-size: 94%;
-}
-
-#toc ul li {
+  }
+  ul ul, .toc ul ul {
+    margin: 1em 0;
+    margin-left: 1em;
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 20px;
+  }
+  .toctoggle, .toc .toctoggle {
+    // font-size: 94%;
+  }
+  ul li {
+    font-size: $base-font-size + 2;
+    a {
+      color: $toc-level-1;
+    }
+  }
+  ul ul li {
+    font-size: $base-font-size + 1;
+    a {
+      color: $toc-level-2;
+    }
+  }
 }
 
 #toc-container {
-	margin-bottom: 10px;
+  // text-align: right;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  // position: fixed;
+  // top: 10px;
+  // right: 10px;
 }
-
 
 .float-left {
   float: left;

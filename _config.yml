@@ -42,3 +42,5 @@ redcarpet:
 
 github:
   repo:      https://github.com/kigster
+tocTopTag:   h2
+showToggleButton: true
