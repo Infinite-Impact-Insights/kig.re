@@ -1,10 +1,42 @@
 require 'colored2'
 require 'rake'
+require 'erb'
+
 task :default => 'jekyll:preview'
+
 namespace :jekyll do
+
+  desc 'Generate a new post with the title provided as an argument'
+  task :new, [ :title ] do | t, args | 
+    @title = args[:title]
+
+    if @title.nil?
+      err = "Error: " + "title is required.".red + 
+      "\nUsage: " + "rake 'jekyll:new[My Fancy New Title]'".bold.green
+      raise err
+    end
+
+    file_title = @title.gsub(/ /, '_').gsub(/[^a-zA-Z0-9\-_]/, '').downcase
+    filename="_posts/#{Time.now.strftime('%Y-%m-%d')}-#{file_title}.md"
+    
+    b = binding
+
+    puts "Creating a new blog post!\n"
+    
+    puts "Filename: " + "#{filename}".bold.green
+    puts "Title:    " + "'#{@title}'".bold.green
+    
+    File.open("#{filename}", 'w') do |f|
+      f.puts(ERB.new(File.read('_templates/post.md.erb')).result(b))
+    end
+  end
+  
+  
   task :clean do
     sh 'rm -rf _site'
   end
+  
+  
   desc 'Generate all static pages into _site folder'
   task :build => :clean do
     sh 'bundle exec jekyll build'
@@ -13,7 +45,7 @@ namespace :jekyll do
   task :serve do
     sh 'bundle exec jekyll serve --watch'
   end
-  task :browser do
+  task :browser do 
     spawn 'sleep 2 && open http://localhost:4000'
   end
   desc 'Starts Jekyll in serve --watch mode and opens the browser'
@@ -30,8 +62,6 @@ def s title
 end
 
 namespace :docker do
-  Config = Struct.new(:image_name, :container_name)
-  @config = Config.new('reinventone/kigre', 'kigre')
 
   task :build => [ 'jekyll:build' ] do
     sh 'cp _docker/Dockerfile.static-only _site/Dockerfile'
