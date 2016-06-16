@@ -15,7 +15,7 @@ hr {
   }
   /* line 78, ../../_compass/custom.scss */
   .navbar li a {
-    font-size: 14pt;
+    font-size: 10pt !important;
   }
 
   /* line 82, ../../_compass/custom.scss */
@@ -30,7 +30,7 @@ hr {
 
   /* line 88, ../../_compass/custom.scss */
   body.theme-ltec {
-    font-size: 18pt;
+    font-size: 13pt;
     line-height: 21pt;
   }
   /* line 91, ../../_compass/custom.scss */
@@ -39,14 +39,14 @@ hr {
   }
   /* line 94, ../../_compass/custom.scss */
   body.theme-ltec code, body.theme-ltec pre {
-    font-size: 14pt;
+    font-size: 11pt;
   }
 }
 @media (min-width: 48em) {
   /* line 102, ../../_compass/custom.scss */
   html body.theme-ltec {
     font-size: 15pt;
-    line-height: 18pt;
+    line-height: 20pt;
   }
   /* line 105, ../../_compass/custom.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
@@ -71,7 +71,7 @@ hr {
   /* line 125, ../../_compass/custom.scss */
   html body.theme-ltec {
     font-size: 16pt;
-    line-height: 19pt;
+    line-height: 21pt;
   }
   /* line 128, ../../_compass/custom.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
@@ -644,7 +644,7 @@ ul.share-buttons .share-buttons-overlay {
 }
 /* line 688, ../../_compass/custom.scss */
 #toc .toc, #toc .mw-warning {
-  font-size: 22pt;
+  font-size: 18pt !important;
   padding: 0;
 }
 /* line 692, ../../_compass/custom.scss */
@@ -658,10 +658,9 @@ ul.share-buttons .share-buttons-overlay {
   text-align: left;
   margin: 0;
   padding-top: 8px;
-  line-height: 1.5;
   overflow: hidden;
 }
-/* line 704, ../../_compass/custom.scss */
+/* line 703, ../../_compass/custom.scss */
 #toc ul, #toc .toc ul {
   list-style-image: none;
   list-style-type: none;
@@ -675,54 +674,59 @@ ul.share-buttons .share-buttons-overlay {
   margin-left: 1em;
   list-style-type: none;
   padding-left: 20px;
+  line-height: 40px !important;
 }
-/* line 720, ../../_compass/custom.scss */
+/* line 721, ../../_compass/custom.scss */
 #toc ul li {
   font-size: 20pt;
 }
-/* line 722, ../../_compass/custom.scss */
+/* line 723, ../../_compass/custom.scss */
 #toc ul li a {
-  color: rgba(142, 95, 156, 0.71);
-}
-/* line 726, ../../_compass/custom.scss */
-#toc ul ul li {
-  font-size: 19pt;
+  color: rgba(176, 139, 203, 0.83);
+  line-height: 22pt;
 }
 /* line 728, ../../_compass/custom.scss */
+#toc ul ul li {
+  font-size: 17pt;
+  padding: 0;
+  margin: 0;
+}
+/* line 732, ../../_compass/custom.scss */
 #toc ul ul li a {
-  color: rgba(105, 144, 172, 0.8);
+  color: rgba(124, 200, 255, 0.49);
+  line-height: 10px !important;
 }
 
-/* line 734, ../../_compass/custom.scss */
+/* line 739, ../../_compass/custom.scss */
 #toc-container {
   margin-bottom: 0px;
   margin-top: 20px;
 }
 
-/* line 743, ../../_compass/custom.scss */
+/* line 748, ../../_compass/custom.scss */
 .float-left {
   float: left;
 }
 
-/* line 747, ../../_compass/custom.scss */
+/* line 752, ../../_compass/custom.scss */
 .float-right {
   float: right;
 }
 
-/* line 752, ../../_compass/custom.scss */
+/* line 757, ../../_compass/custom.scss */
 div.vspacer {
   height: 50px;
 }
-/* line 755, ../../_compass/custom.scss */
+/* line 760, ../../_compass/custom.scss */
 div.vspacer20 {
   height: 20px;
 }
-/* line 758, ../../_compass/custom.scss */
+/* line 763, ../../_compass/custom.scss */
 div.container {
   padding-top: 0;
   margin: 0;
 }
-/* line 762, ../../_compass/custom.scss */
+/* line 767, ../../_compass/custom.scss */
 div.clear-fix {
   clear: both;
   margin-bottom: 20px;

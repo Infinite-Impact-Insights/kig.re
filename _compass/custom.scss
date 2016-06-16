@@ -48,8 +48,8 @@ $quote-shadow: #ffdede;
 
 $transparent: rgba(0, 0, 0, 0);
 
-$toc-level-1: rgba(#8e5f9c, 0.71);
-$toc-level-2: rgba(#6990ac, 0.8);
+$toc-level-1: rgba(#b08bcb, 0.83);
+$toc-level-2: rgba(#7cc8ff, 0.49);
 
 
 $base-font-family: 'Averia Sans Libre', cursive;
@@ -76,7 +76,7 @@ hr {
     margin: 0;
     padding: 0px;
     li a {
-      font-size: $nav-font-size;
+      font-size: $nav-font-size - 4 !important;
     }
   }
   .share-buttons {
@@ -86,13 +86,13 @@ hr {
     display: none;
   }
   body.theme-ltec {
-    font-size: $base-font-size;
+    font-size: $base-font-size - 5;
     line-height: $base-font-size + 3;
     .post {
       padding: 15px;
     }
     code, pre {
-      font-size: $fixed-font-size;
+      font-size: $fixed-font-size - 3;
     }
   }
 }
@@ -101,7 +101,7 @@ hr {
   html {
     body.theme-ltec {
       font-size: $base-font-size - 3;
-      line-height: $base-font-size;
+      line-height: $base-font-size + 2;
       code, pre {
         font-size: $fixed-font-size - 3;
       }
@@ -124,7 +124,7 @@ hr {
   html {
     body.theme-ltec {
       font-size: $base-font-size - 2;
-      line-height: $base-font-size + 1;
+      line-height: $base-font-size + 3;
       code, pre {
         font-size: $fixed-font-size - 2;
       }
@@ -686,7 +686,7 @@ ul.share-buttons{
 #toc {
   font-family: $header-font-family;
   .toc, .mw-warning {
-    font-size: $base-font-size + 4;
+    font-size: $base-font-size !important;
     padding: 0;
   }
   h2, .toc h2 {
@@ -698,7 +698,6 @@ ul.share-buttons{
     text-align: left;
     margin: 0;
     padding-top: 8px;
-    line-height: 1.5;
     overflow: hidden;
   }
   ul, .toc ul {
@@ -707,12 +706,14 @@ ul.share-buttons{
     margin: 20px 10px;
     padding-left: 0;
     text-align: left;
+
   }
   ul ul, .toc ul ul {
     margin: 1em 0;
     margin-left: 1em;
     list-style-type: none;
     padding-left: 20px;
+    line-height: 40px !important;
   }
   .toctoggle, .toc .toctoggle {
     // font-size: 94%;
@@ -721,12 +722,16 @@ ul.share-buttons{
     font-size: $base-font-size + 2;
     a {
       color: $toc-level-1;
+      line-height: $base-font-size + 4;
     }
   }
   ul ul li {
-    font-size: $base-font-size + 1;
+    font-size: $base-font-size - 1;
+    padding: 0;
+    margin: 0;
     a {
       color: $toc-level-2;
+      line-height: 10px !important;
     }
   }
 }
