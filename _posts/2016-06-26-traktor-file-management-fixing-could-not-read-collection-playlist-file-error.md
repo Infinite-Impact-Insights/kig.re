@@ -15,6 +15,9 @@ That said, being a software developer I have also been __continually amazed at h
 
 > But nowhere is the file management disaster is more in-your-face-obvious, aggravating, and frustrating, than in their flagship DJ product – Traktor.
 
+
+{{site.data.macros.continue}}
+
 ### It Should Have Been There 5 Years Ago
 
 Traktor has been around for quite a few years now, and the same complaints I had five years ago, are still  valid. And what I want is really not rocket science, it's complete basics.
