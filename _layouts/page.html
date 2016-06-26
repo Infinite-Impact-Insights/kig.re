@@ -8,7 +8,7 @@ layout: default
       <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
     {% endif %}
     <div class="content">
-      {{ content | toc_generate }}
+      {{ content }}
     </div>
     <div class="vspacer"></div>
     {% if page.date %}
