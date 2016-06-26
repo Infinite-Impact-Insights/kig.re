@@ -43,7 +43,7 @@ namespace :jekyll do
     sh 'chmod -R 755 _site/'
   end
   task :serve do
-    sh 'bundle exec jekyll serve --watch'
+    sh 'bundle exec jekyll serve --watch --trace'
   end
   task :browser do 
     spawn 'sleep 2 && open http://localhost:4000'

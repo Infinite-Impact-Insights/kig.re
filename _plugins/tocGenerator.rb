@@ -43,7 +43,9 @@ module Jekyll
       item_number = 1
       level_html = ''
 
-      doc = Nokogiri::HTML(html)
+      doc = Nokogiri::HTML(html) do |config|
+        config.noblanks
+      end
 
       # Find H1 tag and all its H2 siblings until next H1
       doc.css(toc_top_tag).each do |tag|
@@ -108,7 +110,7 @@ module Jekyll
         doc.css('body').children.before(toc_table)
       end
 
-      doc.css('body').children.to_xhtml
+      doc.css('body').children.to_html
     end
 
     private
