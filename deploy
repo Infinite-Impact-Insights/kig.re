@@ -1,19 +1,33 @@
 #!/usr/bin/env bash
+
 hook() {
   file=$1
   [[ -x "$file" ]] && source $file
 }
 
-project_home=$(dirname $0)
-cd $project_home && pwd
-eval "$(rbenv init .)"
-git reset --hard
-git pull --rebase
-hook "before-bundle"
-bundle
-hook "before-build"
-bundle exec jekyll build
-find . -type d -exec chmod 755 {} \;
-find . -type f -exec chmod o+r {} \;
-hook "after-build"
-cd -
+function local_deploy() { 
+  project_home=$(dirname $0)
+  cd $project_home && pwd
+  eval "$(rbenv init .)"
+  git reset --hard
+  git pull --rebase
+  hook "before-bundle"
+  bundle
+  hook "before-build"
+  bundle exec jekyll build
+  find . -type d -exec chmod 755 {} \;
+  find . -type f -exec chmod o+r {} \;
+  hook "after-build"
+  cd -
+}
+
+function remote_deploy() {
+  ssh kig.re -l kig 'bash -l -c "cd workspace/kig.re && ./deploy"'
+}
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  remote_deploy
+else
+  local_deploy
+fi
+
