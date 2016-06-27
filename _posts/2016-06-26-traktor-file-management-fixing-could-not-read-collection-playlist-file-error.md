@@ -5,36 +5,40 @@ title: 'Native Instruments Traktor — Fixing Dreaded "Could Not Read Collection
 
 ## "Not a Rant" Rant
 
-I'll start by saying that I love Native Instruments, and software and hardware that they make. Not all of it is a hit, but overall the company is definitely one of the undisputed leaders in the Digital Audio space.  I own Komplete versions 2 to 10, Traktor S4, S5, F1, Kore2 and a few others.
+I'll begin by saying that I love Native Instruments, and software and hardware that they make. Not all of it is a hit, but overall, the company is definitely one of the undisputed leaders and innovators in the Digital Audio space.  I own Komplete versions 2 to 10, Traktor S4, S5, F1, Kore2 and a few others.
 
-I've [created albums using NI tools](https://soundcloud.com/polygroovers), [some of which are available on iTunes](https://itunes.apple.com/us/artist/polygroovers/id160976572),  and I've never pirated any of the NI software by principle – being a software engineer, I was able to appreciate the colossal effort they've put into each and every synth.
+In the past I [created albums using NI tools](https://soundcloud.com/polygroovers) and plug-ins, [some of which are available on iTunes](https://itunes.apple.com/us/artist/polygroovers/id160976572),  and as a disclosure — I've never pirated any of NI software by principle – being a software engineer, I was able to appreciate the colossal effort they've put into each and every synth I used.
 
 ### Reality Strikes
 
-That said, being a software developer I have also been __continually amazed at how abysmal the file management interface is in Traktor__, and in fact in all other NI plugins too. With the CoreAudio&trade; Plugins I can usually get around it, since I use Logic Pro X&reg; as a DAW.
+That said, being a software developer I have also been __continually amazed at how abysmal – specifically the file management interfaces are in NI products__. With the CoreAudio&trade; plug-ins I can usually get around it, since I use Logic Pro X&reg; as a DAW.
 
-> But nowhere is the file management disaster is more in-your-face-obvious, aggravating, and frustrating, than in their flagship DJ product – Traktor.
+> But nowhere is the file management shortcomings are more in-your-face-obvious, aggravating, and frustrating, than in their flagship DJ mixing product – Traktor DJ Pro.
 
 
 {{site.data.macros.continue}}
 
-### It Should Have Been There 5 Years Ago
+### It Should Have Been There Five Years Ago
 
-Traktor has been around for quite a few years now, and the same complaints I had five years ago, are still  valid. And what I want is really not rocket science, it's complete basics.
+Traktor has been around for quite a few years now, and the same complaints I had five years ago, are still valid today. And what I want is not really rocket science, no, what I want is complete basics.
 
-Hopefully someone from NI will read this blog post, and add these feature requests that should have been there from the beginning to their list. And if and when Traktor comes out with some of these features implemented, I promise to go back and update this post.
+Hopefully someone from NI will read this blog post, and add these feature requests that should have been there from the beginning to their list. And if and when Traktor comes out with some of these features implemented, I promise to go back and update this post:
 
-* Simple UNDO functionality when working with Playlists?
-* Single key DELETE of a track from a playlist? If I did it wrong, I can always undo. Or can I?
-* Key binding. How about map Cmd-D to delete from a collection + disk?
-* How about copy a tree of playlists and then paste it elsewhere?
+* __Simple UNDO functionality when working with Playlists?__
+* __Single key DELETE of a track from a playlist? If I did it wrong, I can always undo. Or can I?__
+* __Key binding. How about map Cmd-D to delete from a collection + disk?__
+* __How about copy a tree of playlists and then paste it elsewhere?__
+* __What about "De-Duplicate All Playlists" under a given root node?__
+* __Or, playlist properties, such as "this playlist should never have duplicates, so if I add one – ignore it!"__
+* __What about automatically finding and updating file locations (if the files move) using Spotlight?__
+* __Or, show play list on another display while I DJ__
 * Etc... etc... etc..
 
-Instead of these basics, you are supposed to sit their with your mouse and organize your tracks by looking at a 15px tall line of text. Thank God for the Ctrl-Scroll feature on the Mac. Oh, that's right, they _did add this feature in the later versions of Traktor_ – and you can now indeed increase the text font size. But still, you can't hit Delete key to delete (without a stupid confirmation, and with a no-brainer Undo option) a track from a playlist! In 2016! I don't have enough exclamation points to emphasize this last one.
+Instead of this, you are supposed to sit their with your mouse and organize your tracks by looking at a 15px tall line of text. Thank God for the Ctrl-Scroll feature on the Mac. Oh, that's right, they _did make the line height configurable in the later versions of Traktor_. But still, you can't hit Delete key to delete (without a stupid confirmation, and with a no-brainer Undo option) a track from a playlist! In 2016! I don't have enough exclamation points to emphasize this one.
 
-But that's not all. In addition to these basic things we've come to expect from a well designed (from UX-standpoint) modern software, there are just glaring bugs like the one I will try to address in this blog post.
+But that's not even all. In addition to these basic things we've come to expect from a well designed (from UX-standpoint) modern software, there are just glaring bugs like the one I will try to address in this blog post.
 
-It hit me earlier today, and feeling fed up with Traktor's misbehavior with file management for years, I decided to finally take it out here, and help fellow Traktorians, raped daily by this software in all so many nasty ways, heal maybe just some of their PTSD-related nightmares.
+It hit me earlier today, and feeling fed up with Traktor's misbehavior with file management for years, I decided to finally take it to the Interwebs, and help fellow Traktorians, abused daily by this software in all so many nasty ways, to heal maybe just some of their PTSD-related nightmares.
 
 ### Ok, it's a Rant
 
@@ -49,11 +53,11 @@ I mean, honestly, I could rant about how absolutely abysmal Traktor's file manag
 > What if I move a folder? Rename my hard disk? Move to another computer? Oh God, no no no, all of that breaks Traktor! Rename back, quick! Oh wait, but the collection file is already saved and overwritten, and all my playlists are goooooone! Fuuuuuuuuuck!  
 
 <div class="pull-right">
-— last day in the life of one Traktor User, minutes before suicide, Oils and Blood,  "Anonymous".
+— last day in the life of one Traktor User, <br />minutes before suicide,<br />Oils and Blood,<br /> "Anonymous".
 </div>
 <div style="clear: right; margin-bottom: 20px;"></div>
 
-Anyway, you get the point. I guess that was a bit of a rant.
+Anyway, you get the point. I guess that was a bit of a rant after all :) With that out of the way, time to address the elephant in the room.
 
 ##  Problem: "Could Not Read Collection/Playlist file"
 
@@ -207,4 +211,4 @@ I hope this helped some of the Traktor users out there with the head scratching 
 
 In the meantime, I hope that NI will fix these issues and update their File Management interface to be more modern, robust, flexible and consistent. Because it's already about 10 years late to the party.
 
-~ Konstantin / (aka [DJ LeftCtrl](https://soundcloud.com/leftctrl).
+~ Konstantin / (aka [DJ LeftCtrl](https://soundcloud.com/leftctrl), aka producer/composer [PolyGroovers](https://soundcloud.com/polygroovers)).
