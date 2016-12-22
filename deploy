@@ -8,9 +8,17 @@ hook() {
 function local_deploy() { 
   project_home=$(dirname $0)
   cd $project_home && pwd
-  eval "$(rbenv init .)"
+
+  if [[ "$(git status --short | wc -l)" -ne 0 ]]; then
+    printf "Local repo is not clean, please fix.\n"
+    return
+  fi
+
   git reset --hard
   git pull --rebase
+
+  eval "$(rbenv init .)"
+
   hook "before-bundle"
   bundle
   hook "before-build"
