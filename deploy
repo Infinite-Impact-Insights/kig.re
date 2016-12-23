@@ -17,8 +17,8 @@ function local_deploy() {
   git reset --hard
   git pull --rebase
 
-  eval "$(rbenv init .)"
-
+  eval "$(rbenv init -)"
+  gem install bundler --conservative
   hook "before-bundle"
   bundle
   hook "before-build"
