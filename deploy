@@ -30,7 +30,7 @@ function local_deploy() {
 }
 
 function remote_deploy() {
-  ssh kig.re -l kig 'bash -l -c "cd workspace/kig.re && ./deploy"'
+  ssh kig.re -l kig 'bash -l -c "cd workspace/kig.re && source ~/.bashrc && ./deploy"'
 }
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
