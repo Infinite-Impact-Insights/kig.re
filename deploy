@@ -6,6 +6,7 @@ hook() {
 }
 
 function local_deploy() { 
+  outer_dir=$(pwd)
   project_home=$(dirname $0)
   cd $project_home && pwd
 
@@ -26,7 +27,8 @@ function local_deploy() {
   find . -type d -exec chmod 755 {} \;
   find . -type f -exec chmod o+r {} \;
   hook "after-build"
-  cd -
+  cd _site && ln -s ~/music
+  cd $outer_dir
 }
 
 function remote_deploy() {
