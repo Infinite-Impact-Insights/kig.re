@@ -43,7 +43,7 @@ A fully signed drivers for Windows can be found below:
 
 # Mac OS-X
 
-## Mac OS-X Sierra
+## Sierra
 
 _(Added: October, 2016)_
 
@@ -51,7 +51,7 @@ Very similar to El-Capitan, just the driver updated to version 1.3.
 
 The Sierra Mac Driver is here: [CH341SER_MAC_1.3.ZIP (174 Kb)](/downloads/CH341SER_MAC_1.3.ZIP).
 
-## Mac OS-X El Capitan
+## El Capitan
 
 _(Added: Nov 22, 2015)_
 
