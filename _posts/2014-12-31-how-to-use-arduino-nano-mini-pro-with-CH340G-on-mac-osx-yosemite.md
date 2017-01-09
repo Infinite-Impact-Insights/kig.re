@@ -47,9 +47,11 @@ A fully signed drivers for Windows can be found below:
 
 _(Added: October, 2016)_
 
-Very similar to El-Capitan, just the driver updated to version 1.3.
+The Version 1.3 of the driver available on the vendor's website causes a crash on Mac OS-X Sierra. Thankfully, [Adrian Mihalko](https://github.com/adrianmihalko) patched the driver, and made it available to the public.
 
-The Sierra Mac Driver is here: [CH341SER_MAC_1.3.ZIP (174 Kb)](/downloads/CH341SER_MAC_1.3.ZIP).
+  * The updated and patched Sierra Mac Driver can be downloaded here — [CH34x_Install_V1.3.zip (174 Kb)](/downloads/CH34x_Install_V1.3.zip).
+
+<div class="external-reference"">Acknowledgements: thanks to <a href="[https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver" target="boo">https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver</a> for patching the driver.</div>
 
 ## El Capitan
 
