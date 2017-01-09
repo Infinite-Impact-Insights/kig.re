@@ -51,7 +51,7 @@ The Version 1.3 of the driver available on the vendor's website causes a crash o
 
   * The updated and patched Sierra Mac Driver can be downloaded here — [CH34x_Install_V1.3.zip (174 Kb)](/downloads/CH34x_Install_V1.3.zip).
 
-<div class="external-reference"">Acknowledgements: thanks to <a href="[https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver" target="boo">https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver</a> for patching the driver.</div>
+<div class="external-reference"">Thanks to <a href="[https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver" target="boo">https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver</a> for patching the driver.</div>
 
 ## El Capitan
 
@@ -59,7 +59,7 @@ _(Added: Nov 22, 2015)_
 
 Many instructions down below were written for the old driver, which was not signed, and therefore was not working out of the box on OS-X Yosemite and El Capitan. The latest driver appears to be signed, and should work out the box. The new driver is here: [CH34x_Install.zip (111Kb)](/downloads/CH34x_Install.zip).
 
-<div class="external-reference"">Acknowledgements: thanks to <a href="[http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="boo">Björn's Techblog</a> for posting the driver.</div>
+<div class="external-reference"">Thanks to <a href="[http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="boo">Björn's Techblog</a> for posting the driver.</div>
 
 Inside the driver is a brief README with the following instructions:
 
@@ -125,7 +125,7 @@ These are not needed for the newer driver above.
 * run the command ```csrutil enable --without kext```
 * Reboot.
 
-<div class="external-reference"">Acknowledgements: thanks to <a href="http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/" target="blank">this post</a> for these instructions.</div>
+<div class="external-reference"">Thanks to <a href="http://tzapu.com/2015/09/24/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/" target="blank">this post</a> for these instructions.</div>
 
 ### OS-X Yosemite Steps
 
@@ -134,7 +134,7 @@ These are not needed for the newer driver above.
 * Reboot.
 
 <div class="external-reference"">
-Acknowledgements: see <a href="http://www.cindori.org/enabling-trim-on-os-x-yosemite/" target="blank">this post</a> if you
+see <a href="http://www.cindori.org/enabling-trim-on-os-x-yosemite/" target="blank">this post</a> if you
 wish to know more details.</div>
 
 ### Installation
