@@ -8,9 +8,9 @@ draft: false
 
 ### For the Impatient
 
-In quick summary, in this post, I am very excited to announce the official release of the open source Ruby library called [Simple Feed](https://github.com/kigster/simple-feed), released as a [ruby gem](https://rubygems.org/gems/simple-feed). 
+I am very excited to announce the official release of the open source Ruby library called [Simple Feed](https://github.com/kigster/simple-feed), released as a [ruby gem](https://rubygems.org/gems/simple-feed). 
 
-I was and still am the primary developer on this project, and my name is [Konstantin Gredeskoul](https://kig.re) — which you probably already knew. This library would not have been possible without the generosity and sponsorship of my current employer [Simbi.com](https://simbi.com). 
+I am the primary developer on this project, and my name is [Konstantin Gredeskoul](https://kig.re) — which you probably already knew. This library would not have been possible without the generosity and sponsorship of my current employer [Simbi.com](https://simbi.com). 
 
 The software is running live in production, and is powering three separate social feeds on Simbi: the global feed, followers feed, and "own" feed — events related the feed owner's actions:
 
@@ -18,7 +18,7 @@ The software is running live in production, and is powering three separate socia
 
 The software is distributed under the [MIT License](http://opensource.org/licenses/MIT) and is available today. It's written in [ruby](https://www.ruby-lang.org/en/) and does not depend on [Ruby on Rails](http://rubyonrails.org). Therefore it can power applications running on Rack, Sinatra and using alternative web frameworks. Having said that, at Simbi we are using it with Rails, and I may release a small Rails adapter for SimpleFeed in the future.
 
-It's short-list of features is:
+The short-list of its features is:
 
  * You can define any number of feeds per Ruby VM
  * SimpleFeed stores pure strings associated with a floating point number (typically – time), and so does not assume any particular format of the data
@@ -90,9 +90,9 @@ Luckily, most social sites aren't Twitter.
 
 ### Feed Simple
 
-So who do I know so much about these feeds, you might ask?
+So why do I know so much about these feeds, you might ask?
 
-Well, funny you should ask. You see, I built more a few feeds for various social networks I worked for, and they are *all still live and in production*!  
+Well, funny you should ask. You see, I built more than a few feeds for various social networks I worked for, and they are *all remarkably still live and in production*.
 
 My previous employer — [Wanelo.com](https://wanelo.co) — uses activity feeds for both the "Magic" and "My Feed" features. In Wanelo's case, the feeds are populated with products, and the software powering these feeds did experience the "Bieber Problem," except not with Justin Bieber, but with the very popular store [Urban Outfitters](https://wanelo.co/urbanoutfitters), that amassed over 3M followers on that social network. Whenever the store would post a new product, three million users must see that product in their feeds. That's no simple feat.
 
@@ -102,7 +102,7 @@ And it was Simbi that kindly supported the development of the open source librar
 
 **SimpleFeed** is a pure Ruby library that uses [Redis](http://redis.io) as a storage mechanism, and deals with storing pure strings in the feed, associated with the timestamp (or to be precise, with any floating point number that defaults to time). 
 
-> Because the library only stores string data type, it is left to the developer that integrates the library to decide how exactly to serialize their data in the feed. 
+> Because SimpleFeed only stores string data type using Redis, it is left to the developer that integrates the library to decide how exactly to serialize their data in the feed. 
 
 ### Feeding The Frenzy
 
