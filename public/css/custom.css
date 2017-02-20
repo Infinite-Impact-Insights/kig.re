@@ -30,8 +30,8 @@ hr {
 
   /* line 88, ../../_compass/custom.scss */
   body.theme-ltec {
-    font-size: 10pt;
-    line-height: 18pt;
+    font-size: 11pt;
+    line-height: 19pt;
     font-weight: 300;
   }
   /* line 92, ../../_compass/custom.scss */
@@ -46,8 +46,8 @@ hr {
 @media (min-width: 48em) {
   /* line 103, ../../_compass/custom.scss */
   html body.theme-ltec {
-    font-size: 14pt;
-    line-height: 20pt;
+    font-size: 15pt;
+    line-height: 21pt;
   }
   /* line 106, ../../_compass/custom.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
@@ -65,14 +65,14 @@ hr {
   /* line 118, ../../_compass/custom.scss */
   .github-repos {
     padding-left: 0px;
-    font-size: 13pt;
+    font-size: 14pt;
   }
 }
 @media (min-width: 58em) {
   /* line 126, ../../_compass/custom.scss */
   html body.theme-ltec {
-    font-size: 15pt;
-    line-height: 20pt;
+    font-size: 16pt;
+    line-height: 21pt;
     font-weight: 300;
   }
   /* line 130, ../../_compass/custom.scss */
@@ -93,7 +93,7 @@ hr {
 }
 /* line 150, ../../_compass/custom.scss */
 html {
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Raleway", "HelveticaNeue", sans-serif !important;
   font-weight: 300;
 }
 
@@ -102,7 +102,7 @@ body.theme-ltec {
   background-color: rgba(38, 30, 30, 0.88);
   color: rgba(213, 223, 223, 0.93);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Raleway", "HelveticaNeue", sans-serif !important;
   font-weight: 100;
   line-height: 15pt;
 }
@@ -317,8 +317,8 @@ body.theme-ltec .post blockquote {
   border: 5px solid !important;
   text-shadow: none;
   font-weight: bold;
-  font-size: 14pt;
-  line-height: 20pt;
+  font-size: 15pt;
+  line-height: 21pt;
   margin: 30px 0;
 }
 /* line 379, ../../_compass/custom.scss */
@@ -377,7 +377,7 @@ body.theme-ltec .post h4 {
 }
 /* line 423, ../../_compass/custom.scss */
 body.theme-ltec .post h5 {
-  font-size: 17pt;
+  font-size: 18pt;
 }
 /* line 428, ../../_compass/custom.scss */
 body.theme-ltec .post figure {
@@ -471,7 +471,7 @@ body.theme-ltec .post div.external-reference {
   text-shadow: none;
   box-shadow: 0 0 15px #ffdede;
   font-weight: 100;
-  font-size: 11pt;
+  font-size: 12pt;
   padding: 5px 15px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -498,9 +498,9 @@ body.theme-ltec span.post-date {
 body.theme-ltec p.lead {
   color: #FFFFFF;
   /*line-height: 15pt;*/
-  font-size: 12pt;
+  font-size: 13pt;
   text-transform: uppercase;
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Raleway", "HelveticaNeue", sans-serif !important;
 }
 /* line 548, ../../_compass/custom.scss */
 body.theme-ltec .lead a {
@@ -516,7 +516,7 @@ body.theme-ltec a.read-more {
 }
 /* line 560, ../../_compass/custom.scss */
 body.theme-ltec .related {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", "HelveticaNeue", sans-serif;
 }
 /* line 564, ../../_compass/custom.scss */
 body.theme-ltec img {
@@ -584,7 +584,7 @@ body.theme-ltec p.about-footer {
   text-align: center;
   border-top: 1px solid #E08E79;
   background: rgba(113, 95, 98, 0.97);
-  font-size: 13pt;
+  font-size: 14pt;
 }
 
 /* line 640, ../../_compass/custom.scss */
@@ -646,7 +646,7 @@ ul.share-buttons .share-buttons-overlay {
 }
 /* line 695, ../../_compass/custom.scss */
 #toc .toc, #toc .mw-warning {
-  font-size: 15pt !important;
+  font-size: 16pt !important;
   padding: 0;
 }
 /* line 699, ../../_compass/custom.scss */
@@ -680,16 +680,16 @@ ul.share-buttons .share-buttons-overlay {
 }
 /* line 728, ../../_compass/custom.scss */
 #toc ul li {
-  font-size: 17pt;
+  font-size: 18pt;
 }
 /* line 730, ../../_compass/custom.scss */
 #toc ul li a {
   color: rgba(176, 139, 203, 0.83);
-  line-height: 19pt;
+  line-height: 20pt;
 }
 /* line 735, ../../_compass/custom.scss */
 #toc ul ul li {
-  font-size: 14pt;
+  font-size: 15pt;
   padding: 0;
   margin: 0;
 }
