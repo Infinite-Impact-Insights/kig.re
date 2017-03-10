@@ -38,74 +38,87 @@ namespace :jekyll do
   end
 
   desc 'Generate all static pages into _site folder'
-  task :build => :clean do
-    sh 'bundle exec jekyll build'
+  task :build do
+    sh 'RUBYOPT="-W0" bundle exec jekyll build'
     sh 'chmod -R 755 _site/'
   end
   task :serve do
-    sh 'bundle exec jekyll serve --watch --trace'
+    sh 'RUBYOPT="-W0" bundle exec jekyll serve --watch --trace'
   end
   task :browser do
-    spawn 'sleep 2 && open http://localhost:4000'
+    spawn 'sleep 3 && open http://localhost:4000'
   end
   desc 'Starts Jekyll in serve --watch mode and opens the browser'
   task :preview => [ :browser, :serve ]
-end
-
-desc 'Deploy the HEAD to production'
-task :deploy do
-  sh 'ssh kig@kig.re -t -- bash -l -c /home/kig/workspace/kiguino.github.io/deploy'
 end
 
 def s title
   puts "\n#{title.upcase.yellow.bold}\n"
 end
 
+def image
+  "#{@config.docker.image.user}/#{@config.docker.image.name}"
+end
+def container
+  "#{@config.docker.container.name}-#{@config.docker.image.name}"
+end
 
 namespace :docker do
   task :config do
     @config = Hashie::Mash.new(YAML.load(File.read('_config.yml')))
   end
-  desc 'Build Docker Image'
+
+  desc 'Build Docker Image from a Dockerfile'
   task :build => [ :config, 'jekyll:build' ] do
-    sh 'cp _docker/Dockerfile.static-only _site/Dockerfile'
-    sh "cd _site && docker build -t #{@config.docker.image.name} ."
+    sh "cp _docker/Dockerfile.#{@config.docker.dockerfile} _site/Dockerfile"
+    sh "cp _docker/nginx* _site/"
+    sh "cd _site && docker build -t #{image} ."
   end
-  desc "Build and run Docker image"
-  task :run => :build do
-    sh "docker run --name #{@config.docker.container.name} -d -p 8080:80 #{@config.docker.image.name}"
+
+  desc "Run (and build) Docker image"
+  task :run => [ :rm, :build ]   do
+    sh "docker run --name #{container} -d -p 80:8080 #{image}"
   end
-  desc "Start docker container"
-  task :start do
-    sh "docker start #{@config.docker.container.name} "
+
+  desc "Start Docker Container"
+  task :start => :build do
+    sh "docker start #{container} "
   end
+
   desc "Stop docker container"
-  task :stop do
-    sh "docker stop #{@config.docker.container.name}"
+  task :stop => :config do
+    sh "docker stop #{container}"
   end
+
   desc "Remove Docker container"
-  task :rm do
+  task :rm => :config do
     begin
-      unless %x(docker ps -a | grep #{@config.docker.container.name}).empty?
-        sh "docker rm --force #{@config.docker.container.name}"
+      unless %x(docker ps -a | grep #{container}).empty?
+        sh "docker rm --force #{container}"
       end
-      unless %x(docker images | grep #{@config.docker.image.name}).empty?
-        sh "docker rmi #{@config.docker.image.name}"
+      unless %x(docker images | grep #{image}).empty?
+        #sh "docker rmi --force #{image}"
       end
     rescue nil
     end
   end
+
   desc "Report on status of the Docker container"
-  task :status do
-    images = %x(docker images | egrep 'REPOSI|#{@config.docker.image.name}')
+  task :status => :config do
+    images = %x(docker images | egrep 'REPOSI|#{image}')
     unless images.empty?
       s 'Docker Images'
       puts images.green.bold
     end
-    containers = %x(docker ps | egrep 'CONTAIN|#{@config.docker.container.name}')
+    containers = %x(docker ps | egrep 'CONTAIN|#{container}')
     unless containers.empty?
       s 'Docker Containers'
       puts containers.cyan.bold
     end
   end
+end
+
+desc 'Deploy the HEAD to production'
+task :deploy do
+  sh 'ssh kig@kig.re -t -- bash -l -c /home/kig/workspace/kiguino.github.io/deploy'
 end

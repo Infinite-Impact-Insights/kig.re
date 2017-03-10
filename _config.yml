@@ -47,6 +47,8 @@ showToggleButton: false
 
 docker:
   image:
-    name: kigster/kigre
+    user: kigster
+    name: kigre
   container:
-    name: kigster-kigre-jekyll
+    name: kigre
+  dockerfile: nginx-full
