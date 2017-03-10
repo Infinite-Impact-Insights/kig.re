@@ -44,3 +44,9 @@ github:
   repo:      https://github.com/kigster
 tocTopTag:   h2
 showToggleButton: false
+
+docker:
+  image:
+    name: kigster/kigre
+  container:
+    name: kigster-kigre-jekyll
