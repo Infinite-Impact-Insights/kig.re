@@ -44,3 +44,11 @@ github:
   repo:      https://github.com/kigster
 tocTopTag:   h2
 showToggleButton: false
+
+docker:
+  image:
+    user: kigster
+    name: kigre
+  container:
+    name: kigre
+  dockerfile: nginx-full

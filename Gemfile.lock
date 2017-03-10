@@ -32,6 +32,7 @@ GEM
       addressable (~> 2)
     ffi (1.9.14)
     forwardable-extended (2.6.0)
+    hashie (3.5.5)
     jekyll (3.3.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -102,6 +103,7 @@ PLATFORMS
 
 DEPENDENCIES
   colored2
+  hashie
   jekyll
   jekyll-assets
   jekyll-coffeescript
@@ -115,4 +117,4 @@ DEPENDENCIES
   redcarpet
 
 BUNDLED WITH
-   1.14.3
+   1.14.6
