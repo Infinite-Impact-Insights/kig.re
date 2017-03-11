@@ -13,7 +13,6 @@ toc: true
 
 ## Encrypt This!
 
-
 <div class="large">
 
 Security is on everyone's mind and for a good reason. The news is riddled with all sorts of break-ins, backdoors, and headlines like the CIA and NSA have been hacking into secure apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">Whats Up</a>. I, for one, am certainly nervous.
@@ -30,9 +29,7 @@ So how can we have our cake and eat it too? How can we encrypt these application
 </div>
 
 
-
 {{site.data.macros.continue}}
-
 
 
 {% lightbox_image { "url" : "/images/security/banner-encryption-locks.jpg",  "title": "Encryption", "group":"security", "class": "lightbox-image" } %}
