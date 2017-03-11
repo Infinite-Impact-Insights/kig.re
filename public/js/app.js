@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document ).ready(function() {
 
   $('#search-icon').on('click', function(event)  {
     $('#search-form').submit()
@@ -15,6 +15,23 @@ $( document ).ready(function() {
       return false;
   })
 });
+
+class Site {
+  constructor(url) {
+    this.url = url;
+    this.regex = /(localhost|127\.0\.0\.1):4000/;
+  }
+
+  isLocal() {
+    if (window.location.href.match(this.localhostRegex)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
+var site = new Site(window.location.href);
 
 /*
  * jQuery Table of Content Generator Support for Jekyll v1.0
@@ -44,7 +61,7 @@ $( document ).ready(function() {
 
         $('#toctogglelink').click(function() {
             var ul = $($('#toc ul')[0]);
-            
+
             if (ul.is(':visible')) {
                 ul.hide();
                 $(this).text(config.showText);
@@ -65,7 +82,7 @@ $( document ).ready(function() {
 
         if (config.saveShowStatus && $.cookie('toc-hide')) {
             var ul = $($('#toc ul')[0]);
-            
+
             ul.hide();
             $('#toctogglelink').text(config.showText);
             $('#toc').addClass('tochidden');

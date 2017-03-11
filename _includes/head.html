@@ -22,6 +22,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/public/js/app.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/public/lightbox/css/lightbox.css"/>
@@ -50,7 +51,6 @@
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Fira+Mono:400,700' rel='stylesheet' type='text/css'>
     <script async="true" src="{{ site.baseurl }}/public/lightbox/js/lightbox.min.js"></script>
-    <script src="{{ site.baseurl }}/public/js/app.js"></script>
 
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -60,11 +60,8 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
     <meta content="{{page.title}} – a blog by Konstantin Gredeskoul about Arduino, hardware, sensors, robotics, beaglebone black" name='description'>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-1361897040087990",
-        enable_page_level_ads: true
-      });
-    </script>
+
+    {% include newrelic.html %}
+    {% include google.html %}
+
 </head>
