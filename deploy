@@ -23,7 +23,7 @@ function local_deploy() {
   hook "before-bundle"
   bundle
   hook "before-build"
-  bundle exec jekyll build
+  RUBYOPT="-W0" bundle exec jekyll build
   find . -type d -exec chmod 755 {} \;
   find . -type f -exec chmod o+r {} \;
   hook "after-build"
