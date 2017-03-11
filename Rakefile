@@ -43,7 +43,7 @@ namespace :jekyll do
     sh 'chmod -R 755 _site/'
   end
   task :serve do
-    sh 'RUBYOPT="-W0" bundle exec jekyll serve --watch --trace'
+    sh 'RUBYOPT="-W0" bundle exec jekyll serve -H 0.0.0.0 --watch --trace'
   end
   task :browser do
     spawn 'sleep 3 && open http://localhost:4000'

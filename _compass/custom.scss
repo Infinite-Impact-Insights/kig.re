@@ -1,5 +1,5 @@
 $primary-fg: rgba(#d5dfdf, 0.93);
-$primary-bg: rgba(38, 30, 30, 0.88);
+$primary-bg: rgba(22, 20, 20, 0.88);
 $primary-border: #E08E79;
 
 $secondary-fg: #fff9f4;
@@ -90,10 +90,10 @@ hr {
 
 
     li a {
-      font-size: $nav-font-size - 5 !important;
+      font-size: $nav-font-size + 1 !important;
       font-weight: $nav-font-weight;
       code, pre {
-        font-size: $fixed-font-size - 5 !important;
+        font-size: $fixed-font-size - 4 !important;
       }
     }
   }
@@ -106,16 +106,17 @@ hr {
   body.theme-ltec {
     .content-toc {
       height: auto !important;
+      margin-left: 0px !important;
     }
     .content-toc {
       h5.toc-title {
-        margin-left: -10px !important;
+        margin-left: 0px !important;
       }
     }
     .post {
       padding-left: 10px !important;
       h1, h2, h3, h4, h5 {
-        margin-left: -10px !important;
+        margin-left: 0px !important;
       }
     }
 
@@ -203,9 +204,10 @@ body.theme-ltec {
     font-size: $large-font-size;
     font-family: $large-font-family;
     line-height: $large-font-size + 6;
+    text-shadow: 2px 2px 2px $h1-shadow;
     margin-top: 20px;
     margin-bottom: 30px;
-    color: $secondary-fg;
+    color: rgb(196, 196, 196);
   }
 
   em.title {
@@ -225,7 +227,7 @@ body.theme-ltec {
 
     h5.toc-title {
       color: $h1-fg !important;
-      font-size: $header-font-size-h1 - 4;
+      font-size: $header-font-size-h1 - 8;
       font-family: $header-font-family !important;
       text-shadow: 1px 1px 4px $h1-shadow;
       margin-left: 10px;
@@ -237,7 +239,7 @@ body.theme-ltec {
       box-shadow: 0px 0px 8px $nav-hover-shadow;
       width: 96%;
 
-      background-color: $primary-bg - 20;
+      background-color: $primary-bg + 10;
       border: 0px solid #E8E8E8;
       border-radius: 2px;
 
@@ -259,7 +261,7 @@ body.theme-ltec {
             display: block;
             padding: 5px;
             text-decoration: none;
-
+            color: $nav-hover-shadow;
             &:hover, &:focus {
               color: $nav-hover-fg;
               background-color: $nav-hover-bg;
@@ -286,11 +288,11 @@ body.theme-ltec {
       }
 
       .toc-entry.toc-h1 { font-size:  $base-font-size + 3; margin-left: 0px; display: none;}
-      .toc-entry.toc-h2 { font-size:  $base-font-size + 2; margin-left: 0px;}
-      .toc-entry.toc-h3 { font-size:  $base-font-size + 2; margin-left: 0px;}
-      .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 30px;}
-      .toc-entry.toc-h5 { font-size:  $base-font-size - 2; margin-left: 40px;}
-      .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 50px;}
+      .toc-entry.toc-h2 { font-size:  $base-font-size + 2; margin-left: 0px; }
+      .toc-entry.toc-h3 { font-size:  $base-font-size + 2; margin-left: 0px; }
+      .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 15px;}
+      .toc-entry.toc-h5 { font-size:  $base-font-size - 2; margin-left: 30px;}
+      .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 45px;}
     }
   }
 
@@ -440,7 +442,7 @@ body.theme-ltec {
 
   background-color: $primary-bg;
   color: $primary-fg;
-  text-shadow: 1px 1px 1px $h1-shadow;
+  // text-shadow: 1px 1px 1px $h1-shadow;
   font-family: $base-font-family !important;
   font-weight: 100;
   line-height: 15pt;
