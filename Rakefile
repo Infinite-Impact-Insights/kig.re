@@ -80,6 +80,11 @@ namespace :docker do
     sh "docker run --name #{container} -d -p 80:8080 #{image}"
   end
 
+  desc "Push This Docker image"
+  task :push => [ :build ]   do
+    sh "docker push #{image}"
+  end
+
   desc "Start Docker Container"
   task :start => :build do
     sh "docker start #{container} "
