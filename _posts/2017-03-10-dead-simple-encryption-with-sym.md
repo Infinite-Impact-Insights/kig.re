@@ -5,116 +5,115 @@ draft: false
 toc: true
 ---
 
+<img style="margin: 10px 0; width: 100%; height: 100px;" src="/images/security/xlock-long.jpg"/>
+
 <div class="large">
 <strong>A story about how your mom can now protect her application secrets by using this simple and effective <a href="https://github.com/kigster/sym">symmetric encryption tool</a>.</strong>
 </div>
 
-<img style="margin: 10px 0; width: 100%; height: 100px;" src="/images/security/xlock-long.jpg"/>
+## Introduction
 
-## Encrypt This!
+### These Days If You Are Not Paranoid...
 
-<div class="large">
-
-Security is on everyone's mind and for a good reason. The news is riddled with all sorts of break-ins, backdoors, and headlines like the CIA and NSA have been hacking into secure apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">Whats Up</a>. I, for one, am certainly nervous.
-</div>
-
-But while these issues of today are quite important, I wanted to address a much simpler problem that kept arising from one application I was working on to another.
-
-I wanted to respond to the needs of developers who manage one or more applications, where we always seem to have some sensitive information, and people scream at the poor intern that accidentally checked in the application secrets into git, and pushed. OMG! What have you done!
-
-Keeping your secrets outside of git may do more than providing you a false sense of security, it may also derail the ability to track revisions, and rollback to a previously working version. 
+— You don't live in reality :) [ — anonymous]
 
 <div class="large">
-So how can we have our cake and eat it too? How can we encrypt these application secrets, so that it might be OK to keep them in the source repository?
+As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that <a href="https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/">CIA and NSA may have been hacking into your phone</a>, rendering encryption used by the secure messaging apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">Whats Up</a> completely useless.
 </div>
+
+> **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :) 
+
 
 
 {{site.data.macros.continue}}
 
 
-{% lightbox_image { "url" : "/images/security/banner-encryption-locks.jpg",  "title": "Encryption", "group":"security", "class": "lightbox-image" } %}
 
-In this case, the types of information that need protecting fall into a few categories:
+While these are serious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
 
- * **username and password information**, such as logins into external 3rd party services. Such services have various levels of threat: for example, your NewRelic account that monitors your app is probably not as sensitive as your Stripe or Braintree payment processing credentials.<br /><br />
- * **application API tokens** into applications you integrate with. Perhaps these are shipping providers, or accounting applications, or analytics such as MixPanel, Looker and so on.<br /><br />
- * Probably one of the worst types of information to leak is your **cloud deployment SSH keys, API keys and secrets**, something that Amazon AWS, for example, issues to the companies. Using these keys one can completely destroy your AWS accounts, including all of your backups (you are doing offsite backups to ANOTHER cloud provider, aren't you?). The result is very well documented in the saga about the [CodeSpaces going out of business]() after a hacker demanded a ransom, and subsequently killed their infrastructure.
+Now, keeping secrets outside of your repo may provide you with a false sense of security. After all, anyone who gains access to your hard drive can download all of your secrets. Think of a coffee shop, with a public WiFi, combined with a lack of recent security updates for your operating system — and you are instantly at high risk. Besides the fact that decrypted secrets are easily accessible on your file system, this `gitignore` method deprives us, developers, from a very useful ability to track historical revisions of any changes to secrets files, and to be able to rollback to a previously working versions. Not to mention having to sync secrets across all developers when they change!
 
-So how do you deal with this information in a secure way?
-
-### I Can Haz Secrets?
-
-We'll refer to the general concept of a sensitive information described in the previous section as — **secrets**. We need these secrets so that our application can function, or so that our deploy to the cloud can work. And yet, if you hesitated the check that YAML file into git repository that's shared across the organization, you can pat yourself on the back — you are right. Don't ever check that into your repo *unencrypted*.
-
-So what options do you have *besides* encryption?  Let's explore.
-
-#### Secrets Outside of the Repo
-
-As one option, you can keep those files separate out of your git repo, add the filename to `.gitignore`, and distribute the secrets file somehow else. One company that I am familiar with used to keep the application secrets up on the company's AWS S3 account, as a downloadable file.
-
-While this is not the worst idea in the world, it does have some clear disadvantages. The primary one being that when you `git clone` your source code, you may be missing a vital piece of your codebase that prevents you from developing your code. You need to download some file to get things working.
-
-The second big downside is that you loose revision control of the secrets file. I hope I don't have to convince you that source revision control is *kind of a necessity*.
+> "There is gotta be a better way..."  —— I thought to myself.
 
 
-#### Secrets in AWS Host Config
+So I went on a hunt — looking for a magical encryption tool, ideally written in ruby, that I could use to encrypt secrets, which would then enable us to check-in application secrets, encrypted, into the repo. Without the encryption key these files are useless. After looking around for some time, I came to the conclusion that a tool that was simple enough to use, was able to read the private key from many sources — such as a file, environment variable, or even Mac OS-X Keychain, and offerred password-protection for the keys, and can cache passwords for 15 minutes so that we don't have to retype it ten times during the deploy, this tools — **it simply did not exist.**
 
-AWS allows you to configure each host by uploading a manifest file, with a bunch of JSON configuration. I worked at another company that relied on this process to separate secrets out. However, these manifest files were not even version controlled.
+<div class="large">
+Well, technically it did not exist until now :) 
+</div>
 
-So once again, we arrive at a problem that secrets live outside the codebase, and once again are not revision controlled.
-
-#### Secrets in Environment Variables
-
-Sites like Heroku require you to provide sensitive information in the environment variables. To be honest, Heroku does have options to encrypt environment variables, but if you are using this method outside of Heroku, then how are you ensuring these environment variables are set? Somehow the data must make it onto the server. Is it a shell file?
-
-You can quickly see that just moving to environment variables does not solve anything.
-
-### Cracking the Nut
+### Encrypt, How?
 
 {% lightbox_image { "url" : "/images/security/datacenter.jpg",  "title": "Data Center", "group":"security", "class": "clear-image" } %}
 
-
 So the solution, most obviously, is to encrypt your secrets. You can encrypt individual key-pair values or the entire secrets file. This gives you an excellent advantage that the encrypted secrets file can be safely checked into the GitHub repo, as long as the encryption key(s) are nowhere near your repo.
 
-So let's review some basic encryption concepts that can help us feel safe about what we are doing with our secrets.
+So let's review some high-level encryption terms that we'll use futher in this discussion.
 
-There are many types of encryption, but the two most commonly used methods are:
+The two most commonly encryption methods methods are:
 
 {% lightbox_image { "url" : "/images/security/symmetric.png",  "title": "Symmetric", "group":"security", "class": "lightbox-image" } %}
 
- * **Symmetric Encryption** — this is where the same key is used to encrypt and decrypt. Typically a random "IV" vector is used to randomize the encryption and make it harder to "brute-force" the key. The library completely hides `iv` generation from the user and automatically generates a random `iv` per encryption.
+ * **Symmetric Encryption** — this is where the same key is used to encrypt and decrypt the data. Typically, a random "IV" vector is used to randomize the encryption and make it harder to "brute-force" the key. You need both the key and the "IV" vector to decrypt the data. Having said that, and having done some research, people typically store the IV vector right next to the data. So I am not entirely sure how much added security it provides, but I am not an encryption expert. 
 
 {% lightbox_image { "url" : "/images/security/asymmetric.gif",  "title": "Asymmetric", "group":"security", "class": "lightbox-image" } %}
 
- * **Public/Private Key Encryption** — where there are two pieces: a public and a private key.
+ * **Asymmetric (Public/Private Key) Encryption** — uses two pieces: a public and a private key. An unpredictable (typically large and random) number is used to begin generation of an acceptable pair of keys suitable for use by an asymmetric key algorithm. In an asymmetric key encryption scheme, anyone can encrypt messages using the public key, but only the holder of the paired private key can decrypt.
 
-If we are dealing with an encrypted file that needs to be read — then in order to decrypt it, in both cases you'd need to have a key lying around — either the private key (from the public/private pair), or the private key used to encrypt the data, in case of symmetric encryption.
+If we are dealing with an encrypted file that needs to be read by the application in both cases you'd need to have a key lying around — either the private key (from the public/private pair), or, in case of symmetric encryption, — the key used to encrypt the data.
 
-While public/private key has many advantages, for some situations it may be an overkill. It is for those situations that I decided to develop a simple wrapper around OpenSSL's symmetric cipher, and release it under the name `sym` — a ruby gem.
-
-### Enter Sym — Encryption Made Easy
+While public/private key has some advantages to symmetric encryption, for application secrets it appeared to be an overkill. Perhaps this is my personal judgement, and maybe some of you would disagree — in which case please do leave a comment down below. 
 
 <div class="large">
+But it is for these reasons that I decided to build a simple wrapper around OpenSSL's symmetric cipher, and release it under the name `sym` — a ruby gem.
+</div>
 
-<strong>sym</strong> is a command line utility and a Ruby API that makes it <em>trivial to encrypt and decrypt sensitive data</em>. Unlike many other existing encryption tools, <strong>sym</strong> focuses on usability and streamlined interface (CLI), with the goal of making encryption easy and transparent. The result? There is no longer any excuse for keeping your application secrets unencrypted or outside of your repo.
+{% lightbox_image { "url" : "/images/security/banner-encryption-locks.jpg",  "title": "Encryption", "group":"security", "class": "lightbox-image" } %}
+
+### Threat Evaluation
+
+But before we jump into the gem, I would like to explore a couple of use-cases that exist when encryption/decryption of secrets is introduced into the deploy flow of any application.  
+
+We start by assuming that you have an encrypted file in your source repo, on your laptop. Perhaps using `sym` or otherwise you are able to decrypt this file, by providing a key. Now we can outline a few common scenarios:<br /><br />
+
+ 1. You can decrypt secrets locally in order to use your app. This is the simples method that a) keeps your repo free of unencrypted secrets, and b) is very simple to use, because you essentially dealing with an unencrypted file once decryption step is performed.
+ 2. You can split your secrets into, say, "development", "staging" and "production", and only decrypt the "development" locally. This is better than above as it does not expose production secrets locally.
+ 3. But now you need to deploy. So the question is: Do you decrypt production secrets locally, and push them to a remote host (or a docker container), or do you attempt to decrypt things on the remote host? And, in the case of the latter — do you decrypt them once and leave decrypted files lying around on a remote host, or do you make your application decrypt files on the fly?
+    * If you are **decrypting things locally**, you must delete the decrypted secrets immediately after the deploy. You also get completely open secrets file on the remote host, so if someone has access to the file system of a remote host, they can steal your secrets.
+    * If you are **decrypting things remotely**, that means you need to pass the private key to the remote host, at least temporarily. An advantage is that you don't need to worry about production secrets being open locally, or having to remove them after the deploy. But the disadvantage is that your private key has to (at least momentarily) be present on all remote hosts you are deploying to.
+    * Finally, you can decide that you want to **keep secrets encrypted everywhere, including remote hosts**, and make your application automatically decrypt the secrets upon reading them. For this you would need to pass the private key to all remote hosts, perhaps as environment variable, and add some code to reading in your settings, that decrypts it on the fly. This method is *the most secure of the above*, because the decrypted secrets **only exist in RAM**, which means that merely having access to the disk of the server is not enough to compromise your app. <br /><br />An attacker has to have a full login access to your remote server, or a Docker container. And let's face it — if the attacker gains login access to your server, all bets are off at this point. They can probably fireup irb or a remote debugger, and connect to your app's ruby runtime to fetch the secrets. They can also quickly figure out how the app is getting its encryption key by examining the code and the environment variables. So we won't focus much on the case when the remote server is completely compromised, but focus on the cases where may just partial access — such as disk access — is available to the attacker. In these situation you really don't want to have unencrypted secrets lying around the filesystem.
+    * Note that ability to load encrypted settings into memory is not yet available in `sym`, but [this issue](https://github.com/kigster/sym/issues/9) should address this.
+
+Final point I would like to make here, is that — given that the private key is very high-risk piece of data, — it may be a good idea to encrypt the key itself, but perhaps with the password that you can remember. This adds a rather significant layer of security, because finding the encrypted key without a password proves just as futile as trying to brute force the encrypted file itself. It should not be surpising then, that `sym` library supports password encryption with additional flexibility around caching the passwords (or not), and if caching — letting you specify for for how long.
+
+And now, since we already understand various threat vectors and scenarios, without further ado, I would love to introduce you to the new kid on the block: **`sym` — symmetric encryption made easy.**
+
+## Sym — Encrypting & Decrypting with Style.
+
+<div class="large">
+<strong>Sym</strong> is a ruby library (gem) that offers both the command line interface (CLI) and a set of rich Ruby APIs, which make it rather <em>trivial to add encryption and decryption of sensitive data</em> to your development flow. As a layer of additional security, <strong>sym</strong> supports encrypting of the private key itself with a password. Unlike many other existing encryption tools, <strong>sym</strong> focuses on usability and streamlined interface (in both CLI and Ruby API), with the goal of making encryption easy and transparent to the developer integrating the gem. <strong>sym</strong> uses <em>symmetric Encryption</em> with a 256-bit key and a random 'iv' vector, to encrypt and decrypt data.
 </div>
 
 <div>
-<strong>sym</strong> uses <em>symmetric Encryption</em> which simply means that you will be using the same 256-bit key to encrypt and decrypt data. In addition to the private key, the encryption uses an IV vector. The library completely hides `iv` generation from the user and automatically generates a random `iv` per encryption. Finally, each key can be uniquely password-protected (encrypted) and stored in OS-X Keychain, environment variable or a file.
+<strong>Sym</strong> uses the <code>AES-256-CBC</code> cipher to encrypt the actual data, — this is the cipher used by the US Government, and <code>AES-128-CBC</code> cipher to encrypt the key with an optional password.<br /><br />
 
+Finally, <strong>sym</strong> compresses the encrypted data with <code>zlib</code> and converts it to <code>base64</code> string. While compression can be disabled if needed, turning off <code>base64</code> encoding is not currently supported. Therefore both the keys and the encrypted data will always appear like a <code>base64</code>-encoded string.
 </div>
 
-#### What's Included
 
-This gem includes two primary components:
+### What You See is What You Get
 
- * [Rich command line interface CLI](https://github.com/kigster/sym#cli) with many features to streamline encryption/decryption.
- * Ruby API:
-     * [Basic Encryption/Decryption API](https://github.com/kigster/sym#rubyapi) is activated by including `Sym` module in a ruby class, it adds easy to use `encr`/`decr` methods.
-     * [Application API](https://github.com/kigster/sym#rubyapi-app) is activated by instantiating `Sym::Application`, and using the instance to drive sym's complete set of functionality as if it is invoked from the CLI.
+Let's dive into the library! I promise this will be brief!
+
+**Sym** library includes two primary components —
+
+ 1. [Rich command line interface CLI](https://github.com/kigster/sym#cli) with many features to streamline encryption/decryption.
+ 2. Ruby API, available via several entry points:
+     * [Basic Encryption/Decryption API](https://github.com/kigster/sym#rubyapi) is activated by including `Sym` module in a ruby class, it adds easy to use `encr`/`decr`, and `encr_password/decr_password` methods.
+     * [Application API](https://github.com/kigster/sym#rubyapi-app) is activated by instantiating `Sym::Application` class, passing it an arguments hash as if it came from the CLI, and then calling `execute` method on the instance.
      * [Sym::Configuration](https://github.com/kigster/sym#rubyapi-config) class for overriding default cipher, and many other parameters such as compression, cache location, Zlib compression, and more.
 
-#### Time Saving Features
+### Sym Saves Time. Massively.
 
 So how does `sym` substantiate its claim that it *streamlines* the encryption process? I thought about it, and turns out there are quite a few reasons:
  
@@ -129,9 +128,11 @@ As you can see, I tried to build a tool that provides real security for applicat
 
 > Encrypting application secrets had never been easier! –– Socrates [LOL, -ed.]
 
-#### Step By Step
+### Step by Step Walkthrough
 
-  1. You generate a new encryption key, that will be used to both encrypt and decrypt the data. The key is 256 bits, or 32 bytes, or 45 bytes when base64-encoded, and can be generated with `sym -g`.
+In this section, I am hoping to walk you through the entire end-to-end process of generating a key, password-protecting it, caching it, and using it to encrypt and decrypt a file.
+
+  1. We start by generating a new encryption key, that will be used to both encrypt and decrypt the data. The key is 256 bits, or 32 bytes, or 45 bytes when base64-encoded, and can be generated and printed to STDOUT with `sym -g`.
      * You can optionally password protect the key with `sym -gp`
      * You can save the key into a file with `sym -gpo key-file` 
      * Or you can save it into the OS-X Keychain, with `sym -gpx keychain-name`
@@ -144,15 +145,20 @@ As you can see, I tried to build a tool that provides real security for applicat
      * or environment variable
      * or OS-X Keychain password entry
      * or you can paste the key interactively with `-i` 
+     * or you can save your key into `~/.sym.key` file, and it will be read when neither `-k` or `-i` are supplied.
   4. Input data can be read from a file with `-f file`, or read from STDIN, or a passed on the command line with `-s string`    
   4. Output is the encrypted data, which is printed to STDOUT by the default, or it can be saved to a file with `-o <file>`
   5. Encrypted file can be later decrypted with `sym -d [key-spec] [data-spec]`
 
-#### ASCII Session with Sym
+Now that we've got this out of the way — what can be better than watching someone do it? 
+
+<a name="ascii"></a>
+
+### ASCII Session with Sym
 
 <script type="text/javascript" src="https://asciinema.org/a/26nytbf3oaofijuwwxawuseas.js" id="asciicast-26nytbf3oaofijuwwxawuseas" async></script>
 
-### Thanks!
+## Thanks!
 
 Thanks for reading, and I hope you find this tool useful! Please feel free to submit issues or requests on GitHub at [https://github.com/kigster/sym](https://github.com/kigster/sym).
 

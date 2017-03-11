@@ -1,4 +1,4 @@
-$primary-fg: rgba(#d5dfdf, 0.73);
+$primary-fg: rgba(#d5dfdf, 0.83);
 $primary-bg: rgba(22, 20, 20, 0.88);
 $primary-border: #E08E79;
 
@@ -53,8 +53,8 @@ $toc-level-2: rgba(#7cc8ff, 0.49);
 
 
 $base-font-family: 'Assistant', 'HelveticaNeue', sans-serif;
-$base-font-size: 14pt;
-$base-font-weight: 200;
+$base-font-size: 13pt;
+$base-font-weight: 400;
 
 $nav-font-family: 'Cuprum', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
 $nav-font-size: 13pt;
@@ -86,7 +86,7 @@ hr {
     }
     margin: 0;
     padding: 0px;
-    padding-left: 0px !important;
+    padding-left: 15px !important;
 
 
     li a {
@@ -120,9 +120,8 @@ hr {
       }
     }
 
-    font-size: $base-font-size - 3;
-    line-height: $base-font-size + 3;
-    font-weight: $base-font-weight;
+    font-size: $base-font-size + 1;
+    line-height: $base-font-size + 4 !important;
 
     code, pre {
       font-size: $fixed-font-size - 4;
@@ -185,6 +184,7 @@ html {
 }
 
 body.theme-ltec {
+
 
   .lb-container {
     padding: 0;
@@ -287,12 +287,12 @@ body.theme-ltec {
         line-height: $nav-font-size + 5;
       }
 
-      .toc-entry.toc-h1 { font-size:  $base-font-size + 3; margin-left: 0px; display: none;}
-      .toc-entry.toc-h2 { font-size:  $base-font-size + 2; margin-left: 0px; }
-      .toc-entry.toc-h3 { font-size:  $base-font-size + 2; margin-left: 0px; }
-      .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 15px;}
+      .toc-entry.toc-h1 { font-size:  $base-font-size + 4; margin-left: 0px; display: none;}
+      .toc-entry.toc-h2 { font-size:  $base-font-size + 3; margin-left: 0px; }
+      .toc-entry.toc-h3 { font-size:  $base-font-size + 2; margin-left: 10px; }
+      .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 20px;}
       .toc-entry.toc-h5 { font-size:  $base-font-size - 2; margin-left: 30px;}
-      .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 45px;}
+      .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 40px;}
     }
   }
 
@@ -481,10 +481,16 @@ body.theme-ltec {
   .post {
     padding-left: 30px;
     ul, ol {
+      padding-left: 20px;
       li {
-        margin-bottom: 15px;
+        padding-left: 10px;
+        margin: 20px 0;
+        ul li {
+          padding-left: 0px;
+        }
       }
     }
+
     a {
       color: $link-fg;
       font-weight: 400;

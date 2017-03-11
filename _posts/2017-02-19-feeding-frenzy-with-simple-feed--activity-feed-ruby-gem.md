@@ -5,7 +5,7 @@ draft: false
 toc: true
 ---
 
-## OR, how to add a proper [social activity feed](https://github.com/kigster/simple-feed) to your ruby-based  application in fifteen minutes.
+##### OR, how to add a proper [social activity feed](https://github.com/kigster/simple-feed) to your ruby-based  application in fifteen minutes.
 
 ### For the Impatient
 
