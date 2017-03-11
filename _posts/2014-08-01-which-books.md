@@ -2,11 +2,13 @@
 layout: page
 draft: false
 title: Books I Am Reading
+toc: true
+
 ---
 This post is about the books I am reading right now, with short reviews.
 
-
 ![Books](/images/books-to-read.jpg)
+
 #### [Zero to Maker: Learn (Just Enough) to make (Just About) Anything by _David Lang_](http://amzn.to/1ks3Tvc)
 
 Something must be said about inspiration. This book is great at providing continuing inspiration in my quest

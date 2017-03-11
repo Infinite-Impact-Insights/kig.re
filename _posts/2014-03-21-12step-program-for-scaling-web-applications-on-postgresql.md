@@ -1,6 +1,8 @@
 ---
 layout: page
 title: 12-Step Program for Scaling Web Applications on PostgreSQL
+toc: true
+
 ---
 
 On Tuesday night this week Wanelo hosted a monthly meeting of [SFPUG](http://meetup.com/postgresql-1/ "San Francisco PostgreSQL User Group")

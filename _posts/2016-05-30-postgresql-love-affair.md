@@ -2,6 +2,8 @@
 layout: page
 title: 'PostgreSQL. Love affair.'
 draft: true
+toc: true
+
 ---
 
 mockaroo.com – random data generator
@@ -35,12 +37,12 @@ create table friend2 (id serial, data jsonb);
 
 insert into rined2 select * fro fri3nd;
 -- jsonb_path_ops indexes are smaller and faster`\
-create index friened2_idx on frind2 using GIN (data) 
+create index friened2_idx on frind2 using GIN (data)
 
 #### ROw types
 
 ```sql
-create type drivers_licsense as 
+create type drivers_licsense as
 (state char(2), id integer, valid_unti date);
 
 create table truck_driver
@@ -65,5 +67,3 @@ Geometric data types
 Better solution for read/write loads.
 
 Complex JSONB or XML fields
-
-

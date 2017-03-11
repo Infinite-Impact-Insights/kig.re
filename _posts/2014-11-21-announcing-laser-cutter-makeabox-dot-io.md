@@ -2,6 +2,8 @@
 draft: false
 layout: page
 title: "Announcing LaserCutter ruby gem and MakeABox.IO web site"
+toc: true
+
 ---
 
 <div class="small-right">

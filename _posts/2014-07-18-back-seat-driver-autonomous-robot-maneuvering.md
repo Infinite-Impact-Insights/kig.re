@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Back-Seat Driver: Autonomous Robot Maneuvering"
+toc: true
+
 ---
 
 # BackSeat Driver: Autonomous Vehicle Library for Arduino

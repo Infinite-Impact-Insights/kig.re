@@ -2,9 +2,11 @@
 layout: page
 draft: false
 title: Music, DJ-ing, and Origins of Weird Names
+toc: true
+
 ---
 
-– So, did you know? 
+– So, did you know?
 
 ```c++
 if (my.question.style_of(blog.post.style) == FALSE) {
@@ -12,7 +14,7 @@ if (my.question.style_of(blog.post.style) == FALSE) {
 }
 ```
 
-Me: 
+Me:
 – "So, are you prepared to listen to some music?"
 
 You:
@@ -39,7 +41,7 @@ if (!curtains.open()) {
 
 If you've been reading this blog for a while, you know it's a personal blog of Konstantin Gredeskoul, the guy with the longest name ever. Why do I have such a name? Well, I was born in Ukraine, but in the western side that spoke Russian as the daily language. Konstantin, often shortened as "Kostya", is a popular name in Russia and Ukraine, so that's not a surprise that I have that first name. However, Gredeskoul, is a rather unique last name, with only a few surviving Gredeskouls in Russia and Ukraine, and only a couple living outside (me and my mom). __Gredeskoul__ is a last name with origins in Moldova, which culturally is closest to Romania.  And if you try to think of a few famous Romanian last names, perhaps you will come up with a list of folks such as Popescu, Dumitrescu, Paulescu, Constantinescu, etc – they do have some similarity in sound.  So I believe that Gredeskoul is a bastardized version of some Romanian name, something like Gredescu, which happens to exist. See, for example [this football player](http://www.maxpreps.com/athlete/vladimir-gredescu/tB3mwfTtEeKZ5AAmVebBJg/default.htm).
 
-So, now you see that having such a long name for quite some time now, I welcome any opportunity to shorten it. 
+So, now you see that having such a long name for quite some time now, I welcome any opportunity to shorten it.
 
 So whenever I have to "re-" name myself, perhaps for a new "stage name", each time I had a chance to pick something shorter. So with that....
 
@@ -47,7 +49,7 @@ In addition to the __kig__ (my initials in __Kiguino__, the name of the blog), I
 
   1. One is called __[LeftCtrl](https://soundcloud.com/leftctrl)__ and is my DJ name.  Anytime I DJ at a party, this is what I use.  
   2. My very old DJ name used to be __djzeel__ about 15 years ago (famous in Australia, where I played a string of gigs across several top clubs in Melbourne, having been DJ-ing only for about 2 months total at the time, but being very successful at marketing myself to club owners, as a "DJ From San Francisco".  Imagine that, in 1998 that + a tape actually got you paid gigs :-)
-  3. Finally, I wrote and produced a bunch of tracks... 
+  3. Finally, I wrote and produced a bunch of tracks...
      * First the stage name was ["PolyVinyl"](https://soundcloud.com/polygroovers/without-polyvinyl?in=polygroovers/sets/the-best-of-polygroovers), and produced a single album "Inward Journeys", unreleased.
      * Following me meeting my second wife, together we produced enough tracks for [two downtempo albums as PolyGroovers](https://itunes.apple.com/us/artist/polygroovers/id160976572), also available on [SoundCloud](https://soundcloud.com/polygroovers). So, my wife at the time – Telene – sang on most of the vocal tracks with two exceptions, and is also a fantastic DJ with her own SoundCloud page – [Telene](https://soundcloud.com/telene).
 

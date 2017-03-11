@@ -2,6 +2,8 @@
 layout: page
 title: 'The incredible power of Fork'
 draft: true
+toc: true
+
 ---
 
 The incredible power of a fork.

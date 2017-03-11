@@ -4,6 +4,7 @@ gem 'colored2'
 gem 'rake'
 gem 'nokogiri'
 gem 'hashie'
+gem 'jekyll-toc'
 group :jekyll_plugins do
   gem 'redcarpet'
   gem 'jekyll-coffeescript'

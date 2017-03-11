@@ -2,6 +2,8 @@
 layout: page
 draft: false
 title: Choosing The Right Arduino IDE (And The Winner… Is Eclipse!)
+toc: true
+
 ---
 
 As a relative late comer to Arduino world, I went through the beginner tutorials and examples

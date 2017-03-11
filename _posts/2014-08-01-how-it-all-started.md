@@ -2,6 +2,8 @@
 layout: page
 draft: false
 title: How It All Started
+toc: true
+
 ---
 
 I've been a software engineer or technical leader for most of my career, which approaches on 20 years (I just recently hit 40 earlier this year). I started coding when

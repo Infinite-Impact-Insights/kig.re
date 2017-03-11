@@ -1,6 +1,8 @@
 ---
 layout: page
 title: 'Super-charge your email like a Pro with MixMax'
+toc: true
+
 ---
 
 <div class="small-right">

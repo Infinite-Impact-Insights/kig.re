@@ -51,12 +51,14 @@ $transparent: rgba(0, 0, 0, 0);
 $toc-level-1: rgba(#b08bcb, 0.83);
 $toc-level-2: rgba(#7cc8ff, 0.49);
 
-$base-font-family: 'Raleway', 'HelveticaNeue', sans-serif;
-$base-font-size: 16pt;
-$base-font-weight: 300;
 
-$nav-font-family: 'Raleway', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
-$nav-font-size: 17pt;
+$base-font-family: 'Assistant', 'HelveticaNeue', sans-serif;
+$base-font-size: 14pt;
+$base-font-weight: 200;
+
+$nav-font-family: 'Cuprum', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
+$nav-font-size: 13pt;
+$nav-font-weight: 200;
 
 $header-font-family: 'Fjalla One', sans-serif;
 $header-font-size-h1: 28pt;
@@ -64,19 +66,35 @@ $header-font-size-h1: 28pt;
 $fixed-font-family: 'Fira Mono', 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif;
 $fixed-font-size: 14pt;
 
+$large-font-size: 17pt;
+$large-font-family: 'Ropa Sans', 'Roboto Condensed', 'HelveticaNeue', Arial, sans-serif;
+
 hr {
   border-top: 2px dotted $primary-bg !important;
 }
 
 @media (max-width: 48em) {
+  .sidebar {
+    padding-left: 0px !important;
+    margin-left: -20px !important;
+
+
+  }
   .navbar {
     .navbar-header {
       height: 40px;
     }
     margin: 0;
     padding: 0px;
+    padding-left: 0px !important;
+
+
     li a {
-      font-size: $nav-font-size - 4 !important;
+      font-size: $nav-font-size - 5 !important;
+      font-weight: $nav-font-weight;
+      code, pre {
+        font-size: $fixed-font-size - 5 !important;
+      }
     }
   }
   .share-buttons {
@@ -86,14 +104,27 @@ hr {
     display: none;
   }
   body.theme-ltec {
-    font-size: $base-font-size - 5;
+    .content-toc {
+      height: auto !important;
+    }
+    .content-toc {
+      h5.toc-title {
+        margin-left: -10px !important;
+      }
+    }
+    .post {
+      padding-left: 10px !important;
+      h1, h2, h3, h4, h5 {
+        margin-left: -10px !important;
+      }
+    }
+
+    font-size: $base-font-size - 3;
     line-height: $base-font-size + 3;
     font-weight: $base-font-weight;
-    .post {
-      padding: 15px;
-    }
+
     code, pre {
-      font-size: $fixed-font-size - 3;
+      font-size: $fixed-font-size - 4;
     }
   }
 }
@@ -168,16 +199,109 @@ body.theme-ltec {
     font-style: oblique;
   }
 
+  .large {
+    font-size: $large-font-size;
+    font-family: $large-font-family;
+    line-height: $large-font-size + 6;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: $secondary-fg;
+  }
+
   em.title {
     color: $h1-title-fg - 20;
   }
 
+  .left-sidebar {
+    position: relative;
+    min-width: 250px;
+  }
+
+  .content-toc {
+    padding: 0px 10px 0px 10px;
+    margin: 0;
+    position: relative;
+    height: 6000px;
+
+    h5.toc-title {
+      color: $h1-fg !important;
+      font-size: $header-font-size-h1 - 4;
+      font-family: $header-font-family !important;
+      text-shadow: 1px 1px 4px $h1-shadow;
+      margin-left: 10px;
+    }
+
+    .section-nav {
+      position: sticky;
+      top: 0;
+      box-shadow: 0px 0px 8px $nav-hover-shadow;
+      width: 96%;
+
+      background-color: $primary-bg - 20;
+      border: 0px solid #E8E8E8;
+      border-radius: 2px;
+
+      padding: 10px 20px;
+      padding-right: 20px;
+      margin: 0px;
+      margin-left: 4px;
+
+
+
+
+      > li {
+        list-style-type: none;
+      }
+
+      li {
+        margin-bottom: 0px;
+          a, .open > a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+
+            &:hover, &:focus {
+              color: $nav-hover-fg;
+              background-color: $nav-hover-bg;
+              box-shadow: 0px 0px 8px $nav-hover-shadow;
+            }
+
+            &.active {
+              background-color: $nav-active-bg !important;
+              color: $nav-active-fg;
+              margin-right: 0px;
+              border-size: 0;
+              font-weight: 700;
+            }
+          }
+      }
+      .toc-entry.toc-h1,
+      .toc-entry.toc-h2,
+      .toc-entry.toc-h3,
+      .toc-entry.toc-h4,
+      .toc-entry.toc-h5,
+      .toc-entry.toc-h6 {
+        font-family: $nav-font-family;
+        line-height: $nav-font-size + 5;
+      }
+
+      .toc-entry.toc-h1 { font-size:  $base-font-size + 3; margin-left: 0px; display: none;}
+      .toc-entry.toc-h2 { font-size:  $base-font-size + 2; margin-left: 0px;}
+      .toc-entry.toc-h3 { font-size:  $base-font-size + 2; margin-left: 0px;}
+      .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 30px;}
+      .toc-entry.toc-h5 { font-size:  $base-font-size - 2; margin-left: 40px;}
+      .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 50px;}
+    }
+  }
+
   .sidebar {
+    position: relative;
     color: $nav-fg;
     margin: 0;
     padding: 25px 0px 0px;
     li a {
       font-size: $nav-font-size;
+      line-height: $nav-font-size + 1;
     }
     .collapse {
       overflow-x: hidden;
@@ -187,6 +311,7 @@ body.theme-ltec {
   nav.navbar {
     padding: 0;
     margin: 0;
+
     .navbar-header {
       margin: 0;
       width: 100%;
@@ -214,13 +339,14 @@ body.theme-ltec {
     }
   }
   .nav {
+
     code {
       background-color: $form-input-bg + 30;
       color: white;
       margin-right: 10px;
-      font-size: $nav-font-size;
+      font-size: $nav-font-size - 5;
       text-shadow: 1px 1px 2px black;
-      font-weight: 100;
+      font-weight: $nav-font-weight ;
     }
 
     > li a, li.open > a {
@@ -260,11 +386,12 @@ body.theme-ltec {
     a, .open > a {
       background-image: none !important;
       display: block;
-      font-family: $nav-font-family !important;
-      font-weight: 400;
       margin: 0;
       padding: 10px;
       margin-right: -1px;
+
+      font-family: $nav-font-family !important;
+      font-weight: 400;
 
       color: $nav-fg;
       text-shadow: 1px 1px 1px $nav-shadow;
@@ -350,6 +477,7 @@ body.theme-ltec {
   }
 
   .post {
+    padding-left: 30px;
     ul, ol {
       li {
         margin-bottom: 15px;
@@ -395,6 +523,7 @@ body.theme-ltec {
     h1, h2, h3, h4, h5 {
       margin-top: 30px;
       margin-bottom: 10px;
+      margin-left: -30px;
       color: $h1-fg;
       font-weight: 100 !important;
       line-height: 120%;
@@ -575,6 +704,14 @@ body.theme-ltec {
     box-shadow: 0 0 0;
   }
 
+  .lightbox-image  {
+    float: right;
+    clear: right;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    width: 40%;
+    padding: 0 !important;
+  }
 
   a.command-line {
     display: inline-block;

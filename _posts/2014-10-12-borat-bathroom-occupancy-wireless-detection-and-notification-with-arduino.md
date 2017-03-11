@@ -2,6 +2,8 @@
 layout: page
 draft: false
 title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
+toc: true
+
 ---
 
 A great company where I work, [Wanelo](http://wanelo.com/), with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.

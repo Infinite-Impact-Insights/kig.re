@@ -1,6 +1,8 @@
 ---
 layout: page
 title: 'Native Instruments Traktor — Fixing Dreaded "Could Not Read Collection/Playlist file" Error'
+toc: true
+
 ---
 
 ## "Not a Rant" Rant

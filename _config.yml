@@ -42,7 +42,8 @@ redcarpet:
 
 github:
   repo:      https://github.com/kigster
-tocTopTag:   h2
+gems:
+  - jekyll-toc
 showToggleButton: false
 
 docker:

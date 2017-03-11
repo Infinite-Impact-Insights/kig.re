@@ -2,10 +2,12 @@
 layout: page
 title: 'Docking with the Container Conf on Autopilot'
 draft: true
+toc: true
+
 ---
 I am writing this from the [ContainerCamp](http://container.camp) – a single day conference in San Francisco. Its happening inside of the gorgeous Bloomingdale shopping mall. Who knew that inside of the shopping mall is a shwanky co-working space? I didn't.
 
-Anyway, I am here as a bit of an outsider, at least the way I see myself. I have been hearing about Docker, playing with it a bit, scratching my head quite a bit, and so I am certainly looking forward to some clarity today. I do strongly believe that if something is a challenge for me to fully "get", it's going to be a challenge also for other people, perhaps those who think like me. 
+Anyway, I am here as a bit of an outsider, at least the way I see myself. I have been hearing about Docker, playing with it a bit, scratching my head quite a bit, and so I am certainly looking forward to some clarity today. I do strongly believe that if something is a challenge for me to fully "get", it's going to be a challenge also for other people, perhaps those who think like me.
 
 ### Blood Behind
 
@@ -27,7 +29,7 @@ It was during that time that I got to appreciate the complexities and intoxicati
 
 ## Conference Quotes::
 
-"Containers are not a panacaea!" 
+"Containers are not a panacaea!"
 "Containers are not virtualization"
 	 –– RedHeat
 
@@ -37,7 +39,7 @@ Quote from [http://kubernetes.io/docs/whatisk8s/](http://kubernetes.io/docs/what
 
 > The __Old Way__ to deploy applications was to install the applications on a host using the operating system package manager. This had the disadvantage of entangling the applications’ executables, configuration, libraries, and lifecycles with each other and with the host OS. One could build immutable virtual-machine images in order to achieve predictable rollouts and rollbacks, but VMs are heavyweight and non-portable.
 
-And then, of course, 
+And then, of course,
 
 > The New Way is to deploy containers based on operating-system-level virtualization rather than hardware virtualization. These containers are isolated from each other and from the host: they have their own filesystems, they can’t see each others’ processes, and their computational resource usage can be bounded. They are easier to build than VMs, and because they are decoupled from the underlying infrastructure and from the host filesystem, they are portable across clouds and OS distributions.
 
@@ -47,4 +49,3 @@ And then, of course,
 * Kuberneties – deployment and orchestration tool for Docker?
 * Deis – workflow for Kuberneties
 * Flynn
-

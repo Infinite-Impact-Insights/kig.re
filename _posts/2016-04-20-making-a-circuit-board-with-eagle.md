@@ -2,6 +2,8 @@
 layout: page
 title: 'Making a Circuit Board with Eagle'
 draft: true
+toc: true
+
 ---
 
 ## Making a Circuit Board with Eagle

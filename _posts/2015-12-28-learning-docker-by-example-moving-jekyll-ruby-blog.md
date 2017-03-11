@@ -2,6 +2,8 @@
 layout: page
 title: 'DevOps Guide to Docker: Why, How and Wow.'
 draft: true
+toc: true
+
 ---
 
 ---

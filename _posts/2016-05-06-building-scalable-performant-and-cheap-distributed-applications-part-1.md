@@ -2,6 +2,8 @@
 layout: page
 title: 'Distributed Applications That Avoid DevOOPS'
 tags:
+toc: true
+
 ---
 
 ## Are you practicing __DevOops?__
