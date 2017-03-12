@@ -69,7 +69,7 @@ namespace :docker do
   end
 
   desc 'Build Docker Image from a Dockerfile'
-  task :build => [ :config, 'jekyll:build' ] do
+  task :build => [ :config, 'jekyll:build'  ] do
     sh "cp _docker/Dockerfile.#{@config.docker.dockerfile} _site/Dockerfile"
     sh "cp _docker/nginx* _site/"
     sh "cd _site && docker build -t #{image} ."

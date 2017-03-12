@@ -44,6 +44,8 @@ github:
   repo:      https://github.com/kigster
 gems:
   - jekyll-toc
+  - jekyll-sitemap
+
 showToggleButton: false
 
 docker:
@@ -52,4 +54,4 @@ docker:
     name: kigre
   container:
     name: kigre
-  dockerfile: nginx-full
+  dockerfile: nginx-src
