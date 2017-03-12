@@ -23,7 +23,7 @@ class Site {
   }
 
   isLocal() {
-    if (window.location.href.match(this.localhostRegex)) {
+    if (window.location.href.match(this.regex)) {
       return true;
     } else {
       return false;
@@ -32,6 +32,7 @@ class Site {
 };
 
 var site = new Site(window.location.href);
+
 
 /*
  * jQuery Table of Content Generator Support for Jekyll v1.0
