@@ -18,7 +18,7 @@ toc: true
 — You don't live in reality :) [ — anonymous]
 
 <div class="large">
-As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that <a href="https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/">CIA and NSA may have been hacking into your phone</a>, rendering encryption used by the secure messaging apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">Whats Up</a> completely useless.
+As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that <a href="https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/">CIA and NSA may have been hacking into your phone</a>, rendering encryption used by the secure messaging apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">WhatsApp</a> completely useless.
 </div>
 
 > **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :) 
@@ -35,22 +35,19 @@ Now, keeping secrets outside of your repo may provide you with a false sense of 
 
 > "There is gotta be a better way..."  —— I thought to myself.
 
-
-So I went on a hunt — looking for a magical encryption tool, ideally written in ruby, that I could use to encrypt secrets, which would then enable us to check-in application secrets, encrypted, into the repo. Without the encryption key these files are useless. After looking around for some time, I came to the conclusion that a tool that was simple enough to use, was able to read the private key from many sources — such as a file, environment variable, or even Mac OS-X Keychain, and offerred password-protection for the keys, and can cache passwords for 15 minutes so that we don't have to retype it ten times during the deploy, this tools — **it simply did not exist.**
+So I went on a hunt — looking for a magical encryption tool, ideally written in ruby, that I could use to encrypt secrets, which would then enable us to check-in application secrets, encrypted, into the repo. Without the encryption key these files are useless. After looking around for some time, I came to the conclusion that a tool that was simple enough to use, was able to read the private key from many sources — such as a file, environment variable, or even Mac OS-X Keychain, and offered password-protection for the keys, and can cache passwords for 15 minutes so that we don't have to retype it ten times during the deploy, this tools — **it simply did not exist.**
 
 <div class="large">
 Well, technically it did not exist until now :) 
 </div>
 
-### Encrypt, How?
+### Encryption Methods
 
 {% lightbox_image { "url" : "/images/security/datacenter.jpg",  "title": "Data Center", "group":"security", "class": "clear-image" } %}
 
-So the solution, most obviously, is to encrypt your secrets. You can encrypt individual key-pair values or the entire secrets file. This gives you an excellent advantage that the encrypted secrets file can be safely checked into the GitHub repo, as long as the encryption key(s) are nowhere near your repo.
+So let's review some high-level encryption terms that we'll use further in this discussion.
 
-So let's review some high-level encryption terms that we'll use futher in this discussion.
-
-The two most commonly encryption methods methods are:
+The two most commonly encryption method are:
 
 {% lightbox_image { "url" : "/images/security/symmetric.png",  "title": "Symmetric", "group":"security", "class": "lightbox-image" } %}
 
@@ -70,11 +67,11 @@ But it is for these reasons that I decided to build a simple wrapper around Open
 
 {% lightbox_image { "url" : "/images/security/banner-encryption-locks.jpg",  "title": "Encryption", "group":"security", "class": "lightbox-image" } %}
 
-### Threat Evaluation
+### Evaluating Threats
 
 But before we jump into the gem, I would like to explore a couple of use-cases that exist when encryption/decryption of secrets is introduced into the deploy flow of any application.  
 
-We start by assuming that you have an encrypted file in your source repo, on your laptop. Perhaps using `sym` or otherwise you are able to decrypt this file, by providing a key. Now we can outline a few common scenarios:<br /><br />
+We start by assuming that you have an encrypted file in your source repo, on your laptop. Perhaps using `sym` or otherwise you are able to decrypt this file, by providing a key. Now we can outline a few common scenarios:<br />
 
  1. You can decrypt secrets locally in order to use your app. This is the simples method that a) keeps your repo free of unencrypted secrets, and b) is very simple to use, because you essentially dealing with an unencrypted file once decryption step is performed.
  2. You can split your secrets into, say, "development", "staging" and "production", and only decrypt the "development" locally. This is better than above as it does not expose production secrets locally.
@@ -84,15 +81,23 @@ We start by assuming that you have an encrypted file in your source repo, on you
     * Finally, you can decide that you want to **keep secrets encrypted everywhere, including remote hosts**, and make your application automatically decrypt the secrets upon reading them. For this you would need to pass the private key to all remote hosts, perhaps as environment variable, and add some code to reading in your settings, that decrypts it on the fly. This method is *the most secure of the above*, because the decrypted secrets **only exist in RAM**, which means that merely having access to the disk of the server is not enough to compromise your app. <br /><br />An attacker has to have a full login access to your remote server, or a Docker container. And let's face it — if the attacker gains login access to your server, all bets are off at this point. They can probably fireup irb or a remote debugger, and connect to your app's ruby runtime to fetch the secrets. They can also quickly figure out how the app is getting its encryption key by examining the code and the environment variables. So we won't focus much on the case when the remote server is completely compromised, but focus on the cases where may just partial access — such as disk access — is available to the attacker. In these situation you really don't want to have unencrypted secrets lying around the filesystem.
     * Note that ability to load encrypted settings into memory is not yet available in `sym`, but [this issue](https://github.com/kigster/sym/issues/9) should address this.
 
-Final point I would like to make here, is that — given that the private key is very high-risk piece of data, — it may be a good idea to encrypt the key itself, but perhaps with the password that you can remember. This adds a rather significant layer of security, because finding the encrypted key without a password proves just as futile as trying to brute force the encrypted file itself. It should not be surpising then, that `sym` library supports password encryption with additional flexibility around caching the passwords (or not), and if caching — letting you specify for for how long.
+Final point I would like to make here, is that — given that the private key is very high-risk piece of data, — it may be a good idea to encrypt the key itself, but perhaps with the password that you can remember. This adds a rather significant layer of security, because finding the encrypted key without a password proves just as futile as trying to brute force the encrypted file itself. It should not be surprising then, that `sym` library supports password encryption with additional flexibility around caching the passwords (or not), and if caching — letting you specify for how long.
 
 And now, since we already understand various threat vectors and scenarios, without further ado, I would love to introduce you to the new kid on the block: **`sym` — symmetric encryption made easy.**
 
-## Sym — Encrypting & Decrypting with Style.
+## Sym
+### Encrypting & Decrypting with Style
 
 <div class="large">
 <strong>Sym</strong> is a ruby library (gem) that offers both the command line interface (CLI) and a set of rich Ruby APIs, which make it rather <em>trivial to add encryption and decryption of sensitive data</em> to your development flow. As a layer of additional security, <strong>sym</strong> supports encrypting of the private key itself with a password. Unlike many other existing encryption tools, <strong>sym</strong> focuses on usability and streamlined interface (in both CLI and Ruby API), with the goal of making encryption easy and transparent to the developer integrating the gem. <strong>sym</strong> uses <em>symmetric Encryption</em> with a 256-bit key and a random 'iv' vector, to encrypt and decrypt data.
 </div>
+
+Sym's been tested on **Mac OS-X and Linux**, and its 95% coverate test suite successfully builds on the following rubies:
+
+ * 2.2.5
+ * 2.3.3
+ * 2.4.0
+ * jruby-9.1.7.0
 
 <div>
 <strong>Sym</strong> uses the <code>AES-256-CBC</code> cipher to encrypt the actual data, — this is the cipher used by the US Government, and <code>AES-128-CBC</code> cipher to encrypt the key with an optional password.<br /><br />
@@ -101,7 +106,7 @@ Finally, <strong>sym</strong> compresses the encrypted data with <code>zlib</cod
 </div>
 
 
-### What You See is What You Get
+### What's In The Box: No Assembly Required
 
 Let's dive into the library! I promise this will be brief!
 
@@ -111,14 +116,15 @@ Let's dive into the library! I promise this will be brief!
  2. Ruby API, available via several entry points:
      * [Basic Encryption/Decryption API](https://github.com/kigster/sym#rubyapi) is activated by including `Sym` module in a ruby class, it adds easy to use `encr`/`decr`, and `encr_password/decr_password` methods.
      * [Application API](https://github.com/kigster/sym#rubyapi-app) is activated by instantiating `Sym::Application` class, passing it an arguments hash as if it came from the CLI, and then calling `execute` method on the instance.
+     * [Sym::MagicFile API](https://github.com/kigster/sym#magic-file) is a convenience class allowing you to read encrypted files in your ruby code with a couple of lines of code.
      * [Sym::Configuration](https://github.com/kigster/sym#rubyapi-config) class for overriding default cipher, and many other parameters such as compression, cache location, Zlib compression, and more.
 
-### Sym Saves Time. Massively.
+### Priceless Time Savers
 
 So how does `sym` substantiate its claim that it *streamlines* the encryption process? I thought about it, and turns out there are quite a few reasons:
  
-  * By using Mac OS-X Keychain, `sym` offers a simple yet secure way of storing the key on a local machine, much more secure then storing it on a file system.
-  * By using a password cache (`-c`) via an in-memory provider such as `Memcached` or `drb`, `sym` invocations take advantage of password cache, and only ask for a password once per a configurable period.
+  * By using Mac OS-X Keychain (and only on a Mac), `sym` offers a simple yet secure way of storing the key on a local machine, much more secure then storing it on a file system.
+  * By using a password cache (`-c`) via an in-memory provider such as `memcached` or `drb`, `sym` invocations take advantage of password cache, and only ask for a password once per a configurable period.
   * By using `SYM_ARGS` environment variable, where common flags can be saved.
   * By reading a key from the default key source file `~/.sym.key` which requires no flags at all.
   * By utilizing the `--negate` option to quickly encrypt a regular file, or decrypt an encrypted file with extension `.enc`.
@@ -126,31 +132,7 @@ So how does `sym` substantiate its claim that it *streamlines* the encryption pr
 
 As you can see, I tried to build a tool that provides real security for application secrets, including password-based encryption but does not annoyingly ask for a password every time. With `--edit` option, and `--negate` options you can treat encrypted files like regular files. 
 
-> Encrypting application secrets had never been easier! –– Socrates [LOL, -ed.]
-
-### Step by Step Walkthrough
-
-In this section, I am hoping to walk you through the entire end-to-end process of generating a key, password-protecting it, caching it, and using it to encrypt and decrypt a file.
-
-  1. We start by generating a new encryption key, that will be used to both encrypt and decrypt the data. The key is 256 bits, or 32 bytes, or 45 bytes when base64-encoded, and can be generated and printed to STDOUT with `sym -g`.
-     * You can optionally password protect the key with `sym -gp`
-     * You can save the key into a file with `sym -gpo key-file` 
-     * Or you can save it into the OS-X Keychain, with `sym -gpx keychain-name`
-     * You can also cache the password, with `sym -gpcx keychain-name`
-     * Normally, `sym` will also print the resulting key to STDOUT.
-     * You can prevent the key from being printed to STDOUT with `-q/--quiet`. 
-  2. You then take a piece of sensitive __data__ that you want to encrypt. This can be a file or a string.
-  3. You can then use the key to encrypt sensitive __data__, with `sym -e [key-spec] [data-spec]`, passing it the key in several accepted ways. Smart flag `-k` automatically interprets the source of the key, by trying:
-     * a file with a pathname.
-     * or environment variable
-     * or OS-X Keychain password entry
-     * or you can paste the key interactively with `-i` 
-     * or you can save your key into `~/.sym.key` file, and it will be read when neither `-k` or `-i` are supplied.
-  4. Input data can be read from a file with `-f file`, or read from STDIN, or a passed on the command line with `-s string`    
-  4. Output is the encrypted data, which is printed to STDOUT by the default, or it can be saved to a file with `-o <file>`
-  5. Encrypted file can be later decrypted with `sym -d [key-spec] [data-spec]`
-
-Now that we've got this out of the way — what can be better than watching someone do it? 
+> If you are interested in a "step by step" walkthrough, please open this link — [Step By Step Walkthrough of the README](http://kig.re/2017/03/10/dead-simple-encryption-with-sym.html#step-by-step-walkthrough).
 
 <a name="ascii"></a>
 
