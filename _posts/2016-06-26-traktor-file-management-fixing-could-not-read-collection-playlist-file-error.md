@@ -69,7 +69,7 @@ This shows up very briefly in red when you open Traktor and voila – the playli
 
 The problem, in my case, and as I have suspected, was that the XML file `collections.nml` was not a properly formed XML file.
 
-{% lightbox_image { "url": "/images/traktor/traktor--badxml.png", "title": "Traktor Bad XML", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "/images/traktor/traktor--badxml.jpg", "title": "Traktor Bad XML", "group": "traktor", "class": "clear-image" } %}
 
 In my case it contained illegal (possibly UTF8) characters that came from a bogus filename of one of the imported files. Presence of this data in the XML file rendered it unreadable for most XML parsers, including the one Traktor uses internally.
 
@@ -93,7 +93,7 @@ The first thing you'd want to do is to figure out which of these files contains 
 
 Let's say you started Traktor with a blank set (so the initial`collections.nml` file is very small), and then added a ton of files and samples, organized playlists, etc. It's not until you normally exit Traktor that it will save your most recent changes to a file. (By the way, do not Force-Quit Traktor after making many changes to your play lists, or your changes won't be saved). So if we list the files in Finder using the list view (see image below) we should be able to tell which of them is a tiny file, and which of them is a larger file with the real tracks.
 
-{% lightbox_image { "url": "/images/traktor/traktor-file-error--finder-view.png", "title": "Traktor Root Folder", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "/images/traktor/traktor-file-error--finder-view.jpg", "title": "Traktor Root Folder", "group": "traktor", "class": "clear-image" } %}
 
 Let's say you determine that it is the "invalid" file that contains your actual data:
 
@@ -178,7 +178,7 @@ And now lets try to start Traktor again.  If you are as lucky as I was – your 
 
 The first thing you will need to figure out is your Traktor's "Root" folder. Go to "Settings, File Management" and it will be the first folder in the list, as shown below.
 
-{% lightbox_image { "url": "/images/traktor/traktor--prefs.png", "title": "Traktor Preferences", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "/images/traktor/traktor--prefs.jpg", "title": "Traktor Preferences", "group": "traktor", "class": "clear-image" } %}
 
 Next, let's open that folder in Finder.
 
@@ -191,7 +191,7 @@ While you are debugging Traktor it's a good idea to keep Console open, as it wil
 
 `WARNING: Could not read collection/playlist file:Macintosh HD:Users:boo:Documents:Native Instruments:Traktor 2.10.2:collection.nml`
 
-{% lightbox_image { "url": "/images/traktor/traktor--console.png", "title": "Traktor Log File", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "/images/traktor/traktor--console.jpg", "title": "Traktor Log File", "group": "traktor", "class": "clear-image" } %}
 
 I recommend to keep this window open while we perform any operations below, and in the future — if you ever experience issues with Traktor — this should be the first place you look.
 

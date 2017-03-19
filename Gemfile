@@ -4,15 +4,23 @@ gem 'colored2'
 gem 'rake'
 gem 'nokogiri'
 gem 'hashie'
-gem 'jekyll-toc'
+gem 'yui-compressor'
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-its'
+  gem 'simplecov'
+end
+
 group :jekyll_plugins do
   gem 'redcarpet'
   gem 'jekyll-coffeescript'
   gem 'jekyll-watch'
-  gem 'jekyll-feed'
   gem 'jekyll-assets'
+  gem 'jekyll-feed'
   gem 'jekyll-paginate'
   gem 'jekyll-gist'
   gem 'jekyll-compass'
   gem 'jekyll-sitemap'
+  gem 'jekyll-toc'
 end

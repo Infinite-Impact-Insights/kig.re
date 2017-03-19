@@ -49,7 +49,7 @@ So let's review some high-level encryption terms that we'll use further in this 
 
 The two most commonly encryption method are:
 
-{% lightbox_image { "url" : "/images/security/symmetric.png",  "title": "Symmetric", "group":"security", "class": "lightbox-image" } %}
+{% lightbox_image { "url" : "/images/security/symmetric.jpg",  "title": "Symmetric", "group":"security", "class": "lightbox-image" } %}
 
  * **Symmetric Encryption** — this is where the same key is used to encrypt and decrypt the data. Typically, a random "IV" vector is used to randomize the encryption and make it harder to "brute-force" the key. You need both the key and the "IV" vector to decrypt the data. Having said that, and having done some research, people typically store the IV vector right next to the data. So I am not entirely sure how much added security it provides, but I am not an encryption expert. 
 

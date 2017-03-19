@@ -42,7 +42,9 @@ redcarpet:
 
 github:
   repo:      https://github.com/kigster
+
 gems:
+  - jekyll-assets
   - jekyll-toc
   - jekyll-sitemap
 
