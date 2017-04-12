@@ -20,7 +20,8 @@
           <li><a href="/">Home</a></li>
           <li><a href="{{ post_list.first.url }}">Latest Post</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Posts 2012-present<span class="caret"></span></a>
             <ul class="dropdown-menu">
               {% assign last_post_year = post_list.first.date | date: "%Y" %}
               {% for node in post_list %}
@@ -40,10 +41,10 @@
               {% endfor %}
             </ul>
           </li>
+          <li><a target="_blank" href="http://tektastic.kig.re/">Posts 2006-2012</a></li>
           <li role="separator" class="divider"></li>
           <div class="vspacer"></div>
           <li><a href="/about">About Me</a></li>
-          <li><a href="/professional/schedule">Schedule Time</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tech Projects <span class="caret"></span></a>
             <ul class="dropdown-menu">

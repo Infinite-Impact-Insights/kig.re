@@ -5,113 +5,134 @@ disqus: disable
 toc: true
 ---
 
-## First Things First
+## The Story of K
 
-#### Resume
+This is the personal bio, not a professional one, although [professional summary](/professional/summary/) also exists.
 
-<table>
-<tr><td style="width: auto; text-align: left;">
-<a target="_blank" href="/downloads/konstantin-gredeskoul-resume.pdf">
-<img src="/images/sig/resume-thumb.png" />
-</a>
-</td>
-</tr>
-</table>
+### Brief Bio
 
-#### Geekiness
+My life story spans three continents and three countries: **the Ukraine, Australia, and the United States.**
 
-My *geekiness* was born out of desperation.
+##### 1974
 
-I was perplexed about how much relentless studying it typically takes to make a dent, come up with something new and interesting — in modern mathematics, which I was studying in college.
+This is when I was born. It was a fine year, but I can't remember a thing about it.
 
-Impatience has always been my strenght and weakness at the same time. And in this case, it lead me to code "for fun" all the way through college. Impatience also happens to be one of three qualities that are part of the three virtues of great programmers, where the other two are laziness and hubris. See [threevirtues.com](http://threevirtues.com).
+I grew up in Kharkov, Ukraine, where I was enrolled in various specialized schools. It started with the ballet school when I was just seven, and then, as I got older, I moved into (high-)schools with advanced programs in physics and mathematics.
 
-## Short Bio
+In high school I competed at several national Olympiads, winning twice: once in physics, and once in mathematics. I also was rowing and kayaking in white waters, which included winter practicing of the "wet exit" (from the kayak, yo!) in -20ºC (-4ºF) freezing cold weather.
 
-##### Ukraine
+During the breaks or after school I would go to my mother's office — a physics department at a local university, where at the age of thirteen I was the only person who knew how to operate a lonely IBM 286 computer in the corner.  
 
-My life story spans three continents and three countries: the Ukraine, Australia, and the United States.
+##### 1992
 
-I grew up in the Ukraine spending time in schools with advanced physics and mathematics programs. During the breaks or after school I would go to my mother's office – a physics department at a local university, where at the age of 13 I was the only person who knew how to operate a lonely IBM 286 computer in the corner.  I also competed at national Olympiads, winning twice: once in physics, and once in mathematics.
+My family immigrated from Ukraine to Australia, where I completed my degree in Mathematics and Statistics in Monash University, and worked several years writing software. It was during this time that my association with computers, or in fact, everything "geeky" became a thing.
 
-##### Australia
+So let me tell you a short story.
 
-My family immigrated from Ukraine to Australia in 1992, where I completed my degree in Mathematics and Statistics, and worked several years writing software. 
+My perpetual *geekiness* was born out of **frustration and impatience**.
 
-##### San Francisco
+The year was 1995, and I was finishing my honors degree in BSc from Monash University (in Melbourne Australia), and I was majoring in pure, aka "abstract," aka "mind-bending" mathematics. While I enjoyed studying it and was quite excellent at it, I was put off by how much more relentless studying it would take for me to make any dent in modern mathematics.
 
-I moved to the SF Bay Area in 1998 by myself, looking for startups to join. I have since stayed in the Bay Area, working in "the trenches" of companies building various Internet technologies. I worked on email delivery and email groups (Topica, 1992-2005), network penetration and application security (RedSeal, 2006), mobile text and picture messaging (Drop In Media, 2005-2010, bootstrapped, co-founded), and E-Commerce (Blurb, Infectious, ModCloth, Wanelo 2007-2015), as well as social network (Wanelo).
+The realization I had during my last year of college, is that if I wanted to come up with something new — I would have to keep studying after college for another 10-15 years! If you are a medical doctor this is probably not a big deal to you, and I applaud you for it.  But patience was never one of my virtues, while creativity most definitely was. I wanted to be able to create, and instantly see and enjoy the fruits of my (short) labor.
 
-## Who Am I?
+My father is also a computer programmer, and so I was introduced to computers at a relatively young age. Of course it was the games that first grabbed my attention, but shortly thereafter I was volunteering in the school computer lab. At some point I decided to program an app that worked sort of like a Photoshop, albeit very primitive. This is back in 1989 and not even my teacher could understand how it worked.
 
-#### Creator
+So all the way through my college I spent my spare time coding, learning Linux, learning C, Pascal, and Visual Basic — for DOS and Windows. I created and sold an app that was a very effective birthday reminder — as "shareware". I wrote a Cyrillic converter app that became the most popular open source app of the time to convert (or transliterate) russian texts.
 
-Today, I see myself an almost obsessive "creator" as opposed to a "consumer."  It takes an effort for me to step away from the *creative process* (i.e. writing code, fixing something, building a hardware gadget) and into *consuming & processing* (i.e. reading books, watching talks, for example). I am normally able to zero-in on work with a fierce sense of focus, and when I am in the flow, I tend to be incredibly productive. But I can also step outside my flow, when needed, and listen, help, design, collaborate. Nothing good is ever born in complete isolation.
+At some point, I installed Linux using 85 floppy disks. Yeah.
 
-#### Coder for Life
+At some other point, I ran a web server out of my bedroom over 14K dialup modem.
 
-I love coding, and I do it all the time. Last few years have been particularly productive, with several open source tools released. 
+And at some point, me and a friend even received a "Globe" award for the "Best Community Website", during the "Telstra Internet Awards" of 1997. Can you imagine something like that today?
 
-My [github profile](https://github.com/kigster) is perhaps the best place to see what I've been up to :)
+At the end of my college I realized that I should have been taking computer science subjects all along. But it was too late. I was just a month away from graduation, and the administration told me I was aready on the books to graduate. Which I did, with an average score of 96, since all I took in the college was maths.
 
-#### Musician
+The irony of this is that nobody ever cared about my graduation score, except me. Further in my life I regretted not taking more subjects in humanities, arts and politics. But I digress.
 
-Music has always been a big part of my life. When I was a kid I learned to play piano, and it always followed me everywhere. I was in the school jazz band, later becoming an electronic music producer and a DJ. I performed at various music events throughout Bay Area and far beyond since 1997. But my obsession with music didn't stop there: together with my wife, we created "PolyGroovers" – an electronic music duo, whose three albums are available on iTunes and SoundCloud (the latter for free). I still receive emails from people who love it, and that is extremely gratifying to me. I still improvise on my piano at home almost daily.
+I completed my BSc(Hons) degree with two majors in 3 years instead of the typical 4, and left the college with zero computer science theory, but a lot of hands-on practice.
 
-__DJ LeftCtrl (years active: 2005 – now)__
+##### 1997
 
-<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/2701091&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+I did a trip around the world, and stopped by San Francisco, where my best friend Eugene lived. I decided I will return next year and stay for good.
 
-__PolyGroovers (years active: 2002-2009)__
+On that trip I also visited Israel, which was an unforgettable trip. I highly recommend anyone to visit the "City of Three Religions" — Jerusalem. It's influence is beyond words.
 
-<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/132299936&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+##### 1998
 
-### Learning, Emotions and being a "Maker"
+As I promised myself the year before, I collected my stuff and moved to San Francisco by myself.  I was looking for good software companies to join, and found one within a couple of weeks. I have since stayed in the Bay Area, working in "the trenches" of companies building various Internet technologies. I worked on email delivery and email groups (Topica, 1992-2005), network penetration and application security (RedSeal, 2006), mobile SMS and picture messaging applications (Drop In Media, 2005-2010, bootstrapped, co-founded), and E-Commerce (Blurb, Infectious, ModCloth, Wanelo 2007-2015), as well as social network (Wanelo).
 
-I love learning new things, and I do so continuously, subscribing to a lifelong learning. Be that Cisco firewall configuration language, gaming algorithms, hardware and electronics, plastic enclosure design, modeling and production, new programming language, or a piano piece.
+Next year will be 20 years I will have lived in San Francisco. Perhaps one day I will find the time to describe the incredible journey this is and has been.
+
+##### 2017
+
+Today I live in the sunny Potrero Hill neighborhood of SF, consult with companies and help startups.
+
+But enough about the ... bio. But since this whole page is about "me", I can keep going about that, right?
+
+So perhaps I'll spend a few more paragraphs and describe who I am, from my own eyes.
+
+### Self Reflection
+
+I consider myself an almost obsessive "creator" as opposed to a "consumer."  It takes an effort for me to step away from any *creative process* (i.e. writing prose, code, fixing something, building a gadget) and into *consuming & processing* (i.e. reading books, watching talks, processing interactions with people, for example). Typically I am able to zero-in on my work with a fierce sense of focus, and when I am in *the flow*, I tend to be incredibly productive. But I can also step outside my flow, when needed, and listen, help, design, collaborate. Nothing good is ever born in complete isolation. Except Calculus.
+
+My interests lie in the intersection of a few disciplines:
+
+##### Computer Science and Programming
+
+I love coding, have been doing it for nearly 30 years, and I still do it all the time. Last few years have been particularly productive, with several open source tools released. My [github profile](https://github.com/kigster) is perhaps the best place to see what I've been up to.
+
+##### Hardware and Electronics
+
+A few years ago I [got really into electronics](http://kig.re/2014/08/01/how-it-all-started.html). I built a bunch of cool things, including a [bathroom occupancy sensor and a display unit](http://kig.re/2014/10/12/borat-bathroom-occupancy-wireless-detection-and-notification-with-arduino.html), which one day I might release as something you can buy in a store :)
+
+##### Music and DJ-ing
+
+I am also an amateur, but very passionate **Musician**.
+
+Music has always been a big part of my life. When I was a kid I learned to play piano, and it always followed me everywhere. I was in the school jazz band, later becoming an electronic music producer and a DJ. I performed at various music events throughout Bay Area and far beyond since 1997.
+
+But my obsession with music didn't stop there: together with my former partner, we created an [electronic duo PolyGroovers](https://www.facebook.com/polygroovers), and I composed, recorded and released [two albums on iTunes](https://itunes.apple.com/us/artist/polygroovers/id160976572). I love receiving emails and facebook messages from the people who love my music — it is extremely gratifying.
+
+I also improvise on my piano at home almost daily, and recently had an improve session with an incredible violinist with took my breath away, and opened up a new dimension I've never thought existed. Music is true magic.
+
+##### Life Long Learning
+
+I absolutely believe that learning is a life-long commitment. I love learning new things, and I do so continuously. Be that a Cisco firewall configuration language, gaming algorithms, programming hardware and electronics, industrial design, modeling and production, a new programming language, or a new piano piece.
 
 A few years ago I started studying human emotions, and how by harnessing their power we can surpass any limits previously thought unattainable. I am a big believer in that.
 
-Most recently I signed up for an Electronic and Digital Circuits course from MIT, due in May. Earlier I built a bathroom occupancy sensor and a display unit, which I still plan to release, eventually, as a product you can buy in stores.
+## TL;DR
 
-# Professional History
+This was most certainly too much information for anyone but my obsessed fans :)
 
-During the last four years, I worked as a CTO at Wanelo.com. There, I had the honor of forming and leading my dream engineering team, infused with the culture of collaboration, optimism, mastery, high quality, and care. Best practices such as pair programming and test-driven development, continuous deployment and complete automation were supportive of that culture, which ultimately cultivated work environment with a phenomenally high productivity, low defect rate, and a happy, self-managing team.
+But hey, it's my blog after all. Hope you enjoyed reading it!
 
-Besides managing the team, I coded the entire time, working on the technology stack all the way from the browser to the deep data store backend. I did not work in iOS or Android, but I worked on nearly everything else.
-
-Our small team of 12 covered a huge range of technologies and solutions:  from iOS & Android mobile apps, a single ruby on rails application with many micro-services, a massive horizontally sharded PostgreSQL backend storing over 3B "saves" across 8K shards and eight postgreSQL databases.  We also built an incredibly powerful "Data Feeds" application, from the beginning designed to be a standalone solution, it integrated with the primary application via asynchronous queueing and pub/sub using RabbitMQ.
-
-I was instrumental to the design and implementation of the sharded solution, the data-feeds application, and almost all of the key initiatives. I frequently speak at conferences and user groups on how we did this, and the choices we made.
-
-In the end, our backend was serving nearly *5,000–7,000 dynamic requests per second* from only eight app servers nodes, with a 80ms average latency. Our # of users to # of engineers ratio by far overtook Facebook's, even in the early days of the Internet giant. Our uptime was 99.99%. We had no security breaches. We did this all without Ops or QA teams, almost never "burning the midnight oil", or working on weekends.
-
-### TL;DR
-
-I believe that my strong natural leadership, high intelligence – both rational and emotional, ability to think in abstractions coming from mathematics, diverse set of skills and creativity, and continuous investment into learning allow me to apply "outside the box" thinking to solve hard problems, again and again. It is what makes me a strong player on any engineering team. I can rise above the details, and think, speak using abstractions required to break a hard problem down. Which is often necessary to have it understood and solved. And while doing that, I can mentor most junior developers, helping them learn and be able to repeat such method in the future, and crack a few jokes along the way.
-
-Thanks for taking the time to read all the way down to here!
-
-## LinkedIn
-
-<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/kigster" data-format="inline" data-related="false"></script>
+Feel free to reach out by emailing kigster, at this rather common domain that google provides for free email.
 
 
 ## References
 
 Personal site:
 
- * http://kig.re
+ * [http://kig.re](http://kig.re)
 
 Networks:
 
- * https://twitter.com/kig
- * https://github.com/kigster
- * https://angel.co/kig
+ * [@kigster on Github](https://github.com/kigster)
+ * [@kigster on SlideShare](https://slideshare.net/kigster)
+ * [@kig on Twitter](https://twitter.com/kig)
+ * [@kig on Angel.co](https://angel.co/kig)
+ * [@kigster on LinkedIn](https://linkedin.com/in/kigster)
 
 Music:
 
- * http://soundcloud.com/polygroovers
- * http://soundcloud.com/leftctrl
+ * [@PolyGroovers on SoundCloud](http://soundcloud.com/polygroovers)
+ * [@LeftCtrl on SoundCloud](http://soundcloud.com/leftctrl)
 
+__DJ LeftCtrl (years active: 2005 – now)__
+
+<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/users/2701091&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+__PolyGroovers (years active: 2002-2009)__
+
+<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/playlists/132299936&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
