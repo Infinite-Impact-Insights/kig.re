@@ -5,27 +5,11 @@ disqus: disable
 sidebar: top
 ---
 
-```ruby
-CURRENT_AVAILABILITY = :medium
-CURRENT_INTERESTS    = %i(ruby rails scalability performance high-availability)
-
-class Konstantin
-  def contact(visitor)
-    raise WorldExplodedError if visitor.is_recruiter?
-    if visitor.have_a_phone?
-      visitor.call(who: 'Konstantin', area: 415, digits: 2651054)
-    else
-      visitor.email(who: 'Konstantin', username: 'kig', domain: 'reinvent.one')
-    end
-  end
-end
-```
-
 ## Professional Summary
 
-Thanks for checking out my online resume / progressional background.
+Thanks for checking out my [online resume](http://sw.im/kig.pdf) and the progressional background.
 
-Right now I am focusing on consulting through my company [ReinventONE, Inc.](http://reinvent.one). Throught ReinventONE, I am currently helping various companies in the SF Bay Area with technology, scalability, performance, availability, deployment, cloud, and many other issues and topics.
+At the moment I am focusing on consulting through my company [ReinventONE, Inc.](https://reinvent.one). Throught ReinventONE, I am currently helping various companies in the SF Bay Area with technology, scalability, performance, availability, deployment, cloud, and many other issues and topics.
 
 My engagements typically revolve around a few roles:
 
@@ -35,15 +19,11 @@ My engagements typically revolve around a few roles:
  * Senior contributor – cloud automation (Chef, Docker, etc)
  * Special interests: hardware development, industrial design, Arduino
 
-### Availability
-
-I am currently looking for a long-term part-time engagement, about one to three days a week, within San Francisco City limits or telecommuting.
-
 ### Schedule Time
 
 Please feel free to [schedule a meeting time with me](/professional/schedule).
 
-### Skills
+### Skill Set
 
 *Fluent, expert level*
 
