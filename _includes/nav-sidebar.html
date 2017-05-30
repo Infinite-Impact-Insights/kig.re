@@ -16,14 +16,15 @@
               {% endunless %}
 
 
+              <div class="vspacer"></div>
+              {% include google-adsense.html %}
+
               {% if page.toc %}
               <div class="content-toc">
                 <h5 class="toc-title">Table of Contents</h1>
                 {{ content | toc_only }}
               </div>
               {% endif %}
-
-              <div class="vspacer"></div>
 
               {% if false || page.show_twitter %}
               <div class="tweets">

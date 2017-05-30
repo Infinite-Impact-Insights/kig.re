@@ -138,6 +138,7 @@ The files are IDENTICAL sized (but not actually identical, I checked).
 Anyway, now that we had this brief detour about C++ versions and how to use a compiler, we are going to take a look at what type of things we may be creating with our C++ project?
 
 ## Targets
+pr
 
 So targets are what you actually wanna build with your code. It can be one of three things:
 

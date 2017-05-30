@@ -103,12 +103,11 @@ hr {
   .tweets {
     display: none;
   }
+
   body.theme-ltec {
     .content-toc {
       height: auto !important;
       margin-left: 0px !important;
-    }
-    .content-toc {
       h5.toc-title {
         margin-left: 0px !important;
       }
@@ -177,15 +176,12 @@ hr {
   }
 }
 
-
 html {
   font-family: $base-font-family !important;
   font-weight: $base-font-weight;
 }
 
 body.theme-ltec {
-
-
   .lb-container {
     padding: 0;
     img.lb-image {
@@ -219,9 +215,17 @@ body.theme-ltec {
     min-width: 250px;
   }
 
+  .adsense {
+    position: relative;
+    margin: 40px auto;
+    margin-top: -70px;
+    padding: 10px;
+  }
+
   .content-toc {
     padding: 0px 10px 0px 10px;
     margin: 0;
+    margin-top: 100px;
     position: relative;
     height: 6000px;
 
@@ -232,7 +236,7 @@ body.theme-ltec {
       text-shadow: 1px 1px 4px $h1-shadow;
       margin-left: 10px;
     }
-
+s
     .section-nav {
       position: sticky;
       top: 0;
@@ -247,9 +251,6 @@ body.theme-ltec {
       padding-right: 20px;
       margin: 0px;
       margin-left: 4px;
-
-
-
 
       > li {
         list-style-type: none;
@@ -310,6 +311,7 @@ body.theme-ltec {
       overflow-y: scroll;;
     }
   }
+
   nav.navbar {
     padding: 0;
     margin: 0;
@@ -341,7 +343,6 @@ body.theme-ltec {
     }
   }
   .nav {
-
     code {
       background-color: $form-input-bg + 30;
       color: white;
