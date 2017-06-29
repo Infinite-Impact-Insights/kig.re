@@ -1,8 +1,12 @@
 <div class="vspacer"></div>
 <div id="disqus_thread"></div>
-<script type="text/javascript">
+<script type="text/javascript" async="true">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'kiguino'; // required: replace example with your forum shortname
+    var disqus_config = function () {
+        this.page.url = document.location.href.replace('https', 'http');
+        this.page.identifier = document.location.href.replace('https', 'http');
+    };
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
