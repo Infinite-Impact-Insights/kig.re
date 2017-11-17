@@ -10,6 +10,7 @@ toc: true
 
 <blockquote>
   <ul>
+     <li>Updated Nov, 2017 with the latest driver for OS-X High Sierra</li>
      <li>Updated Oct, 2016 with the new signed driver for OS-X Sierra</li>
      <li>Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite</li>
      <li>Updated Jan 9, 2016 with Windows Drivers</li>
@@ -44,6 +45,12 @@ A fully signed drivers for Windows can be found below:
  * [2014 Driver version 3.4.2014.8 for Windows 8+](http://www.arduined.eu/ch340-windows-8-driver-download/)
 
 # Mac OS-X
+
+## High Sierra
+
+_(Added: November, 2017)_
+
+Looks like the updated version from their site works now as is. Here is the updated [CH341SER_MAC.ZIP (148KB)](/downloads/CH341SER_MAC.ZIP) cached locally, but for other platforms, please checkout [their website](http://www.wch.cn/download/CH341SER_MAC_ZIP.html).
 
 ## Sierra
 
