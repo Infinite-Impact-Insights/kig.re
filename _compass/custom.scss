@@ -1,4 +1,4 @@
-$primary-fg: rgba(#d5dfdf, 0.83);
+$primary-fg: rgba(#d5dfdf, 0.7);
 $primary-bg: rgba(22, 20, 20, 0.88);
 $primary-border: #E08E79;
 
@@ -6,7 +6,7 @@ $secondary-fg: #fff9f4;
 $secondary-bg: #C5E0DC;
 $secondary-border: #45504C;
 
-$nav-fg: rgba(#ffffff, 0.98);
+$nav-fg: rgba(#ffffff, 0.7);
 $nav-bg: rgba(#715f62, 0.97);
 $nav-border: #1b253c;
 $nav-shadow: rgba(#1d2732, 0.96);
@@ -27,9 +27,9 @@ $blockquote-border: rgba(255, 229, 135, 0.87);
 $nav-h1: #ffffff;
 $nav-hover-fg: #ffffff;
 $nav-hover-bg: rgba(#ffc794, .7);
-$nav-hover-shadow: rgba(#fffadb, 0.61);
+$nav-hover-shadow: rgba(#fffadb, 0.5);
 
-$h1-title-fg: rgba(195, 227, 117, 0.9);
+$h1-title-fg: rgba(218, 240, 250, 0.9);
 $h1-fg: rgba(219, 198, 240, 0.78);
 $h1-shadow: rgba(0, 0, 0, 0.8);
 
@@ -52,22 +52,22 @@ $toc-level-1: rgba(#b08bcb, 0.83);
 $toc-level-2: rgba(#7cc8ff, 0.49);
 
 
-$base-font-family: 'Assistant', 'HelveticaNeue', sans-serif;
-$base-font-size: 13pt;
-$base-font-weight: 400;
+$base-font-family: 'Roboto Condensed', 'HelveticaNeue', sans-serif;
+$base-font-size: 11pt;
+$base-font-weight: 200;
 
-$nav-font-family: 'Cuprum', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
-$nav-font-size: 13pt;
+$nav-font-family: 'Assistant', 'Cuprum', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
+$nav-font-size: 12pt;
 $nav-font-weight: 200;
 
-$header-font-family: 'Fjalla One', sans-serif;
-$header-font-size-h1: 28pt;
+$header-font-family: 'Oswald', 'HelveticaNeue-CondensedBold', sans-serif;
+$header-font-size-h1: 20pt;
 
-$fixed-font-family: 'Fira Mono', 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif;
-$fixed-font-size: 14pt;
+$fixed-font-family: 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif;
+$fixed-font-size: 13pt;
 
-$large-font-size: 17pt;
-$large-font-family: 'Ropa Sans', 'Roboto Condensed', 'HelveticaNeue', Arial, sans-serif;
+$large-font-family: 'Ropa Sans', 'HelveticaNeue', Arial, sans-serif;
+$large-font-size: 14pt;
 
 hr {
   border-top: 2px dotted $primary-bg !important;
@@ -199,11 +199,13 @@ body.theme-ltec {
   .large {
     font-size: $large-font-size;
     font-family: $large-font-family;
-    line-height: $large-font-size + 6;
-    text-shadow: 2px 2px 2px $h1-shadow;
+    line-height:  $large-font-size + 6;
+    // text-shadow: 2px 2px 2px $h1-shadow;
     margin-top: 20px;
     margin-bottom: 30px;
-    color: rgb(220, 220, 220);
+    padding-left: 15px;
+    border-left: 15px solid rgb(208, 66, 45);
+    // color: rgb(220, 220, 220);
   }
 
   em.title {
@@ -218,14 +220,15 @@ body.theme-ltec {
   .adsense {
     position: relative;
     margin: 40px auto;
-    margin-top: -70px;
+    margin-top: 50px;
     padding: 10px;
+    opacity: 0.5;
   }
 
   .content-toc {
     padding: 0px 10px 0px 10px;
     margin: 0;
-    margin-top: 100px;
+    margin-top: 10px;
     position: relative;
     height: 6000px;
 
@@ -236,7 +239,7 @@ body.theme-ltec {
       text-shadow: 1px 1px 4px $h1-shadow;
       margin-left: 10px;
     }
-s
+
     .section-nav {
       position: sticky;
       top: 0;
@@ -284,13 +287,14 @@ s
       .toc-entry.toc-h4,
       .toc-entry.toc-h5,
       .toc-entry.toc-h6 {
-        font-family: $nav-font-family;
-        line-height: $nav-font-size + 5;
+        font-family: $base-font-family;
+        line-height: $base-font-size + 5;
+        font-weigth: 200;
       }
 
-      .toc-entry.toc-h1 { font-size:  $base-font-size + 4; margin-left: 0px; display: none;}
-      .toc-entry.toc-h2 { font-size:  $base-font-size + 3; margin-left: 0px; }
-      .toc-entry.toc-h3 { font-size:  $base-font-size + 2; margin-left: 10px; }
+      .toc-entry.toc-h1 { font-size:  $base-font-size + 2; margin-left: 0px; display: none;}
+      .toc-entry.toc-h2 { font-size:  $base-font-size + 1; margin-left: 0px; }
+      .toc-entry.toc-h3 { font-size:  $base-font-size + 0; margin-left: 10px; }
       .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 20px;}
       .toc-entry.toc-h5 { font-size:  $base-font-size - 2; margin-left: 30px;}
       .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 40px;}
@@ -478,6 +482,9 @@ s
     color: $primary-fg - 40;
     font-family: HelveticaNeue-CondensedBold;
   }
+  .post-excerpt {
+      border-bottom: 4px solid rgba(255, 107, 0, 0.6) !important;
+  }
 
   .post {
     padding-left: 30px;
@@ -505,10 +512,10 @@ s
       clear: both;
       background-color: $blockquote-bg * 0.7;
       color: $blockquote-fg * 0.8;
-      border: 5px solid !important;
-      //border-radius: 10px;
+      border: 1px solid !important;
+      border-radius: 10px;
       text-shadow: none;
-      //box-shadow: 0 0 15px $blockquote-border;
+      box-shadow: 0 0 15px $blockquote-border;
       font-weight: bold;
       font-size: $base-font-size - 1;
       line-height: $base-font-size + 5;
@@ -534,11 +541,11 @@ s
       margin-bottom: 10px;
       margin-left: -30px;
       color: $h1-fg;
-      font-weight: 100 !important;
-      line-height: 120%;
+      font-weight: 400 !important;
+      line-height: auto;
       font-family: $header-font-family !important;
       text-transform: capitalize;
-      text-shadow: 1px 1px 4px $h1-shadow;
+      // text-shadow: 1px 1px 4px $h1-shadow;
     }
     h1, h1.post-title {
       color: $h1-fg !important;
@@ -550,13 +557,13 @@ s
       color: $h1-title-fg !important;
     }
     h2 {
-      font-size: $header-font-size-h1 - 3;
+      font-size: $header-font-size-h1 - 5;
     }
     h3 {
-      font-size: $header-font-size-h1 - 6;
+      font-size: $header-font-size-h1 - 7;
     }
     h4 {
-      font-size: $header-font-size-h1 - 8;
+      font-size: $header-font-size-h1 - 9;
     }
     h5 {
       font-size: $base-font-size + 2;
