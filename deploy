@@ -7,7 +7,7 @@ function hook() {
   [[ -x "$file" ]] && source $file
 }
 
-function say() { 
+function puts() { 
  printf "—————>  ${txtblu} $*${clr}\n"
 }
 
@@ -52,10 +52,10 @@ function remote_deploy() {
 }
 
 if [[ $(uname -s) -eq "Darwin" ]]; then
-  say beginning remote deploy to ${deploy_host}
+  puts beginning remote deploy to ${deploy_host}
   remote_deploy
 else
-  say doing a local deploy on $(hostname)
+  puts doing a local deploy on $(hostname)
   local_deploy
 fi
 
