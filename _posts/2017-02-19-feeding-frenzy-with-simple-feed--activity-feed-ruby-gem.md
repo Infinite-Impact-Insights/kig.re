@@ -3,6 +3,7 @@ layout: page
 title: 'Feeding Frenzy with SimpleFeed'
 draft: false
 toc: true
+crosspost_to_medium: true
 ---
 
 ##### OR, how to add a proper [social activity feed](https://github.com/kigster/simple-feed) to your ruby-based  application in fifteen minutes.

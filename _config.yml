@@ -57,3 +57,9 @@ docker:
   container:
     name: kigre
   dockerfile: nginx-src
+
+jekyll-crosspost_to_medium:
+  enabled: true
+  status: public
+  backdate: true
+
