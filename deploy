@@ -51,7 +51,7 @@ function remote_deploy() {
   ssh ${deploy_host} -l kig 'bash -l -c "cd workspace/kig.re && source ~/.bashrc && ./deploy"'
 }
 
-if [[ $(uname -s) -eq "Darwin" ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
   puts beginning remote deploy to ${deploy_host}
   remote_deploy
 else
