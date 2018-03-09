@@ -59,7 +59,6 @@ docker:
   dockerfile: nginx-src
 
 jekyll-crosspost_to_medium:
-  enabled: true
+  enabled: false
   status: public
-  backdate: true
-
+  backdate: false

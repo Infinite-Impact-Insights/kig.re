@@ -22,12 +22,12 @@ hr {
   }
   /* line 92, ../../_compass/custom.scss */
   .navbar li a {
-    font-size: 13pt !important;
+    font-size: 14pt !important;
     font-weight: 200;
   }
   /* line 95, ../../_compass/custom.scss */
   .navbar li a code, .navbar li a pre {
-    font-size: 9pt !important;
+    font-size: 11pt !important;
   }
 
   /* line 100, ../../_compass/custom.scss */
@@ -42,8 +42,8 @@ hr {
 
   /* line 107, ../../_compass/custom.scss */
   body.theme-ltec {
-    font-size: 12pt;
-    line-height: 15pt !important;
+    font-size: 16pt;
+    line-height: 19pt !important;
   }
   /* line 108, ../../_compass/custom.scss */
   body.theme-ltec .content-toc {
@@ -64,18 +64,18 @@ hr {
   }
   /* line 125, ../../_compass/custom.scss */
   body.theme-ltec code, body.theme-ltec pre {
-    font-size: 9pt;
+    font-size: 11pt;
   }
 }
 @media (min-width: 48em) {
   /* line 133, ../../_compass/custom.scss */
   html body.theme-ltec {
-    font-size: 10pt;
-    line-height: 16pt;
+    font-size: 14pt;
+    line-height: 20pt;
   }
   /* line 136, ../../_compass/custom.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
-    font-size: 10pt;
+    font-size: 12pt;
   }
   /* line 139, ../../_compass/custom.scss */
   html body.theme-ltec .post {
@@ -89,19 +89,19 @@ hr {
   /* line 148, ../../_compass/custom.scss */
   .github-repos {
     padding-left: 0px;
-    font-size: 9pt;
+    font-size: 13pt;
   }
 }
 @media (min-width: 58em) {
   /* line 156, ../../_compass/custom.scss */
   html body.theme-ltec {
-    font-size: 11pt;
-    line-height: 16pt;
+    font-size: 15pt;
+    line-height: 20pt;
     font-weight: 200;
   }
   /* line 160, ../../_compass/custom.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
-    font-size: 11pt;
+    font-size: 13pt;
   }
   /* line 164, ../../_compass/custom.scss */
   html .github-repos {
@@ -146,9 +146,9 @@ body.theme-ltec em {
 }
 /* line 199, ../../_compass/custom.scss */
 body.theme-ltec .large {
-  font-size: 14pt;
+  font-size: 20pt;
   font-family: "Ropa Sans", "HelveticaNeue", Arial, sans-serif;
-  line-height: 20pt;
+  line-height: 26pt;
   margin-top: 20px;
   margin-bottom: 30px;
   padding-left: 15px;
@@ -182,7 +182,7 @@ body.theme-ltec .content-toc {
 /* line 235, ../../_compass/custom.scss */
 body.theme-ltec .content-toc h5.toc-title {
   color: rgba(219, 198, 240, 0.78) !important;
-  font-size: 12pt;
+  font-size: 17pt;
   font-family: "Oswald", "HelveticaNeue-CondensedBold", sans-serif !important;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   margin-left: 10px;
@@ -238,38 +238,38 @@ body.theme-ltec .content-toc .section-nav .toc-entry.toc-h4,
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h5,
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h6 {
   font-family: "Roboto Condensed", "HelveticaNeue", sans-serif;
-  line-height: 16pt;
+  line-height: 20pt;
   font-weigth: 200;
 }
 /* line 295, ../../_compass/custom.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h1 {
-  font-size: 13pt;
+  font-size: 17pt;
   margin-left: 0px;
   display: none;
 }
 /* line 296, ../../_compass/custom.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h2 {
-  font-size: 12pt;
+  font-size: 16pt;
   margin-left: 0px;
 }
 /* line 297, ../../_compass/custom.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h3 {
-  font-size: 11pt;
+  font-size: 15pt;
   margin-left: 10px;
 }
 /* line 298, ../../_compass/custom.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h4 {
-  font-size: 10pt;
+  font-size: 14pt;
   margin-left: 20px;
 }
 /* line 299, ../../_compass/custom.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h5 {
-  font-size: 9pt;
+  font-size: 13pt;
   margin-left: 30px;
 }
 /* line 300, ../../_compass/custom.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h6 {
-  font-size: 8pt;
+  font-size: 12pt;
   margin-left: 40px;
 }
 /* line 304, ../../_compass/custom.scss */
@@ -281,8 +281,8 @@ body.theme-ltec .sidebar {
 }
 /* line 309, ../../_compass/custom.scss */
 body.theme-ltec .sidebar li a {
-  font-size: 12pt;
-  line-height: 13pt;
+  font-size: 13pt;
+  line-height: 14pt;
 }
 /* line 313, ../../_compass/custom.scss */
 body.theme-ltec .sidebar .collapse {
@@ -329,7 +329,7 @@ body.theme-ltec .nav code {
   background-color: #3b303a;
   color: white;
   margin-right: 10px;
-  font-size: 7pt;
+  font-size: 8pt;
   text-shadow: 1px 1px 2px black;
   font-weight: 200;
 }
@@ -482,8 +482,8 @@ body.theme-ltec .post blockquote {
   text-shadow: none;
   box-shadow: 0 0 15px rgba(255, 229, 135, 0.87);
   font-weight: bold;
-  font-size: 10pt;
-  line-height: 16pt;
+  font-size: 14pt;
+  line-height: 20pt;
   margin: 30px 0;
 }
 /* line 523, ../../_compass/custom.scss */
@@ -520,7 +520,7 @@ body.theme-ltec .post h1, body.theme-ltec .post h2, body.theme-ltec .post h3, bo
 /* line 550, ../../_compass/custom.scss */
 body.theme-ltec .post h1, body.theme-ltec .post h1.post-title {
   color: rgba(219, 198, 240, 0.78) !important;
-  font-size: 20pt;
+  font-size: 25pt;
   font-family: "Oswald", "HelveticaNeue-CondensedBold", sans-serif !important;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
@@ -530,19 +530,19 @@ body.theme-ltec .post h1.post-title {
 }
 /* line 559, ../../_compass/custom.scss */
 body.theme-ltec .post h2 {
-  font-size: 15pt;
+  font-size: 20pt;
 }
 /* line 562, ../../_compass/custom.scss */
 body.theme-ltec .post h3 {
-  font-size: 13pt;
+  font-size: 18pt;
 }
 /* line 565, ../../_compass/custom.scss */
 body.theme-ltec .post h4 {
-  font-size: 11pt;
+  font-size: 16pt;
 }
 /* line 568, ../../_compass/custom.scss */
 body.theme-ltec .post h5 {
-  font-size: 13pt;
+  font-size: 17pt;
 }
 /* line 573, ../../_compass/custom.scss */
 body.theme-ltec .post figure {
@@ -636,7 +636,7 @@ body.theme-ltec .post div.external-reference {
   text-shadow: none;
   box-shadow: 0 0 15px #ffdede;
   font-weight: 100;
-  font-size: 7pt;
+  font-size: 11pt;
   padding: 5px 15px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -663,7 +663,7 @@ body.theme-ltec span.post-date {
 body.theme-ltec p.lead {
   color: #FFFFFF;
   /*line-height: 15pt;*/
-  font-size: 8pt;
+  font-size: 12pt;
   text-transform: uppercase;
   font-family: "Roboto Condensed", "HelveticaNeue", sans-serif !important;
 }
@@ -758,7 +758,7 @@ body.theme-ltec p.about-footer {
   text-align: center;
   border-top: 1px solid #E08E79;
   background: rgba(113, 95, 98, 0.97);
-  font-size: 9pt;
+  font-size: 13pt;
 }
 
 /* line 793, ../../_compass/custom.scss */
@@ -820,7 +820,7 @@ ul.share-buttons .share-buttons-overlay {
 }
 /* line 848, ../../_compass/custom.scss */
 #toc .toc, #toc .mw-warning {
-  font-size: 11pt !important;
+  font-size: 15pt !important;
   padding: 0;
 }
 /* line 852, ../../_compass/custom.scss */
@@ -854,16 +854,16 @@ ul.share-buttons .share-buttons-overlay {
 }
 /* line 881, ../../_compass/custom.scss */
 #toc ul li {
-  font-size: 13pt;
+  font-size: 17pt;
 }
 /* line 883, ../../_compass/custom.scss */
 #toc ul li a {
   color: rgba(176, 139, 203, 0.83);
-  line-height: 15pt;
+  line-height: 19pt;
 }
 /* line 888, ../../_compass/custom.scss */
 #toc ul ul li {
-  font-size: 10pt;
+  font-size: 14pt;
   padding: 0;
   margin: 0;
 }
