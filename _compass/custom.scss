@@ -1,9 +1,9 @@
-$primary-fg: rgba(#d5dfdf, 0.7);
-$primary-bg: rgba(22, 20, 20, 0.88);
+$primary-fg: rgba(#363636, 1);
+$primary-bg: rgba(227, 225, 211, 0.86);
 $primary-border: #E08E79;
 
-$secondary-fg: #fff9f4;
-$secondary-bg: #C5E0DC;
+$secondary-fg: #2f2f2f;
+$secondary-bg: #656565;
 $secondary-border: #45504C;
 
 $nav-fg: rgba(#ffffff, 0.7);
@@ -12,52 +12,52 @@ $nav-border: #1b253c;
 $nav-shadow: rgba(#1d2732, 0.96);
 
 $form-input-bg: rgb(29, 18, 28);
-$form-input-fg: rgb(114, 181, 230);
+$form-input-fg: rgb(0, 71, 122);
 $form-input-border: rgb(26, 14, 22);
 $form-input-shadow: rgba(255, 126, 108, 0.89);
 
-$nav-active-fg: $nav-fg;
-$nav-active-bg: rgba(#9e697b, 0.72);
+$nav-active-fg: rgb(255, 251, 227);
+$nav-active-bg: rgba(#c69e37, 0.72);
 $nav-active-shadow: #28241d;
 
-$blockquote-bg: rgba(129, 91, 123, 0.67);
+$blockquote-bg: rgba(75, 30, 68, 0.8);
 $blockquote-fg: rgba(255, 203, 248, 1);
 $blockquote-border: rgba(255, 229, 135, 0.87);
 
 $nav-h1: #ffffff;
 $nav-hover-fg: #ffffff;
 $nav-hover-bg: rgba(#ffc794, .7);
-$nav-hover-shadow: rgba(#fffadb, 0.5);
+$nav-hover-shadow: rgba(#ffffff, 1);
 
-$h1-title-fg: rgba(218, 240, 250, 0.9);
-$h1-fg: rgba(219, 198, 240, 0.78);
-$h1-shadow: rgba(0, 0, 0, 0.8);
+$h1-title-fg: rgba(54, 46, 28, 0.9);
+$h1-fg: rgba(113, 99, 90, 1);
+$h1-shadow: rgba(185, 185, 185, 0.6);
 
-$link-fg: rgba(#fece7c, 0.95);
-$offset-fg: #99B2B7;
+$link-fg: rgba(#e77600, 0.59);
+$offset-fg: #00c5ec;
 
-$code-fg: #FFFFFF;
-$code-bg: #2b1414;
+$code-fg: rgb(255, 255, 255);
+$code-bg: rgba(42, 78, 17, 0.57);
 
-$image-shadow: rgb(52, 255, 203);
-$widgets-border: rgb(52, 255, 203);
+$image-shadow: rgb(130, 122, 14);
+$widgets-border: rgb(255, 184, 0);
 
 $quote-fg: rgb(109, 139, 107);
-$quote-bg: $primary-bg + 10;
+$quote-bg: $primary-bg - 30;
 $quote-shadow: #ffdede;
 
 $transparent: rgba(0, 0, 0, 0);
 
-$toc-level-1: rgba(#b08bcb, 0.83);
-$toc-level-2: rgba(#7cc8ff, 0.49);
+$toc-level-1: rgba(#5d0f0f, 0.83);
+$toc-level-2: rgba(#713d00, 1);
 
 
-$base-font-family: 'Roboto Condensed', 'HelveticaNeue', sans-serif;
-$base-font-size: 15pt;
+$base-font-family: 'Cuprum', 'HelveticaNeue', sans-serif;
+$base-font-size: 13pt;
 $base-font-weight: 200;
 
 $nav-font-family: 'Assistant', 'Cuprum', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
-$nav-font-size: 13pt;
+$nav-font-size: 12pt;
 $nav-font-weight: 200;
 
 $header-font-family: 'Oswald', 'HelveticaNeue-CondensedBold', sans-serif;
@@ -67,7 +67,10 @@ $fixed-font-family: 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans
 $fixed-font-size: 15pt;
 
 $large-font-family: 'Ropa Sans', 'HelveticaNeue', Arial, sans-serif;
-$large-font-size: 20pt;
+$large-font-size: 17pt;
+
+$quote-side-line-color: rgb(252, 144, 127);
+$vertical-indent: 80px;
 
 hr {
   border-top: 2px dotted $primary-bg !important;
@@ -137,7 +140,7 @@ hr {
         font-size: $fixed-font-size - 3;
       }
       .post {
-        max-width: 900px;
+        // max-width: 900px;
       }
     }
     .tweets {
@@ -182,6 +185,25 @@ html {
 }
 
 body.theme-ltec {
+
+  .content {
+    padding: 30px;
+    padding-left: 0px;
+  }
+
+  .blog-header {
+    border-bottom: 1px solid $primary-border;
+    font-family: $header-font-family;
+    margin-bottom: $vertical-indent - 40;
+
+    h1 {
+      font-size: 15pt;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
   .lb-container {
     padding: 0;
     img.lb-image {
@@ -204,7 +226,7 @@ body.theme-ltec {
     margin-top: 20px;
     margin-bottom: 30px;
     padding-left: 15px;
-    border-left: 15px solid rgb(208, 66, 45);
+    border-left: 15px solid $quote-side-line-color;
     // color: rgb(220, 220, 220);
   }
 
@@ -228,7 +250,7 @@ body.theme-ltec {
   .content-toc {
     padding: 0px 10px 0px 10px;
     margin: 0;
-    margin-top: 10px;
+    margin-top: $vertical-indent;
     position: relative;
     height: 6000px;
 
@@ -236,19 +258,17 @@ body.theme-ltec {
       color: $h1-fg !important;
       font-size: $header-font-size-h1 - 8;
       font-family: $header-font-family !important;
-      text-shadow: 1px 1px 4px $h1-shadow;
       margin-left: 10px;
+      padding-top: 20px !important;
     }
 
     .section-nav {
       position: sticky;
       top: 0;
-      box-shadow: 0px 0px 8px $nav-hover-shadow;
       width: 96%;
+      min-width: 200px;
 
-      background-color: $primary-bg + 10;
-      border: 0px solid #E8E8E8;
-      border-radius: 2px;
+      // background-color: $nav-bg;
 
       padding: 10px 20px;
       padding-right: 20px;
@@ -260,21 +280,24 @@ body.theme-ltec {
       }
 
       li {
+        background-color: $nav-bg;
+        border: 0px solid $primary-bg;
+        border-radius: 2px;
+
         margin-bottom: 0px;
           a, .open > a {
             display: block;
             padding: 5px;
+            margin: 2px;
+            color: $nav-fg;
             text-decoration: none;
-            color: $nav-hover-shadow;
             &:hover, &:focus {
               color: $nav-hover-fg;
-              background-color: $nav-hover-bg;
-              box-shadow: 0px 0px 8px $nav-hover-shadow;
+              background-color: $nav-bg - 30;
             }
 
             &.active {
-              background-color: $nav-active-bg !important;
-              color: $nav-active-fg;
+              color: $nav-active-fg + 20;
               margin-right: 0px;
               border-size: 0;
               font-weight: 700;
@@ -287,17 +310,19 @@ body.theme-ltec {
       .toc-entry.toc-h4,
       .toc-entry.toc-h5,
       .toc-entry.toc-h6 {
-        font-family: $base-font-family;
-        line-height: $base-font-size + 5;
+        font-family: $nav-font-family;
+        line-height: 15pt !important;
         font-weigth: 200;
+        padding: 1px;
+        margin-bottom: 2px;
       }
 
       .toc-entry.toc-h1 { font-size:  $base-font-size + 2; margin-left: 0px; display: none;}
-      .toc-entry.toc-h2 { font-size:  $base-font-size + 1; margin-left: 0px; }
-      .toc-entry.toc-h3 { font-size:  $base-font-size + 0; margin-left: 10px; }
-      .toc-entry.toc-h4 { font-size:  $base-font-size - 1; margin-left: 20px;}
-      .toc-entry.toc-h5 { font-size:  $base-font-size - 2; margin-left: 30px;}
-      .toc-entry.toc-h6 { font-size:  $base-font-size - 3; margin-left: 40px;}
+      .toc-entry.toc-h2 { font-size:  $base-font-size - 1; color: $nav-hover-fg; margin-left: -10px; }
+      .toc-entry.toc-h3 { font-size:  $base-font-size - 2; margin-left: 20px; }
+      .toc-entry.toc-h4 { font-size:  $base-font-size - 3; margin-left: 30px;}
+      .toc-entry.toc-h5 { font-size:  $base-font-size - 4; margin-left: 40px;}
+      .toc-entry.toc-h6 { font-size:  $base-font-size - 5; margin-left: 50px;}
     }
   }
 
@@ -319,6 +344,7 @@ body.theme-ltec {
   nav.navbar {
     padding: 0;
     margin: 0;
+    margin-top: $vertical-indent;
 
     .navbar-header {
       margin: 0;
@@ -375,7 +401,6 @@ body.theme-ltec {
         line-height: 120%;
         font-family: $header-font-family !important;
         text-transform: capitalize;
-        text-shadow: 1px 1px 4px $h1-shadow;
       }
 
       .divider {
@@ -401,13 +426,13 @@ body.theme-ltec {
       font-weight: 400;
 
       color: $nav-fg;
-      text-shadow: 1px 1px 1px $nav-shadow;
+      text-decoration: none;
+      // text-shadow: 1px 1px 1px $nav-shadow;
 
       &:hover, &:focus {
         color: $nav-hover-fg;
         background-color: $nav-hover-bg;
         box-shadow: 0px 0px 8px $nav-hover-shadow;
-
       }
       &.active {
         background-color: $nav-active-bg !important;
@@ -473,17 +498,21 @@ body.theme-ltec {
   }
 
   a {
-    font-weight: 400;
+    font-weight: 200;
     margin: 0;
-    color: $link-fg - 50;
-    text-shadow: 1px 1px 5px $primary-bg - 20;
+    color: $link-fg;
+    // text-shadow: 1px 1px 3px rgb(74, 74, 74) - 20;
+    text-decoration: underline;
   }
   .text-muted, label {
     color: $primary-fg - 40;
     font-family: HelveticaNeue-CondensedBold;
   }
+
   .post-excerpt {
-      border-bottom: 4px solid rgba(255, 107, 0, 0.6) !important;
+    margin-top: 30px;
+    border-bottom: 2px solid rgba(255, 107, 0, 0.6) !important;
+    margin-bottom: 100px;
   }
 
   .post {
@@ -509,6 +538,10 @@ body.theme-ltec {
     }
     text-align: left;
     blockquote {
+      a {
+        color: $blockquote-border;
+        font-weight: 400;
+      }
       clear: both;
       background-color: $blockquote-bg * 0.7;
       color: $blockquote-fg * 0.8;
@@ -581,7 +614,7 @@ body.theme-ltec {
     }
     code {
       border: 1px solid $code-bg - 20;
-      background-color: $primary-bg;
+      background-color: $code-bg;
       color: $code-fg;
       display: inline-block;
       font-family: $fixed-font-family !important;
@@ -608,7 +641,7 @@ body.theme-ltec {
       pre {
         code {
           box-shadow: 2px 2px 10px $primary-bg - 50;
-          background-color: $primary-bg;
+          background-color: $code-bg;
           //border-radius: 20px/20px !important;
           overflow: hidden;
           background-clip: padding-box;

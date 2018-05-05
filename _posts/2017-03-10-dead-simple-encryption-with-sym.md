@@ -5,15 +5,11 @@ draft: false
 toc: true
 ---
 
-<img style="margin: 10px 0; width: 100%; height: 100px;" src="/images/security/xlock-long.jpg"/>
-
 <div class="large">
 <strong>A story about how your mom can now protect her application secrets by using this simple and effective <a href="https://github.com/kigster/sym">symmetric encryption tool</a>.</strong>
 </div>
 
-## Introduction
-
-### These Days If You Are Not Paranoid...
+## These Days If You Are Not Paranoid...
 
 — You don't live in reality :) [ — anonymous]
 
@@ -21,7 +17,7 @@ toc: true
 As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that <a href="https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/">CIA and NSA may have been hacking into your phone</a>, rendering encryption used by the secure messaging apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">WhatsApp</a> completely useless.
 </div>
 
-> **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :) 
+> **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :)
 
 
 
@@ -38,7 +34,7 @@ Now, keeping secrets outside of your repo may provide you with a false sense of 
 So I went on a hunt — looking for a magical encryption tool, ideally written in ruby, that I could use to encrypt secrets, which would then enable us to check-in application secrets, encrypted, into the repo. Without the encryption key these files are useless. After looking around for some time, I came to the conclusion that a tool that was simple enough to use, was able to read the private key from many sources — such as a file, environment variable, or even Mac OS-X Keychain, and offered password-protection for the keys, and can cache passwords for 15 minutes so that we don't have to retype it ten times during the deploy, this tools — **it simply did not exist.**
 
 <div class="large">
-Well, technically it did not exist until now :) 
+Well, technically it did not exist until now :)
 </div>
 
 ### Encryption Methods
@@ -51,7 +47,7 @@ The two most commonly encryption method are:
 
 {% lightbox_image { "url" : "/images/security/symmetric.jpg",  "title": "Symmetric", "group":"security", "class": "lightbox-image" } %}
 
- * **Symmetric Encryption** — this is where the same key is used to encrypt and decrypt the data. Typically, a random "IV" vector is used to randomize the encryption and make it harder to "brute-force" the key. You need both the key and the "IV" vector to decrypt the data. Having said that, and having done some research, people typically store the IV vector right next to the data. So I am not entirely sure how much added security it provides, but I am not an encryption expert. 
+ * **Symmetric Encryption** — this is where the same key is used to encrypt and decrypt the data. Typically, a random "IV" vector is used to randomize the encryption and make it harder to "brute-force" the key. You need both the key and the "IV" vector to decrypt the data. Having said that, and having done some research, people typically store the IV vector right next to the data. So I am not entirely sure how much added security it provides, but I am not an encryption expert.
 
 {% lightbox_image { "url" : "/images/security/asymmetric.gif",  "title": "Asymmetric", "group":"security", "class": "lightbox-image" } %}
 
@@ -59,7 +55,7 @@ The two most commonly encryption method are:
 
 If we are dealing with an encrypted file that needs to be read by the application in both cases you'd need to have a key lying around — either the private key (from the public/private pair), or, in case of symmetric encryption, — the key used to encrypt the data.
 
-While public/private key has some advantages to symmetric encryption, for application secrets it appeared to be an overkill. Perhaps this is my personal judgement, and maybe some of you would disagree — in which case please do leave a comment down below. 
+While public/private key has some advantages to symmetric encryption, for application secrets it appeared to be an overkill. Perhaps this is my personal judgement, and maybe some of you would disagree — in which case please do leave a comment down below.
 
 <div class="large">
 But it is for these reasons that I decided to build a simple wrapper around OpenSSL's symmetric cipher, and release it under the name `sym` — a ruby gem.
@@ -97,6 +93,7 @@ Sym's been tested on **Mac OS-X and Linux**, and its 95% coverate test suite suc
  * 2.2.5
  * 2.3.3
  * 2.4.0
+ * 2.5.0
  * jruby-9.1.7.0
 
 <div>
@@ -122,7 +119,7 @@ Let's dive into the library! I promise this will be brief!
 ### Priceless Time Savers
 
 So how does `sym` substantiate its claim that it *streamlines* the encryption process? I thought about it, and turns out there are quite a few reasons:
- 
+
   * By using Mac OS-X Keychain (and only on a Mac), `sym` offers a simple yet secure way of storing the key on a local machine, much more secure then storing it on a file system.
   * By using a password cache (`-c`) via an in-memory provider such as `memcached` or `drb`, `sym` invocations take advantage of password cache, and only ask for a password once per a configurable period.
   * By using `SYM_ARGS` environment variable, where common flags can be saved.
@@ -130,7 +127,7 @@ So how does `sym` substantiate its claim that it *streamlines* the encryption pr
   * By utilizing the `--negate` option to quickly encrypt a regular file, or decrypt an encrypted file with extension `.enc`.
   * By using the `-t` (edit) mode, that opens an encrypted file in your `$EDITOR`, and replaces the encrypted version upon save & exit.
 
-As you can see, I tried to build a tool that provides real security for application secrets, including password-based encryption but does not annoyingly ask for a password every time. With `--edit` option, and `--negate` options you can treat encrypted files like regular files. 
+As you can see, I tried to build a tool that provides real security for application secrets, including password-based encryption but does not annoyingly ask for a password every time. With `--edit` option, and `--negate` options you can treat encrypted files like regular files.
 
 > If you are interested in a "step by step" walkthrough, please open this link — [Step By Step Walkthrough of the README](http://kig.re/2017/03/10/dead-simple-encryption-with-sym.html#step-by-step-walkthrough).
 
