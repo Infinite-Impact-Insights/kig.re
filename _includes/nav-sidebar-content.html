@@ -1,50 +1,66 @@
 {% assign published_posts = site.posts | where: 'draft', false %}
 {% assign draft_posts = site.posts | where: 'draft', true %}
 {% if page.draft == true %}
-  {% assign post_list = draft_posts %}
+{% assign post_list = draft_posts %}
 {% else %}
-  {% assign post_list = published_posts %}
+{% assign post_list = published_posts %}
 {% endif %}
 <div class="sidebar">
   <nav class="navbar">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle expanded" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-        </button>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="/">Home</a></li>
-          <li><a href="{{ post_list.first.url }}">Latest Post</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">Posts 2012-present<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              {% assign last_post_year = post_list.first.date | date: "%Y" %}
-              {% for node in post_list %}
-                {% assign this_post_year = node.date | date: "%Y" %}
-                {% if last_post_year != '' and this_post_year != last_post_year %}
-                  <li role="separator" class="divider"></li>
-                {% endif %}
-                {% if node.title != null %}
-                  {% if node.layout == "page" %}
-                  <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-                         href="{{ node.url }}"
-                         title="{{ node.title }}"
-                  ><code>{{node.date | date: "%Y.%m" }}</code> {{ node.title | truncate 100] }}</a></li>
-                  {% endif %}
-                {% endif %}
-                {% assign last_post_year = node.date | date: "%Y" %}
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle expanded" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <h1 class="toc-title">Blog Navigation</h1>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+          aria-expanded="false">Posts 2012-present<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% assign last_post_year = post_list.first.date | date: "%Y" %}
+            {% for node in post_list %}
+            {% assign this_post_year = node.date | date: "%Y" %}
+            {% if last_post_year != '' and this_post_year != last_post_year %}
+            <li role="separator" class="divider"></li>
+            {% endif %}
+            {% if node.title != null %}
+            {% if node.layout == "page" %}
+            <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+              href="{{ node.url }}"
+              title="{{ node.title }}"
+              ><code>{{node.date | date: "%Y.%m" }}</code> {{ node.title | truncate 100] }}</a></li>
+              {% endif %}
+              {% endif %}
+              {% assign last_post_year = node.date | date: "%Y" %}
               {% endfor %}
             </ul>
           </li>
           <li><a target="_blank" href="http://tektastic.kig.re/">Posts 2006-2012</a></li>
-          <li role="separator" class="divider"></li>
-          <div class="vspacer"></div>
-          <li><a href="/about">About Me</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Music <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><h4>Original Music &mdash; as "PolyGroovers"</h4></li>
+              <li><p class="intro">All originally composed, produced and recorded electronica, classified as "downtempo", with frequent female vocals, poly-rhythms, phat basslines and latin-inspired grooves.</li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/the-best-of-polygroovers"         target="_blank"><code>2016</code> The Best Of PolyGroovers</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/ticks-and-trips-2009"             target="_blank"><code>2009</code> Ticks and Trips</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/moods-for-take-out-2006"          target="_blank"><code>2006</code> Moods for Take Out</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/polyvinyl-inward-journeys-2001"   target="_blank"><code>2001</code> Inward Journeys</a></li>
+              <li role="separator" class="divider"></li>
+              <li><h4>DJ Mixes &mdash; as "DJ LeftCtrl"</h4></li>
+              <li><p class="intro">Most recent sets from a DJ who started spinning records in 1998 in San Francisco. Having played techno and trance back then, LeftCtrl spins mostly house – deep, electro-swing, funky, tech and progressive.</li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/leftctrl-time-travelers-2016"              target="_blank"><code>2016</code> <code> Deep House</code> Time Travellers</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/leftctrl-live-frolic-campout-2015-yokayo-ranch"
+              target="_blank"><code>2015</code> <code> Deep House</code> Live @ Frolic Campout</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/swingophrenia-oh-forty"                    target="_blank"><code>2014</code> <code> Swing House</code> Swingophrenia-Oh-Forty!</a></li>
+              <li><a target="_blank" href="https://soundcloud.com/leftctrl/packit-sunset-tagteam-sessions"            target="_blank"><code>2013</code> <code> Deep House</code> Packit Sunset Tagteam Sessions</a></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tech Projects <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -71,50 +87,35 @@
               <li><a target="_blank" href="https://github.com/kigster/pullulant"><code>Pullulant</code> modular install of dev-environment on OS-X</a></li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Music <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><h4>Original Music &mdash; as "PolyGroovers"</h4></li>
-              <li><p class="intro">All originally composed, produced and recorded electronica, classified as "downtempo", with frequent female vocals, poly-rhythms, phat basslines and latin-inspired grooves.</li>
-              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/the-best-of-polygroovers"         target="_blank"><code>2016</code> The Best Of PolyGroovers</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/ticks-and-trips-2009"             target="_blank"><code>2009</code> Ticks and Trips</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/moods-for-take-out-2006"          target="_blank"><code>2006</code> Moods for Take Out</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/polygroovers/sets/polyvinyl-inward-journeys-2001"   target="_blank"><code>2001</code> Inward Journeys</a></li>
-              <li role="separator" class="divider"></li>
-              <li><h4>DJ Mixes &mdash; as "DJ LeftCtrl"</h4></li>
-              <li><p class="intro">Most recent sets from a DJ who started spinning records in 1998 in San Francisco. Having played techno and trance back then, LeftCtrl spins mostly house – deep, electro-swing, funky, tech and progressive.</li>
-              <li><a target="_blank" href="https://soundcloud.com/leftctrl/leftctrl-time-travelers-2016"              target="_blank"><code>2016</code> <code> Deep House</code> Time Travellers</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/leftctrl/leftctrl-live-frolic-campout-2015-yokayo-ranch"
-                                                                                                                      target="_blank"><code>2015</code> <code> Deep House</code> Live @ Frolic Campout</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/leftctrl/swingophrenia-oh-forty"                    target="_blank"><code>2014</code> <code> Swing House</code> Swingophrenia-Oh-Forty!</a></li>
-              <li><a target="_blank" href="https://soundcloud.com/leftctrl/packit-sunset-tagteam-sessions"            target="_blank"><code>2013</code> <code> Deep House</code> Packit Sunset Tagteam Sessions</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a target="_blank" href="https://linkedin.com/in/kigster" >@kigster on LinkedIn</a></li>
-              <li><a target="_blank" href="https://github.com/kigster" >@kigster on Github</a></li>
-              <li><a target="_blank" href="https://slideshare.net/kigster">@kigster on SlideShare</a></li>
-              <li><a target="_blank" href="https://slideshare.net/kig">@kig on Twitter</a></li>
-              <li><a target="_blank" href="https://angel.co/kig">@kig on Angel.co</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="vspacer"></div>
 
-        <form role="search" id="search-form">
-          <fieldset class="form-group">
-            <span class="glyphicon glyphicon-search" aria-hidden="true" id="search-icon"></span>
-            <label for="search-query">Search in this blog:</label>
-            <input id="search-query" type="text" class="form-control"  placeholder="" name="q" />
-            <small class="text-muted">Type your query and press ENTER.</small>
-          </fieldset>
-        </form>
-        <div class="vspacer"></div>
+                <li role="separator" class="divider"></li>
+                <div class="vspacer"></div>
+                <li><a href="/about">About Me</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a target="_blank" href="https://linkedin.com/in/kigster" >@kigster on LinkedIn</a></li>
+                    <li><a target="_blank" href="https://github.com/kigster" >@kigster on Github</a></li>
+                    <li><a target="_blank" href="https://slideshare.net/kigster">@kigster on SlideShare</a></li>
+                    <li><a target="_blank" href="https://slideshare.net/kig">@kig on Twitter</a></li>
+                    <li><a target="_blank" href="https://angel.co/kig">@kig on Angel.co</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="vspacer"></div>
 
-      </div><!-- /.navbar-collapse -->
+              <form role="search" id="search-form">
+                <fieldset class="form-group">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true" id="search-icon"></span>
+                  <label for="search-query">Search in this blog:</label>
+                  <input id="search-query" type="text" class="form-control"  placeholder="" name="q" />
+                  <small class="text-muted">Type your query and press ENTER.</small>
+                </fieldset>
+              </form>
+              <div class="vspacer"></div>
 
-  </nav>
+            </div><!-- /.navbar-collapse -->
 
-</div>
+          </nav>
+
+        </div>

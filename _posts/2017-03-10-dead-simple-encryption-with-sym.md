@@ -13,19 +13,16 @@ toc: true
 
 — You don't live in reality :) [ — anonymous]
 
-<div class="large">
 As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that <a href="https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/">CIA and NSA may have been hacking into your phone</a>, rendering encryption used by the secure messaging apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">WhatsApp</a> completely useless.
-</div>
 
-> **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :)
-
+While these are serious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
 
 
 {{site.data.macros.continue}}
 
 
+> **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :)
 
-While these are serious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
 
 Now, keeping secrets outside of your repo may provide you with a false sense of security. After all, anyone who gains access to your hard drive can download all of your secrets. Think of a coffee shop, with a public WiFi, combined with a lack of recent security updates for your operating system — and you are instantly at high risk. Besides the fact that decrypted secrets are easily accessible on your file system, this `gitignore` method deprives us, developers, from a very useful ability to track historical revisions of any changes to secrets files, and to be able to rollback to a previously working versions. Not to mention having to sync secrets across all developers when they change!
 
