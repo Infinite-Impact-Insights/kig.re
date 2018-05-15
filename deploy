@@ -25,10 +25,6 @@ function local_deploy() {
     return
   fi
 
-  git reset --hard
-  printf "${txtgrn}"
-  git pull --rebase
-
   eval "$(rbenv init -)"
 
   gem install bundler --conservative
@@ -51,7 +47,11 @@ function local_deploy() {
 }
 
 function remote_deploy() {
-  ssh ${deploy_host} -l kig 'bash -l -c "cd workspace/kig.re && source ~/.bashrc && ./deploy"'
+  ssh ${deploy_host} -l kig 'bash -l -c "cd workspace/kig.re \
+    && source ~/.bashrc  \
+    && git reset --hard  \
+    && git pull --rebase \
+    && ./deploy"'
 }
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
