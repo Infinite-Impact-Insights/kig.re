@@ -7,8 +7,9 @@ $secondary-bg: #656565;
 $secondary-border: #45504C;
 
 $nav-fg: rgba(#ffffff, 0.7);
-$nav-bg: rgba(#715f62, 0.97);
-$nav-bg-opaque: rgba(#715f62, 1);
+$nav-bg: rgba(#584e50, 0.97);
+$nav-bg-opaque: rgba(#584e50, 1);
+$nav-bg-semi-transparent: rgba(#584e50, 0.7);
 $nav-border: #1b253c;
 $nav-shadow: rgba(#1d2732, 0.96);
 
@@ -34,11 +35,11 @@ $h1-title-fg: rgba(54, 46, 28, 0.9);
 $h1-fg: rgba(113, 99, 90, 1);
 $h1-shadow: rgba(185, 185, 185, 0.6);
 
-  $link-fg: rgba(#322111, 1);
+$link-fg: rgba(#322111, 1);
 $offset-fg: #00c5ec;
 
-$code-fg: rgb(255, 255, 255);
-$code-bg: rgba(42, 78, 17, 0.57);
+$code-bg: rgba(59, 59, 59, 1);
+$code-fg: rgba(170, 213, 158, 1);
 
 $image-shadow: rgb(130, 122, 14);
 $widgets-border: rgb(255, 184, 0);
@@ -52,7 +53,6 @@ $transparent: rgba(0, 0, 0, 0);
 $toc-level-1: rgba(#5d0f0f, 0.83);
 $toc-level-2: rgba(#713d00, 1);
 
-
 $base-font-family: 'Roboto Condensed', 'HelveticaNeue', sans-serif;
 $base-font-size: 14pt;
 $base-font-weight: 400;
@@ -64,8 +64,8 @@ $nav-font-weight: 200;
 $header-font-family: 'Oswald', 'HelveticaNeue-CondensedBold', sans-serif;
 $header-font-size-h1: 25pt;
 
-$fixed-font-family: 'Consolas', 'Cousine', 'Menlo', 'Andale Mono', Courier, sans-serif;
-$fixed-font-size: 15pt;
+$fixed-font-family: 'Menlo', 'Andale Mono', Courier, sans-serif;
+$fixed-font-size: 10pt;
 
 $large-font-family: 'Ropa Sans', 'HelveticaNeue', Arial, sans-serif;
 $large-font-size: 17pt;
@@ -81,22 +81,40 @@ hr {
   .sidebar {
     padding-left: 0px !important;
     margin-left: -20px !important;
-
-
+    width: 100% !important;
+    margin-top: -30px !important;
+    overflow-y: visible;
+    overflow-x: visible;
   }
-  .navbar {
+
+  nav.navbar {
+    ::before {
+      position: absolute;
+      top: 10px !important;
+    }
+    background-color: $nav-bg-semi-transparent !important;
+
+    .dropdown-menu {
+      overflow-y: visible;
+      overflow-x: visible;
+      height: auto !important;
+      width: auto !important;
+      background-color: $nav-bg - 100 !important;
+    }
+    position: sticky !important;
     .navbar-header {
       height: 40px;
     }
     margin: 0;
     padding: 0px;
     padding-left: 15px !important;
-
-    li a {
-      font-size: $nav-font-size + 1 !important;
-      font-weight: $nav-font-weight;
-      code, pre {
-        font-size: $fixed-font-size - 4 !important;
+    ul {
+      li a {
+        font-size: $nav-font-size + 1 !important;
+        font-weight: $nav-font-weight;
+        code, pre {
+          font-size: $fixed-font-size - 4 !important;
+        }
       }
     }
   }
@@ -106,9 +124,9 @@ hr {
   .tweets {
     display: none;
   }
-
   body.theme-ltec {
     .content-toc {
+      position: sticky !important;
       height: auto !important;
       margin-left: 0px !important;
       h5.toc-title {
@@ -126,7 +144,8 @@ hr {
     line-height: $base-font-size + 4 !important;
 
     code, pre {
-      font-size: $fixed-font-size - 4;
+      font-size: $fixed-font-size - 5 !important;
+      padding: 3px !important;
     }
   }
 }
@@ -224,11 +243,10 @@ body.theme-ltec {
   }
 
   em {
-    color: $quote-side-line-color;
-    font-weight: 900;
+    color: $quote-side-line-color - 90;
+    font-weight: 600;
     font-style: normal;
-    text-shadow: 0px 0px 5px $form-input-border;
-
+    // text-shadow: 0px 0px 5px $form-input-border;
   }
 
   .large {
@@ -368,6 +386,8 @@ body.theme-ltec {
         top: -10px;
         position: absolute;
         span.glyphicon-menu-hamburger {
+          top: 0px;
+          position: absolute;
           color: $primary-fg - 50;
           font-size: 30pt;
           visibility: visible;
@@ -630,9 +650,12 @@ body.theme-ltec {
       box-shadow: 1px 1px 2px $code-bg - 50;
       overflow: hidden;
       margin: 0px;
+      font-size: 14pt;
     }
     code {
-      border: 1px solid $code-bg - 20;
+      box-shadow: 0 0 3px $code-bg - 100;
+      font-size: 14pt;
+      border: 1px solid $code-bg - 100;
       background-color: $code-bg;
       color: $code-fg;
       display: inline-block;
@@ -640,7 +663,6 @@ body.theme-ltec {
       margin-bottom: 2px;
       margin-top: 2px;
       padding: 2px 5px;
-      text-shadow: 1px 1px 1px $primary-bg - 40;
     }
     .panel-heading {
       padding: 0;
@@ -665,19 +687,20 @@ body.theme-ltec {
           overflow: hidden;
           background-clip: padding-box;
           border: 1px solid $code-bg - 20;
+          border-radius: 5px;
           color: $code-fg;
           display: inline-block;
           font-family: $fixed-font-family !important;
+          font-size: $fixed-font-size;
           margin-bottom: 2px;
           margin-top: 2px;
           padding: 20px;
           width: 100%;
-          text-shadow: 1px 1px 1px $primary-bg - 40;
         }
       }
       code, pre {
         background-color: $transparent;
-        color: $code-fg - 20 !important;
+        color: $code-fg !important;
         border: 0;
         box-shadow: 0 0 0;
       }
