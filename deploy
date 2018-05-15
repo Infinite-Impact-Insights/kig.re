@@ -43,7 +43,7 @@ function local_deploy() {
   hook "after-build"
   printf "${txtgrn}"
   cd _site && ln -s ~/music
-  cd downloads && link -s ~/downloads/*.mp3 .
+  cd downloads && ln -s ~/downloads/*.mp3 .
   cd ..
   ln -s ~/downloads d
   cd $outer_dir
