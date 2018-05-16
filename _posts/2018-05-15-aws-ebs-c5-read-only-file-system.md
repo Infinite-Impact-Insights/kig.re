@@ -3,17 +3,18 @@ layout: page
 title: 'AWS/EBS/C5 class instance: cannot create file: Read-only file system'
 draft: false
 toc: true
+author: Konstantin Gredeskoul
 ---
 
-## Subtitle: Is AWS a sane choice of a Cloud for mission-critical infrastructure?
+## Is AWS a sane choice of a Cloud for mission-critical infrastructure
+<div class="large">
+In this short post I describe the "read-only" problem that happened to one of our C5 hosts, offer a bit of a rant about how incompetent AWS support staff is, and how their forums are completely _useless_, and frankly, _infuriating_.
 
-I will let you make your own conclusion by the end of this post... so read on.
-
-----
-
-In this short post I describe the "read-only" problem that happened to one of our C5 hosts, offer a bit of a rant about how incompetent AWS support staff is, and how their forums are completely *useless*, and frankly, *infuriating*.
+And as far as the question posted above I will let you make your own conclusion — so keep on reading.
 
 Do you have the same problem on one of your C5 instances? Then read on. At least in our case the solution has been found. But not by AWS. By me.
+
+</div>
 
 ## The Problem — read only file system on a C5 class instance.
 
@@ -27,7 +28,10 @@ I desperately searched for answer on AWS forums... to no avail.
 
 Despite finding [several](https://forums.aws.amazon.com/post!post.jspa?forumID=30&threadID=269150&messageID=818393&reply=true) [threads](https://forums.aws.amazon.com/thread.jspa?messageID=818393#818393) describing my exact problem, I quickly realized that NONE of the threads contained a solution!!!!! Now single customer who reported the problem said on the forum — "Yay!", it worked!
 
-Because there were no suggestions besides increasing `nvme` `io_timeout` from 30 seconds to some arbitrary large number. I did that, rebooted the instance, and nothing changed. And the `io_timeout` was reset back to 30 seconds.
+
+{{site.data.macros.continue}}
+
+Because there were no suggestions besides increasing *nvme* *io_timeout* from 30 seconds to some arbitrary large number. I did that, rebooted the instance, and nothing changed. And the *io_timeout* was reset back to 30 seconds.
 
 Well, that was a flop. Nice try AWS. Next time — try a bit harder, will you?
 
@@ -52,8 +56,8 @@ Anyway, from my early Linux days (I installed my first Linux in 1996, I think, f
 
 ```
 $ fsck<TAB><TAB>
-fsck          fsck.cramfs   fsck.ext3     fsck.ext4dev  fsck.minix    fsck.nfs      fsck.xfs
-fsck.btrfs    fsck.ext2     fsck.ext4     fsck.fat      fsck.msdos    fsck.vfat
+fsck          fsck.cramfs   fsck.ext3     fsck.ext4dev  fsck.minix    fsck.nfs      fsck.xfs      fsck.btrfs    fsck.ext2     fsck.ext4
+fsck.fat      fsck.msdos    fsck.vfat
 ```  
 
 OK, so we just need to figure out the file system — and then run it. Right above, where we did `mount -l` you will notice that the file system type is `ext4`. Alrighty then. We have our `fsck`!
@@ -145,7 +149,5 @@ It's [**Joyent**](https://www.joyent.com/) — now a subsidiary of Samsung, litt
 But even if I wasn't on Joyent, I would probably choose Google Cloud. I just trust Google a whole lot more than I trust Amazon after my experience.
 
 You can decide what's best for you, but don't forget, AWS Forums are not very helpful it turns out.
-
-
 
 Please leave a comment if you found the solution here, and not on AWS support site. I would really appreciate it!

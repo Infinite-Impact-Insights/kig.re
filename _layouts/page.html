@@ -4,9 +4,17 @@ layout: default
 
   <div class="post">
     <h1 class="post-title" id="title">{{ page.title }}</h1>
-    {% if page.date %}
-      <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
-    {% endif %}
+    <div class="post-header">
+      {% if page.date %}
+        <span class="post-date">
+          Posted on {{page.date | date: "%A, %d %b %Y" }}
+          {% if page.author %}
+            <strong>by {{ page.author }}</strong>
+          {% endif %}
+
+        </span>
+      {% endif %}
+    </div>
     <div class="content">
       {{ content }}
     </div>
@@ -16,7 +24,7 @@ layout: default
     {% endif %}
   </div>
 
-  <!-- {% if site.related_posts  %}
+  {% if site.related_posts  %}
 
     <div class="related">
       <h2>Related Posts</h2>
@@ -33,7 +41,7 @@ layout: default
         {% endfor %}
       </ul>
     </div>
-  {% endif %} -->
+  {% endif %}
 
 
   {% unless page.disqus == "disable" %}
