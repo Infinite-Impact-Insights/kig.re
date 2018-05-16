@@ -585,11 +585,14 @@ body.theme-ltec {
     fieldset {
       position: relative;
       color: $form-input-fg;
-      span.glyphicon-search {
+      input.search-query {
         position: relative;
-        float: right;
-        margin-right: 30px;
-        margin-top: 25px;
+      }
+      span.glyphicon-search {
+        display: block;
+        position: absolute;
+        top: 38px;
+        right: 5px;
         color: rgb(121, 70, 17);
         &:hover {
           cursor: pointer;
