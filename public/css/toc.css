@@ -1,0 +1,90 @@
+/*
+Error: Undefined variable: "$vertical-indent".
+        on line 8 of /Users/kig/Dropbox/Workspace/sites/kig.re/_compass/toc.scss
+
+3:     display: block ;
+4:     position: fixed;
+5:     top: 20px;
+6:     padding: 0px 10px 0px 10px;
+7:     margin: 0;
+8:     margin-top: $vertical-indent;
+9: 
+10:     h1.toc-title {
+11:       margin-left: 0px ;
+12:     }
+13:     .section-nav {
+
+Backtrace:
+/Users/kig/Dropbox/Workspace/sites/kig.re/_compass/toc.scss:8
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:20:in `render'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jekyll-compass-2.0.1/lib/jekyll/compass/generator.rb:32:in `generate'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jekyll-3.4.2/lib/jekyll/site.rb:174:in `block in generate'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jekyll-3.4.2/lib/jekyll/site.rb:172:in `each'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jekyll-3.4.2/lib/jekyll/site.rb:172:in `generate'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jekyll-3.4.2/lib/jekyll/site.rb:68:in `process'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/jekyll-watch-1.5.0/lib/jekyll/watcher.rb:59:in `block in listen_handler'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/config.rb:23:in `call'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/processor.rb:115:in `_process_changes'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/processor.rb:19:in `block in loop_for'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/processor.rb:15:in `loop'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/processor.rb:15:in `loop_for'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/loop.rb:84:in `_wait_for_changes'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/event/loop.rb:42:in `block in setup'
+/Users/kig/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/listen-3.0.8/lib/listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$vertical-indent\".\A         on line 8 of /Users/kig/Dropbox/Workspace/sites/kig.re/_compass/toc.scss\A \A 3:     display: block ;\A 4:     position: fixed;\A 5:     top: 20px;\A 6:     padding: 0px 10px 0px 10px;\A 7:     margin: 0;\A 8:     margin-top: $vertical-indent;\A 9: \A 10:     h1.toc-title {\A 11:       margin-left: 0px ;\A 12:     }\A 13:     .section-nav {"; }

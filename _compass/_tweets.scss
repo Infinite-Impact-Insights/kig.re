@@ -1,0 +1,18 @@
+.tweets {
+  display: none;
+  margin-top: 300px;
+  width: 90%;
+  border: 1px solid $nav-border;
+  color: $nav-hover-fg;
+  background-color: $nav-bg;
+  box-shadow: 0px 0px 8px $primary-bg - 10;
+  padding: 5px;
+  margin-right: 0px;
+  margin-left: 10px;
+  .timeline-Widget {
+    .timeline-Header, .timeline-TweetList, .timeline-Viewport {
+      background-color: $nav-bg;
+      color: $nav-fg;
+    }
+  }
+}

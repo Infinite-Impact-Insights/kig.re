@@ -1,0 +1,196 @@
+body.theme-ltec {
+  .sidebar {
+    position: fixed;
+    margin: $vertical-indent 0 300px;
+    width: 15%;
+    min-width: 150px ;
+    color: $nav-fg;
+    padding: 25px 0 0;
+    z-index: 1000;
+
+    li a {
+      font-size: $nav-font-size;
+      line-height: $nav-font-size + 1;
+    }
+
+    .collapse {
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    nav.navbar {
+      display: block ;
+      padding: 0;
+      margin: 0;
+
+      // background-color: $primary-bg ;
+
+      .navbar-header {
+        margin: 0;
+        width: 100%;
+        max-width: 200px ;
+        text-align: left;
+        padding: 0;
+
+        button {
+          padding: 0;
+          margin: 0;
+          left: 0px;
+          top: -10px;
+          background-color: $nav-bg ;
+          position: absolute;
+
+          span.glyphicon-menu-hamburger {
+            top: 5px;
+            position: absolute;
+            color: $primary-fg - 50;
+            font-size: 30pt;
+            z-index: 5000;
+            visibility: visible;
+
+            &:hover {
+              color: $primary-fg + 20;
+            }
+
+            &:active {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .nav {
+      code {
+        background-color: $form-input-bg + 30;
+        color: white;
+        margin-right: 10px;
+        font-size: $nav-font-size - 5;
+        text-shadow: 1px 1px 2px black;
+        font-weight: $nav-font-weight;
+      }
+
+      > li a,
+      li.open > a {
+        background-color: $nav-bg;
+      }
+
+      span.caret {
+        float: right;
+        margin: 10px;
+      }
+
+      .dropdown-menu {
+        position: relative;
+        overflow-y: visible;
+        overflow-x: visible;
+        background-color: $dropdown-menu-fg ;
+        height: auto;
+        // min-width: 90%;
+        // max-width: 110%;
+        // max-height: 900px;
+        background-color: $nav-bg - 50;
+        .intro {
+          padding-left: 10px;
+          color: $nav-fg - 80;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          color: $nav-fg + 80;
+          padding-left: 10px;
+          font-weight: 100 ;
+          line-height: 120%;
+          font-family: $header-font-family ;
+          text-transform: capitalize;
+        }
+
+        .divider {
+          background-color: transparent;
+          height: 0;
+        }
+
+        a {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+
+      .open > a,
+      a {
+        background-image: none ;
+        display: block;
+        margin: 0;
+        padding: 10px;
+        margin-right: -1px;
+        font-family: $nav-font-family ;
+        font-weight: 400;
+        color: $nav-fg;
+        text-decoration: none;
+        // text-shadow: 1px 1px 1px $nav-shadow;
+        &:focus,
+        &:hover {
+          color: $nav-hover-fg;
+          background-color: $dropdown-menu-bg ;
+          box-shadow: 0 0 8px $nav-hover-shadow;
+        }
+
+        &.active {
+          //background-color: $nav-active-bg ;
+          color: $dropdown-menu-fg ;
+          background-color: $dropdown-menu-bg ;
+          margin-right: 0;
+          border-size: 0;
+          font-weight: 700;
+        }
+      }
+
+      .open a {
+        &:hover {
+          background-color: $nav-bg;
+        }
+      }
+    }
+  }
+
+  form {
+    input {
+      background-color: $form-input-bg;
+      color: $form-input-fg ;
+      border-color: $form-input-border + 20;
+      box-shadow: 0 0 5px $dropdown-menu-bg;
+      max-width: 100%;
+      font-size: $base-font-size + 3;
+      font-weight: 400;
+      padding: 2px;
+      paddingr-right: 15px;
+    }
+
+    fieldset {
+      position: relative;
+      color: $form-input-fg;
+
+      .search-input-wrapper {
+        position: relative;
+
+        input.search-query {
+          position: relative;
+        }
+
+        span.glyphicon-search {
+          display: block !important;
+          position: absolute !important;
+          top: 8px !important;
+          right: 5px !important;
+          color: rgb(121, 70, 17);
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

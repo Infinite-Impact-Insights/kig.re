@@ -1,0 +1,47 @@
+
+@media (min-width: 48em) {
+  html {
+    body.theme-ltec {
+      .sidebar {
+        display: block ;
+        .navbar-collapse {
+          overflow-y: visible ;
+          overflow-x: visible ;
+        }
+      }
+      .content-toc {
+        display: none ;
+      }
+      font-size: $base-font-size - 1;
+      line-height: $base-font-size + 5;
+      code, pre {
+        font-size: $fixed-font-size - 3;
+      }
+      .post {
+        // max-width: 900px;
+      }
+    }
+    .tweets {
+      display: none;
+    }
+    .sidebar {
+      display: none ;
+      .nav.navbar {
+        .dropdown-menu {
+          background-color: $nav-bg - 200 ;
+        }
+      }
+      .navbar-collapse {
+        overflow-y: visible ;
+        overflow-x: visible ;
+      }
+    }
+    .share-buttons img {
+      display: none ;
+    }
+  }
+  .github-repos {
+    padding-left: 0px;
+    font-size: $base-font-size - 2;
+  }
+}

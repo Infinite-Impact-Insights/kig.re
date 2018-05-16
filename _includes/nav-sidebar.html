@@ -8,9 +8,6 @@
     {% include nav-sidebar-content.html %}
     {% endunless %}
 
-    <div class="vspacer"></div>
-    {% include google-adsense.html %}
-
     {% if false || page.show_twitter %}
     <div class="tweets">
       <a class="twitter-timeline"
@@ -30,14 +27,15 @@
     {{ content  | inject_anchors }}
   </div>
 
-  {% if page.toc %}
   <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1">
+    {% if page.toc %}
     <div class="content-toc">
       <h1 class="toc-title">Table of Contents</h1>
       {{ content | toc_only }}
     </div>
+    {% endif %}
+    <div class="vspacer"></div>
+    {% include google-adsense.html %}
   </div>
-  {% else %}
-  <div class="col-sm-0 col-md-0 col-lg-0 col-xl-1"></div>
-  {% endif %}
+
 </div>

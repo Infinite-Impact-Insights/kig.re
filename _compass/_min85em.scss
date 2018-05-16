@@ -1,0 +1,23 @@
+
+@media (min-width: 85em) {
+  html {
+    body.theme-ltec {
+      .sidebar {
+        display: block ;
+        .navbar {
+        }
+        .navbar-collapse {
+          overflow-y: visible ;
+          overflow-x: visible ;
+        }
+      }
+
+      .content-toc {
+        display: block ;
+      }
+    }
+    .tweets {
+      display: block;
+    }
+  }
+}

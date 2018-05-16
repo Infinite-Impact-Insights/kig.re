@@ -1,0 +1,202 @@
+body.theme-ltec {
+  .post {
+    margin-top: 50px;
+    text-align: left;
+    padding-left: 30px;
+    ul, ol {
+      padding-left: 20px;
+      li {
+        padding-left: 10px;
+        margin: 20px 0;
+        ul li {
+          padding-left: 0px;
+        }
+      }
+    }
+
+    a {
+      color: $link-fg;
+      font-weight: 400;
+    }
+    .related-posts li a:hover {
+      color: $link-fg;
+      font-weight: 400;
+    }
+    blockquote {
+      a {
+        color: rgb(73, 255, 239);
+        text-decoration: underlined;
+        font-weight: 400;
+        text-shadow: 0 0 15px $blockquote-border;
+        &:hover {
+          color: rgb(74, 189, 196) + 20;
+        }
+      }
+      background-color: $blockquote-bg;
+      border-radius: 5px;
+      border: 1px solid  $blockquote-bg - 10 ;
+      box-shadow: 0 0 20px $blockquote-border;
+      clear: both;
+      color: $blockquote-fg + 20;
+      font-size: $base-font-size;
+      line-height: $base-font-size + 5;
+      margin: 20px 10px;
+      padding: 10px;
+      text-shadow: none;
+      p {
+        margin-bottom: 15px;
+      }
+      p:last-child {
+        margin-bottom: 0px;
+      }
+      ul {
+        padding: 10px;
+        padding-left: 20px;
+        li {
+          margin-bottom: 10px;
+        }
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    h1, h2, h3, h4, h5 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      margin-left: -30px;
+      color: $h1-fg;
+      font-weight: 400 ;
+      line-height: auto;
+      font-family: $header-font-family ;
+      text-transform: capitalize;
+      // text-shadow: 1px 1px 4px $h1-shadow;
+    }
+    h1, h1.post-title {
+      color: $h1-fg ;
+      font-size: $header-font-size-h1;
+      font-family: $header-font-family ;
+      text-shadow: 1px 1px 4px $h1-shadow;
+    }
+    h1.post-title {
+      color: $h1-title-fg ;
+    }
+    h2 {
+      font-size: $header-font-size-h1 - 5;
+    }
+    h3 {
+      font-size: $header-font-size-h1 - 7;
+    }
+    h4 {
+      font-size: $header-font-size-h1 - 9;
+    }
+    h5 {
+      font-size: $base-font-size + 2;
+    }
+
+
+    figure {
+      background-color: $transparent;
+    }
+    pre {
+      background-color: transparent;
+      box-shadow: 1px 1px 2px $code-bg - 50;
+      overflow: hidden;
+      margin: 0px;
+      font-size: 14pt;
+    }
+    code {
+      box-shadow: 0 0 1px $code-bg - 100;
+      font-size: $fixed-font-size;
+      border: 1px solid $code-bg - 20;
+      background-color: $code-bg + 80;
+      color: $code-fg + 80;
+      display: inline-block;
+      font-family: $fixed-font-family ;
+      margin-bottom: 2px;
+      margin-top: 1px;
+      padding: 2px 3px;
+    }
+    .panel-heading {
+      padding: 0;
+      margin: 0;
+      background-color: $transparent;
+
+      figure > pre {
+        background-color: $primary-bg;
+        //border-radius: 20px/20px ;
+        overflow: hidden;
+        background-clip: padding-box;
+      }
+    }
+    .highlight {
+      background-color: $transparent;
+      padding: 0px;
+      pre {
+        code {
+          //border-radius: 20px/20px ;
+          background-color: $code-bg;
+          border-radius: 5px;
+          border: 1px solid $code-bg - 20;
+          box-shadow: 0 0 10px $code-bg - 100;
+          color: $code-fg;
+          display: block;
+          font-family: $fixed-font-family ;
+          font-size: $fixed-font-size;
+          margin: 20px 0  ;
+          z-index: 3000;
+          padding: 20px;
+          width: 100%;
+        }
+      }
+      code, pre {
+        background-color: $transparent;
+        color: $code-fg ;
+        border: 0;
+        box-shadow: 0 0 0;
+      }
+      .gutter {
+        border-size: 0px;
+      }
+      pre, code .lineno, td.gutter {
+        background-color: $transparent;
+        border: 0;
+        box-shadow: 0 0 0;
+        font-family: $fixed-font-family ;
+      }
+      td.gutter pre, td.code pre {
+        border-radius: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .panel .panel-heading figure > pre {
+      padding: 0;
+      border: 1px solid $code-bg - 20;
+      box-shadow: 0 0 15px black;
+    }
+
+    div.external-reference {
+      background-color: $quote-bg;
+      color: $quote-fg;
+      border-radius: 5px;
+      text-shadow: none;
+      box-shadow: 0 0 5px $quote-shadow;
+      font-weight: 100;
+      font-size: $base-font-size - 3;
+      padding: 15px 15px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .pagination {
+      border: 1px solid $primary-border;
+      padding: 0 25px;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      .pagination-item {
+        padding: 5px;
+      }
+    }
+  }
+}
