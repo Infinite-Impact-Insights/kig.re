@@ -22,7 +22,7 @@ function local_deploy() {
     git status --long
     printf ${clr}
     echo
-    return
+    return 1
   fi
 
   eval "$(rbenv init -)"
@@ -38,10 +38,10 @@ function local_deploy() {
   find . -type f -exec chmod o+r {} \;
   hook "after-build"
   printf "${txtgrn}"
-  cd _site && ln -s ~/music
-  cd downloads && ln -s ~/downloads/*.mp3 .
-  cd ..
-  ln -s ~/downloads d
+  cd _site 
+  ln -nfs ~/music
+  ln -nfs ~/downloads d
+  cd downloads && ln -nfs ~/downloads/*.mp3 .
   cd $outer_dir
   printf "${bldwht}Deploy Status: ${bldgrn}OK\n${clr}"
 }
