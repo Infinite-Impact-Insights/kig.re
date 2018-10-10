@@ -7,6 +7,7 @@ author: Konstantin Gredeskoul
 ---
 
 ## Is AWS a sane choice of a Cloud for mission-critical infrastructure
+
 <div class="large">
 In this short post I describe the "read-only" problem that happened to one of our C5 hosts, offer a bit of a rant about how incompetent AWS support staff is, and how their forums are completely _useless_, and frankly, _infuriating_.
 
@@ -17,7 +18,9 @@ Do you have the same problem on one of your C5 instances? Then read on. At least
 
 ## The Problem — read only file system on a C5 class instance.
 
+
 {{site.data.macros.continue}}
+
 
 So here is what happened earlier today.
 

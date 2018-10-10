@@ -11,6 +11,10 @@ First things first, let's start with terminology. You see, I started learning C+
 
 But, it turns out that you can have your cake and eat it too.
 
+
+{{site.data.macros.continue}}
+
+
 You can absolutely build an Arduino library in C++, as long is does not need to link with large static libraries (or, if they do — you have plenty of flash on your chip — thanks Teensy!). And that's how I got into learning how to structure my C code in a C++ way. Cause that's what's C++ programming is all about, no?
 
 So with this I kick off an official "C++ Newbie Tour" set of blog posts, with which I hope to share some of the important things I've been learning as I am going through this process, and in particular figure out something that those of us who've been using Rails for too many goddamn years :) are used to having nicely laid out projects, with clearly named folders for where things should go, and a magical dependency loader.

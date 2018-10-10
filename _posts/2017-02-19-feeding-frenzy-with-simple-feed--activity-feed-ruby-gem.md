@@ -16,6 +16,7 @@ Simple Feed is running live in production, and is powering three separate social
 
 <img src="https://raw.githubusercontent.com/kigster/simple-feed/master/man/activity-feed-action.png" width="100%" border="1">
 
+
 {{site.data.macros.continue}}
 
 
