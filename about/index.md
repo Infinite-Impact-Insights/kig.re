@@ -4,9 +4,6 @@ title: About Konstantin
 disqus: disable
 toc: true
 ---
-
-## The Story of K
-
 This is the personal bio, not a professional one, although [professional summary](/professional/summary/) also exists.
 
 ### Brief Bio

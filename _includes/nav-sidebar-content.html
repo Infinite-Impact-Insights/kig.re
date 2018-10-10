@@ -19,8 +19,7 @@
       <h1 class="toc-title">Blog Navigation</h1>
       <ul class="nav nav-pills nav-stacked">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-          aria-expanded="false">Chronological Posts (2012 — Present)<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Archive (2012 — Now)<span class="caret"></span></a>
           <ul class="dropdown-menu">
             {% assign last_post_year = post_list.first.date | date: "%Y" %}
             {% for node in post_list %}
@@ -39,6 +38,7 @@
               {% endfor %}
             </ul>
           </li>
+          <li><a target="_blank" href="http://tektastic.kig.re">Archive (2006 — 2012)</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Music <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -69,10 +69,11 @@
                     <li><a target="_blank" href="https://github.com/kigster/ventable"><code>Ventable</code> Observer design pattern with a twist</a></li>
                     <li role="separator" class="divider"></li>
                     <li><h4>C/C++/Objective-C</h4></li>
-                    <li><a target="_blank" href="https://github.com/kigster/librgb"><code>librgb</code> simple RGB color manipulation lib</a></li>
-                    <li><a target="_blank" href="https://github.com/kigster/kigomoku-ios"><code>Gomoku</code> game for iOS</a></li>
+                    <li><a target="_blank" href="https://github.com/kigster/cmake-project-template"><code>cmake-project-template</code> a starting point for CMake/C++ project</a></li>
+                    <li><a target="_blank" href="https://github.com/kigster/kigomoku-ios"><code>Gomoku</code> 2D game for iOS</a></li>
                     <li role="separator" class="divider"></li>
                     <li><h4>Arduino/Hardware</h4></li>
+                    <li><a target="_blank" href="https://github.com/kigster/arli"><code>Arli</code> — Arduino library manager and project generator</a></li>
                     <li><a target="_blank" href="https://github.com/kigster/back-seat-driver"><code>Back-seat Driver</code> motor control library for Arduino</a></li>
                     <li><a target="_blank" href="https://github.com/kigster/flix-capacitor"><code>FlixCapacitor</code> music box with photos and lights</a></li>
                     <li><a target="_blank" href="https://github.com/kigster/auto-dimming-clock"><code>Auto-Dimming Clock</code> bedside clock smart enough to auto-dim</a></li>
@@ -95,7 +96,6 @@
                   </ul>
                 </li>
                 <li><a href="/about">About</a></li>
-                <li><a target="_blank" href="http://tektastic.kig.re/">Chronological: 2006-2012</a></li>
 
               </ul>
               <div class="vspacer"></div>
