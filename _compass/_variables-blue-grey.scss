@@ -1,0 +1,101 @@
+.w3-theme-l5 {color:#000 !important; background-color:#f5f7f8 !important}
+.w3-theme-l4 {color:#000 !important; background-color:#dfe5e8 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#becbd2 !important}
+.w3-theme-l2 {color:#000 !important; background-color:#9eb1bb !important}
+.w3-theme-l1 {color:#fff !important; background-color:#7d97a5 !important}
+.w3-theme-d1 {color:#fff !important; background-color:#57707d !important}
+.w3-theme-d2 {color:#fff !important; background-color:#4d636f !important}
+.w3-theme-d3 {color:#fff !important; background-color:#435761 !important}
+.w3-theme-d4 {color:#fff !important; background-color:#3a4b53 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#303e45 !important}
+
+.w3-theme-light {color:#000 !important; background-color:#f5f7f8 !important}
+.w3-theme-dark {color:#fff !important; background-color:#303e45 !important}
+.w3-theme-action {color:#fff !important; background-color:#303e45 !important}
+
+.w3-theme {color:#fff !important; background-color:#607d8b !important}
+.w3-text-theme {color:#607d8b !important}
+.w3-border-theme {border-color:#607d8b !important}
+
+.w3-hover-theme:hover {color:#fff !important; background-color:#607d8b !important}
+.w3-hover-text-theme:hover {color:#607d8b !important}
+.w3-hover-border-theme:hover {border-color:#607d8b !important}
+
+$primary-fg: rgba(#715252, 1);
+$primary-bg: rgba(244, 221, 162, 0.39);
+$primary-border: #E08E79;
+
+$secondary-fg: #2f2f2f;
+$secondary-bg: #656565;
+$secondary-border: #45504C;
+
+$nav-fg: rgba(#ffffff, 0.7);
+$nav-bg: rgba(#9d8263, 0.97);
+$nav-bg-opaque: rgba(#584e50, 1);
+$nav-bg-semi-transparent: rgba(#584e50, 0.7);
+$nav-border: #1b253c;
+$nav-shadow: rgba(#1d2732, 0.96);
+
+$dropdown-menu-fg: $nav-fg + 50;
+$dropdown-menu-bg: rgb(112, 93, 60);
+$nav-dropdown-bg: #e7cf9d;
+
+$form-input-bg: rgba(255, 182, 57, 0.84);
+$form-input-fg: rgb(70, 52, 18);
+$form-input-border: rgb(70, 52, 18);
+$form-input-shadow: rgba(255, 126, 108, 0.89);
+
+$nav-active-fg: rgb(255, 251, 227);
+$nav-active-bg: rgba(#c69e37, 0.72);
+$nav-active-shadow: #28241d;
+
+$blockquote-bg: rgba(30, 75, 74, 0.8);
+$blockquote-fg: rgba(213, 255, 204, 1);
+$blockquote-border: rgba(1, 20, 13, 0.87);
+
+$nav-h1: #ffffff;
+$nav-hover-fg: #ffffff;
+$nav-hover-bg: rgba(#ffc794, .7);
+$nav-hover-shadow: rgba(#ffffff, 1);
+
+$h1-title-fg: rgba(54, 46, 28, 0.9);
+$h1-fg: rgba(113, 99, 90, 1);
+$h1-shadow: rgba(185, 185, 185, 0.6);
+
+$link-fg: rgba(#322111, 1);
+$offset-fg: #00c5ec;
+
+$code-bg: rgba(60, 60, 40, 1);
+$code-fg: rgba(173, 255, 150, 0.9);
+
+$image-shadow: rgb(130, 122, 14);
+$widgets-border: rgb(255, 184, 0);
+
+$quote-bg: rgba(164, 247, 153, 0.6);
+$quote-fg: rgb(15, 105, 0);
+$quote-shadow: rgb(49, 68, 96);
+
+$transparent: rgba(0, 0, 0, 0);
+
+$toc-entry-fg: rgba(#5d0f0f, 0.83);
+$toc-entry-active-fg: rgba(#ff0000, 0.83);
+
+$base-font-family: 'Roboto Condensed', 'HelveticaNeue', sans-serif;
+$base-font-size: 14pt;
+$base-font-weight: 500;
+
+$nav-font-family: 'Cuprum', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
+$nav-font-size: 12pt;
+$nav-font-weight: 200;
+
+$header-font-family: 'Oswald', 'HelveticaNeue-CondensedBold', sans-serif;
+$header-font-size-h1: 25pt;
+
+$fixed-font-family: 'Menlo', 'Andale Mono', Courier, sans-serif;
+$fixed-font-size: 10pt;
+
+$large-font-family: 'Ropa Sans', 'HelveticaNeue', Arial, sans-serif;
+$large-font-size: 17pt;
+
+$quote-side-line-color: rgb(252, 144, 127);
+$vertical-indent: 30px;

@@ -1,4 +1,4 @@
-body.theme-ltec {
+body.theme {
   .sidebar {
     position: fixed;
     margin: $vertical-indent 0 300px;
@@ -84,7 +84,7 @@ body.theme-ltec {
         position: relative;
         overflow-y: visible;
         overflow-x: visible;
-        background-color: $dropdown-menu-fg ;
+        background-color: $dropdown-menu-bg;
         height: auto;
         // min-width: 90%;
         // max-width: 110%;
@@ -132,9 +132,8 @@ body.theme-ltec {
         // text-shadow: 1px 1px 1px $nav-shadow;
         &:focus,
         &:hover {
-          color: $nav-hover-fg;
-          background-color: $dropdown-menu-bg ;
-          box-shadow: 0 0 8px $nav-hover-shadow;
+          color: $nav-bg !important;
+          background-color: $nav-fg - 30 !important;
         }
 
         &.active {
@@ -160,12 +159,11 @@ body.theme-ltec {
       background-color: $form-input-bg;
       color: $form-input-fg ;
       border-color: $form-input-border + 20;
-      box-shadow: 0 0 5px $dropdown-menu-bg;
+      box-shadow: 5px 5px 15px $shadow;
       max-width: 100%;
-      font-size: $base-font-size + 3;
+      font-size: $base-font-size + 2;
       font-weight: 400;
-      padding: 2px;
-      paddingr-right: 15px;
+      padding: 5px;
     }
 
     fieldset {
@@ -184,8 +182,7 @@ body.theme-ltec {
           position: absolute !important;
           top: 8px !important;
           right: 5px !important;
-          color: rgb(121, 70, 17);
-
+          color: white !important;
           &:hover {
             cursor: pointer;
           }

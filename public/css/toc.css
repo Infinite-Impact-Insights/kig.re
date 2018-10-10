@@ -1,12 +1,12 @@
 /* line 5, ../../_compass/toc.scss */
-body.theme-ltec h1.toc-title {
+body.theme h1.toc-title {
   margin-left: 0px;
   font-size: 15pt !important;
   text-transform: uppercase;
   white-space: nowrap;
 }
 /* line 11, ../../_compass/toc.scss */
-body.theme-ltec .content-toc {
+body.theme .content-toc {
   display: block;
   position: fixed;
   top: 20px;
@@ -15,7 +15,7 @@ body.theme-ltec .content-toc {
   margin-top: 50px;
 }
 /* line 19, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav {
+body.theme .content-toc .section-nav {
   width: 100%;
   min-width: 250px;
   min-height: 1000px;
@@ -27,21 +27,21 @@ body.theme-ltec .content-toc .section-nav {
   border-size: 0;
 }
 /* line 29, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav > li {
+body.theme .content-toc .section-nav > li {
   list-style-type: none;
 }
 /* line 32, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav ul {
+body.theme .content-toc .section-nav ul {
   padding-left: 10px;
   list-style: none;
 }
 /* line 36, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li {
+body.theme .content-toc .section-nav li {
   margin-bottom: 0px;
   padding: 0px;
 }
 /* line 39, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li a, body.theme-ltec .content-toc .section-nav li .open > a {
+body.theme .content-toc .section-nav li a, body.theme .content-toc .section-nav li .open > a {
   display: block;
   color: rgba(93, 15, 15, 0.83);
   padding: 0px;
@@ -49,51 +49,51 @@ body.theme-ltec .content-toc .section-nav li a, body.theme-ltec .content-toc .se
   text-decoration: underline;
 }
 /* line 45, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li a:hover, body.theme-ltec .content-toc .section-nav li a:focus, body.theme-ltec .content-toc .section-nav li .open > a:hover, body.theme-ltec .content-toc .section-nav li .open > a:focus {
+body.theme .content-toc .section-nav li a:hover, body.theme .content-toc .section-nav li a:focus, body.theme .content-toc .section-nav li .open > a:hover, body.theme .content-toc .section-nav li .open > a:focus {
   color: rgba(255, 0, 0, 0.83);
   text-decoration: underline;
 }
 /* line 50, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li a.active, body.theme-ltec .content-toc .section-nav li .open > a.active {
+body.theme .content-toc .section-nav li a.active, body.theme .content-toc .section-nav li .open > a.active {
   color: rgba(255, 20, 20, 0.83);
   margin-right: 0px;
   border-size: 0;
   font-weight: 700;
 }
 /* line 59, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h1,
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h2,
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h3,
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h4,
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h5,
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h6 {
-  font-family: "Cuprum", "Roboto Condensed", "HelveticaNeue-CondensedBold", Arial, sans-serif;
+body.theme .content-toc .section-nav .toc-entry.toc-h1,
+body.theme .content-toc .section-nav .toc-entry.toc-h2,
+body.theme .content-toc .section-nav .toc-entry.toc-h3,
+body.theme .content-toc .section-nav .toc-entry.toc-h4,
+body.theme .content-toc .section-nav .toc-entry.toc-h5,
+body.theme .content-toc .section-nav .toc-entry.toc-h6 {
+  font-family: "Oswald", "Roboto Condensed", "HelveticaNeue-CondensedBold", Arial, sans-serif;
   font-weight: 500;
   padding: 0px !important;
   margin: 0px;
   margin-bottom: 0px;
 }
 /* line 72, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h1 {
-  font-size: 14pt;
-}
-/* line 73, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h2 {
+body.theme .content-toc .section-nav .toc-entry.toc-h1 {
   font-size: 12pt;
 }
-/* line 74, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h3 {
-  font-size: 11pt;
-}
-/* line 75, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h4 {
+/* line 73, ../../_compass/toc.scss */
+body.theme .content-toc .section-nav .toc-entry.toc-h2 {
   font-size: 10pt;
 }
-/* line 76, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h5 {
+/* line 74, ../../_compass/toc.scss */
+body.theme .content-toc .section-nav .toc-entry.toc-h3 {
   font-size: 9pt;
 }
-/* line 77, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav .toc-entry.toc-h6 {
+/* line 75, ../../_compass/toc.scss */
+body.theme .content-toc .section-nav .toc-entry.toc-h4 {
   font-size: 8pt;
+}
+/* line 76, ../../_compass/toc.scss */
+body.theme .content-toc .section-nav .toc-entry.toc-h5 {
+  font-size: 7pt;
+}
+/* line 77, ../../_compass/toc.scss */
+body.theme .content-toc .section-nav .toc-entry.toc-h6 {
+  font-size: 6pt;
 }

@@ -1,4 +1,4 @@
-body.theme-ltec {
+body.theme {
   .post {
     margin-top: 50px;
     text-align: left;
@@ -23,6 +23,19 @@ body.theme-ltec {
       font-weight: 400;
     }
     blockquote {
+      background-color: $blockquote-bg;
+      border-radius: 5px;
+      border: 1px solid  $blockquote-bg - 10 ;
+      box-shadow: 5px 5px 15px $shadow;
+      clear: both;
+      color: $blockquote-fg;
+      font-size: $base-font-size;
+      font-weight: 600;
+      line-height: $base-font-size + 5;
+      margin: 20px 0px;
+      padding: 10px;
+      text-shadow: none;
+
       a {
         color: rgb(73, 255, 239);
         text-decoration: underlined;
@@ -32,17 +45,7 @@ body.theme-ltec {
           color: rgb(74, 189, 196) + 20;
         }
       }
-      background-color: $blockquote-bg;
-      border-radius: 5px;
-      border: 1px solid  $blockquote-bg - 10 ;
-      box-shadow: 0 0 20px $blockquote-border;
-      clear: both;
-      color: $blockquote-fg + 20;
-      font-size: $base-font-size;
-      line-height: $base-font-size + 5;
-      margin: 20px 10px;
-      padding: 10px;
-      text-shadow: none;
+
       p {
         margin-bottom: 15px;
       }
@@ -66,7 +69,7 @@ body.theme-ltec {
       margin-bottom: 10px;
       margin-left: -30px;
       color: $h1-fg;
-      font-weight: 400 ;
+      font-weight: $header-weight;
       line-height: auto;
       font-family: $header-font-family ;
       text-transform: capitalize;
@@ -94,33 +97,31 @@ body.theme-ltec {
       font-size: $base-font-size + 2;
     }
 
-
     figure {
       background-color: $transparent;
     }
     pre {
-      background-color: transparent;
       box-shadow: 1px 1px 2px $code-bg - 50;
       overflow: hidden;
       margin: 0px;
       font-size: 14pt;
     }
     code {
-      box-shadow: 0 0 1px $code-bg - 100;
-      font-size: $fixed-font-size;
-      border: 1px solid $code-bg - 20;
-      background-color: $code-bg + 80;
-      color: $code-fg + 80;
+      box-shadow: $code-box-shadow;
+      font-size: $code-font-size;
+      border: $code-border;
+      font-family: $code-font-family;
+      // background-color: $code-bg !important;
+      opacity: 1;
+      //color: $code-fg;
       display: inline-block;
-      font-family: $fixed-font-family ;
-      margin-bottom: 2px;
-      margin-top: 1px;
-      padding: 2px 3px;
+      margin: 5px 5px;
+      padding: 2px 5px;
+      font-weight: 900;
     }
     .panel-heading {
       padding: 0;
       margin: 0;
-      background-color: $transparent;
 
       figure > pre {
         background-color: $primary-bg;
@@ -130,28 +131,29 @@ body.theme-ltec {
       }
     }
     .highlight {
-      background-color: $transparent;
-      padding: 0px;
+      border: $code-border;
+      box-shadow: $code-box-shadow;
+      padding: 3px;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 20px;
       pre {
+        background-color: transparent !important;
+        color: inherit;
         code {
-          //border-radius: 20px/20px ;
-          background-color: $code-bg;
-          border-radius: 5px;
-          border: 1px solid $code-bg - 20;
-          box-shadow: 0 0 10px $code-bg - 100;
-          color: $code-fg;
+          color: inherit;
+          font-size: $code-font-size;
+          font-family: $code-font-family;
+          font-size: $code-font-size;
+          background-color: transparent !important;
           display: block;
-          font-family: $fixed-font-family ;
-          font-size: $fixed-font-size;
-          margin: 20px 0  ;
+          margin: 10px 0;
           z-index: 3000;
-          padding: 20px;
-          width: 100%;
+          padding: 3px;
+          width: 90%;
         }
       }
       code, pre {
-        background-color: $transparent;
-        color: $code-fg ;
         border: 0;
         box-shadow: 0 0 0;
       }
@@ -159,7 +161,6 @@ body.theme-ltec {
         border-size: 0px;
       }
       pre, code .lineno, td.gutter {
-        background-color: $transparent;
         border: 0;
         box-shadow: 0 0 0;
         font-family: $fixed-font-family ;
@@ -177,16 +178,16 @@ body.theme-ltec {
     }
 
     div.external-reference {
-      background-color: $quote-bg;
-      color: $quote-fg;
+      background-color: $blockquote-bg + 20;
+      color: $blockquote-fg + 20;
       border-radius: 5px;
       text-shadow: none;
-      box-shadow: 0 0 5px $quote-shadow;
-      font-weight: 100;
+      box-shadow: 5px 5px 15px $shadow;
+      font-weight: 400;
       font-size: $base-font-size - 3;
       padding: 15px 15px;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin: 15px 50px;
+      a { color: white !important; font-weight: 600; }
     }
 
     .pagination {

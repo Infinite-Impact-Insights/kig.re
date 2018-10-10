@@ -1,7 +1,7 @@
 {
   "cmd": "bundle",
-  "name": "Recompile",
-  "args": [ "exec", "jekyll", "build" ],
+  "name": "Serve",
+  "args": [ "exec", "jekyll", "serve", "--watch" ],
   "keymap": "ctrl-r",
   "sh": true,
   "errorMatch": [
