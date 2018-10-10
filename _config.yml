@@ -44,9 +44,12 @@ github:
   repo:      https://github.com/kigster
 
 plugins:
+  - jekyll-coffeescript
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-compass
   - jekyll-assets
   - jekyll-toc
-  - jekyll-sitemap
 
 showToggleButton: false
 

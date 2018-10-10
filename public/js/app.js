@@ -64,26 +64,30 @@ var site = new Site(window.location.href);
             var ul = $($('#toc ul')[0]);
 
             if (ul.is(':visible')) {
-                ul.hide();
                 $(this).text(config.showText);
                 if (config.saveShowStatus) {
                     $.cookie('toc-hide', '1', { expires: 365, path: '/' });
                 }
                 $('#toc').addClass('tochidden');
+                window.setTimeout(function() {
+                  ul.hide();
+                }, 200);
             } else {
-                ul.show();
                 $(this).text(config.hideText);
                 if (config.saveShowStatus) {
                     $.removeCookie('toc-hide', { path: '/' });
                 }
                 $('#toc').removeClass('tochidden');
+                window.setTimeout(function() {
+                  ul.show();
+                }, 200);
+
             }
             return false;
         });
 
         if (config.saveShowStatus && $.cookie('toc-hide')) {
             var ul = $($('#toc ul')[0]);
-
             ul.hide();
             $('#toctogglelink').text(config.showText);
             $('#toc').addClass('tochidden');

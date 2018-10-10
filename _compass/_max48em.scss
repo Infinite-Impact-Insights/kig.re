@@ -2,7 +2,8 @@
 @media (max-width: 48em) {
   html {
     body.theme-ltec {
-      padding-left: 20px;
+      padding-left: 10px;
+      padding-right: 5px;
       min-width: 350px ;
       font-size: $base-font-size - 1;
       font-weight: 500;
@@ -11,8 +12,7 @@
         font-size: $base-font-size - 3 !important;
         line-height: $base-font-size + 3 !important;
         ul li {
-          padding-top: 0px;
-          padding-bottom: 5px;
+          padding: 0px !important;
         }
       }
 
@@ -30,7 +30,8 @@
         font-size: 9pt;
         position: relative ;
         margin: 0 ;
-        left: 30px;
+        left: 10px;
+        right: 10px;
         top: 0px;
         margin-top: -10px ;
         margin-right: -50px ;
@@ -55,8 +56,8 @@
       }
 
       code, pre {
-        font-size: $fixed-font-size - 5 ;
-        padding: 3px ;
+        font-size: $fixed-font-size - 3 !important ;
+        padding: 3px !important ;
       }
       span.glyphicon-menu-hamburger {
         font-size: 19pt !important;

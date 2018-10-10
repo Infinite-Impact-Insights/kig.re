@@ -1,21 +1,21 @@
 @media (max-width: 48em) {
   /* line 4, ../../_compass/_max48em.scss */
   html body.theme-ltec {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 5px;
     min-width: 350px;
     font-size: 13pt;
     font-weight: 500;
     line-height: 17pt;
   }
-  /* line 10, ../../_compass/_max48em.scss */
+  /* line 11, ../../_compass/_max48em.scss */
   html body.theme-ltec blockquote {
     font-size: 11pt !important;
     line-height: 17pt !important;
   }
-  /* line 13, ../../_compass/_max48em.scss */
+  /* line 14, ../../_compass/_max48em.scss */
   html body.theme-ltec blockquote ul li {
-    padding-top: 0px;
-    padding-bottom: 5px;
+    padding: 0px !important;
   }
   /* line 19, ../../_compass/_max48em.scss */
   html body.theme-ltec .large {
@@ -32,43 +32,44 @@
     font-size: 9pt;
     position: relative;
     margin: 0;
-    left: 30px;
+    left: 10px;
+    right: 10px;
     top: 0px;
     margin-top: -10px;
     margin-right: -50px;
     width: 100%;
     z-index: 10000;
   }
-  /* line 41, ../../_compass/_max48em.scss */
+  /* line 42, ../../_compass/_max48em.scss */
   html body.theme-ltec .content-toc {
     display: none;
   }
-  /* line 44, ../../_compass/_max48em.scss */
+  /* line 45, ../../_compass/_max48em.scss */
   html body.theme-ltec .share-buttons img {
     display: none;
   }
-  /* line 47, ../../_compass/_max48em.scss */
+  /* line 48, ../../_compass/_max48em.scss */
   html body.theme-ltec .tweets {
     display: none;
   }
-  /* line 50, ../../_compass/_max48em.scss */
+  /* line 51, ../../_compass/_max48em.scss */
   html body.theme-ltec .post {
     padding-left: 10px;
   }
-  /* line 52, ../../_compass/_max48em.scss */
+  /* line 53, ../../_compass/_max48em.scss */
   html body.theme-ltec .post h1, html body.theme-ltec .post h2, html body.theme-ltec .post h3, html body.theme-ltec .post h4, html body.theme-ltec .post h5 {
     margin-left: 0px;
   }
-  /* line 57, ../../_compass/_max48em.scss */
+  /* line 58, ../../_compass/_max48em.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
-    font-size: 5pt;
-    padding: 3px;
+    font-size: 7pt !important;
+    padding: 3px !important;
   }
-  /* line 61, ../../_compass/_max48em.scss */
+  /* line 62, ../../_compass/_max48em.scss */
   html body.theme-ltec span.glyphicon-menu-hamburger {
     font-size: 19pt !important;
   }
-  /* line 65, ../../_compass/_max48em.scss */
+  /* line 66, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar {
     height: auto;
     margin-left: -20px;
@@ -81,7 +82,7 @@
     padding-right: 0px;
     width: 100%;
   }
-  /* line 77, ../../_compass/_max48em.scss */
+  /* line 78, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar {
     position: relative;
     margin: 0;
@@ -89,24 +90,24 @@
     padding: 0px;
     padding-left: 15px;
   }
-  /* line 84, ../../_compass/_max48em.scss */
+  /* line 85, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar .navbar-collapse {
     overflow-y: visible;
     overflow-x: visible;
   }
-  /* line 89, ../../_compass/_max48em.scss */
+  /* line 90, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar ::before {
     position: fixed;
     top: 0px;
     left: 0px;
   }
-  /* line 95, ../../_compass/_max48em.scss */
+  /* line 96, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar .collapse, html body.theme-ltec .sidebar nav.navbar .collapsing {
     border: 1px solid rgba(79, 26, 14, 0.1);
     background-color: #c9b17f;
     box-shadow: 0px 0px 10px #513907;
   }
-  /* line 100, ../../_compass/_max48em.scss */
+  /* line 101, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar .dropdown-menu {
     overflow-y: visible;
     overflow-x: visible;
@@ -117,31 +118,31 @@
     margin-right: 0px !important;
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 109, ../../_compass/_max48em.scss */
+  /* line 110, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar .dropdown-menu li a {
     background-color: #705d3c;
     font-size: 9pt;
   }
-  /* line 114, ../../_compass/_max48em.scss */
+  /* line 115, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar .navbar-header {
     margin: 0;
     height: 40px;
   }
-  /* line 120, ../../_compass/_max48em.scss */
+  /* line 121, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar form fieldset span.glyphicon-search {
     display: none !important;
   }
-  /* line 125, ../../_compass/_max48em.scss */
+  /* line 126, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar ul {
     overflow-y: visible;
     overflow-x: visible;
   }
-  /* line 129, ../../_compass/_max48em.scss */
+  /* line 130, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar ul li a {
     font-size: 13pt;
     font-weight: 200;
   }
-  /* line 132, ../../_compass/_max48em.scss */
+  /* line 133, ../../_compass/_max48em.scss */
   html body.theme-ltec .sidebar nav.navbar ul li a code, html body.theme-ltec .sidebar nav.navbar ul li a pre {
     font-size: 7pt;
     padding: 1px;
@@ -155,44 +156,45 @@
   }
   /* line 5, ../../_compass/_min48em.scss */
   html body.theme-ltec .sidebar {
+    width: 30%;
     display: block;
   }
-  /* line 7, ../../_compass/_min48em.scss */
+  /* line 8, ../../_compass/_min48em.scss */
   html body.theme-ltec .sidebar .navbar-collapse {
     overflow-y: visible;
     overflow-x: visible;
   }
-  /* line 12, ../../_compass/_min48em.scss */
+  /* line 13, ../../_compass/_min48em.scss */
   html body.theme-ltec .content-toc {
     display: none;
   }
-  /* line 17, ../../_compass/_min48em.scss */
+  /* line 18, ../../_compass/_min48em.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
     font-size: 7pt;
   }
-  /* line 24, ../../_compass/_min48em.scss */
+  /* line 25, ../../_compass/_min48em.scss */
   html .tweets {
     display: none;
   }
-  /* line 27, ../../_compass/_min48em.scss */
+  /* line 28, ../../_compass/_min48em.scss */
   html .sidebar {
     display: none;
   }
-  /* line 30, ../../_compass/_min48em.scss */
+  /* line 31, ../../_compass/_min48em.scss */
   html .sidebar .nav.navbar .dropdown-menu {
     background-color: rgba(0, 0, 0, 0.97);
   }
-  /* line 34, ../../_compass/_min48em.scss */
+  /* line 35, ../../_compass/_min48em.scss */
   html .sidebar .navbar-collapse {
     overflow-y: visible;
     overflow-x: visible;
   }
-  /* line 39, ../../_compass/_min48em.scss */
+  /* line 40, ../../_compass/_min48em.scss */
   html .share-buttons img {
     display: none;
   }
 
-  /* line 43, ../../_compass/_min48em.scss */
+  /* line 44, ../../_compass/_min48em.scss */
   .github-repos {
     padding-left: 0px;
     font-size: 12pt;
@@ -207,23 +209,24 @@
   }
   /* line 5, ../../_compass/_min58em.scss */
   html body.theme-ltec .sidebar {
+    width: 20%;
     display: block;
   }
-  /* line 7, ../../_compass/_min58em.scss */
+  /* line 8, ../../_compass/_min58em.scss */
   html body.theme-ltec .sidebar .navbar-collapse {
     overflow-y: visible;
     overflow-x: visible;
   }
-  /* line 12, ../../_compass/_min58em.scss */
+  /* line 13, ../../_compass/_min58em.scss */
   html body.theme-ltec .content-toc {
     display: none;
     width: 10%;
   }
-  /* line 20, ../../_compass/_min58em.scss */
+  /* line 21, ../../_compass/_min58em.scss */
   html body.theme-ltec code, html body.theme-ltec pre {
     font-size: 8pt;
   }
-  /* line 24, ../../_compass/_min58em.scss */
+  /* line 25, ../../_compass/_min58em.scss */
   html .github-repos {
     padding-left: 0px;
     font-size: 14px;
@@ -232,75 +235,86 @@
 @media (min-width: 85em) {
   /* line 5, ../../_compass/_min85em.scss */
   html body.theme-ltec .sidebar {
+    width: 15%;
     display: block;
   }
-  /* line 9, ../../_compass/_min85em.scss */
+  /* line 10, ../../_compass/_min85em.scss */
   html body.theme-ltec .sidebar .navbar-collapse {
     overflow-y: visible;
     overflow-x: visible;
   }
-  /* line 15, ../../_compass/_min85em.scss */
+  /* line 16, ../../_compass/_min85em.scss */
   html body.theme-ltec .content-toc {
     display: block;
   }
-  /* line 19, ../../_compass/_min85em.scss */
+  /* line 20, ../../_compass/_min85em.scss */
   html .tweets {
     display: block;
   }
 }
-/* line 2, ../../_compass/toc.scss */
+/* line 5, ../../_compass/toc.scss */
+body.theme-ltec h1.toc-title {
+  margin-left: 0px;
+  font-size: 15pt !important;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* line 11, ../../_compass/toc.scss */
 body.theme-ltec .content-toc {
   display: block;
   position: fixed;
   top: 20px;
   padding: 0px 10px 0px 10px;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 50px;
 }
-/* line 10, ../../_compass/toc.scss */
-body.theme-ltec .content-toc h1.toc-title {
-  margin-left: 0px;
-}
-/* line 13, ../../_compass/toc.scss */
+/* line 19, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav {
-  width: 96%;
-  min-width: 200px;
-  min-height: 1200px;
+  width: 100%;
+  min-width: 250px;
+  min-height: 1000px;
+  overflow-y: auto;
   padding: 5px 5px;
   padding-right: 20px;
   margin: 0px;
   margin-left: 0px;
   border-size: 0;
 }
-/* line 24, ../../_compass/toc.scss */
+/* line 29, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav > li {
   list-style-type: none;
 }
-/* line 28, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li {
-  margin-bottom: 0px;
-}
-/* line 30, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li a, body.theme-ltec .content-toc .section-nav li .open > a {
-  color: #29783c;
-  display: block;
-  padding: 7px;
-  margin: 2px;
-  text-decoration: underline;
+/* line 32, ../../_compass/toc.scss */
+body.theme-ltec .content-toc .section-nav ul {
+  padding-left: 10px;
+  list-style: none;
 }
 /* line 36, ../../_compass/toc.scss */
-body.theme-ltec .content-toc .section-nav li a:hover, body.theme-ltec .content-toc .section-nav li a:focus, body.theme-ltec .content-toc .section-nav li .open > a:hover, body.theme-ltec .content-toc .section-nav li .open > a:focus {
-  color: rgba(88, 78, 80, 0.7);
+body.theme-ltec .content-toc .section-nav li {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+/* line 39, ../../_compass/toc.scss */
+body.theme-ltec .content-toc .section-nav li a, body.theme-ltec .content-toc .section-nav li .open > a {
+  display: block;
+  color: rgba(93, 15, 15, 0.83);
+  padding: 0px;
+  padding-top: 5px !important;
   text-decoration: underline;
 }
-/* line 41, ../../_compass/toc.scss */
+/* line 45, ../../_compass/toc.scss */
+body.theme-ltec .content-toc .section-nav li a:hover, body.theme-ltec .content-toc .section-nav li a:focus, body.theme-ltec .content-toc .section-nav li .open > a:hover, body.theme-ltec .content-toc .section-nav li .open > a:focus {
+  color: rgba(255, 0, 0, 0.83);
+  text-decoration: underline;
+}
+/* line 50, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav li a.active, body.theme-ltec .content-toc .section-nav li .open > a.active {
-  color: #fffff7;
+  color: rgba(255, 20, 20, 0.83);
   margin-right: 0px;
   border-size: 0;
   font-weight: 700;
 }
-/* line 49, ../../_compass/toc.scss */
+/* line 59, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h1,
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h2,
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h3,
@@ -308,42 +322,34 @@ body.theme-ltec .content-toc .section-nav .toc-entry.toc-h4,
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h5,
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h6 {
   font-family: "Cuprum", "Roboto Condensed", "HelveticaNeue-CondensedBold", Arial, sans-serif;
-  line-height: 13pt;
-  font-weigth: 500;
-  padding: 1px;
+  font-weight: 500;
+  padding: 0px !important;
+  margin: 0px;
   margin-bottom: 0px;
 }
-/* line 62, ../../_compass/toc.scss */
+/* line 72, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h1 {
   font-size: 14pt;
-  margin-left: 0px;
-  display: none;
 }
-/* line 63, ../../_compass/toc.scss */
+/* line 73, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h2 {
   font-size: 12pt;
-  color: #ffffff;
-  margin-left: -10px;
 }
-/* line 64, ../../_compass/toc.scss */
+/* line 74, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h3 {
   font-size: 11pt;
-  margin-left: 0px;
 }
-/* line 65, ../../_compass/toc.scss */
+/* line 75, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h4 {
   font-size: 10pt;
-  margin-left: 10px;
 }
-/* line 66, ../../_compass/toc.scss */
+/* line 76, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h5 {
   font-size: 9pt;
-  margin-left: 20px;
 }
-/* line 67, ../../_compass/toc.scss */
+/* line 77, ../../_compass/toc.scss */
 body.theme-ltec .content-toc .section-nav .toc-entry.toc-h6 {
   font-size: 8pt;
-  margin-left: 30px;
 }
 
 /* line 2, ../../_compass/_sidebar.scss */
@@ -393,14 +399,14 @@ body.theme-ltec .sidebar nav.navbar .navbar-header button {
 body.theme-ltec .sidebar nav.navbar .navbar-header button span.glyphicon-menu-hamburger {
   top: 5px;
   position: absolute;
-  color: #040404;
+  color: #3f2020;
   font-size: 30pt;
   z-index: 5000;
   visibility: visible;
 }
 /* line 51, ../../_compass/_sidebar.scss */
 body.theme-ltec .sidebar nav.navbar .navbar-header button span.glyphicon-menu-hamburger:hover {
-  color: #4a4a4a;
+  color: #856666;
 }
 /* line 55, ../../_compass/_sidebar.scss */
 body.theme-ltec .sidebar nav.navbar .navbar-header button span.glyphicon-menu-hamburger:active {
@@ -680,7 +686,7 @@ body.theme-ltec .post .panel-heading {
 }
 /* line 125, ../../_compass/_post.scss */
 body.theme-ltec .post .panel-heading figure > pre {
-  background-color: rgba(200, 163, 68, 0.1);
+  background-color: rgba(244, 221, 162, 0.39);
   overflow: hidden;
   background-clip: padding-box;
 }
@@ -766,7 +772,7 @@ body.theme-ltec .post .pagination .pagination-item {
   border: 1px solid #1b253c;
   color: #ffffff;
   background-color: rgba(157, 130, 99, 0.97);
-  box-shadow: 0px 0px 8px rgba(190, 153, 58, 0.1);
+  box-shadow: 0px 0px 8px rgba(234, 211, 152, 0.39);
   padding: 5px;
   margin-right: 0px;
   margin-left: 10px;
@@ -831,8 +837,8 @@ html {
 /* line 18, ../../_compass/custom.scss */
 body.theme-ltec {
   position: relative;
-  background-color: rgba(200, 163, 68, 0.1);
-  color: #363636;
+  background-color: rgba(244, 221, 162, 0.39);
+  color: #715252;
   font-family: "Roboto Condensed", "HelveticaNeue", sans-serif;
   font-weight: 100;
   line-height: 15pt;
@@ -856,35 +862,34 @@ body.theme-ltec .content {
 body.theme-ltec .blog-header {
   font-family: "Oswald", "HelveticaNeue-CondensedBold", sans-serif;
   margin-bottom: 30px;
-  white-space: nowrap;
 }
-/* line 46, ../../_compass/custom.scss */
+/* line 45, ../../_compass/custom.scss */
 body.theme-ltec .blog-header h1 {
   font-size: 13pt;
 }
-/* line 49, ../../_compass/custom.scss */
+/* line 48, ../../_compass/custom.scss */
 body.theme-ltec .blog-header a {
   text-decoration: none;
 }
-/* line 54, ../../_compass/custom.scss */
+/* line 53, ../../_compass/custom.scss */
 body.theme-ltec .lb-container {
   padding: 0;
 }
-/* line 56, ../../_compass/custom.scss */
+/* line 55, ../../_compass/custom.scss */
 body.theme-ltec .lb-container img.lb-image {
   border-width: 0;
   box-shadow: 0 0 0;
 }
-/* line 62, ../../_compass/custom.scss */
+/* line 61, ../../_compass/custom.scss */
 body.theme-ltec em {
   color: #a23625;
   font-weight: 600;
   font-style: normal;
 }
-/* line 68, ../../_compass/custom.scss */
+/* line 67, ../../_compass/custom.scss */
 body.theme-ltec .large {
   font-size: 17pt;
-  color: #727272 !important;
+  color: #ad8e8e !important;
   font-family: "Ropa Sans", "HelveticaNeue", Arial, sans-serif;
   line-height: 21pt;
   margin-top: 20px;
@@ -892,36 +897,36 @@ body.theme-ltec .large {
   padding-left: 15px;
   border-left: 15px solid #fc907f;
 }
-/* line 79, ../../_compass/custom.scss */
+/* line 78, ../../_compass/custom.scss */
 body.theme-ltec .left-sidebar {
   position: relative;
   min-width: 250px;
 }
-/* line 84, ../../_compass/custom.scss */
+/* line 83, ../../_compass/custom.scss */
 body.theme-ltec a {
   font-weight: 200;
   margin: 0;
   color: #322111;
   text-decoration: underline;
 }
-/* line 90, ../../_compass/custom.scss */
+/* line 89, ../../_compass/custom.scss */
 body.theme-ltec .text-muted, body.theme-ltec label {
-  font-family: #363636;
+  font-family: #715252;
 }
-/* line 94, ../../_compass/custom.scss */
+/* line 93, ../../_compass/custom.scss */
 body.theme-ltec .post-excerpt {
   margin-top: 30px;
   border-bottom: 2px solid rgba(255, 107, 0, 0.6);
   margin-bottom: 100px;
 }
-/* line 100, ../../_compass/custom.scss */
+/* line 99, ../../_compass/custom.scss */
 body.theme-ltec span.post-date {
   display: block;
   margin-bottom: 15px;
   color: rgba(54, 46, 28, 0.9);
   font-weight: 700;
 }
-/* line 107, ../../_compass/custom.scss */
+/* line 106, ../../_compass/custom.scss */
 body.theme-ltec p.lead {
   color: rgba(173, 255, 150, 0.9);
   /*line-height: 15pt;*/
@@ -929,11 +934,11 @@ body.theme-ltec p.lead {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "HelveticaNeue", sans-serif;
 }
-/* line 115, ../../_compass/custom.scss */
+/* line 114, ../../_compass/custom.scss */
 body.theme-ltec .lead a {
   font-color: rgba(173, 255, 150, 0.9);
 }
-/* line 119, ../../_compass/custom.scss */
+/* line 118, ../../_compass/custom.scss */
 body.theme-ltec a.read-more {
   display: block;
   padding-bottom: 50px;
@@ -941,11 +946,11 @@ body.theme-ltec a.read-more {
   font-weight: 400;
   text-align: right;
 }
-/* line 127, ../../_compass/custom.scss */
+/* line 126, ../../_compass/custom.scss */
 body.theme-ltec .related {
   font-family: "Roboto Condensed", "HelveticaNeue", sans-serif;
 }
-/* line 131, ../../_compass/custom.scss */
+/* line 130, ../../_compass/custom.scss */
 body.theme-ltec img {
   border: 1px solid #ffb800;
   box-shadow: 1px 1px 6px #827a0e;
@@ -954,12 +959,12 @@ body.theme-ltec img {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 140, ../../_compass/custom.scss */
+/* line 139, ../../_compass/custom.scss */
 body.theme-ltec img.clear-image {
   border: 0;
   box-shadow: 0 0 0;
 }
-/* line 145, ../../_compass/custom.scss */
+/* line 144, ../../_compass/custom.scss */
 body.theme-ltec .lightbox-image {
   float: right;
   clear: right;
@@ -968,7 +973,7 @@ body.theme-ltec .lightbox-image {
   width: 40%;
   padding: 0;
 }
-/* line 154, ../../_compass/custom.scss */
+/* line 153, ../../_compass/custom.scss */
 body.theme-ltec a.command-line {
   display: inline-block;
   background-color: black;
@@ -978,12 +983,12 @@ body.theme-ltec a.command-line {
   margin-right: 10px;
   margin-bottom: 20px;
 }
-/* line 163, ../../_compass/custom.scss */
+/* line 162, ../../_compass/custom.scss */
 body.theme-ltec a.command-line img {
   border: 0px solid black;
   box-shadow: 0 0 0;
 }
-/* line 170, ../../_compass/custom.scss */
+/* line 169, ../../_compass/custom.scss */
 body.theme-ltec .small-right a {
   float: right;
   width: 32%;
@@ -991,18 +996,18 @@ body.theme-ltec .small-right a {
   margin-top: 5px;
   margin-bottom: 15px;
 }
-/* line 176, ../../_compass/custom.scss */
+/* line 175, ../../_compass/custom.scss */
 body.theme-ltec .small-right a img {
   margin-top: 0;
 }
-/* line 183, ../../_compass/custom.scss */
+/* line 182, ../../_compass/custom.scss */
 body.theme-ltec .small a img {
   float: left;
   margin-top: 0;
   margin-bottom: 10px;
   width: 31%;
 }
-/* line 191, ../../_compass/custom.scss */
+/* line 190, ../../_compass/custom.scss */
 body.theme-ltec img#google-plus-icon, body.theme-ltec img.external-service-logo {
   width: 25px;
   height: 25px;
@@ -1012,7 +1017,7 @@ body.theme-ltec img#google-plus-icon, body.theme-ltec img.external-service-logo 
   border: 0px solid transparent;
   box-shadow: 0 0 0;
 }
-/* line 202, ../../_compass/custom.scss */
+/* line 201, ../../_compass/custom.scss */
 body.theme-ltec p.about-footer {
   width: 100%;
   padding: 5px;
@@ -1023,30 +1028,30 @@ body.theme-ltec p.about-footer {
   font-size: 12pt;
 }
 
-/* line 213, ../../_compass/custom.scss */
+/* line 212, ../../_compass/custom.scss */
 .float-left {
   float: left;
 }
 
-/* line 217, ../../_compass/custom.scss */
+/* line 216, ../../_compass/custom.scss */
 .float-right {
   float: right;
 }
 
-/* line 222, ../../_compass/custom.scss */
+/* line 221, ../../_compass/custom.scss */
 div.vspacer {
   height: 50px;
 }
-/* line 225, ../../_compass/custom.scss */
+/* line 224, ../../_compass/custom.scss */
 div.vspacer20 {
   height: 20px;
 }
-/* line 228, ../../_compass/custom.scss */
+/* line 227, ../../_compass/custom.scss */
 div.container {
   padding-top: 0;
   margin: 0;
 }
-/* line 232, ../../_compass/custom.scss */
+/* line 231, ../../_compass/custom.scss */
 div.clear-fix {
   clear: both;
   margin-bottom: 20px;
