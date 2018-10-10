@@ -5,7 +5,7 @@ draft: false
 toc: true
 ---
 
-# C++ Newbie Tour 
+## C++ — A Newbie Tour 
 
 First I'll start with a confession: I started learning C++ somewhat recently, which may be puzzling if you know me well because I've been building my career in software engineering for well over twenty five years. 
 
@@ -13,7 +13,7 @@ Well, despite having hands-on skils in C, Java, Ruby, Perl, even BASH, — I hav
 
 By that time I was very surprised to find that the vast majority of the existing Arduino projects and libraries were written rather badly, in C. The best ones are written in a mixture of C++ and Assembly. But, it turns out that you can have your cake and eat it too — meaning, you can apply OO principles to Arduino programming.
 
-> In this post we'll explore some of the things that a beginner C++ programmers (but not general beginner programmers) might find useful in getting quickly up to speed, and utilizing this knowledge in their own C++ projects.
+> In this post we'll explore some of the things that a beginner C++ programmers (but not general beginner programmers) might find useful in getting quickly up to speed. We will look at which compilers support newer C++ standards C++11 and C++14 and the difference between linker and compiler, as well as dynamic vs static library. Finally, we'll offer a C++ project template you can use in your own projects.
 
 
 
@@ -100,7 +100,7 @@ int main(){
 
 Now, let's compile it and run it using both:
 
-```ruby
+```bash
 # First, let's use the default Apple's compiler installed with Dev Tools:
 $ /usr/bin/g++ c++ver.cpp -o default-c++compiler
 $ ./default-c++compiler
@@ -114,7 +114,7 @@ C++14
 
 OK, so we know know what each supports. But, what about the size of the binary generated?
 
-```ruby
+```bash
 $ ls -al *c++*
 -rwxr-x---  1 kig  staff  15788 May 12 17:59 default-c++compiler
 -rwxr-x---  1 kig  staff   9180 May 12 17:59 gcc6-c++compiler
@@ -124,7 +124,7 @@ The newer compiler produced a binary of half the size!
 
 And what if we add `-O3` to optimize it?
 
-```ruby
+```bash
 $ ls -al *c++*
 -rwxr-x---  1 kig  staff  10676 May 12 18:13 default-c++compiler
 -rwxr-x---  1 kig  staff   9056 May 12 18:13 gcc6-c++compiler
@@ -152,7 +152,7 @@ int main(){
 
 Compiles the same way, and hey - look at that!
 
-```tcl
+```bash
 -rwxr-x---  1 kig  staff  8432 May 12 18:17 default-c++compiler
 -rwxr-x---  1 kig  staff  8432 May 12 18:17 gcc6-c++compiler
 ```
@@ -167,14 +167,13 @@ But if you install `gcc` with HomeBrew - you can use latest C++ features, and no
 
 Not to mention, why make project OS-X specific when it can be platform independent right?
 
-## Targets
+## Build Targets
 
 So targets are what you actually wanna build with your code. It can be one of three things:
 
   1. an executable binary
   2. a static library
   3. a shared library
-
 
 ### Compiling Things...
 
@@ -218,3 +217,14 @@ In the subsequent series of posts we'll go through the next steps:
 
 Thanks for reading!
 
+---
+
+And once again, I suggest you check out **[cmake-project-template](https://github.com/kigster/cmake-project-template)** – it's great starting point for any bare-bones C/C++ project.
+
+And, if you got here because you want to build Arduino software in C++, I suggest you check out **[Arli](https://github.com/kigster/arli) — the Arduino library manager and project generator. To get started with it — run this:
+
+```bash
+$ gem install arli
+$ arli -h
+$ arli generate TimeMachine 
+```
