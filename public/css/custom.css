@@ -1039,32 +1039,33 @@ body.theme-deep-orange p.about-footer {
   border-top: 1px solid #ff5722;
   background: #912200;
   font-size: 10pt;
+  color: white !important;
 }
 
-/* line 215, ../../_compass/_theme-deep-orange.scss */
+/* line 216, ../../_compass/_theme-deep-orange.scss */
 .float-left {
   float: left;
 }
 
-/* line 219, ../../_compass/_theme-deep-orange.scss */
+/* line 220, ../../_compass/_theme-deep-orange.scss */
 .float-right {
   float: right;
 }
 
-/* line 224, ../../_compass/_theme-deep-orange.scss */
+/* line 225, ../../_compass/_theme-deep-orange.scss */
 div.vspacer {
   height: 50px;
 }
-/* line 227, ../../_compass/_theme-deep-orange.scss */
+/* line 228, ../../_compass/_theme-deep-orange.scss */
 div.vspacer20 {
   height: 20px;
 }
-/* line 230, ../../_compass/_theme-deep-orange.scss */
+/* line 231, ../../_compass/_theme-deep-orange.scss */
 div.container {
   padding-top: 0;
   margin: 0;
 }
-/* line 234, ../../_compass/_theme-deep-orange.scss */
+/* line 235, ../../_compass/_theme-deep-orange.scss */
 div.clear-fix {
   clear: both;
   margin-bottom: 20px;
