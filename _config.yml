@@ -14,7 +14,7 @@ show_drafts:    false
 limit_posts:    0
 
 permalink:      date
-paginate:       10
+paginate:       5
 
 markdown:       redcarpet
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
@@ -24,6 +24,7 @@ excerpt_separator: "\n\n\n"
 curly_open:     "{"
 curly_close:    "}"
 
+baseurl:       ''
 url:            http://kig.re
 title:          by Konstantin Gredeskoul (@kig)
 description:    'Stories from the frontlines of software engineers, hardware tinkering, general technology, DIY and makers, hacking and about life in general &mdash; by a veteran software engineer, three-times CTO, inventor, hacker, mentor <a href="/about">Konstantin Gredeskoul</a>.'

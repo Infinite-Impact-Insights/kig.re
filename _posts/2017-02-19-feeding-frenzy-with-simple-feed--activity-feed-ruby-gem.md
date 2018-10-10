@@ -6,8 +6,6 @@ toc: true
 crosspost_to_medium: true
 ---
 
->  OR, how to add a proper [social activity feed](https://github.com/kigster/simple-feed) to your ruby-based  application in fifteen minutes.
-
 ### For the Impatient
 
 I am very excited to announce the official release of the open source Ruby library called [Simple Feed](https://github.com/kigster/simple-feed), released as a [ruby gem](https://rubygems.org/gems/simple-feed).
@@ -18,9 +16,7 @@ Simple Feed is running live in production, and is powering three separate social
 
 <img src="https://raw.githubusercontent.com/kigster/simple-feed/master/man/activity-feed-action.png" width="100%" border="1">
 
-
 {{site.data.macros.continue}}
-
 
 
 The software is distributed under the [MIT License](http://opensource.org/licenses/MIT) and is available today. It's written in [ruby](https://www.ruby-lang.org/en/) and does not depend on [Ruby on Rails](http://rubyonrails.org). Therefore it can power applications running on Rack, Sinatra and using alternative web frameworks. Having said that, at Simbi we are using it with Rails, and I may release a small Rails adapter for SimpleFeed in the future.

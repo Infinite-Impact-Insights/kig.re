@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 'C++ Newbie Tour: How to Use CMake with CLion, GoogleTest and Your Code'
-draft: true
+draft: false
 toc: true
 ---
 
@@ -168,4 +168,5 @@ So, in a nutshell, compiler turns our little C++ classes and declarations into o
 
 # GoogleTest
 
-Next on our agenda is the fantastic testing library from Google — `googletest`.
+Next on our agenda is the fantastic testing library from Google — `googletest`. But I'll save it for next time!
+

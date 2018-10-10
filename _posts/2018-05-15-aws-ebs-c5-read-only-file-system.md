@@ -13,10 +13,11 @@ In this short post I describe the "read-only" problem that happened to one of ou
 And as far as the question posted above I will let you make your own conclusion — so keep on reading.
 
 Do you have the same problem on one of your C5 instances? Then read on. At least in our case the solution has been found. But not by AWS. By me.
-
 </div>
 
 ## The Problem — read only file system on a C5 class instance.
+
+{{site.data.macros.continue}}
 
 So here is what happened earlier today.
 
@@ -27,9 +28,6 @@ Since most services write to disk, the instance essentially became completely us
 I desperately searched for answer on AWS forums... to no avail.
 
 Despite finding [several](https://forums.aws.amazon.com/post!post.jspa?forumID=30&threadID=269150&messageID=818393&reply=true) [threads](https://forums.aws.amazon.com/thread.jspa?messageID=818393#818393) describing my exact problem, I quickly realized that NONE of the threads contained a solution!!!!! Now single customer who reported the problem said on the forum — "Yay!", it worked!
-
-
-{{site.data.macros.continue}}
 
 Because there were no suggestions besides increasing *nvme* *io_timeout* from 30 seconds to some arbitrary large number. I did that, rebooted the instance, and nothing changed. And the *io_timeout* was reset back to 30 seconds.
 
