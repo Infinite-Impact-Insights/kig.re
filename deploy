@@ -45,6 +45,7 @@ function local_deploy() {
 
 function remote_deploy() {
   ssh ${deploy_host} -l kig 'bash -l -c "mkdir -p workspace \
+    && cd ~/workspace \
     && [[ -d kig.re ]] || git clone https://github.com/kigster/kig.re.git kig.re \
     && source ~/.bashrc  \
     && cd kig.re \
