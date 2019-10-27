@@ -20,7 +20,7 @@ group :jekyll_plugins do
   gem 'jekyll-feed'
   gem 'jekyll-paginate'
   gem 'jekyll-gist'
-  gem 'jekyll-compass'
+  gem 'jekyll-compass', git: 'https://github.com/chikamichi/jekyll-compass.git'
   gem 'jekyll-sitemap'
   gem 'jekyll-toc'
 end
