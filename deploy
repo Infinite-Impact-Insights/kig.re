@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export deploy_host=kig.re
+export deploy_host=dev.kig.re
 
 function hook() {
   file=$1
@@ -39,16 +39,15 @@ function local_deploy() {
   hook "after-build"
   printf "${txtgrn}"
   cd _site 
-  ln -nfs ~/music
-  ln -nfs ~/downloads d
-  cd downloads && ln -nfs ~/downloads/*.mp3 .
   cd $outer_dir
   printf "${bldwht}Deploy Status: ${bldgrn}OK\n${clr}"
 }
 
 function remote_deploy() {
-  ssh ${deploy_host} -l kig 'bash -l -c "cd workspace/kig.re \
+  ssh ${deploy_host} -l kig 'bash -l -c "mkdir -p workspace \
+    && [[ -d kig.re ]] || git clone https://github.com/kigster/kig.re.git kig.re \
     && source ~/.bashrc  \
+    && cd kig.re \
     && git reset --hard  \
     && git pull --rebase \
     && ./deploy"'
