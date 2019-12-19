@@ -65,7 +65,11 @@ _(Added: Nov 22, 2015)_
 
 Many instructions down below were written for the old driver, which was not signed, and therefore was not working out of the box on OS-X Yosemite and El Capitan. The latest driver appears to be signed, and should work out the box. The new driver is here: [CH34x_Install.zip (111Kb)](/downloads/CH34x_Install.zip).
 
-<div class="external-reference"">Thanks to <a href="[http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="boo">Björn's Techblog</a> for posting the driver.</div>
+
+<div class="external-reference">Acknowledgements: thanks to
+  <a href="http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="blanket">Björn's Techblog</a>
+  for posting the driver.
+</div>
 
 Inside the driver is a brief README with the following instructions:
 
