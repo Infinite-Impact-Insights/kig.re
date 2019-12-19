@@ -1,53 +1,86 @@
 #!/usr/bin/env bash
 
-export deploy_host=dev.kig.re
+
+export BashMatic="${HOME}/.bashmatic"
+
+if [[ ! -f "${BashMatic}/init.sh" ]]; then
+  rm -rf "${BashMatic}" 2>/dev/null
+  git clone https://github.com/kigster/bashmatic "${BashMatic}" 1>/dev/null 2>&1
+else
+  cd "${BashMatic}" && {
+    git diff-index --quiet HEAD && git pull
+  }
+  cd - >/dev/null
+fi
+
+# shellcheck disable=SC1090
+source "${BashMatic}/init.sh" 1>/dev/null 2>&1
+
+export deploy_host=kig.re
 
 function hook() {
   file=$1
-  [[ -x "$file" ]] && source $file
-}
-
-function puts() { 
- printf "—————>  ${txtblu} $*${clr}\n"
+  [[ -x "$file" ]] && {
+    info "Loading ${file}..."
+    source $file
+  }
 }
 
 function local_deploy() { 
   outer_dir=$(pwd)
   project_home=$(dirname $0)
-  cd $project_home && pwd
+
+  run "cd $project_home"
+
+  info "Currently inside of $(pwd -P)"
 
   if [[ $(git status --short | wc -l) -ne 0 ]]; then
-    printf "ERROR: Local repo is not clean, please fix.\n"
-    printf "${bldred}"
-    git status --long
-    printf ${clr}
-    echo
+    error "Local repo is not clean, please fix."
+    run::set-next show-output-on
+    run "git status --long"
     return 1
   fi
 
-  eval "$(rbenv init -)"
+  [[ -n $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
-  gem install bundler --conservative
+  run "gem install bundler --conservative"
   hook "before-bundle"
-  bundle > /dev/null
+  run "bundle install"
   hook "before-build"
-  printf "${txtpur}"
-  RUBYOPT="-W0" bundle exec jekyll build
-  printf "${txtcyn}"  
-  find . -type d -exec chmod 755 {} \;
-  find . -type f -exec chmod o+r {} \;
+
+  run::set-next show-output-on
+
+  local backup="_site.$(millis)"
+
+  run "mv _site ${backup}"
+  run "RUBYOPT="-W0" bundle exec jekyll clean && bundle exec jekyll build"
+  if [[ -s "_site/2014/12/31/how-to-use-arduino-nano-mini-pro-with-CH340G-on-mac-osx-yosemite.html" && 
+     -s "_site/public/css/custom.css" ]]; then
+    info "Build appears successful, total size: $(du -hs _site | cut -f 1)"
+    run "rm -rf ${backup}"
+  else
+    warning "Can't find posts in the folder, switching back..."
+    run "rm -rf _site"
+    run "mv ${backup} _site"
+    exit 1
+  fi
+
+  run "find . -type d -exec chmod 755 {} \;"
+  run "find . -type f -exec chmod o+r {} \;"
+
   hook "after-build"
-  printf "${txtgrn}"
-  cd _site 
-  cd $outer_dir
-  printf "${bldwht}Deploy Status: ${bldgrn}OK\n${clr}"
+
+  success "Deploy Completed." 
+  ok:
 }
 
 function remote_deploy() {
   ssh ${deploy_host} -l kig 'bash -l -c "mkdir -p workspace \
+    && export SSH_LOGIN=kig \
     && cd ~/workspace \
     && [[ -d kig.re ]] || git clone https://github.com/kigster/kig.re.git kig.re \
     && source ~/.bashrc  \
+    && source ~/.bashmatic/init.sh  \
     && cd kig.re \
     && git reset --hard  \
     && git pull --rebase \
@@ -55,10 +88,10 @@ function remote_deploy() {
 }
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  puts beginning remote deploy to ${deploy_host}
+  h2 "Starting a Remote deploy to ${bldylw}${deploy_host}"
   remote_deploy
 else
-  puts doing a local deploy on $(hostname)
+  h2 "Starting a Local deploy on ${bldylw}$(hostname)"
   local_deploy
 fi
 

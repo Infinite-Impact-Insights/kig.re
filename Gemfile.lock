@@ -173,6 +173,3 @@ DEPENDENCIES
   rspec-its
   simplecov
   yui-compressor
-
-BUNDLED WITH
-   1.17.2
