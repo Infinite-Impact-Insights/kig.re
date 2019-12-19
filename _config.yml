@@ -1,16 +1,12 @@
 source:         .
 destination:    ./_site
-plugins:        ./_plugins
-layouts:        ./_layouts
-pages:          ./_pages
+plugins_dir:    ./_plugins
+layouts_dir:    ./_layouts
+pages_dir:      ./_pages
+sass_path:      ./_compass
 include:        ['.htaccess']
-exclude:        []
-keep_files:     ['.git','.svn']
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-  - redcarpet
-
+exclude:        ['./_docker', 'Gemfile', 'Gemfile.lock', 'README.md', 'Rakefile']
+keep_files:     ['.git']
 timezone:       nil
 encoding:       utf-8
 future:         true
@@ -20,7 +16,6 @@ limit_posts:    0
 permalink:      date
 paginate:       5
 
-highlighter:    pygments
 markdown:       redcarpet
 markdown_ext:   markdown,mkdown,mkdn,mkd,md
 
@@ -29,12 +24,10 @@ excerpt_separator: "\n\n\n"
 curly_open:     "{"
 curly_close:    "}"
 
-host:           kmac.moos.io
-port:           4000
-baseurl:        http://kiguino.moos.io
-url:            http://kiguino.com
-title:          Personal blog by Konstantin Gredeskoul
-description:    'Tales on Hardware, Software, Technology, DIY, Makers, Hacking, Life and more &mdash; by a veteran software engineer, CTO, inventor, hacker, mentor <a href="/professional/summary">Konstantin Gredeskoul</a>.'
+baseurl:       ''
+url:            http://kig.re
+title:          by Konstantin Gredeskoul (@kig)
+description:    'Stories from the frontlines of software engineers, hardware tinkering, general technology, DIY and makers, hacking and about life in general &mdash; by a veteran software engineer, three-times CTO, inventor, hacker, mentor <a href="/about">Konstantin Gredeskoul</a>.'
 author:
   name:       Konstantin Gredeskoul
   url:        https://twitter.com/kig
@@ -45,9 +38,31 @@ github_repos:
   - laser-cutter
   - occupus
 
-
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 
 github:
-  repo:      https://github.com/kigster/kiguino.github.io
+  repo:      https://github.com/kigster
+
+plugins:
+  - jekyll-coffeescript
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-compass
+  - jekyll-assets
+  - jekyll-toc
+
+showToggleButton: false
+
+docker:
+  image:
+    user: kigster
+    name: kigre
+  container:
+    name: kigre
+  dockerfile: nginx-src
+
+jekyll-crosspost_to_medium:
+  enabled: false
+  status: public
+  backdate: false

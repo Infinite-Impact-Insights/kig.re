@@ -4,9 +4,17 @@ layout: default
 
   <div class="post">
     <h1 class="post-title" id="title">{{ page.title }}</h1>
-    {% if page.date %}
-      <span class="post-date">Posted on {{page.date | date: "%A, %d %b %Y" }}</span>
-    {% endif %}
+    <div class="post-header">
+      {% if page.date %}
+        <span class="post-date">
+          Posted on {{page.date | date: "%A, %d %b %Y" }}
+          {% if page.author %}
+            <em>by {{ page.author }}</em>
+          {% endif %}
+
+        </span>
+      {% endif %}
+    </div>
     <div class="content">
       {{ content }}
     </div>
@@ -17,35 +25,27 @@ layout: default
   </div>
 
   {% if site.related_posts  %}
+
     <div class="related">
       <h2>Related Posts</h2>
       <ul class="related-posts">
-        {% for post in site.related_posts limit:3 %}
+        {% for post in site.related_posts limit:5 %}
+        {% unless post.draft %}
           <li>
               <a href="{{ post.url }}#content">
                 {{ post.title }}
                 <small>{{ post.date | date_to_string }}</small>
               </a>
           </li>
+        {% endunless %}
         {% endfor %}
       </ul>
     </div>
   {% endif %}
 
-  {% unless page.disqus == "disable" %}
-    <div class="vspacer"></div>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'kiguino'; // required: replace example with your forum shortname
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+  {% unless page.disqus == "disable" %}
+    {% include disqus.html %}
   {% endunless %}
 
   {% unless page.ga == "disable" %}

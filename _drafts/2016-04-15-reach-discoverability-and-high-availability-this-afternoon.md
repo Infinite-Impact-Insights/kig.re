@@ -1,0 +1,243 @@
+---
+layout: page
+title: 'Achieve Service Discovery, High Availability, and Fault Tolerance – This Afternoon'
+draft: true
+toc: true
+
+---
+
+# Achieve Service Discovery, High Availability, and Fault Tolerance – This Afternoon
+
+Hi. With this post, I'd like to start a series of __DevOps__ related conversations covering topics that are not only on my mind, but are also being asked by people I meet, running applications of all sizes across multiple clouds, all different technologies.
+
+## Down Under, But Above the Ground
+
+I started building distributed applications in 1996, when I was placed as a junior contractor in the operations group managing a very large scale project. The goal was to rebuild the entire messaging and cargo-tracking software for the Australian Railway corporation named aptly [National Rail Corporation](https://en.wikipedia.org/wiki/National_Rail_Corporation).  Back then, we used this fascinating commercial software called [Tuxedo](https://en.wikipedia.org/wiki/Tuxedo_(software))  as a middleware, transation manager, a queueing system, and so much more. Tuxedo has a fascinating history – which could be a subject of an entirely separate post, but suffice it to say that it was developed at AT&T in the late 1970s, in a practically the same lab as UNIX itself! At some point in the 80s, it was then sold to Novell, then to BEA – which eventually used it to build it's flagship product [WebLogic](http://www.oracle.com/technetwork/middleware/weblogic/overview/index-085209.html) that now belongs to Oracle. I was told that there was a time where British Airways used Tuxedo to network over 20,000 stations together.
+
+This is wnere I learned how to build distributed applications – with tenets such as *high availability, fault tolerance, load balancing, transactional queueing, distributed transactions* spanning several databases, plus several queues. Oh my gosh, if it sounds complicated — it' because it was! But once you get the main concepts behind how Tuxedo was constructed: each node had a server process that communicated with other nodes, and managed a local pool of services – it sounds very very reasonable. I stayed on this project for about a year and a half, long enough that all of the more senior people who understood the messaging component had left, leaving me – 23 year old junior programmer, the only person understanding the architecture and operational aspect of that system. That part of the waterfall was not predicted by their project managers ☺.  
+
+Now, close your eyes and imagine being flown on a corporate helicopter across the gorgeous city of Sydney, just to attend the meeting with people five levels senior. That was fun indeed.
+
+<img src="../images/sydney-skyline.jpg" class="clear-image"/>
+
+## Back in the USA
+
+I took my knowledge of distributed systems to the US, where I was hired to build Topica, a hot new startup in San Francisco building a new generation of listservs, or email groups (aka. mailing lists). The year was 1998 and there sure wasn't any sort of open source distributed networking software that gave us the incredible reliability and versatility that the middleware like Tuxedo provided, so we boght a license. Whether this was the right choice for the company as at time is not for me to judge, but the system we built using Tuxedo (ANSI C with Tuxedo SDK), Perl (with native bindings for C), and horizontally distributed Oracle databases, ended up being so damn scalable that at some point in time we were noted as a source of more than 1% of __all daily internet__ at that time! And sure enough, we were sending several hundred milliion messages per day.  
+
+And here is a kicker: if you open [https://app.topica.com/](https://app.topica.com/) you will see the login screen from the app we built – it's functionality is most similar to that of [Constant Contact](http://www.constantcontact.com/). The Topica app has been running untouched, seemingly unmodified, since 2004! – twelve years! They stopped developing the app shortly after I left in 2004, mostly for business reasons. But the software endured. And it's still running, 12 years later.  It was built to be reliable. It was scalable. It was transactional. What it wasn't – is simple.
+
+This second experience with Tuxedo forever changed the way I approach distributed application development.
+
+## New Startup!
+
+This part is hypothetical (and a bit sarcastic, for which, I hope, you can forgive me).
+
+Say we are building a brand new web application that will do *this and that * in a very *particularly special way*, and the investors are flocking, giving us money, and so we get funded.  W00T!
+
+> If I am an early engineer, or even a CTO, on this new project, *I would not be doing my job if I am not asking the founders a lot of questions that have great affect on how we are going to build the software supporting the business. And how soon.*
+
+So I pull the founder into a quiet room, hide their cell phone from them, and unload onto them with questions for an hour.
+
+The *best hour spent in the history of this startup*. Promise.
+
+### Six Questions Every Technology Entreprenuer Should be Able to Answer.
+
+1. How reliable should this application be? What is the cost of one hour of downtime? What's the cost of one hour downtime now, six months from now, a year from now? What is the cost of many small downtimes?  What about nightly maintenance?
+2. How likely is it that we'll get a spike of traffic that will be very important or even critical for the app to withstand? Perhaps we were mentioned on TV.  Or someone twitted about us. How truly bad for our business will it be, if the app goes down during this type of event because it just can't handle the traffic? And even if the spike of death happens, how important it is that the team is able to scale the service right up with traffic within a reasonable amount of time?  What *is* a reasonable amount of time?
+3. How important is it that the application interactions are fast? That users don't have to wait three seconds for each page to load? How important is it that the application is not just "good" (say, 300ms average server latency), but amazing (say, 50ms average server latency)?
+4. How important it the core application data is to the survival of the business? For example, a financial startup that deals with people's money, data integrity is paramount.  For a social network that's merely collecting bookmarks, it's only vaguely important. Large data losses are never fun, but a social network might recover, while a financial service will not.
+5. How important it is that the application is secure? This question should be viewed from the point of view of being hacked into – once you are hacked, can you recover? If the answer is "no", you better not get hacked. Right?
+6. The last bucket will deal with the engineering effort. Things like **cost,  productivity, ability to release often, hire and grow the team easily, **etc. Whats the cost of maintenance, how bit is the Ops team, how big and how senior must be the develoment team?
+
+Oh, I hear you say the word: **catastrophic**.  
+
+Now, how bad is it for your business, if, say, [you are hosted on AWS, and a greedy hacker takes over your account and demands ransom?](https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/) Well, if you did not think about the implications of building a 'mono-cloud' service, and even your "offsite" backups are within your one and only AWS account, then the answer is – once again – **catastrophic.**  Your business is finished.
+
+But then, in between "oh, it hurts, but it's ok" and "we are finished" there lies a whole other category of: "our users are pissed", "we lost 20% MOU", "[everyone is switching to another social network](https://www.technologyreview.com/s/511846/an-autopsy-of-a-dead-social-network/)", "did you hear so and so got broken into and got their user data stolen? They've asked for my social security number, and I am furious!..."  
+
+> This may not be The Catastrophy just yet, but your technology is either not scaling, not reliable, or not secure. The Catastrophy may be right around the corner.
+
+Given that I've been building almost exclusively applications that most certainly did not want to die because of scalability, reliability or security concerns, I've applied the same patterns over and over again, and results speak for themselves. I don't like bragging, and I wouldn't say this – but for those of you still skeptical – [I refer you to the uptime and scalability numbers mentioned in this presentation](https://rubyconf.eventer.com/rubyconf-australia-2015-1223/devops-without-the-ops-a-fallacy-a-dream-or-both-by-konstantin-gredeskoul-1724).
+
+Which brings me to the conclusion of this blog post.
+
+# Six Tenets of Modern Apps
+
+The topics and scenarious above,distill down to the following tenets the apply to the vast majority of applications built today.
+
+> As a simple excersize, feel free to write down – for your company, or an application – how important, on a scale from 0 (not important), to 10 (critical/catastrophic if happens), are the following:
+
+1. **High Availability**. Solutions to this are comprised of fault tolerance, multi-datacenter architecture, offsite backups, redundancy at every level, replicas, hosting/cloud vendor-independence, monitoring and a team on call.
+2. **Scalability**.  Scalability is the ability to handle huge concurrent load, perhaps hundreds of thousands of actively logged in users intearacting with the system, that might spike to (say) 1M or more. It is also the ability to dynamically raise and lower application resources to match the demand and save on hosting.
+3. **Performance.** What's the average application latency (the time it takes for the application to respond to a single user request – like a page load)? What's the 99% and 95% percentile? This is all application performance. Good performance helps scalability tremendously, but does not warrant scalability in of itself. Well performing applications simply need a lot less resources to scale, and are both pleasure to use by your customers, and cheap to scale. So performance really does matter.
+4. **Data Integrity.**  This is about not loosing your data. Accidentally. Or maliciously. Usually some data can be OK to loose. While other data is the lifeblood of your business. What if a trustworthy employee, thinking they are connected to a development database, accidentally drops a critical table, and only then realizes that they did that on production? Can you recover from this user error?
+5. **Security.** This one is a no brainer. The bigger the payoff for the hackers (or disgruntled empoyees) the more you want to focus on securing your digital assets, inventions, etc.  Not only preventing them from being copied and stolen, but from erased completely. Always have last day's backup of your database securily downloaded somewhere into an undisclosed location and encrypted with a passphrase.
+6. **Application runtime cost**, **Development Cost** and **Productivity**, engineering and devops teams, rapid release cycle, team size, etc. This is such a huge subject, that I will leave it alone for the time being.
+
+In the next blog post, I will discuss specific solutions to:
+* High Availability
+	* Fault tolerance
+	* Redundancy
+	* Recovery
+	* Replication
+* Scalability
+	* How to scale transparently to more traffic
+	* And scale down as needed
+* Service Discovery
+	* How does the app know where is everyone?
+* Monitoring and Alerting
+	* How to put your entire dev team on call
+	* How to alerts on what's important
+* How to do this all at a fraction of a cost that it used to be just a few years ago...
+* How to stay vendor independent and why would you want to.
+
+Thanks for reading!
+
+# Microservices
+
+aybe you are running one or more distributed multi-part, a.k.a. micro-services applications in production. Good for you!
+
+<img src="/images/haproxy/microservices-hell.png" class="clear-image"/>
+
+Perhaps you are struggling with _high availability_, such as tolerating hardware outages, maybe when your cloud provider is  rebooting servers, etc.
+
+Perhaps you may be seeing an error known as __"too many clients"__, or __"max connections reached"__, or __"what, you think you really need another one!!??"__ – coming from one or more of your services (or your coffee shop barista)...
+
+Or maybe, within your micro-services architecture, you are struggling with service discoverability, ie. how does your app know the IPs of your:
+
+* search cluster
+* your backend service(s)
+* your redis cluster
+* your databases with their replicas
+* your memcaches
+* your message bus
+* cat feeder
+
+
+### You and Me
+
+We have a lot in common.
+
+I too wanted a solution to all of the above, but I wanted the solution _yesterday_ – because I am impatient, and I needed it to be _cheap_ – because startup, _simple to understand and manage_  – because tiny team, _reliable_  – because sleep!
+
+Also, together the above problems can be summed up quite simply. We sincerely want to improve the state of:
+
+1. _hardware (or server) failure tolerance_, such as, for example – instances bouncing up and down
+2. _too many clients problem_ – when the share number of connections overwhelm the underlying service
+3. _service discovery_, i.e. – how do we move routing information (read: every single IP address) __out of our application configuration__?
+
+The issue of failing hardware, especially in a large cloud deployment, is so ubiquitous that Netflix even wrote a tool to simulate it. The __Netflix Mantra__ encourages us to expect and anticipate failures at every level, and to practice swift recovery. See [ChaosMonkey](https://en.wikipedia.org/wiki/Chaos_Monkey), aka [Simian Army](https://github.com/Netflix/SimianArmy).
+
+Whether this is your motivation, or if you, like me, feel that any self-respecting SRE (site reliability engineer) should take care of their (mental) health first, and that means – zero alerts at night, most of the time, all the time.
+
+# So, how do we get there?
+
+But before we discuss the solution, I'd like to pose it to you that there are three important questions that need to be formulated for any of this to make sense:
+
+ 1. What is a _real problem_ worth waking up for at night, and how is it different from a problem that can wait until the morning?
+ 2. How do I get alerted (at night) only about the "real problem", but not be spammed by the other less important ones?
+ 3. Is there such as thing, as an "ignorable problem"?
+
+Below, I offer to you my answers. As with everything, your mileage may vary. Very.
+
+## Defining the Real Problem
+
+In my mind
+
+> The _real problem_ can almost always be defined as a rapid change (often downward) in at least one critical business metric.
+
+#### What business metric?
+
+On any application with an uptime requirement I would want to track, in real time, key business metrics that represent the "heartbeat" of the business: such as a the rate of sales per second, rate of new user registrations, rate of saving a product (Wanelo) or pinning a pin (Pinterest), or tweeting a tweat (Twitter) or submitting a post (Tumblr), or committing the code (Github), the list goes on.
+
+Give me a company name I am familiar with, and I can guarantee you that both you and I can instantly write down 2-3 definitive metrics, that _if the metrics stay at the expected value_ chances are the underlying software is functioning __good enough__ to support these critical functions.
+
+A good way to think about the primary critical metrics for your business is in terms of some of the most valuable __write__ operation – in computer terms –  that users perform on your site/app/platform.  Why? Most businesses are defined by data they collect.  Take away that data and the business may need to start from scratch or fold. Read operations don't seem to have the same critical impact on the business, although they sure affect the end users.
+
+Ultimately, both read and write metrics are important, but what is most important is that they are tracked in near-real time, shown on the dashboards.
+
+> But what's most important, is that your Severity 1 Alerts are based on the critical metrics rapidly changing for the worse, and nothing else.
+
+### Detecting the Real Problem
+
+In order to detect our real problem, we need to first start monitoring our business metrics, but not just anyhow, but __live__: with no more than a 1-3 second delay.
+
+#### Events
+
+If you are not sure how you could add this functionality, I would point you in the direction of the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) design pattern.
+
+If you've been building websites with Rails, it is very likely that you have __not__ seen this pattern closely in action, and may not realize why you even need it.
+
+In fact, what is true is that every web application is necessarily an [Event Based System](https://en.wikipedia.org/wiki/Event_(computing) that generates and consumes events, including the critical  business metrics that we care about. It is just that events are not universally implemented [as they ought to be in software](http://www.martinfowler.com/eaaDev/EventSourcing.html).
+
+But doing so offers great many benefits. When we started building the new [Wanelo](https://wanelo.com), I knew early on that I had to buckle down and create the basis for our future eventing model before much of the business logic had been written in an __eventless__ manner.  The result of that effort is the open source ruby library [Ventable](https://github.com/kigster/ventable), and a related [blog post](/2013/08/05/detangling-business-logic-in-rails-apps-with-poro-events-and-observers.html).
+
+This can be typically very easily implemented into an application by do as can be measured by detecting that a *derivative* function of said metric is a negative constant. Value lower than -3 or -4 represents a __very steep decline__ in the business metric. In summary:
+
+> Real time data collection of critical business metrics is easier in systems that natively implement and handle events, and dispatch them to the interested parties, including real-time data collection and monitoring systems.
+
+One such third-party software that I really like using is [Circonus](https://circonus.com/).
+
+# The Solution
+
+If you are thinking "Docker" because that's what everyone is saying, I would like to politely remind you what people were saying in early 2008 – namely that Lehman Brothers can not fail. Any time you have mass mania, it is bound to have an explosive ending.
+
+In fact, Docker only makes this problem worse: we have MORE virtual hosts, which are all running services, databases and caches in containers, because everything is now containerized, and can run side by side another container just like those "lego blocks" on the cargo train. Or at least that's the dream :)
+
+__I really shouldn't be beating on Docker,__ – it's a good technology. I just have a strong allergy to mass manias and obsessions. But I digress.
+
+What I am talking about, is something I, as a developer, did not have in very high regard for a longest time, but something that grew on rapidly me during my days at [ModCloth](https://modcloth.com) and [Wanelo](https://wanelo.com), and now I can not live without it.
+
+It is a simple thing, known as .... (drumroll....)....
+
+### The answer to life, universe and everything....
+
+> A Proxy
+
+Yes, the panacea is an old friend from the old days. Except it's younger than ever.
+
+So how can I claim that a simple proxy can solve all of the above?
+
+Let's start with the actual software: _HAProxy is a HTTP/HTTPS/TCP proxy and connection pooling_ software that is built on top of `libevent`, typically runs in a single process and is incredibly efficient. It is also some of the best software ever written in C. Seriously!
+
+At the RubyConf Australia conference I [recommended that you put `haproxy` in front of your MOM](https://rubyconf.eventer.com/rubyconf-australia-2015-1223/devops-without-the-ops-a-fallacy-a-dream-or-both-by-konstantin-gredeskoul-1724). Let me clarify this point – it was mainly so that your MOM can failover to another you (or your sibling) in case you are too busy :)  It's not so that you have two moms. Or is it?
+
+`haproxy` Does the following:
+
+ * automatic failover, stops sending traffic to a dead node, or while it's rebooting, in-memory queue size, failure actions, etc.
+
+ * automatically add more backend servers if traffic increases
+
+ * use in HTTP mode, or TCP mode – to failover redis, memcached, postgresql, etc.
+
+`pgBouncer`
+
+ * This one is a specialized proxy, meant to be used with PostgreSQL database, and this thing rocks!
+ * We chose _transaction_ mode, and were able to reduce the number of connections from our application by a factor of 10 without any noticeable latency added.
+
+`Twemproxy`
+
+ * Redis / Memcached connection pooling proxy with automatic key-based sharding implemented.
+ * We sharded our redis cluster into 256 redis nodes, and application talked to it through haproxy first, then six twemproxy servers, talking to the actual redis servers.
+ * Need to failover to another Redis? Haproxy does that – switches to another twemproxy cluster or port.
+
+
+So how do we solve each problem we listed upfront?
+
+
+
+## High availability
+
+<img src="/images/haproxy/haproxy-frontend.png" class="clear-image"/>
+
+## Fault Tolerance
+
+<img src="/images/haproxy/haproxy-backend.png" class="clear-image"/>
+
+## Service Discovery or Routing Encapsulation
+
+<img src="/images/haproxy/haproxy-router.png" class="clear-image"/>
+
+## Conclusion
+
+My strong recommendation is to invest into building haproxy into your application stay, to serve as a "glue" or as a high-availability router. If you are using PostgreSQL you will do yourself a favor if you start using pgBouncer running on your application servers, so that you can collapse the crazy number of database connections that Rails likes to create into a much more reasonable set. Similarly, with Twemproxy – it's a fantastic piece of software that, in addition, will allow you to shard your redis or memcached backend by key.

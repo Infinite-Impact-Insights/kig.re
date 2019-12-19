@@ -1,0 +1,203 @@
+body.theme {
+  .post {
+    margin-top: 50px;
+    text-align: left;
+    padding-left: 30px;
+    ul, ol {
+      padding-left: 20px;
+      li {
+        padding-left: 10px;
+        margin: 20px 0;
+        ul li {
+          padding-left: 0px;
+        }
+      }
+    }
+
+    a {
+      color: $link-fg;
+      font-weight: 400;
+    }
+    .related-posts li a:hover {
+      color: $link-fg;
+      font-weight: 400;
+    }
+    blockquote {
+      background-color: $blockquote-bg;
+      border-radius: 5px;
+      border: 1px solid  $blockquote-bg - 10 ;
+      box-shadow: 5px 5px 15px $shadow;
+      clear: both;
+      color: $blockquote-fg;
+      font-size: $base-font-size;
+      font-weight: 600;
+      line-height: $base-font-size + 5;
+      margin: 20px 0px;
+      padding: 10px;
+      text-shadow: none;
+
+      a {
+        color: rgb(73, 255, 239);
+        text-decoration: underlined;
+        font-weight: 400;
+        text-shadow: 0 0 15px $blockquote-border;
+        &:hover {
+          color: rgb(74, 189, 196) + 20;
+        }
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+      p:last-child {
+        margin-bottom: 0px;
+      }
+      ul {
+        padding: 10px;
+        padding-left: 20px;
+        li {
+          margin-bottom: 10px;
+        }
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    h1, h2, h3, h4, h5 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      margin-left: -30px;
+      color: $h1-fg;
+      font-weight: $header-weight;
+      line-height: auto;
+      font-family: $header-font-family ;
+      text-transform: capitalize;
+      // text-shadow: 1px 1px 4px $h1-shadow;
+    }
+    h1, h1.post-title {
+      color: $h1-fg ;
+      font-size: $header-font-size-h1;
+      font-family: $header-font-family ;
+      text-shadow: 1px 1px 4px $h1-shadow;
+    }
+    h1.post-title {
+      color: $h1-title-fg ;
+    }
+    h2 {
+      font-size: $header-font-size-h1 - 5;
+    }
+    h3 {
+      font-size: $header-font-size-h1 - 7;
+    }
+    h4 {
+      font-size: $header-font-size-h1 - 9;
+    }
+    h5 {
+      font-size: $base-font-size + 2;
+    }
+
+    figure {
+      background-color: $transparent;
+    }
+    pre {
+      box-shadow: 1px 1px 2px $code-bg - 50;
+      overflow: hidden;
+      margin: 0px;
+      font-size: 14pt;
+    }
+    code {
+      box-shadow: $code-box-shadow;
+      font-size: $code-font-size;
+      border: $code-border;
+      font-family: $code-font-family;
+      // background-color: $code-bg !important;
+      opacity: 1;
+      //color: $code-fg;
+      display: inline-block;
+      margin: 5px 5px;
+      padding: 2px 5px;
+      font-weight: 900;
+    }
+    .panel-heading {
+      padding: 0;
+      margin: 0;
+
+      figure > pre {
+        background-color: $primary-bg;
+        //border-radius: 20px/20px ;
+        overflow: hidden;
+        background-clip: padding-box;
+      }
+    }
+    .highlight {
+      border: $code-border;
+      box-shadow: $code-box-shadow;
+      padding: 3px;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 20px;
+      pre {
+        background-color: transparent !important;
+        color: inherit;
+        code {
+          color: inherit;
+          font-size: $code-font-size;
+          font-family: $code-font-family;
+          font-size: $code-font-size;
+          background-color: transparent !important;
+          display: block;
+          margin: 10px 0;
+          z-index: 3000;
+          padding: 3px;
+          width: 90%;
+        }
+      }
+      code, pre {
+        border: 0;
+        box-shadow: 0 0 0;
+      }
+      .gutter {
+        border-size: 0px;
+      }
+      pre, code .lineno, td.gutter {
+        border: 0;
+        box-shadow: 0 0 0;
+        font-family: $fixed-font-family ;
+      }
+      td.gutter pre, td.code pre {
+        border-radius: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .panel .panel-heading figure > pre {
+      padding: 0;
+      border: 1px solid $code-bg - 20;
+      box-shadow: 0 0 15px black;
+    }
+
+    div.external-reference {
+      background-color: $blockquote-bg + 20;
+      color: $blockquote-fg + 20;
+      border-radius: 5px;
+      text-shadow: none;
+      box-shadow: 5px 5px 15px $shadow;
+      font-weight: 400;
+      font-size: $base-font-size - 3;
+      padding: 15px 15px;
+      margin: 15px 50px;
+      a { color: white !important; font-weight: 600; }
+    }
+
+    .pagination {
+      border: 1px solid $primary-border;
+      padding: 0 25px;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      .pagination-item {
+        padding: 5px;
+      }
+    }
+  }
+}

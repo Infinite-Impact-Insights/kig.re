@@ -1,6 +1,9 @@
 ---
 layout: page
+draft: false
 title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
+toc: true
+
 ---
 
 A great company where I work, [Wanelo](http://wanelo.com/), with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.
@@ -16,8 +19,7 @@ Given my foray into Arduino over the last few months, I knew I could come up wit
 </div>
 <br />
 
->The problem was very simple: __people needed to know when each bathroom was occupied, or not__.  Just like on an airplane you can see bathroom light on/off, I wanted something similar for our two bathrooms. Something everyone could see.
-
+> The problem was very simple: __people needed to know when each bathroom was occupied, or not__.  Just like on an airplane you can see bathroom light on/off, I wanted something similar for our two bathrooms. Something everyone could see.
 
 {{site.data.macros.continue}}
 ___
@@ -71,9 +73,11 @@ Shortly after, I received all the pieces in the mail, had a plan in my head, and
 
 ## The Solution
 
+<div class="small-right">
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" data-lightbox="enclosures" data-title="Display Unit">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title="" class="small-right">
 </a>
+</div>
 
 Enter the project (all of which is open sourced under an MIT License), which took good month working some nights and weekends this summer to complete: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system. It uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms to the main display unit located in a highly visible area.
 
@@ -195,8 +199,8 @@ The template files inside the enclosure folder of the project contain designs fo
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg" data-lightbox="enclosures" data-title="Retro Look">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg">
 </a>
-<p style="clear:both; margin-bottom: 20px;">
 </div>
+{% macro clearfix %}
 
 #### Flexible Arm Designs
 
@@ -210,7 +214,7 @@ The template files inside the enclosure folder of the project contain designs fo
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg" data-lightbox="enclosures" data-title="Third Module with Flexible Arm">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg">
 </a>
-<p style="clear:both; margin-bottom: 20px;">
+<div class="clear-fix"></div>
 </div>
 
 #### On the Inside
@@ -260,7 +264,7 @@ Tall spacers filled the box all the way to the top, pushed LED matrices flush wi
 <a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" data-lightbox="enclosures" data-title="Display Assembly">
     <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg">
 </a>
-<div style="clear:both; margin-bottom: 20px;"></div>
+<div class="clear-fix"></div>
 </div>
 
 ## Conclusion
@@ -280,11 +284,3 @@ Also – please leave comments, feedback, and suggestions. All of those nice thi
 <p>Thanks for reading,<br />
 –– Konstantin.
 </p>
-
-
-
-
-
-
-
-

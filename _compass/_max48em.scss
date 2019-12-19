@@ -1,0 +1,148 @@
+
+@media (max-width: 48em) {
+  html {
+    body.theme {
+      padding-left: 10px;
+      padding-right: 5px;
+      min-width: 350px ;
+      font-size: $base-font-size;
+      font-weight: 500;
+      line-height: $base-font-size + 3;
+
+      blockquote {
+        width: 100%;
+        margin-left: 0 !important;
+        font-size: $base-font-size - 1 !important;
+        line-height: $base-font-size + 3 !important;
+        ul li {
+          margin: 0;
+          padding: 0px !important;
+        }
+      }
+
+      .large {
+        font-size: $large-font-size - 2;
+        font-family: $large-font-family;
+        line-height:  $large-font-size + 2;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding-left: 5px;
+        border-left: 15px solid $quote-side-line-color;
+      }
+
+      .blog-header {
+        display: none;
+        // font-size: 9pt;
+        // margin: 0;
+        // left: 10px;
+        // right: 10px;
+        // top: 0px;
+        // width: 100%;
+        // height: 30px;
+        // z-index: 10000;
+      }
+
+      .content-toc {
+        display: none ;
+      }
+      .share-buttons img {
+        display: none ;
+      }
+      .tweets {
+        display: none;
+      }
+      .post {
+        padding-left: 10px ;
+        h1, h2, h3, h4, h5 {
+          margin-left: 0px ;
+        }
+      }
+
+      code, pre {
+        font-size: 6pt;
+        line-height: 10pt;
+        padding: 5px !important ;
+      }
+
+      span.glyphicon-menu-hamburger {
+        font-size: 19pt !important;
+      }
+
+      .sidebar {
+        height: auto ;
+        margin-left: -20px ;
+        margin-right: 0px ;
+        margin-top: -30px ;
+        min-width: 350px ;
+        overflow-x: visible ;
+        overflow-y: visible ;
+        padding-left: 0px ;
+        padding-right: 0px ;
+        width: 100% ;
+
+        nav.navbar {
+          position: relative ;
+          margin: 0;
+          width: 90% ;
+          padding: 0px;
+          padding-left: 15px;
+
+          .navbar-collapse {
+            overflow-y: visible ;
+            overflow-x: visible ;
+          }
+
+          ::before {
+            position: fixed;
+            top: 0px ;
+            left: 0px;
+          }
+
+          .collapse, .collapsing {
+            border: 1px solid rgba(79, 26, 14, 0.1);
+            background-color: $nav-dropdown-bg - 30;
+            box-shadow: 0px 0px 10px $nav-dropdown-bg - 150;
+          }
+          .dropdown-menu {
+            overflow-y: visible;
+            overflow-x: visible;
+            min-width: 90%;
+            height: auto ;
+            margin-top: -14px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+            color: $dropdown-menu-fg ;
+            li a {
+              font-size: 8pt ;
+              font-weight: 500;
+            }
+          }
+          .navbar-header {
+            margin: 0 ;
+            height: 40px;
+          }
+          form {
+            fieldset {
+              span.glyphicon-search {
+                display: none !important;
+              }
+            }
+          }
+          ul {
+            overflow-y: visible ;
+            overflow-x: visible ;
+
+            li a {
+              font-size: $nav-font-size - 2 !important;
+              font-weight: 400;
+              code, pre {
+                font-size: $fixed-font-size - 3 ;
+                padding: 1px ;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

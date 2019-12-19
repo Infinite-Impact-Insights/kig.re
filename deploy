@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+export deploy_host=dev.kig.re
+
+function hook() {
+  file=$1
+  [[ -x "$file" ]] && source $file
+}
+
+function puts() { 
+ printf "—————>  ${txtblu} $*${clr}\n"
+}
+
+function local_deploy() { 
+  outer_dir=$(pwd)
+  project_home=$(dirname $0)
+  cd $project_home && pwd
+
+  if [[ $(git status --short | wc -l) -ne 0 ]]; then
+    printf "ERROR: Local repo is not clean, please fix.\n"
+    printf "${bldred}"
+    git status --long
+    printf ${clr}
+    echo
+    return 1
+  fi
+
+  eval "$(rbenv init -)"
+
+  gem install bundler --conservative
+  hook "before-bundle"
+  bundle > /dev/null
+  hook "before-build"
+  printf "${txtpur}"
+  RUBYOPT="-W0" bundle exec jekyll build
+  printf "${txtcyn}"  
+  find . -type d -exec chmod 755 {} \;
+  find . -type f -exec chmod o+r {} \;
+  hook "after-build"
+  printf "${txtgrn}"
+  cd _site 
+  cd $outer_dir
+  printf "${bldwht}Deploy Status: ${bldgrn}OK\n${clr}"
+}
+
+function remote_deploy() {
+  ssh ${deploy_host} -l kig 'bash -l -c "mkdir -p workspace \
+    && cd ~/workspace \
+    && [[ -d kig.re ]] || git clone https://github.com/kigster/kig.re.git kig.re \
+    && source ~/.bashrc  \
+    && cd kig.re \
+    && git reset --hard  \
+    && git pull --rebase \
+    && ./deploy"'
+}
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  puts beginning remote deploy to ${deploy_host}
+  remote_deploy
+else
+  puts doing a local deploy on $(hostname)
+  local_deploy
+fi
+

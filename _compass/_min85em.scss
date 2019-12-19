@@ -1,0 +1,24 @@
+
+@media (min-width: 85em) {
+  html {
+    body.theme {
+      .sidebar {
+        width: 15%;
+        display: block ;
+        .navbar {
+        }
+        .navbar-collapse {
+          overflow-y: visible ;
+          overflow-x: visible ;
+        }
+      }
+
+      .content-toc {
+        display: block ;
+      }
+    }
+    .tweets {
+      display: block;
+    }
+  }
+}

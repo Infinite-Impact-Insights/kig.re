@@ -1,0 +1,23 @@
+# Build environment so that jekyll can run and Build
+# the static site.
+  #
+# Run this at the project level.
+#
+# https://github.com/dockerfile/ubuntu
+
+# Pull base image.
+FROM nginx:1.11.10
+MAINTAINER Konstantin Gredeskoul <kigster@gmail.com>
+LABEL Description="This image is used to run Konstantins Blog" Vendor="ReinventONE, Inc." Version="1.0"
+
+RUN apt-get update -qq && apt-get -y upgrade
+RUN apt-get install -V -y nodejs software-properties-common curl git htop man unzip vim wget
+RUN apt-get install -V -y net-tools
+
+RUN mkdir /app
+ADD . /app
+COPY nginx.conf /etc/nginx/nginx.conf
+WORKDIR /app
+RUN rm /app/nginx.conf
+EXPOSE 8080
+CMD /usr/sbin/nginx

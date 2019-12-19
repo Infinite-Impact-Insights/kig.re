@@ -1,6 +1,9 @@
 ---
 layout: page
 title: Serial Console Hacks with Arduino
+draft: false
+toc: true
+
 ---
 
 ## Battling Console
@@ -11,7 +14,7 @@ I wanted to share a method that I use to connect to a Serial port of any Arduino
 
 I always hate Serial port windows.  They do not automatically reconnect, and if they try (Eclipse) they don't always work (Teensy). So I went searching for a reliable solution that will automatically reconnect after loosing a connection.
 
-I found it! It's called minicom! 
+I found it! It's called minicom!
 
 
 {{site.data.macros.continue}}
@@ -25,22 +28,16 @@ I found it! It's called minicom!
 
 This is what I get:
 
-<div class="panel panel-code"><div class="panel-heading">
-     
-{% highlight bash linenos %}
+```
 minicom version 2.7 (compiled Oct 20 2014)
-{% endhighlight %}
-
-</div></div>
-
+```
 
 ### BASH Magic
 
 Now add the following [BASH function](http://tldp.org/LDP/abs/html/complexfunct.html) to your ```~/.bashrc``` or ```~/.bash_profile``` files:
 
 
-<div class="panel panel-code"><div class="panel-heading">
-{% highlight bash linenos %}
+```bash
 function console {
   modem=`ls -1 /dev/cu.* | grep -vi bluetooth | tail -1`
   baud=${1:-9600}
@@ -50,14 +47,13 @@ function console {
     echo "No USB modem device found in /dev"
   fi
 }
-{% endhighlight %}
-</div></div>
+```
 
 Then you can use it as follows – in Terminal type `console` and it will automatically launch minicom, on the first found USB port.
 
 If you are using baud rate other than 9600, then you can pass the new baud rate as a second parameter, eg. `console 115200`
 
-The function will find a serial device and connect MiniCom to it, which then automatically reconnects upon restart of your Arduino board.  Neat, eh? 
+The function will find a serial device and connect MiniCom to it, which then automatically reconnects upon restart of your Arduino board.  Neat, eh?
 
 To stop this monitor, close the Terminal Window.
 

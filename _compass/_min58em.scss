@@ -1,0 +1,30 @@
+
+@media (min-width: 58em) {
+  html {
+    body.theme {
+      .sidebar {
+        width: 20%;
+        display: block ;
+        .navbar-collapse {
+          overflow-y: visible ;
+          overflow-x: visible ;
+        }
+      }
+      .content-toc {
+        display: none ;
+        width: 10%;
+      }
+
+      font-size: $base-font-size;
+      line-height: $base-font-size + 5;
+      font-weight: $base-font-weight;
+      code, pre {
+        font-size: $fixed-font-size - 2;
+      }
+    }
+    .github-repos {
+      padding-left: 0px;
+      font-size: 14px;
+    }
+  }
+}

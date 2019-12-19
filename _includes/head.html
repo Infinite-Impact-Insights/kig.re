@@ -8,23 +8,28 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
+    {% if page.draft == true %}
+    <meta name="robots" content="noindex">
+    {% endif %}
+
     <title>
-        {% if page.title == "Home" %}
+      {% if page.title == "Home" %}
         {{ site.title }} &middot; {{ site.tagline }}
-        {% else %}
+      {% else %}
         {{ page.title }} &middot; {{ site.title }}
-        {% endif %}
+      {% endif %}
     </title>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/public/js/app.js?90948534978593847"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/lightbox/css/lightbox.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/lightbox/css/lightbox.css?098435038450394850"/>
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/pygment_trac.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/custom.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css?098435038450394850">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/pygment_trac.css?098435038450394850">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/custom.css?098435038450394850">
 
 
     <!-- Bootstrap v 3.3.6 -->
@@ -34,12 +39,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">-->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
 
-    <!--<script src="/javascripts/scale.fix.js"></script>-->
-    <script src="{{ site.baseurl }}/public/lightbox/js/lightbox.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Mono:400,700' rel='stylesheet' type='text/css'>
+    <script async="true" src="{{ site.baseurl }}/public/lightbox/js/lightbox.min.js"></script>
 
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -49,5 +59,7 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
     <meta content="{{page.title}} – a blog by Konstantin Gredeskoul about Arduino, hardware, sensors, robotics, beaglebone black" name='description'>
+
+    {% include newrelic.html %}
 
 </head>

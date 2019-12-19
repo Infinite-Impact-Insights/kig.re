@@ -1,0 +1,116 @@
+$w3-theme-l5: #fff5f2;
+$w3-theme-l4: #ffddd3;
+$w3-theme-l3: #ffbca7;
+$w3-theme-l2: #ff9a7b;
+$w3-theme-l1: #ff7850;
+$w3-theme-d1: #ff4107;
+$w3-theme-d2: #e93600;
+$w3-theme-d3: #cb2f00;
+$w3-theme-d4: #ae2900;
+$w3-theme-d5: #912200;
+
+$w3-theme-light:  #fff5f2;
+$w3-theme-dark:   #912200;
+$w3-theme-action: #912200;
+$w3-theme:        #ff5722;
+$w3-text-theme:   #ff5722;
+$w3-border-color: #ff5722;
+
+$w3-hover-theme-hover: #ff5722;
+$w3-hover-text-theme-hover: #ff5722;
+$w3-hover-border-theme-hover: #ff5722;
+
+$w3-shadow: rgba(#280900, 0.5);
+
+$w3-code-bg: #3A3C42;
+$w3-code-fg: #f8f8f2;
+
+// —————————————————————————— CUSTOM —————————————————————————————
+
+$shadow: $w3-shadow;
+$code-box-shadow: 8px 8px 15px $w3-shadow;
+$code-font-size: 10pt;
+$code-border: 1px solid $w3-shadow;
+$code-font-family: 'Consolas', 'Menlo', 'Andale Mono', 'Courier', sans-serif;
+$code-bg: $w3-code-bg;
+$code-fg: $w3-code-fg;
+
+$nav-fg: $w3-theme-l5;
+$nav-bg: $w3-theme-dark;
+$nav-bg-opaque: $w3-theme-light;
+$nav-bg-semi-transparent: rgba(235, 229, 122, 0.59);
+$nav-border: $w3-theme-dark;
+$nav-shadow: rgba(#000000, 0);
+
+$nav-active-fg: $w3-theme + 30;
+$nav-active-bg: $w3-theme-d4;
+$nav-active-shadow: rgba(#000000, 0);
+
+$dropdown-menu-fg: $w3-theme-d5 - 10;
+$dropdown-menu-bg: $w3-theme-l2;
+$nav-dropdown-bg: $w3-theme-dark - 30;
+
+$primary-fg: #3e221a;
+$primary-bg: $w3-theme-l5;
+$primary-border: $w3-border-color;
+
+$secondary-fg: $w3-theme-d5;
+$secondary-bg: $w3-theme-l2;
+$secondary-border: $w3-border-color ;
+
+$form-input-bg: $nav-bg;
+$form-input-fg: $nav-fg;
+$form-input-border: $nav-fg;
+$form-input-shadow: $shadow;
+
+$blockquote-bg: rgb(90, 65, 97);
+$blockquote-fg: rgb(255, 153, 211);
+$blockquote-border: rgba(1, 20, 13, 0.87);
+
+$nav-h1: $w3-theme-dark;
+$nav-hover-fg: $w3-hover-text-theme-hover;
+$nav-hover-bg:$w3-theme-dark;
+$nav-hover-shadow: $w3-theme-dark;
+
+$h1-title-fg: rgba(54, 46, 28, 0.9);
+$h1-fg: rgba(113, 99, 90, 1);
+$h1-shadow: rgba(185, 185, 185, 0.6);
+
+$link-fg: rgba(#322111, 1);
+$offset-fg: #00c5ec;
+
+$code-bg: rgba(60, 60, 40, 1);
+$code-fg: rgba(173, 255, 150, 0.9);
+
+$image-shadow: rgb(130, 122, 14);
+$widgets-border: rgb(255, 184, 0);
+
+$quote-bg: rgba(164, 247, 153, 0.6);
+$quote-fg: rgb(15, 105, 0);
+$quote-shadow: rgb(49, 68, 96);
+
+$transparent: rgba(0, 0, 0, 0);
+
+$toc-entry-fg: rgba(#5d0f0f, 0.83);
+$toc-entry-active-fg: rgba(#ff0000, 0.83);
+
+$base-font-family: 'Roboto Condensed', 'DIN Condensed', sans-serif;
+$base-font-size: 12pt;
+$base-font-weight: 500;
+
+$nav-font-family: 'Oswald', 'Roboto Condensed', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
+$nav-font-size: 12pt;
+$nav-font-weight: 200;
+
+$header-font-family: 'Ropa Sans', 'HelveticaNeue-CondensedBold', sans-serif;
+$header-font-size-h1: 25pt;
+$header-weight: 600;
+
+$fixed-font-family: 'Menlo', 'Andale Mono', Courier, sans-serif;
+$fixed-font-size: 10pt;
+
+$large-font-family: 'Ropa Sans', 'HelveticaNeue', Arial, sans-serif;
+$large-font-size: 17pt;
+
+$quote-side-line-color: rgb(252, 144, 127);
+$vertical-indent: 30px;

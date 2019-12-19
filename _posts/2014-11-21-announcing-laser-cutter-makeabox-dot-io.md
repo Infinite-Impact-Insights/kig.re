@@ -1,6 +1,9 @@
 ---
+draft: false
 layout: page
-title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
+title: "Announcing LaserCutter ruby gem and MakeABox.IO web site"
+toc: true
+
 ---
 
 <div class="small-right">
@@ -9,7 +12,7 @@ title: Announcing LaserCutter ruby gem and MakeABox.IO web site!
 </a>
 </div>
 
-My day job, @ Wanelo, requires cranking on all cylinders, and so I've been pretty busy with life, the universe, and everything, although it mostly means Work, the Wife, and the Cat). In all this constructive chaos, I totally forgot to mention, and properly introduce to the world something I've been working on during many sleepless nights this September :) 
+My day job, @ Wanelo, requires cranking on all cylinders, and so I've been pretty busy with life, the universe, and everything, although it mostly means Work, the Wife, and the Cat). In all this constructive chaos, I totally forgot to mention, and properly introduce to the world something I've been working on during many sleepless nights this September :)
 
 > So without further ado, [LaserCutter](https://github.com/kigster/laser-cutter) –– ruby gem (a library and a CLI) for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting.
 
@@ -65,7 +68,7 @@ Yes tests.  We, in the ruby world, can't take a shit without writing a test for 
 
 
 
-One of the key components of laser cut boxes is the tabs that make two sides snap into each other, by using alternative in/out tabs on each side. The width of this tab has a lot to do with the way the box will ultimately look.  The default is to use 3 x material thickness, but feel free to experiment with other values. Note that notch width input field is treated as a guideline, and not a promised value. 
+One of the key components of laser cut boxes is the tabs that make two sides snap into each other, by using alternative in/out tabs on each side. The width of this tab has a lot to do with the way the box will ultimately look.  The default is to use 3 x material thickness, but feel free to experiment with other values. Note that notch width input field is treated as a guideline, and not a promised value.
 
 ### Kerfing
 
@@ -85,11 +88,11 @@ My process typically revolves around the following steps:
 1. Measure my components and decide on the internal box dimensions.
 2. Generate the box using http://MakeABox.IO
 3. Import the PDF into Adobe Illustrator
-4. Add holes, joins, openings for switches, screens, knobs, power, etc. 
-5. Sometimes I expand a two opposite facing sides to grow larger than the box in both dimensions, so that they end up "squeezing" the contents between them. The picture at the top of the post is using this method: I built this enclosure for the [Ada fruit 32x32 LED Matrix](https://www.adafruit.com/products/2026) powered by [SmartMatrix](http://docs.pixelmatix.com/SmartMatrix/) and [Teensy 3.1](https://www.pjrc.com/teensy/teensy31.html). 
-6. Sometimes I make legs and a stand (you can see that on the speakers above – who likes to have speakers that can not aim in your direction? :) 
+4. Add holes, joins, openings for switches, screens, knobs, power, etc.
+5. Sometimes I expand a two opposite facing sides to grow larger than the box in both dimensions, so that they end up "squeezing" the contents between them. The picture at the top of the post is using this method: I built this enclosure for the [Ada fruit 32x32 LED Matrix](https://www.adafruit.com/products/2026) powered by [SmartMatrix](http://docs.pixelmatix.com/SmartMatrix/) and [Teensy 3.1](https://www.pjrc.com/teensy/teensy31.html).
+6. Sometimes I make legs and a stand (you can see that on the speakers above – who likes to have speakers that can not aim in your direction? :)
 
-I've gotten pretty good at Illustrator, and these days it takes me anything from 10 minutes, to a couple of hours (for a complex project) to design an enclosure. Then of course I haul to Techshop and print it on their Epolog Laser Cutter, while swearing profusely. 
+I've gotten pretty good at Illustrator, and these days it takes me anything from 10 minutes, to a couple of hours (for a complex project) to design an enclosure. Then of course I haul to Techshop and print it on their Epolog Laser Cutter, while swearing profusely.
 
 __Perfect Thickness__
 
@@ -104,8 +107,8 @@ Notably, ```--help, --examples``` is a good place to start.
 For example, to create a box defined in inches, set kerf to 0.008" and open PDF in preview right after it is generated, run the following:
 
 ```bash
-> gem install laser-cutter
-> laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
+ $ gem install laser-cutter
+ $ laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
 ```
 
 <div class="small-right">
@@ -126,7 +129,7 @@ I am planning on adding a few key features, namely:
 * T-Slot joins support with a configurable screw size
 * Oversized front/back panel that hide some of the notches (as on the picture above)
 * Lids and support for hinges and locks
-* Your great idea here? :) 
+* Your great idea here? :)
 
 ### Contributing
 

@@ -1,0 +1,41 @@
+{% include share.html %}
+
+<div class="row">
+  <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+  <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 left-sidebar">
+
+    {% unless page.sidebar == 'hidden' %}
+    {% include nav-sidebar-content.html %}
+    {% endunless %}
+
+    {% if false || page.show_twitter %}
+    <div class="tweets">
+      <a class="twitter-timeline"
+        data-chrome="noheader nofooter noborders noscrollbar transparent"
+        data-dnt="true"
+        width="100%"
+        href="https://twitter.com/kig"
+        data-widget-id="673740947461566464">Tweets by @kig
+      </a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="col-sm-6 col-md-7 col-lg-6 col-xl-7 main">
+    {% include blog-headline.html %}
+    {{ content  | inject_anchors }}
+  </div>
+
+  <div class="col-sm-0 col-md-0 col-lg-2 col-xl-2">
+    {% if page.toc %}
+    <div class="content-toc">
+      <h1 class="toc-title">Table of Contents</h1>
+      {{ content | toc_only }}
+    </div>
+    {% endif %}
+    <div class="vspacer"></div>
+    {% include google-adsense.html %}
+  </div>
+
+</div>
