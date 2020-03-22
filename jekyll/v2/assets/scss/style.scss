@@ -13,7 +13,7 @@ CSS Index
 8.Blog CSS
 9.Footer CSS
 10.About CSS
-11.post-details 
+11.post-details
 12.Tag CSS
 13.Contact CSS
 14.404 CSS
@@ -28,9 +28,9 @@ CSS Index
  @import "base/common";
  @import "base/main_menu";
  @import "base/ghost_fix";
- 
-/* ################ 
-Bannner-Area CSS 
+
+/* ################
+Bannner-Area CSS
 ################ */
  .bannner-area{
      .banner{
@@ -74,7 +74,7 @@ Bannner-Area CSS
          .list-block{
              padding:40px 50px;
              margin-bottom:42px;
-            
+
 			 @include tablet{
               margin-bottom:40px;
 			  padding:30px;
@@ -98,7 +98,7 @@ Bannner-Area CSS
 					}
                 }
             }
-			             
+
         }&:last-child{
                  margin-bottom:0;
             }
@@ -172,8 +172,8 @@ Bannner-Area CSS
         }
     }
 }
-/* ################ 
-Footer-area Css Here 
+/* ################
+Footer-area Css Here
 ################ */
  .footer-area{
      background:url(../images/footer-bg.png);
@@ -231,7 +231,7 @@ Footer-area Css Here
                  line-height: 25px;
                  a{
                      color:$primary-link;
-                 
+
 					 &:hover{
 				  color:$hover;
 				 }
@@ -266,8 +266,8 @@ Footer-area Css Here
         }
     }
 }
-/* ################ 
-Post-content-area 
+/* ################
+Post-content-area
 ################ */
 .post-sp-meta {
 	font-size: 14px;
@@ -371,7 +371,7 @@ Post-content-area
          .categories-post-image{
              position:relative;
              .categories-post-hover{
-           
+
 				 padding:15px;
                  .post-link{
 					 text-align: left;
@@ -396,8 +396,8 @@ Post-content-area
         }
     }
 }
-/* ################ 
-Comment area css 
+/* ################
+Comment area css
 ################ */
  .comments-area{
      color:#323232;
@@ -484,8 +484,8 @@ Comment area css
         }
     }
 }
-/* ################ 
-Right-sidebar Css 
+/* ################
+Right-sidebar Css
 ################ */
  .right-sidebar{
      @include desktop{
@@ -598,7 +598,7 @@ Right-sidebar Css
         }
     }
      .p-title{
-         h4{ 
+         h4{
 		    margin:0;
 			line-height:19px;
              a{
@@ -654,8 +654,8 @@ Right-sidebar Css
         }
     }
 }
-/* ################ 
-About-content-area Css 
+/* ################
+About-content-area Css
 ################ */
 .pt-85{
 padding-top:85px;
@@ -689,8 +689,8 @@ padding-top:85px;
   margin-bottom:10px;
   display:block;
 }
-/* ################ 
-Authors-area css 
+/* ################
+Authors-area css
 ################ */
  .page-header{
      .header-image{
@@ -706,7 +706,7 @@ Authors-area css
          height: 100%;
     }
 }
- 
+
      .author-details,.tags-details{
          padding:30px;
          margin-bottom:30px;
@@ -744,17 +744,17 @@ Authors-area css
 					 &:hover {
 					 color:$white-text;
 					 }
-					 
+
                 }
             }
         }
 		.social-link ul li a{
 		 color:$white-text;
 		}
-		
-	 
+
+
     }
- 
+
  .tags-area{
      .tags-details{
          border:1px solid #efebeb;
@@ -768,8 +768,8 @@ Authors-area css
 
 			 color:#fff!important;
 }
-/* ################ 
-404 Css 
+/* ################
+404 Css
 ################ */
  .headerr-text h2{
      font-weight:$font-bold;
@@ -797,8 +797,8 @@ Authors-area css
          margin:30px 0;
     }
 }
-/* ################ 
-Style Guide Page 
+/* ################
+Style Guide Page
 ################ */
  .style-guide-area{
      .guide-wrapper{
@@ -835,8 +835,8 @@ Style Guide Page
         }
     }
 }
-/* ################ 
-Contact Guide Page 
+/* ################
+Contact Guide Page
 ################ */
  .icon i {
      color:#777777;
@@ -947,7 +947,6 @@ body.paged .main-content-area .blog-list {
 	}
 }
 
-
 .site-tag-archive>a {
     display: block;
     font-size: 20px;
@@ -959,10 +958,20 @@ body.paged .main-content-area .blog-list {
     width: calc(50% - 20px);
     margin: 10px;
     padding: 10px;&:hover {
-	 background: $primary-color; 
+	 background: $primary-color;
 	}
 }
 .btn-danger {
 background : $hover;
 border-color:$hover;
+}
+
+
+.code-toolbar, pre, .highlighter-rouge, .highlighter {
+    width: 100% !important;
+    min-width: 100% !important;
+}
+
+code {
+    padding: 0 !important;
 }

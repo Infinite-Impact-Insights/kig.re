@@ -22,7 +22,7 @@ Bazel is pretty well supported by the VSCode plugin [vscode-bazel](https://marke
 
 Here is a screenshot of my Bazel-enabled Ruby Project, with various Bazel-specific UI elements in action:
 
-![bazel-vscode]({{site.baseurl}}/assets/images/bazel/bazel-vscode.png)
+<img src="{{site.baseurl}}/assets/images/bazel/bazel-vscode.png" width="100%"/>
 
 ### IntelliJ Bazel Plugin
 
@@ -30,7 +30,7 @@ However, the most fully featured IDE support for Bazel is offered by the [Intell
 
 Here is a similar screenshot of the same project opened in IntelliJ IDEA Ultimate, with Ruby plugin installed:
 
-![bazel-intellij]({{site.baseurl}}/assets/images/bazel/bazel-intellij.png)
+<img src="{{site.baseurl}}/assets/images/bazel/bazel-intellij.png" width="100%"/>
 
 It is the IntelliJ plugin that is the subject of this blog post.
 
@@ -85,31 +85,32 @@ There is currently an issue that may affect your ability to import Bazel Project
 
 The issue manifest itself as follow:
 
-  * If you are unable to move past the last step in the Project Import Wizard, meaning — you click 'Next' button, but nothing happens, you should click 'Cancel', and then click on the flashing red bulb in your status bar: it will contain the exact error message.
+* If you are unable to move past the last step in the Project Import Wizard, meaning — you click 'Next' button, but nothing happens, you should click 'Cancel', and then click on the flashing red bulb in your status bar: it will contain the exact error message.
 
-  * If the error message is something like this:
+* If the error message is something like this:
 
-    ```
-    java.lang.IllegalStateException: No SyncPlugin present which provides a default workspace type.
-    	at com.google.common.base.Preconditions.checkState(Preconditions.java:508)
-    	at com.google.idea.blaze.base.sync.projectview.LanguageSupport.getDefaultWorkspaceType(LanguageSupport.java:47)
-    ```
+  ```java
+  java.lang.IllegalStateException:
+    No SyncPlugin present which provides a default workspace type.
+  	at com.google.common.base.Preconditions.checkState(Preconditions.java:508)
+  ```
 
-    Then you need to do the following:
+  Then you need to do the following:
 
-      Reset your IDEA preferences folder. For instance, on a Mac OS-X, and using IntelliJ IDEA Ultimate, you could run the following command in the Terminal:
+  Reset your IDEA preferences folder. For instance, on a Mac OS-X, and using IntelliJ IDEA Ultimate, you could run the following command in the Terminal:
 
-      ```bash
-      rm -rf ~/Library/Preferences/IntelliJIdea2019.3
-      ```
+  ```bash
+  rm -rf ~/Library/Preferences/IntelliJIdea2019.3
+  ```
 
-      Or, if you prefer to back it up instead of removing it:
+  Or, if you prefer to back it up instead of removing it:
 
-      ```bash
-      mv ~/Library/Preferences/IntelliJIdea2019.3 \
-         ~/Library/Preferences/IntelliJIdea2019.3.backup
-      ```
-  * After this, start IDEA and choose `Reset Default Plugins` on the first screen.
+  ```bash
+  mv ~/Library/Preferences/IntelliJIdea2019.3 \
+     ~/Library/Preferences/IntelliJIdea2019.3.backup
+  ```
+
+* After this, start IDEA and choose `Reset Default Plugins` on the first screen.
 
 Once you reset your settings, you should once again be able to import Bazel Projects.
 
@@ -232,7 +233,7 @@ With that out of the way, we should be able to construct our build command line.
 To simplify the next step, we put together a [convenient shell script](https://gist.github.com/kigster/dc847d68aed71920e4bc902320c1188d) that you can download inside the container with the following command (run it inside the Docker container):
 
 ```bash
-wget http://bit.ly/bazel-intellij-build -O build.sh
+$ wget http://bit.ly/bazel-intellij-build -O build.sh
 ```
 
 Now you should have a script `build.sh` ready to use.
@@ -244,7 +245,7 @@ Note: we recommend that you **DO NOT EXIT** the container once the command below
 Change `intellij-ue-latest` below to the appropriate tag for your IntelliJ IDE, and run this command inside the Docker container as root:
 
 ```bash
-# bash build.sh intellij-ue-latest
+$ bash build.sh intellij-ue-latest
 ```
 
 Depending on the capabilities of your machine the build time may vary from anywhere around 3-5 minutes to 10 minutes.
@@ -252,7 +253,7 @@ Depending on the capabilities of your machine the build time may vary from anywh
 After the build succeeds, you should be able to find the compiled zip file on your local machine under the `/tmp/build_output` folder (the folder was mapped to the container's `/tmp/build_output` in the original Docker command). You might want to copy it to your Desktop folder for convenience — the following command is performed on your local system and not inside the container:
 
 ```bash
-cp -v \
+$ cp -v \
      /tmp/build_output/*bazel.zip \
     ~/Desktop
 ```
@@ -266,9 +267,9 @@ This step is optional — if you don't intend on building or rebuilding the plug
 While the Docker container window remains open after a successful build, go ahead and open a new Terminal window, and run the following command:
 
 ```bash
-CONTAINER_ID=$(docker ps | grep l.gcr.io/google/bazel | awk '{print $1}')
+$ CONTAINER_ID=$(docker ps | grep l.gcr.io/google/bazel | awk '{print $1}')
 # save the modified container as a new image
-docker commit ${CONTAINER_ID} intellij-bazel-plugin-built
+$ docker commit ${CONTAINER_ID} intellij-bazel-plugin-built
 ```
 
 Once you've run this, you can exit the Docker Container, because your modified container image is now stored under the `intellij-bazel-plugin-built` label.
@@ -276,7 +277,7 @@ Once you've run this, you can exit the Docker Container, because your modified c
 If you decide to rebuild the plugin in the future, simply run the following command instead of the original Docker command, which will retain Bazel cache from the previous build as well as th build script we downloaded:
 
 ```bash
-docker run -it --rm -v $(pwd):/src/workspace \
+$ docker run -it --rm -v $(pwd):/src/workspace \
     -v /tmp/build_output:/tmp/build_output \
     -w /src/workspace \
     --entrypoint=/bin/bash \
@@ -290,16 +291,16 @@ Now you can just run `bash build.sh product-identifier` as the script we generat
 If you do not need the Bazel Cache for future builds, run this command to reclaim disk space on your machine and to remove the unneeded images:
 
 ```bash
-cp /tmp/build_output/*bazel.zip ~/Desktop
-rm -rf /tmp/build_output
-docker image --rm intellij-bazel-plugin-built
+$ cp /tmp/build_output/*bazel.zip ~/Desktop
+$ rm -rf /tmp/build_output
+$ docker image --rm intellij-bazel-plugin-built
 ```
 
 # Installing the Plugin
 
 Once you've built the plugin, and plugin zip file is on your Desktop, you can open your IDE and install the plugin from Disk.
 
-Open your IDE, press `⌘,` to open Preferences, click on Plugins, and then find the little vertical ellipsis "..." and click it to display the dropdown shown on the screenshot:\
+Open your IDE, press `⌘,` to open Preferences, click on Plugins, and then find the little vertical ellipsis "..." and click it to display the dropdown shown on the screenshot:
 
 ![install-from-disk.png]({{site.baseurl}}/assets/images/bazel/install-from-disk.png)
 
