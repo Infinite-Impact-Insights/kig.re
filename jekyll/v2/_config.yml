@@ -1,0 +1,108 @@
+###################################################################
+# Welcome to Primula Jekyll Theme
+# Developed by https://themeix.com
+# Version : 3.1.1
+###################################################################
+
+title: Ramblings of a Techie — kig.re — Konstantin Gredeskoul
+email: kig@reinvent.one
+description: "This is a personal blog of Konstantin Gredeskoul — a former CTO, Ruby Expert, Loving of all things Scaling and Performance."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://kig.re/" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: kig
+github_username:  kigster
+logo_url: '/assets/images/logo.png'
+mailchimp-list: ''
+facebook_username: kigster
+twitter_username: kig
+google_plus_username:
+linkedin_username: kigster
+
+# Build settings
+
+markdown: kramdown
+markdown_ext: md
+timezone: "America/Los_Angeles"
+
+permalink: /posts/:year/:month/:day/:title
+
+theme: minima
+plugins:
+  - jekyll-archives
+  - jekyll-coffeescript
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate-v2
+  - jekyll-sass-converter
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-watch
+
+###################################################################
+# Site configuration for the Jekyll 2 Pagination Gem
+###################################################################
+pagination:
+  enabled: true
+  debug: true
+  collection: 'posts'
+  per_page: 10
+  permalink: '/pages/:num/' # Pages are simple html files
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
+  #extension: 'html'
+  indexpage: 'index'
+
+autopages:
+  enabled: true
+  categories:
+    layouts:
+      - 'category.html'
+    title: 'Category -  :cat'
+    permalink: '/category/:cat'
+  collections:
+    layouts:
+      - 'category.html'
+    title: ' :coll' # :coll is replaced by the collection name
+    permalink: '/:coll/'
+  tags:
+    layouts:
+      - 'tag_page.html'
+    title: '#:tag' # :tag is replaced by the tag name
+    permalink: '/tag/:tag'
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
+
+jekyll-archives:
+  enabled: all
+  layout: category
+  permalinks:
+    category: '/category/:name/'
+
+collections:
+  authors:
+    title: Authors
+    output: true
+    permalink: /authors/:path/
+
+feed:
+  collections:
+    posts:
+      path: "/index.xml"
+
+###################################################################
+# If you need any help please contact our support portal
+# https://support.themeix.com
+# or
+# Email us at themeix@gmail.com
+# We would happpy to assist you!!
+###################################################################

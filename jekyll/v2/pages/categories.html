@@ -1,0 +1,28 @@
+---
+layout: default
+title: Categories
+add_to_menu: true
+---
+
+{% include page-title.html %}
+
+<div class="about-content-area pb-100 clearfix">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="post-text site-tag-archive">
+			  {% for category in site.categories %}
+  {% assign category_name = category[0] %}   
+        <a href="/category/{{ category_name }}/">{{ category_name | replace: "-", " " }}</a>
+    {% endfor %}
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+ 
+

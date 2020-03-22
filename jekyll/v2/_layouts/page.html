@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{% if page.image_url %}
+<div class="page-header pb-100 pt-85 clearfix">
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-lg-6 col-sm-6">
+				<div class="headerr-image">
+					<img src="{{page.image_url}}" alt="{{page.title}}"/>
+				</div>
+			</div>
+			
+			<div class="col-lg-6 col-sm-6">
+				<div class="author-text wow fadeIn" data-wow-duration="2s">
+					<div class="single-author-d">
+						<div class="title">
+							<h2>{{page.title}}</h2>
+							<p>{{page.description}} </p>
+						</div>
+					   
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% else %}	
+{% include page-title.html %}
+{% endif %}	
+<div class="about-content-area pb-100 clearfix">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="post-text">
+					{{page.content}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

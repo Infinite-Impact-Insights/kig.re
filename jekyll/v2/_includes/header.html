@@ -1,0 +1,20 @@
+<header class="head-main">
+    <div class="navbar navbar-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="{{site.url}}" class="navbar-brand d-flex align-items-center">
+			{% if site.logo_url %}
+				<img src="{{site.logo_url}}" alt="{{site.title}}"/>
+				{% else %}
+				<img src="{{site.baseurl}}/assets/images/logo.png" alt="{{site.title}}"/>
+            {% endif %}
+               
+            </a>
+            <a class="nav-button ml-auto"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+        </div>
+    </div>
+    <div class="fixed-top main-menu">
+        <div class="flex-center p-5">
+          {% include navigation.html %}
+        </div>
+    </div>
+</header>

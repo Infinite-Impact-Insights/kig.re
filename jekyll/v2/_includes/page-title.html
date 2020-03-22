@@ -1,0 +1,31 @@
+<div class="page-header grey-bg mt-5 pb-100 mb-100 pt-85 clearfix">
+   <div class="container">
+      <div class="row">
+         <div class="col">
+            <div class="author-text">
+               <div class="single-author-d  w-100">
+                  <div class="title  ">
+                     <h2 class="mb-0 text-center">{{page.title | capitalize }}</h2>
+                  </div>
+                  {% if page.layout == "post" %}		
+                  <div class="post-meta d-flex">
+                     <ul class="post-sp-meta list-inline mx-auto my-0">
+                        <li class="list-inline-item">
+                           <i class="fa fa-clock-o"></i>{{page.date | date_to_long_string }}
+                        </li>
+                        {% for category in page.categories limit:2 %}
+                        <li class="list-inline-item">
+                           <a href="/category/{{ category | slugize }}/">
+                           <i class="fa fa-folder-o"></i>  {{ category }}
+                           </a>
+                        </li>
+                        {% endfor %}
+                     </ul>
+                  </div>
+                  {% endif %}		
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
