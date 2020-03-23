@@ -22,7 +22,9 @@ Bazel is pretty well supported by the VSCode plugin [vscode-bazel](https://marke
 
 Here is a screenshot of my Bazel-enabled Ruby Project, with various Bazel-specific UI elements in action:
 
-<img src="{{site.baseurl}}/assets/images/bazel/bazel-vscode.png" width="100%"/>
+{% lightbox_image {
+  "url" : "bazel/bazel-vscode.png",
+  "title": "VSCode Bazel Plugin in Action", "group":"IDE" } %}
 
 ### IntelliJ Bazel Plugin
 
@@ -30,7 +32,9 @@ However, the most fully featured IDE support for Bazel is offered by the [Intell
 
 Here is a similar screenshot of the same project opened in IntelliJ IDEA Ultimate, with Ruby plugin installed:
 
-<img src="{{site.baseurl}}/assets/images/bazel/bazel-intellij.png" width="100%"/>
+{% lightbox_image {
+  "url" : "bazel/bazel-intellij.png",
+  "title": "IntelliJ Bazel Plugin in Action", "group":"IDE" } %}
 
 It is the IntelliJ plugin that is the subject of this blog post.
 
@@ -47,12 +51,15 @@ You can install this plugin in the following IntelliJ products:
 
 #### Compatibility Notes
 
-For information on which IntelliJ IDEs are compatible with the Bazel Plugin, please see [this chart](https://ij.bazel.build/docs/bazel-support.html).
+For information on which IntelliJ IDEs are compatible with the Bazel Plugin, please see the following diagram, borrowed from the [IntelliJ Bazel Support Page](https://ij.bazel.build/docs/bazel-support.html):
+
+{% lightbox_image {
+  "url" : "bazel/bazel-support.png",
+  "title": "IntelliJ Bazel Compatibility Chart", "group":"IDE" } %}
 
 * There are some issues with the marketplace plugin version when used with the latest IDEA version. This is when you might need to build it from the sources, as described below.
 
 * Even if you build the plugin from sources, it will NOT be compatible with the EAP (pre-release) version of IDEA.
-
 
 #### Installing the Plugin
 
@@ -78,7 +85,6 @@ The plugin allows you to:
 * Run tests from within the IDE by right-clicking on methods/classes.
 * [**BUILD file language support**](https://ij.bazel.build/docs/build-file-support.html).
 
-
 #### What to do when you can't import Bazel Project...
 
 There is currently an issue that may affect your ability to import Bazel Projects into the IDE. It seems to stem from a misconfiguration resulting in disabling some of the default IntelliJ plugins, although we never figured out which ones.
@@ -89,10 +95,11 @@ The issue manifest itself as follow:
 
 * If the error message is something like this:
 
-  ```java
+  ```bash
   java.lang.IllegalStateException:
-    No SyncPlugin present which provides a default workspace type.
-  	at com.google.common.base.Preconditions.checkState(Preconditions.java:508)
+
+  No SyncPlugin present which provides a default workspace type.
+  at com.google.common.base.Preconditions.checkState(Preconditions.java:508)
   ```
 
   Then you need to do the following:
@@ -302,7 +309,9 @@ Once you've built the plugin, and plugin zip file is on your Desktop, you can op
 
 Open your IDE, press `⌘,` to open Preferences, click on Plugins, and then find the little vertical ellipsis "..." and click it to display the dropdown shown on the screenshot:
 
-![install-from-disk.png]({{site.baseurl}}/assets/images/bazel/install-from-disk.png)
+{% lightbox_image {
+  "url" : "bazel/install-from-disk.png",
+  "title": "Installing plugin from the disk", "group":"IDE" } %}
 
 Select "Install Plugin from Disk", and choose the ZIP file on your Desktop, and once installed — restart your IDE.
 And... Vola!

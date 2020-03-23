@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
       <meta name="keywords" content="{% if page.keywords %}{{ page.keywords}}{% else %}{{ site.keywords }}{% endif %}">
-      <!-- Facebook Open Graph -->	
+      <!-- Facebook Open Graph -->
       <meta content="{{ site.title }}" property="og:site_name">
       <meta property="og:locale" content="en_US" />
       {% if page.title %}
@@ -27,7 +27,7 @@
       {% endif %}
       {% if page.url %}
          <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-      {% endif %}	
+      {% endif %}
       {% if page.post_image %}
           <meta content="{{ page.post_image }}" property="og:image">
       {% else %}
@@ -41,7 +41,7 @@
       {% endfor %}{% endif %}
       {% if page.date %}
          <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-      {% endif %}	
+      {% endif %}
       <!-- Twitter cards -->
       <meta name="twitter:site"    content="@{{ site.twitter_username }}">
       <meta name="twitter:creator" content="@{{ page.twitter_username }}">
@@ -49,7 +49,7 @@
          <meta name="twitter:title"   content="{{ page.title }}">
       {% else %}
          <meta name="twitter:title"   content="{{ site.title }}">
-      {% endif %}	
+      {% endif %}
       {% if page.description %}
          <meta name="twitter:description" content="{{ page.description }}">
       {% else %}
@@ -64,14 +64,15 @@
       {% endif %}
       <!-- Site Title -->
       <title>{% if page.title %} {{page.title}} {% else %} {{site.title}} {% endif %}</title>
-      <link rel="shortcut icon" href="{{site.baseurl}}/assets/images/favicon.png" type="image/x-icon"/>
+      <link rel="shortcut icon" href="{{site.baseurl}}/assets/images/site/favicon.png" type="image/x-icon"/>
       <!-- gulp:css -->
       <link rel="stylesheet" href="{{site.baseurl}}/assets/css/app.min.css">
       <!-- endgulp -->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Yanone+Kaffeesatz:400,500,600,700&display=swap" rel="stylesheet">
+      <script async type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"ab7fddab964c6ba596338bf84","lid":"d7802cdf53","uniqueMethods":true}) })</script>
    </head>
    <body class="{% if page.layout == 'post' %} post-template {% endif %} {% if page.url == '/index.html' %} home-template {% endif %} {% if page.layout == 'tag_page' %} tag-template {% endif %} {% if page.parmalink %} page-template {% endif %}">
-   
+
 	{% include header.html %}
 	  {{content}}
 	{% include footer.html %}

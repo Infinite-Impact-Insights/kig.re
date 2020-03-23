@@ -1,10 +1,15 @@
 ---
-layout: page
-draft: false
+layout: post
 title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
-toc: true
-
+date: 2014-10-12 00:00:00 +0600
+post_image: /assets/images/posts/borat/bathroom-occupied-calm-technology.jpg
+tags: [Bazel, IntelliJ, Docker]
+categories: [jekyll]
+author_id: 1
+comments: true
+excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
 ---
+
 
 A great company where I work, [Wanelo](http://wanelo.com/), with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.
 
@@ -14,16 +19,9 @@ You can likely see how this could be a frustrating and disruptive experience eve
 
 Given my foray into Arduino over the last few months, I knew I could come up with a solution. I got approved for a small budget of about $200, and started looking around.
 
-<div class="full">
-    <img src="/images/bathroom-occupied-calm-technology.jpg"/>
-</div>
-<br />
-
 > The problem was very simple: __people needed to know when each bathroom was occupied, or not__.  Just like on an airplane you can see bathroom light on/off, I wanted something similar for our two bathrooms. Something everyone could see.
 
-{{site.data.macros.continue}}
 ___
-
 
 ### Broadcasting Occupancy Status
 
@@ -35,14 +33,10 @@ which were driving
 [8x8 LED Matrix displays](http://www.amazon.com/Super-Bright-RGB-LED-matrix/dp/B0068K01QE/?_encoding=UTF8&tag=kiguino-20), and I was pretty impressed with the results. I immediately knew I wanted to use these to indicate the status of occupancy. Initially I thought the green matrix should indicate that a bathroom is available, while red would mean occupied.  I basically went with this for the final version, although I added some
 [lava-lamp like animations](https://github.com/kigster/Borat/blob/master/firmware/DisplayLED/DisplayLED.ino) to make things more interesting.
 
-<div class="full">
 
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg" data-lightbox="enclosures" data-title="BORAT in Action!">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg"
-    alt="Bathroom Occupancy Wireless Notification Arduino-based System" title="Live on the wall at work"/>
-</a>
-</div>
-<br />
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg",
+  "title": "Bathroom Occupancy Wireless Notification Arduino-based System", "group": "enclosures" } %}
 
 ### Communication
 
@@ -73,11 +67,11 @@ Shortly after, I received all the pieces in the mail, had a plan in my head, and
 
 ## The Solution
 
-<div class="small-right">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" data-lightbox="enclosures" data-title="Display Unit">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg" alt="" title="" class="small-right">
-</a>
-</div>
+
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg",
+  "title": "Display Unit", "group": "enclosures" } %}
+
 
 Enter the project (all of which is open sourced under an MIT License), which took good month working some nights and weekends this summer to complete: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system. It uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms to the main display unit located in a highly visible area.
 
@@ -95,12 +89,11 @@ BORAT consists of two logical units:
 
 Here is a diagram that explains various placement options and the overall concept.
 
-<div class="full">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png" data-lightbox="enclosures" data-title="Concept Diagram">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png" alt="Concept Diagram" title="Concept Diagram">
-</a>
-</div>
-<br />
+
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png",
+  "title": "Concept Diagram", "group": "enclosures" } %}
+
 
 Remember, communication is wireless. These little cards are pretty damn impressive. They get through walls and significant distances (50-100 feet) when used across line of sight. I did have to move the display unit once from a place that had three walls separating it from the Observers, which made for spotty connection. Its new location has only two walls of separation, and it works flawlessly.
 
@@ -122,12 +115,10 @@ All settings and thresholds, including timeouts, are meant to be tweaked individ
 
 The diagram below shows the components used in each Observer unit.
 
-<div class="full">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg" data-lightbox="enclosures" data-title="Observer Components">
-<img src="https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg" alt="Observer Components" title="Observer Components">
-</a>
-</div>
-<br />
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg",
+  "title": "Observer Components", "group": "enclosures" } %}
+
 
 They are, for reference:
 
@@ -151,25 +142,33 @@ To make changes visible to the user of the Observer module, one must have a Seri
 
 Here is a picture of one of the observer units attached to the debugging LCD, which is communicates via a serial cable. The LCD is optional and can be plugged in or out at any time.
 
-<div class="small">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" data-lightbox="enclosures" data-title="Configuring Observer. Legend: D = Sonar, M = Motion, L = Light. + next to it means it's been trigger (motion), or above threshold (sonar and light). First numeric value in brackets is the sensor reading, second is the threshold.">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg" alt="Configuring a Sensor" title="">
-</a>
+Configuring Observer. Legend: D = Sonar, M = Motion, L = Light. + next to it means it's been trigger (motion), or above threshold (sonar and light). First numeric value in brackets is the sensor reading, second is the threshold:
 
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Knob.jpg" data-lightbox="enclosures" data-title="Knob and Serial Port">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Knob.jpg" alt="Configuring a Sensor" title="">
-</a>
-<p style="clear:both;">
-</div>
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg",
+  "title": "Configuring Observer.",
+  "group": "enclosures" } %}
+
+
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Knob.jpg",
+  "title": "Knob and Serial Port", "group": "enclosures" } %}
+
+---
 
 The settings that can be changed are (and are cycled through by pressing the button):
 
 1. _Light sensitivity_ (between 0 and 1023): A light reading below the threshold will be considered "dark" and will render the overall status as "unoccupied".
+
 2. _IR Sensor Delay_: This is a delay in milliseconds that "blocks" any reading of the motion sensor after any change was detected (this is so that it does not flicker). Typically set to 5000ms, it means that once motion is detected, the motion sensor reading is considered positive regardless of what the sensor actually reports.
+
 3. _Sonar Distance_ (in cm): A distance threshold is used to decide if sonar is detecting someone or not. Values less than the threshold are positive (occupied), while larger values than the threshold are negative (unoccupied).
+
 4. _Exit Timout_ (in seconds): If the light was left on, and we detected occupancy, but no longer do – how long should we consider the room still occupied?  If you make this number too small, the overall status will flicker as various sensors are triggered, but are then released. Setting this to 10-30 seconds is reasonable.  Remember, if the person using the bathroom turns off the light, the timeout is not used.
-5. _Save Settings?_ Defaults to NO, but if YES is chosen, parameters are saved to EEPROM, so even if the unit reboots they persist and are used moving forward by that unit.
-6. _Disable Radio?_ Sometimes it's convenient to configure the sensors alone, without the unit attempting to connect to the mothership (the display unit).  Set that to YES and radio will temporarily deactivate. This is not saved to EEPROM.
+
+5. _Save Settings?_: Defaults to NO, but if YES is chosen, parameters are saved to EEPROM, so even if the unit reboots they persist and are used moving forward by that unit.
+
+6. _Disable Radio?_: Sometimes it's convenient to configure the sensors alone, without the unit attempting to connect to the mothership (the display unit).  Set that to YES and radio will temporarily deactivate. This is not saved to EEPROM.
 
 ### Observer Module Designs and Enclosures
 
@@ -183,51 +182,52 @@ The new arm allows movement using three degrees of freedom. This design is clear
 
 The template files inside the enclosure folder of the project contain designs for the boxes, as well as the arm. Feel free to use them. By laser-cutting these parts, you too can assemble BORAT boxes and the sonar arm.
 
-<div style="clear:both; margin-bottom: 30px;"></div>
+---
 
 #### Early Boxes with Fixed Sonar
 
-<div class="small">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg" data-lightbox="enclosures" data-title="Observer First Module">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg">
-</a>
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg",
+  "title": "Observer First Module", "group": "enclosures" } %}
 
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-Nano-Shield.jpg" data-lightbox="enclosures" data-title="Observer Second Module">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-Nano-Shield.jpg">
-</a>
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-Nano-Shield.jpg",
+  "title": "Observer Second Module", "group": "enclosures" } %}
 
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg" data-lightbox="enclosures" data-title="Retro Look">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg">
-</a>
-</div>
-{% macro clearfix %}
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg",
+  "title": "Retro Look", "group": "enclosures" } %}
+
+---
 
 #### Flexible Arm Designs
 
-<div class="small">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Front.jpg" data-lightbox="enclosures" data-title="Third Module with Flexible Arm">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Front.jpg">
-</a>
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3.jpg" data-lightbox="enclosures" data-title="Third Module with Flexible Arm">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3.jpg">
-</a>
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg" data-lightbox="enclosures" data-title="Third Module with Flexible Arm">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg">
-</a>
-<div class="clear-fix"></div>
-</div>
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Front.jpg",
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
+
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3.jpg",
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
+
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg",
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
+
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg",
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
+
+
+---
 
 #### On the Inside
 
 Finally, here is the unit opened up so you can see how it's put together. I am a big fan of spacers, and mounting items to the enclosure, so I use a lot of cables to connect things up.  Plus, this way you could always replace faulty components over time.
 
-<div class="full">
-<a href="/images/observer-module-open.jpg" data-lightbox="enclosures" data-title="Observer Module on the Inside">
-    <img src="/images/observer-module-open.jpg" alt="Observer Module inside">
-</a>
-</div>
-<br />
-
+{% lightbox_image {
+  "url":  "posts/borat/observer-module-open.jpg",
+  "title": "Observer Module on the Inside", "group": "enclosures" } %}
 
 ### Display Module
 
@@ -248,24 +248,27 @@ I then glued 4 plastic spacers to the back of the two Rainbowduinos (2 per each)
 
 Tall spacers filled the box all the way to the top, pushed LED matrices flush with the front side of the enclosure. This approach allowed me to avoid screwing or glueing things inside of the box altogether: everything was held up by the pressure of the box.  I did put a couple of foamy pieces in a few places to ensure the internals do not bounce in any dimension.
 
-<div class="small">
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg" data-lightbox="enclosures" data-title="Display Assembly">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg">
+<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
+<img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg"/>
 </a>
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg" data-lightbox="enclosures" data-title="Display Assembly">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg">
+
+<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
+<img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg"/>
 </a>
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg" data-lightbox="enclosures" data-title="Display Assembly">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg">
+
+<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
+    <img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg"/>
 </a>
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg" data-lightbox="enclosures" data-title="Display Assembly">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg">
+
+<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
+    <img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg"/>
 </a>
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" data-lightbox="enclosures" data-title="Display Assembly">
-    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg">
+
+<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
+    <img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg">
 </a>
-<div class="clear-fix"></div>
-</div>
+
+---
 
 ## Conclusion
 
@@ -281,6 +284,6 @@ Do you want to help me design a PCB board to make the next Observer Unit?  Pleas
 
 Also – please leave comments, feedback, and suggestions. All of those nice things.
 
-<p>Thanks for reading,<br />
+Thanks for reading,
+
 –– Konstantin.
-</p>

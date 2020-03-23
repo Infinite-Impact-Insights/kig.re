@@ -9,22 +9,35 @@ email: kig@reinvent.one
 description: "This is a personal blog of Konstantin Gredeskoul — a former CTO, Ruby Expert, Loving of all things Scaling and Performance."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kig.re/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: kig
-github_username:  kigster
-logo_url: '/assets/images/logo.png'
+logo_url: '/assets/images/site/logo.png'
 mailchimp-list: ''
 facebook_username: kigster
-twitter_username: kig
-google_plus_username:
+github_username:  kigster
 linkedin_username: kigster
+twitter_username: kig
 
 # Build settings
+
+exclude:
+  - README.md
+  - Gemfile.lock
+  - Gemfile
+  - Rakefile
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - .editorconfig
+  - .idea/**/*
+  - gulpfile.js
+  - node_modules/**/*
+  - lib/**/*
+  - bin/**/*
 
 markdown: kramdown
 markdown_ext: md
 timezone: "America/Los_Angeles"
 highlighter: rouge
-permalink: /posts/:year/:month/:day/:title
+permalink: /:year/:month/:day/:title:output_ext
 
 theme: minima
 plugins:
@@ -45,7 +58,7 @@ pagination:
   enabled: true
   debug: true
   collection: 'posts'
-  per_page: 5
+  per_page: 20
   permalink: '/pages/:num/' # Pages are simple html files
   title: ':title - page :num'
   limit: 0

@@ -1,0 +1,8 @@
+{
+  "favorites.resources": [
+    "assets/scss",
+    "_posts",
+    "pages",
+    "_config.yml"
+  ]
+}

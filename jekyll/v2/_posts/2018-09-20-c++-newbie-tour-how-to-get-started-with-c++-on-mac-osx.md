@@ -2,7 +2,7 @@
 layout: post
 title: 'C++ Newbie Tour: Getting Started with C++ on Mac OSX'
 date: 2018-09-20 12:57:52 +0600
-post_image: /assets/images/blog-images/c-cpp.jpg
+post_image: /assets/images/posts/c-cpp.jpg
 tags: [C/C++, Code]
 categories: [programming]
 author_id: 1
@@ -19,7 +19,6 @@ Well, despite having hands-on skils in C, Java, Ruby, Perl, even BASH, — I hav
 By that time I was very surprised to find that the vast majority of the existing Arduino projects and libraries were written rather badly, in C. The best ones are written in a mixture of C++ and Assembly. But, it turns out that you can have your cake and eat it too — meaning, you can apply OO principles to Arduino programming.
 
 > In this post we'll explore some of the things that a beginner C++ programmers (but not general beginner programmers) might find useful in getting quickly up to speed. We will look at which compilers support newer C++ standards C++11 and C++14 and the difference between linker and compiler, as well as dynamic vs static library. Finally, we'll offer a C++ project template you can use in your own projects.
-
 
 
 {{site.data.macros.continue}}

@@ -20,7 +20,8 @@
         './assets/css/fontawesome-all.min.css',
         './assets/css/owl.carousel.min.css',
         './assets/css/animate.css',
-        './assets/css/prism.css'
+        './assets/css/prism.css',
+        './assets/css/lightbox.min.css',
     ];
     var JS_Files = [
         './assets/js/jquery-3.3.1.min.js',
@@ -31,6 +32,7 @@
         './assets/js/jquery.waypoints.min.js',
         './assets/js/wow.min.js',
         './assets/js/prism.js',
+        './assets/js/lightbox.min.js',
         './assets/js/jquery.fitvids.js',
         './assets/js/app.js'
     ];

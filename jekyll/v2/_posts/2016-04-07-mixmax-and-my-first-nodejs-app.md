@@ -5,9 +5,7 @@ toc: true
 
 ---
 
-<div class="small-right">
-{% lightbox_image { "url" : "/images/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
-</div>
+{% lightbox_image { "url" : "posts/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
 
 A few days ago I was blown away but what a (still) little-known startup called [MixMax](http://mixmax.com) is doing with email —
 nothing short of revolutionizing it! If you haven't see it yet, do check it out, especially if you often find yourself scheduling
@@ -27,9 +25,7 @@ Once they do, the event is inserted into my calendar right away. This is magic!
 
 ## Features
 
-<div class="small-right">
-{% lightbox_image { "url" : "/images/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
-</div>
+{% lightbox_image { "url" : "posts/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
 
 
 I haven't gone through an exhaustive list of the features MixMax offers at this time,
@@ -42,9 +38,7 @@ Like I said – my favorite feature at the moment. I love how easy it is to pick
 
 ### Formatted Code
 
-<div class="small-right">
-{% lightbox_image { "url" : "/images/mixmax/mixmax-code-blocks.png",  "title": "MixMax Code Blocks", "group":"mixmax" } %}
-</div>
+{% lightbox_image { "url" : "posts/mixmax/mixmax-code-blocks.png",  "title": "MixMax Code Blocks", "group":"mixmax" } %}
 
 Another awesome feature – how often have I gone to GitHub to create a temporary gist just to provide syntax highlighting in my emails? Not every day (thank god!) but quite often.
 
@@ -97,14 +91,14 @@ If you have never used JetBrains IDE – just take a look at this screenshot, an
 try to comprehend just how much is going on there on my screen, all within the
 confines of my development environment.
 
-{% lightbox_image { "url" : "/images/mixmax/webstorm-mixmax-resolver.png",  "title": "WebStorm IDE with MixMax project loaded", "group":"mixmax" } %}
+{% lightbox_image { "url" : "posts/mixmax/webstorm-mixmax-resolver.png",  "title": "WebStorm IDE with MixMax project loaded", "group":"mixmax" } %}
 
 ## Project 'wanelo-mixmax-link-resolver'
 
 To cut the long story pretty damn short, [I built a small project](https://github.com/kigster/wanelo-mixmax-link-resolver)
 to resolve Wanelo product URLs into a small widget that looks like this:
 
-{% lightbox_image { "url" : "/images/mixmax/mixmax-wanelo-preview.png",  "title": "Preview of the Widget I built", "group":"mixmax" } %}
+{% lightbox_image { "url" : "posts/mixmax/mixmax-wanelo-preview.png",  "title": "Preview of the Widget I built", "group":"mixmax" } %}
 
 Along the way I had to figure out how to
 

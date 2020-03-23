@@ -1,30 +1,42 @@
 ---
-layout: page
-title: 'AWS/EBS/C5 class instance: cannot create file: Read-only file system'
-draft: false
-toc: true
-author: Konstantin Gredeskoul
+layout: post
+title: 'C5 class instance on EC2: cannot create file: Read-only file system'
+date: 2018-05-15 00:00:00 +0600
+post_image: /assets/images/posts/aws/nvme-disks.jpg
+tags: [AWS, Ubuntu]
+categories: [devops]
+author_id: 1
+comments: true
+excerpt: "In this short post I describe the read-only file system issue that happened to one of our C5 hosts, and how we fixed it."
 ---
 
-## Is AWS a sane choice of a Cloud for mission-critical infrastructure
+## Summary
 
-<div class="large">
-In this short post I describe the "read-only" problem that happened to one of our C5 hosts, offer a bit of a rant about how incompetent AWS support staff is, and how their forums are completely _useless_, and frankly, _infuriating_.
+<div class="post-summary">
+
+This post describes how I was able to fix the "read-only filesystem" issue on one of my C5 instances in AWS EC2.
+
+For impatient, I was able to run <code>fsck.ext4 -p</code> to fix an inode issue, and then the machine rebooted with read/write.
+
+Read on for more details.
+
+</div>
+
+## Is AWS really a sane choice of a Cloud for mission-critical infrastructure?
+
+This is a rhetorical question.
+
+Still, — in this short post I describe the "read-only" problem that happened to one of our C5 hosts, offer a bit of a rant about how incompetent AWS support staff is, and how their forums are completely _useless_, and frankly, _infuriating_.
 
 And as far as the question posted above I will let you make your own conclusion — so keep on reading.
 
-Do you have the same problem on one of your C5 instances? Then read on. At least in our case the solution has been found. But not by AWS. By me.
-</div>
+Do you have this problem on one of your EC2 instances? Then read on. At least in our case the solution has been found. But not by AWS.
 
 ## The Problem — read only file system on a C5 class instance.
 
-
-{{site.data.macros.continue}}
-
-
 So here is what happened earlier today.
 
-One of our C5 instances suddenly became *read only*.
+**One of our C5 instances suddenly became *read only***.
 
 Since most services write to disk, the instance essentially became completely useless.
 
@@ -45,6 +57,10 @@ $ mount -l | grep nvme
 /dev/nvme0n1p1 on / type ext4 (ro,relatime,data=ordered) [cloudimg-rootfs]
 ```
 
+The command which assumes your instance uses SSD local drives, which are typically provided by the NVME (Non-Volatile Memory Express) drives.
+
+> Note: NVMe (Non-Volatile Memory Express) is a communications interface and driver that defines a command set and feature set for PCIe-based SSDs with the goals of increased and efficient performance and interoperability on a broad range of enterprise and client systems. NVMe was designed for SSD.
+
 What you see here is that the primary EBS volume was mounted as `ro` — meaning read only.
 
 If you issue the same command on a healthy machine, you should see `rw`, instead of `ro`, meaning, of course, "read-write".
@@ -57,17 +73,29 @@ Anyway, from my early Linux days (I installed my first Linux in 1996, I think, f
 
 ```
 $ fsck<TAB><TAB>
-fsck          fsck.cramfs   fsck.ext3     fsck.ext4dev  fsck.minix    fsck.nfs      fsck.xfs      fsck.btrfs    fsck.ext2     fsck.ext4
-fsck.fat      fsck.msdos    fsck.vfat
-```  
+fsck
+fsck.cramfs
+fsck.ext3
+fsck.ext4dev
+fsck.minix
+fsck.nfs
+fsck.fat
+fsck.msdos
+fsck.vfat
+fsck.xfs
+fsck.btrfs
+fsck.ext2
+fsck.ext4
+```
 
-OK, so we just need to figure out the file system — and then run it. Right above, where we did `mount -l` you will notice that the file system type is `ext4`. Alrighty then. We have our `fsck`!
+OK, so we just need to figure out which file system we are running, and then run the appropriate `fsck` utility.
+
+Right above, where we did `mount -l`, you may have noticed that the file system type is `ext4`. Alrighty then. Now we know which `fsck` to run!
 
 Let's run it and see what options does it have:
 
-
-```
-fsck.ext4
+```bash
+$ fsck.ext4
 Usage: fsck.ext4 [-panyrcdfvtDFV] [-b superblock] [-B blocksize]
 		[-I inode_buffer_blocks] [-P process_inode_size]
 		[-l|-L bad_blocks_file] [-C fd] [-j external_journal]
@@ -91,7 +119,7 @@ Alright — I love seeing something called "automatic repair". Since this machin
 
 Let's run this sucker.
 
-```
+```bash
 $ fsck.ext4 -p /dev/nvme0n1p1
 cloudimg-rootfs contains a file system with errors, check forced.
 cloudimg-rootfs: Deleted inode 1567791 has zero dtime.  FIXED.
@@ -113,42 +141,18 @@ sync; sync; reboot
 
 > NOTE: this how I recommend you always reboot you instances. Double `sync`, then `reboot`. Why this is so is outside the scope of this post.
 
-The box rebooted very quickily and some 30 seconds later I was able to SSH into the machine and vola!
 
-**No more read-only root partition, all services boot, and everything is back to normal.** Whoohooo!
+### Result
+
+The box rebooted very quickly, and some 30 seconds later I was able to SSH into the machine. Viola!
+
+No more read-only root partition, all services boot, and everything is back to normal.
+
+Fantastic.
 
 ### How Not to Run Support Forums
 
-Now, I think to myself, I can share this wisdom on AWS Forums! And other people can benefit from this!
+I could vent a lot about how horrible AWS forums are, but I'll just say that there were relevant questions, with no answers. Not only that, but I couldn't even register for the forums and post the question right away.
 
-Not so fast, says AWS (allegorically, not literaly) they spell out for me:
+Perhaps some time has passed now and they've fixed that. But let's just say it left me infuriated and without any useful info whatsoever.
 
-> Dear Konstantin, we are going to fuck you in a few more ways before you can be "helpful" to our customers. They really don't need your help, we got it covered. Really, fuck off.
-
-What they actually said verbatim is this:
-
-> Your account is not ready for posting messages yet. See the following article for details: [https://aws.amazon.com/premiumsupport/knowledge-center/error-forum-post/](https://aws.amazon.com/premiumsupport/knowledge-center/error-forum-post/).
-
-So now I am sitting on a solution, but I can't even share it with other AWS customers, because apparently my account is not activated. It says something stupid like "you have to login to activate it". I am already logged in! OK, fine, I'll log out and log back in again. Nope, same problem.
-
-This is infuriating beyond belief. Hence, I take it to my own blog to bitch about it, and in the process, perhaps help a few people.
-
-## Conclusion
-
-I personally think AWS is a behemoth not worth wasting your time on.
-
-I believe in clouds that are flexible and do not lock you into their proprietary and expensive solutions.
-
-I believe in a cloud that helps their customers and quickly resolves their problems.
-
-I used to be on such a cloud, and it was a paradise. But my current employer was already on AWS, and so I deal with it.
-
-Are you curious about what cloud does not screw with their customers, offers incredibly competitive pricing, and is the only cloud that can run Docker Containers natively on the bare metal?
-
-It's [**Joyent**](https://www.joyent.com/) — now a subsidiary of Samsung, little known but the most amazing cloud I've worked with.
-
-But even if I wasn't on Joyent, I would probably choose Google Cloud. I just trust Google a whole lot more than I trust Amazon after my experience.
-
-You can decide what's best for you, but don't forget, AWS Forums are not very helpful it turns out.
-
-Please leave a comment if you found the solution here, and not on AWS support site. I would really appreciate it!

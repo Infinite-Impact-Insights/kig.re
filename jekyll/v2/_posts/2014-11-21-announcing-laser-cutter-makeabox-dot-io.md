@@ -7,8 +7,8 @@ toc: true
 ---
 
 <div class="small-right">
-<a href="/images/pen-holder.jpg" data-lightbox="makeabox" data-title="Pen-Holder box made by starting with a box design from makeabox.io">
-	<img src="/images/pen-holder.jpg"/>
+<a href="/assets/images/posts/makeabox/pen-holder.jpg" data-lightbox="makeabox" data-title="Pen-Holder box made by starting with a box design from makeabox.io">
+	<img src="/assets/images/posts/makeabox/pen-holder.jpg"/>
 </a>
 </div>
 
@@ -16,14 +16,14 @@ My day job, @ Wanelo, requires cranking on all cylinders, and so I've been prett
 
 > So without further ado, [LaserCutter](https://github.com/kigster/laser-cutter) –– ruby gem (a library and a CLI) for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting.
 
-In addition to the ruby gem, there is also simple web front-end, called  [MakeABox.IO](http://makeabox.io/), which can get you started creating boxes without installing any gem, or running anything on the command line.  
+In addition to the ruby gem, there is also simple web front-end, called  [MakeABox.IO](http://makeabox.io/), which can get you started creating boxes without installing any gem, or running anything on the command line.
 
 If you've made any enclosures of your own, like either for your electronics gear, or a lighting show, or your cat auto-flushable toilet, you probably used one of the existing and free tools out there. I did not find them all when I started making boxes, but over time the choice seemed to come down to three options:
 
 
 <div class="small-right">
-<a href="/images/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made by starting with MakeABox.IO">
-	<img src="/images/omnipix-enclosure.jpg"/>
+<a href="/assets/images/posts/makeabox/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made by starting with MakeABox.IO">
+	<img src="/assets/images/posts/makeabox/omnipix-enclosure.jpg"/>
 </a>
 </div>
 
@@ -41,8 +41,8 @@ If you've made any enclosures of your own, like either for your electronics gear
 It came down to a simple fact that I was not at all happy with BoxMaker, or the alternatives.  Boxmaker had lots of features, but also some bugs; it's source code was difficult to read and modify, it produced asymmetric box designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests. The last part made it difficult to think about contributing fixes.
 
 <div class="small-right">
-<a href="/images/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io screen shot. It's very easy to use.">
-	<img src="/images/makeabox.jpg"/>
+<a href="/assets/images/posts/makeabox/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io screen shot. It's very easy to use.">
+	<img src="/assets/images/posts/makeabox/makeabox.jpg"/>
 </a>
 </div>
 
@@ -54,8 +54,8 @@ So I embarked on writing my own, and as of a few weeks ago, the beast is now fea
 To the coders reading this, I will shamefully admit that the current incarnation of this library (version 1.0.3) contains a number of hacks, and there is a consistent lack of clean intentional software design. I've sort of taken a brute force approach in a couple o places, and consequently been awarded a pretty low Code Clime score.  (Although who are they to judge! Some computers, dammit :P)  But on the bright side, I am planning a refactor before I do more with it.  The algorithmic part of this ended up being a bit tricky (surprise!), but the kinks are ironed out and the tests are there to prove it.
 
 <div class="small-right">
-<a href="/images/makeabox-pdf.jpg" data-lightbox="makeabox" data-title="An example of PDF layout for one of the box designs at MakeABox.io">
-	<img src="/images/makeabox-pdf.jpg"/>
+<a href="/assets/images/posts/makeabox/makeabox-pdf.jpg" data-lightbox="makeabox" data-title="An example of PDF layout for one of the box designs at MakeABox.io">
+	<img src="/assets/images/posts/makeabox/makeabox-pdf.jpg"/>
 </a>
 </div>
 
@@ -73,8 +73,8 @@ One of the key components of laser cut boxes is the tabs that make two sides sna
 ### Kerfing
 
 <div class="small-right">
-<a href="/images/box-speakers.jpg" data-lightbox="makeabox" data-title="Speaker boxes made with MakeABox.io">
-	<img src="/images/box-speakers.jpg"/>
+<a href="/assets/images/posts/makeabox/box-speakers.jpg" data-lightbox="makeabox" data-title="Speaker boxes made with MakeABox.io">
+	<img src="/assets/images/posts/makeabox/box-speakers.jpg"/>
 </a>
 </div>
 When laser cuts the material it usually burns a small portion of it.  This creates a cut with a non-zero width, called __[kerf](http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf)__. If your box design does not account for kerf, your box will fit loose.  The stronger the laser, the bigger the cut, the looser the fit.
@@ -102,7 +102,7 @@ Having tried nearly all thicknesses at the thinner range of the imperial scale, 
 
 LaserCutter comes with rich command line (CLI) interface, shown to the right.
 
-Notably, ```--help, --examples``` is a good place to start.  
+Notably, ```--help, --examples``` is a good place to start.
 
 For example, to create a box defined in inches, set kerf to 0.008" and open PDF in preview right after it is generated, run the following:
 
@@ -112,8 +112,8 @@ For example, to create a box defined in inches, set kerf to 0.008" and open PDF 
 ```
 
 <div class="small-right">
-<a href="/images/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter accessed via the rich CLI interface">
-	<img src="/images/laser-cutter.jpg"/>
+<a href="/assets/images/posts/makeabox/laser-cutter.jpg" data-lightbox="makeabox" data-title="laser-cutter accessed via the rich CLI interface">
+	<img src="/assets/images/posts/makeabox/laser-cutter.jpg"/>
 </a>
 </div>
 
