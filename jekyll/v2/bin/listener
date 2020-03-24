@@ -1,0 +1,128 @@
+#!/usr/bin/env ruby -W0
+# frozen_string_literal: true
+
+# vim: ft=ruby
+
+require 'listen'
+require 'colored2'
+require 'tty-box'
+require 'tty-screen'
+require 'tty-cursor'
+
+module Jekyll
+  class FileChangeListener
+    class << self
+      attr_accessor :ignored, :types
+    end
+
+    self.types = {
+        modified: { letter: 'M', color: :blue },
+        added:    { letter: 'A', color: :green },
+        removed:  { letter: 'R', color: :red },
+    }
+
+    self.ignored = [
+        /^\.idea/,
+        /^\.sass-cache/,
+        /^\.vscode/,
+        /^\.git/,
+        /^\.jsh/,
+        /^\.editorconfig/,
+        /^_site.*\.html$/,
+        /^Gemfile/,
+        /^Rakefile/,
+        /^lib/,
+        /^package/,
+        /^node_modules/,
+        /^graphics/,
+        /^dist/,
+        /^bin/,
+    ]
+
+    attr_accessor :listener, :last, :cursor
+
+    def initialize
+      self.cursor = TTY::Cursor
+
+      info "Starting Listener at #{Dir.pwd}...",
+           "Ignoring Regex: ",
+           ignored.map(&:to_s)
+
+      self.last     = { added: [], removed: [], modified: [] }
+      self.listener = Listen.to('.',
+                                ignore:         ignored,
+                                wait_for_delay: 1,
+                                latency:        1,
+                                relative:       true,
+                                &method(:process_event))
+    end
+
+    def execute!
+      listener.start
+      sleep
+    end
+
+    private
+
+    def refresh!
+      print cursor.clear_screen_up
+      print cursor.move_to(0, 0)
+    end
+
+    def process_event(modified, added, removed)
+      if (modified.size + added.size + removed.size) > 0
+        if last[:modified] != modified ||
+            last[:removed] != removed ||
+            last[:added] != added
+          files = format(modified, :modified) << format(added, :added) << format(removed, :removed)
+          frame(files)
+        end
+      end
+
+      last[:modified] = modified
+      last[:removed]  = removed
+      last[:added]    = added
+    rescue StandardError => e
+      error e.message
+    end
+
+    def ignored
+      self.class.ignored
+    end
+
+    def format(array, type)
+      color  = self.class.types[type][:color]
+      letter = self.class.types[type][:letter]
+      array.map { |e| "[ #{letter} ] #{e}" }.map { |e| e.send(color).bold }
+    end
+
+    def frame(*text)
+      refresh!
+
+      box = TTY::Box.frame(width:   TTY::Screen.width,
+                           align:   :left,
+                           padding: [0,2,0,2],
+                           title:   { top_center: 'FILE CHANGES, ADDITIONS, REMOVALS' },
+                           style:   {
+                               fg: :white,
+                           }) do
+        text.join("\n")
+      end
+      print box
+    end
+
+    def error(*args)
+      print TTY::Box.error(args.join("\n"), width: TTY::Screen.width, border: :light)
+    end
+
+    def info(*args)
+      print TTY::Box.info(args.join("\n"), width: TTY::Screen.width, border: :light)
+    end
+
+    def line
+      ('—' * 80).yellow
+    end
+  end
+end
+
+Jekyll::FileChangeListener.new.execute!

@@ -16,7 +16,6 @@
         {% endif %}
       {% endif %}
     {% endfor %}
-
     {% if sameTagCount >= minCommonTags %}
 <div class="single-item">
 	<div class="categories-post-image">
@@ -33,6 +32,7 @@
 		</div>
 	</div>
 </div>
+
 {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
       {% if maxRelatedCounter >= maxRelated %}
         {% break %}
@@ -42,4 +42,3 @@
   {% endfor %}
 </div>
 
- 

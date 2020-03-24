@@ -1,276 +1,166 @@
-/*!
- * Themeix Gulp Package (https://themeix.com/)
- * Copyright 2016-2019 themeix team
- * Licensed under MIT
- * Available Main Task Command : production, gulp, zip
- */
+'use strict';
 
-(function () {
-    'use strict';
-    /*
-    =============================
-        Configure Options & Files
-    =============================
-    */
-    var File_Name = 'jekyll-primula.zip';
-    var CSS_Files = [
+const {series, parallel, watch, src, dest} = require('gulp');
 
-        './assets/css/bootstrap.min.css',
-        './assets/css/bootstrap.min.css',
-        './assets/css/fontawesome-all.min.css',
-        './assets/css/owl.carousel.min.css',
-        './assets/css/animate.css',
-        './assets/css/prism.css',
-        './assets/css/lightbox.min.css',
-    ];
-    var JS_Files = [
-        './assets/js/jquery-3.3.1.min.js',
-        './assets/js/easing-effect.js',
-        './assets/js/owl.carousel.min.js',
-        './assets/js/bootstrap.min.js',
-        './assets/js/proper.js',
-        './assets/js/jquery.waypoints.min.js',
-        './assets/js/wow.min.js',
-        './assets/js/prism.js',
-        './assets/js/lightbox.min.js',
-        './assets/js/jquery.fitvids.js',
-        './assets/js/app.js'
-    ];
+const sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 
+const cleanCSS = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const copy = require('gulp-copy');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const terser = require('gulp-terser');
+const jshint = require('gulp-jshint');
+const plumber = require('gulp-plumber');
+const livereload = require('gulp-livereload');
+const size = require('gulp-size');
+const uglify = require('gulp-uglify');
 
-    /*
-    =============================
-        Include Gulp & Plugins
-    =============================
-    */
-    var gulp = require('gulp'),
-        sass = require('gulp-sass'),
-        cleanCSS = require('gulp-clean-css'),
-        autoprefixer = require('gulp-autoprefixer'),
-        concat = require('gulp-concat'),
-        rename = require('gulp-rename'),
-        uglify = require('gulp-uglify'),
-        terser = require('gulp-terser'),
-        jshint = require('gulp-jshint'),
-        plumber = require('gulp-plumber'),
-        c = require('ansi-colors'),
-        replace = require('gulp-replace'),
-        size = require('gulp-size'),
-        livereload = require('gulp-livereload'),
-        zip = require('gulp-zip'),
-        del = require('del'),
-        gulpCopy = require('gulp-copy'),
-        runSequence = require('run-sequence'),
-        inject = require('gulp-inject')
+const del = require('del');
+const fs = require('fs');
 
-    sass.compiler = require('node-sass');
+const paths = {
+  css: {
+    src: '_vendor/css/*.css',
+    dest: 'assets/css',
+    file: 'vendor.min.css'
+  },
+  sass: {
+    src: '_sass/*.scss',
+    dest: 'assets/css',
+    file: 'site.min.css'
+  },
+  js: {
+    src: [
+      './_vendor/js/jquery-3.4.1.min.js',
+      './_vendor/js/jquery.fitvids.js',
+      './_vendor/js/jquery.waypoints.min.js',
+      './_vendor/js/popper.js',
+      './_vendor/js/lightbox.min.js',
+      './_vendor/js/bootstrap.min.js',
+      './_vendor/js/easing-effect.js',
+      './_vendor/js/fontawesome.min.js',
+      './_vendor/js/isotope.pkgd.min.js',
+      './_vendor/js/owl.carousel.min.js',
+      './_vendor/js/owl.navigation.js',
+      './_vendor/js/prism.js',
+      './_vendor/js/wow.min.js',
+      './assets/js/app.js',
+    ],
+    sourcemaps: [
+      './_vendor/js/lightbox.min.map',
+    ],
+    dest: 'assets/js',
+    file: 'site.min.js'
+  }
+};
 
-    // Start server
-    gulp.task('serve', function (done) {
-        livereload.listen({
-            host: 'localhost',
-            port: '2368',
-            start: true
-        });
-        done();
-    });
+function folders(cb) {
+  const folders = [
+    './assets/css',
+    './assets/js',
+  ];
 
-    // Cleaning
-    gulp.task('clean-production', function () {
-        return del('dist', {
-            force: true
-        });
-    });
+  folders.forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+      console.log('📁 folder created:', dir);
+    }
+  });
 
-    // SCSS
-    gulp.task('sass', function (done) {
-        return gulp.src('./assets/scss/*.scss')
-            .pipe(plumber({
-                // errorHandler: onError
-            }))
-            .pipe(sass())
-            .pipe(autoprefixer())
-            .pipe(gulp.dest('./assets/css'))
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(cleanCSS())
-            .pipe(gulp.dest('./assets/css'))
-            .pipe(size())
-            .pipe(livereload())
-        done();
-    });
-
-    // Vendor CSS
-
-    gulp.task('vendor_css', function (done) {
-        return gulp.src(CSS_Files)
-            .pipe(concat('vendors.css'))
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(cleanCSS())
-            .pipe(gulp.dest('./assets/css'))
-            .pipe(size())
-        done();
-    });
-
-    // App CSS
-
-    gulp.task('app_css', function (done) {
-        return gulp.src(['./assets/css/vendors.min.css', './assets/css/style.min.css'])
-            .pipe(concat('app.css'))
-            .pipe(cleanCSS())
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(gulp.dest('./assets/css'))
-            .pipe(size())
-        done();
-    });
+  cb();
+}
 
 
-    // js
-    gulp.task('js', function (done) {
-        return gulp.src(JS_Files)
-            .pipe(jshint())
-            .pipe(jshint.reporter('jshint-stylish'))
-            .pipe(concat('build.js'))
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(terser())
-            .pipe(gulp.dest('./assets/js'))
-            .pipe(size())
-            .pipe(livereload())
-        done();
-    });
+function clean(cb) {
+  del([
+    paths.sass.dest + '/' + paths.sass.file,
+    paths.css.dest + '/' + paths.css.file,
+    paths.js.dest + '/' + paths.js.file
+  ]);
+  cb();
+};
 
-    // Ghost Template Files
-    gulp.task('hbs', function (done) {
-        return gulp.src('**/*.hbs')
-        // .pipe(livereload())
-        done();
-    });
+function serve(cb) {
+  livereload.listen({
+    host: 'localhost',
+    port: '2368',
+    start: true
+  });
+  cb();
+};
 
 
+function site_sass(cb) {
+  src(paths.sass.src, {sourcemaps: true})
+      .pipe(sass.sync().on('error', sass.logError))
+      .pipe(plumber({}))
+      .pipe(autoprefixer())
+      .pipe(rename(paths.sass.file))
+      .pipe(cleanCSS())
+      .pipe(size())
+      .pipe(dest(paths.sass.dest))
+      .pipe(livereload());
 
-    // Watch
-    gulp.task('watch', function () {
-        gulp.watch('assets/scss/**/*.scss', gulp.series('css'));
-        gulp.watch('assets/js/**/*.js', gulp.series('js'));
-        gulp.watch('**/*.hbs', gulp.series('hbs'));
-    });
+  var sass_source = paths.sass.dest + '/' + paths.sass.file;
 
-    // Zip
-    gulp.task('zip', function (done) {
-        gulp.src([
-            './**/*',
-            '.editorconfig',
-            '.jshintignore',
-            '.jshintrc',
-            '!.gitattributes',
-            '!package-lock.json',
-            '!README.md',
-            '!_site/**',
-            '!.gitignore',
-            '!./node_modules/**',
-            '!./bower_components/**',
-            '!./dist/**',
-            '!./git/**'
-        ])
-            .pipe(zip('dev-' + File_Name))
-            .pipe(gulp.dest('dist'))
-            .pipe(size())
-        done();
-    });
+  del(['_site/' + sass_source]);
 
-    // Production Zip
+  src(sass_source)
+      .pipe(plumber({}))
+      .pipe(copy('_site'))
+      .pipe(dest('_site'));
+  cb();
+}
 
-    gulp.task('production-zip', function (done) {
-        gulp.src([
-            './dist/production/**/*',
+function vendor_css(cb) {
+  src(paths.css.src)
+      .pipe(plumber({}), {sourcemaps: true})
+      .pipe(concat(paths.css.file))
+      .pipe(autoprefixer())
+      .pipe(cleanCSS())
+      .pipe(size())
+      .pipe(dest(paths.css.dest))
+      .pipe(livereload());
+  cb();
 
-        ])
-            .pipe(zip('production-' + File_Name))
-            .pipe(gulp.dest('./dist/'))
-            .pipe(size())
-        done();
-    });
+}
 
+function vendor_js(cb) {
+  src(paths.js.src)
+      .pipe(plumber({}))
+      .pipe(concat(paths.js.file))
+      .pipe(uglify())
+      .pipe(terser())
+      .pipe(dest(paths.js.dest));
 
+  src(paths.js.sourcemaps)
+      .pipe(plumber({}))
+      .pipe(copy(paths.js.dest, {prefix: 3}))
+      .pipe(dest(paths.js.dest));
 
-    // Copy All Files to Dist
+  cb();
+}
 
-    gulp.task('copy_all_files', function (done) {
-        return gulp.src([
-            './**/*',
-            '!.editorconfig',
-            '!.jshintignore',
-            '!.jshintrc',
-            '!package-lock.json',
-            '!package-lock.json',
-            '!.gitattributes',
-            '!Gemfile.lock',
-            '!README.md',
-            '!_site/**',
-            '!.gitignore',
-            '!./node_modules/**',
-            '!./dist/**',
-            '!./*.html',
-            '!./git/**'
-        ])
-            .pipe(gulp.dest('./dist/production'))
-            .pipe(size())
-        done();
-    });
-    // Copy CSS Files to Dist
+function watch_files(cb) {
+  watch('./_sass/**/*.scss', site_sass);
+  watch('./_vendor/css/**/*.css', vendor_css);
+  watch('./_vendor/js/**/*.js', vendor_js);
+}
 
-    gulp.task('copy_css_files', function (done) {
-        return gulp.src(CSS_Files)
-            .pipe(gulp.dest('./dist/production/assets/css'))
-            .pipe(size())
-
-        done();
-    });
-
-
-    // Copy JS Files to Dist
-
-    gulp.task('copy_js_files', function (done) {
-        return gulp.src(JS_Files)
-            .pipe(gulp.dest('./dist/production/assets/js'))
-            .pipe(size())
-
-        done();
-    });
-
-
-
-    gulp.task(
-        'css',
-        gulp.series('sass', 'vendor_css', 'app_css')
-    );
-
-    // gulp build
-
-    gulp.task(
-        'build',
-        gulp.series('css', 'js', 'hbs')
-    );
-
-    // gulp production
-
-    gulp.task(
-        'production',
-        gulp.series('build', 'clean-production', 'copy_all_files', 'copy_css_files', 'copy_js_files', 'production-zip', 'zip')
-    );
-
-    // gulp
-
-    gulp.task(
-        'default',
-        gulp.series('build', 'watch')
-    );
-
-})();
+exports.sass = site_sass;
+exports.vendor_css = vendor_css;
+exports.js = vendor_js;
+exports.clean = clean;
+exports.serve = serve;
+exports.watch = watch_files;
+exports.build = series(
+    folders,
+    clean,
+    parallel(
+        vendor_js,
+        series(site_sass, vendor_css)
+    ),
+);

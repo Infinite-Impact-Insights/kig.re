@@ -50,11 +50,11 @@ namespace :jekyll do
     sh 'chmod -R 755 _site/'
   end
 
-  task :serve do
+  task :server do
     sh 'RUBYOPT="-W0" bundle exec jekyll serve -H 0.0.0.0 --watch --trace'
   end
 
-  task server: %i(deps serve)
+  task serve: %i(deps server)
 
   task :browser do
     spawn 'sleep 10 && open http://0.0.0.0:4000'

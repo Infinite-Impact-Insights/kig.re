@@ -15,7 +15,7 @@ gem 'colored2'
 gem 'hashie'
 gem 'nokogiri'
 gem 'rake'
-gem 'yui-compressor'
+# gem 'yui-compressor'
 gem 'minima', '~> 2.0'
 
 gem 'jekyll-tagging'
@@ -31,10 +31,14 @@ group :jekyll_plugins do
   gem 'jekyll-sass-converter'
   gem 'jekyll-sitemap'
   gem 'jekyll-toc'
-  gem 'jekyll-watch'
   gem 'jekyll-feed', '~> 0.6'
   gem 'jekyll-paginate-v2'
 end
+
+gem 'tty-box'
+gem 'tty-screen'
+gem 'tty-cursor'
+gem 'listener'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

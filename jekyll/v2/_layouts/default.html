@@ -66,18 +66,19 @@
       <title>{% if page.title %} {{page.title}} {% else %} {{site.title}} {% endif %}</title>
       <link rel="shortcut icon" href="{{site.baseurl}}/assets/images/site/favicon.png" type="image/x-icon"/>
       <!-- gulp:css -->
-      <link rel="stylesheet" href="{{site.baseurl}}/assets/css/app.min.css">
+      <link rel="stylesheet" href="{{site.baseurl}}/assets/css/vendor.min.css">
+      <link rel="stylesheet" href="{{site.baseurl}}/assets/css/site.min.css">
       <!-- endgulp -->
       <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Yanone+Kaffeesatz:400,500,600,700&display=swap" rel="stylesheet">
-      <script async type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"ab7fddab964c6ba596338bf84","lid":"d7802cdf53","uniqueMethods":true}) })</script>
+      <!-- gulp:js -->
+      <script type="text/javascript" src="{{site.baseurl}}/assets/js/site.min.js"></script>
+      <!-- endgulp -->
+      <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"ab7fddab964c6ba596338bf84","lid":"d7802cdf53","uniqueMethods":true}) })</script>
    </head>
    <body class="{% if page.layout == 'post' %} post-template {% endif %} {% if page.url == '/index.html' %} home-template {% endif %} {% if page.layout == 'tag_page' %} tag-template {% endif %} {% if page.parmalink %} page-template {% endif %}">
 
 	{% include header.html %}
 	  {{content}}
 	{% include footer.html %}
-      <!-- gulp:js -->
-      <script src="{{site.baseurl}}/assets/js/build.min.js"></script>
-      <!-- endgulp -->
    </body>
 </html>

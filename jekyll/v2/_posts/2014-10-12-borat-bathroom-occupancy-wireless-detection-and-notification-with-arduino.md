@@ -10,7 +10,6 @@ comments: true
 excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
 ---
 
-
 A great company where I work, [Wanelo](http://wanelo.com/), with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.
 
 A few times a day, when the need was strong, I'd go to the downstairs bathroom only to find its door locked. I'd then run upstairs and find the other one locked too... Damn! I'd come back down only find out that someone else grabbed the first bathroom while I was upstairs. Argh!
@@ -34,15 +33,11 @@ which were driving
 [lava-lamp like animations](https://github.com/kigster/Borat/blob/master/firmware/DisplayLED/DisplayLED.ino) to make things more interesting.
 
 
-{% lightbox_image {
-  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg",
-  "title": "Bathroom Occupancy Wireless Notification Arduino-based System", "group": "enclosures" } %}
-
 ### Communication
 
-The next question was – how would the display unit receive information about each bathroom status?
-
-This part was easy – I picked up a few [nRF24L01+ radios](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20) for very cheap. Most excellent [RF24 communications library](http://maniacbug.github.io/RF24/) has some of the best Arduino C++ code I've seen, and so it instilled confidence in this approach.  Quick test of the radios at work showed that they are more than capable of reaching through the walls.
+{% lightbox_image {
+  "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/real-life-examples/borat-at-wanelo.jpg",
+  "title": "Bathroom Occupancy Wireless Notification Arduino-based System", "group": "enclosures" } %} The next question was – how would the display unit receive information about each bathroom status? This part was easy – I picked up a few [nRF24L01+ radios](http://www.amazon.com/nRF24L01-Wireless-Transceiver-Arduino-Compatible/dp/B00E594ZX0/?_encoding=UTF8&tag=kiguino-20) for very cheap. Most excellent [RF24 communications library](http://maniacbug.github.io/RF24/) has some of the best Arduino C++ code I've seen, and so it instilled confidence in this approach.  Quick test of the radios at work showed that they are more than capable of reaching through the walls.
 
 ### Detecting Occupancy Status
 
@@ -70,12 +65,7 @@ Shortly after, I received all the pieces in the mail, had a plan in my head, and
 
 {% lightbox_image {
   "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-0.jpg",
-  "title": "Display Unit", "group": "enclosures" } %}
-
-
-Enter the project (all of which is open sourced under an MIT License), which took good month working some nights and weekends this summer to complete: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system. It uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms to the main display unit located in a highly visible area.
-
-You may be asking – why in the hell does the observer unit (which determines occupancy) need sonar? Well, if you're like me, you like to take your time when you are ... you know. Perhaps I don't move very much during this time. Maybe I'm reading my phone. This would cause the motion sensor to eventually give up and show a green light. This is where sonar comes in. Aimed directly at someone sitting on the toilet, sonar will read a different distance with a person there versus without. You can configure the threshold after installing Observer, and — voila! Near 100% accuracy! Is it creepy to have a 2-eyed robot staring at you in the bathroom? I'll leave that question to the reader.
+  "title": "Display Unit", "group": "enclosures" } %} Enter the project (all of which is open sourced under an MIT License), which took good month working some nights and weekends this summer to complete: [BORAT: Bathroom Occupancy Remote Awareness Technology](https://github.com/kigster/borat). BORAT is an Arduino-based toilet occupancy notification system. It uses inexpensive wireless radios (nRF24L01+) to communicate occupancy status of one or more bathrooms to the main display unit located in a highly visible area. You may be asking – why in the hell does the observer unit (which determines occupancy) need sonar? Well, if you're like me, you like to take your time when you are ... you know. Perhaps I don't move very much during this time. Maybe I'm reading my phone. This would cause the motion sensor to eventually give up and show a green light. This is where sonar comes in. Aimed directly at someone sitting on the toilet, sonar will read a different distance with a person there versus without. You can configure the threshold after installing Observer, and — voila! Near 100% accuracy! Is it creepy to have a 2-eyed robot staring at you in the bathroom? I'll leave that question to the reader.
 
 My company can't live without this technology now. I took a unit home one night to fix it, and forgot to bring it back. The next day everyone I'd bump into was asking "Where is BORAT? What happened?" It's amazing how quickly humans get used to things that are actually useful.
 
@@ -92,10 +82,7 @@ Here is a diagram that explains various placement options and the overall concep
 
 {% lightbox_image {
   "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/concept/layout-diagram.png",
-  "title": "Concept Diagram", "group": "enclosures" } %}
-
-
-Remember, communication is wireless. These little cards are pretty damn impressive. They get through walls and significant distances (50-100 feet) when used across line of sight. I did have to move the display unit once from a place that had three walls separating it from the Observers, which made for spotty connection. Its new location has only two walls of separation, and it works flawlessly.
+  "title": "Concept Diagram", "group": "enclosures" } %} Remember, communication is wireless. These little cards are pretty damn impressive. They get through walls and significant distances (50-100 feet) when used across line of sight. I did have to move the display unit once from a place that had three walls separating it from the Observers, which made for spotty connection. Its new location has only two walls of separation, and it works flawlessly.
 
 ### Observer Unit Logic
 
@@ -109,18 +96,11 @@ How do Observers determine if the bathroom is occupied? They do so based on the 
   * If the sonar (which is meant to be pointed at the toilet) is reading a distance below a given threshold, it means someone is sitting there, and so the bathroom is occupied.
   * Otherwise, it's available.
 
-That's it!
-
-All settings and thresholds, including timeouts, are meant to be tweaked individually for each bathroom. This is why Observer units contain a [rotary encoder knob](http://www.amazon.com/Rotary-Encoder-Development-Arduino-Compatible/dp/B00HSWXMDK/?_encoding=UTF8&tag=kiguino-20) and a connector for external serial port. This is meant to be a Serial LCD Display used only to configure the device.
-
-The diagram below shows the components used in each Observer unit.
-
 {% lightbox_image {
   "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/concept/observer-components.jpg",
-  "title": "Observer Components", "group": "enclosures" } %}
+  "title": "Observer Components", "group": "enclosures" } %} That's it! All settings and thresholds, including timeouts, are meant to be tweaked individually for each bathroom. This is why Observer units contain a [rotary encoder knob](http://www.amazon.com/Rotary-Encoder-Development-Arduino-Compatible/dp/B00HSWXMDK/?_encoding=UTF8&tag=kiguino-20) and a connector for external serial port. This is meant to be a Serial LCD Display used only to configure the device.
 
-
-They are, for reference:
+The diagram below shows the components used in each Observer unit. They are, for reference:
 
 __Observer Unit__ (quantities per unit):
 
@@ -147,10 +127,7 @@ Configuring Observer. Legend: D = Sonar, M = Motion, L = Light. + next to it mea
 {% lightbox_image {
   "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Configuration-via-SerialLCD.jpg",
   "title": "Configuring Observer.",
-  "group": "enclosures" } %}
-
-
-{% lightbox_image {
+  "group": "enclosures" } %}  {% lightbox_image {
   "url": "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Knob.jpg",
   "title": "Knob and Serial Port", "group": "enclosures" } %}
 
@@ -188,13 +165,9 @@ The template files inside the enclosure folder of the project contain designs fo
 
 {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg",
-  "title": "Observer First Module", "group": "enclosures" } %}
-
-{% lightbox_image {
+  "title": "Observer First Module", "group": "enclosures" } %} {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-Nano-Shield.jpg",
-  "title": "Observer Second Module", "group": "enclosures" } %}
-
-{% lightbox_image {
+  "title": "Observer Second Module", "group": "enclosures" } %} {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-WoodenPanel-Prototype.jpg",
   "title": "Retro Look", "group": "enclosures" } %}
 
@@ -204,17 +177,11 @@ The template files inside the enclosure folder of the project contain designs fo
 
 {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Front.jpg",
-  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
-
-{% lightbox_image {
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %} {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3.jpg",
-  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
-
-{% lightbox_image {
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %} {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg",
-  "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
-
-{% lightbox_image {
+  "title": "Third Module with Flexible Arm", "group": "enclosures" } %} {% lightbox_image {
   "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Module-3-Side.jpg",
   "title": "Third Module with Flexible Arm", "group": "enclosures" } %}
 
@@ -222,13 +189,10 @@ The template files inside the enclosure folder of the project contain designs fo
 ---
 
 #### On the Inside
-
-Finally, here is the unit opened up so you can see how it's put together. I am a big fan of spacers, and mounting items to the enclosure, so I use a lot of cables to connect things up.  Plus, this way you could always replace faulty components over time.
-
 {% lightbox_image {
   "url":  "posts/borat/observer-module-open.jpg",
-  "title": "Observer Module on the Inside", "group": "enclosures" } %}
-
+  "title": "Observer Module on the Inside", "group": "enclosures" } %} Finally, here is the unit opened up so you can see how it's put together. I am a big fan of spacers, and mounting items to the enclosure, so I use a lot of cables to connect things up.  Plus, this way you could always replace faulty components over time.
+   
 ### Display Module
 
 The _Display_ unit can be implemented in a variety of ways. I chose to use:
@@ -248,25 +212,19 @@ I then glued 4 plastic spacers to the back of the two Rainbowduinos (2 per each)
 
 Tall spacers filled the box all the way to the top, pushed LED matrices flush with the front side of the enclosure. This approach allowed me to avoid screwing or glueing things inside of the box altogether: everything was held up by the pressure of the box.  I did put a couple of foamy pieces in a few places to ensure the internals do not bounce in any dimension.
 
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
-<img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg"/>
-</a>
 
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
-<img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
-    <img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
-    <img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg" class="lightbox-anchor" data-lightbox="enclosures" data-title="Display Assembly">
-    <img class="lightbox-img" src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg">
-</a>
+{% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-1.jpg",
+  "title": "Display Assembly", "group": "enclosures" } %} {% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-2.jpg",
+  "title": "Display Assembly", "group": "enclosures" } %} {% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-3.jpg",
+  "title": "Display Assembly", "group": "enclosures" } %} {% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-4.jpg",
+  "title": "Display Assembly", "group": "enclosures" } %} {% lightbox_image {
+  "url":  "https://raw.githubusercontent.com/kigster/Borat/master/images/module-display/DisplayUnit-5.jpg",
+  "title": "Display Assembly", "group": "enclosures" } %}
+  
 
 ---
 

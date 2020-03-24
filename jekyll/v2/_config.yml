@@ -17,21 +17,24 @@ linkedin_username: kigster
 twitter_username: kig
 
 # Build settings
-
 exclude:
+  - "**/.DS_Store"
   - README.md
   - Gemfile.lock
   - Gemfile
   - Rakefile
   - package.json
   - package-lock.json
+  - gulpfile.js
+  - lib/**/*
+  - bin/**/*
+  - node_modules/**/*
+  - .git/**/*
   - .gitignore
   - .editorconfig
   - .idea/**/*
-  - gulpfile.js
-  - node_modules/**/*
-  - lib/**/*
-  - bin/**/*
+  - _vendor/**/*
+  - _sass/**/*
 
 markdown: kramdown
 markdown_ext: md
@@ -49,7 +52,6 @@ plugins:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-toc
-  - jekyll-watch
 
 ###################################################################
 # Site configuration for the Jekyll 2 Pagination Gem

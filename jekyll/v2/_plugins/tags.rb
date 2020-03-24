@@ -46,7 +46,7 @@ module Jekyll
     #    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg">
     # </a>
     class LightboxImageTag < Liquid::Tag
-      attr_accessor :group, :url, :title, :css_a_class, :css_img_class
+      attr_accessor :group, :url, :title, :css_class_anchor, :css_class_image
 
       def initialize(tag_name, markup, options = {})
         super
@@ -56,19 +56,19 @@ module Jekyll
           options.delete(k.to_s)
         end
 
-        self.url           = options[:url]
-        self.title         = options[:title] || ''
-        self.group         = options[:group] || 'default-group'
-        self.css_a_class   = options[:a_class] || 'lightbox-anchor'
-        self.css_img_class = options[:img_class] || 'lightbox-img'
+        self.url              = options[:url]
+        self.title            = options[:title] || ''
+        self.group            = options[:group] || 'default-group'
+        self.css_class_anchor = options[:a_class] || 'lightbox-anchor'
+        self.css_class_image  = options[:img_class] || 'lightbox-img'
       end
 
       def render(context)
         tag = <<~HTML
-          <a href="#{image_url}" class="#{css_a_class}"
+          <a href="#{image_url}" class="#{css_class_anchor}"
            data-lightbox="#{group}"
            data-title="#{title}"><img
-             class="#{css_img_class}"
+             class="#{css_class_image}"
              src="#{image_url}"/></a>
         HTML
 

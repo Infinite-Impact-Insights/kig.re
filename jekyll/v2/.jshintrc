@@ -6,5 +6,6 @@
   "multistr": true,
   "globals": {
     "$": false
-   }
+  },
+  "esversion": 6
 }
