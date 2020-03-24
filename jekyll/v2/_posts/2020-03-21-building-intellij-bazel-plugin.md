@@ -18,23 +18,17 @@ excerpt: "Overview of Bazel support in IntelliJ Family of products, and instruct
 
 ### Visual Studio Code
 
-Bazel is pretty well supported by the VSCode plugin [vscode-bazel](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel). If you are using VSCode and Bazel, you should check this plugin out.
-
-Here is a screenshot of my Bazel-enabled Ruby Project, with various Bazel-specific UI elements in action:
-
 {% lightbox_image {
   "url" : "bazel/bazel-vscode.png",
-  "title": "VSCode Bazel Plugin in Action", "group":"IDE" } %}
+  "title": "VSCode Bazel Plugin in Action", "group":"IDE" } %} Bazel is pretty well supported by the VSCode plugin [vscode-bazel](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel). If you are using VSCode and Bazel, you should check this plugin out. Here is a screenshot of my Bazel-enabled Ruby Project, with various Bazel-specific UI elements in action:
+
 
 ### IntelliJ Bazel Plugin
 
-However, the most fully featured IDE support for Bazel is offered by the [IntelliJ Bazel Plugin](https://ij.bazel.build/docs/bazel-plugin.html). It supports several IDEs in the the IntelliJ family.
-
-Here is a similar screenshot of the same project opened in IntelliJ IDEA Ultimate, with Ruby plugin installed:
-
 {% lightbox_image {
   "url" : "bazel/bazel-intellij.png",
-  "title": "IntelliJ Bazel Plugin in Action", "group":"IDE" } %}
+  "title": "IntelliJ Bazel Plugin in Action", "group":"IDE" } %} However, the most fully featured IDE support for Bazel is offered by the [IntelliJ Bazel Plugin](https://ij.bazel.build/docs/bazel-plugin.html). It supports several IDEs in the the IntelliJ family. Here is a similar screenshot of the same project opened in IntelliJ IDEA Ultimate, with Ruby plugin installed:
+
 
 It is the IntelliJ plugin that is the subject of this blog post.
 
