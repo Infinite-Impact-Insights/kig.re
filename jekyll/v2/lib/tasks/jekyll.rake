@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative '../task_helper'
+require 'childprocess'
+
 extend(TaskHelper)
 Rake.extend(TaskHelper)
 
@@ -51,13 +53,16 @@ namespace :jekyll do
   end
 
   task :server do
-    sh 'RUBYOPT="-W0" bundle exec jekyll serve -H 0.0.0.0 --watch --trace'
+    background_sh(
+        %w(bundle exec jekyll serve -H 0.0.0.0 --watch --trace),
+        %w(gulp watch)
+    )
   end
 
   task serve: %i(deps server)
 
   task :browser do
-    spawn 'sleep 10 && open http://0.0.0.0:4000'
+    spawn 'sleep 20 && open http://0.0.0.0:4000'
   end
 
   desc 'Starts Jekyll in serve --watch mode and opens the browser'

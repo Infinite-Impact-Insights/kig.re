@@ -1,6 +1,7 @@
 'use strict';
-
 const {series, parallel, watch, src, dest} = require('gulp');
+
+const log = require('fancy-log');
 
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
@@ -14,153 +15,181 @@ const rename = require('gulp-rename');
 const terser = require('gulp-terser');
 const jshint = require('gulp-jshint');
 const plumber = require('gulp-plumber');
-const livereload = require('gulp-livereload');
 const size = require('gulp-size');
 const uglify = require('gulp-uglify');
+const rimraf = require('gulp-rimraf');
+const wait = require('gulp-wait2');
 
 const del = require('del');
 const fs = require('fs');
 
+const options = {sourcemaps: true, buffer: true, allowEmpty: false};
+
 const paths = {
   css: {
-    src: '_vendor/css/*.css',
-    dest: 'assets/css',
+    src: './_vendor/css/*.css',
+    dest: './assets/css',
     file: 'vendor.min.css'
   },
   sass: {
-    src: '_sass/*.scss',
-    dest: 'assets/css',
+    src: './_sass/*.scss',
+    dest: './assets/css',
     file: 'site.min.css'
   },
   js: {
     src: [
-      './_vendor/js/jquery-3.4.1.min.js',
-      './_vendor/js/jquery.fitvids.js',
-      './_vendor/js/jquery.waypoints.min.js',
-      './_vendor/js/popper.js',
-      './_vendor/js/lightbox.min.js',
-      './_vendor/js/bootstrap.min.js',
-      './_vendor/js/easing-effect.js',
-      './_vendor/js/fontawesome.min.js',
-      './_vendor/js/isotope.pkgd.min.js',
-      './_vendor/js/owl.carousel.min.js',
-      './_vendor/js/owl.navigation.js',
-      './_vendor/js/prism.js',
-      './_vendor/js/wow.min.js',
-      './assets/js/app.js',
+      '_vendor/js/jquery-3.4.1.min.js',
+      '_vendor/js/jquery.fitvids.js',
+      '_vendor/js/jquery.waypoints.min.js',
+      '_vendor/js/popper.js',
+      '_vendor/js/lightbox.min.js',
+      '_vendor/js/bootstrap.min.js',
+      '_vendor/js/easing-effect.js',
+      '_vendor/js/fontawesome.min.js',
+      '_vendor/js/isotope.pkgd.min.js',
+      '_vendor/js/owl.carousel.min.js',
+      '_vendor/js/owl.navigation.js',
+      '_vendor/js/prism.js',
+      '_vendor/js/wow.min.js',
+      'assets/js/app.js',
     ],
     sourcemaps: [
-      './_vendor/js/lightbox.min.map',
+      '_vendor/js/lightbox.min.map',
     ],
     dest: 'assets/js',
     file: 'site.min.js'
+  },
+  assets: {
+    src: [
+      'assets/js/site.min.js',
+      'assets/css/vendor.min.css',
+      'assets/css/site.min.css',
+    ],
+    dest: './_site'
   }
 };
 
-function folders(cb) {
-  const folders = [
-    './assets/css',
-    './assets/js',
-  ];
-
-  folders.forEach(dir => {
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-      console.log('📁 folder created:', dir);
-    }
-  });
-
-  cb();
+function mkdirs(folders) {
+  return (async () => {
+    folders.forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+        log.info('📁 created:', dir);
+      }
+    });
+  })();
 }
 
+function rm_rf(files) {
+  return (async () => {
+    const deletedPaths = del.sync(files, {dryRun: false});
+    if (deletedPaths.length > 0)
+      log.info('🧨 Deleted: ', deletedPaths)
+  })();
+}
 
-function clean(cb) {
-  del([
-    paths.sass.dest + '/' + paths.sass.file,
-    paths.css.dest + '/' + paths.css.file,
-    paths.js.dest + '/' + paths.js.file
-  ]);
-  cb();
-};
+function folders() {
+  return mkdirs(['./assets/css', './_site', './_site/assets', './_site/assets/css', './_site/assets/js']);
+}
 
-function serve(cb) {
-  livereload.listen({
-    host: 'localhost',
-    port: '2368',
-    start: true
-  });
-  cb();
-};
+function clean() {
+  let files = [].concat(paths.assets.src);
+  files.push('._site/**/*');
 
+  return rm_rf(files);
+}
 
-function site_sass(cb) {
-  src(paths.sass.src, {sourcemaps: true})
-      .pipe(sass.sync().on('error', sass.logError))
-      .pipe(plumber({}))
+function site_css() {
+  return src(paths.sass.src, {sourcemaps: true, buffer: true, allowEmpty: false})
+      .pipe(sass.sync()
+          .on('error', sass.logError)
+          .on('end', callback('Sass.compile()', 'OK'))
+      )
       .pipe(autoprefixer())
-      .pipe(rename(paths.sass.file))
-      .pipe(cleanCSS())
-      .pipe(size())
-      .pipe(dest(paths.sass.dest))
-      .pipe(livereload());
-
-  var sass_source = paths.sass.dest + '/' + paths.sass.file;
-
-  del(['_site/' + sass_source]);
-
-  src(sass_source)
-      .pipe(plumber({}))
-      .pipe(copy('_site'))
-      .pipe(dest('_site'));
-  cb();
+      .pipe(rename(paths.sass.file).on('end', callback('Sass.rename()', 'OK')))
+      .pipe(cleanCSS().on('end', callback('Sass.cleanCSS()', 'OK')))
+      .pipe(size().on('end', callback('CSS.size()', 'OK')))
+      .pipe(dest(paths.sass.dest).on('end', callback('CSS.dest()', 'OK')))
 }
 
-function vendor_css(cb) {
-  src(paths.css.src)
-      .pipe(plumber({}), {sourcemaps: true})
+function callback(operation, result) {
+  return function () {
+    log("    ", (result === 'OK') ? ' ✅ ' : result, operation);
+  }
+}
+
+function vendor_css() {
+  return src(paths.css.src,)
       .pipe(concat(paths.css.file))
       .pipe(autoprefixer())
       .pipe(cleanCSS())
-      .pipe(size())
-      .pipe(dest(paths.css.dest))
-      .pipe(livereload());
-  cb();
-
+      .pipe(size().on('end', callback('CSS size()', 'OK')))
+      .pipe(dest(paths.css.dest));
 }
 
-function vendor_js(cb) {
-  src(paths.js.src)
-      .pipe(plumber({}))
-      .pipe(concat(paths.js.file))
-      .pipe(uglify())
-      .pipe(terser())
-      .pipe(dest(paths.js.dest));
-
-  src(paths.js.sourcemaps)
-      .pipe(plumber({}))
-      .pipe(copy(paths.js.dest, {prefix: 3}))
-      .pipe(dest(paths.js.dest));
-
-  cb();
+function vendor_js() {
+  return src(paths.js.src, {sourcemaps: true, buffer: true, allowEmpty: false})
+      .pipe(concat(paths.js.file).on('end', callback('JS.concat()', 'OK')))
+      .pipe(uglify().on('end', callback('JS.uglify()', 'OK')))
+      .pipe(terser().on('end', callback('JS.terser()', 'OK')))
+      .pipe(dest(paths.js.dest).on('end', callback('JS.terser()', 'OK')))
 }
 
-function watch_files(cb) {
-  watch('./_sass/**/*.scss', site_sass);
-  watch('./_vendor/css/**/*.css', vendor_css);
-  watch('./_vendor/js/**/*.js', vendor_js);
+function vendor_js_sourcemaps(cb) {
+  return src(paths.js.sourcemaps, {buffer: true, allowEmpty: false})
+      .pipe(dest(paths.js.dest).on('end', callback('JS Source Maps.dest()', 'OK')))
 }
 
-exports.sass = site_sass;
+function assets() {
+  return src(paths.assets.src, {sourcemaps: true, buffer: true, allowEmpty: true})
+      .pipe(copy(paths.assets.dest, {prefix: 0}).on('end', callback('Assets.copy()', 'OK')))
+      .pipe(dest(paths.assets.dest).on('end', callback('Assets.dest()', 'OK')))
+}
+
+
+function watch_files() {
+  watch('./_sass/**/*.scss', series(site_css, assets));
+  watch('./_vendor/css/**/*.css', series(vendor_css, assets));
+  watch('./_vendor/js/**/*.js', series(vendor_js, assets));
+}
+
+exports.site_css = site_css;
 exports.vendor_css = vendor_css;
-exports.js = vendor_js;
-exports.clean = clean;
-exports.serve = serve;
-exports.watch = watch_files;
-exports.build = series(
+
+exports.css = series(
     folders,
-    clean,
     parallel(
-        vendor_js,
-        series(site_sass, vendor_css)
+        site_css,
+        vendor_css,
     ),
+);
+
+exports.js = vendor_js;
+exports.folders = folders;
+
+exports.build_assets = series(
+    folders,
+    parallel(
+        site_css,
+        vendor_css,
+        vendor_js,
+    ),
+    assets
+);
+
+exports.clean = clean;
+exports.watch = series(
+    folders,
+    watch_files
+);
+
+exports.default = exports.build = series(
+    clean,
+    folders,
+    parallel(
+        site_css,
+        vendor_css,
+        vendor_js,
+    ),
+    assets
 );
