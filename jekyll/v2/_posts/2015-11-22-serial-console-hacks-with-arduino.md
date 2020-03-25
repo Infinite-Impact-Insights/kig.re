@@ -1,10 +1,15 @@
 ---
-layout: page
-title: Serial Console Hacks with Arduino
-draft: false
-toc: true
-
+layout: post
+title: "Serial Console Hacks With Arduino"
+date: "2015-11-22 00:00:00 +08:00"
+post_image: /assets/images/posts/serial-console-hacks-with-arduino.png
+tags: [arduino, console, hacks]
+categories: [programming, hardware]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
+
 
 ## Battling Console
 
@@ -15,10 +20,6 @@ I wanted to share a method that I use to connect to a Serial port of any Arduino
 I always hate Serial port windows.  They do not automatically reconnect, and if they try (Eclipse) they don't always work (Teensy). So I went searching for a reliable solution that will automatically reconnect after loosing a connection.
 
 I found it! It's called minicom!
-
-
-{{site.data.macros.continue}}
-
 
 ### Minicom
 
@@ -35,7 +36,6 @@ minicom version 2.7 (compiled Oct 20 2014)
 ### BASH Magic
 
 Now add the following [BASH function](http://tldp.org/LDP/abs/html/complexfunct.html) to your ```~/.bashrc``` or ```~/.bash_profile``` files:
-
 
 ```bash
 function console {

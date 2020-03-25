@@ -4,10 +4,32 @@
  * NOTE:   This is not part of the template. */
 
 body {
-  .post-summary {
-    font-size: 25px;
-    line-height: 29px;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    margin-bottom: 30px;
+  .post-summary, #preamble .sectionbody .paragraph {
+    p, h1, h2, h3 {
+      font-size: 20pt;
+      line-height: 24pt;
+      font-weight: 300;
+      font-family: 'Yanone Kaffeesatz', sans-serif !important;
+      margin: 10px 20px !important;
+      text-align: right;
+    }
+  }
+
+  div.clear-fix {
+    clear: both !important;
+  }
+
+  .google-maps {
+    float: none;
+    display: block;
+    position: relative;
+    clear: both;
+    height: 600px;
+    width: 600px;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 1px solid #503757;
+    box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
   }
 }
+

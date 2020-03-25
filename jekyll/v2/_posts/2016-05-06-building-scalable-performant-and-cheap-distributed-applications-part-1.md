@@ -1,9 +1,13 @@
 ---
-layout: page
-title: 'Distributed Applications That Avoid DevOOPS'
-tags:
-toc: true
-
+layout: post
+title: "Building Scalable Performant And Cheap Distributed Applications Part 1"
+date: "2016-05-06 00:00:00 +08:00"
+post_image: /assets/images/posts/building-scalable-performant-and-cheap.png
+tags: [sre, resilience, scalability, uptime]
+categories: [devops]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
 
 ## Are you practicing __DevOops?__
@@ -20,10 +24,6 @@ toc: true
 If you answer *yes* to any of these questions, then you just might... The thing is — you are not alone. Thousands of organizations do not have the time and resources to fix this type of technical debt, and escape the world of DevOops, where things just don't run smoothly. That is despite using newest technologies (Docker), largest cloud in the world (AWS), and a great team of engineers.
 
 > I'd like to help.
-
-
-
-{{site.data.macros.continue}}
 
 ## "DevOps Conversations"
 

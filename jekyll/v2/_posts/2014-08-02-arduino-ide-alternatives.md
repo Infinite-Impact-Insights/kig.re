@@ -1,9 +1,13 @@
 ---
-layout: page
-draft: false
-title: Choosing The Right Arduino IDE (And The Winner… Is Eclipse!)
-toc: true
-
+layout: post
+title: "Arduino IDE Alternatives"
+date: "2014-08-02 00:00:00 +08:00"
+post_image: /assets/images/posts/arduino-ide-alternatives.png
+tags: [arduino, integrated-dev-environments]
+categories: [hardware]
+author_id: 1
+comments: true
+excerpt: "Review of Arduino IDE Alternatives."
 ---
 
 As a relative late comer to Arduino world, I went through the beginner tutorials and examples
@@ -20,8 +24,6 @@ features, refactor code, and so on: all the "basic" features I so got spoiled wi
 JetBrain's [RubyMine](http://www.jetbrains.com/ruby/), [AppCode](http://www.jetbrains.com/objc/), [IDEA](http://www.jetbrains.com/idea/),
 open source (but originally IBM's) [Eclipse](https://www.eclipse.org/), and not to
 mention Apple's [XCode](https://developer.apple.com/xcode/).
-
-{{site.data.macros.continue}}
 
 ![Arduino IDE](/images/ide-arduino-arduino.jpg)
 
@@ -134,7 +136,6 @@ in my experience they've been pretty stable. The single-file download will alrea
 
 Option 2: But my preferred way to install the plugin is to first install a full version of Eclipse Luna for C/C++,
 and then add Arduino plugin to it via software installer.
-
 
 > [This blog post](http://trippylighting.com/teensy-arduino-ect/arduino-eclipse-plugin/arduino-eclipse-ide-and-plugin-v2-2-installation/)
 > does a really good job at describing installation of the plugin.  Skip to the section called _Arduino Eclipse Plugin V2.2_

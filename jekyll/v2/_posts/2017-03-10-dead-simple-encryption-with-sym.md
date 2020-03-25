@@ -1,8 +1,12 @@
 ---
-layout: page
+layout: post
 title: 'Dead Simple Encryption with Sym'
-draft: false
-toc: true
+post_image: /assets/images/bazel/bazel-build.png
+tags: [sym, symmetric-encryption, ruby-gem, open-source]
+categories: [programming]
+author_id: 1
+comments: true
+excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
 ---
 
 <div class="large">
@@ -23,7 +27,7 @@ Now, keeping secrets outside of your repo may provide you with a false sense of 
 
 As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that <a href="https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/">CIA and NSA may have been hacking into your phone</a>, rendering encryption used by the secure messaging apps like <a href="https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8">Signal</a> and <a href="https://www.whatsapp.com/">WhatsApp</a> completely useless.
 
-While these are serious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
+While these are sedrious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
 
 > "There is gotta be a better way..."  —— I thought to myself.
 
@@ -61,7 +65,7 @@ But it is for these reasons that I decided to build a simple wrapper around Open
 
 ### Evaluating Threats
 
-But before we jump into the gem, I would like to explore a couple of use-cases that exist when encryption/decryption of secrets is introduced into the deploy flow of any application.  
+But before we jump into the gem, I would like to explore a couple of use-cases that exist when encryption/decryption of secrets is introduced into the deploy flow of any application.
 
 We start by assuming that you have an encrypted file in your source repo, on your laptop. Perhaps using `sym` or otherwise you are able to decrypt this file, by providing a key. Now we can outline a few common scenarios:<br />
 

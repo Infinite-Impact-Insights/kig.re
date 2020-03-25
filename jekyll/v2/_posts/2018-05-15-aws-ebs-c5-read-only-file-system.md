@@ -1,9 +1,8 @@
 ---
 layout: post
 title: 'C5 class instance on EC2: cannot create file: Read-only file system'
-date: 2018-05-15 00:00:00 +0600
 post_image: /assets/images/posts/aws/nvme-disks.jpg
-tags: [AWS, Ubuntu]
+tags: [aws, ec2, ubuntu]
 categories: [devops]
 author_id: 1
 comments: true

@@ -1,9 +1,15 @@
 ---
-layout: page
-title: 'Native Instruments Traktor — Fixing Dreaded "Could Not Read Collection/Playlist file" Error'
-toc: true
-
+layout: post
+title: "Traktor File Management Fixing Could Not Read Collection Playlist File Error"
+date: "2016-06-26 00:00:00 +08:00"
+post_image: /assets/images/posts/traktor-file-management-fixing-could.png
+tags: [traktor, dj, file-management]
+categories: [music]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
+
 
 ## "Not a Rant" Rant
 
@@ -16,9 +22,6 @@ In the past I [created albums using NI tools](https://soundcloud.com/polygroover
 That said, being a software developer I have also been __continually amazed at how abysmal – specifically the file management interfaces are in NI products__. With the CoreAudio&trade; plug-ins I can usually get around it, since I use Logic Pro X&reg; as a DAW.
 
 > But nowhere is the file management shortcomings are more in-your-face-obvious, aggravating, and frustrating, than in their flagship DJ mixing product – Traktor DJ Pro.
-
-
-{{site.data.macros.continue}}
 
 ### It Should Have Been There Five Years Ago
 
@@ -181,7 +184,6 @@ The first thing you will need to figure out is your Traktor's "Root" folder. Go 
 {% lightbox_image { "url": "/images/traktor/traktor--prefs.jpg", "title": "Traktor Preferences", "group": "traktor", "class": "clear-image" } %}
 
 Next, let's open that folder in Finder.
-
 
 ### Finding Traktor's Log File
 

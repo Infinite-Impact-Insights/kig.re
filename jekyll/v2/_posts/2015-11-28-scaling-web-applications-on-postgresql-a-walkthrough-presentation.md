@@ -1,10 +1,15 @@
 ---
-layout: page
-title: 'Scaling Web Applications on PostgreSQL pgConfSV 2015 presentation'
-draft: false
-toc: true
-
+layout: post
+title: "Scaling Web Applications On Postgresql A Walkthrough Presentation"
+date: "2015-11-28 00:00:00 +08:00"
+post_image: /assets/images/posts/scaling-web-applications-on-postgresql.png
+tags: [scaling, postgresql, web-apps]
+categories: [programming]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
+
 
 ## pgConf 2015 PostgreSQL Developer Conference in the Bay Area
 

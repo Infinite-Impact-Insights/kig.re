@@ -1,9 +1,15 @@
 ---
-draft: false
-layout: page
-title: How to use cheap Chinese Arduinos that come with with CH340G / CH341G Serial/USB chip (Windows & Mac OS-X)
-toc: true
+layout: post
+title: "How To Use Arduino Nano Mini Pro With CH340G On Mac Osx Yosemite"
+date: "2014-12-31 00:00:00 +08:00"
+post_image: /assets/images/posts/how-to-use-arduino-nano.png
+tags: [arduino, coding]
+categories: [programming, hardware]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
+
 
 <blockquote>
   <ul>
@@ -18,17 +24,11 @@ My golden rule is that if something took me longer than 15 minutes to figure out
 
 ## Introduction – What is CH340G?
 
-
-{{site.data.macros.continue}}
-
-
-
 <div class="small-right">
 <a href="/images/nano-ch340g-bottom.jpg" data-lightbox="kiguino" data-title="Bottom of the Arduino Nano clone with the CH340G chip">
 	<img src="/images/nano-ch340g-bottom.jpg"/>
 </a>
 </div>
-
 
 Recent versions of cheap Chinese [clones of Arduino boards](http://www.ebay.com/itm/381019048475) have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
 
@@ -65,15 +65,12 @@ _(Added: Nov 22, 2015)_
 
 Many instructions down below were written for the old driver, which was not signed, and therefore was not working out of the box on OS-X Yosemite and El Capitan. The latest driver appears to be signed, and should work out the box. The new driver is here: [CH34x_Install.zip (111Kb)](/downloads/CH34x_Install.zip).
 
-
 <div class="external-reference">Acknowledgements: thanks to
   <a href="http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/" target="blanket">Björn's Techblog</a>
   for posting the driver.
 </div>
 
 Inside the driver is a brief README with the following instructions:
-
-{{site.data.macros.continue}}
 
 ### Driver README
 

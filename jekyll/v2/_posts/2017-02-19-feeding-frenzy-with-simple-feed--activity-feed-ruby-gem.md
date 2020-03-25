@@ -1,10 +1,15 @@
 ---
-layout: page
-title: 'Feeding Frenzy with SimpleFeed'
-draft: false
-toc: true
-crosspost_to_medium: true
+layout: post
+title: "Feeding Frenzy With Simple Feed Activity Feed Ruby Gem"
+date: "2017-02-19 00:00:00 +08:00"
+post_image: /assets/images/posts/feeding-frenzy-with-simple-feed.png
+tags: [activity-feed, redis, ruby-gem, open-source]
+categories: [programming]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
+
 
 ### For the Impatient
 
@@ -15,10 +20,6 @@ I am the primary developer on this project, and my name is [Konstantin Gredeskou
 Simple Feed is running live in production, and is powering three separate social feeds on Simbi: the global feed, followers feed, and "own" feed — events related the feed owner's actions:
 
 <img src="https://raw.githubusercontent.com/kigster/simple-feed/master/man/activity-feed-action.png" width="100%" border="1">
-
-
-{{site.data.macros.continue}}
-
 
 The software is distributed under the [MIT License](http://opensource.org/licenses/MIT) and is available today. It's written in [ruby](https://www.ruby-lang.org/en/) and does not depend on [Ruby on Rails](http://rubyonrails.org). Therefore it can power applications running on Rack, Sinatra and using alternative web frameworks. Having said that, at Simbi we are using it with Rails, and I may release a small Rails adapter for SimpleFeed in the future.
 

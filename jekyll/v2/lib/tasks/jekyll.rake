@@ -52,6 +52,11 @@ namespace :jekyll do
     sh 'chmod -R 755 _site/'
   end
 
+  desc 'Serve while live updating just Jekyll content'
+  task :watch do
+    sh 'bundle exec jekyll serve -H 0.0.0.0 --watch --trace'
+  end
+
   task :server do
     background_sh(
         %w(bundle exec jekyll serve -H 0.0.0.0 --watch --trace),

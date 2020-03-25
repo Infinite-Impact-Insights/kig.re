@@ -8,12 +8,11 @@ layout: default
       <div class="row">
          <div class="col-lg-10 mx-auto">
             <div class="s-post-details">
-
-                  {% if page.post_image %}
-				                 <div class="post-image  mb-4">
+               {% if page.post_image %}
+               <div class="post-image  mb-4">
                   <img class="mx-auto d-block" src="{{page.post_image}}" alt="{{page.title}}"/>
-				  </div>
-                  {% endif %}
+               </div>
+               {% endif %}
                 
                <div class="entry-content">
                   {{page.content}}                     

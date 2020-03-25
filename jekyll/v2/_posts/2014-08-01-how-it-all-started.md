@@ -1,10 +1,15 @@
 ---
-layout: page
-draft: false
-title: How It All Started
-toc: true
-
+layout: post
+title: "How It All Started"
+date: "2014-08-01 00:00:00 +08:00"
+post_image: /assets/images/posts/how-it-all-started.png
+tags: [arduino, c/c++]
+categories: [hardware]
+author_id: 1
+comments: true
+excerpt: "In this post I share the story of how I got myself into Hardware programming with Arduino."
 ---
+
 
 I've been a software engineer or technical leader for most of my career, which approaches on 20 years (I just recently hit 40 earlier this year). I started coding when
 I still lived in Kharkov, Ukraine, not too far from where the war is raging right now (a fact I am still finding hard to believe). I wrote my first program sometime in
@@ -22,8 +27,6 @@ In the end I was not successful in my quest. I've assembled the subwoofer back t
 someone with trained hands at JK Sound SF, someone who can _actually_ fix it. But in the meantime, I signed up for a soldering class at the TechShop, and
 purchased a "pro" level soldering iron – [Weller WES51](http://amzn.to/1ndGWXi) on Amazon. This is how it all began.
 
-
-{{site.data.macros.continue}}
 ___
 
 Shortly after that I discovered Arduino, Arduino programming environment, Eclipse plugin for Arduino, Beaglebone Black running Debian Linux, sensors, robots, wheels,
@@ -45,8 +48,6 @@ working with my hands, dropping shit on the floor, swearing (although that part 
 Perhaps you are too?
 
 ![Small Robot Army on my desk](/images/robo-mania.jpg)
-
-
 
 <blockquote>
 Friday, August 1st, 2014, –– Konstantin.

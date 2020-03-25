@@ -1,8 +1,13 @@
 ---
-layout: page
-title: "Back-Seat Driver: Autonomous Robot Maneuvering"
-toc: true
-
+layout: post
+title: "Back Seat Driver Autonomous Robot Maneuvering"
+date: "2014-07-18 00:00:00 +08:00"
+post_image: /assets/images/posts/back-seat-driver-autonomous-robot.png
+tags: [robots, arduino]
+categories: [hardware]
+author_id: 1
+comments: true
+excerpt: "Back Seat Driver is a library for programming autonomous (or not) Arduino based robots. This library provides a convenient non-blocking command API to programmatically drive an autonomous vehicle. Current implementation is aimed at a 2-wheeled robot, with the two Servo motors setup opposite each other. Therefore to move the robot forward (or backward), two Servos need to rotate in the opposite direction (this is certainly true in the current version of the library, but may be more flexible in the future if need arises)."
 ---
 
 # BackSeat Driver: Autonomous Vehicle Library for Arduino
@@ -202,3 +207,6 @@ void checkRight() {
 ```
 
 ## Conclusion
+
+[Hardware Requirements]: #hardware-requirements
+

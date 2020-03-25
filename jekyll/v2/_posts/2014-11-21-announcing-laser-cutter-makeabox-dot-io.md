@@ -1,9 +1,13 @@
 ---
-draft: false
-layout: page
-title: "Announcing LaserCutter ruby gem and MakeABox.IO web site"
-toc: true
-
+layout: post
+title: "Announcing Laser Cutter Makeabox Dot Io"
+date: "2014-11-21 00:00:00 +08:00"
+post_image: /assets/images/posts/announcing-laser-cutter-makeabox-dot.png
+tags: [hardware, laser-cutting, makeabox]
+categories: [programming]
+author_id: 1
+comments: true
+excerpt: "LaserCutter & MakeABox.io — its a ruby gem and a website for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting."
 ---
 
 <div class="small-right">
@@ -20,12 +24,10 @@ In addition to the ruby gem, there is also simple web front-end, called  [MakeAB
 
 If you've made any enclosures of your own, like either for your electronics gear, or a lighting show, or your cat auto-flushable toilet, you probably used one of the existing and free tools out there. I did not find them all when I started making boxes, but over time the choice seemed to come down to three options:
 
-
-<div class="small-right">
-<a href="/assets/images/posts/makeabox/omnipix-enclosure.jpg" data-lightbox="makeabox" data-title="OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made by starting with MakeABox.IO">
-	<img src="/assets/images/posts/makeabox/omnipix-enclosure.jpg"/>
-</a>
-</div>
+{% lightbox_image {
+  "url": "posts/makeabox/omnipix-enclosure.jpg",
+  "title": "OmniPix 32x32 LED Screen with SmartMatrix and Teensy, in a custom enclosure made by starting with MakeABox.IO", 
+  "group": "makeabox" } %}   
 
 * [Rahulbotics BoxMaker](https://github.com/rahulbot/boxmaker) –– It was working a few months ago, but as of publishing this blog, it's been taken down, though the source code remains.  I used this tool to create about a dozen of my first laser-cut boxes ever, and it worked OK.  Note that [Adam Phelps](https://github.com/aphelps) has a [slightly better fork](https://github.com/aphelps/boxmaker) with easier interface with command line arguments.
 
@@ -34,18 +36,13 @@ If you've made any enclosures of your own, like either for your electronics gear
 * [Tabbed Box Maker – A plugin for InkScape](http://www.keppel.demon.co.uk/111000/111000.html) – I tried this beast on a Mac, and OMG – it takes foreeeeeeeeeeeeever to start and do anything.  It also looks.... sort of like MS Paint, or something built for Linux GUI a decade ago. I don't want to hurt anyone's feelings, but seriously, it took about 2 minutes to start on my iMac that's about a year old, maxed out build.  Srsly?
 
 ##  So, why a new library?
-{{site.data.macros.continue}}
-
-
 
 It came down to a simple fact that I was not at all happy with BoxMaker, or the alternatives.  Boxmaker had lots of features, but also some bugs; it's source code was difficult to read and modify, it produced asymmetric box designs –– including corner pieces that would sometimes be disconnected from the main shape –– and it had no automated tests. The last part made it difficult to think about contributing fixes.
 
-<div class="small-right">
-<a href="/assets/images/posts/makeabox/makeabox.jpg" data-lightbox="makeabox" data-title="MakeABox.io screen shot. It's very easy to use.">
-	<img src="/assets/images/posts/makeabox/makeabox.jpg"/>
-</a>
-</div>
-
+{% lightbox_image {
+  'url': 'posts/makeabox/makeabox.jpg',
+  'title': 'MakeABox.io screen shot. Its very easy to use.', 
+  'group': 'makeabox' } %}   
 
 To top it off it was written in Java, which was the right choice back in 2001.. but we are not there anymore. I think.
 
@@ -59,14 +56,11 @@ To the coders reading this, I will shamefully admit that the current incarnation
 </a>
 </div>
 
-
 ### Wait, you said "tests"? WTF!
 
 Yes tests.  We, in the ruby world, can't take a shit without writing a test for it. Ruby is a dynamic language and makes test writing both fun and necessary. With tests, someone else can come and contribute to my library, because of the confidence tests provide that they won't break anything.  Well, *nearly* anything.  Not everything is as well tested as it should be, and I'll slap my own wrists sometime before bed. But some tests are infinitely better than none :)
 
 ### Tab (aka "notch") Geometry
-
-
 
 One of the key components of laser cut boxes is the tabs that make two sides snap into each other, by using alternative in/out tabs on each side. The width of this tab has a lot to do with the way the box will ultimately look.  The default is to use 3 x material thickness, but feel free to experiment with other values. Note that notch width input field is treated as a guideline, and not a promised value.
 
@@ -118,7 +112,6 @@ For example, to create a box defined in inches, set kerf to 0.008" and open PDF 
 </div>
 
 ### Getting Creative
-
 
 The image in the very beginning of the post, is supposed to be a pen holder. I started with a box generated on MakeABox.io, and then added circles and other decorations in Illustrator until it looked... well, decorated :)
 

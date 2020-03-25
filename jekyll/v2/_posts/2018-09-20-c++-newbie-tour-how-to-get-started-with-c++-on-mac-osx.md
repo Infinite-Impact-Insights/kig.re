@@ -1,9 +1,8 @@
 ---
 layout: post
 title: 'C++ Newbie Tour: Getting Started with C++ on Mac OSX'
-date: 2018-09-20 12:57:52 +0600
 post_image: /assets/images/posts/c-cpp.jpg
-tags: [C/C++, Code]
+tags: [c/c++, build-systems, coding, learning]
 categories: [programming]
 author_id: 1
 comments: true

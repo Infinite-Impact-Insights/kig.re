@@ -3,11 +3,11 @@ layout: post
 title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
 date: 2014-10-12 00:00:00 +0600
 post_image: /assets/images/posts/borat/bathroom-occupied-calm-technology.jpg
-tags: [Bazel, IntelliJ, Docker]
-categories: [jekyll]
+tags: [arduino, occupancy, borat, sensor]
+categories: [hardware]
 author_id: 1
 comments: true
-excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
+excerpt: "Occupus (formerly BORAT: Bathroom Occupancy Remote Awareness Technology) – is an Arduino-based restroom occupancy detection and rapid notification system based on a network of nRF24L01+ 2.4GHz RF radios. It supports multiple (up to 5) casters (each installed in a bathrooms) and a single reporting unit."
 ---
 
 A great company where I work, [Wanelo](http://wanelo.com/), with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.

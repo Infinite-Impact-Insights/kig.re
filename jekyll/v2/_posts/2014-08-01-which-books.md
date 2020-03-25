@@ -1,10 +1,15 @@
 ---
-layout: page
-draft: false
-title: Books I Am Reading
-toc: true
-
+layout: post
+title: "Books on Being a Maker"
+date: "2014-08-01 00:00:00 +08:00"
+post_image: /assets/images/posts/maker-books.png
+tags: [arduino, hardware, books]
+categories: [hardware]
+author_id: 1
+comments: true
+excerpt: "Review of the list of books on being a Maker that I've been reading and thoroughly enjoying."
 ---
+
 This post is about the books I am reading right now, with short reviews.
 
 ![Books](/images/books-to-read.jpg)

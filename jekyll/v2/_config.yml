@@ -1,16 +1,9 @@
-###################################################################
-# Welcome to Primula Jekyll Theme
-# Developed by https://themeix.com
-# Version : 3.1.1
-###################################################################
-
 title: Ramblings of a Techie — kig.re — Konstantin Gredeskoul
 email: kig@reinvent.one
 description: "This is a personal blog of Konstantin Gredeskoul — a former CTO, Ruby Expert, Loving of all things Scaling and Performance."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kig.re1.re/" # the base hostname & protocol for your site, e.g. http://example.com
 logo_url: '/assets/images/site/logo.png'
-mailchimp-list: ''
 facebook_username: kigster
 github_username:  kigster
 linkedin_username: kigster
@@ -29,6 +22,7 @@ exclude:
   - lib/**/*
   - bin/**/*
   - node_modules/**/*
+  - _old_posts
   - .git/**/*
   - .gitignore
   - .editorconfig
@@ -36,8 +30,21 @@ exclude:
   - _vendor/**/*
   - _sass/**/*
 
+sass:
+  sass_dir: _sass
+
 markdown: kramdown
 markdown_ext: md
+
+kramdown:
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: [1, 2, 3, 4, 5, 6]
+  smart_quotes:
+  hard_wrap: false
+  footnote_nr: 1
+  show_warnings: true
+
 timezone: "America/Los_Angeles"
 highlighter: rouge
 permalink: /:year/:month/:day/:title:output_ext
@@ -52,15 +59,16 @@ plugins:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-toc
+  - jekyll-asciidoc
 
 ###################################################################
 # Site configuration for the Jekyll 2 Pagination Gem
 ###################################################################
 pagination:
   enabled: true
-  debug: true
+  debug: false
   collection: 'posts'
-  per_page: 4
+  per_page: 10
   permalink: '/pages/:num/' # Pages are simple html files
   title: ':title - page :num'
   limit: 0
@@ -113,11 +121,3 @@ feed:
   collections:
     posts:
       path: "/index.xml"
-
-###################################################################
-# If you need any help please contact our support portal
-# https://support.themeix.com
-# or
-# Email us at themeix@gmail.com
-# We would happpy to assist you!!
-###################################################################

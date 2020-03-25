@@ -1,9 +1,15 @@
 ---
-layout: page
-title: 'Super-charge your email like a Pro with MixMax'
-toc: true
-
+layout: post
+title: "Mixmax And My First Nodejs App"
+date: "2016-04-07 00:00:00 +08:00"
+post_image: /assets/images/posts/mixmax-and-my-first-nodejs.png
+tags: [nodejs, mixmax]
+categories: [programming]
+author_id: 1
+comments: true
+excerpt: "TODO"
 ---
+
 
 {% lightbox_image { "url" : "posts/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
 
@@ -16,9 +22,6 @@ both the GUI as well as via the "slash" commands while composing an email.
 
 > Slash commands have been used for a very long time, to send "commands", like in age-old [IRC](http://www.irc.org), as well as the much more recent app [Slack](https://slack.com), or even, any multi-player online video games.
 
-
-{{site.data.macros.continue}}
-
 So imagine my joy, when I realized that with a simple `/cal` I can now insert a few
 available time slot options in my email, and request the recipient to choose one.
 Once they do, the event is inserted into my calendar right away. This is magic!
@@ -26,7 +29,6 @@ Once they do, the event is inserted into my calendar right away. This is magic!
 ## Features
 
 {% lightbox_image { "url" : "posts/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
-
 
 I haven't gone through an exhaustive list of the features MixMax offers at this time,
 but a few stand out and are certainly going to be in my daily use.

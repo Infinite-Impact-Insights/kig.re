@@ -84,6 +84,8 @@ body {
   background: $grey-bg;
 }
 
+p, a, a img, h1, h2, h3 { clear: none !important; }
+
 .page-header {
   .title {
     margin-bottom: 20px;
