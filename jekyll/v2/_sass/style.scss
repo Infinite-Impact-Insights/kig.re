@@ -30,6 +30,8 @@ CSS Index
 @import "base/ghost_fix";
 @import "base/lightbox";
 @import "base/custom";
+@import "base/asciidoc";
+@import "base/mailchimp_form";
 
 /* ################
 Banner-Area CSS
@@ -225,7 +227,8 @@ Footer-area Css Here
         }
 
         img {
-            max-height: 80px;
+            max-height: 200px;
+            max-width: 200px;
 
         }
     }

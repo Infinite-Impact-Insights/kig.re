@@ -7,6 +7,7 @@ tags: [sharding, scalability, databases, postgresql]
 categories: [devops, programming]
 author_id: 1
 comments: true
+toc: true
 excerpt: "In this post I share the story of overcoming a massive scalability bottleneck from too many writes ino the Analytics database table used for Event collection, using Vertical Sharding."
 ---
 

@@ -7,6 +7,7 @@ tags: [arduino, integrated-dev-environments]
 categories: [hardware]
 author_id: 1
 comments: true
+toc: true
 excerpt: "Review of Arduino IDE Alternatives."
 ---
 

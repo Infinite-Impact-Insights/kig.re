@@ -4,14 +4,40 @@
  * NOTE:   This is not part of the template. */
 
 body {
+  .banner, img#post-image {
+    border-radius: 5px;
+    border: 0px solid #503757;
+    box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
+
+  }
+
+  /* Override Asciidoctor CSS to get the correct background */
+  .listingblock .content pre[class^="highlight "] {
+    background-color: #272822 !important;
+
+    code[class^="language-"] {
+      background-color: #272822 !important;
+    }
+  }
+
   .post-summary, #preamble .sectionbody .paragraph {
     p, h1, h2, h3 {
       font-size: 20pt;
       line-height: 24pt;
       font-weight: 300;
       font-family: 'Yanone Kaffeesatz', sans-serif !important;
-      margin: 10px 20px !important;
-      text-align: right;
+      margin: 10px 10px 10px 0 !important;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 26pt;
+      line-height: 28pt;
+    }
+
+    h2 {
+      font-size: 22pt;
+      line-height: 25pt;
     }
   }
 
@@ -31,5 +57,46 @@ body {
     border: 1px solid #503757;
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
   }
+
+  #content-toc {
+
+    .section-nav {
+      margin: 5px 0;
+      padding: 10px 30px;
+    }
+
+    position: sticky !important;
+    display: block;
+    top: 0;
+    font-size: 1.1rem;
+
+    ul.sectlevel1, .toc-entry {
+      li, a, li.toc-h1 {
+        font-size: 1.2rem;
+
+        ul.sectlevel2, .toc-entry li.toc-h2 {
+
+          li, a, .toc-entry li.toc-h3 {
+            font-size: 1rem;
+
+            ul.sectlevel3, .toc-entry li.toc-h4 {
+              li, a {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    min-height: 1000px;
+    margin-top: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
 }
 

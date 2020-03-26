@@ -1,24 +1,20 @@
 ---
 layout: post
 title: 'Dead Simple Encryption with Sym'
-post_image: /assets/images/bazel/bazel-build.png
+post_image: /assets/images/posts/security/banner-encryption-locks.jpg
 tags: [sym, symmetric-encryption, ruby-gem, open-source]
 categories: [programming]
 author_id: 1
 comments: true
-excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
+toc: true
+excerpt: "A story about how your mom can now protect her application secrets by using this simple and effective <a href='https://github.com/kigster/sym'>symmetric encryption tool.</a>"
 ---
 
-<div class="large">
-<strong>A story about how your mom can now protect her application secrets by using this simple and effective <a href="https://github.com/kigster/sym">symmetric encryption tool</a>.</strong>
-</div>
 
-> **Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :)
+**Are you impatient?** If so — I direct you to view a [4-minute long ASCII Cinema session](/2017/03/10/dead-simple-encryption-with-sym.html#ascii) I recorded that showcases **sym** in its beautiful CLI glory :)
 
 Now, keeping secrets outside of your repo may provide you with a false sense of security. After all, anyone who gains access to your hard drive can download all of your secrets. Think of a coffee shop, with a public WiFi, combined with a lack of recent security updates for your operating system — and you are instantly at high risk. Besides the fact that decrypted secrets are easily accessible on your file system, this `gitignore` method deprives us, developers, from a very useful ability to track historical revisions of any changes to secrets files, and to be able to rollback to a previously working versions. Not to mention having to sync secrets across all developers when they change!
 
-
-{{site.data.macros.continue}}
 
 
 ## These Days If You Are Not Paranoid...
@@ -39,7 +35,7 @@ Well, technically it did not exist until now :)
 
 ### Encryption Methods
 
-{% lightbox_image { "url" : "/images/security/datacenter.jpg",  "title": "Data Center", "group":"security", "class": "clear-image" } %}
+{% lightbox_image { "url" : "posts/security/datacenter.jpg",  "title": "Data Center", "group":"security", "class": "clear-image" } %}
 
 So let's review some high-level encryption terms that we'll use further in this discussion.
 
@@ -82,6 +78,7 @@ Final point I would like to make here, is that — given that the private key is
 And now, since we already understand various threat vectors and scenarios, without further ado, I would love to introduce you to the new kid on the block: **`sym` — symmetric encryption made easy.**
 
 ## Sym
+
 ### Encrypting & Decrypting with Style
 
 <div class="large">

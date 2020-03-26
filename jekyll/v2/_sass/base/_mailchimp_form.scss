@@ -1,0 +1,34 @@
+#email_form #mc_embed_signup #mc_embed_signup_scroll {
+  clear: left;
+  text-align: left;
+  width: 100%;
+
+  input[type=email] {
+    width: 200px;
+    margin: 10px auto;
+    padding: 11px 15px;
+    border: $input-border;
+
+    @include tablet {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  #mc-embedded-subscribe {
+    margin: 10px auto;
+    color: white;
+    background-color: dodgerblue;
+
+    &:hover {
+      background-color: #fe6061 !important ;
+    }
+    &:active {
+      background-color: #fe3000  !important ;
+    }
+  }
+}

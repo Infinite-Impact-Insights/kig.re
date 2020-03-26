@@ -7,6 +7,7 @@ tags: [arduino, hardware, books]
 categories: [hardware]
 author_id: 1
 comments: true
+toc: true
 excerpt: "Review of the list of books on being a Maker that I've been reading and thoroughly enjoying."
 ---
 

@@ -6,6 +6,7 @@ post_image: /assets/images/posts/high-read-write-performance-postgres.png
 tags: [postgresql]
 categories: [programming, devops, cloud, databases]
 author_id: 1
+toc: true
 comments: true
 excerpt: "In this post, I'll go over some of our settings in postgresql.conf, which have been adjusted for high-performance/throughput and large RAM sizes. I would like to credit Josh Berkus and his PGExperts consultancy for providing us with timely and necessary assistance in tuning PostgreSQL these last few months."
 ---

@@ -1,4 +1,3 @@
-= What is Bazel?
 :showtitle:
 :page-layout: post
 :page-title: Building IntelliJ Bazel Plugin from Sources
@@ -10,9 +9,18 @@
 :page-comments: true
 :page-excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
 :page-quote: "I love deadlines. I like the whooshing sound they make as they fly by." - Douglas Adamso
+:page-asciidoc_toc: true
+:docinfo1:
+
+:icons: font
 :hide-uri-scheme:
 
-https://bazel.build[Bazel] is a powerful open-source build and test tool similar to Make, Maven, and Gradle. It uses a human-readable, high-level build language called Starlark, which is a strict subset of Python. Bazel can build projects in multiple languages and output results for multiple platforms. Bazel supports large code-bases across multiple repositories and large numbers of users. In fact, it is the build tool used by Google internally for all of their software.
+= Building IntelliJ Bazel Plugin from Sources
+
+
+== What is Bazel?
+
+INFO https://bazel.build[Bazel] is a powerful open-source build and test tool similar to Make, Maven, and Gradle. It uses a human-readable, high-level build language called Starlark, which is a strict subset of Python. Bazel can build projects in multiple languages and output results for multiple platforms. Bazel supports large code-bases across multiple repositories and large numbers of users. In fact, it is the build tool used by Google internally for all of their software.
 
 == Bazel IDE Support
 
@@ -73,8 +81,8 @@ However, sometimes the plugin is behind the most recent version of the IntelliJ 
 
  * Rollback IDE to a previous version
  * Or, build the plugin from sources.
+ * Further below we'll show how to {{site.url}}{{page.url}}#building-the-plugin[how to build and install the plugin from sources]*.
 
-*Further below we'll show how to {{site.url}}{{page.url}}#building-the-plugin[how to build and install the plugin from sources]*.
 
 ==== Plugin Functionality
 
@@ -148,7 +156,9 @@ You should have the following in order to build the plugin:
 
 == Build Steps
 
-=== 1. Check out the Code
+:sectnums!:
+
+=== Check out the Code
 
 In this section, we'll show the script to build the plugin and explain the commands that need to be run.
 
@@ -159,7 +169,7 @@ git clone git@github.com:bazelbuild/intellij.git
 cd intellij
 
 
-=== 2. Pulling Docker Image
+=== Pulling Docker Image
 
 Next, we need to pull the docker image that we'll use for this.
 
@@ -179,7 +189,7 @@ If the above command succeeded, you will be dropped in the root's prompt:
 root@611dbf701d6d:/src/workspace#
 
 
-=== 3. Pulling Latest Changes
+=== Pulling Latest Changes
 
 But before we build the plugin, be sure to pull the latest changes, in case the Docker image is not the most up to date:
 
@@ -190,7 +200,7 @@ git pull --rebase upstream master
 
 Now we can issue our `bazel build` command, which we describe in the next sections.
 
-=== 4. Determining the IntelliJ Product Identifier — PRODUCT
+=== Determining the IntelliJ Product Identifier — PRODUCT
 
 The very last argument of the bazel build command must map to a product identifier string such as  `intellij-ue-2019.3`. This particular label is what you would specify for IntelliJ IDEA Ultimate Edition, Version okp `2019.3.\*`. For community edition, you'd use `intellij-2019.3` or `intellij-latest.`
 
@@ -233,7 +243,7 @@ root@611dbf701d6d:/src/workspace# grep define \
 
 Any value that appears in that list can then be used below.
 
-=== 5. Preparing to Build the Plugin
+=== Preparing to Build the Plugin
 
 With that out of the way, we should be able to construct our build command line.
 
@@ -245,7 +255,7 @@ $ wget http://bit.ly/bazel-intellij-build -O build.sh
 
 Now you should have a script `build.sh` ready to use.
 
-=== 6. Building the Plugin
+=== Building the Plugin
 
 Note: we recommend that you **DO NOT EXIT** the container once the command below is finished. You will need the container running if you'd like to save its state as a new Docker image in order to speed up any future builds of that plugin. If that's not a priority for you, you can exit as soon as the morning script completes.
 
@@ -266,7 +276,7 @@ $ cp -v \
 
 Now the plugin zip file should reside on your Desktop.
 
-=== 7. Saving Docker Container State for Future Builds
+=== Saving Docker Container State for Future Builds
 
 This step is optional — if you don't intend on building or rebuilding the plugin, skip to the next section.
 
@@ -292,7 +302,7 @@ $ docker run -it --rm -v $(pwd):/src/workspace \
 
 Now you can just run `bash build.sh product-identifier` as the script we generated should still be present in your saved Docker image.
 
-== 8. Cleaning the Build Directory
+=== Cleaning the Build Directory
 
 If you do not need the Bazel Cache for future builds, run this command to reclaim disk space on your machine and to remove the unneeded images:
 

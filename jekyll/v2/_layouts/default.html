@@ -4,7 +4,7 @@
       <!-- meta -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"">
       <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
       <meta name="keywords" content="{% if page.keywords %}{{ page.keywords}}{% else %}{{ site.keywords }}{% endif %}">
       <!-- Facebook Open Graph -->
@@ -71,15 +71,16 @@
       <!-- endgulp -->
       <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Yanone+Kaffeesatz:300&display=swap" rel="stylesheet">
       <!-- gulp:js -->
+
+      <script src="https://kit.fontawesome.com/09a9169bd2.js" crossorigin="anonymous"></script>
       <script type="text/javascript" src="{{site.baseurl}}/assets/js/site.min.js"></script>
-      <script type="text/javascript" src="{{site.baseurl}}/assets/js/app.js"></script>
       <!-- endgulp -->
-      <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"ab7fddab964c6ba596338bf84","lid":"d7802cdf53","uniqueMethods":true}) })</script>
+      <script type="text/javascript" src="{{site.baseurl}}/assets/js/disquss_embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"ab7fddab964c6ba596338bf84","lid":"d7802cdf53","uniqueMethods":true}) })</script>
    </head>
    <body class="{% if page.layout == 'post' %} post-template {% endif %} {% if page.url == '/index.html' %} home-template {% endif %} {% if page.layout == 'tag_page' %} tag-template {% endif %} {% if page.parmalink %} page-template {% endif %}">
-
 	{% include header.html %}
 	  {{content}}
 	{% include footer.html %}
+   <script type="text/javascript" src="{{site.baseurl}}/assets/js/app.js"></script>
    </body>
 </html>

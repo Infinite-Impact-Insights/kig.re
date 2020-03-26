@@ -1,9 +1,10 @@
 'use strict';
-const {series, parallel, watch, src, dest} = require('gulp');
-
-const log = require('fancy-log');
 
 const sass = require('gulp-sass');
+
+const {series, parallel, watch, src, dest} = require('gulp');
+const log = require('fancy-log');
+
 sass.compiler = require('node-sass');
 
 const cleanCSS = require('gulp-clean-css');
@@ -41,20 +42,21 @@ const paths = {
       '_vendor/js/jquery-3.4.1.min.js',
       '_vendor/js/jquery.fitvids.js',
       '_vendor/js/jquery.waypoints.min.js',
-      '_vendor/js/popper.js',
-      '_vendor/js/lightbox.min.js',
+      '_vendor/js/popper.min.js',
       '_vendor/js/bootstrap.min.js',
       '_vendor/js/easing-effect.js',
-      '_vendor/js/fontawesome.min.js',
+      '_vendor/js/fontawesome.js',
+      '_vendor/js/lightbox.min.js',
       '_vendor/js/isotope.pkgd.min.js',
       '_vendor/js/owl.carousel.min.js',
       '_vendor/js/owl.navigation.js',
       '_vendor/js/prism.js',
       '_vendor/js/wow.min.js',
-      'assets/js/app.js',
     ],
     sourcemaps: [
       '_vendor/js/lightbox.min.map',
+      '_vendor/js/bootstrap.min.js.map',
+      '_vendor/css/bootstrap.min.css.map',
     ],
     dest: 'assets/js',
     file: 'site.min.js'
@@ -100,7 +102,8 @@ function clean() {
 }
 
 function site_css() {
-  return src(paths.sass.src, {sourcemaps: true, buffer: true, allowEmpty: false})
+  return src(paths.sass.src, options)
+      .pipe(plumber())
       .pipe(sass.sync()
           .on('error', sass.logError)
           .on('end', callback('Sass.compile()', 'OK'))
@@ -119,7 +122,7 @@ function callback(operation, result) {
 }
 
 function vendor_css() {
-  return src(paths.css.src,)
+  return src(paths.css.src, {sourcemaps: true, buffer: true, allowEmpty: false})
       .pipe(concat(paths.css.file))
       .pipe(autoprefixer())
       .pipe(cleanCSS())
@@ -136,7 +139,7 @@ function vendor_js() {
 }
 
 function vendor_js_sourcemaps(cb) {
-  return src(paths.js.sourcemaps, {buffer: true, allowEmpty: false})
+  return src(paths.js.sourcemaps, {sourcemaps: true, buffer: true, allowEmpty: false})
       .pipe(dest(paths.js.dest).on('end', callback('JS Source Maps.dest()', 'OK')))
 }
 

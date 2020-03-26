@@ -6,9 +6,11 @@ post_image: /assets/images/posts/mixmax-and-my-first-nodejs.png
 tags: [nodejs, mixmax]
 categories: [programming]
 author_id: 1
+toc: true
 comments: true
-excerpt: "TODO"
+excerpt: "Mixmax And My First Nodejs App"
 ---
+
 
 
 {% lightbox_image { "url" : "posts/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
@@ -34,6 +36,7 @@ I haven't gone through an exhaustive list of the features MixMax offers at this 
 but a few stand out and are certainly going to be in my daily use.
 
 ### Calendar Integration
+
 `/cal`
 
 Like I said – my favorite feature at the moment. I love how easy it is to pick the time slot, and how you can integrate with your calendar.

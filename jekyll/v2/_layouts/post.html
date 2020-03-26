@@ -1,109 +1,129 @@
 ---
 layout: default
 ---
-{% include page-title.html %}
-{% assign author = site.authors | where: 'author_id', page.author_id | first %}		
+{% include page-title.html %}ß
+{% assign author = site.authors | where: 'author_id', page.author_id | first %}
+
 <div class="post-content-area pb-100 clearfix">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-10 mx-auto">
-            <div class="s-post-details">
-               {% if page.post_image %}
-               <div class="post-image  mb-4">
-                  <img class="mx-auto d-block" src="{{page.post_image}}" alt="{{page.title}}"/>
-               </div>
-               {% endif %}
-                
-               <div class="entry-content">
-                  {{page.content}}                     
-               </div>
-               <div class="inner-padding fullwidth  pb-60">
-                  <div class="post-share-icon clearfix">
-                     <div class="tag-list">
-                        <div class="row">
-                           <div class="col-md-8">
-                              <p class="float-left pr-2"><strong>Tags :</strong></p>
-                              <ul class="float-left">
-                                 {% for tag in page.tags %}
-                                 {% capture tag_name %}{{ tag }}{% endcapture %}
-                                 <li>
-                                    <a href="/tag/{{tag_name}}"> #{{tag_name}}</a>
-                                 </li>
-                                 {% endfor %}
-                              </ul>
-                           </div>
-                           <div class="col-md-4">
-                              <div class="share link-right float-right d-none d-sm-block">
-                                 {% include social_share.html %}
-                              </div>
-                           </div>
+    <div class="container">
+        <div class="row flex-xl-nowrap">
+            <main  class="col-lg-7 col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+                <div class="s-post-details">
+                    {% if page.post_image %}
+                        <div class="post-image  mb-4">
+                            <img id="post-image" class="mx-auto d-block" src="{{ page.post_image }}"
+                                 alt="{{ page.title }}"/>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               {% if author %}					
-               <div class="author-bio mb-60">
-                  <div class="author-img px-3 py-3">
-                     <a href="{{author.url}}">
-                     <img src="{{author.image}}" alt="{{author.name}}"/>
-                     </a>
-                  </div>
-                  <div class="author-details py-3 px-3">
-                     <div class="pot-page-a">
-                        <div class="author-name">
-                           <h3><a href="{{author.url}}">{{author.name}}</a></h3>
+                    {% endif %}
+                    <div class="entry-content">
+                        {{ page.content }}
+                    </div>
+                    <div class="inner-padding fullwidth  pb-60">
+                        <div class="post-share-icon clearfix">
+                            <div class="tag-list">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="float-left pr-2"><strong>Tags :</strong></p>
+                                        <ul class="float-left">
+                                            {% for tag in page.tags %}
+                                                {% capture tag_name %}{{ tag }}{% endcapture %}
+                                                <li>
+                                                    <a href="/tag/{{ tag_name }}">
+                                                        #{{ tag_name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="share link-right float-right d-none d-sm-block">
+                                            {% include social_share.html %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>{{author.bio}}</p>
-                        <div class="social-link">
-                           <ul>
-                              {% if author.facebook %}
-                              <li class="list-inline-item">
-                                 <a href="{{author.facebook}}">
-                                 <i class="fa fa-facebook-f"></i>
-                                 </a>
-                              </li>
-                              {% endif %}
-                              {% if author.twitter %}
-                              <li class="list-inline-item">
-                                 <a href="{{author.twitter}}">
-                                 <i class="fa fa-twitter"></i>
-                                 </a>
-                              </li>
-                              {% endif %}
-                              {% if author.instagram %}
-                              <li class="list-inline-item">
-                                 <a href="{{author.instagram}}">
-                                 <i class="fa fa-instagram"></i>
-                                 </a>
-                              </li>
-                              {% endif %}
-                           </ul>
+                    </div>
+                    {% if author %}
+                        <div class="author-bio mb-60">
+                            <div class="author-img px-3 py-3">
+                                <a href="{{ author.url }}">
+                                    <img src="{{ author.image }}" alt="{{ author.name }}"/>
+                                </a>
+                            </div>
+                            <div class="author-details py-3 px-3">
+                                <div class="pot-page-a">
+                                    <div class="author-name">
+                                        <h3><a href="{{ author.url }}">{{ author.name }}</a></h3>
+                                    </div>
+                                    <p>{{ author.bio }}</p>
+                                    <div class="social-link">
+                                        <ul>
+                                            {% if author.facebook %}
+                                                <li class="list-inline-item">
+                                                    <a href="{{ author.facebook }}">
+                                                        <i class="fa fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if author.twitter %}
+                                                <li class="list-inline-item">
+                                                    <a href="{{ author.twitter }}">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if author.instagram %}
+                                                <li class="list-inline-item">
+                                                    <a href="{{ author.instagram }}">
+                                                        <i class="fa fa-instagram"></i>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               {% endif %}					
+                    {% endif %}
+                </div>
+                <div class="categories-carousel pb-60 clearfix">
+                    <div class="section-title">
+                        <h3>Related Posts</h3>
+                    </div>
+                    {% include related_posts_carousel.html %}
+                </div>
+                {% if page.comments == true %}
+                    <div class="comments-area pb-60 clearfix">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="post-comments">
+                                        {% include disqus_comments.html %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </main>
+            <div class="col-lg-1 mx-auto">
             </div>
-            <div class="categories-carousel pb-60 clearfix">
-               <div class="section-title">
-                  <h3>Related Posts</h3>
-               </div>
-               {% include related_posts_carousel.html %}
+            <div class="col-lg-4 d-none d-xl-block col-xl-4 bd-sidebar">
+                {% if page.asciidoc_toc %}
+                    <div id="content-toc">
+                        <ul class="section-nav">
+                        {{ page.document | tocify_asciidoc: 3 }}
+                        </ul>
+                    </div>
+                {% endif %}
+                {% if page.toc %}
+                    <div id="content-toc">
+                        <ul class="section-nav">
+                        {{ content | toc_only }}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
-            {% if page.comments == true %}
-            <div class="comments-area pb-60 clearfix">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12">
-                        <div class="post-comments">
-                           {% include disqus_comments.html %}
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            {% endif %}	
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </div>

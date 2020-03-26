@@ -12,19 +12,18 @@ gem 'jekyll', '~> 3.8.6'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem 'colored2'
-gem 'hashie'
 gem 'nokogiri'
 gem 'rake'
-# gem 'yui-compressor'
 gem 'minima', '~> 2.0'
+gem 'rouge'
 
-gem 'jekyll-tagging'
 # If you want to use GitHub Pages, remove the 'gem 'jekyll'' above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem 'github-pages', group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem 'jekyll-tagging'
   gem 'jekyll-archives'
   gem 'jekyll-coffeescript'
   gem 'jekyll-gist'
@@ -34,13 +33,16 @@ group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.6'
   gem 'jekyll-paginate-v2'
   gem 'jekyll-asciidoc'
+  gem 'jekyll-toc'
 end
 
-gem 'tty-box'
-gem 'tty-screen'
-gem 'tty-cursor'
-gem 'listener'
-gem 'childprocess'
+group :development do
+  gem 'tty-box'
+  gem 'tty-screen'
+  gem 'tty-cursor'
+  gem 'listener'
+  gem 'childprocess'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

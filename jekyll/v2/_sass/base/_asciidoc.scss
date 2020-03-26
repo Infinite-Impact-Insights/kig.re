@@ -1,0 +1,94 @@
+//colors
+$black_50: rgba(0, 0, 0, .5);
+$color_bay_of_many_approx: #19407c;
+$color_olive_80_approx: rgba(155, 155, 0, .8);
+$color_cod_gray_approx: #111;
+$color_indochine_approx: #bf6900;
+$color_fire_approx: #bf3400;
+$color_guardsman_red_approx: #bf0000;
+$white: #fff;
+$black_80: rgba(0, 0, 0, .8);
+
+conum[data-value] {
+  display: inline-block;
+  color: $white !important;
+  background: $black_80;
+  border-radius: 1em;
+  text-align: center;
+  font-size: .75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.conum[data-value] {
+  * {
+    color: $white !important;
+  }
+
+  + b {
+    display: none;
+  }
+}
+
+.conum[data-value]::after {
+  content: attr(data-value);
+}
+
+span.icon > .fa {
+  cursor: default;
+}
+
+.admonitionblock td.icon {
+  text-align: center;
+  width: 80px;
+
+  [class^="fa icon-"] {
+    font-size: 2.5em;
+    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: 1px 1px 2px $black_50;
+    cursor: default;
+  }
+
+  .icon-note:before {
+    content: "\f05a";
+    color: $color_bay_of_many_approx;
+  }
+
+  .icon-tip:before {
+    content: "\f0eb";
+    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: 1px 1px 2px $color_olive_80_approx;
+    color: $color_cod_gray_approx;
+  }
+
+  .icon-warning:before {
+    content: "\f071";
+    color: $color_indochine_approx;
+  }
+
+  .icon-caution:before {
+    content: "\f06d";
+    color: $color_fire_approx;
+  }
+
+  .icon-important:before {
+    content: "\f06a";
+    color: $color_guardsman_red_approx;
+  }
+}
+
+s.conum[data-value] {
+  position: relative;
+  top: -.125em;
+}
+
+b.conum * {
+  color: inherit !important;
+}
+
+.conum:not([data-value]):empty {
+  display: none;
+}

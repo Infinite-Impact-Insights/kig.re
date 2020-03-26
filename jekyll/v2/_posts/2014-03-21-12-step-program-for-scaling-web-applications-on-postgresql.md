@@ -6,6 +6,7 @@ post_image: /assets/images/posts/twelve-step-program.png
 tags: [postgresql, scalability, performance]
 categories: [programming]
 author_id: 1
+toc: true
 comments: true
 excerpt: "In this exciting and informative talk, presented at PgConf Silicon Valley 2015, Konstantin cut through the theory to deliver a clear set of practical solutions for scaling applications atop PostgreSQL, eventually supporting millions of active users, tens of thousands concurrently, and with the application stack that responds to requests with a 100ms average. He will share how his team solved one of the biggest challenges they faced: effectively storing and retrieving over 3B rows of 'saves' (a Wanelo equivalent of Instagram's likes or Pinterest's pins), all in PostgreSQL, with highly concurrent random access."
 ---

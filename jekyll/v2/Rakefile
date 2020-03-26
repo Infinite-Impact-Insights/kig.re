@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
+ENV['RUBYOPT'] = 'W0'
+
 require 'colored2'
 require 'rake'
 require 'erb'
 require 'yaml'
-require 'hashie/mash'
+# require 'hashie/mash'
 
 require_relative 'lib/task_helper'
 

@@ -2,11 +2,12 @@
 layout: post
 title: Detangling Business Logic in Rails Apps with PORO Events and Observers
 date: 2013-08-05 00:00:00 +0600
-post_image: /assets/images/rails/rails-models.png
+post_image: /assets/images/posts/ruby/rails-models.png
 tags: [ruby, rails, observable, ventable]
 categories: [programming]
 author_id: 1
 comments: true
+toc: true
 excerpt: "With any Rails app that evolves along with substantial user growth and active feature development, pretty soon a moment comes when there appears to be a decent amount of tangled logic, AKA technical debt."
 ---
 
@@ -45,10 +46,10 @@ class PostsController
   end
 end
 ```
+
 In this blog post we'll examine an event-based approach to decoupling this business logic, a method that's been pretty successful within the Wanelo codebase thus far.
 
-**Simple World**
-
+### Simple World**
 In a small Rails application it might be tempting to put this type of logic _directly on the controller_ as DHH did above, but this approach, while simple and easy to understand, might make things a bit difficult as the application matures. For one, testing this action becomes a challenge: many unrelated services need to be stubbed out, and many permutations tested. What if a Twitter post succeeds, but a Facebook post doesn't? In other words, these concerns become "tightly coupled" inside the controller. And what if we want to also create comments from another place, perhaps an API controller? This certainly applied to our case at Wanelo.
 
 A possible solution could be to _split the logic into various methods on the ActiveRecord Comment model, and implement them as callbacks,_ such as after_create. Unfortunately this approach suffers from similar problems: many of the above actions do not belong inside the model, and will only pollute it with tangled code and external dependencies. Why does the Comment model need to know about posting to Facebook or a spam checker? This certainly is a matter of taste, but experience shows that attaching this behavior directly onto the model does not work out well in the long run, as the model classes become bloated and full of external dependencies.
@@ -130,7 +131,7 @@ end
 
 There is a lot going on above, but it's also pretty obvious what's happening -- another power of this eventing approach. First we are defining a `CommentCreatedEvent` class, to wrap `user` and `comment` instances, and then we configure this event using the DSL to notify several observers (which in this case are all ruby classes). We can now use generic FacebookService and TwitterService (which could encapsulate multiple Twitter and Facebook operations; a plus in my book), which all have a callback method, called by the eventing gem upon firing the event.
 
-**Diving Deeper**
+##  **Diving Deeper**
 
 In Wanelo code base, we currently have 30 distinct events, which are all fired at various points throughout the life cycle of our application. Some events are fired in web request, some during background jobs. Currently Ventable dispatch mechanism only supports in-process ruby observers, but it would not be difficult to extend it to support a queueing mechanism, such as RabbitMQ.
 
@@ -191,7 +192,7 @@ end
 
 Ventable calls all observers in the order defined in the configuration. The first four observers are called inside the transaction block, while the last two are called after the transaction had already committed.
 
-**Pros and Cons**
+##  Pros and Cons
 
 _Advantages_
 

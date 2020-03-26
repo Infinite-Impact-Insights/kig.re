@@ -1,11 +1,12 @@
 ---
 layout: post
 title: 'C++ Newbie Tour: Getting Started with C++ on Mac OSX'
-post_image: /assets/images/posts/c-cpp.jpg
+post_image: /assets/images/posts/cpp/c-cpp.jpg
 tags: [c/c++, build-systems, coding, learning]
 categories: [programming]
 author_id: 1
 comments: true
+toc: true
 excerpt: "In this post we'll explore some of the things that a beginner C++ programmers (but not general beginner programmers) might find useful in getting quickly up to speed."
 ---
 

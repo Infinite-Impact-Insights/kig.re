@@ -6,13 +6,14 @@ post_image: /assets/images/posts/rebuilding-wanelo.png
 tags: [coding]
 categories: [devops, programming]
 author_id: 1
+toc: true
 comments: true
 excerpt: "In this post we share the details of what we did and what we learned, in case someone out there ever finds themselves in a similar situation, weighing the risks of either working with a legacy stack or going full steam ahead with a rewrite."
 ---
 
 The [Wanelo](http://wanelo.com) you see today is a completely different website than the one that existed a few months ago. It’s been rewritten and rebuilt from the ground up, as part of a process that took about two months. We thought we’d share the details of what we did and what we learned, in case someone out there ever finds themselves in a similar situation, weighing the risks of either working with a legacy stack or going full steam ahead with a rewrite.
 
-#### In the Beginning..
+#### In the Beginning...
 
 Back in February, Wanelo was a fast-growing service with some ecstatic members and a lot of promise. The technology stack that powered Wanelo 1.0 was a pretty typical Java-based one: Sun's Java 1.5 under Hibernate, Spring and Struts 2 (formerly WebWork), all running atop Tomcat and MySQL 5\. At the time, this choice was a[  big step forward](http://java.sys-con.com/node/299903), especially compared to the bloated alternative of J2EE.
 

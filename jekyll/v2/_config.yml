@@ -4,6 +4,7 @@ description: "This is a personal blog of Konstantin Gredeskoul — a former CTO,
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kig.re1.re/" # the base hostname & protocol for your site, e.g. http://example.com
 logo_url: '/assets/images/site/logo.png'
+alt_logo_url: '/assets/images/site/kigre-red-logo.png'
 facebook_username: kigster
 github_username:  kigster
 linkedin_username: kigster
@@ -19,10 +20,11 @@ exclude:
   - package.json
   - package-lock.json
   - gulpfile.js
-  - lib/**/*
-  - bin/**/*
+  - lib/
+  - bin/
+  - graphics/**/*
   - node_modules/**/*
-  - _old_posts
+  - _templates/
   - .git/**/*
   - .gitignore
   - .editorconfig
@@ -30,20 +32,43 @@ exclude:
   - _vendor/**/*
   - _sass/**/*
 
+toc:
+  min_level: 1
+  max_level: 4
+  no_toc_section_class: no_toc_section
+  list_class: section-nav
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-
+
 sass:
   sass_dir: _sass
 
 markdown: kramdown
 markdown_ext: md
 
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe`
+  require_front_matter_header: true
+  attributes:
+    - idseparator=_
+    - showtitle=@
+    - idprefix=_
+    - source-highlighter=prism
+    - doctype=book
+
 kramdown:
   auto_ids: true
+  parse_block_html: true
   entity_output: as_char
   toc_levels: [1, 2, 3, 4, 5, 6]
   smart_quotes:
   hard_wrap: false
   footnote_nr: 1
-  show_warnings: true
+  show_warnings: false
+  syntax_highlighter: rouge
 
 timezone: "America/Los_Angeles"
 highlighter: rouge
@@ -60,6 +85,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-toc
   - jekyll-asciidoc
+  - jekyll-toc
+  - rouge
 
 ###################################################################
 # Site configuration for the Jekyll 2 Pagination Gem
@@ -103,7 +130,7 @@ autopages:
 
 tag_page_layout: tag_page
 tag_page_dir: tag
-tag_permalink_style: pretty
+#tag_permalink_style: pretty
 
 jekyll-archives:
   enabled: all

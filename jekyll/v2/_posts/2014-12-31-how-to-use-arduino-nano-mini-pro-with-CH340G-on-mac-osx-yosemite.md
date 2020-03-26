@@ -7,6 +7,7 @@ tags: [arduino, coding]
 categories: [programming, hardware]
 author_id: 1
 comments: true
+toc: true
 excerpt: "TODO"
 ---
 

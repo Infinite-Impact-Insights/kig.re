@@ -7,6 +7,7 @@ tags: [music, dj]
 categories: [music]
 author_id: 1
 comments: true
+toc: true
 excerpt: "TODO"
 ---
 

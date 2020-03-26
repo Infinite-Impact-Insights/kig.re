@@ -7,7 +7,8 @@ tags: [traktor, dj, file-management]
 categories: [music]
 author_id: 1
 comments: true
-excerpt: "TODO"
+toc: true
+excerpt: "Wrestling with Native Instruments Traktor file management — playlists and organizing music."
 ---
 
 

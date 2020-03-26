@@ -7,8 +7,10 @@ tags: [sre, resilience, scalability, uptime]
 categories: [devops]
 author_id: 1
 comments: true
-excerpt: "TODO"
+toc: true
+excerpt: "Practicing sane DevOps."
 ---
+
 
 ## Are you practicing __DevOops?__
 
@@ -49,8 +51,7 @@ And this is just the backend — forget about the front-end and drop the operati
 
 So which group do I, Konstantin, personally belong? Funny you should ask. The thing is – I am a __skeptical outsider__, and always have been. I try things on, see if they fit, and use what I like. And I am also a bit overwhelmed, and very excited about what lies ahead. Humans are great at classifying a ton of complexity, and that is exactly what I plan on doing here. Because complete mayhem.
 
-<a href="/images/haproxy/microservices-hell.png" data-lightbox="devoops1" data-title="Example Distributed Architecture Hell">
-<div class="full"><img src="/images/haproxy/microservices-hell.png" class="clear-image"/></div></a>
+{% lightbox_image { "url": "posts/haproxy/microservices-hell.png", "title": "Example Distributed Architecture Hell" } %}
 
 As can be see from the (fictional), but multi-color diagram above, building todays application requires connecting things to other things in many different ways. This requires things to know about other things, to be able to talk to them, and listen. Just like people. We would be worthless without these basic properties.
 
@@ -86,14 +87,13 @@ This is where I learned how to build distributed applications – with tenets su
 
 Imagine being flown on a corporate helicopter across the gorgeous city of Sydney, just to attend the meeting with people five levels senior to explain how the multi-million dollar messaging infrastructure works :)  That was a good day.
 
-<a href="/images/sydney-skyline.jpg" data-lightbox="devoops1" data-title="Sydney Skyline">
-<div class="full"><img src="/images/sydney-skyline.jpg" class="clear-image"/></div></a>
+{% lightbox_image { "url": "posts/sydney-skyline.jpg", "title": "Sydney Skyline" } %}
 
 ### Distributing Email in San Francisco
 
 I took my knowledge of distributed systems to the US, where I was hired to build Topica, a hot new startup in San Francisco creating a new generation of listservs, or email groups (aka. mailing lists). The year was 1998, and there sure wasn't any open source distributed networking software that gave us the incredible reliability and versatility that the middleware like Tuxedo provided, so we bought a license. Whether this was the right choice for the company as at time is not for me to judge. But the system we built ended up using Tuxedo (ANSI C with Tuxedo SDK), Perl (with native bindings for C), and horizontally distributed Oracle databases. This beast ended up being so damn scalable that at a point in time someone mentioned Topica as a source of more than 1% of __all daily internet__ at that time! And sure enough, we were sending several hundred million messages per day.  
 
-And here is a kicker: if you open [https://app.topica.com/](https://app.topica.com/) you will see the login screen from the app we built – it's functionality is most similar to that of [Constant Contact](http://www.constantcontact.com/). The Topica app has been running untouched, seemingly unmodified, since 2004! – Twelve years! They stopped developing the app shortly after I left in 2004, mostly for business reasons. But the software endured. And it's still running, 12 years later.  It was built to be reliable. It was scalable. It was transactional. What it wasn't – is simple.
+And here is a kicker: if you open [app.topica.com](https://app.topica.com/) you will see the login screen from the app we built – it's functionality is most similar to that of [Constant Contact](http://www.constantcontact.com/). The Topica app has been running untouched, seemingly unmodified, since 2004! – Twelve years! They stopped developing the app shortly after I left in 2004, mostly for business reasons. But the software endured. And it's still running, 12 years later.  It was built to be reliable. It was scalable. It was transactional. What it wasn't – is simple.
 
 This second experience with Tuxedo forever changed the way I approach distributed application development.
 
@@ -139,11 +139,16 @@ The topics and scenarios above, distill down to the following principles the app
 > As a simple exercise, feel free to write down – for your company, or application – how important, on a scale from 0 (not important), to 10 (critical/catastrophic if happens), are the following:
 
 1. __High Availability__. Solutions to this are comprised of fault tolerance, multi-datacenter architecture, offsite backups, redundancy at every level, replicas, hosting/cloud vendor-independence, monitoring and a team on call.
+
 2. __Scalability__.  Scalability is the ability to handle a massive concurrent load, perhaps hundreds of thousands of actively logged in users interacting with the system; that might spike to (say) 1M or more. It is also the ability to dynamically raise and lower application resources to match the demand and save on hosting.
+
 3. __Performance.__ What's the average application latency (the time it takes the servers to respond to a user request – like a page load)? What's the 99% and 95% percentile? This is all application performance. Good performance helps scalability tremendously but does not warrant scalability in of itself. Well-performing applications simply need a lot fewer resources to scale, and are both the pleasure to use by your customers, and cheap to scale up. So performance truly does matter.
+
 4. __Data Integrity.__  This is about not losing your data. Accidentally. Or maliciously. Usually, some data can be OK to lose. While another set of data is the lifeblood of your business. What if a trustworthy employee, thinking that they are connected to a development database, accidentally drops a critical table, and only then realizes that they did that on production? Can you recover from this user error?
+
 5. __Security.__ This one is a no-brainer. The bigger the payoff for the hackers (or disgruntled employees) the more you want to focus on securing your digital assets, inventions, etc.  Not only preventing them from being copied and stolen but from being erased altogether. Always have at least the last day's backup of your database securely downloaded somewhere into an undisclosed location and encrypted with a passphrase.
-6. __Productivity__. How quickly do we need to move? How unproven is the idea? Is it better to be down often, but move with a super-sonic speed, or be slower, but more reliable?  
+
+6. __Productivity__. How quickly do we need to move? How unproven is the idea? Is it better to be down often, but move with a super-sonic speed, or be slower, but more reliable?
 
 These types of trade-offs I would like to discuss in the next installment of the DevOops Series.
 

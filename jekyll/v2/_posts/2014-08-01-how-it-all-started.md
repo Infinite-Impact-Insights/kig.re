@@ -7,6 +7,7 @@ tags: [arduino, c/c++]
 categories: [hardware]
 author_id: 1
 comments: true
+toc: true
 excerpt: "In this post I share the story of how I got myself into Hardware programming with Arduino."
 ---
 

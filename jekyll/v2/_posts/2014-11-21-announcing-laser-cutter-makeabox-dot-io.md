@@ -6,6 +6,7 @@ post_image: /assets/images/posts/announcing-laser-cutter-makeabox-dot.png
 tags: [hardware, laser-cutting, makeabox]
 categories: [programming]
 author_id: 1
+toc: true
 comments: true
 excerpt: "LaserCutter & MakeABox.io — its a ruby gem and a website for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting."
 ---

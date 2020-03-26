@@ -6,8 +6,8 @@ post_image: /assets/images/posts/feeding-frenzy-with-simple-feed.png
 tags: [activity-feed, redis, ruby-gem, open-source]
 categories: [programming]
 author_id: 1
-comments: true
-excerpt: "TODO"
+toc: true
+excerpt: "This gem implements a flexible time-ordered activity feeds commonly used within social networking applications. As events occur, they are pushed into the Feed and distributed to all users that need to see the event. Upon the user visiting their 'feed page', a pre-populated ordered list of events is returned by the library. "
 ---
 
 

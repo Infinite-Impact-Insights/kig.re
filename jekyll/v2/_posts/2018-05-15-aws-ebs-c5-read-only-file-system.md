@@ -6,6 +6,7 @@ tags: [aws, ec2, ubuntu]
 categories: [devops]
 author_id: 1
 comments: true
+toc: true
 excerpt: "In this short post I describe the read-only file system issue that happened to one of our C5 hosts, and how we fixed it."
 ---
 
