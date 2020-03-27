@@ -1,4 +1,7 @@
 /* Menu CSS */
+
+@import "variable";
+
 .navbar.navbar-dark {
   padding: 0;
 }
@@ -131,6 +134,20 @@
   display: block;
   width: 50px;
   padding: 12px;
+  cursor: pointer !important;
+
+  &:hover {
+    i {
+      color: $hover;
+    }
+
+  }
+
+  &:active {
+    i {
+      color: $active;
+    }
+  }
 
   @include desktop {
     padding-left: 25px;

@@ -84,7 +84,9 @@ body {
   background: $grey-bg;
 }
 
-p, a, a img, h1, h2, h3 { clear: none !important; }
+p, a, a img, h1, h2, h3 {
+  clear: none !important;
+}
 
 .page-header {
   .title {
@@ -286,7 +288,8 @@ input[type="search"] {
     max-height: 100px;
     padding-top: 10px;
 
-    @include tablet {}
+    @include tablet {
+    }
   }
 }
 

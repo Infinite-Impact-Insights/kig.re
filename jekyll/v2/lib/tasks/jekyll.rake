@@ -45,7 +45,7 @@ namespace :jekyll do
     TaskHelper.watch
   end
 
-  task serve: %i(deps watch)
+  task serve: %i(clean deps watch)
 
   task :browser do
     spawn 'sleep 20 && open http://0.0.0.0:4000'

@@ -25,6 +25,10 @@
         }
     });
 
+    $(document).on("load", woodhamLines());
+
+    $('.banner').on("show", helloWorld());
+
     new WOW().init();
 
 })(jQuery);

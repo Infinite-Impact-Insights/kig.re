@@ -17,7 +17,6 @@ const terser = require('gulp-terser');
 const jshint = require('gulp-jshint');
 const plumber = require('gulp-plumber');
 const size = require('gulp-size');
-const uglify = require('gulp-uglify');
 const rimraf = require('gulp-rimraf');
 const wait = require('gulp-wait2');
 
@@ -45,7 +44,6 @@ const paths = {
       '_vendor/js/popper.min.js',
       '_vendor/js/bootstrap.min.js',
       '_vendor/js/easing-effect.js',
-      '_vendor/js/fontawesome.js',
       '_vendor/js/lightbox.min.js',
       '_vendor/js/isotope.pkgd.min.js',
       '_vendor/js/owl.carousel.min.js',
@@ -133,8 +131,7 @@ function vendor_css() {
 function vendor_js() {
   return src(paths.js.src, {sourcemaps: true, buffer: true, allowEmpty: false})
       .pipe(concat(paths.js.file).on('end', callback('JS.concat()', 'OK')))
-      .pipe(uglify().on('end', callback('JS.uglify()', 'OK')))
-      .pipe(terser().on('end', callback('JS.terser()', 'OK')))
+      .pipe(terser( {ecma: 6} ).on('end', callback('JS.terser()', 'OK')))
       .pipe(dest(paths.js.dest).on('end', callback('JS.terser()', 'OK')))
 }
 

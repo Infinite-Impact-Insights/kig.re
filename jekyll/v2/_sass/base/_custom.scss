@@ -3,6 +3,8 @@
  * Author: Konstantin Gredeskoul
  * NOTE:   This is not part of the template. */
 
+@import "variable";
+
 body {
   .banner, img#post-image {
     border-radius: 5px;
@@ -58,45 +60,105 @@ body {
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
   }
 
-  #content-toc {
 
-    .section-nav {
-      margin: 5px 0;
-      padding: 10px 30px;
-    }
-
+  #toc {
     position: sticky !important;
     display: block;
     top: 0;
     font-size: 1.1rem;
 
-    ul.sectlevel1, .toc-entry {
-      li, a, li.toc-h1 {
-        font-size: 1.2rem;
+    #content-toc, #asciidoc-toc {
+      .section-nav {
+        margin: 5px 0;
+        padding: 10px 30px;
+      }
 
-        ul.sectlevel2, .toc-entry li.toc-h2 {
+      ul, ul.toc-entry, ul.section-nav, ul.sectlevel1, ul.sectlevel2, ul.sectlevel3 {
+        &:first {
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+        }
 
-          li, a, .toc-entry li.toc-h3 {
-            font-size: 1rem;
+        margin-left: 10px !important;
+        padding-left: 10px !important;
 
-            ul.sectlevel3, .toc-entry li.toc-h4 {
-              li, a {
-                font-size: 0.8rem;
-              }
+        li {
+          list-style-type: none !important;
+
+          margin-left: 0px !important;
+          padding-left: 0px !important;
+
+          a {
+            white-space: nowrap;
+            font-family: $font-preamble-family;
+            font-weight: 700 !important;
+
+            color1: $hover !important;
+
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+              color: $black_80;
+              font-weight: 800;
+            }
+
+            &:active {
+              color: $active !important;
             }
           }
         }
+
+        ul.sectlevel1 {
+          font-size: 1.4rem !important;
+          line-height: 2.2rem;
+
+          a { color: $hover + 10; }
+
+          ul.sectlevel2 {
+            font-size: 1.1rem !important;
+            line-height: 1.4rem;
+
+            a { color: $hover + 30; }
+
+            ul.sectlevel3 {
+              font-size: 0.9rem !important;
+              line-height: normal;
+
+              a { color: $hover + 70; }
+
+            }
+          }
+        }
+
+        li.toc-h2 {
+          font-size: 1.4rem !important;
+          line-height: 2.2rem;
+
+          a { color: $hover + 10; }
+
+          li.toc-h3 {
+            a { color: $hover + 20; }
+
+            font-size: 1.1rem !important;
+            line-height: 1.4rem;
+
+            li.toc-h4 {
+              a { color: $hover + 30; }
+
+              font-size: 0.9rem !important;
+              line-height: normal;
+            }
+          }
+        }
+
       }
     }
-
 
     min-height: 1000px;
     margin-top: 0;
 
     a {
-      text-decoration: none;
     }
   }
-
 }
-

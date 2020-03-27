@@ -11,7 +11,6 @@ toc: true
 excerpt: "Practicing sane DevOps."
 ---
 
-
 ## Are you practicing __DevOops?__
 
  - do you constantly struggle to keep production running smoothly?
