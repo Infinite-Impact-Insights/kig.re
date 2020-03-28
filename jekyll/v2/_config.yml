@@ -82,7 +82,6 @@ plugins:
   - jekyll-archives
   - jekyll-coffeescript
   - jekyll-feed
-  - jekyll-gist
   - jekyll-paginate-v2
   - jekyll-sass-converter
   - jekyll-sitemap
