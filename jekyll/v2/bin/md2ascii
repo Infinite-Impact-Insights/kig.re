@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+export HOME=${HOME:-$(ruby -e "puts Dir.home")}
+
+# vim: ft=sh
+[[ -d ${HOME}/.bashmatic ]] || {
+  echo "Can not initialize bashmatic, exiting."
+  exit 1
+}
+
+# shellcheck disable=SC1090
+source "${HOME}/.bashmatic/init.sh"
+# shellcheck disable=SC1090
+source "${HOME}/.bashmatic/lib/util.sh"
+# shellcheck disable=SC1090
+source "${HOME}/.bashmatic/lib/color.sh"
+
+setup() {
+  gem.install "kramdown-asciidoc"
+}
+
+markdown-to-asciidoc() {
+  local source_file="$1"
+  local dest_dir="$2"
+  local output_file="${dest_dir}/$(file.extension.replace .adoc "$(basename "${source_file}")")"
+
+  h1 "$(basename "${source_file}")" "$(basename "${output_file}")"
+
+  local cmd="ruby -S kramdoc -o ${output_file} ${source_file}"
+
+  run "${cmd}"
+
+  run.was-successful || {
+    error "Command Failed:" "${bldred}${cmd}"
+    return 1
+  }
+}
+
+main() {
+  run.set-all abort-on-error on-decline-return show-output-on
+  setup
+
+  [[ -z $1 || -z $2 ]] && {
+    h1 "Markdown to Asciidoc Converter using Kramdoc"
+    echo
+    info "Usage: ${bldylw} $0 source-dir dest-dir"
+    echo
+    info "Source folder should contain markdown files."
+    info "Dest folder may not exist, in which case it'll be created."
+    return 0
+  }
+
+  local sources_dir=${1}
+  [[ -d ${sources_dir} ]] || {
+    error "Directory ${sources_dir} does not exist."
+    return 1
+  }
+
+  local dest_dir=${2}
+  if [[ "${sources_dir}" != "${dest_dir}" ]]; then
+    if [[ -d ${dest_dir} ]]; then
+      warning "Destination folder ${dest_dir} already exists. Here are the files in it:"
+      run.set-next show-output-on
+      run "ls -alF"
+      run.ui.ask 'Should I remove it?' || return 1
+      run "rm -rf \"${dest_dir}\" && mkdir -p \"${dest_dir}\""
+    fi
+  fi
+
+  h1 "Converting Markdown files in ${sources_dir} to ASCIIDOC format in ${dest_dir} ... "
+  # shellcheck disable=SC2044
+  for file in $(find "${sources_dir}" -type f -name "*.md" -print); do
+    markdown-to-asciidoc "${file}" "${dest_dir}" || {
+      error "Failed to convert ${file}."
+      exit 1
+    }
+  done
+}
+
+main "$@"

@@ -16,6 +16,8 @@ gem 'nokogiri'
 gem 'rake'
 gem 'minima', '~> 2.0'
 gem 'rouge'
+gem 'kramdown'
+gem 'octokit'
 
 # If you want to use GitHub Pages, remove the 'gem 'jekyll'' above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -37,6 +39,7 @@ group :jekyll_plugins do
 end
 
 group :development do
+  gem 'kramdown-asciidoc'
   gem 'tty-box'
   gem 'tty-screen'
   gem 'tty-cursor'

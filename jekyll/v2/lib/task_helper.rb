@@ -34,9 +34,9 @@ module TaskHelper
       raise "This task requires HomeBrew to be installed. 'which brew' returned #{brew}"
     end
 
-    sh 'command -V node 2>/dev/null || brew install node'
+    sh 'command -V node 2>/dev/null 1>&2 || brew install node'
     sh "[[ $(node --version) == '#{node_version}' ]] || brew upgrade node"
-    sh 'command -V gulp 2>/dev/null || npm install --global gulp-cli'
+    sh 'command -V gulp 2>/dev/null 1>&2 || npm install --global gulp-cli'
     sh 'npm install'
     sh 'gulp build'
   end
@@ -51,7 +51,7 @@ module TaskHelper
     file_title = title.gsub(/ /, '_').gsub(/[^a-zA-Z0-9\-_]/, '').downcase
     filename   = "_posts/#{Time.now.strftime('%Y-%m-%d')}-#{file_title}.md"
     b          = binding
-    header "Generating your new blog post!\n"
+    h1 "Generating your new blog post!\n"
     puts 'Filename: ' + filename.to_s.bold.green
     puts 'Title:    ' + "'#{title}'".bold.green
     File.open(filename.to_s, 'w') do |f|

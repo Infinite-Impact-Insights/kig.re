@@ -62,7 +62,7 @@ module TaskHelper
   ).freeze
 
   JEKYLL_WATCH_COMMAND = Executable.new(
-    'bundle exec jekyll serve -H 0.0.0.0 --watch --trace', { RUBYOPT: '-W0' }
+    'bundle exec jekyll serve -H 0.0.0.0 --watch --drafts --trace', { RUBYOPT: '-W0' }
   ).freeze
 
   GULP_WATCH_COMMAND = Executable.new('gulp watch').freeze

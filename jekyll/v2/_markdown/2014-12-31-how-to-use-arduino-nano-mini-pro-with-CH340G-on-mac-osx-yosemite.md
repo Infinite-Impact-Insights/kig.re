@@ -11,7 +11,6 @@ toc: true
 excerpt: "TODO"
 ---
 
-
 <blockquote>
   <ul>
      <li>Updated Nov, 2017 with the latest driver for OS-X High Sierra</li>

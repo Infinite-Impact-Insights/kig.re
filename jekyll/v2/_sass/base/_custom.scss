@@ -13,13 +13,38 @@ body {
 
   }
 
+  footer {
+    a {
+      letter-spacing: 0.03rem;
+      color: $nav-level3 !important;
+
+      &:hover {
+        font-weight: 600;
+        color: $active;
+        text-decoration: underline;
+      }
+    }
+  }
+
   /* Override Asciidoctor CSS to get the correct background */
   .listingblock .content pre[class^="highlight "] {
     background-color: #272822 !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    code { width: 100% !important; }
 
     code[class^="language-"] {
       background-color: #272822 !important;
+      min-width: 80% !important;
     }
+  }
+
+  .s-post-details {
+    width: 100% !important;
+  }
+
+  #preamble {
+    margin: 20px 0;
   }
 
   .post-summary, #preamble .sectionbody .paragraph {
@@ -60,17 +85,47 @@ body {
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
   }
 
+  div.post-listing-image {
+    float: right !important;
+
+    img {
+      border-radius: 5px;
+      border: 1px solid #503757;
+      box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
+      position: relative;
+      display: block;
+      width: 200px !important;
+      margin: 20px;
+    }
+  }
 
   #toc {
     position: sticky !important;
     display: block;
     top: 0;
     font-size: 1.1rem;
+    margin-left: -20px !important;
+    padding-left: 0 !important;
+    width: 100%;
 
     #content-toc, #asciidoc-toc {
+      padding-left: 0 !important;
+      padding-top: 10px;
+      width: 100%;
+
       .section-nav {
         margin: 5px 0;
         padding: 10px 30px;
+      }
+
+      h2.toc-h2 {
+        font-size: 1.4rem !important;
+        white-space: nowrap;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-bottom: 0;
+        margin-left: 20px;
+        color: $nav-level3;
       }
 
       ul, ul.toc-entry, ul.section-nav, ul.sectlevel1, ul.sectlevel2, ul.sectlevel3 {
@@ -80,31 +135,28 @@ body {
         }
 
         margin-left: 10px !important;
-        padding-left: 10px !important;
+        padding-left: 0px !important;
 
         li {
           list-style-type: none !important;
-
           margin-left: 0px !important;
           padding-left: 0px !important;
 
           a {
-            white-space: nowrap;
             font-family: $font-preamble-family;
             font-weight: 700 !important;
-
-            color1: $hover !important;
+            letter-spacing: 0.03rem;
+            color: $nav-level1 !important;
 
             text-decoration: none;
 
             &:hover {
               text-decoration: underline;
-              color: $black_80;
-              font-weight: 800;
+              color: $active !important;
             }
 
             &:active {
-              color: $active !important;
+              color: $black_80;
             }
           }
         }
@@ -113,19 +165,25 @@ body {
           font-size: 1.4rem !important;
           line-height: 2.2rem;
 
-          a { color: $hover + 10; }
+          a {
+            color: $nav-level1 !important;
+          }
 
           ul.sectlevel2 {
             font-size: 1.1rem !important;
             line-height: 1.4rem;
 
-            a { color: $hover + 30; }
+            a {
+              color: $nav-level1 !important;
+            }
 
             ul.sectlevel3 {
               font-size: 0.9rem !important;
               line-height: normal;
 
-              a { color: $hover + 70; }
+              a {
+                color: $nav-level3 !important;
+              }
 
             }
           }
@@ -135,16 +193,22 @@ body {
           font-size: 1.4rem !important;
           line-height: 2.2rem;
 
-          a { color: $hover + 10; }
+          a {
+            color: $nav-level1 !important;
+          }
 
           li.toc-h3 {
-            a { color: $hover + 20; }
+            a {
+              color: $nav-level2 !important;
+            }
 
             font-size: 1.1rem !important;
             line-height: 1.4rem;
 
             li.toc-h4 {
-              a { color: $hover + 30; }
+              a {
+                color: $nav-level3 !important;
+              }
 
               font-size: 0.9rem !important;
               line-height: normal;
@@ -155,7 +219,7 @@ body {
       }
     }
 
-    min-height: 1000px;
+    min-height: 500px;
     margin-top: 0;
 
     a {

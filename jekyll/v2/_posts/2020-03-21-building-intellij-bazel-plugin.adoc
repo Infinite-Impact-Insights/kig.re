@@ -1,21 +1,17 @@
-:showtitle:
-:page-layout: post
-:page-title: Building IntelliJ Bazel Plugin from Sources
-:page-post_image: /assets/images/bazel/bazel-build.png
-:page-tags: [bazel, intellij, docker, build-systems, integrated-dev-environments]
-:page-categories: [programming]
+:page-asciidoc_toc: true
 :page-author_id: 1
-:page-liquid:
+:page-categories: [programming]
 :page-comments: true
 :page-excerpt: "Overview of Bazel support in IntelliJ Family of products, and instructions on how to build the plugin from sources."
+:page-layout: post
+:page-liquid:
+:page-post_image: /assets/images/bazel/bazel-build.png
 :page-quote: "I love deadlines. I like the whooshing sound they make as they fly by." - Douglas Adamso
-:page-asciidoc_toc: true
-:docinfo1:
+:page-tags: [bazel, intellij, docker, build-systems, integrated-dev-environments]
+:page-title: Building IntelliJ Bazel Plugin from Sources
 
+:showtitle:
 :icons: font
-:hide-uri-scheme:
-
-= Building IntelliJ Bazel Plugin from Sources
 
 
 == What is Bazel?
@@ -38,7 +34,7 @@ Bazel is pretty well supported by the VSCode plugin https://marketplace.visualst
 === IntelliJ Bazel Plugin
 
 However, the most fully featured IDE support for Bazel is offered by the https://ij.bazel.build/docs/bazel-plugin.html[IntelliJ Bazel Plugin]. It supports several IDEs in the the IntelliJ family. Here is a similar screenshot of the same project opened in IntelliJ IDEA Ultimate, with Ruby plugin installed:
-  
+
 It is the IntelliJ plugin that is the subject of this blog post.
 
 {% lightbox_image {
@@ -67,7 +63,7 @@ You can install this plugin in the following IntelliJ products:
   "title": "IntelliJ Bazel Compatibility Chart"
 } %}
 
-For information on which IntelliJ IDEs are compatible with the Bazel Plugin, please see the following diagram, borrowed from the https://ij.bazel.build/docs/bazel-support.html[IntelliJ Bazel Support Page]: 
+For information on which IntelliJ IDEs are compatible with the Bazel Plugin, please see the following diagram, borrowed from the https://ij.bazel.build/docs/bazel-support.html[IntelliJ Bazel Support Page]:
 
 * There are some issues with the marketplace plugin version when used with the latest IDEA version. This is when you might need to build it from the sources, as described below.
 
@@ -139,23 +135,25 @@ For more information on this error, see the following:
 
 {% link_to "building-the-plugin" %}
 
-= Building the IntelliJ Plugin from Sources
+== Building the IntelliJ Plugin from Sources
 
 The plugin can be built using Bazel and Docker on any platform.
 
 Unfortunately, you can not build it directly on MacOS-X or Windows because `WORKSPACE` points to Linux-specific JDK dependencies.
 
-== Prerequisites
+=== Prerequisites
 
 You should have the following in order to build the plugin:
 
-* Working knowledge of your operating system shell and terminal app.
-* `git` installed locally
-* Docker installed and running — get it from https://www.docker.com/products/docker-desktop[here].
-* One or more supported https://www.jetbrains.com/products.html[IntelliJ IDEs installed].
+    * Working knowledge of your operating system shell and terminal app.
 
-== Build Steps
+    * `git` installed locally
 
+    * Docker installed and running — get it from https://www.docker.com/products/docker-desktop[here].
+
+    * One or more supported https://www.jetbrains.com/products.html[IntelliJ IDEs installed].
+
+=== Build Steps
 :sectnums!:
 
 === Check out the Code
@@ -229,6 +227,7 @@ For other IDEs and other versions, you should use the appropriate argument taken
 * `intellij-ue-canary`
 * `intellij-ue-latest`
 
+[IMPORTANT]
 If you read this blog post much later than March 2020, you can re-generate the above list of product labels using the following command, which you would run inside the Docker container:
 
 [source, bash]

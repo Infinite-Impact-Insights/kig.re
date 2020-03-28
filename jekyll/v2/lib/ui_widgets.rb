@@ -5,40 +5,44 @@ require 'tty/screen'
 require 'tty/cursor'
 
 module UIWidgets
+  DEFAULTS = {
+               width:   TTY::Screen.width,
+               align:   :left,
+               border:  :light,
+               padding: [0, 1, 0, 1],
+               style:   {
+                 fg:     :bright_yellow,
+                 border: {
+                   fg: :bright_yellow,
+                 }
+               }
+             }.freeze
+
   def line
     ('—' * 80).yellow
   end
 
+  def default_box_options(color = nil)
+    options = DEFAULTS.dup
+
+    if color
+      options[:style][:fg]          = color
+      options[:style][:border][:fg] = color
+    end
+
+    options
+  end
+
   def error(*args)
-    print TTY::Box.error(args.join("\n"),
-                         width:   TTY::Screen.width,
-                         border:  :light,
-                         padding: [0, 1, 0, 1])
+    print TTY::Box.error(args.join("\n"), **default_box_options)
   end
 
   def warn(*args)
-    print TTY::Box.warn(args.join("\n"),
-                        width:   TTY::Screen.width,
-                        border:  :light,
-                        padding: [0, 1, 0, 1],
-                        style:   {
-                          bg: :black,
-                          fg: :bright_yellow
-                        })
+    print TTY::Box.warn(args.join("\n"), **default_box_options(:bright_yellow))
   end
 
   def info(*args)
-    print TTY::Box.info(args.join("\n"),
-                        width:   TTY::Screen.width,
-                        border:  :light,
-                        padding: [0, 1, 0, 1],
-                        style:   {
-                          bg:     :black,
-                          fg:     :bright_blue,
-                          border: {
-                            bg: :black
-                          }
-                        })
+    print TTY::Box.info(args.join("\n"), **default_box_options(:bright_green))
   end
 
   def cursor(method = nil, *args)
@@ -51,28 +55,24 @@ module UIWidgets
 
   def clear_screen!
     `reset`
-    cursor :clear_screen
-    cursor :move_to, 0, 0
   end
+
+  BOX_OPTIONS = ->(title) do
+    {
+      title:   { top_center: title.nil? ? Time.new.to_s : title },
+      padding: [0, 2, 0, 2]
+    }
+  end.freeze
 
   def text_box(title: nil, text: [], **options)
     cursor options[:cursor_action_before] if options[:cursor_action_before]
 
-    box = TTY::Box.frame(width:   TTY::Screen.width,
-                         border:  :light,
-                         align:   :left,
-                         padding: [0, 2, 0, 2],
-                         title:   { top_center: title.nil? ? Time.new.to_s : title},
-                         style:   {
-                           fg:     :bright_white,
-                           border: {
-                             fg: :bright_yellow,
-                           }
-                         }) do
+    print TTY::Box.frame(
+      width: TTY::Screen.width,
+      **default_box_options(:bright_yellow).merge(BOX_OPTIONS[title])
+    ) do
       text.is_a?(Array) ? text.join("\n") : text.to_s
     end
-
-    print box
 
     cursor options[:cursor_action_after] if options[:cursor_action_after]
   end
