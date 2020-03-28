@@ -42,7 +42,6 @@ p {
   border-color: #1b1e21;
 }
 
-
 // trick to prevent caption from influencing width of an autowidth table
 table.tableblock.fit-content > caption.title {
   white-space: normal;
@@ -75,9 +74,12 @@ table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p 
   font-size: inherit;
 }
 
+.admonitionblock {
+  margin-bottom: 0 !important;
+}
 
 .admonitionblock > table {
-  border-radius: 5px;
+  border-radius: 5px !important;
   border: 1px solid #503757;
   box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.2);
 
@@ -87,8 +89,15 @@ table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p 
 
   td.icon {
     text-align: center;
-    // FIXME use ems!
-    width: 80px;
+    padding: 10px !important;
+    padding-left: 20px !important;
+    width: 120px !important;
+    height: 120px !important;
+    overflow: hidden;
+
+    i {
+      font-size: 5rem !important;
+    }
 
     img {
       max-width: none;
@@ -103,16 +112,16 @@ table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p 
   }
 
   td.content {
-    font-size: 1rem;
-    padding-left: emCalc(18px);
-    padding-right: emCalc(20px);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    color: #888 !important;
+    font-size: 1rem !important;
+    p, li, em, code, pre {
+      font-size: inherit !important;
+    }
+    padding: 1rem 1rem;
 
     > :last-child > :last-child {
       margin-bottom: 0;
     }
-
   }
 }
 

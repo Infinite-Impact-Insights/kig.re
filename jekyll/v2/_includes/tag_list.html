@@ -1,0 +1,25 @@
+<div class="inner-padding fullwidth  pb-60">
+  <div class="post-share-icon clearfix">
+    <div class="tag-list">
+      <div class="row">
+        <div class="col-md-8">
+          <p class="float-left pr-2"><strong>Tags :</strong></p>
+          <ul class="float-left">
+            {% for tag in page.tags %}
+              {% capture tag_name %}{{ tag }}{% endcapture %}
+              <li>
+                <a href="/tag/{{ tag_name }}">
+                  #{{ tag_name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="share link-right float-right d-none d-sm-block">
+            {% include social_share.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

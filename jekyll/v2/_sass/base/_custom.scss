@@ -10,13 +10,12 @@ body {
     border-radius: 5px;
     border: 0px solid #503757;
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
-
   }
 
   footer {
     a {
       letter-spacing: 0.03rem;
-      color: $nav-level3 !important;
+      color: $nav-level1 !important;
 
       &:hover {
         font-weight: 600;
@@ -31,7 +30,10 @@ body {
     background-color: #272822 !important;
     width: 90% !important;
     margin: 0 auto !important;
-    code { width: 100% !important; }
+
+    code {
+      width: 100% !important;
+    }
 
     code[class^="language-"] {
       background-color: #272822 !important;
@@ -44,17 +46,36 @@ body {
   }
 
   #preamble {
-    margin: 20px 0;
+    margin: 30px 0;
+    color: #4e555b !important;
+    text-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
+  }
+
+  .index-page {
+    .banner-text-wrap, .blog-list {
+      .sectionbody {
+        .paragraph {
+          p {
+            color: #999 !important;
+            font-size: 1.4rem !important;
+            line-height: 1.7rem !important;
+          }
+          line-height: 1.2rem !important;
+          color: #333034 !important;
+          text-shadow: none !important;
+        }
+      }
+    }
   }
 
   .post-summary, #preamble .sectionbody .paragraph {
     p, h1, h2, h3 {
-      font-size: 20pt;
-      line-height: 24pt;
-      font-weight: 300;
+      font-size: 22pt;
+      line-height: 26pt !important;
+      font-weight: 400;
       font-family: 'Yanone Kaffeesatz', sans-serif !important;
       margin: 10px 10px 10px 0 !important;
-      text-align: left;
+      text-align: left;;
     }
 
     h1 {
@@ -100,18 +121,21 @@ body {
   }
 
   #toc {
+    top: 0;
+    overflow-x: hidden;
     position: sticky !important;
     display: block;
-    top: 0;
     font-size: 1.1rem;
     margin-left: -20px !important;
     padding-left: 0 !important;
     width: 100%;
+    opacity: 0.9;
 
     #content-toc, #asciidoc-toc {
       padding-left: 0 !important;
       padding-top: 10px;
       width: 100%;
+      text-shadow: 5px 5px 15px rgba(60, 60, 60, 0.2);
 
       .section-nav {
         margin: 5px 0;
@@ -119,51 +143,52 @@ body {
       }
 
       h2.toc-h2 {
-        font-size: 1.4rem !important;
-        white-space: nowrap;
+        font-family: $font-preamble-family;
+        font-size: 2rem !important;
+        white-space: nowrap !important;
         margin-top: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         padding-bottom: 0;
-        margin-left: 20px;
-        color: $nav-level3;
+        margin-left: 0;
+        color: $active;
       }
 
-      ul, ul.toc-entry, ul.section-nav, ul.sectlevel1, ul.sectlevel2, ul.sectlevel3 {
-        &:first {
-          margin-left: 0 !important;
-          padding-left: 0 !important;
-        }
-
-        margin-left: 10px !important;
-        padding-left: 0px !important;
+      ul, ul.toc-entry, ul.section-nav {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
 
         li {
           list-style-type: none !important;
-          margin-left: 0px !important;
-          padding-left: 0px !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
 
           a {
             font-family: $font-preamble-family;
-            font-weight: 700 !important;
+            font-weight: 400 !important;
             letter-spacing: 0.03rem;
             color: $nav-level1 !important;
-
             text-decoration: none;
 
             &:hover {
               text-decoration: underline;
-              color: $active !important;
+              color: black !important;
             }
 
             &:active {
-              color: $black_80;
+              color: $active !important;
             }
           }
         }
 
         ul.sectlevel1 {
-          font-size: 1.4rem !important;
-          line-height: 2.2rem;
+          font-size: 1.5rem !important;
+          line-height: 1.6rem;
+          margin-top: 20px !important;
+
+          li {
+            white-space: nowrap;
+            margin-bottom: 20px !important;
+          }
 
           a {
             color: $nav-level1 !important;
@@ -171,51 +196,35 @@ body {
 
           ul.sectlevel2 {
             font-size: 1.1rem !important;
-            line-height: 1.4rem;
+            line-height: 1.3rem;
+            margin-top: 10px !important;
 
-            a {
-              color: $nav-level1 !important;
+            li {
+              white-space: nowrap;
+              margin-left: 10px !important;
+              margin-bottom: 10px !important;
             }
 
-            ul.sectlevel3 {
-              font-size: 0.9rem !important;
-              line-height: normal;
-
-              a {
-                color: $nav-level3 !important;
-              }
-
-            }
-          }
-        }
-
-        li.toc-h2 {
-          font-size: 1.4rem !important;
-          line-height: 2.2rem;
-
-          a {
-            color: $nav-level1 !important;
-          }
-
-          li.toc-h3 {
             a {
               color: $nav-level2 !important;
             }
 
-            font-size: 1.1rem !important;
-            line-height: 1.4rem;
+            ul.sectlevel3 {
+              font-size: 0.9rem !important;
+              line-height: 1rem;
 
-            li.toc-h4 {
+              li {
+                margin-bottom: 5px !important;
+                margin-top: 5px !important;
+              }
+
               a {
                 color: $nav-level3 !important;
               }
 
-              font-size: 0.9rem !important;
-              line-height: normal;
             }
           }
         }
-
       }
     }
 

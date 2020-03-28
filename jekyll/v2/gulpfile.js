@@ -8,17 +8,13 @@ const log = require('fancy-log');
 sass.compiler = require('node-sass');
 
 const cleanCSS = require('gulp-clean-css');
-const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const copy = require('gulp-copy');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const terser = require('gulp-terser');
-const jshint = require('gulp-jshint');
 const plumber = require('gulp-plumber');
 const size = require('gulp-size');
-const rimraf = require('gulp-rimraf');
-const wait = require('gulp-wait2');
 
 const del = require('del');
 const fs = require('fs');
@@ -69,6 +65,21 @@ const paths = {
   }
 };
 
+
+function callback(operation, result) {
+  return function () {
+    log("    ", (result === 'OK') ? ' ✅ ' : result, operation);
+  }
+}
+
+
+function callbackError(operation, done) {
+  return function (error) {
+    log.error("ERROR:", operation, error);
+    done(error);
+  }
+}
+
 function mkdirs(folders) {
   return (async () => {
     folders.forEach(dir => {
@@ -99,24 +110,18 @@ function clean() {
   return rm_rf(files);
 }
 
-function site_css() {
+function site_css(cb) {
   return src(paths.sass.src, options)
-      .pipe(plumber())
       .pipe(sass.sync()
-          .on('error', sass.logError)
+          .on('error', callbackError("Sass.compile()", cb))
           .on('end', callback('Sass.compile()', 'OK'))
       )
+      .pipe(plumber())
       .pipe(autoprefixer())
       .pipe(rename(paths.sass.file).on('end', callback('Sass.rename()', 'OK')))
       .pipe(cleanCSS().on('end', callback('Sass.cleanCSS()', 'OK')))
       .pipe(size().on('end', callback('CSS.size()', 'OK')))
       .pipe(dest(paths.sass.dest).on('end', callback('CSS.dest()', 'OK')))
-}
-
-function callback(operation, result) {
-  return function () {
-    log("    ", (result === 'OK') ? ' ✅ ' : result, operation);
-  }
 }
 
 function vendor_css() {
