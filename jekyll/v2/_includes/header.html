@@ -1,17 +1,64 @@
-<div id="original-nav">
-  <div class="fixed-top main-menu">
-    <div class="flex-center p-5">
-      <ul class="nav flex-column">
-        <li class="nav-item delay-1"><a class="nav-link"
-                                        href="{{ site.url }}">Home</a></li>
-        {% for page in site.pages %}
-        {% if page.add_to_menu == true %}
-        <li class="nav-item delay-1"><a class="nav-link"
-                                        href="{{ page.url }}">{{ page.title
-          }}</a></li>
-        {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
+<!--<div class="container">-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container d-flex ">
+    <a class="navbar-brand float-left" href="/">
+      <img src="/assets/images/site/kigre-red-logo.png" width="100"/>
+    </a>
+    <ul class="nav nav-pills float-left ml-0" id="top-nav">
+
+      <li class="nav-item dropdown ml-2">
+        <a class="nav-link  btn-info  dropdown-toggle"
+           data-toggle="dropdown"
+           href="#"
+           role="button" aria-haspopup="true"
+           aria-expanded="false">Posts</a>
+        <div class="dropdown-menu">
+          {% for post in site.posts %}
+          <a class="dropdown-item small" href="{{ post.url }}">
+            <div class="w-25 d-inline-block position-relative text-monospace">
+              {{ post.date | date: '%M/%d/%Y' }}
+            </div>
+            {{ post.title | truncatewords: 5 }}
+          </a>
+          {% endfor %}
+        </div>
+      </li>
+
+      <li class="nav-item dropdown ml-2">
+        <a class="nav-link btn-success  dropdown-toggle"
+           data-toggle="dropdown"
+           href="#"
+           role="button" aria-haspopup="true"
+           aria-expanded="false">Tags</a>
+        <div class="dropdown-menu">
+          {% for tag in site.tags %}
+          {% assign tag_name = tag[0] %}
+          <a class="tag-link dropdown-item small" href="/tag/{{ tag_name }}/">{{ tag_name | replace: "-", " "
+              }}
+          </a>
+          {% endfor %}
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown ml-2">
+        <a class="nav-link btn-secondary  dropdown-toggle"
+           data-toggle="dropdown"
+           href="#"
+           role="button" aria-haspopup="true"
+           aria-expanded="false">Pages</a>
+        <div class="dropdown-menu">
+          {% for page in site.pages %}
+          {% if page.add_to_menu == true %}
+          <a class="dropdown-item small" href="{{ page.url }}">{{ page.title |
+            truncatewords: 5
+            }}</a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+    </ul>
   </div>
-</div>
+</nav>
+<!--</div>-->

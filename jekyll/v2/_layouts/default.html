@@ -86,10 +86,9 @@
         home-template {% endif %} {% if page.layout == 'tag_page' %}
     tag-template {% endif %} {% if page.parmalink %} page-template {% endif %}">
 <header class="head-main ">
-{% include main_nav.html %}
 {% include header.html %}
 </header>
-
+<div class="clearfix mt-100"></div>
 {{ content }}
 {% include footer.html %}
 <script type="text/javascript" src="{{ site.baseurl }}/assets/js/app.js?d={{ "now" | date: "%Y%m%d%H%M%S" }}"></script>
