@@ -1,6 +1,5 @@
 <header class="head-main">
   <div class="navbar navbar-dark box-shadow">
-    
     <div class="container d-flex justify-content-between">
       <a href="{{ site.url }}" class="navbar-brand d-flex align-items-center">
         {% if site.alt_logo_url %}
@@ -14,7 +13,14 @@
   </div>
   <div class="fixed-top main-menu">
     <div class="flex-center p-5">
-      {% include navigation.html %}
+      <ul class="nav flex-column">
+        <li class="nav-item delay-1"><a class="nav-link" href="{{ site.url }}">Home</a></li>
+        {% for page in site.pages %}
+          {% if page.add_to_menu == true %}
+            <li class="nav-item delay-1"><a class="nav-link" href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </header>

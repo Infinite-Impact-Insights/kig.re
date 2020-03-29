@@ -1,8 +1,5 @@
 :page-title: "Detangling Business Logic in Rails Apps with PORO Events and Observers"
-:showtitle:
 :page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
@@ -69,7 +66,7 @@ We want code that's easily testable, easy to understand, and easy to maintain. T
 
 Events and event-driven architecture offer a nice design pattern for splitting this logic into self-contained units (observers), which can declare interest in a certain business event independently of one another. When an event happens, observers get notified. It's pretty straightforward, but it moves the dependency association into _subscribing_ each observer to the event.
 
-Ruby's http://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html[Observable] module provides a very simple way to create observers and tie them to an "observable" event (which is a class including the module). 
+Ruby's http://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html[Observable] module provides a very simple way to create observers and tie them to an "observable" event (which is a class including the module).
 
 But we found ourselves wanting a bit more. For starters, it's nice to encapsulate events into plain Ruby classes that might wrap some useful event data (for example, a comment object, for the CommentPublishedEvent). Another feature we wanted was the ability to notify a group of observers within a transaction block, and others outside of the transaction.
 
@@ -203,7 +200,7 @@ _Advantages_
 
 Modeling business events as actual Ruby classes has many advantages, that might not be obvious from the get-go. For example, as we can see from the example above, it is trivial to subscribe a global concern such as _metrics listener_ to ALL interesting events at once. With just a few lines of code we can suddenly enable tracking and graphing every interesting business metric that is modeled in code as a Ventable event. This is very powerful.
 
-Another obvious advantage of this approach is that the code pieces relating to a particular piece of functionality can be placed inside classes implementing this functionality. In the above example, the code to post the comment to Twitter could live inside the TwitterService class, instead of inside some arbitrary controller.  
+Another obvious advantage of this approach is that the code pieces relating to a particular piece of functionality can be placed inside classes implementing this functionality. In the above example, the code to post the comment to Twitter could live inside the TwitterService class, instead of inside some arbitrary controller.
 
 Finally, it becomes very easy to see how the events are dispatched and glued together by reviewing the `event_initializer.rb` file, which we tend to keep in our `config/initializers` folder. Whenever you see a "handle_event" method anywhere, quickly open up event initializer and you can see what the other interested parties of this event are, what order they are being called, and whether they are executing inside a transaction.
 

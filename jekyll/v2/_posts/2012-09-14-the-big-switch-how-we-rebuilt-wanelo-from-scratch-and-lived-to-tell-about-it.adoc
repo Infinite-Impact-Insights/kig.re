@@ -5,22 +5,49 @@
 :page-excerpt: In this post we share the details of what we did and what we learned, in case someone out there ever finds themselves in a similar situation, weighing the risks of either working with a legacy stack or going full steam ahead with a rewrite.
 :page-layout: post
 :page-liquid:
-:page-post_image: /assets/images/posts/rebuilding-wanelo.png
+:page-post_image: /assets/images/posts/misc/wanelo.png
 :page-tags: ["coding"]
 :page-title: "The Big Switch How We Rebuilt Wanelo From Scratch And Lived To Tell About It"
 
 :showtitle:
-:icons: font
+:icons: fontm
 
 The http://wanelo.com[Wanelo] you see today is a completely different website than the one that existed a few months ago. It's been rewritten and rebuilt from the ground up, as part of a process that took about two months. We thought we'd share the details of what we did and what we learned, in case someone out there ever finds themselves in a similar situation, weighing the risks of either working with a legacy stack or going full steam ahead with a rewrite.
 
-==== In the Beginning...
+== The Cost of Success
+:sectnums!:
 
-Back in February, Wanelo was a fast-growing service with some ecstatic members and a lot of promise. The technology stack that powered Wanelo 1.0 was a pretty typical Java-based one: Sun's Java 1.5 under Hibernate, Spring and Struts 2 (formerly WebWork), all running atop Tomcat and MySQL 5. At the time, this choice was ahttp://java.sys-con.com/node/299903[big step forward], especially compared to the bloated alternative of J2EE.
+=== Wanelo Version 1
 
-The original stack served its purpose, enabling the prototyping of various features and allowing Wanelo to gain traction among users. As Java is pretty well optimized on the server, it also offered many reasonable scaling options.
+Back in February 2012, Wanelo was a fast-growing online service with some ecstatic members and a lot of promise. The technology stack that powered Wanelo v1.0 was a pretty typical Java-based one: Java 1.5 with Hibernate ORM, Spring and Struts 2 (formerly WebWork), all running atop Tomcat and MySQL 5. When the first Wanelo engineering team was starting, circa 2009, this choice was a http://java.sys-con.com/node/299903[big step forward], especially compared to the bloated alternatives of J2EE.
 
-==== New Team
+However, the original tech stack served its purpose, enabling the prototyping of various features and allowing Wanelo to gain traction among many of its passionate users. As Java is pretty well optimized on the server, it also offered many reasonable scaling options.
+
+=== When your CEO restarts Tomcat every thirty minutes...
+
+When I joined Wanelo as it's CTO, there were only two employees: https://wanelo.co/deena[Deena Varshavskaya] (its CEO and Founder) and her sister https://wanelo.com/kristina[Kristina].
+
+Literally, about an hour after I verbally accepted the position, I got a call from Deena. It sounded like this:
+
+*****
+— "Hey, do you by chance have a moment to take a look at the current site? My sister and I are restarting Tomcat every 20 minutes, otherwise the site is down..."
+
+— ... (long pause)
+
+— "Are you there?", she must be worried I hung up.
+
+— "... Yes. Did you say... you are restarting Tomcat every 20 minutes?"
+
+— "Uhm... yes, why?" — she asks.
+
+— "Well, for starters, I am impressed that my CEO knows what Tomcat is, not to mention — how to restart it.  But I am also terrified that my CEO knows what Tomcat is, not to mention — how to restart it. ", — I must be sound worried, so I quickly utter: "But, let me take a quick look... Give me the credentials please."
+*****
+
+So this is how my tenure started, and during the first two weeks I had to dive in and fix the performance issues plaguing the site that just got just a little too popular for the teeny tiny Rackspace-leased server, that was housing both the database and Tomcat. Oh, and of course it was serving static assets with Tomcat.
+
+=== Onward
+
+==== The New Team
 
 As soon as the new engineering team had assembled, the question of whether or not we wanted to keep the Java stack was a heated topic of discussion. Most of us were familiar with Java and Java-based web frameworks. So muchhttp://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx[advice] around the web leaned toward http://www.joelonsoftware.com/articles/fog0000000069.html[not rewriting] the existing software, but rather extending it incrementally or simply embracing the old platform and "fixing it."
 

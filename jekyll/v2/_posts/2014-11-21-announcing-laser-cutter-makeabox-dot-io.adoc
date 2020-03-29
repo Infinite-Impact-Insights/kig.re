@@ -1,8 +1,3 @@
-:page-title: "Announcing Laser Cutter Makeabox Dot Io"
-:showtitle:
-:page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
@@ -12,6 +7,8 @@
 :page-post_image: /assets/images/posts/announcing-laser-cutter-makeabox-dot.png
 :page-tags: ["hardware", "laser-cutting", "makeabox"]
 :page-asciidoc_toc: true
+:page-title: "Announcing Laser Cutter and MakeABox.IO"
+:page-liquid:
 
 link:/assets/images/posts/makeabox/pen-holder.jpg[image:/assets/images/posts/makeabox/pen-holder.jpg[\]]
 

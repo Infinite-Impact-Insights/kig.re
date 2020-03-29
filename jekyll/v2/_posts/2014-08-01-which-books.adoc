@@ -1,16 +1,12 @@
 :page-title: "Books on Being a Maker"
-:showtitle:
 :page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["hardware"]
 :page-comments: true
-:date: 2014-08-01 00:00:00 +08:00
 :page-excerpt: Review of the list of books on being a Maker that I've been reading and thoroughly enjoying.
 :page-layout: post
 :page-post_image: /assets/images/posts/maker-books.png
-:page-tags: ["arduino", "hardware", "books"]
+:page-tags: ["arduino", "hardware", "books", "c++"]
 :page-asciidoc_toc: true
 
 This post is about the books I am reading right now, with short reviews.

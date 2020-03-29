@@ -1,5 +1,4 @@
-= Achieve Service Discovery, High Availability, and Fault Tolerance -- This Afternoon
-
+:page-title: How to achieve the coveted "four nines" — 99.99% uptime.
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
@@ -8,7 +7,6 @@
 :page-post_image: /assets/images/posts/ruby/rails-models.png
 :page-tags: ["ruby", "rails", "observable", "ventable"]
 :page-asciidoc_toc: true
-
 
 Hi. With this post, I'd like to start a series of *DevOps* related conversations covering topics that are not only on my mind, but are also being asked by people I meet, running applications of all sizes across multiple clouds, all different technologies.
 
@@ -68,7 +66,7 @@ Given that I've been building almost exclusively applications that most certainl
 
 Which brings me to the conclusion of this blog post.
 
-= Six Tenets of Modern Apps
+== Six Ways to Measure a Modern Web App
 
 The topics and scenarious above,distill down to the following tenets the apply to the vast majority of applications built today.
 
@@ -108,7 +106,7 @@ Thanks for reading!
 aybe you are running one or more distributed multi-part, a.k.a. micro-services applications in production. Good for you!
 
 [.clear-image]
-image::/images/haproxy/microservices-hell.png[]
+image::images/posts/haproxy/microservices-hell.png[]
 
 Perhaps you are struggling with _high availability_, such as tolerating hardware outages, maybe when your cloud provider is  rebooting servers, etc.
 

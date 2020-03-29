@@ -1,8 +1,3 @@
-:page-title: "Introducing My Dj Sets Unrelated"
-:showtitle:
-:page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["music"]
 :page-comments: true
@@ -12,6 +7,8 @@
 :page-post_image: /assets/images/posts/introducing-my-dj-sets-unrelated.png
 :page-tags: ["music", "dj"]
 :page-asciidoc_toc: true
+:page-title: "Introducing My Dj Sets Unrelated"
+:page-liquid:
 
 -- So, did you know?
 

@@ -220,11 +220,9 @@ exception of  uses functions from standard library. And therefore must be linked
 
 Note that linking can be *static* or *dynamic*.
 
-[TIP]
+[NOTE]
 **Static libraries** are literally embedded into the final binary, and so the binary will work whether or not the system has that library
-installed. That's a nice advantage, but the downside is that the binary will be much larger.
-
-[TIP]
+installed. That's a nice advantage, but the downside is that the binary will be much larger.+++<br/><br/>+++
 **Dynamic (or shared) libraries** are not embedded into the final binary - instead a reference to an external file are embedded
 . When you run that binary, the shared linkage code embedded into it by the linker will search `LD_LIBRARY_PATH` for each shared library mentioned, and will fail if one or more are not found. The upside is having a small binary, but the downside is -- the binary won't work unless dynamic library was found when the binary is run.
 

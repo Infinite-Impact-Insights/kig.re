@@ -1,8 +1,5 @@
 :page-title: "C5 class instance on EC2: cannot create file: Read-only file system"
-:showtitle:
 :page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["devops"]
 :page-comments: true
@@ -11,8 +8,6 @@
 :page-post_image: /assets/images/posts/aws/nvme-disks.jpg
 :page-tags: ["aws", "ec2", "ubuntu"]
 :page-asciidoc_toc: true
-
-== Summary
 
 This post describes how I was able to fix the "read-only filesystem" issue on one of my C5 instances in AWS EC2. For impatient, I was able to run `fsck.ext4 -p` to fix an inode issue, and then the machine rebooted with read/write. Read on for more details.
 

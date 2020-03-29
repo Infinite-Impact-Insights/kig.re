@@ -1,21 +1,17 @@
 :page-title: "Traktor File Management Fixing Could Not Read Collection Playlist File Error"
-:showtitle:
 :page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["music"]
 :page-comments: true
-:date: 2016-06-26 00:00:00 +08:00
 :page-excerpt: Wrestling with Native Instruments Traktor file management — playlists and organizing music.
 :page-layout: post
-:page-post_image: /assets/images/posts/traktor-file-management-fixing-could.png
+:page-post_image: /assets/images/posts/traktor/traktor-screenshot.png
 :page-tags: ["traktor", "dj", "file-management"]
 :page-asciidoc_toc: true
 
-== "Not a Rant" Rant
-
 I'll begin by saying that I love Native Instruments, and software and hardware that they make. Not all of it is a hit, but overall, the company is definitely one of the undisputed leaders and innovators in the Digital Audio space.  I own Komplete versions 2 to 10, Traktor S4, S5, F1, Kore2 and a few others.
+
+== "Not a Rant" Rant
 
 In the past I https://soundcloud.com/polygroovers[created albums using NI tools] and plug-ins, https://itunes.apple.com/us/artist/polygroovers/id160976572[some of which are available on iTunes],  and as a disclosure -- I've never pirated any of NI software by principle -- being a software engineer, I was able to appreciate the colossal effort they've put into each and every synth I used.
 
@@ -49,30 +45,21 @@ But that's not even all. In addition to these basic things we've come to expect 
 
 It hit me earlier today, and feeling fed up with Traktor's misbehavior with file management for years, I decided to finally take it to the Interwebs, and help fellow Traktorians, abused daily by this software in all so many nasty ways, to heal maybe just some of their PTSD-related nightmares.
 
-=== Ok, it's a Rant
+=== Ok, Perhaps it IS a Rant
 
 I mean, honestly, I could rant about how absolutely abysmal Traktor's file management is for a long time, but it would get boring fast. Instead of a rant, I'll just make a short allegorical side note that's barely visible on this blog, and not at all emphasized. Feel free to skip if you are in a hurry.
 
 ____
-Traktor. If you and are were to get married, I would parade you like a trophy wife. You look gorgeous. You are the envy of the town. Your ability to mix drinks is beyond imaginable. Your effects are from the future, and your style pushes the boundary of what's possible today.
-____
+**Trakor, The Love Letter**
 
-____
+Dear Traktor. If you and are were to get married, I would parade you like a trophy wife. You look gorgeous. You are the envy of the town. Your ability to mix drinks is beyond imaginable. Your effects are from the future, and your style pushes the boundary of what's possible today.
+
 And so why, why is it that in the bedroom you are one lousy celibate prude? Why is it that you won't push the boundary of what's possible there too?  When I ask you to import a collection that you yourself,  just a few seconds ago saved to disk... Why!!! Do you give me the dreaded "_Could Not Read Collection/Playlist File_" error? Wasn't it you damn yourself who just created that file to begin with? Wasn't that you who used ugly caps to write nasty XML tags into the file that makes even the ugliest formats look pretty by comparison?
-____
 
-____
 So here I am, calling on you, Traktor-wife, to go and train with some kinky clan in San Francisco, and finally learn how to manage files easily, quickly, cleanly, repeatedly, consistently, how to automatically detect that the hard-drive's name has changed and just remap the top folder without invalidating the entire collection! How hard is that? Open source your file management software, and the community will fix it in a weekend. Who, am I kidding, in an *hour*.
-____
 
-____
 What if I move a folder? Rename my hard disk? Move to another computer? Oh God, no no no, all of that breaks Traktor! Rename back, quick! Oh wait, but the collection file is already saved and overwritten, and all my playlists are goooooone! Fuuuuuuuuuck!
 ____
-
--- last day in the life of one Traktor User, +
-minutes before suicide, +
-Oils and Blood, +
-"Anonymous".+++<div style="clear: right; margin-bottom: 20px;">++++++</div>+++
 
 Anyway, you get the point. I guess that was a bit of a rant after all :) With that out of the way, time to address the elephant in the room.
 
@@ -84,17 +71,14 @@ This shows up very briefly in red when you open Traktor and voila -- the playlis
 
 The problem, in my case, and as I have suspected, was that the XML file `collections.nml` was not a properly formed XML file.
 
-{% lightbox_image { "url": "/images/traktor/traktor--badxml.jpg", "title": "Traktor Bad XML", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "posts/traktor/traktor--badxml.jpg", "title": "Traktor Bad XML" } %}
 
 In my case it contained illegal (possibly UTF8) characters that came from a bogus filename of one of the imported files. Presence of this data in the XML file rendered it unreadable for most XML parsers, including the one Traktor uses internally.
 
-____
-*RANT WARNING*. Good software would have captured the error from the XML parser, which often includes the exact line and column where the error occurs, and often even the data. It would have printed this error on the screen, so that I could go and manually try to fix this. Instead Traktor swallowed this error, not printing it anywhere, -- _even in its own log file!_ -- and proceeded to boot with a blank set. Because that's what you've asked, right?'
-____
+[WARNING]
+Good software would have captured the error from the XML parser, which often includes the exact line and column where the error occurs, and often even the data. It would have printed this error on the screen, so that I could go and manually try to fix this. Instead Traktor swallowed this error, not printing it anywhere, -- _even in its own log file!_ -- and proceeded to boot with a blank set. Because that's what you've asked, right?'
 
-____
 Not to mention the fact it was Traktor in the first place that *create this file*!
-____
 
 === So, Why Did This Happen?
 
@@ -110,15 +94,14 @@ The file where Traktor stores its data is called `collection.nml`. It usually li
 
 The first thing you'd want to do is to figure out which of these files contains the collections you would like to become "active" collection, and once you do -- please make a copy/backup of that file.
 
+{% lightbox_image { "url": "posts/traktor/traktor--file-error.jpg", "title": "Traktor Root Folder", "group": "traktor", "class": "clear-image" } %}
 Let's say you started Traktor with a blank set (so the initial``collections.nml`` file is very small), and then added a ton of files and samples, organized playlists, etc. It's not until you normally exit Traktor that it will save your most recent changes to a file. (By the way, do not Force-Quit Traktor after making many changes to your play lists, or your changes won't be saved). So if we list the files in Finder using the list view (see image below) we should be able to tell which of them is a tiny file, and which of them is a larger file with the real tracks.
 
-{% lightbox_image { "url": "/images/traktor/traktor-file-error--finder-view.jpg", "title": "Traktor Root Folder", "group": "traktor", "class": "clear-image" } %}
 
 Let's say you determine that it is the "invalid" file that contains your actual data:
 
-----
+[source, bash]
 cp collection_backup_invalid.nml collection-my-backup.nml
-----
 
 Now we have a backup file of your full collection, so we can proceed to munge the invalid file until it's valid.
 
@@ -126,10 +109,9 @@ Now we have a backup file of your full collection, so we can proceed to munge th
 
 I detected the error using the `xmllint` tool that's installed  on Mac OS-X by default. If you don't have one, you can install it with Homebrew:
 
-----
+[source, bash]
 brew install libxml2
 xmllint --version
-----
 
 The above commands (as well as subsequent commands) are meant to run inside Terminal (or do yourself a favor, and install https://www.iterm2.com/[iTerm2] please).
 
@@ -149,6 +131,7 @@ xmllint --noout collection_backup_invalid.nml 2>&1 | head -10
 
 On my machine I saw the following:
 
+[source,bash]
 ----
 collection_backup_invalid.nml:14195: parser error: invalid character in attribute value
 MzMzMzMzIjMiIjIzIQ==" TITLE="MidBass3°%/
@@ -187,6 +170,7 @@ In the above fix we have likely messed up the actual file entry for MidBass[1,2,
 
 Let's copy our fixed file over the one that Traktor will use during it's boot:
 
+[source,bash]
 ----
 cp collection_backup_invalid.nml collection.nml
 ----
@@ -199,7 +183,7 @@ And now lets try to start Traktor again.  If you are as lucky as I was -- your T
 
 The first thing you will need to figure out is your Traktor's "Root" folder. Go to "Settings, File Management" and it will be the first folder in the list, as shown below.
 
-{% lightbox_image { "url": "/images/traktor/traktor--prefs.jpg", "title": "Traktor Preferences", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "posts/traktor/traktor--prefs.jpg", "title": "Traktor Preferences", "group": "traktor", "class": "clear-image" } %}
 
 Next, let's open that folder in Finder.
 
@@ -211,7 +195,7 @@ While you are debugging Traktor it's a good idea to keep Console open, as it wil
 
 `WARNING: Could not read collection/playlist file:Macintosh HD:Users:boo:Documents:Native Instruments:Traktor 2.10.2:collection.nml`
 
-{% lightbox_image { "url": "/images/traktor/traktor--console.jpg", "title": "Traktor Log File", "group": "traktor", "class": "clear-image" } %}
+{% lightbox_image { "url": "posts/traktor/traktor--console.jpg", "title": "Traktor Log File", "group": "traktor", "class": "clear-image" } %}
 
 I recommend to keep this window open while we perform any operations below, and in the future -- if you ever experience issues with Traktor -- this should be the first place you look.
 

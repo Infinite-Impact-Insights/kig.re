@@ -9,10 +9,7 @@
 :page-tags: ["postgresql"]
 :page-title: "High Read Write Performance Postgres On Joyent Cloud"
 
-:showtitle:
-:icons: font
-
-At Wanelo we are pretty ardent fans of PostgreSQL database server, but try not to be dogmatic about it. 
+At Wanelo we are pretty ardent fans of PostgreSQL database server, but try not to be dogmatic about it.
 
 I have personally used PostgreSQL since version 7.4, dating back to some time in 2003 or 4. I was always impressed with how easy it was to get PostgreSQL installed on a UNIX system, how quick it was to configure (only two config files to edit), and how simple it was to create and authenticate users.
 
@@ -34,9 +31,9 @@ Finally, http://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server[this is a
 
 ==== RAM
 
-As we are running most of our databases on 80GB instances, we set shared_buffers to 12GB. We did this because PostgreSQL takes great advantage of file system caches. The related parameter effective_cache_size tells the PostgreSQL query planner exactly how much RAM is available for caching. On Joyent this cache is provided by the extremely efficient ZFS http://en.wikipedia.org/wiki/Adaptive_replacement_cache[ARC] cache. 
+As we are running most of our databases on 80GB instances, we set shared_buffers to 12GB. We did this because PostgreSQL takes great advantage of file system caches. The related parameter effective_cache_size tells the PostgreSQL query planner exactly how much RAM is available for caching. On Joyent this cache is provided by the extremely efficient ZFS http://en.wikipedia.org/wiki/Adaptive_replacement_cache[ARC] cache.
 
-We've set work_mem to a somewhat large value of 65MB (per process) so that our SQL sorts don't go to disk. 
+We've set work_mem to a somewhat large value of 65MB (per process) so that our SQL sorts don't go to disk.
 
 *IO*
 

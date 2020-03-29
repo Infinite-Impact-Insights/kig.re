@@ -1,21 +1,17 @@
-:page-title: "Serial Console Hacks With Arduino"
-:showtitle:
-:page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["programming", "hardware"]
 :page-comments: true
-:date: 2015-11-22 00:00:00 +08:00
-:page-excerpt: TODO
+:page-excerpt:
 :page-layout: post
-:page-post_image: /assets/images/posts/serial-console-hacks-with-arduino.png
+:page-post_image: /assets/images/posts/arduino/arduino-board.jpg
 :page-tags: ["arduino", "console", "hacks"]
 :page-asciidoc_toc: true
-
-== Battling Console
+:page-title: "Serial Console Hacks With Arduino"
+:page-liquid:
 
 I wanted to share a method that I use to connect to a Serial port of any Arduino I am using at any given moment.  This method has a caveat, in that if you have more than one Arduino connected, it will pick one of them at random.
+
+== Battling Console
 
 === Motivation
 

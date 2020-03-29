@@ -1,88 +1,53 @@
 ---
 layout: default
 ---
-{% include page-title.html %}
+{% include main_header.html %}
 {% assign author = site.authors | where: 'author_id', page.author_id | first %}
 
 <div class="post-content-area pb-100 clearfix">
   <div class="container">
     <div class="row flex-xl-nowrap">
       <main class="col-12 col-md-12 col-lg-12 col-xl-8 d-content" role="main">
+        
         <div class="s-post-details">
           {% if page.post_image %}
             <div class="post-image mb-4">
-              <img id="post-image" class="mx-auto d-block" src="{{ page.post_image }}"
-                   alt="{{ page.title }}"/>
+              <img id="post-image" class="mx-auto d-block" src="{{ page.post_image }}" alt="{{ page.title }}"/>
             </div>
           {% endif %}
           <div class="entry-content">
             {{ page.content }}
           </div>
           {% if author %}
-            <div class="author-bio mb-60">
-              <div class="author-img px-3 py-3">
-                <a href="{{ author.url }}">
-                  <img src="{{ author.image }}" alt="{{ author.name }}"/>
-                </a>
-              </div>
-              <div class="author-details py-3 px-3">
-                <div class="pot-page-a">
-                  <div class="author-name">
-                    <h3><a href="{{ author.url }}">{{ author.name }}</a></h3>
-                  </div>
-                  <p>{{ author.bio }}</p>
-                  <div class="social-link">
-                    <ul>
-                      {% if author.facebook %}
-                        <li class="list-inline-item">
-                          <a href="{{ author.facebook }}">
-                            <i class="fa fa-facebook-f"></i>
-                          </a>
-                        </li>
-                      {% endif %}
-                      {% if author.twitter %}
-                        <li class="list-inline-item">
-                          <a href="{{ author.twitter }}">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                      {% endif %}
-                      {% if author.instagram %}
-                        <li class="list-inline-item">
-                          <a href="{{ author.instagram }}">
-                            <i class="fa fa-instagram"></i>
-                          </a>
-                        </li>
-                      {% endif %}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% include post_author.html %}
           {% endif %}
         </div>
+        
         <div class="categories-carousel pb-60 clearfix">
           <div class="section-title">
             <h3>Related Posts</h3>
           </div>
-          {% include related_posts_carousel.html %}
+          {% include post_related.html %}
         </div>
+        
         {% if page.comments == true %}
           <div class="comments-area pb-60 clearfix">
             <div class="container">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="post-comments">
-                    {% include disqus_comments.html %}
+                    {% include post_comments.html %}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         {% endif %}
+        
       </main>
-      <div class="col-md-0 col-lg-0 col-xl-1 mx-auto">
-      </div>
+      
+      <div class="col-md-0 col-lg-0 col-xl-1 mx-auto"></div>
+      
       <div class="col-md-0 col-lg-0 col-xl-3 d-lg-block d-md-block d-xl-block bd-sidebar">
         <div id="toc" class="small">
           {% if page.asciidoc_toc %}
@@ -93,7 +58,7 @@ layout: default
               </ul>
             </div>
           {% endif %}
-          </div>
+        </div>
       </div>
     </div>
   </div>

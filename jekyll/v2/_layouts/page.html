@@ -5,14 +5,13 @@ layout: default
   <div class="page-header pb-100 pt-85 clearfix">
     <div class="container">
       <div class="row">
-        
+
         <div class="col-lg-6 col-sm-6">
           <div class="headerr-image">
             <img src="{{ page.image_url }}" alt="{{ page.title }}"/>
           </div>
         </div>
-        
-        
+
         <div class="col-lg-6 col-sm-6">
           <div class="author-text wow fadeIn" data-wow-duration="2s">
             <div class="single-author-d">
@@ -21,7 +20,7 @@ layout: default
                 <p>{{ page.description }} </p>
                 <blockquote></blockquote>
               </div>
-            
+
             </div>
           </div>
         </div>
@@ -29,7 +28,7 @@ layout: default
     </div>
   </div>
 {% else %}
-  {% include page-title.html %}
+  {% include main_header.html %}
 {% endif %}
 <div class="about-content-area pb-100 clearfix">
   <div class="container">

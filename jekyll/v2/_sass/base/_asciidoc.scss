@@ -1,16 +1,78 @@
 @import "variable";
 
-dt, th.tableblock, td.content, div.footnote {
+ol>li p,
+ul>li p,
+ul dd,
+ol dd,
+.olist .olist,
+.ulist .ulist,
+.ulist .olist,
+.olist .ulist {
+  margin-bottom: 0.46875em;
+}
+
+.ulist,
+.olist {
+  ul, ol {
+    li {
+      padding-left: 10px;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      font-size: $primary-font-size-small !important;
+
+      ul, ol {
+        li {
+          margin-top: 10px !important;
+        }
+      }
+    }
+  }
+}
+
+.sidebarblock {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d4d4d4;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #ededed;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.sidebarblock> :first-child {
+  margin-top: 0;
+}
+
+.sidebarblock> :last-child {
+  margin-bottom: 0;
+}
+
+.sidebarblock>.content>.title {
+  color: #3c3d3f;
+  margin-top: 0;
+}
+
+dt,
+th.tableblock,
+td.content,
+div.footnote {
   // NOTE text-rendering is already set for p
   text-rendering: optimizeLegibility;
 }
 
 // QUESTION should we tighten letter spacing of text in footnotes?
-h1, h2, p, td.content, span.alt {
+h1,
+h2,
+p,
+td.content,
+span.alt {
   letter-spacing: -0.01em;
 }
 
-p, td.content, div.footnote {
+p,
+td.content,
+div.footnote {
   strong {
     // NOTE needs to apply anywhere we have bold prose
     letter-spacing: -0.005em;
@@ -18,7 +80,11 @@ p, td.content, div.footnote {
 }
 
 // NOTE include blockquote for when it doesn't have a nested p
-p, blockquote, dt, td.content, span.alt {
+p,
+blockquote,
+dt,
+td.content,
+span.alt {
   font-size: 1.0625rem;
 }
 
@@ -27,11 +93,14 @@ p {
 }
 
 // restore font size in sidebar block and regular table cells
-.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
+.sidebarblock p,
+.sidebarblock dt,
+.sidebarblock td.content,
+p.tableblock {
   font-size: 1em;
 }
 
-.exampleblock > .content {
+.exampleblock>.content {
   // white
   //background-color: #fff;
   //border-color: $panel-border-color;
@@ -43,7 +112,7 @@ p {
 }
 
 // trick to prevent caption from influencing width of an autowidth table
-table.tableblock.fit-content > caption.title {
+table.tableblock.fit-content>caption.title {
   white-space: normal;
   width: 0;
 }
@@ -60,43 +129,44 @@ table.tableblock.fit-content > caption.title {
 //}
 
 // matches %lead
-.paragraph.lead > p,
-#preamble > .sectionbody > [class="paragraph"]:first-of-type p {
+.paragraph.lead>p,
+#preamble>.sectionbody>[class="paragraph"]:first-of-type p {
   font-size: 1.3rem + em-calc(3.5);
+
+  font-weight: 400;
   line-height: 1.6;
   color: #1d2124;
   width: 100%;
+
   // QUESTION remove or reduce letter-spacing?
 }
 
 // nested AsciiDoc document (should put "nested" class on surrounding div)
-table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p {
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p {
   font-size: inherit;
 }
 
 .admonitionblock {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
-.admonitionblock > table {
-  border-radius: 5px !important;
-  border: 1px solid #503757;
+.sectionbody .admonitionblock>table {
+  border-radius: 5px;
   box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.2);
 
   border-collapse: separate;
   border: 0;
   width: 100%;
+  overflow: hidden !important;
 
   td.icon {
     text-align: center;
-    padding: 10px !important;
-    padding-left: 20px !important;
-    width: 120px !important;
-    height: 120px !important;
+    padding: 10px 10px 10px 20px;
     overflow: hidden;
+    font-size: 1.5rem;
 
     i {
-      font-size: 5rem !important;
+      font-size: 5rem;
     }
 
     img {
@@ -112,14 +182,21 @@ table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p 
   }
 
   td.content {
-    color: #888 !important;
-    font-size: 1rem !important;
-    p, li, em, code, pre {
-      font-size: inherit !important;
-    }
-    padding: 1rem 1rem;
+    color: #888;
+    font-size: 1rem;
 
-    > :last-child > :last-child {
+    p,
+    li,
+    em,
+    code,
+    pre {
+      font-size: inherit;
+      padding-right: 1rem !important;
+    }
+
+    padding: 1rem !important;
+
+    > :last-child> :last-child {
       margin-bottom: 0;
     }
   }
@@ -146,7 +223,7 @@ conum[data-value] {
     color: $white !important;
   }
 
-  + b {
+  +b {
     display: none;
   }
 }
@@ -155,7 +232,7 @@ conum[data-value] {
   content: attr(data-value);
 }
 
-span.icon > .fa {
+span.icon>.fa {
   cursor: default;
 }
 

@@ -9,9 +9,6 @@
 :page-tags: ["robots", "arduino"]
 :page-asciidoc_toc: true
 
-:showtitle:
-:icons: font
-
 Today I am introducing the Back Seat Driver -- a library for programming
 autonomous (or not) arduino based robots. https://github.com/kigster/back-seat-driver[Source Code on Github].
 

@@ -1,19 +1,15 @@
-:page-title: "Mixmax And My First Nodejs App"
-:showtitle:
-:page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
 :date: 2016-04-07 00:00:00 +08:00
 :page-excerpt: Mixmax And My First Nodejs App
 :page-layout: post
-:page-post_image: /assets/images/posts/mixmax-and-my-first-nodejs.png
+:page-post_image: /assets/images/posts/mixmax/mixmax.gif
 :page-tags: ["nodejs", "mixmax"]
 :page-asciidoc_toc: true
+:page-title: "Mixmax And My First Nodejs App"
+:page-liquid:
 
-{% lightbox_image { "url" : "posts/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
 
 A few days ago I was blown away but what a (still) little-known startup called http://mixmax.com[MixMax] is doing with email --
 nothing short of revolutionizing it! If you haven't see it yet, do check it out, especially if you often find yourself scheduling
@@ -22,6 +18,7 @@ meetings or lunches over email, asking for feedback, conducting polls or sharing
 MixMax enhances, enriches, extends (EEE!) the standard Gmail functionality with a lot of goodies, accessible from
 both the GUI as well as via the "slash" commands while composing an email.
 
+{% lightbox_image { "url" : "posts/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
 ____
 Slash commands have been used for a very long time, to send "commands", like in age-old http://www.irc.org[IRC], as well as the much more recent app https://slack.com[Slack], or even, any multi-player online video games.
 ____
@@ -122,4 +119,3 @@ you choose to install this resolver for yourself.
 
 Thanks for reading!
 
-/signoff

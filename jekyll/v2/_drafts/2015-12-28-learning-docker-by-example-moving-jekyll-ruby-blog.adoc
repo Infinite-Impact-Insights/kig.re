@@ -1,13 +1,12 @@
-'''
-
-layout: page
-title: 'DevOps Guide to Docker: Why, How and Wow.'
-draft: true
-toc: true
-
-'''
-
-'''
+:page-title: DevOps Guide to Docker: Why, How and Wow.
+:page-author_id: 1
+:page-categories: ["devops"]
+:page-comments: true
+:page-excerpt: Docker enables developers to easily pack, ship, and run any application as a lightweight, portable, self-sufficient container, which can run virtually anywhere. Containers gives you instant application portability. In this post we explore why Docker is so popular, and which innovations make it stand out.
+:page-layout: post
+:page-post_image: /assets/images/posts/ruby/rails-models.png
+:page-tags: ["ruby", "rails", "observable", "ventable"]
+:page-asciidoc_toc: true
 
 == Preface
 

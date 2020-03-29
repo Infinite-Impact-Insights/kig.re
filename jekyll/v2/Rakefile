@@ -8,11 +8,11 @@ require 'erb'
 require 'yaml'
 # require 'hashie/mash'
 
-require_relative 'lib/task_helper'
+require_relative '../lib/task_helper'
 
-load 'lib/tasks/deploy.rake'
-load 'lib/tasks/docker.rake'
-load 'lib/tasks/jekyll.rake'
+load '../lib/tasks/deploy.rake'
+load '../lib/tasks/docker.rake'
+load '../lib/tasks/jekyll.rake'
 
 task default: 'jekyll:preview'
 

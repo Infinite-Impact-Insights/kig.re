@@ -2,7 +2,7 @@
   "use strict";
 
   /* Mobile-menu	 */
-  $(".nav-button").on("click", function () {
+  $("#nav-button").on("click", function () {
     $("body").toggleClass("nav-open");
     let button = $("#nav-button");
     if (button.hasClass("fa-bars"))

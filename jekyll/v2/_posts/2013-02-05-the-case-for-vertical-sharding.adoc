@@ -9,9 +9,6 @@
 :page-tags: ["sharding", "scalability", "databases", "postgresql"]
 :page-asciidoc_toc: true
 
-:showtitle:
-:icons: font
-
 Wanelo's recent surge in popularity rewarded our engineers with a healthy stream of scaling problems to solve.
 
 Among the many performance initiatives launched over the last few weeks, vertical sharding has been the most impactful and interesting so far.
@@ -24,7 +21,7 @@ Horizontal sharding is generally a great long-term solution if the architecture 
 
 ==== To the Limit
 
-Under high application load, there is a physical limit on how many writes a single database server can take per second. Of course it depends on the type of RAID, file system and so on, but regardless, there is a hard limit. 
+Under high application load, there is a physical limit on how many writes a single database server can take per second. Of course it depends on the type of RAID, file system and so on, but regardless, there is a hard limit.
 
 _Reads are somewhat easier to scale --_ multiple levels of caching and spreading reads to database replicas form a familiar scaling strategy for read-heavy sites. Writes, however, are a whole different story.
 
@@ -42,7 +39,7 @@ In more practical terms, we needed to reduce the write load on the master to all
 
 ==== Finding It
 
-We looked at where all the writes were coming from using the amazing http://www.postgresql.org/docs/9.2/static/pgstatstatements.html[pg_stat_statements] PostgreSQL library, and it was one of two tables in our schema receiving upwards of 150 inserts per second (our database was doing about 4K commits per second at the time, which can be deduced by comparing xact_commit values in the http://www.postgresql.org/docs/9.2/static/monitoring-stats.html#PG-STAT-DATABASE-VIEW[pg_stat_databases] view). 
+We looked at where all the writes were coming from using the amazing http://www.postgresql.org/docs/9.2/static/pgstatstatements.html[pg_stat_statements] PostgreSQL library, and it was one of two tables in our schema receiving upwards of 150 inserts per second (our database was doing about 4K commits per second at the time, which can be deduced by comparing xact_commit values in the http://www.postgresql.org/docs/9.2/static/monitoring-stats.html#PG-STAT-DATABASE-VIEW[pg_stat_databases] view).
 
 The graph below shows the day-over-day growth of reads on one of the largest tables in our database, and the one we moved out.
 
@@ -85,11 +82,11 @@ With some followup:
 
 After the deploy we discovered that the new master database needed to have analyze run on the table for it to perform adequately, although it was also just warming up the filesystem ARC cache. After that initial warming period, the site hummed along as usual and the next day we were greeted by dramatically dropped I/O on all databases involved, a much faster website latency, and more blissfully obsessed users than ever.
 
-In this graph below of virtual filesystem reads and writes on our master database, you can clearly see where the the sharding happened. There is a dramatic drop in both reads and writes.  
+In this graph below of virtual filesystem reads and writes on our master database, you can clearly see where the the sharding happened. There is a dramatic drop in both reads and writes.
 
 image::http://media.tumblr.com/ba2729c6f8738168f8a49b301d4cd5f7/tumblr_inline_mhmyeaJ9Av1qz4rgp.png[image]
 
-While this provides us with some room to grow, we know that sharding this large table horizontally is just around the corner. 
+While this provides us with some room to grow, we know that sharding this large table horizontally is just around the corner.
 
 ==== Understanding It
 

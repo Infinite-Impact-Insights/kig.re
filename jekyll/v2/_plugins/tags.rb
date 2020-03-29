@@ -25,8 +25,8 @@ module Jekyll
 
     class MacroTag < Liquid::Tag
       MACROS = {
-        read_more: %{&#8627; Keep reading &hellip;},
-        clear_fix: CLEAR_FIX.to_s
+          read_more: %{&#8627; Keep reading &hellip;},
+          clear_fix: CLEAR_FIX.to_s
       }.freeze
 
       attr_accessor :macro, :asciidoc
@@ -65,7 +65,7 @@ module Jekyll
     #    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg">
     # </a>
     class LightboxImageTag < Liquid::Tag
-      attr_accessor :group, :url, :title, :css_class_anchor, :css_class_image, :asciidoc, :clear
+      attr_accessor :group, :url, :title, :css_class_anchor, :css_class_image, :no_asciidoc, :clear
 
       def initialize(tag_name, markup, options = {})
         super
@@ -75,8 +75,8 @@ module Jekyll
           options.delete(k.to_s)
         end
 
+        self.no_asciidoc      = options[:no_asciidoc]
         self.clear            = options[:clear]
-        self.asciidoc         = options[:asciidoc]
         self.url              = options[:url]
         self.title            = options[:title] || ''
         self.group            = options[:group] || 'default-group'
@@ -94,13 +94,13 @@ module Jekyll
         HTML
 
         case clear
-        when 'before'
-          tag = CLEAR_FIX + tag
-        when 'after'
-          tag += CLEAR_FIX
+          when 'before'
+            tag = CLEAR_FIX + tag
+          when 'after'
+            tag += CLEAR_FIX
         end
 
-        if asciidoc
+        unless no_asciidoc
           tag = "+++#{tag}+++"
         end
 

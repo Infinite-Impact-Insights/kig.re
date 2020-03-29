@@ -2,50 +2,52 @@
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
-:page-excerpt: A story about how your mom can now protect her application secrets by using this simple and effective <a href='https://github.com/kigster/sym'>symmetric encryption tool.</a>
+:page-excerpt: Most of us are familiar with the concept of application secrets, how important it is is not to commit those to your version control system, and how challenging it is to distribute development and production secrets across the dev team in a consistent and, most importantly, secure fashion. In this post we introduce a new Ruby Gem called 'Sym' for symmetric encryption.
 :page-layout: post
 :page-liquid:
-:page-post_image: /assets/images/posts/security/banner-encryption-locks.jpg
+:page-post_image: /assets/images/posts/security/big-data.jpg
 :page-tags: ["sym", "symmetric-encryption", "ruby-gem", "open-source"]
 :page-title: "Dead Simple Encryption with Sym"
-:showtitle:
 
+Sym is a command line utility and a Ruby API that makes it trivial to encrypt and decrypt sensitive data. Unlike many other existing encryption tools, sym focuses on usability and streamlined interface (CLI), with the goal of making encryption easy and transparent. The result? There is no excuse for keeping your application secrets unencrypted :)
 
-:icons: font
+== Dealing with Application Secrets
+
+Keeping secrets outside of your repo may provide you with a false sense of security. After all, anyone who gains access to your hard drive can download all of your secrets. A story about how your mom can now protect her application secrets by using this simple and effective symmetric encryption tool.
 
 *Are you impatient?* If so -- I direct you to view a link:/2017/03/10/dead-simple-encryption-with-sym.html#ascii[4-minute long ASCII Cinema session] I recorded that showcases *sym* in its beautiful CLI glory :)
 
 Now, keeping secrets outside of your repo may provide you with a false sense of security. After all, anyone who gains access to your hard drive can download all of your secrets. Think of a coffee shop, with a public WiFi, combined with a lack of recent security updates for your operating system -- and you are instantly at high risk. Besides the fact that decrypted secrets are easily accessible on your file system, this `gitignore` method deprives us, developers, from a very useful ability to track historical revisions of any changes to secrets files, and to be able to rollback to a previously working versions. Not to mention having to sync secrets across all developers when they change!
 
-== These Days If You Are Not Paranoid...
+[quote, Anonymous]
+-- These Days If You Are Not Paranoid... you don't live in reality :)
 
--- You don't live in reality :) [ -- anonymous]
-
+{% lightbox_image { "url" : "posts/security/keyboard.jpg",  "title": "Data Center" } %}
 As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/[CIA and NSA may have been hacking into your phone], rendering encryption used by the secure messaging apps like https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8[Signal] and https://www.whatsapp.com/[WhatsApp] completely useless.
 
 While these are sedrious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
 
-"There is gotta be a better way..."  ---- I thought to myself.
+[quote, Myself]
+"There is gotta be a better way...", —— I thought to myself.
 
 So I went on a hunt -- looking for a magical encryption tool, ideally written in ruby, that I could use to encrypt secrets, which would then enable us to check-in application secrets, encrypted, into the repo. Without the encryption key these files are useless. After looking around for some time, I came to the conclusion that a tool that was simple enough to use, was able to read the private key from many sources -- such as a file, environment variable, or even Mac OS-X Keychain, and offered password-protection for the keys, and can cache passwords for 15 minutes so that we don't have to retype it ten times during the deploy, this tools -- *it simply did not exist.*
 
 Well, technically it did not exist until now :)
 
-=== Encryption Methods
+{% lightbox_image { "url" : "posts/security/encryption-methods.png",  "title": "Encryption Methods" } %}
 
-{% lightbox_image { "url" : "posts/security/datacenter.jpg",  "title": "Data Center", "group":"security", "class": "clear-image" } %}
+=== Encryption Methods
 
 So let's review some high-level encryption terms that we'll use further in this discussion.
 
 The two most commonly encryption method are:
 
-{% lightbox_image { "url" : "/images/security/symmetric.jpg",  "title": "Symmetric", "group":"security", "class": "lightbox-image" } %}
-
+[NOTE]
+====
 * *Symmetric Encryption* -- this is where the same key is used to encrypt and decrypt the data. Typically, a random "IV" vector is used to randomize the encryption and make it harder to "brute-force" the key. You need both the key and the "IV" vector to decrypt the data. Having said that, and having done some research, people typically store the IV vector right next to the data. So I am not entirely sure how much added security it provides, but I am not an encryption expert.
 
-{% lightbox_image { "url" : "/images/security/asymmetric.gif",  "title": "Asymmetric", "group":"security", "class": "lightbox-image" } %}
-
 * *Asymmetric (Public/Private Key) Encryption* -- uses two pieces: a public and a private key. An unpredictable (typically large and random) number is used to begin generation of an acceptable pair of keys suitable for use by an asymmetric key algorithm. In an asymmetric key encryption scheme, anyone can encrypt messages using the public key, but only the holder of the paired private key can decrypt.
+====
 
 If we are dealing with an encrypted file that needs to be read by the application in both cases you'd need to have a key lying around -- either the private key (from the public/private pair), or, in case of symmetric encryption, -- the key used to encrypt the data.
 
@@ -53,7 +55,7 @@ While public/private key has some advantages to symmetric encryption, for applic
 
 But it is for these reasons that I decided to build a simple wrapper around OpenSSL's symmetric cipher, and release it under the name `sym` -- a ruby gem.
 
-{% lightbox_image { "url" : "/images/security/banner-encryption-locks.jpg",  "title": "Encryption", "group":"security", "class": "lightbox-image" } %}
+{% lightbox_image { "url" : "posts/security/big-data.jpg",  "title": "Encryption"} %}
 
 === Evaluating Threats
 

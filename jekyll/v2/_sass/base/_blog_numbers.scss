@@ -1,0 +1,102 @@
+@mixin numbered-blog-list {
+
+  .block-0:before {
+    background: #f50057;
+    content: "01";
+  }
+
+  .block-1:before {
+    background: #fe6061;
+    content: "02";
+  }
+
+  .block-2:before {
+    background: #d2a9fc;
+    content: "03";
+  }
+
+  .block-3:before {
+    background: #f8d86b;
+    content: "04";
+  }
+
+  .block-4:before {
+    background: #74cee7;
+    content: "05";
+  }
+
+  .block-5:before {
+    background: #fe6061;
+    content: "06";
+  }
+
+  .block-6:before {
+    background: #55efc4;
+    content: "07";
+  }
+
+  .block-7:before {
+    background: #3b3b98;
+    content: "08";
+  }
+
+  .block-8:before {
+    background: #2c3a47;
+    content: "09";
+  }
+
+  .block-9:before {
+    background: #fc427b;
+    content: "10";
+  }
+
+  .block-10:before {
+    background: #f50057;
+    content: "11";
+  }
+
+  .block-11:before {
+    background: #fe6061;
+    content: "12";
+  }
+
+  .block-12:before {
+    background: #d2a9fc;
+    content: "13";
+  }
+
+  .block-13:before {
+    background: #f8d86b;
+    content: "14";
+  }
+
+  .block-14:before {
+    background: #74cee7;
+    content: "15";
+  }
+
+  .block-15:before {
+    background: #fe6061;
+    content: "16";
+  }
+
+  .block-16:before {
+    background: #55efc4;
+    content: "17";
+  }
+
+  .block-17:before {
+    background: #3b3b98;
+    content: "18";
+  }
+
+  .block-18:before {
+    background: #2c3a47;
+    content: "19";
+  }
+
+  .block-19:before {
+    background: #fc427b;
+    content: "20";
+  }
+}

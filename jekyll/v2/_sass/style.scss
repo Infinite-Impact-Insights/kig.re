@@ -32,6 +32,7 @@ CSS Index
 @import "base/custom";
 @import "base/asciidoc";
 @import "base/mailchimp_form";
+@import "base/blog_numbers";
 
 /* ################
 Banner-Area CSS
@@ -348,8 +349,7 @@ Post-content-area
     padding: 15px;
 
     .tag-list {
-      span {
-      }
+      span {}
 
       p {
         float: left;
@@ -471,6 +471,7 @@ Post-content-area
               font-size: 16px;
               color: $primary-color;
               font-weight: 400;
+              /**/
             }
           }
 
@@ -482,6 +483,11 @@ Post-content-area
             margin-top: 5px;
             color: $hover;
             font-weight: 500;
+
+            &:hover {
+              color: $hover;
+              transition: all 0.3s ease-out;
+            }
           }
         }
       }
@@ -848,6 +854,9 @@ About-content-area Css
 Authors-area css
 ################ */
 .page-header {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
   .header-image {
     img {
       max-width: 100%;
@@ -863,7 +872,8 @@ Authors-area css
   }
 }
 
-.author-details, .tags-details {
+.author-details,
+.tags-details {
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 1px 1px 9px 0px rgba(156, 202, 183, 0.27);
@@ -1044,120 +1054,14 @@ Contact Guide Page
 
 
 .main-content-area .blog-list {
-  .block-0:before {
-    background: #f50057;
-    content: "0";
-  }
-
-  .block-1:before {
-    background: #fe6061;
-    content: "01";
-  }
-
-  .block-2:before {
-    background: #d2a9fc;
-    content: "02";
-  }
-
-  .block-3:before {
-    background: #f8d86b;
-    content: "03";
-  }
-
-  .block-4:before {
-    background: #74cee7;
-    content: "04";
-  }
-
-  .block-5:before {
-    background: #fe6061;
-    content: "05";
-  }
-
-  .block-6:before {
-    background: #55efc4;
-    content: "06";
-  }
-
-  .block-7:before {
-    background: #3b3b98;
-    content: "07";
-  }
-
-  .block-8:before {
-    background: #2c3a47;
-    content: "08";
-  }
-
-  .block-9:before {
-    background: #fc427b;
-    content: "09";
-  }
-
-  .block-10:before {
-    background: #b33771;
-    content: "10";
-  }
+  @include numbered-blog-list;
 }
 
 body.paged .main-content-area .blog-list {
-  .block-0:before {
-    background: #f50057;
-    content: "01";
-  }
-
-  .block-1:before {
-    background: #fe6061;
-    content: "02";
-  }
-
-  .block-2:before {
-    background: #d2a9fc;
-    content: "03";
-  }
-
-  .block-3:before {
-    background: #f8d86b;
-    content: "04";
-  }
-
-  .block-4:before {
-    background: #74cee7;
-    content: "05";
-  }
-
-  .block-5:before {
-    background: #fe6061;
-    content: "06";
-  }
-
-  .block-6:before {
-    background: #55efc4;
-    content: "07";
-  }
-
-  .block-7:before {
-    background: #3b3b98;
-    content: "08";
-  }
-
-  .block-8:before {
-    background: #2c3a47;
-    content: "09";
-  }
-
-  .block-9:before {
-    background: #fc427b;
-    content: "10";
-  }
-
-  .block-10:before {
-    background: #b33771;
-    content: "11";
-  }
+  @include numbered-blog-list;
 }
 
-.site-tag-archive > a {
+.site-tag-archive>a {
   display: block;
   font-size: 20px;
   background: $hover;
@@ -1178,7 +1082,6 @@ body.paged .main-content-area .blog-list {
   background: $hover;
   border-color: $hover;
 }
-
 
 .code-toolbar,
 pre,

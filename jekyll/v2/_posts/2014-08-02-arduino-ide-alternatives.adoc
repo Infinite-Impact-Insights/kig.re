@@ -1,8 +1,5 @@
 :page-title: "Arduino IDE Alternatives"
-:showtitle:
 :page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["hardware"]
 :page-comments: true
@@ -10,8 +7,7 @@
 :page-excerpt: Review of Arduino IDE Alternatives.
 :page-layout: post
 :page-post_image: /assets/images/posts/arduino-ide-alternatives.png
-:pp: {plus}{plus}
-:page-tags: ["arduino", "integrated-dev-environments"]
+:page-tags: ["arduino", "integrated-dev-environments", "c++"]
 :page-asciidoc_toc: true
 
 As a relative late comer to Arduino world, I went through the beginner tutorials and examples

@@ -1,16 +1,12 @@
 :page-title: "How It All Started"
-:showtitle:
 :page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["hardware"]
 :page-comments: true
-:date: 2014-08-01 00:00:00 +08:00
 :page-excerpt: In this post I share the story of how I got myself into Hardware programming with Arduino.
 :page-layout: post
 :page-post_image: /assets/images/posts/how-it-all-started.png
-:page-tags: ["arduino", "c/c++"]
+:page-tags: ["arduino", "c++"]
 :page-asciidoc_toc: true
 
 I've been a software engineer or technical leader for most of my career, which approaches on 20 years (I just recently hit 40 earlier this year). I started coding when

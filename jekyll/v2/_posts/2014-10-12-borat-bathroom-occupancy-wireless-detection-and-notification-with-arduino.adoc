@@ -1,18 +1,13 @@
-:page-title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
-:showtitle:
-:page-liquid:
-:icons: font
-
 :page-author_id: 1
 :page-categories: ["hardware"]
 :page-comments: true
-:date: 2014-10-12 00:00:00 +0600
-:page-excerpt: Occupus (formerly BORAT: Bathroom Occupancy Remote Awareness Technology) – is an Arduino-based restroom occupancy detection and rapid notification system based on a network of nRF24L01+ 2.4GHz RF radios. It supports multiple (up to 5) casters (each installed in a bathrooms) and a single reporting unit.
+:page-excerpt: "Occupus (formerly BORAT: Bathroom Occupancy Remote Awareness Technology) – is an Arduino-based restroom occupancy detection and rapid notification system based on a network of nRF24L01+ 2.4GHz RF radios. It supports multiple (up to 5) casters (each installed in a bathrooms) and a single reporting unit."
 :page-layout: post
 :page-post_image: /assets/images/posts/borat/bathroom-occupied-calm-technology.jpg
-:pp: {plus}{plus}
-:page-tags: ["arduino", "occupancy", "borat", "sensor"]
+:page-tags: ["arduino", "occupancy", "borat", "sensor", "c++"]
 :page-asciidoc_toc: true
+:page-title: "BORAT: Bathroom Occupancy Remote Awareness Technology with Arduino"
+:page-liquid:
 
 A great company where I work, http://wanelo.com/[Wanelo], with all of it's 35 people, recently moved to a new office which has only two single-occupancy bathrooms, each on a separate floor.
 

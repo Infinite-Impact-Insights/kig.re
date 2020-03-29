@@ -80,15 +80,11 @@ permalink: /:year/:month/:day/:title:output_ext
 theme: minima
 plugins:
   - jekyll-archives
-  - jekyll-coffeescript
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-sass-converter
   - jekyll-sitemap
-  - jekyll-toc
   - jekyll-asciidoc
-  - jekyll-toc
-  - rouge
 
 ###################################################################
 # Site configuration for the Jekyll 2 Pagination Gem
@@ -117,16 +113,18 @@ autopages:
   categories:
     layouts:
       - 'category.html'
-    title: 'Category -  :cat'
+    title: 'Category'
+    subtitle: ':cat'
     permalink: '/category/:cat'
   collections:
     layouts:
       - 'category.html'
     title: ' :coll' # :coll is replaced by the collection name
+    subtitle: ':coll'
     permalink: '/:coll/'
   tags:
     layouts:
-      - 'tag_page.html'
+      - 'tags.html'
     title: '#:tag' # :tag is replaced by the tag name
     permalink: '/tag/:tag'
 
