@@ -67,13 +67,13 @@
   <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/site/favicon.png" type="image/x-icon"/>
   <!-- gulp:css -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/vendor.min.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/site.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/vendor.min.css?d={{ "now" | date: "%Y%m%d%H%M%S" }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/site.min.css?d={{ "now" | date: "%Y%m%d%H%M%S" }}">
   <!-- endgulp -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Yanone+Kaffeesatz:300,400,800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/09a9169bd2.js" crossorigin="anonymous"></script>
   <!-- gulp:js -->
-  <script type="text/javascript" src="{{ site.baseurl }}/assets/js/site.min.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/assets/js/site.min.js?d={{ "now" | date: "%Y%m%d%H%M%S" }}"></script>
   <!-- endgulp -->
   <script type="text/javascript" src="{{ site.baseurl }}/assets/js/disquss_embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
   <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function (L) {
@@ -88,6 +88,6 @@
 {% include header.html %}
 {{ content }}
 {% include footer.html %}
-<script type="text/javascript" src="{{ site.baseurl }}/assets/js/app.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/app.js?d={{ "now" | date: "%Y%m%d%H%M%S" }}"></script>
 </body>
 </html>
