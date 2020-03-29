@@ -1,26 +1,17 @@
-<header class="head-main">
-  <div class="navbar navbar-dark box-shadow">
-    <div class="container d-flex justify-content-between">
-      <a href="{{ site.url }}" class="navbar-brand d-flex align-items-center">
-        {% if site.alt_logo_url %}
-          <img src="{{ site.alt_logo_url }}" alt="{{ site.title }}"/>
-        {% else %}
-          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }}"/>
-        {% endif %}
-      </a>
-      <a class="nav-button ml-auto"><i id="nav-button" class="fas fa-bars fa-3x"></i></span></a>
-    </div>
-  </div>
+<div id="original-nav">
   <div class="fixed-top main-menu">
     <div class="flex-center p-5">
       <ul class="nav flex-column">
-        <li class="nav-item delay-1"><a class="nav-link" href="{{ site.url }}">Home</a></li>
+        <li class="nav-item delay-1"><a class="nav-link"
+                                        href="{{ site.url }}">Home</a></li>
         {% for page in site.pages %}
-          {% if page.add_to_menu == true %}
-            <li class="nav-item delay-1"><a class="nav-link" href="{{ page.url }}">{{ page.title }}</a></li>
-          {% endif %}
+        {% if page.add_to_menu == true %}
+        <li class="nav-item delay-1"><a class="nav-link"
+                                        href="{{ page.url }}">{{ page.title
+          }}</a></li>
+        {% endif %}
         {% endfor %}
       </ul>
     </div>
   </div>
-</header>
+</div>
