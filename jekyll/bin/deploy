@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# vim: ft=bash
+
+set -e
+source ~/.bashmatic/init.sh
+
+git status -s || { 
+  warning "You have locally modified unstaged or uncommitted changes."
+  git status --long
+  run.ui.ask "Deploy anyway?"
+}
+
+ssh kig.re -c "bash -l -c 'kigre'"
