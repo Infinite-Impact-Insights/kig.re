@@ -10,4 +10,4 @@ git status -s || {
   run.ui.ask "Deploy anyway?"
 }
 
-ssh kig.re -c "bash -l -c 'kigre'"
+ssh kig.re "bash -l -c 'kigre'"

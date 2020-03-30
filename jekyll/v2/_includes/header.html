@@ -1,9 +1,10 @@
 <!--<div class="container">-->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top pb-0"
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
      id="top-nav">
 
-  <div class="container align-content-center float-left  navbar-light bg-light">
+  <div class="container align-content-end">
+
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -11,14 +12,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse pr-lg-5 navbar-light bg-light"
+    <div class="collapse navbar-collapse navbar-light bg-light"
          id="navbarSupportedContent">
 
-      <ul class="float-right navbar-nav nav-tabs navbar-light bg-light border-0 ml-0 w-100 pb-0">
-        <li class="nav-item float-right  navbar-light bg-light">
-          <a class="nav-link"
+      <a class="navbar-brand" id="site-logo" href="/">
+        <img src="/assets/images/site/kigre-red-logo.png"/>
+      </a>
+
+      <ul class="navbar-nav nav-tabs navbar-light bg-light" id="nav-ul">
+        {% if page.url == "/index.html" %}
+        {% assign active_class="active" %}
+        {% endif %}
+
+        <li class="nav-item">
+          <a class="nav-link {{ active_class }}"
              href="/">Home</a>
         </li>
+
         {% for menu_page in site.pages %}
         {% if menu_page.add_to_menu == true %}
         {% if page.title == menu_page.title %}
@@ -26,7 +36,7 @@
         {% else %}
         {% assign active_class="" %}
         {% endif %}
-        <li class="nav-item float-right">
+        <li class="nav-item">
           <a class="nav-link {{ active_class }}"
              href="{{ menu_page.url }}">{{
             menu_page.title | truncatewords: 5 }}</a>
@@ -34,30 +44,14 @@
         {% endif %}
         {% endfor %}
 
-        <div class="divider-horizontal w-100"></div>
+        {% if page.url contains 'category' %}
+        {% assign cat_active_class="active" %}
+        {% else %}
+        {% assign cat_active_class="" %}
+        {% endif %}
 
-        <li class="nav-item float-right dropdown">
-          <a class="nav-link btn-outline-light dropdown-toggle"
-             data-toggle="dropdown"
-             href="#"
-             role="button"
-             aria-haspopup="true"
-             aria-expanded="false">Archive</a>
-
-          <div class="dropdown-menu">
-            {% for post in site.posts %}
-            <a class="dropdown-item small" href="{{ post.url }}">
-              <div class="post-date-menu">
-                <strong>{{ post.date | date: '%b %Y' }}</strong>
-              </div>
-              <span class="post-title">{{ post.title | truncatewords: 6 }}</span>
-            </a>
-            {% endfor %}
-          </div>
-        </li>
-
-        <li class="nav-item float-right dropdown">
-          <a class="nav-link btn-outline-light dropdown-toggle"
+        <li class="nav-item dropdown {{ cat_active_class }}">
+          <a class="nav-link btn-outline-light dropdown-toggle "
              data-toggle="dropdown"
              href="#"
              role="button" aria-haspopup="true"
@@ -75,14 +69,28 @@
           </div>
         </li>
 
-        <div class="divider-horizontal w-100"></div>
+        <li class="nav-item dropdown">
+          <a class="nav-link btn-outline-light dropdown-toggle"
+             data-toggle="dropdown"
+             href="#"
+             role="button"
+             aria-haspopup="true"
+             aria-expanded="false">Post Archive</a>
 
+          <div class="dropdown-menu">
+            {% for post in site.posts %}
+            <a class="dropdown-item small" href="{{ post.url }}">
+              <div class="post-date-menu">
+                <strong>{{ post.date | date: '%b %Y' }}</strong>
+              </div>
+              <span
+                  class="post-title">{{ post.title | truncatewords: 6 }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </li>
 
       </ul>
-
-      <a class="navbar-brand" id="site-logo" href="/">
-        <img src="/assets/images/site/kigre-red-logo.png" width="100"/>
-      </a>
 
 
     </div>

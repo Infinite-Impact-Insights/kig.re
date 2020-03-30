@@ -3,11 +3,33 @@
 @import "variable";
 
 #top-nav {
-  border-bottom: 1px solid #eee;
   padding-bottom: 0;
   margin-bottom: 0;
   font-family: $font-menu !important;
   font-weight: 600;
+
+  .container {
+    position: relative;
+
+    ul#nav-ul {
+      width: 100%;
+      text-align: right;
+    }
+
+    a#site-logo {
+      position: absolute;
+      top: -10px;
+      right: 0;
+      float: right;
+
+      img {
+        width: 100px !important;
+        height: auto !important;
+
+      }
+    }
+  }
+
   .post-date-menu {
     font-family: $font-monospace-family;
     font-weight: 400;
@@ -35,10 +57,12 @@
 
     a.dropdown-item {
       color: black !important;
+
       &:hover {
         background-color: $hover !important;
       }
     }
+
     @include desktop {
       padding: 8px;
     }
@@ -59,6 +83,7 @@
   nav {
     .navbar-nav {
       left: 0;
+
       .nav-link {
         padding-left: 10px !important;
         width: 150px;

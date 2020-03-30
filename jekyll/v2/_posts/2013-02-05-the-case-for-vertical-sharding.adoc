@@ -1,15 +1,18 @@
 :page-title: "The Case For Vertical Sharding"
 :page-liquid:
 :page-author_id: 1
-:page-categories: ["devops", "programming"]
+:page-categories: ["programming", "databases", "scalability" ]
 :page-comments: true
 :page-excerpt: In this post I share the story of overcoming a massive scalability bottleneck from too many writes ino the Analytics database table used for Event collection, using Vertical Sharding.
 :page-layout: post
-:page-post_image: /assets/images/posts/the-case-for-vertical-sharding.png
-:page-tags: ["sharding", "scalability", "databases", "postgresql"]
+:page-post_image: /assets/images/posts/abstract/shiny-db-cylinders.jpg
+:page-tags: ["sharding", "scalability", "postgresql"]
 :page-asciidoc_toc: true
 
-Wanelo's recent surge in popularity rewarded our engineers with a healthy stream of scaling problems to solve.
+
+== Good Problems to Have
+
+https://wanelo.co[Wanelo]'s recent surge in popularity rewarded our engineers with a healthy stream of scaling problems to solve.
 
 Among the many performance initiatives launched over the last few weeks, vertical sharding has been the most impactful and interesting so far.
 
@@ -19,7 +22,7 @@ Vertical sharding is often contrasted with "horizontal" sharding, where higher s
 
 Horizontal sharding is generally a great long-term solution if the architecture supports it, but vertical sharding can often be done quicker and can buy you some time to implement a longer-term redesign.
 
-==== To the Limit
+=== To the Limit
 
 Under high application load, there is a physical limit on how many writes a single database server can take per second. Of course it depends on the type of RAID, file system and so on, but regardless, there is a hard limit.
 

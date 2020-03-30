@@ -7,23 +7,6 @@
 
 body {
 
-  nav.navbar,
-  .navbar {
-    position: fixed;
-  }
-
-  nav {
-    #site-logo {
-      position: relative;
-
-      img {
-        width: 120px;
-        height: 50px;
-        display: block;
-      }
-    }
-  }
-
   .banner {
     margin-top: 50px !important;
   }
@@ -91,7 +74,6 @@ body {
   }
 
   .index-page {
-
     .banner-text-wrap,
     .blog-list {
       .sectionbody {
@@ -105,7 +87,26 @@ body {
           line-height: 1.2rem !important;
           color: #333034 !important;
           text-shadow: none !important;
+
         }
+      }
+    }
+  }
+
+  a.image {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    img {
+      width: 60%;
+      border-radius: 5px;
+      border: 0px solid #503757;
+      box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
+
+      &:hover {
+        border: 1px solid $hover;
+        box-shadow: 5px 5px 15px $hover;
       }
     }
   }
@@ -124,8 +125,7 @@ body {
       font-weight: 700;
       font-family: 'Yanone Kaffeesatz', sans-serif !important;
       margin: 10px 10px 10px 0 !important;
-      text-align: left;
-      ;
+      text-align: left;;
     }
 
     h1 {
@@ -158,10 +158,29 @@ body {
 
   .post-link-arrow {
     width: 30px;
-    float: right;
-    margin-top: -20px;
+    float: left;
+    margin-top: -10px;
+    margin-right: 50px;
+
+    a {
+      color: $hover !important;
+
+      &:hover {
+        color: $active !important;
+      }
+    }
+
   }
 
+  h2.post-link {
+    line-height: 1.6rem !important;
+  }
+
+  .banner-text-wrap {
+    h2.post-link {
+      line-height: 2.5rem !important;
+    }
+  }
 
   .post-link {
     position: relative;
@@ -202,27 +221,29 @@ body {
 
   div.post-listing-image {
     float: right !important;
+    width: 40% !important;
+    margin: 20px 20px 40px 40px;
 
     img {
       border-radius: 5px;
-      border: 1px solid #503757;
-      box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
+      //border: 1px solid #503757;
+      //box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
       position: relative;
       display: block;
-      width: 200px !important;
-      margin: 20px;
+      width: 100%;
+      max-height: 150px;
+      overflow-y: hidden;
     }
+
   }
 
-  @media (max-width: 900px) {
-
+  @media (max-width: 600px) {
     .post-link {
       width: 100%;
     }
 
     div.post-listing-image {
-      float: none;
-      clear: both;
+      display: none;
 
       img {
         display: none;
@@ -348,6 +369,8 @@ body {
     min-height: 500px;
     margin-top: 0;
 
-    a {}
+    a {
+    }
   }
+
 }

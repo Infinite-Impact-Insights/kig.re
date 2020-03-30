@@ -344,6 +344,9 @@ Post-content-area
   .post-image img {
     max-width: 100%;
   }
+  #post-image {
+    box-shadow: none !important;
+  }
 
   .post-share-icon {
     margin-top: 40px;
@@ -876,6 +879,8 @@ Authors-area css
 
 .author-details,
 .tags-details {
+  float: left;
+  clear: both;
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 1px 1px 9px 0px rgba(156, 202, 183, 0.27);

@@ -9,15 +9,18 @@
 :page-asciidoc_toc: true
 :page-liquid:
 
+
+== PostgreSQL Developer Conference
+
 I was very happy to find out that my submission accepted at 2015 pgConfSV conference (where SV is for Silicone Valley) was accepted.
 
- For various reasons I was unable to cover everything I wanted during the talk, which is a note to self for future public speaking engagements! Time your talk! :). Well, below is an updated version of that presentation, which shows an incremental and methodical path to scaling web applications to millions of users using PostgreSQL, all the while covering a very range of material.
+For various reasons I was unable to cover everything I wanted during the talk, which is a note to self for future public speaking engagements! Time your talk! :). Well, below is an updated version of that presentation, which shows an incremental and methodical path to scaling web applications to millions of users using PostgreSQL, all the while covering a very range of material.
 
-== 2015 Silicon Valley PostgreSQL Developer Conference
+=== What was covered?
 
 I wanted to share how the Wanelo team had solved one of the biggest challenges we faced:
 
-> How to effectively store and retrieve over 4B rows of 'saves' (a Wanelo equivalent of Instagram 'like' or Pinterest 'pin'), all in PostgreSQL, with highly concurrent random access.
+ * How to effectively store and retrieve over 4B rows of 'saves' (a Wanelo equivalent of Instagram 'like' or Pinterest 'pin'), all in PostgreSQL, with highly concurrent random access.
 
 In general, the ideal audience for this is operationally and architecturally minded full stack engineers, building web apps that either are already serving a ton of traffic, or will be soon.
 
@@ -25,12 +28,11 @@ But on the broader scale, I was intending for this presentation to be helpful to
 
 Turns out it _is_ possible to achieve high scalability on the cheap, and using PostgreSQL, which is what we did at Wanelo, and it turned out great.
 
-=== Presentation
+=== The Presentation
 
 You can view the presentation here:
 
-***
-https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql[From Obvious to Ingenius: Incrementally Scaling Web Apps on PostgreSQL]
-***
+image:{{ site.url }}/assets/images/posts/postgres/scaling-web-applications-on-postgresql.png[link="https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql", 400, center]
+
 
 Thanks!

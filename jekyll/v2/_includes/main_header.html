@@ -5,12 +5,17 @@
         <div class="author-text">
           <div class="single-author-d w-100">
             <div class="title">
-              <h2 class="mb-0 text-center">{{ page.title | capitalize
-                }}</h2>
+              {% if category %}
+              <h2 class="mb-0 text-center"><span
+                  class="badge badge-pill badge-secondary">{{ category }}</span>
+              </h2>
+              {% else %}
+              <h2 class="mb-0 text-center">{{ page.title | capitalize }}</h2>
               {% if page.subtitle %}
               <h3 class="mb-0 text-center"><span
                   class="badge badge-pill badge-secondary">{{ page.subtitle }}</span>
               </h3>
+              {% endif %}
               {% endif %}
             </div>
             {% if page.layout == "post" %}
