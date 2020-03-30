@@ -24,6 +24,7 @@ exclude:
   - bin/
   - graphics/**/*
   - node_modules/**/*
+  - _drafts/
   - _markdown/
   - _templates/
   - .git/**/*
@@ -85,6 +86,7 @@ plugins:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-asciidoc
+  - jekyll-liquify
 
 ###################################################################
 # Site configuration for the Jekyll 2 Pagination Gem

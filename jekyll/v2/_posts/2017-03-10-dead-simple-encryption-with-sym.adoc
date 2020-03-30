@@ -19,28 +19,30 @@ Keeping secrets outside of your repo may provide you with a false sense of secur
 
 Now, keeping secrets outside of your repo may provide you with a false sense of security. After all, anyone who gains access to your hard drive can download all of your secrets. Think of a coffee shop, with a public WiFi, combined with a lack of recent security updates for your operating system -- and you are instantly at high risk. Besides the fact that decrypted secrets are easily accessible on your file system, this `gitignore` method deprives us, developers, from a very useful ability to track historical revisions of any changes to secrets files, and to be able to rollback to a previously working versions. Not to mention having to sync secrets across all developers when they change!
 
-[quote, Anonymous]
--- These Days If You Are Not Paranoid... you don't live in reality :)
+[quote, Chris Pirillo]
+"Passwords are like underware: don't let people see it, change it often, and you should't share it with strangers."
 
-{% lightbox_image { "url" : "posts/security/keyboard.jpg",  "title": "Data Center" } %}
+image::/assets/images/posts/security/xlock.jpg[Lock,500,200]
+
 As I write this, security is on everyone's mind, and for a very good reason. The news is riddled with all sorts of high profile break-ins and backdoors. Just a few days ago WikiLeaks released findings that https://www.wired.com/2017/03/wikileaks-cia-hack-signal-encrypted-chat-apps/[CIA and NSA may have been hacking into your phone], rendering encryption used by the secure messaging apps like https://itunes.apple.com/us/app/signal-private-messenger/id874139669?mt=8[Signal] and https://www.whatsapp.com/[WhatsApp] completely useless.
 
 While these are sedrious issues that we as a society should debate, I found myself in need of an easy-to-use encryption tool, required for a much simpler problem. I was building a deploy automation for a web app, and one of the major inconveniences with that application was that various secrets were sprinkled around the file system, their filenames added to the `.gitignore` file so that they don't get accidentally checked into the repo. It took a good amount of time to get a local environment fully setup with all the secrets, so that the app would function locally.
 
 [quote, Myself]
-"There is gotta be a better way...", —— I thought to myself.
+"There is gotta be a better way...", — I thought.
 
 So I went on a hunt -- looking for a magical encryption tool, ideally written in ruby, that I could use to encrypt secrets, which would then enable us to check-in application secrets, encrypted, into the repo. Without the encryption key these files are useless. After looking around for some time, I came to the conclusion that a tool that was simple enough to use, was able to read the private key from many sources -- such as a file, environment variable, or even Mac OS-X Keychain, and offered password-protection for the keys, and can cache passwords for 15 minutes so that we don't have to retype it ten times during the deploy, this tools -- *it simply did not exist.*
 
 Well, technically it did not exist until now :)
 
-{% lightbox_image { "url" : "posts/security/encryption-methods.png",  "title": "Encryption Methods" } %}
 
 === Encryption Methods
 
 So let's review some high-level encryption terms that we'll use further in this discussion.
 
-The two most commonly encryption method are:
+The two most commonly encryption method are — **Symmetric** and **Asymmetric** encryption:
+
+image::/assets/images/posts/security/encryption-methods.png[Encryption Methods,100%,border=1]
 
 [NOTE]
 ====
@@ -77,19 +79,16 @@ Final point I would like to make here, is that -- given that the private key is 
 
 And now, since we already understand various threat vectors and scenarios, without further ado, I would love to introduce you to the new kid on the block: *`sym` -- symmetric encryption made easy.*
 
+
 == Sym
+
+[NOTE]
+Please note that sym works great on both *Mac OS-X and Linux*, and its 95% coverage test suite successfully builds on rubies from 2.2 to 2.7 and jruby.
+
 
 === Encrypting & Decrypting with Style
 
 *Sym* is a ruby library (gem) that offers both the command line interface (CLI) and a set of rich Ruby APIs, which make it rather _trivial to add encryption and decryption of sensitive data_ to your development flow. As a layer of additional security, *sym* supports encrypting of the private key itself with a password. Unlike many other existing encryption tools, *sym* focuses on usability and streamlined interface (in both CLI and Ruby API), with the goal of making encryption easy and transparent to the developer integrating the gem. *sym* uses _symmetric Encryption_ with a 256-bit key and a random 'iv' vector, to encrypt and decrypt data.
-
-Sym's been tested on *Mac OS-X and Linux*, and its 95% coverate test suite successfully builds on the following rubies:
-
-* 2.2.5
-* 2.3.3
-* 2.4.0
-* 2.5.0
-* jruby-9.1.7.0
 
 *Sym* uses the `AES-256-CBC` cipher to encrypt the actual data, -- this is the cipher used by the US Government, and `AES-128-CBC` cipher to encrypt the key with an optional password. +
  +
@@ -121,15 +120,16 @@ So how does `sym` substantiate its claim that it _streamlines_ the encryption pr
 
 As you can see, I tried to build a tool that provides real security for application secrets, including password-based encryption but does not annoyingly ask for a password every time. With `--edit` option, and `--negate` options you can treat encrypted files like regular files.
 
-____
+[TIP]
 If you are interested in a "step by step" walkthrough, please open this link -- http://kig.re/2017/03/10/dead-simple-encryption-with-sym.html#step-by-step-walkthrough[Step By Step Walkthrough of the README].
-____
 
-+++<a name="ascii">++++++</a>+++
++++<a name="ascii"/>+++
 
-=== ASCII Session with Sym+++<script type="text/javascript" src="https://asciinema.org/a/26nytbf3oaofijuwwxawuseas.js" id="asciicast-26nytbf3oaofijuwwxawuseas" async="">++++++</script>+++
+=== ASCII Session with Sym
 
-== Thanks!
++++<script type="text/javascript" src="https://asciinema.org/a/26nytbf3oaofijuwwxawuseas.js" id="asciicast-26nytbf3oaofijuwwxawuseas" async="">++++++</script>+++
+
+Thanks!
 
 Thanks for reading, and I hope you find this tool useful! Please feel free to submit issues or requests on GitHub at https://github.com/kigster/sym.
 

@@ -4,19 +4,22 @@
 :date: 2014-11-21 00:00:00 +08:00
 :page-excerpt: LaserCutter & MakeABox.io — its a ruby gem and a website for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting.
 :page-layout: post
-:page-post_image: /assets/images/posts/announcing-laser-cutter-makeabox-dot.png
+:page-post_image: /assets/images/posts/makeabox/laser-cut-johnny5.jpg
 :page-tags: ["hardware", "laser-cutting", "makeabox"]
 :page-asciidoc_toc: true
 :page-title: "Announcing Laser Cutter and MakeABox.IO"
 :page-liquid:
 
-link:/assets/images/posts/makeabox/pen-holder.jpg[image:/assets/images/posts/makeabox/pen-holder.jpg[\]]
+
+== The Joys of Laser Cutting are hard to describe...
 
 My day job, @ Wanelo, requires cranking on all cylinders, and so I've been pretty busy with life, the universe, and everything, although it mostly means Work, the Wife, and the Cat). In all this constructive chaos, I totally forgot to mention, and properly introduce to the world something I've been working on during many sleepless nights this September :)
 
-____
-So without further ado, https://github.com/kigster/laser-cutter[LaserCutter] ---- ruby gem (a library and a CLI) for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting.
-____
+**So without further ado, https://github.com/kigster/laser-cutter[LaserCutter] — Ruby Gem (a library and a CLI) for making PDF designs of laser-cut boxes, which fit/snap in together at all edges using tabs that go in and out.  The output of the library is a PDF document. Typically next step would import that PDF into Adobe Illustrator for additions and touch ups, and then sent off to a laser cutter for the actual, well, cutting.**
+
+{% lightbox_image {
+  "url": "posts/makeabox/makeabox.jpg",
+  "title": "MakeABox.io"} %}
 
 In addition to the ruby gem, there is also simple web front-end, called  http://makeabox.io/[MakeABox.IO], which can get you started creating boxes without installing any gem, or running anything on the command line.
 
@@ -46,7 +49,7 @@ So I embarked on writing my own, and as of a few weeks ago, the beast is now fea
 
 To the coders reading this, I will shamefully admit that the current incarnation of this library (version 1.0.3) contains a number of hacks, and there is a consistent lack of clean intentional software design. I've sort of taken a brute force approach in a couple o places, and consequently been awarded a pretty low Code Clime score.  (Although who are they to judge! Some computers, dammit :P)  But on the bright side, I am planning a refactor before I do more with it.  The algorithmic part of this ended up being a bit tricky (surprise!), but the kinks are ironed out and the tests are there to prove it.
 
-link:/assets/images/posts/makeabox/makeabox-pdf.jpg[image:/assets/images/posts/makeabox/makeabox-pdf.jpg[\]]
+image::/assets/images/posts/makeabox/makeabox-pdf.jpg[]
 
 === Wait, you said "tests"? WTF!
 
@@ -95,7 +98,7 @@ For example, to create a box defined in inches, set kerf to 0.008" and open PDF 
  $ laser-cutter -z 3x2x2/0.125 -k 0.008 -O -o box.pdf
 ----
 
-link:/assets/images/posts/makeabox/laser-cutter.jpg[image:/assets/images/posts/makeabox/laser-cutter.jpg[\]]
+image::/assets/images/posts/makeabox/laser-cutter.jpg[]
 
 === Getting Creative
 
@@ -117,5 +120,3 @@ My library, like most of the projects I am working on, are under MIT Open Source
 Let's make laser cutting enclosures fun for the whole family! (Or just for you :)
 
 Please leave comments, suggestions, complaints and the answer to life, the universe, and everything.
-
----- KIG.

@@ -3,12 +3,14 @@
 :page-author_id: 1
 :page-categories: ["hardware"]
 :page-comments: true
-:date: 2014-08-02 00:00:00 +08:00
 :page-excerpt: Review of Arduino IDE Alternatives.
 :page-layout: post
-:page-post_image: /assets/images/posts/arduino-ide-alternatives.png
+:page-post_image: /assets/images/posts/arduino/ide-arduino-arduino.jpg
 :page-tags: ["arduino", "integrated-dev-environments", "c++"]
 :page-asciidoc_toc: true
+
+
+== Developing for Hardware using Arduino and Integrated Development Environments
 
 As a relative late comer to Arduino world, I went through the beginner tutorials and examples
 using the provided Arduino IDE.  I faithfully downloaded it from http://arduino.cc/en/Main/Software[arduino.cc]
@@ -24,8 +26,6 @@ features, refactor code, and so on: all the "basic" features I so got spoiled wi
 JetBrain's http://www.jetbrains.com/ruby/[RubyMine], http://www.jetbrains.com/objc/[AppCode], http://www.jetbrains.com/idea/[IDEA],
 open source (but originally IBM's) https://www.eclipse.org/[Eclipse], and not to
 mention Apple's https://developer.apple.com/xcode/[XCode].
-
-image::/images/ide-arduino-arduino.jpg[Arduino IDE]
 
 After going through several example projects using the IDE I became more and more frustrated with
 its limitations.  Programming hardware is hard enough (pun intended), and the IDE is supposed to

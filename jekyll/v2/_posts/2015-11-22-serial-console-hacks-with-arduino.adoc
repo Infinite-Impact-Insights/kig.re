@@ -1,7 +1,7 @@
 :page-author_id: 1
 :page-categories: ["programming", "hardware"]
 :page-comments: true
-:page-excerpt:
+:page-excerpt: In this post I'll share a method that I use to connect to a Serial port of any Arduino I am using at any given moment.  This method has a caveat, in that if you have more than one Arduino connected, it will pick one of them at random.
 :page-layout: post
 :page-post_image: /assets/images/posts/arduino/arduino-board.jpg
 :page-tags: ["arduino", "console", "hacks"]
@@ -9,7 +9,7 @@
 :page-title: "Serial Console Hacks With Arduino"
 :page-liquid:
 
-I wanted to share a method that I use to connect to a Serial port of any Arduino I am using at any given moment.  This method has a caveat, in that if you have more than one Arduino connected, it will pick one of them at random.
+
 
 == Battling Console
 
@@ -27,9 +27,9 @@ I found it! It's called minicom!
 
 This is what I get:
 
-----
+[source,bash]
 minicom version 2.7 (compiled Oct 20 2014)
-----
+
 
 === BASH Magic
 

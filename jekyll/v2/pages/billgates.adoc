@@ -1,0 +1,1169 @@
+The Core Memory Project The Bill Gates Interview A candid conversation with the sultan of software about outsmarting his rivals Copyright Playboy Enterprises Inc. 1994 A youngish man who looks like a graduate student sits on the door of his unpretentious dormlike room, spooning Thai noodles from a plastic container.
+His glasses are smudged, his clothes are wrinkled, his hair is tousled like a boy's.
+But, when he talks, people listen.
+Certainly no person on the campus can talk about the future, as he does, with the riveting authority of someone who not only knows what's in store for tomorrow but is a major force in shaping that future as well.
+Yet this is an office, not a dorm room.
+And, while everyone calls the complex of 25 buildings a campus, it's not a college or university.
+It's the sprawling Microsoft headquarters in Redmond, Washington.
+And the speaker is no grad student.
+He's William H. Gates III, chief executive and co-founder of the largest software company in the world, which made $953 million last year on sales of $3.75 billion.
+As Microsoft's largest stockholder, he's worth nearly $6.1 billion, making him this country's second wealthiest man and, at 38, its youngest self-made billionaire.
+(Gates pal, investor Warren Buffett, is first, though they occasionally trade places depending on stock prices.) Microsoft's wealth and power just grow and grow, asserts Fortune magazine.
+CEO Bill Gates could buy out an entire years production of his 99 nearest competitors, burn it, and still be worth more than Rupert Murdoch or Ted Turner.
+Microsoft's $25 billion market value tops that of Ford, General Motors, 3M, Boeing, RJR Nabisco, General Mills, Anheuser-Busch or Eastman Kodak.
+With size comes power.
+Microsoft dominates the PC market with its MS-DOS operating system, the basic software that lets the computer understand your commands and carry them out.
+MS-DOS runs on 90 percent of the worlds IBM and IBM-clone computers.
+Microsoft has extended that presence with Windows, a graphics interface environment that runs on top of MS-DOS and will, according to Gates, replace DOS in future versions.
+Microsoft also supplies about 50 percent of the worlds software applications: programs such as Excel (spreadsheets), Microsoft Word (word processing) and Access (data bases).
+It is also in the business of networking.
+And multimedia.
+And CD-ROMs.
+And books.
+And as an early supporter of the Macintosh computer, Microsoft virtually owns the Mac application market.
+The future looks equally promising.
+Gates recently announced that Microsoft and McCaw Cellular Communications will form a joint 840-satellite global communications network.
+At the same time, Gates also acknowledged that he was in high-level negotiations with AT&T about a series of ventures that could include interactive television, on-line computer services and software.
+This is in addition to a previously announced joint venture with Nippon Telegraph and Telephone, the worlds second-largest phone company, and with cable giant John Malone and his Tele-Communications, Inc. aimed at launching a digital cable TV network for computer users.
+Viewers would be able to interact with programs, download software and shop for products and services.
+Other partnerships loom as well, including ones with publishing companies and Hollywood studios.
+Gates insists that Microsoft has to keep running full speed just to stay in place.
+But that hasn't stopped his enemies from engaging in constant Bill-bashing.
+His competitors accuse Microsoft of unfair business practices, and his allies consider themselves fortunate to be on his good side.
+Given the fluidity of partnerships and strategic alliances in the computer industries, today's friends could easily become tomorrows foes and vice versa, if Gates thinks it advantageous.
+Nor is Gates immune from official attack, as evidenced by a three-year Federal Trade Commission investigation into possible monopolistic tendencies stemming in part from the success of Windows over IBMs OS/2 created in tandem with Microsoft.
+The FTC dropped the
+http://www.thecorememory.com
+The Core Memory Project case but, uncharacteristically, it was picked up again, this time by the Justice Department.
+Gates insists "the hard-core truth is that we've done nothing wrong." But the investigation continues, and Gates has other problems as well.
+Microsoft recently lost a $120 million lawsuit led by Stac Electronics and is planning an appeal.
+Stac claimed Microsoft's Doublespace hard disk compression utility infringed on its patents for Stacker, the compression utility Microsoft had originally wanted to include with its new versions of MSDOS. (Its worth noting, though, that Stac also had to pay Microsoft $13 million in damages for misappropriated trade secrets.) Gates is part scientist, part businessman and he's surprisingly good at both roles.
+If he's not flying off somewhere (he often travels coach despite his wealth), his day is an endless series of meetings.
+Gates cruises the Microsoft campus at a breakneck pace to check on the progress of his young, idealistic and fiercely competitive programming jocks: Wired magazine calls them Microserfs.
+He listens to presentations, praises some ideas and criticizes others as "the stupidest thing I've ever heard".
+Since founding Microsoft in 1975 with Harvard pal Paul Allen, Gates has been described as everything from a capitalist brainiac to a plain old nerd.
+The New Yorker wrote: To many people, the rise of Bill Gates marks the revenge of the nerd.
+Actually, Gates probably represents the end of the word nerd as we know it.
+Maybe that's why a software competitor and friend once called him one part Albert Einstein, one part John McEnroe and one part General Patton.
+(Must be somebody who likes me, mused Gates.) Bill Gates was born into a well-to-do Seattle family.
+His father, William H. Gates II, is a prominent attorney.
+His mother, Mary, is a University of Washington regent and a director of First Interstate Bank.
+Hoping to alter young Bills rebellious streak, his parents put him into Lakeside, an academically rigorous private school in Seattle.
+It was there that he met eventual business partner Paul Allen and discovered computers.
+Soon Gates was programming in his spare time and making money at it.
+He was in the eighth grade.
+Gates entered Harvard in 1973, and dropped out two years later when he and Allen wrote a version of BASIC computer language that worked on the new Altair computer.
+He and Allen moved to Albuquerque, where the Altair was built, and started Micro-soft.
+In 1979, Gates and Allen moved the company, but not the hyphen, to Seattle.
+In 1980, when IBM turned to Microsoft in its search for an operating system, the modern PC era began in earnest.
+Allen left the company a few years later when he was diagnosed with Hodgkins disease, but he has since recovered and re-emerged.
+With his own Microsoft billions, Allen now owns the Portland Trailblazers basketball team, his own software company (Asymetrics), Ticketmaster and a large chunk of the America Online service.
+We sent Contributing Editor David Rensin to Redmond to speak with Gates.
+Rensin, who wrote our Bill Gates profile in 1991, reports:
+"A couple of years ago you checked in at Microsoft simply by giving your name to the receptionist.
+Now you type your name and destination into a Compaq notebook computer at the front desk and it prints out your building pass." "However, not much had changed inside Gates' office since my last visit.
+A poster for the Russian version of DOS 4.01 had been replaced by a poster of Intel's Pentium chip.
+His coffee table had been cleaned up and the computer and monitor were different.
+Gates uses a Compaq 486/25 Lite notebook (he has docking stations at the office and at home) and is looking forward to getting a Compaq Concerto notebook.
+Otherwise, Gates doesn't have lots of time to tinker with the newest computer hot rods." "When Bill is talking about computers, technology, business strategy, biotechnology, or his vision of the future, youre amazed at the amount of information in his head, and at his facility at sifting through it and drawing surprising conclusions.
+On his personal life, he can be
+http://www.thecorememory.com
+The Core Memory Project somewhat defensive, reluctantly talking about his parents, his recent marriage to co-worker Melinda French and his life away from the campus." "True to his reputation, Bill would rock furiously at times.
+Other times he would stand and pace or stare out the window.
+Once, as we were talking about his problems with IBM, he picked up a heavy rulersome kind of paperweight or award and slapped it repeatedly into his hand." "I decided, at least for that moment, to stick with less controversial questions." PLAYBOY: Let's start small.
+Explain the future.
+GATES: OK. [Laughs] Today, the PC is used as a primary tool for creating documents of many types; word processing, spreadsheets, presentations.
+But by and large, when you want to find a document, archive it or transmit it, you don't really use the electronic form.
+You get it out on paper and send it.
+In the coming information age, access to documents, broadly defined, will be done electronically, just by traveling across a network that people now call an information highway.
+It's also called digital convergence, a term popularized by John Sculley, and information at your fingertips, a term I use a lot.
+I'm quite content this will happen.
+I could be wrong about how quickly.
+PLAYBOY: How soon?
+GATES: Optimists think three years.
+Others think ten.
+I'm a convert.
+I'm spending almost $100 million a year to build the kind of software that will help make this thing work, make it easy to use, protect privacy in the right way.
+I think it's possible that in three or four years we'll have millions of people hooked up.
+PLAYBOY: Coming soon: a nation of couch potatoes?
+GATES: You can already stay glued to the box.
+But this box is a facilitator.
+It can save time, which you can then put into the things you want to do.
+For a lot of people that will mean getting away from the box.
+PLAYBOY: Besides finding documents, what will we be able to do?
+GATES: Say you want to watch a movie.
+To choose, you'll want to know what movies others liked and, based on what you thought of other movies you've seen, if this is a movie you'd like.
+You'll be able to browse that information.
+Then you select and get video on demand.
+Afterward, you can even share what you thought of the movie.
+But thinking of it only in terms of movies on demand trivializes the ultimate impact.
+The way we find information and make decisions will be changed.
+Think about how you find people with common interests, how you pick a doctor, how you decide what book to read.
+Right now, its hard to reach out to a broad range of people.
+You are tied into the physical community near you.
+But in the new environment, because of how information is stored and accessed, that community will expand.
+This tool will be empowering, the infrastructure will be built quickly and the impact will be broad.
+PLAYBOY: What about those who say things won't change that much, that it's mostly bluesky?
+GATES: It's as blue-sky as the PC was six or seven years before it became a phenomenon.
+PLAYBOY: How will Microsoft participate in the information highway?
+GATES: The current interactive user interface doesn't consist of much.
+It doesn't have the shared information and the reviews, the niceties that will make people want the systems.
+Microsoft is spending a lot of money to build software that we think is better.
+It will run in the
+http://www.thecorememory.com
+The Core Memory Project box in your home that controls your set as you make choices.
+We're involved in creating the much bigger piece of software at the other end of the fiber-optic cable, the program that runs on the computer, which stores the movie data base, the directory and everything else.
+PLAYBOY: The mainframe?
+GATES: The successor to the mainframe.
+But its speed and data capacity go beyond what's now used to do airline reservations or credit card data bases.
+Watching a movie doesn't require much computer power.
+Youre just picking the information off the magnetic disc, putting it on the wire and sending it.
+But if you're synthesizing a 3-D scene, kind of a virtual reality thing, with 20 people in a multiplayer game, then you have some computation.
+Or say the President is making a speech.
+Everybody in the nation gets to push little buttons to say yea or nay, and gathering all that information so it can be displayed within a second or two is tricky.
+But it's all within the state of the art.
+You don't have to be a dreamer to know that the technology will not limit the construction of the information highway.
+PLAYBOY: How will being able to respond directly to the president alter our system of government?
+GATES: The idea of representative democracy will change.
+Today, we claim we don't use direct democracy because it would be impractical to poll everybody on every issue.
+The truth is that we use representative democracy because we want to get an above-average group to think through problems and make choices that, in the short term, might not be obvious, even if they are to everybody's benefit over the long term.
+PLAYBOY: Do you agree?
+GATES: Yes.
+When making choices, or setting policies about the economy, education or medicine, society is best served by electing people who are particularly hardworking, intelligent and interested in long-term thinking.
+PLAYBOY: You're giving our current elected officials a lot of credit.
+GATES: What we have may be less than ideal, but it's still better than direct democracy.
+Anyway, we'll no longer be able to hide behind the excuse that we don't have the technology to gather the opinions.
+PLAYBOY: What else is Microsoft involved in?
+Weve heard about software that can control washing machines, for instance.
+GATES: [Laughs] The washing machine example is extreme, but people do sometimes kid us that we see an opportunity to sell our software in broad areas.
+We are involved in a new generation of fax machines that we think will be better and easier to use.
+And a generation of screen phones [a standard phone with a minicomputer] in which the typically cryptic buttons are replaced with a graphics interface.
+We're also working on software that runs in printers.
+We've worked with people on car navigation systems.
+And in the home environment, something you can carry in your pocket called the Wallet PC.
+PLAYBOY: In your pocket?
+GATES: It's a futuristic device unlike todays personal digital assistants.
+Instead of using keys to enter your house, the Wallet PC identifies that you're allowed to go into a certain door and it happens electronically.
+Instead of having tickets to the theater, your Wallet PC will digitally prove that you paid.
+When you want to board a plane, instead of showing your tickets to 29 people, you just use this.
+You have digital certificates.
+Digital money.
+It has a global positioning thing in it, so you can see a map of where you are and where you might want to go.
+It's our vision of the small, portable PC of, say, five years from now.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: Do you use a PDA?
+GATES: I carry a standard 486 portable machine with me whenever I travel, because I have my e-mail on it.
+I used one of the original Newtons for a week, and its available if you'd like it.
+PLAYBOY: Whats your problem with it?
+GATES: It was supposed to do handwriting recognition.
+But, based on the initial product, people are skeptical about whether handwriting recognition really works.
+They did some nice technical work on the product.
+Unfortunately, its not a useful device as far as I'm concerned, so it'll probably set the category back.
+PLAYBOY: You've been meeting with people such as QVC head Barry Diller, Fox owner Rupert Murdoch, agent Mike Ovitz, John Malone of TCI and Gerald Levin of Time Warner to mastermind the future.
+Who sought out whom?
+GATES: Its a good mix.
+Ovitz called me.
+He understands the opportunities of the new media.
+He thought it would be valuable to see how our visions meshed.
+He wants to make sure that when he's doing deals he's reserving rights for his clients in the best way.
+He wants us to think about licensing rights as were doing titles.
+PLAYBOY: That's what you can do for Ovitz.
+What can he do for you?
+GATES: So many things.
+He can help us get the word out in Hollywood that we want to team up with people to do multimedia titles.
+Mike can help us create ways to explain how these new tools are the studio of the future.
+PLAYBOY: We hear so much about Ovitz, but never from him.
+What kind of guy is he?
+GATES: It's strange when you read a lot in the press about somebody before you meet him.
+I don't know that much about Hollywood and its dynamics, so when I read this long piece on Ovitz in The New Yorker, it made me go, Whoa!
+I better be careful.
+Actually, he's a pretty personable guy.
+And, when you think about it, how could he be successful in that business without that kind of skill?
+PLAYBOY: One might think he would be intimidated by you.
+GATES: Sure.
+Not that I hoped for that.
+We've had lots of long dinners, and I went down and saw Creative Artists Agency.
+Its actually been almost two years since we first started talking with each other.
+We come from our own domains, where we're clearly hardworking, focused, quite successful.
+The issue is, what's the opportunity to work together?
+I've gotten to know a lot of these people over the past 18 months, and they are much more down-to-earth, practical, even humble, than you'd expect.
+PLAYBOY: For instance?
+GATES: Murdoch's a fairly quiet guy.
+Clearly brilliant, but quiet.
+Malone is straightforward in terms of talking about technology and strategy.
+He and I are damn similar.
+He worked at Bell Labs and understands both business and technology.
+We have a lot more in common than some of the other people these joint-venture things have exposed me to.
+I've met Diller several times.
+He came up here twice before landing at QVC, when he was just driving around and looking at the possibilities.
+He spent a lot of time here.
+He's a very sharp guy.
+He asked good questions.
+Not everybody loves him, but they all respect the hell out of him.
+Apparently he's a tough manager.
+PLAYBOY: Meet any movie stars yet?
+http://www.thecorememory.com
+The Core Memory Project GATES: No. [Pauses] Actually, I did.
+I went to this Golden Plate thing where there were quite a few movie stars: Barbra Streisand, Dolly Parton, Kevin-what's his name?
+PLAYBOY: Costner?
+GATES: That's a mental lapse, just to completely embarrass myself.
+I talked to Michael Crichton quite a bit, but he's not a movie star.
+PLAYBOY: Did any of the celebrities recognize you?
+GATES: I don't think so.
+But some of the scientists did.
+And a lot of the kids did, because kids tend to use computers more.
+PLAYBOY: They had no idea they were shaking hands with the second richest guy in America?
+GATES: No.
+PLAYBOY: By the way, how much are you worth at this moment?
+GATES: Well, remember, I don't own dollars.
+I own Microsoft stock.
+So it's only through multiplication that you convert what I own into some scary number.
+PLAYBOY: Are people more intimidated by your brains or your money?
+GATES: Not many people are intimidated by either.
+Here at work we're all just trying to get a job done.
+My people have the confidence of their convictions and they know their skills.
+And that occupies most of my time.
+The people I buy burgers from aren't intimidated, either.
+[Laughs] We all suffer from being hyped up in the press.
+These markets are very competitive.
+When people say things like, Bill Gates controls this or Malone controls this or Ovitz controls that, I hope people don't really believe it.
+Because every day were saying, How can we keep this customer happy?
+How can we get ahead in innovation by doing this, because if we don't, somebody else will?
+If anything, people underestimate how effective capitalism is at keeping even the most successful companies on the edge.
+PLAYBOY: Since you and Paul Allen started Microsoft in 1975, the company's capacity for renewal has been unerring and wildly profitable.
+If you could sum up the corporate ethos in one sentence, what would it be?
+GATES: Lets use our heads and think and do better software than anyone else.
+PLAYBOY: How soon did it become more business than fun?
+GATES: Pretty early, when I hired four guys and one of them didn't come in for a couple days.
+I said, Damn it, we're not going to get this stuff done.
+People are going to be upset.
+I've got salaries to pay.
+Fun became a serious responsibility.
+Back then I used to compute how much software we had to sell each day.
+I was directly involved in everything.
+I knew at ten in the morning if I'd already sold that days worth of software.
+If I had, then I wanted to take care of a weeks worth of sales.
+PLAYBOY: A true businessman.
+GATES: I have to admit that business-type thoughts do sneak into my head: I hope our customers pay us, I hope this stuff is decent, I hope we get it done on time.
+The little additions and subtractions that one has to do.
+Take sales, take costs and try to get that big positive number at the bottom.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: Do you dislike being called a businessman?
+GATES: Yeah.
+Of my mental cycles, I devote maybe ten percent to business thinking.
+Business isn't that complicated.
+I wouldn't want to put it on my business card.
+PLAYBOY: What, then?
+GATES: Scientist.
+Unless I've been fooling myself.
+When I read about great scientists like, say, Crick and Watson and how they discovered DNA, I get a lot of pleasure.
+Stories of business success don't interest me in the same way.
+PLAYBOY: How come you're not in a lab coat somewhere?
+GATES: Part of my skill is understanding technology and business.
+So lets just say I'm a technologist.
+PLAYBOY: If business is ten percent, how does the other 90 percent break down?
+GATES: [Blows a big raspberry]
+PLAYBOY: Come on!!
+GATES: This gets far too ephemeral and private.
+It is an interesting question, I will admit.
+But applying it to myself in a public way is probably PLAYBOY: But you brought it up.
+GATES: I did.
+OK. Ninety percent to all other.
+PLAYBOY: [Blows raspberry]
+GATES: This percentage thing is too hard because you always forget something important.
+Whoops, I forgot about my family.
+I mean, come on, this is too difficult.
+PLAYBOY: Its hard to believe we found something too difficult for you.
+GATES: There must be another metric to explain what I mean when I say that business is not the hard part.
+Let me put it this way: Say you added two years to my life and let me go to business school.
+I don't think I would have done a better job at Microsoft. [Stands] Let's look around these shelves and see if there are any business books.
+Oops.
+We didn't need any.
+PLAYBOY: How do you define smart?
+GATES: [Rolls his eyes] Oh, come on.
+It's an elusive concept.
+There's a certain sharpness, an ability to absorb new facts.
+To walk into a situation, have something explained to you and immediately say, Well, what about this?
+To ask an insightful question.
+To absorb it in real time.
+A capacity to remember.
+To relate to domains that may not seem connected at first.
+A certain creativity that allows people to be effective.
+PLAYBOY: Whew.
+Are you smart?
+GATES: By my own little definition I'm probably above average.
+PLAYBOY: Why do some of your critics say you and by extension, Microsoft are not innovative, that you are evolutionary rather than revolutionary?
+Here's a quote: Bill is just a systems guy who has been able to fund a wider range of me-too applications on the basis of
+http://www.thecorememory.com
+The Core Memory Project one extremely lucrative product MS-DOS practically handed to him ten years ago by IBM. All he's done since is hang in.
+GATES: [Smiles] DOS has been as much as 25 percent of our profit.
+But believe me, those profits go to the bottom line.
+If the company weren't profitable you could say, Ah, DOS, they're using it to fund the other stuff.
+The fact is, everything is very profitable here.
+And we're doing so many innovative things now, even my harshest critics will never say that again.
+PLAYBOY: Perhaps.
+But why did they say it in the first place that, along with vision, luck, timing and an unrelenting need to win, you've succeeded by picking up the fumbles of your competitors?
+You were given the right to license MS-DOS by IBM because it thought the future was in hardware, not in software or operating systems.
+GATES: [Stands, paces] So here's our management meeting: Well, I don't know what we're supposed to do.
+Has anybody fumbled anything recently?
+I mean, come on!
+Hey, Digital Research: I hear they're fumbling something.
+Let's go do something there.
+What was the first microcomputer software company?
+Microsoft.
+The very first!
+Who were we imitating when we dropped out of school and started Microsoft?
+When we did the Altair BASIC?
+When, early on, we did CD-ROM conferences and talked about all this multimedia software?
+And who were we imitating when we did Microsoft Word?
+When we did Excel?
+It's just nonsense.
+PLAYBOY: It's said that you have nothing less than industry domination in mind.
+GATES: But what does it mean to win?
+If I were a guy who just wanted to win, I would have already moved on to another arena.
+If I'd had some set idea of a finish line, don't you think I would have crossed it years ago?
+PLAYBOY: Do you want to dominate the software industry?
+GATES: No.
+We're only healthy if the industry as a whole is healthy and thriving.
+Most types of software aren't appropriate for us to do.
+For those that are, well always have competition.
+Its so simplistic.
+Whenever a company is successful, people say it's out to dominate.
+Take Disney.
+Its a wonderful company, but there are people within the entertainment industry who wonder about Disneys goals.
+Or IBMs, when it was successful.
+People impute all sorts of ridiculous motives and plans.
+PLAYBOY: Such as Disney being called Mauschwitz because of the tough deals they drive?
+GATES: They do great products and they're good businessmen.
+In our industry, some people are afraid of us because were so good.
+Outside the industry people say, Wow!
+This software stuff is confusing.
+You bet I want to go with a company that's going to be around and has proved it has things that work together and are pretty good.
+Actually, that scares successful companies in the industry.
+You get a good enough reputation and you're like an incumbent.
+PLAYBOY: And vulnerable to incumbent-bashing?
+GATES: Yes.
+The industry press has been tough on us for as long as we've been the largest company.
+We're involved in setting some fairly key standards and people are afraid of us because they think, Geez, they are quite capable.
+It's daunting, I suppose.
+PLAYBOY: You suppose?
+GATES: One thing people underestimate is how markets don't allow anyone to do anything except make better and better products.
+There's not much leeway.
+The world is a lot more competitive than most people think, particularly in a high-technology area.
+If a company takes its eye off improving its products, if it tries to do anything that would be viewed as an exercise of power, it'll be displaced very rapidly.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: You're not suggesting you've never exercised your power.
+GATES: OK, so we tried to get everybody to write software for Windows.
+If we discouraged people from writing software for Windows we would be hurting ourselves a lot.
+PLAYBOY: And now Windows is so popular in the stand-alone-PC market that you've blown away competitors like IBM's OS/2 and HP's New Wave.
+Has Windows won?
+GATES: If you define the term narrowly enough, you could say yes.
+Windows has a substantial share of the volume on DOS-based PC's.
+But we keep doing versions.
+And despite its current success, unless we keep the price low and keep improving the product dramatically, then it will be supplanted.
+Of course, we think there are enough improvements in the next version, 4.0, code-named Chicago, to extend Windows success another couple of years.
+And then we'll have a version after that.
+PLAYBOY: Do you have an unfair advantage over your competition because your systems people who do things like MS-DOS and Windows exchange data freely with your applications programmers, thereby breaching the Chinese wall, the ethical boundary that's supposed to separate them?
+Its been an oft-repeated charge.
+GATES: [Strongly] Chinese wall is not a term we've ever used.
+And companies often have more than one product.
+Kodak makes film and cameras, and those two parts of the company can work together.
+IBM makes computers, some peripherals, and software and applications.
+Ford not only makes cars, it makes repair parts.
+The day it thinks of a new car, it doesn't call in all the other repair-parts companies to build those repair parts.
+We're actually more open than any other company that has multiple products.
+We take lots of affirmative steps to help other companies.
+Naturally, our applications group is the most committed to Windows.
+In the early days they didn't hesitate when I said, Hey, we're going to do Windows.
+Other companies did, even though we begged them to write for Windows.
+That gave us a leadership position, which we've continued to increase over the years.
+We bet the company on Windows and we deserve to benefit.
+It was a risk that's paid off immensely.
+In retrospect, committing to the graphics interface seems so obvious that now it's hard to keep a straight face.
+But the big beneficiary of the whole PC phenomenon has been the users.
+Individuals can now get these tools at very low prices.
+This is the market working exactly as it should.
+And yeah, that's been tougher on some producers, and it means we have to keep working hard.
+We can't rest for a second.
+PLAYBOY: Let's talk about the recent government investigations.
+Last year the Federal Trade Commission concluded a three-year look into Microsoft's affairs.
+During that time many of your competitors complained about alleged Microsoft strong-arm business tactics and monopolistic practices.
+After two votes the FTC decided not to proceed with any action.
+Now the Justice Department has picked up the ball.
+Is Justice asking questions different from the FTC's?
+GATES: It's the same stuff.
+PLAYBOY: Why don't you just refer them to the FTC files?
+GATES: That's millions of pieces of paper.
+PLAYBOY: Did these investigations take you by surprise?
+GATES: At some point, with the kind of success we've had, it's both expected and appropriate for one government agency to review what's going on in the industry.
+The fact that we have a second one doing it, sort of double jeopardy, is unprecedented.
+But fine, we'll go through another one.
+It may take many years.
+PLAYBOY: Are you hoping that it takes many years?
+http://www.thecorememory.com
+The Core Memory Project GATES: No.
+It would be better if it were over soon.
+PLAYBOY: What was the toughest part of testifying before the FTC?
+GATES: No real problem.
+I was quoted once.
+I think the quote was misinterpreted as answering the question, What's the worst case in your dealings with the FTC? with, Well, if I trip on steps when I'm walking in and break my head open, that's the worst case.
+PLAYBOY: It does seem rather cavalier.
+GATES: It does.
+What I meant was that you multiply low-probability events by their probability.
+That's how you judge them.
+You don't just take this one-in-a-billion thing and spend everybody's time elaborating on it.
+In any case, we had no problem with a company as successful as Microsoft, in an industry as important as ours, being looked at by a government agency to make sure we're competitive and that things work the right way.
+In fact, we spent three years providing the FTC with millions of documents and explaining our industry so that it could be sure the status quo was being maintained.
+That's perfectly legitimate.
+PLAYBOY: Does the FTC have to go through all that trouble to understand your industry?
+GATES: Yeah.
+It takes some time.
+But if it hadn't looked at the software industry, then the status quo still would have been maintained.
+PLAYBOY: This also happened to IBM and AT&T, with the latter being broken up.
+Do you fear that?
+GATES: No.
+The government decides when something's important enough to look into.
+Then it allows all your competitors to call it up and say, Please hold them back this way.
+Please make it harder for them to create good products in this way.
+Please tell them not to compete with us anymore.
+Microsoft makes a little mouse, so we had these guys who make mice saying, Why don't you tell them not to do mice.
+They do Windows and they do mice.
+Some guy who does Arabic software layers complained that he didn't like the way we were doing Arabic software layers.
+The government looks at all the mud that gets thrown up on the wall.
+We did have one competitor who launched a paranoid political attack against us with the FTC in an attempt to persuade the government to help it compete.
+PLAYBOY: Everybody knows that was Ray Noorda, chief executive of Novell.
+GATES: That was disappointing.
+PLAYBOY: Careful word, disappointing.
+Didn't it piss you off when you thought Noorda was working against you?
+GATES: To the degree that he failed, we can be magnanimous about it.
+PLAYBOY: Was the outpouring of negative sentiment hurtful?
+GATES: No.
+This is a very competitive business.
+PLAYBOY: You're blase about it.
+GATES: It's cheap for a competitor to pick up the telephone and say, in effect, Please hurt my competition in the following way.
+It's straightforward.
+It's absolutely to be expected.
+PLAYBOY: Is there nobody you'd like to restrict or retaliate against?
+For instance, one of your most vocal critics is Borland chief executive Philippe Kahn.
+It seems he goes out of his way to attack you.
+http://www.thecorememory.com
+The Core Memory Project GATES: When we got into the Apple lawsuit, he said, Oh, Windows, it's like waking up and finding out that your partner might have AIDS. That was his quote in Time.
+In another magazine, I think it was Business Week, he chose to compare us to Germany in World War Two.
+PLAYBOY: And your response?
+GATES: That was so extreme.
+I don't think it will mislead people in any way.
+People who do that discredit themselves.
+It's so outrageous and so offensive and inappropriate.
+Just think back to the Holocaust and all the tragedy.
+But what bothers me more is when facts are twisted so that people can't tell what's right or wrong.
+You won't find us ever doing anything like that with any of our competitors.
+Philippe is a smart guy.
+I've been critical of his company's inability to make more money, but that's something I do to his face.
+Everything I'm saying to you about Philippe, I've said to him directly.
+PLAYBOY: Mitch Kapor, founder of Lotus, says Microsoft has won and now the industry is the kingdom of the dead.
+GATES: I have immense respect for Mitch.
+We've agreed and disagreed on many things but stayed friends through the years.
+After he said that, I saw him and asked, Hey, Mitch, what was that?
+PLAYBOY: Had he really said it?
+GATES: He has strong opinions, and I think that the remark was taken out of context.
+He's given us good feedback on our software for a long time.
+PLAYBOY: Is Microsoft so big that you never go on the offensive?
+GATES: Never.
+And as we move onto this information highway, believe me, most of the companies involved are far bigger than we are.
+We're dealing with the German telephone company and with British Telcom.
+We're dealing with NTT, the worlds highest-valuation corporation.
+Are they going to compete with us?
+Work with us?
+Were a small, small company in that arena.
+There may be some point when we feel that somebody is using market muscle against us and wish we had a way to avoid it.
+PLAYBOY: How long do you anticipate staying active with Microsoft?
+GATES: At least for the next ten years, I see myself being in very much the role I am in today.
+Then there will be a point where somebody younger, probably younger, should be given the prime role here.
+I'd still have a role, but it wouldn't be as CEO.
+PLAYBOY: Does depending on someone else's vision make you nervous?
+GATES: No, I just have to pick the right person.
+PLAYBOY: Would that have to be somebody like you?
+GATES: No.
+You have to be open-minded.
+Somebody could do it differently and still do it well.
+You can't have this bias that they need to do things the same way.
+Of course, it'll be somebody who understands technology very well and has high energy and likes to think ahead.
+There are certain requirements.
+PLAYBOY: Like your management style?
+We hear you're brusque at times, that you won't hesitate to tell someone their idea is the stupidest thing you've ever heard.
+It's been called management by embarrassment challenging employees and even leaving some in tears.
+http://www.thecorememory.com
+The Core Memory Project GATES: I don't know anything about employees in tears.
+I do know that if people say things that are wrong, others shouldn't just sit there silently.
+They should speak.
+Great organizations demand a high level of commitment by the people involved.
+That's true in any endeavor.
+I've never criticized a person.
+I have criticized ideas.
+If I think something's a waste of time or inappropriate I don't wait to point it out.
+I say it right away.
+It's real time.
+So you might hear me say, That's the dumbest idea I have ever heard many times during a meeting.
+PLAYBOY: What do you mean when you say something is random?
+GATES: That it's not a particularly enlightened idea. [Sarcastically] So, how do you have a successful software company?
+Well, you get me and Microsoft executive vice president Steve Ballmer and we just start yelling.
+PLAYBOY: Do your employees stand up to you?
+GATES: Oh, sure.
+PLAYBOY: In the beginning, why did you and Paul Allen decide to do only software when everyone else was doing hardware?
+GATES: Paul and I believed that software would drive the industry and create substantial value.
+And we understood it best.
+PLAYBOY: Didn't Paul originally want to do hardware?
+GATES: Hardware and software, and I thought we should do only software.
+When you have the microprocessor doubling in power every two years, in a sense you can think of computer power as almost free.
+So you ask, Why be in the business of making something that's almost free?
+What is the scarce resource?
+What is it that limits being able to get value out of that infinite computing power?
+Software.
+Another way to look at it is that I just understood a lot more about software than I did about hardware, so I was sticking to what I knew well and that turned out to be something important.
+PLAYBOY: Your big move into operating systems was when you did the 16-bit MS-DOS operating system.
+GATES: We always knew that we were going to do operating systems, though we initially thought just high-end.
+When we were helping to design the original IBM PC hardware, the question was whether we would do the operating system.
+PLAYBOY: And now MS-DOS runs on more than 90 percent of all personal computers, or about 100 million, and it made Microsoft.
+Was the partnership the key to winning?
+GATES: Our restricting IBM's ability to compete with us in licensing MS-DOS to other computer makers was the key point of the negotiation.
+We wanted to make sure only we could license it.
+We did the deal with them at a fairly low price, hoping that would help popularize it.
+Then we could make our move because we insisted that all other business stay with us.
+We knew that good IBM products are usually cloned, so it didn't take a rocket scientist to figure out that eventually we could license DOS to others.
+We knew that if we were ever going to make a lot of money on DOS it was going to come from the compatible guys, not from IBM.
+They paid us a fixed fee for DOS. We didn't get a royalty, even though we did make some money on the deal.
+Other people paid a royalty.
+So it was always advantageous to us, the market grew and other hardware guys were able to sell units.
+PLAYBOY: By 1986, DOS had won.
+http://www.thecorememory.com
+The Core Memory Project GATES: Right.
+Subsequently there were clone competitors to DOS, and there were people coming out with completely new operating systems.
+But we had already captured the volume, so we could price it low and keep selling.
+PLAYBOY: Has DOS peaked?
+GATES: I don't know.
+DOS continues to be sold on a high percentage of PC's.
+But within a few years it will be replaced by a next-generation operating system.
+This is a case where we're obsoleting our own product I hope.
+Or somebody else will.
+Actually, it would have been obsolete some time ago if we hadn't come along with Windows and sort of built it on top of DOS, to renew its capabilities.
+The fact that we did that as an add-on to DOS allowed people to keep running DOS applications.
+We thought that would be of some benefit to people.
+PLAYBOY: And to yourself.
+Perhaps to buy time.
+GATES: No.
+People wanted to run their DOS applications.
+Believe me, it would have been a lot easier to write Windows so it didn't run DOS applications.
+But we knew that we couldn't make the transition without that compatibility.
+In fact, the next version of Windows further enhances our ability to run DOS applications.
+PLAYBOY: What happened to IBM?
+According to one book, you supposedly told a group of Lotus employees over too many drinks that IBM would fold in seven years.
+IBM is still here, of course, but it's restructuring and streamlining.
+So you were partially right.
+GATES: In this business, by the time you realize you're in trouble, it's too late to save yourself.
+Unless youre running scared all the time, you're gone.
+IBM could recover, but in terms of what it was, it'll never have a position like that again.
+It was during the glory years, its years of greatest profit and greatest admiration, that it was making the mistakes that sowed the billions of dollars of losses that came later.
+PLAYBOY: What were those mistakes?
+GATES: The idea of how you run software development properly is not something you can capture in a few sentences.
+It's how you hire people, organize people, how you plan the spec, how you let it change, how you do the testing, how you get feedback from customers.
+IBM's only real software success had been with mainframes, where they were the only choice.
+Consequently IBM didn't develop those processes very well.
+PLAYBOY: Could that be happening to Microsoft now?
+In terms of corporate power, your company has been called the new IBM.
+GATES: I've thought about that, but I don't think so.
+PLAYBOY: That's what IBM said.
+GATES: That's right.
+But did IBM try to renew its vision, did it really look at the early signs that things weren't going right?
+Did management really focus on those things, or did they let themselves get a little complacent about their success?
+Were they working hard, were they hiring new people?
+And remember, when IBM was run by its founder it thrived and for several generations of management after that.
+When you have a founder around, or if that founder picks the right successor, companies can do well.
+But we have to prove ourselves.
+I can't prove that decay hasn't set in.
+Five years from now you can call me and say, Well, Bill, it looks like the decay didn't set in.
+At least I hope the evidence will show that.
+PLAYBOY: What was your first meeting like with Lou Gerstner, IBM's new chief?
+GATES: It was my chance to tell him what Microsoft is.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: He didn't know?
+GATES: I'm not saying that.
+I wanted to talk more about the company.
+It was a bit awkward because when I went there they said, Thank you for coming, Mr.
+Manzi. [Laughs] Jim Manzi
+[current head of Lotus, a Microsoft rival] and I don't look alike, so that set me back a little.
+Then we went into this room, the famous Tom Watson Library, a place I'd been probably a dozen times and know the history of pretty well.
+Gerstner took some time explaining it to me, though I already knew.
+I wasn't sure whether I was supposed to stop him or not.
+We eventually talked about the business.
+I did not endeavor to give him any advice.
+He knew I'd been talking to the board and chided me a little about that.
+PLAYBOY: Do you expect to get along?
+GATES: Microsoft and IBM are perfectly complementary companies with the exception of one small group IBM has that does PC system software.
+PLAYBOY: Where does the relationship stand today?
+GATES: IBM is our best customer.
+It's porting a lot of its key software into the Windows environment.
+Every month we find more and more things we can do together.
+PLAYBOY: Over the years, have your youthful looks been more help or harm?
+GATES: Its hard to say.
+If you're asking whether I intentionally mess up my hair, no, I don't.
+And certain things, like my freckles, they're just there.
+I don't do anything consciously.
+I suppose I could get contact lenses.
+I suppose I could comb my hair more often.
+PLAYBOY: We are talking about knowing that your youthful, or can we say nerdish? looks would throw potential competitors and partners off balance and give you an advantage going in.
+GATES: [Smiles] I think that my looks were a disadvantage, at least back then.
+But once our competitors had to admit we knew what we we're doing, they had a hard time knowing what category to put us in.
+We were young, but we had good advice and good ideas and lots of enthusiasm.
+PLAYBOY: You recently got married, an event many of your competitors have fervently wished for.
+Now, they say, you'll concentrate less on work.
+GATES: They're just joking.
+If they really think I'm going to work a lot less just because I'm married, thats an error.
+PLAYBOY: Isn't there a kernel of truth in any joke?
+GATES: Married life is a simpler life.
+Who I spend my time with is established in advance.
+PLAYBOY: You were one of the world's most eligible bachelors.
+No doubt there are many women who would love to be in Melinda's place.
+GATES: What?
+They want to do puzzle contests with me?
+They want to go golfing with me?
+How do they know its interesting to be around me?
+They want to read the books I read?
+PLAYBOY: What was it that attracted you to Melinda?
+GATES: Oh, I don't know.
+That's probably too personal.
+Even before I met Melinda, if someone asked me a question like that I'd always say I was interested in people who are smart
+http://www.thecorememory.com
+The Core Memory Project and independent.
+And I'm sure I'll continue to meet lots of interesting, smart, independent people.
+PLAYBOY: Something about Melinda must have made you turn the corner.
+Don't tell us you're just getting older and it was time.
+GATES: There's some magic there that's hard to describe, and I'm pursuing that.
+PLAYBOY: Can you describe how she makes you feel?
+GATES: Amazingly, she made me feel like getting married.
+Now that is unusual!
+It's against all my past rational thinking on the topic.
+PLAYBOY: We know you're kidding and not kidding.
+Let's go back farther.
+Which parent most influenced you?
+GATES: My mom was around more, but my dad had the final say on things.
+They were both major influences.
+I was raised pretty normal.
+We didn't get to watch TV on weeknights.
+We were encouraged to get good grades.
+Our parents talked a lot about the challenges they were dealing with and treated us as though we could understand and appreciate those things.
+My parents took us around and traveled some.
+When we were young our grandparents read to us a lot, so we got into the habit of reading.
+My sister is two years older than I am and we learned a lot of stuff together.
+PLAYBOY: How were you encouraged to get good grades?
+GATES: We got 25 cents for an A. It was kind of funny because there was a whole period when I got terrible grades and my sister got straight A's.
+That was until I was in eighth grade.
+Then my sister discovered boys.
+She never got straight A's again.
+My grade point average went from a 2.2 to a 4.0 over the summer.
+I wanted to get straight A's.
+I decided to get straight A's.
+PLAYBOY: Why?
+GATES: There was no reason.
+It takes a little bit of effort.
+I guess I didnt want people to think I was dumb.
+And when you get straight A's once, its easier.
+PLAYBOY: Were you a discipline problem?
+GATES: People thought I was a goof-off, a class clown at times.
+That was OK, not really a problem.
+Then I went to private school, and there was no position called the clown.
+I applied for it, but either they didn't like my brand of humor or humor wasn't in that season.
+In fact, I didn't have clear positioning for a couple of years.
+I was trying the no-effort-makes-a-cool-guy routine.
+When I did start trying, people said, Whoa, we thought he was stupid!
+Better reassess.
+PLAYBOY: Did your parents wonder if you might be stupid?
+GATES: Oh, no.
+They just thought I was underachieving dramatically.
+When I did get into trouble in school, they sent me to this psychiatrist.
+He gave me a little test and books to read, and he would talk to me about psychological theories just getting me to think about things.
+He said some profound things that got me thinking a little differently.
+He was a cool guy.
+That's why I always liked the movie Ordinary People, because this guy was just like the psychiatrist in that movie.
+I only saw him for a year and a half, and never saw him again, and I haven't been to anybody like that since.
+But my mind was focused appropriately.
+PLAYBOY: What did he say to you?
+http://www.thecorememory.com
+The Core Memory Project GATES: I said, Hey, I'm in a little bit of a battle with my parents.
+He said, Oh, you'll win, don't worry.
+I said, What?
+What's the story here?
+He said, You'll win.
+They love you and you're their child.
+You win.
+PLAYBOY: And the implication was?
+GATES: That if you think you need to put more effort into winning with them, don't.
+It's a fake battle.
+It's ridiculous.
+It was enough to get me to think, Hmm, that's interesting.
+He also had me read all this Freud stuff.
+PLAYBOY: How old were you?
+GATES: I was 11. But he was an enlightened guy.
+He was always challenging me.
+He would ask me questions, but he would never tell me whether my answer was right or not.
+He would say, That's an OK answer.
+Then our time would always be up and he'd give me more stuff to read.
+PLAYBOY: Ever wonder what might have become of you if you had gone to public school instead of Lakeside, where you met Paul Allen and fell in love with computers?
+GATES: I'd be a better street fighter.
+PLAYBOY: When did you know you had something special to offer?
+When did you become aware you were different?
+GATES: [Big raspberry] I have something special to offer, Mom!
+Mom, I just figured it out: I have something special to offer!
+So don't make me eat my beans.
+PLAYBOY: You know what we mean.
+GATES: When I was young we used to read books over the summer and get little colored bookmarks for each one.
+There were girls who had read maybe 15 books.
+I'd read 30. Numbers two through 99 were all girls, and there I was at number one.
+I thought, Well, this is weird, this is very strange.
+I also liked taking tests.
+I happened to be good at it.
+Certain subjects came easily, like math.
+All the science stuff.
+I would just read the textbooks in the first few days of class.
+PLAYBOY: Even though your parents are well off on their own, how have they reacted to your extreme wealth?
+GATES: I don't show it to them.
+I hide it from them.
+I have it buried in the lawn.
+It's bulging a little bit, and I hope it doesn't rain.
+PLAYBOY: Bad bet, living in Seattle.
+GATES: My money is meaningless to them.
+Meaningless.
+It has no effect on anything I do with my parents. [Pauses] If somebody's sick we can get the best doctors, so it has that impact.
+But we talk about things that money doesn't affect.
+PLAYBOY: We're not suggesting that you talk only about money.
+GATES: We never talk about money.
+PLAYBOY: Does your net worth of multi-billions, despite the fact that it's mostly in stock and the value varies daily, boggle your mind?
+http://www.thecorememory.com
+The Core Memory Project GATES: It's a ridiculous number.
+But remember, 95 percent of it I'm just going to give away.
+[Smiles] Don't tell people to write me letters.
+I'm saving that for when I'm in my 50s.
+It's a lot to give away and it's going to take time.
+PLAYBOY: Where will you donate it?
+GATES: To charitable things, scientific things.
+I don't believe in burdening any children I might have with that.
+They'll have enough.
+They'll be comfortable.
+PLAYBOY: Youll give them only a billion, maybe?
+GATES: No, no, are you kidding?
+Nothing like that.
+One percent of that.
+PLAYBOY: But they'll grow up thinking, Gee, if Dad leaves me some of the money.
+. . .
+GATES: I'll make it clear that it'll be a modest amount.
+PLAYBOY: So you want them to be as self-made as you?
+GATES: No, that's not the point.
+The point is that ridiculous sums of money can be confusing.
+PLAYBOY: In general, or only to the young or inexperienced?
+GATES: I think to anyone.
+PLAYBOY: Is it confusing to you?
+GATES: I'm very well grounded because of my parents and my job and what I believe in.
+Some people ask me why I don't own a plane, for instance.
+Why?
+Because you can get used to that kind of stuff, and I think that's bad.
+It takes you away from normal experiences in a way that is probably debilitating.
+So I control that kind of thing intentionally.
+It's one of those discipline things.
+If my discipline ever broke down it would confuse me, too.
+So I try to prevent that.
+PLAYBOY: So why not give the kid a billion dollars and let him try to control it as well?
+GATES: Not earning it yourself, knowing you have it from a young age, being so different in that respect from the other kids you grow up with, would be very confusing.
+PLAYBOY: Won't your being their dad be confusing enough?
+GATES: I will seek to minimize that in every way possible.
+I'll be as creative as I can.
+That experience is bad for a kid.
+PLAYBOY: How do you entertain yourself with your money?
+GATES: I swallow quarters, burn dollar bills, that kind of thing.
+I mean, when I buy golf balls I buy used golf balls, and that entertains me.
+Ha, ha, ha.
+PLAYBOY: Seriously.
+GATES: I'm building a house.
+It has serious functions, but entertainment is most of it.
+It has a screening room.
+And I'm putting in these huge video screens and buying the digital rights to the world's masterpieces and all sorts of art.
+I guess that's indulgent.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: Rumor has it the house is mostly underground.
+GATES: Completely false.
+PLAYBOY: When will it be done?
+GATES: I thought it would take four years.
+It will take five, then I'll move into the project.
+PLAYBOY: What else entertains you?
+GATES: I like to learn.
+I like puzzles.
+Ive even played some golf the past year and a half, because everybody else in my family does.
+Actually, right now I'm a little addicted.
+I get a kick out of being out there on the green grass.
+I'm just getting into the 90s now.
+PLAYBOY: We hear you don't watch TV.
+GATES: I do watch television.
+I don't have any TVs with their over-the-air receivers connected in my house.
+But when I'm in a hotel room or other places that have a TV, then I turn it on and flip the channels just like everybody else.
+I was watching cartoons on Nickelodeon on Sunday.
+Its amazing.
+PLAYBOY: What was on?
+GATES: Ren & Stimpy and Rugrats.
+Great!
+Cartoons have improved a lot since I was a kid.
+I'm not immune to the lures of television.
+I just try to stay away from it because I like to read.
+PLAYBOY: What do you read?
+GATES: The Economist, every page.
+Also The Wall Street Journal and Business Week.
+And I read Time.
+If I'm traveling, every once in a while I'll pick up an issue of People.
+I read USA Today.
+PLAYBOY: What's the most random thing you read?
+GATES: Fiction.
+That's true randomness.
+My older sister has read all the trashy books.
+So, occasionally, I have her recommend one.
+Otherwise, I'm in the same traffic as everybody else.
+I'm in the same airplane delay as everybody else.
+I sit in the same coach seat as everybody else.
+Yeah, I'm here in meetings all day.
+Here at Microsoft I work hard.
+There are a lot of experiences I haven't had.
+There are a lot of sitcoms I haven't seen.
+I haven't had a child yet.
+There are religions I don't belong to.
+I think we all have our own slice of life.
+I eat at McDonald's more than most people, but that's because I don't cook.
+PLAYBOY: You're back to eating meat?
+GATES: Yes.
+That was only a three-year period when I was proving to myself I could do it.
+But in terms of fast food and deep understanding of the culture of fast food, I'm your man.
+PLAYBOY: Jack-in-the-Box?
+McDonald's?
+GATES: Well, McDonald's is more pervasive around here.
+We also have Jack-in-the-Box.
+I'm not the kind of guy who decides that just because a few people got sick, it's necessarily going to happen to me.
+It wasn't very crowded for a while, but I thought that was fine.
+PLAYBOY: The recent biographies of Bill Gates and Microsoft, Gates and Hard Drive, both explore the mythology that's developed about your quirks, habits and exploits.
+We'd like to sort the actual from the apocryphal.
+GATES: Fine.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: We'll start with an easy one.
+It's always written that you rock compulsively in your chair, and we can attest that you're doing it now and have been for most of this interview.
+GATES: Right.
+PLAYBOY: What about your penchant for driving fast and accumulating speeding tickets?
+GATES: [Smiles] I get fewer speeding tickets than I used to.
+PLAYBOY: Did you once get a cop fired for giving you a speeding ticket?
+GATES: Thats false.
+PLAYBOY: What about the story that while driving from Albuquerque to Seattle, you got three speeding tickets in one day from the same cop?
+GATES: No, no, no.
+I've always told the truth about that one.
+I got twospeeding tickets from the same cop.
+Two.
+Not three.
+I got three tickets on the drive, but only two from the same cop.
+But I don't think anybody ever suggested that I said I got three from the same cop.
+PLAYBOY: There's the story that your mother chooses your clothes and helps you colorcoordinate by pinning them together this from a former girlfriend, who seems to repeat it without incurring your disapproval.
+GATES: There was one point in my life when my mother was trying to explain to me about what color shirt to wear with what ties.
+But this goes way back.
+And I think people listen to their mother's advice when it relates to fashion.
+It's not an area in which I claim to know more than she does.
+And it's not that much effort to pick one shirt versus the other.
+I don't look down at the color I'm wearing during the day.
+So if it pleases other people that I know a little bit more about which shirt to pick with which tie, thats fine.
+At that time I didn't know much about it.
+I think I know a little bit about it now, but below average.
+PLAYBOY: Is it true that you cornered the market in McGovern-Eagleton buttons after Eagleton was dumped as a running mate?
+GATES: It's certainly true that I made a lot of money selling McGovern-Eagleton campaign buttons.
+I'll be glad to show them to you, but I don't think it matters how much I made.
+It doesn't aggrandize me when things get less and less accurate the farther they get from the source.
+PLAYBOY: Next: the $242 that you supposedly paid for a pizza to be delivered one night.
+GATES: That is just reporters' randomness to the max.
+PLAYBOY: Did you have a million-dollar trust fund while you were at Harvard?
+GATES: Not true. [Throws up his hands, stands and starts pacing] Where does this randomness come from?
+You think it's a better myth to have started with a bunch of money and made money than to have started without?
+In what sense?
+My parents are very successful, and I went to the nicest private school in the Seattle area.
+I was lucky.
+But I never had any trust funds of any kind, though my dad did pay my tuition at Harvard, which was quite expensive.
+PLAYBOY: How did he feel when you dropped out?
+GATES: I told him it was a leave of absence, that I was going back.
+http://www.thecorememory.com
+The Core Memory Project PLAYBOY: Nice move.
+GATES: Hey, if I had completely failed I would have gone back, of course.
+Harvard was willing to take me back.
+I was a student on leave.
+PLAYBOY: When you were at Harvard, did you frequent the Combat Zone, home of hookers, drugs and adult films?
+GATES: That's true. [Laughs] But just because I went there doesn't mean I engaged in everything that was going on.
+But I did go there.
+It's easy, you just take the subway.
+And it's pretty inexpensive.
+I ate pizza, read books and watched what was going on.
+I went to the diners.
+PLAYBOY: Ever take LSD?
+GATES: My errant youth ended a long time ago.
+PLAYBOY: What does that mean?
+GATES: That means there were things I did under the age of 25 that I ended up not doing subsequently.
+PLAYBOY: One LSD story involved you staring at a table and thinking the corner was going to plunge into your eye.
+GATES: [Smiles]
+PLAYBOY: Ah, a glimmer of recognition.
+GATES: That was on the other side of that boundary.
+The young mind can deal with certain kinds of gooping around that I don't think at this age I could.
+I don't think you're as capable of handling lack of sleep or whatever challenges you throw at your body as you get older.
+However, I never missed a day of work.
+PLAYBOY: Here's the wildest rumor: You once trolled Seattle in a limo looking for hookers.
+GATES: No, no, that is not true.
+A Korean friend of mine in high school rented a limousine one night, and we went to Burger Master.
+He liked one of the girls there, so he thought it would be fun to pull up in a limousine and leave a big tip at this drive-in place.
+But that is quite a metamorphosis from this nice hamburger girl to something more lurid.
+This isn't the rock-and-roll industry.
+The computer industry doesn't have groupies like rock does.
+PLAYBOY: Really?
+You've been described by one of your own people as Bill Gates, rock star.
+Wasn't there a young woman in Mensa, from Atlanta, who said she needed some software for her Mac which you delivered personally?
+GATES: Who told you that?
+I sent it to her.
+There are elements of truth in all mythology, along with a good dose of exaggeration that I have not contributed to.
+Here's the point: People think, Hey, here's this guy, he's single, has all this success, isn't he taking advantage of it a little bit?
+I mean, geez, just a little bit?
+PLAYBOY: And the answer?
+GATES: Those people wouldn't be completely disappointed.
+They'd be somewhat disappointed because at night they'd find me sitting at home reading the molecular biology of the gene or just working late, or just lying around doing new deals and things like that.
+My job
+http://www.thecorememory.com
+The Core Memory Project is about the most fun thing I do, but I have a broad set of interests, going places, reading things, doing things.
+PLAYBOY: And when you do fly, you fly in coach.
+GATES: It's quite a mix there.
+I fly coach when I'm in the U.S. on business.
+But when I fly to Europe, I fly business class.
+When I go to Trailblazers games with Paul Allen, I fly on the plane he owns.
+I also drive my own car.
+PLAYBOY: Does privilege corrupt?
+GATES: It can, I've noticed.
+It's easy to get spoiled by things that alienate you from what's important.
+PLAYBOY: Are you afraid it would look bad to the people at Microsoft?
+GATES: No, it's for me personally.
+I wouldn't want to get used to being waited on or driven around.
+Living in a way that is unique would be strange.
+PLAYBOY: Do the rumors bother you?
+GATES: Rarely.
+But its difficult.
+Microsoft being well known and having people know we do great software and getting people enthused about new things, that's an important part of Microsoft, challenging these new frontiers.
+It's natural for a company to be associated with its co-founder and leader.
+But as far as my personal life goes, its kind of a drawback.
+Even so, my experience with being exposed to the public is nothing like that of really well-known people.
+PLAYBOY: Are you ready for celebrity?
+GATES: No.
+I haven't even taken the introductory course.
+PLAYBOY: Why not write your own book?
+GATES: If I were to, I'd do it about the future instead of the past.
+When I reach a ripe old age, like 60 or something, then maybe I can be reflective.
+PLAYBOY: You can set the record straight right now.
+GATES: [Sighs] That some degree of oversimplication occurs is unavoidable.
+It's not like I'm complaining.
+Actually, my only complaint is that I wish somebody had written a decent book.
+And perhaps in the future somebody will.
+I just don't happen to like the ones that exist.
+They're incredibly inaccurate.
+Worse, they don't capture the excitement, the fun.
+What were the hard decisions?
+Why did things work out?
+Where was the luck?
+Where was the skill?
+You just don't get a sense of it.
+In fact, at one point we wanted to encourage a writer of reputation to do that, but we decided against it because we didn't want to put the time into it.
+PLAYBOY: Don't you think people would want to read your Iacocca?
+GATES: [Peeved] Now what does that mean?
+I think the answer is no to all such things.
+And when I do, I'll do it a hundred times better than any book done so far.
+But right now I don't want to be huger.
+I'm huger than I want to be.
+I'd like to shrink a little.
+PLAYBOY: Then why are you talking with us?
+GATES: For the message that personal computers can do neat things, that software is great stuff, that there's an exciting opportunity here and Microsoft is involved in it, that's a worthwhile message for Microsoft to get out.
+And if you want to just put Microsoft spokesman
+http://www.thecorememory.com
+The Core Memory Project next to all those comments, that would be fine, except I know that people are more interested in human stories than they are in what technology can do for them.
+PLAYBOY: Perhaps thats a strong clue to what should be done with emerging technologies.
+GATES: That's true.
+We should let people communicate with other people.
+PLAYBOY: Communicate with us: Who is Bill Gates?
+GATES: I don't think theres a simple summary of anyone.
+PLAYBOY: That said, give it a try.
+GATES: [Laughs, then grudgingly, almost by rote] I like my job because it involves learning.
+I like being around smart people who are trying to gure out new things.
+I like the fact that if people really try they can figure out how to invent things that actually have an impact.
+I don't like to waste time where I'm not hearing new things or being creative.
+PLAYBOY: Like these questions?
+GATES: Some of them I've heard before.
+Certainly the history of the company has been widely discussed.
+PLAYBOY: We mean questions about who you are.
+GATES: Nobody's ever asked me the question in that form before.
+Who are you?
+Just get right to the meat of the issue.
+Lets make it multiple choice.
+PLAYBOY: Make it a free-association test.
+It must conjure some thoughts.
+GATES: [Long pause] No, I don't know if I'm thinking of anything.
+PLAYBOY: Try again.
+GATES: OK, I have a nickname.
+My family calls me Trey because I'm William the third.
+My dad has the same name, which is always confusing because my dad is well known and I'm also known.
+If they'd realized that would occur, they wouldn't have called me the same name.
+They thought I'd be unknown so they said, Hey, just use the same name, what the heck.
+When people say Bill, that's work, mostly, and I think of all the stuff I should be doing.
+When people call me Trey, I think of myself as the son.
+I think of myself as young.
+I think of my family, of just being a kid, growing up.
+PLAYBOY: Do you like the public Bill that we've described to you?
+GATES: I think the observations about me are all over the map, so it's hard to respond to that.
+When I got engaged, the Star said that I had a little contest for Melinda and that as soon as she finished the contest, I asked her to marry me.
+And then she said, Yes, oh yes!
+I find that humorous because it's so unreal and so ridiculous.
+The National Enquirer hired an astrologist Id never met to say various things about me.
+That struck me as ridiculous.
+Forbes does this whole thing about who's wealthy and what they think.
+I thought what they wrote about me was silly, but this year they had a nice article on my friend Warren Buffett that I thought was pretty good.
+So I guess it's easier reading about other people.
+My guideline has always been to avoid a focus on me personally.
+Not because of any deep, dark secrets.
+Rather just a sense of privacy.
+I guess it's kind of silly in a way.
+PLAYBOY: People see what you have wrought and want to know what kind of person becomes a guy like you.
+http://www.thecorememory.com
+The Core Memory Project GATES: You mean if they have the same kind of personal life then maybe they'll become like me?
+PLAYBOY: Come on.
+Isn't this whole information highway based on wanting and having access to more information?
+GATES: Yeah, but there are lots of things you can be interested in.
+PLAYBOY: And this is one of them.
+GATES: But it's sort of prurient, isn't it?
+PLAYBOY: Maybe only to the guy who's the center of attention.
+GATES: When we have the information highway, I'll put it out there.
+Everybody who wants to pay, I don't know, one cent, can see what movies I'm watching and what books I'm reading and certain other information.
+If I'm still interesting, I'll rack up dollars as people access that part of the highway.
+PLAYBOY: How many buildings are on this campus?
+Have you visited them all?
+GATES: Twenty-five.
+Yeah, I've been to all of them, but there are a few I've been to only once.
+PLAYBOY: Do you wander around here late at night?
+GATES: Actually, I'll do that tonight.
+It's Friday and I have no plans.
+PLAYBOY: Do you look in people's offices?
+GATES: I see if people are around, see what they put up on the walls.
+I want a little sense of what the feeling is, how lively, how much people personalize things.
+They put industry articles up on the walls, ones that are particularly rude to us or particularly nice to us.
+They put up their progress, their number of bugs or new things that work.
+And you run into people.
+Even on a Friday night there'll be a bunch of people here, and I'll get a chance to ask what they're thinking.
+PLAYBOY: Let's start to wrap up with a more global perspective.
+What should our attitude be toward the Japanese?
+GATES: This Japanese-bashing stuff is so out of control.
+It's almost racist the way people have these stereotyped views of why Japanese companies are successful, without gathering many facts.
+PLAYBOY: Even though they're in a slump now, why have the Japanese been so successful?
+GATES: For good reasons.
+Great products.
+A long-term approach.
+Focus on engineering and what it takes to turn products around quickly.
+Being able to adapt to what's necessary to sell effectively in markets around the world.
+Believe me, they have some challenges ahead.
+But what they did with no natural resources and, essentially, no world power is a miracle.
+PLAYBOY: And we did none of the above?
+What were our mistakes?
+GATES: Actually, America has also done pretty well during this period.
+Some American companies made mistakes, and there are things we could do to improve our products.
+For instance, we could improve our education system.
+Also, get rid of short-term thinking.
+Focus on product engineering instead of financial engineering.
+We could fine-tune.
+But we've contributed a lot, too.
+America and Japan are the two leading world economies in terms of
+http://www.thecorememory.com
+The Core Memory Project technology and innovative products.
+And in software, information-age technology and biotechnology, our second most important business, the U.S. has an amazing lead.
+PLAYBOY: Our auto business is recovering.
+We're finally focused on making better cars instead of on holding down Japanese imports.
+But what in the American psyche let our lead slip away?
+GATES: I don't think it's the American psyche.
+We don't have to dig that deep to find rot.
+The way those car companies managed their engineering process and their manufacturing process was wrong.
+It was out of date, and it took an unbelievable amount of time to get those processes reformed.
+It really took Ford to set the pace.
+PLAYBOY: Does Microsoft follow the Japanese model?
+GATES: There are aspects.
+Look, our workers are all Americans, so we don't sing company songs and things like that.
+The idea of taking a long-term approach, taking a global approach, many fine American companies have done that, and have that in common with the Japanese.
+But in no sense would I say were following some broad set of Japanese approaches.
+PLAYBOY: How should our society think about the future?
+GATES: More optimistically.
+As there is progress, which is partly advances in technology, in a certain sense the world gets richer.
+That is, the things we do that use a lot of resources and time can be done more efficiently.
+So people wonder, Will there be jobs?
+Will there be things to do?
+Until were educating every kid in a fantastic way, until every inner city is cleaned up, there is no shortage of things to do.
+And as society gets richer, we can choose to allocate the resources in a way that gives people the incentive to go out and do those unfinished jobs.
+PLAYBOY: One story about you suggested that if Microsoft manages to write and deliver the software running inside the box it will, on the most basic levels, influence how we interact with the information highway.
+How does it feel to know you can have the same impact in the next 20 years as you had in the first 20? GATES: Because we've had leadership products, we've had an opportunity to have a role.
+But this would have happened without us.
+Somebody would have done a standard operating system and promoted a graphics interface.
+We may have made it happen a little sooner.
+Likewise, the information highway is going to happen.
+If we play a major role it'll be because we were a little bit better a little bit sooner than others were.
+PLAYBOY: If you don't take the next step, are you concerned about falling from the heights you've achieved?
+GATES: There may be a better way to put it.
+If we weren't still hiring great people and pushing ahead at full speed, it would be easy to fall behind and become a mediocre company.
+Fear should guide you, but it should be latent.
+I have some latent fear.
+I consider failure on a regular basis.
+PLAYBOY: Personally, are you slowing down any?
+GATES: I used to take no vacations.
+I used to stay up two nights in a row.
+I don't do that anymore.
+PLAYBOY: What about keeping up with the technology?
+Overwhelming?
+GATES: No.
+But it's harder than when I was young.
+PLAYBOY: What's the last thing you didn't understand?
+http://www.thecorememory.com
+The Core Memory Project
+http://www.thecorememory.com
+GATES: The quantum theory of gravity. [Laughs] Look at this office.
+Who can read all this stuff?
+Maybe tomorrow I'll return the hundreds of e-mail messages that are in my in-box right now.
+PLAYBOY: People might find it hard to believe that you just barely keep up.
+GATES: How would they know?
+I can tell them that's the truth.
+The same with the degree of success I have had.
+I never would have predicted it.
+I didn't set out to achieve some level of wealth or size of company.
+I remember in 1980 or 1981 looking at a list of people who had made a lot of money in the computer industry and thinking, Wow, that's amazing.
+But I never thought I'd be on that list.
+It's clear I was wrong.
+I'm on the list, at least temporarily.
+PLAYBOY: Temporarily?
+GATES: I'm waiting for the anticlimax.
+I hate anticlimax.
+In terms of being able to do new and interesting things, I would hate to lose that.
+That's partly why I work as hard as I do trying to stay on top of things.
+PLAYBOY: Is the one success of Microsoft enough for you?
+GATES: Microsoft has had many, many successful products.
+It's like saying to somebody whos been married 50 years, Well, hell, you've had only one wife.
+What's wrong with you?
+You think you can do only one?
+I mean, I'm committed to one company.
+This is the industry I've decided to work in.
+PLAYBOY: An interesting metaphor you choose, the wife thing.
+GATES: You're welcome to print it.
+PLAYBOY: Put it this way: You're 38, a billionaire, you co-founded the world's largest software company and transformed the industry.
+What do you want to do for an encore if there is one?
+GATES: Encore implies that life is not a continuous process, that there's some sort of finite number of achievements that defines your life.
+For me, there are a lot of exciting things in front of me at Microsoft, things that we want to see if we can make happen with technology.
+There are great people here who are fun to work with.
+And in the next decade the most interesting industry by far will be information technology, broadly dened.
+We have a chance to make a major contribution to that.
+Its very competitive.
+We won't know until late in that period whether we did it right or not.
+I'm excited about that.
+And were still on a pretty steep curve in terms of making even better word processors or figuring out how an electronic encyclopedia or movie guide should work, guring out what sort of tools for collaboration we should offer to people.
+That will be my focus for the foreseeable future.
+PLAYBOY: What about tomorrow?
+Any plans for Saturday?
+GATES: [Smiles] Work.

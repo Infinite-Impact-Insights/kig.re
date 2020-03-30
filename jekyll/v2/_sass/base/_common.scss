@@ -118,42 +118,6 @@ p, a, a img, h1, h2, h3 {
   }
 }
 
-.post-link {
-  position: relative;
-  width: 70%;
-
-  &:hover {
-    a:before {
-      width: 100%;
-      opacity: 1;
-      transform: scale(1);
-      transition: all 0.2s ease-out;
-    }
-  }
-
-  a {
-    color: #404040;
-    font-weight: $font-medium;
-
-    &:hover {
-      color: $hover;
-      transition: all 0.3s ease-out;
-    }
-
-    &:before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: $hover;
-      content: "";
-      opacity: 0;
-      transition: all 0.4s ease-out;
-      transform: scale(0);
-    }
-  }
-}
 
 input[type="email"] {
   padding: 8px 15px;

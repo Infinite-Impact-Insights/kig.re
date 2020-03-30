@@ -6,7 +6,30 @@
 @import "variable";
 
 body {
-  .banner, img#post-image {
+
+  nav.navbar,
+  .navbar {
+    position: fixed;
+  }
+
+  nav {
+    #site-logo {
+      position: relative;
+
+      img {
+        width: 120px;
+        height: 50px;
+        display: block;
+      }
+    }
+  }
+
+  .banner {
+    margin-top: 50px !important;
+  }
+
+  .banner,
+  img#post-image {
     border-radius: 5px;
     border: 0px solid #503757;
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
@@ -45,18 +68,32 @@ body {
     width: 100% !important;
   }
 
-  .entry-content #preamble .sectionbody .paragraph p {
+
+  #preamble .sectionbody .paragraph p {
     margin: 30px 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem !important;
     line-height: auto;
     font-weight: 400;
-    color: #6F8B91 !important;
+    //color: #3c4449 !important;
+    color: #726F71 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .list-block #preamble .sectionbody .paragraph p {
+    margin: 30px 0;
+    font-size: 1.4rem !important;
+    line-height: 1.6rem !important;
+    font-weight: 400;
+    color: #726F71 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   .index-page {
-    .banner-text-wrap, .blog-list {
+
+    .banner-text-wrap,
+    .blog-list {
       .sectionbody {
         .paragraph {
           p {
@@ -64,6 +101,7 @@ body {
             font-size: 1.4rem !important;
             line-height: 1.7rem !important;
           }
+
           line-height: 1.2rem !important;
           color: #333034 !important;
           text-shadow: none !important;
@@ -72,8 +110,13 @@ body {
     }
   }
 
-  .post-summary, #preamble .sectionbody .paragraph {
-    p, h1, h2, h3 {
+  .post-summary,
+  #preamble .sectionbody .paragraph {
+
+    p,
+    h1,
+    h2,
+    h3 {
 
 
       font-size: 22pt;
@@ -81,7 +124,8 @@ body {
       font-weight: 700;
       font-family: 'Yanone Kaffeesatz', sans-serif !important;
       margin: 10px 10px 10px 0 !important;
-      text-align: left;;
+      text-align: left;
+      ;
     }
 
     h1 {
@@ -112,6 +156,50 @@ body {
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
   }
 
+  .post-link-arrow {
+    width: 30px;
+    float: right;
+    margin-top: -20px;
+  }
+
+
+  .post-link {
+    position: relative;
+    width: 70%;
+
+    &:hover {
+      a:before {
+        width: 100%;
+        opacity: 1;
+        transform: scale(1);
+        transition: all 0.2s ease-out;
+      }
+    }
+
+    a {
+      color: #404040;
+      font-weight: $font-medium;
+
+      &:hover {
+        color: $hover;
+        transition: all 0.3s ease-out;
+      }
+
+      &:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: $hover;
+        content: "";
+        opacity: 0;
+        transition: all 0.4s ease-out;
+        transform: scale(0);
+      }
+    }
+  }
+
   div.post-listing-image {
     float: right !important;
 
@@ -126,22 +214,40 @@ body {
     }
   }
 
+  @media (max-width: 900px) {
+
+    .post-link {
+      width: 100%;
+    }
+
+    div.post-listing-image {
+      float: none;
+      clear: both;
+
+      img {
+        display: none;
+      }
+    }
+  }
+
   #toc {
     top: 0;
-    overflow-x: hidden;
     position: sticky !important;
     display: block;
     font-size: 1.1rem;
     margin-left: -20px !important;
     padding-left: 0 !important;
     width: 100%;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 400;
+    font-family: $font-menu;
 
-    #content-toc, #asciidoc-toc {
+    #content-toc,
+    #asciidoc-toc {
       padding-left: 0 !important;
       padding-top: 10px;
       width: 100%;
-      text-shadow: 5px 5px 15px rgba(60, 60, 60, 0.2);
+      // text-shadow: 5px 5px 15px rgba(60, 60, 60, 0.2);
 
       .section-nav {
         margin: 5px 0;
@@ -149,17 +255,22 @@ body {
       }
 
       h2.toc-h2 {
-        font-family: $font-preamble-family;
+        font-family: $font-menu;
+        font-weight: 600;
         font-size: 2rem !important;
+        letter-spacing: -0.1rem;
         white-space: nowrap !important;
         margin-top: 10px;
-        margin-bottom: 0;
+        margin-bottom: -20px;
         padding-bottom: 0;
         margin-left: 0;
-        color: $active;
+        color: $hover - 50;
+        display: none;
       }
 
-      ul, ul.toc-entry, ul.section-nav {
+      ul,
+      ul.toc-entry,
+      ul.section-nav {
         margin-left: 0 !important;
         padding-left: 0 !important;
 
@@ -169,9 +280,9 @@ body {
           padding-left: 0 !important;
 
           a {
-            font-family: $font-preamble-family;
-            font-weight: 400 !important;
-            letter-spacing: 0.03rem;
+            font-family: $font-menu;
+            font-weight: 700 !important;
+            letter-spacing: -0.05rem;
             color: $nav-level1 !important;
             text-decoration: none;
 
@@ -187,8 +298,8 @@ body {
         }
 
         ul.sectlevel1 {
-          font-size: 1.5rem !important;
-          line-height: 1.6rem;
+          font-size: 1.1rem !important;
+          line-height: 1.3rem;
           margin-top: 20px !important;
 
           li {
@@ -201,14 +312,14 @@ body {
           }
 
           ul.sectlevel2 {
-            font-size: 1.1rem !important;
-            line-height: 1.3rem;
-            margin-top: 10px !important;
+            font-size: 0.8rem !important;
+            line-height: 0.9rem;
+            margin-top: 4px !important;
 
             li {
               white-space: nowrap;
               margin-left: 10px !important;
-              margin-bottom: 10px !important;
+              margin-bottom: 1px !important;
             }
 
             a {
@@ -216,8 +327,8 @@ body {
             }
 
             ul.sectlevel3 {
-              font-size: 0.9rem !important;
-              line-height: 1rem;
+              font-size: 0.7rem !important;
+              line-height: 0.8rem;
 
               li {
                 margin-bottom: 5px !important;
@@ -237,7 +348,6 @@ body {
     min-height: 500px;
     margin-top: 0;
 
-    a {
-    }
+    a {}
   }
 }

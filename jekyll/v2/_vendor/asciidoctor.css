@@ -1376,8 +1376,8 @@ pre.pygments .lineno:before {
     font-size: 2.75em;
     font-weight: bold;
     line-height: 0.6em;
-    margin-left: -0.6em;
-    color: #7a2518;
+    margin-left: -2em !important;
+    color: #999;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 

@@ -1,5 +1,31 @@
 @import "variable";
 
+.imageblock {
+  .content {
+    img {
+      border: 1px solid #888;
+      box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.2);
+      margin: 50px auto;
+    }
+  }
+}
+
+.quoteblock {
+  margin-left: 0px !important;
+
+  blockquote,
+  blockquote .paragraph p {
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: $font-cursive;
+    margin: 30px;
+
+    font-weight: 600;
+    line-height: 1.7rem !important;
+    font-style: italic !important;
+  }
+}
+
 ol>li p,
 ul>li p,
 ul dd,
@@ -13,14 +39,17 @@ ol dd,
 
 .ulist,
 .olist {
-  ul, ol {
+
+  ul,
+  ol {
     li {
       padding-left: 10px;
       margin-bottom: 15px;
       margin-top: 10px;
       font-size: $primary-font-size-small !important;
 
-      ul, ol {
+      ul,
+      ol {
         li {
           margin-top: 10px !important;
         }
@@ -209,10 +238,10 @@ conum[data-value] {
   background: $black_80;
   border-radius: 1em;
   text-align: center;
-  font-size: .75em;
-  width: 1.67em;
-  height: 1.67em;
-  line-height: 1.67em;
+  font-size: 2.75em;
+  width: 3.67em;
+  height: 3.67em;
+  line-height: 2.67em;
   font-family: "Open Sans", "DejaVu Sans", sans-serif;
   font-style: normal;
   font-weight: bold;

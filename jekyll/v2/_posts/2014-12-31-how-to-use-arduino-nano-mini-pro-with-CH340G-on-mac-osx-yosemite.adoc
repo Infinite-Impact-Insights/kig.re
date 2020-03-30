@@ -5,59 +5,64 @@
 :doctype: book
 :page-excerpt: TODO
 :page-layout: post
-:page-post_image: /assets/images/posts/how-to-use-arduino-nano.png
+:page-post_image: /assets/images/posts/arduino/nano-ch340g-top.jpg
 :page-tags: ["arduino", "coding"]
 :page-title: "How To Use Arduino Nano Mini Pro With CH340G On Mac Osx Yosemite"
 :page-liquid:
 :page-asciidoc_toc: true
 
-My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
-
-* Updated Nov, 2017 with the latest driver for OS-X High Sierra
-* Updated Oct, 2016 with the new signed driver for OS-X Sierra
-* Updated Nov 22, 2015 with the new signed driver for OS-X El Capitan and Yosemite
-* Updated Jan 9, 2016 with Windows Drivers
+:hide-uri-scheme:
 
 == Introduction -- What is CH340G?
 
-link:/images/nano-ch340g-bottom.jpg[image:/images/nano-ch340g-bottom.jpg[\]]
+My golden rule is that if something took me longer than 15 minutes to figure out, then it's worth documenting in a tiny blog post so that it would save time to others, just like many other similar posts saved me million hours by providing simple clear instructions.
 
+**Change Log**
+
+----
+* Updated Mar, 2020 with the new blog redesign
+* Updated Nov, 2017 with the latest driver for OS-X High Sierra
+* Updated Oct, 2016 with the new signed driver for OS-X Sierra
+* Updated Jan, 2016 with Windows Drivers
+* Updated Nov, 2015 with new driver for OS-X El Capitan & Yosemite
+----
 Recent versions of cheap Chinese http://www.ebay.com/itm/381019048475[clones of Arduino boards] have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
 
 Below you'll find links to drivers for both Windows and Mac to make these work. Please leave a comment, if it worked or didn't work for you, especially if you had to do anything special or hacky to make it work :)
 
-== Windows
+image::/assets/images/posts/arduino/nano-ch340g-bottom.jpg[Nano Bottom,100%]
+
+== Drivers for USB Connection
+
+=== Windows
 
 A fully signed drivers for Windows can be found below:
 
 * http://catalog.update.microsoft.com/v7/site/ScopedViewRedirect.aspx?updateid=032a878e-8ca0-40d2-b7b1-936640b0eecb[2011 Driver version 3.3.2011.11 for Windows 7]
+
 * http://www.arduined.eu/ch340-windows-8-driver-download/[2014 Driver version 3.4.2014.8 for Windows 8+]
 
-== Mac OS-X
+=== Mac OS-X
 
-=== High Sierra
-
-_(Added: November, 2017)_
+==== High Sierra (Added: November, 2017)
 
 Looks like the updated version from their site works now as is. Here is the updated link:/downloads/CH341SER_MAC.ZIP[CH341SER_MAC.ZIP (148KB)] cached locally, but for other platforms, please checkout http://www.wch.cn/download/CH341SER_MAC_ZIP.html[their website].
 
-=== Sierra
-
-_(Added: October, 2016)_
+==== Sierra (Added: October, 2016)
 
 The Version 1.3 of the driver available on the vendor's website causes a crash on Mac OS-X Sierra. Thankfully, https://github.com/adrianmihalko[Adrian Mihalko] patched the driver, and made it available to the public.
 
 * The updated and patched Sierra Mac Driver can be downloaded here -- link:/downloads/CH34x_Install_V1.3.zip[CH34x_Install_V1.3.zip (174 Kb)].
 
-<div class="external-reference"">Thanks to link:[https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver[https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver] for patching the driver.</div>
+[quote]
+Thanks to this source for patching the driver: https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver[https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver] for patching the driver.
 
-=== El Capitan
-
-_(Added: Nov 22, 2015)_
+=== El Capitán (Added: Nov 22, 2015)
 
 Many instructions down below were written for the old driver, which was not signed, and therefore was not working out of the box on OS-X Yosemite and El Capitan. The latest driver appears to be signed, and should work out the box. The new driver is here: link:/downloads/CH34x_Install.zip[CH34x_Install.zip (111Kb)].
 
-Acknowledgements: thanks to http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/[Björn's Techblog] for posting the driver.
+[quote]
+Thanks to http://blog.sengotta.net/signed-mac-os-driver-for-winchiphead-ch340-serial-bridge/[Björn's Techblog] for posting the driver.
 
 Inside the driver is a brief README with the following instructions:
 
@@ -65,9 +70,10 @@ Inside the driver is a brief README with the following instructions:
 
 CH34X USB-SERIAL DRIVER INSTALLATION INSTRUCTIONS
 Version: V1.0 Copyright (C) Jiangsu Qinheng Co., Ltd.
-Support System: OSX 10.9 and above
+Support System: OSX 10.9 and aboves
 
 Installation Process:
+
 	* Extract the contents of the zip file to a local installation directory
 	* Double-click CH34x_Install.pkg
 	* Install according to the installation on procedure
@@ -78,12 +84,12 @@ list(/dev/tty.wchusbserial*), and you can access it by serial tools.
 
 If you can't find the serial port then you can follow the steps below:
 
-. Open terminal and type '`ls /dev/tty*`' ande see is there device like tty.wchusbserial;
-. Open '`System Report`'\->Hardware\->USB, on the right side "`USB Device Tree`" there will
+ *  Open terminal and type `ls /dev/tty*` and see is there device like `tty.wchusbserial`;
+ * Open `System Report->Hardware->USB`, on the right side `USB Device Tree` there will
 be device named "`Vendor-Specific Device`" and check if the Current is normal.
 If the steps upper don't work at all, please try to install the package again.
 
-NOTE: Please enter _System Preferences ➜ Security & Privacy ➜ General_, below the
+NOTE: Please enter **System Preferences ➜ Security & Privacy ➜ General**, below the
 title "Allow apps downloaded from:" you should choose the choice 2 ➜ "Mac App Store and
 identified developers" so that our driver will work normally.
 
@@ -97,12 +103,12 @@ This older version requires some hacking in order to get it to work.  I am leavi
 
 There are two main sites that people mention in the discussions about the driver:
 
-* Chinese company that developed it: http://www.wch.cn/downloads.php?name=pro&proid=178
+ * http://www.wch.cn/downloads.php?name=pro&proid=178[Chinese company that developed it]
  ** This driver appears newer than on the second link, and is from Dec 2013.
  ** NOTE: for me that site took a long long time to load, and then it took forever to download this tiny driver, so I put up a copy here link:/downloads/CH341SER_MAC.ZIP[CH341SER_MAC.ZIP (256Kb)], so that you don't have to wait. Hopefully they won't go after me for mirroring their driver :)
-* Second site is the Russian company that sells the USB programmer based on this chip: http://www.5v.ru/ch340g.htm but this site only has an older version of the driver, from 2012, so I do not recommend downloading it.
 
-link:/images/nano-ch340g-top.jpg[image:/images/nano-ch340g-top.jpg[\]]
+* Second site is some sketchy http://www.5v.ru/ch340g.htm[Russian Company] that sells the USB programmer based on this chip:  but this site only has an older version of the driver, from 2012, so I do not recommend downloading it.
+
 
 ==== Pre-Installation
 

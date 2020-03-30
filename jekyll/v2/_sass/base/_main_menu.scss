@@ -2,6 +2,72 @@
 
 @import "variable";
 
+#top-nav {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: $font-menu !important;
+  font-weight: 600;
+  .post-date-menu {
+    font-family: $font-monospace-family;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    font: $font-blockquote;
+    width: 70px;
+    border-right: 1px solid #eee;
+  }
+
+  .post-title {
+    display: inline-block;
+    display: $font-menu;
+    margin-left: 10px;
+    font-family: $font-menu !important;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px !important;
+
+    a {
+      color: $active !important;
+      font-family: $font-menu !important;
+    }
+
+    a.dropdown-item {
+      color: black !important;
+      &:hover {
+        background-color: $hover !important;
+      }
+    }
+    @include desktop {
+      padding: 8px;
+    }
+
+    @include tablet {
+      padding: 5px 0;
+    }
+  }
+
+
+  .navbar-brand > img {
+    max-height: 55px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  nav {
+    .navbar-nav {
+      left: 0;
+      .nav-link {
+        padding-left: 10px !important;
+        width: 150px;
+      }
+    }
+  }
+}
+
+
 #original-nav {
   .navbar.navbar-dark {
     padding: 0;
@@ -247,21 +313,5 @@
     -ms-flex-align: center;
     align-items: center;
     height: 100%;
-  }
-
-  .nav-link {
-    padding: 8px 0;
-
-    @include desktop {
-      padding: 8px;
-    }
-
-    @include tablet {
-      padding: 5px 0;
-    }
-  }
-
-  .navbar-brand > img {
-    max-height: 55px;
   }
 }
