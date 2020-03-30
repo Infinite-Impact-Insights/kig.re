@@ -6,45 +6,47 @@
           <div class="single-author-d w-100">
             <div class="title">
               {% if category %}
-              <h2 class="mb-0 text-center"><span
-                  class="badge badge-pill badge-secondary">{{ category }}</span>
-              </h2>
+                <h2 class="mb-0 text-center">
+                  <span class="badge badge-pill badge-secondary">{{ category }}</span>
+                </h2>
               {% else %}
-              <h2 class="mb-0 text-center">{{ page.title | capitalize }}</h2>
-              {% if page.subtitle %}
-              <h3 class="mb-0 text-center"><span
-                  class="badge badge-pill badge-secondary">{{ page.subtitle }}</span>
-              </h3>
-              {% endif %}
+                <h2 class="mb-0 text-center">{{ page.title | capitalize }}</h2>
+                {% if page.subtitle %}
+                  <h3 class="mb-0 text-center">
+                    <span class="badge badge-pill badge-secondary">{{ page.subtitle }}</span>
+                  </h3>
+                {% endif %}
               {% endif %}
             </div>
             {% if page.layout == "post" %}
-            <div class="post-meta d-flex">
-              <ul class="post-sp-meta list-inline mx-auto my-0">
-                <li class="list-inline-item">
-                  <i class="fa fa-clock-o"></i>{{ page.date |
-                  date_to_long_string }}
-                </li>
-                <i class="fa fa-folder-o fa-orcid"></i>
-                {% for category in page.categories limit:8 %}
-                <li class="list-inline-item">
-                  <a href="/category/{{ category | slugize }}/">
-                    <span class="badge badge-pill badge-secondary">{{ category }}</span>
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-            <div class="post-meta d-flex pt-30">
-              <div
-                  class="post-sp-meta list-inline mx-auto my-0 text-center">
-                {% for tag in page.tags %}
-                {% capture tag_name %}{{ tag }}{% endcapture %}
-                <a class="tag-link" href="/tag/{{ tag_name }}"><span
-                    class="btn btn-info btn-sm mb-1">#{{ tag_name }}</span></a>
-                {% endfor %}
+              <div class="post-meta d-flex">
+                <ul class="post-sp-meta list-inline mx-auto my-0">
+                  <li class="list-inline-item">
+                    <i class="fa fa-clock-o"></i>
+                    {{ page.date | date_to_long_string }}
+                  </li>
+                  <i class="fa fa-folder-o fa-orcid"></i>
+                  {% for category in page.categories limit:8 %}
+                    <li class="list-inline-item">
+                      <a href="/category/{{ category | slugize }}/">
+                        <span class="badge badge-pill badge-secondary">{{ category }}</span>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
               </div>
-            </div>
+              <div class="post-meta d-flex pt-30">
+                <div class="post-sp-meta list-inline mx-auto my-0 text-center">
+                  {% for tag in page.tags %}
+                    {% capture tag_name %}
+                      {{ tag }}
+                    {% endcapture %}
+                    <a class="tag-link" href="/tag/{{ tag_name }}">
+                      <span class="btn btn-info btn-sm mb-1">#{{ tag_name }}</span>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
             {% endif %}
           </div>
         </div>
@@ -52,4 +54,3 @@
     </div>
   </div>
 </div>
-

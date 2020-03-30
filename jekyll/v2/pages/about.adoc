@@ -5,6 +5,7 @@
 :page-image_url: '/assets/images/posts/kig/kig-2015-geekcamp-328x328.png'
 :page-title: "About"
 :page-add_to_menu: true
+:page-asciidoc_toc: true
 
 
 

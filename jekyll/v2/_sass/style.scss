@@ -151,7 +151,6 @@ Banner-Area CSS
       box-shadow: 1px 1px 9px 0px rgba(156, 202, 183, 0.27);
 
 
-
       &:before {
         position: absolute;
         top: 0;
@@ -340,10 +339,62 @@ Post-content-area
   }
 }
 
+.tag-column-even {
+  padding-left: 50px !important;
+}
+
+.tag-column-odd {
+  padding-right: 50px !important;
+}
+
+.tag-post-counter {
+  h1 {
+    float: right;
+    font-family: $font-menu;
+    font-weight: 800;
+  }
+
+  a span {
+    text-shadow: 1px 1px 2px rgba(46%, 46%, 46%, 1);
+  }
+
+  .numberCircle {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+  }
+
+  .popular .numberCircle {
+    background-color: rgba(0, 0, 0, 1);
+    ;
+  }
+
+  .mediocre .numberCircle {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .rare .numberCircle {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  a span {
+    font-family: $font-menu;
+    font-weight: 800;
+    font-size: 1.3rem;
+    padding: 7px 15px;
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+
+}
+
 .post-content-area {
   .post-image img {
     max-width: 100%;
   }
+
   #post-image {
     box-shadow: none !important;
   }
@@ -822,6 +873,8 @@ About-content-area Css
 }
 
 .about-content-area {
+  width: 80%;
+
   .about-image {
     img {
       max-width: 100%;

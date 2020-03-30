@@ -24,6 +24,7 @@ gem 'kramdown'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem 'jekyll-haml'
   gem 'jekyll-liquify'
   gem 'jekyll-tagging'
   gem 'jekyll-archives'

@@ -1,64 +1,64 @@
 {% assign post = paginator.posts[0] %}
-<div class="bannner-area pb-100 pt-4 clearfix">
+<div class="bannner-area pb-100 pt-3 clearfix">
   <div class="container">
 
     <div class="row">
       <div class="col-lg-6">
-        <div class="banner"
-             style="background-image:url({{ post.post_image }})"><i
-            class="fas fa-angle-double-right elastic-fai-3x"></i>
+        <div class="banner" style="background-image:url({{ post.post_image }})">
+          <i class="fas fa-angle-double-right elastic-fai-3x"></i>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="banner-text d-flex justify-content-center">
           <div class="banner-text-wrap">
             <div class="title-text mb-4">
-              <h2 class="post-link wow fadeIn"
-                  data-wow-duration=".5s"><a
-                  href="{{ post.url }}">{{ post.title
-                }}</a></h2>
+              <h2 class="post-link wow fadeIn" data-wow-duration=".5s">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              </h2>
             </div>
             <p class="post-link" data-wow-delay="300ms" data-wow-duration=".5s" style="animation-duration:2s;animation-delay:300ms;">
-              {{ post.excerpt | truncatewords:30 }}
+              {{ post.excerpt }}
             </p>
-            <div class="post-link-arrow" data-wow-delay="300ms" data-wow-duration=".5s" style="animation-duration:2s;animation-delay:300ms;"><a
-                href="{{ post.url }}"><i
-                class="fas fa-angle-double-right fa-2x"></i></a>
+            <div class="post-link-arrow" data-wow-delay="300ms" data-wow-duration=".5s" style="animation-duration:2s;animation-delay:300ms;">
+              <a href="{{ post.url }}">
+                <i class="fas fa-angle-double-right fa-2x"></i>
+              </a>
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="main-content-area pb-100 clearfix">
+<div class="main-content-area pb-50 clearfix">
   <div class="container">
-
     <div class="row">
       <div class="col-lg-1 col-md-1 offset-md-2 offset-lg-1"></div>
       <div class="col-lg-10 col-md-10 offset-md-2 offset-lg-2">
         {% for post in paginator.posts %}
-        {% if forloop.index != 1 %}
-        <div class="blog-list wow fadeIn" data-wow-delay="100ms"
-             data-wow-duration=".5s">
-          <div class="list-block block block-{{ forloop.index }}">
-            {% if post.post_image %}
-            <div class="post-listing-image">
-              <img src="{{ post.post_image }}"
-                   width="200"></img>
+          {% if forloop.index > 1 %}
+            {% assign counter = forloop.index %}
+            <div class="blog-list wow fadeIn" data-wow-delay="100ms" data-wow-duration=".5s">
+              <div class="list-block block block-{{ counter | minus: 1 }}">
+                {% if post.post_image %}
+                  <div class="post-listing-image">
+                    <img src="{{ post.post_image }}" width="200"/>
+                  </div>
+                {% endif %}
+                <span>{{ post.date | date_to_long_string }}</span>
+                <h2 class="post-link">
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </h2>
+                <p>{{ post.excerpt }}</p>
+                <div class="post-link-arrow">
+                  <a href="{{ post.url }}">
+                    <i class="fas fa-angle-double-right fa-2x"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            {% endif %}
-            <span>{{ post.date | date_to_long_string }}</span>
-            <h2 class="post-link"><a href="{{ post.url }}">{{
-              post.title }}</a></h2>
-            <p>{{ post.excerpt | truncatewords:100 }}</p>
-            <div class="post-link-arrow"><a href="{{ post.url }}"><i
-                class="fas fa-angle-double-right fa-2x"></i></a>
-            </div>
-          </div>
-        </div>
-        {% endif %}
+          {% endif %}
         {% endfor %}
       </div>
       <div class="col-lg-1 col-md-1 offset-md-2 offset-lg-1"></div>
@@ -66,24 +66,29 @@
 
 
     {% if paginator.total_pages > 1 %}
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="post-pagination pt-100 text-center clearfix">
-          {% if paginator.previous_page %}
-          <p class="float-left"><a
-              href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Prev
-            {{ pre }} </a></p>
-          {% endif %}
-          <p class="page-count">Page {{ paginator.page }} of {{
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="post-pagination pt-100 text-center clearfix">
+            {% if paginator.previous_page %}
+              <p class="float-left">
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Prev
+                  {{ pre }}
+                </a>
+              </p>
+            {% endif %}
+            <p class="page-count">Page
+              {{ paginator.page }}
+              of
+              {{
             paginator.total_pages }}</p>
-          {% if paginator.next_page %}
-          <p class="float-right"><a
-              href="{{ paginator.next_page_path | prepend: site.baseurl }}">Next</a>
-          </p>
-          {% endif %}
+            {% if paginator.next_page %}
+              <p class="float-right">
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Next</a>
+              </p>
+            {% endif %}
+          </div>
         </div>
       </div>
-    </div>
     {% endif %}
   </div>
 </div>

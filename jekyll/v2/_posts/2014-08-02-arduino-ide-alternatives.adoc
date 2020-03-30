@@ -6,7 +6,7 @@
 :page-excerpt: Review of Arduino IDE Alternatives.
 :page-layout: post
 :page-post_image: /assets/images/posts/arduino/ide-arduino-arduino.jpg
-:page-tags: ["arduino", "integrated-dev-environments", "c++"]
+:page-tags: ["arduino", "ide", "c++"]
 :page-asciidoc_toc: true
 
 

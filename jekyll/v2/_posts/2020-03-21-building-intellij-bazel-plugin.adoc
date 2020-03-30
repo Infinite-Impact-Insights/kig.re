@@ -7,7 +7,7 @@
 :page-liquid:
 :page-post_image: /assets/images/bazel/bazel-build.png
 :page-quote: "I love deadlines. I like the whooshing sound they make as they fly by." - Douglas Adamso
-:page-tags: [bazel, intellij, docker, build-systems, integrated-dev-environments]
+:page-tags: [bazel, intellij, docker, build-systems, ide]
 :page-title: Building IntelliJ Bazel Plugin from Sources
 
 :showtitle:

@@ -9,19 +9,24 @@
 :page-tags: ["aws", "ec2", "ubuntu"]
 :page-asciidoc_toc: true
 
-This post describes how I was able to fix the "read-only filesystem" issue on one of my C5 instances in AWS EC2. For impatient, I was able to run `fsck.ext4 -p` to fix an inode issue, and then the machine rebooted with read/write. Read on for more details.
+This post describes how I was able to fix the "read-only filesystem" issue on one of my C5 instances in AWS EC2.
 
-== Is AWS really a sane choice of a Cloud for mission-critical infrastructure?
 
-This is a rhetorical question.
+== Read Only my Ass!
 
-Still, -- in this short post I describe the "read-only" problem that happened to one of our C5 hosts, offer a bit of a rant about how incompetent AWS support staff is, and how their forums are completely _useless_, and frankly, _infuriating_.
+Let me tell you a story, which I like to call the "Read-Only" problem that happened to one of our C5 hosts. It cost me a few hours of head-scratching and after figuring it out, it would be a missed opportunity if I didn't blog about it.
 
-And as far as the question posted above I will let you make your own conclusion -- so keep on reading.
+But I have some alternative motives too: I'd love to rant to you about how incompetent AWS support staff is, and how their forums are completely _useless_, and frankly, _infuriating_.
 
-Do you have this problem on one of your EC2 instances? Then read on. At least in our case the solution has been found. But not by AWS.
+=== Does this problem look familiar?
 
-== The Problem -- read only file system on a C5 class instance.
+You try to run commands on your machine, but all you get back is:
+
+[source,bash]
+$ touch file
+Error: read only file system
+
+=== What the hell is going on?
 
 So here is what happened earlier today.
 
@@ -37,7 +42,7 @@ Because there were no suggestions besides increasing _nvme_ _io_timeout_ from 30
 
 Well, that was a flop. Nice try AWS. Next time -- try a bit harder, will you?
 
-== The Solution
+=== The Solution
 
 Now, if you are experiencing the same problem I suggest you run the following command:
 

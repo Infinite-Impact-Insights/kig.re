@@ -5,7 +5,45 @@
 
 @import "variable";
 
+@media (max-width: 1100px) {
+  #toc {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .post-link {
+    width: 100%;
+  }
+
+  div.post-listing-image {
+    display: none;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+
 body {
+  .numberCircle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    float: right;
+    margin-left: 10px;
+
+    background: #222;
+    border: 2px solid #666;
+    color: #eee;
+    text-align: center;
+
+    font-weight: 600;
+    font: 24px $font-preamble-family;
+  }
 
   .banner {
     margin-top: 50px !important;
@@ -74,6 +112,7 @@ body {
   }
 
   .index-page {
+
     .banner-text-wrap,
     .blog-list {
       .sectionbody {
@@ -125,7 +164,8 @@ body {
       font-weight: 700;
       font-family: 'Yanone Kaffeesatz', sans-serif !important;
       margin: 10px 10px 10px 0 !important;
-      text-align: left;;
+      text-align: left;
+      ;
     }
 
     h1 {
@@ -237,37 +277,33 @@ body {
 
   }
 
-  @media (max-width: 600px) {
-    .post-link {
-      width: 100%;
-    }
 
-    div.post-listing-image {
-      display: none;
-
-      img {
-        display: none;
-      }
-    }
-  }
 
   #toc {
-    top: 0;
+    top: 50px;
     position: sticky !important;
     display: block;
     font-size: 1.1rem;
     margin-left: -20px !important;
     padding-left: 0 !important;
     width: 100%;
+    min-width: 400px;
     opacity: 1;
     font-weight: 400;
     font-family: $font-menu;
+    // text-shadow: 1px 1px 0px black;
 
     #content-toc,
     #asciidoc-toc {
+      position: relative;
       padding-left: 0 !important;
       padding-top: 10px;
       width: 100%;
+
+      a:hover {
+        color: $active !important;
+      }
+
       // text-shadow: 5px 5px 15px rgba(60, 60, 60, 0.2);
 
       .section-nav {
@@ -276,17 +312,38 @@ body {
       }
 
       h2.toc-h2 {
+        position: relative;
         font-family: $font-menu;
         font-weight: 600;
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
         letter-spacing: -0.1rem;
-        white-space: nowrap !important;
         margin-top: 10px;
         margin-bottom: -20px;
         padding-bottom: 0;
         margin-left: 0;
         color: $hover - 50;
         display: none;
+        overflow: hidden;
+        width: 100%;
+        opacity: 0.8;
+      }
+
+      a {
+        font-family: $font-menu;
+        font-weight: 700 !important;
+        letter-spacing: -0.05rem;
+        color: $nav-level1 !important;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          font-weight: 500;
+          color: $active !important;
+        }
+
+        &:active {
+          color: $active !important;
+        }
       }
 
       ul,
@@ -300,56 +357,50 @@ body {
           margin-left: 0 !important;
           padding-left: 0 !important;
 
-          a {
-            font-family: $font-menu;
-            font-weight: 700 !important;
-            letter-spacing: -0.05rem;
-            color: $nav-level1 !important;
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-              color: black !important;
-            }
-
-            &:active {
-              color: $active !important;
-            }
-          }
         }
 
         ul.sectlevel1 {
-          font-size: 1.1rem !important;
-          line-height: 1.3rem;
-          margin-top: 20px !important;
+          font-size: 1.4rem !important;
+          line-height: 1.4rem;
+          margin-top: 4px !important;
 
           li {
-            white-space: nowrap;
-            margin-bottom: 20px !important;
+            margin-bottom: 3px !important;
           }
 
           a {
             color: $nav-level1 !important;
+
+            &:hover {
+              text-decoration: underline;
+              font-weight: 500;
+              color: $active !important;
+            }
           }
 
           ul.sectlevel2 {
-            font-size: 0.8rem !important;
-            line-height: 0.9rem;
-            margin-top: 4px !important;
+            font-size: 1rem !important;
+            line-height: 1rem;
+            margin-top: 1px !important;
 
             li {
-              white-space: nowrap;
               margin-left: 10px !important;
               margin-bottom: 1px !important;
             }
 
             a {
               color: $nav-level2 !important;
+
+              &:hover {
+                text-decoration: underline;
+                font-weight: 500;
+                color: $active !important;
+              }
             }
 
             ul.sectlevel3 {
-              font-size: 0.7rem !important;
-              line-height: 0.8rem;
+              font-size: 0.9rem !important;
+              line-height: 0.9rem;
 
               li {
                 margin-bottom: 5px !important;
@@ -358,6 +409,12 @@ body {
 
               a {
                 color: $nav-level3 !important;
+
+                &:hover {
+                  text-decoration: underline;
+                  font-weight: 500;
+                  color: $active !important;
+                }
               }
 
             }
@@ -369,8 +426,7 @@ body {
     min-height: 500px;
     margin-top: 0;
 
-    a {
-    }
+    a {}
   }
 
 }

@@ -14,7 +14,9 @@ layout: default
             <div class="tags-details-text">
               <div class="title">
                 <span>{{ post.date | date_to_long_string }}</span>
-                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <h3>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </h3>
               </div>
             </div>
           </div>
@@ -23,4 +25,3 @@ layout: default
     </div>
   </div>
 </div>
-

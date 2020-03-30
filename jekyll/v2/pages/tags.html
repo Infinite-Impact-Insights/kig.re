@@ -1,25 +1,48 @@
 ---
 layout: default
 title: Tags
+subtitle: All Tags Used with Post Counts
 add_to_menu: true
 ---
 
+
 {% include main_header.html %}
 
-<div class="about-content-area pb-100 clearfix">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <div class="post-text site-tag-archive">
-          {% for tag in site.tags %}
-            {% assign tag_name = tag[0] %}
-            <a href="/tag/{{ tag_name }}/">{{ tag_name | replace: "-", " " }}</a>
-          {% endfor %}
+<div class="main-content-area clearfix mt-100">
+  <div class="tag-post-counter container">
+    <div class="row clearfix">
+      {% assign tags = site.tags | sort "[0]" %}
+      {% for tag in tags %}
+
+        {% assign tag_name = tag[0] %}
+        {% assign post_count = site.tags[tag_name].size %}
+        {% if post_count <= 1 %}
+          {% assign popular_class="rare" %}
+        {% elsif post_count >= 4 %}
+          {% assign popular_class="popular" %}
+        {% else %}
+          {% assign popular_class="mediocre" %}
+        {% endif %}
+
+        {% assign odd_even = forloop.index | modulo: 2 %}
+        {% if odd_even == 1 %}
+        <div class="tag-column-odd col-6 mb-5 text-left mx-auto text-nowrap {{ popular_class }}">
+          <div class="float-right ml-3 numberCircle">{{ post_count }}</div>
+          <a href="/tag/{{ tag_name }}" class="mr-25">
+            <span class="text-nowrap badge-pill badge-success float-right ">#{{ tag_name }}
+            </span>
+          </a>
         </div>
-      </div>
+        {% else %}
+        <div class="tag-column-even col-6 mb-5 text-right mx-auto text-nowrap {{ popular_class }}">
+          <div class="float-left mr-3 numberCircle">{{ post_count }}</div>
+          <a href="/tag/{{ tag_name }}">
+            <span class="text-nowrap badge-pill badge-success float-left ">#{{ tag_name }}
+            </span>
+          </a>
+        </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>
-
- 
-
