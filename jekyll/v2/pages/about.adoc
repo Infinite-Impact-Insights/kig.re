@@ -42,7 +42,7 @@ I was hacking on computers the entire time, but still manage to pass my exams. A
 ____
 There was one particular influencer that I must acknowledge: sometime around 1995 I read a long and very detailed article about the career of Bill Gates. The very respectable magazine in question is... Playboy.
 
-Remarkably, I found the entire interview online, and so if you care to read an article that changed my life, go ahead, {{ site.url }}/assets/pdf/bill-gates-interview.pdf[Interview with Bill Gates].
+Remarkably, I found the entire interview online, and so if you care to read an article that changed my life, go ahead, {{ site.url }}assets/pdfs/bill-gates-interview.pdf[Interview with Bill Gates].
 ____
 
 === Software Engineering Career
