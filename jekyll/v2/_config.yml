@@ -2,7 +2,7 @@ title: Konstantin Gredeskoul, All rights reserved. Kig.Re™.
 email: kig@reinvent.one
 description: "This is a personal blog of Konstantin Gredeskoul — a former CTO, Ruby Expert, Loving of all things Scaling and Performance."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kig.re1.re/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://kig.re/" # the base hostname & protocol for your site, e.g. http://example.com
 logo_url: '/assets/images/site/logo.png'
 alt_logo_url: '/assets/images/site/kigre-red-logo.png'
 facebook_username: kigster
