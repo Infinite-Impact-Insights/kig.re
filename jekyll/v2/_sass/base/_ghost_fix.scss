@@ -150,7 +150,7 @@ body {
   }
 }
 
-.post-full-image + .entry-content .kg-content *:first-child .kg-image {
+.post-full-image+.entry-content .kg-content *:first-child .kg-image {
   width: 100%;
 }
 
@@ -158,10 +158,10 @@ body {
   padding: 0 1.5em;
 }
 
-.kg-gallery-card + .kg-image-card.kg-width-wide,
-.kg-gallery-card + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+.kg-gallery-card+.kg-image-card.kg-width-wide,
+.kg-gallery-card+.kg-gallery-card,
+.kg-image-card.kg-width-wide+.kg-gallery-card,
+.kg-image-card.kg-width-wide+.kg-image-card.kg-width-wide {
   margin: -2.25em 0 3em;
 }
 
@@ -297,7 +297,7 @@ body {
   img {
     @extend %extend_1;
 
-    + br + small {
+    +br+small {
       display: block;
       margin-top: -3em;
       margin-bottom: 1.5em;
@@ -340,9 +340,9 @@ body {
     background: radial-gradient(ellipse at left,
         rgba(0, 0, 0, 0.2) 0,
         rgba(0, 0, 0, 0) 75%) 0 center,
-    radial-gradient(ellipse at right,
-            rgba(0, 0, 0, 0.2) 0,
-            rgba(0, 0, 0, 0) 75%) 100% center;
+      radial-gradient(ellipse at right,
+        rgba(0, 0, 0, 0.2) 0,
+        rgba(0, 0, 0, 0) 75%) 100% center;
     background-attachment: scroll, scroll;
     background-size: 10px 100%, 10px 100%;
     background-repeat: no-repeat;
@@ -392,6 +392,7 @@ body {
   }
 }
 
+
 @media (max-width: 1040px) {
   .entry-content {
     max-width: 80%;
@@ -406,11 +407,8 @@ body {
   }
 }
 
-@media (max-width: 900px) {
-  #toc {
-    display: none !important;
-  }
 
+@media (max-width: 900px) {
   .entry-content {
     font-size: 1rem !important;
   }
@@ -429,12 +427,13 @@ body {
 
   }
 
-  .sectionbody .admonitionblock > table {
+  .sectionbody .admonitionblock>table {
     td.content {
       font-size: 1rem !important;
       padding-left: 0 !important;
     }
-/**/
+
+    /**/
 
     td.icon {
       vertical-align: top;
@@ -513,12 +512,8 @@ body {
     margin-top: -20px;
   }
 
-  .navbar-brand > img {
+  .navbar-brand>img {
     margin-left: 10px;
-  }
-
-  #toc #content-toc ul li {
-    display: none !important;
   }
 }
 

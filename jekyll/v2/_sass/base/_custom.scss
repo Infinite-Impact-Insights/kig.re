@@ -5,12 +5,64 @@
 
 @import "variable";
 
-@media (max-width: 1100px) {
+@media (max-width: 1040px) {
+  #toc {
+    overflow: hidden !important;
+    margin-left: -20px !important;
+
+    #content-toc,
+    #asciidoc-toc {
+      padding-left: 0 !important;
+      width: 90% !important;
+
+      ul.sectlevel1 {
+        >li { padding-top: 10px !important; }
+
+        padding-left: 0px !important;
+
+        li {
+          margin-bottom: 0px !important;
+
+          a {
+            white-space: normal !important;
+            font-size: 1rem !important;
+            line-height: 1.2rem;
+          }
+        }
+
+        ul.sectlevel2 {
+          li {
+            white-space: normal !important;
+
+            a {
+              font-size: 0.7rem !important;
+              line-height: 0.9rem !important;
+            }
+          }
+
+
+          ul.sectlevel3 {
+            li {
+              a {
+                font-size: 0.5rem !important;
+                white-space: normal !important;
+                line-height: 0.7rem !important;
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
   #toc {
     display: none !important;
   }
 }
-
 
 @media (max-width: 600px) {
   .post-link {
@@ -277,15 +329,13 @@ body {
 
   }
 
-
-
   #toc {
     top: 50px;
     position: sticky !important;
     display: block;
     font-size: 1.1rem;
-    margin-left: -20px !important;
-    padding-left: 0 !important;
+    margin-left: 0px;
+    padding-left: 20px;
     width: 100%;
     min-width: 400px;
     opacity: 1;
@@ -296,9 +346,10 @@ body {
     #content-toc,
     #asciidoc-toc {
       position: relative;
-      padding-left: 0 !important;
-      padding-top: 10px;
-      width: 100%;
+      margin-left: 20px !important;
+      margin-top: 10px;
+      width: 92% !important;
+      overflow: hidden !important;
 
       a:hover {
         color: $active !important;
@@ -349,47 +400,28 @@ body {
       ul,
       ul.toc-entry,
       ul.section-nav {
-        margin-left: 0 !important;
+        margin: 0 !important;
         padding-left: 0 !important;
 
-        li {
+        li a {
           list-style-type: none !important;
-          margin-left: 0 !important;
           padding-left: 0 !important;
-
+          font-size: 1.7rem !important;
+          line-height: 1.9rem !important;
+          margin-bottom: 5px !important;
+          margin-top: 5px !important;
         }
 
         ul.sectlevel1 {
-          font-size: 1.4rem !important;
-          line-height: 1.4rem;
-          margin-top: 4px !important;
 
           li {
-            margin-bottom: 3px !important;
-          }
-
-          a {
-            color: $nav-level1 !important;
-
-            &:hover {
-              text-decoration: underline;
-              font-weight: 500;
-              color: $active !important;
-            }
-          }
-
-          ul.sectlevel2 {
-            font-size: 1rem !important;
-            line-height: 1rem;
-            margin-top: 1px !important;
-
-            li {
-              margin-left: 10px !important;
-              margin-bottom: 1px !important;
-            }
+            margin-bottom: 5px !important;
+            margin-top: 5px !important;
 
             a {
-              color: $nav-level2 !important;
+              line-height: 1.6rem !important;
+              font-size: 1.3rem !important;
+              color: $nav-level1 - 30 !important;
 
               &:hover {
                 text-decoration: underline;
@@ -397,18 +429,19 @@ body {
                 color: $active !important;
               }
             }
+          }
 
-            ul.sectlevel3 {
-              font-size: 0.9rem !important;
-              line-height: 0.9rem;
+          ul.sectlevel2 {
 
-              li {
-                margin-bottom: 5px !important;
-                margin-top: 5px !important;
-              }
+            li {
+              margin-left: 10px !important;
+              margin-bottom: 4px !important;
+              margin-top: 5px !important;
 
               a {
-                color: $nav-level3 !important;
+                font-size: 1rem !important;
+                line-height: 1.2rem !important;
+                color: $nav-level2 - 20 !important;
 
                 &:hover {
                   text-decoration: underline;
@@ -416,7 +449,24 @@ body {
                   color: $active !important;
                 }
               }
+            }
 
+            ul.sectlevel3 {
+              li {
+                // margin-bottom: 1px !important;
+                font-size: 0.8rem !important;
+
+                a {
+                  line-height: 0.9rem !important;
+                  color: $nav-level3 - 10 !important;
+
+                  &:hover {
+                    text-decoration: underline;
+                    font-weight: 500;
+                    color: $active !important;
+                  }
+                }
+              }
             }
           }
         }
