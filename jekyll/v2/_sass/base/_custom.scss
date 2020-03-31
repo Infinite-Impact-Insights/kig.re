@@ -16,27 +16,29 @@
       width: 90% !important;
 
       ul.sectlevel1 {
-        >li { padding-top: 10px !important; }
+        > li {
+          padding-top: 10px !important;
+          white-space: normal !important;
+        }
 
         padding-left: 0px !important;
 
         li {
           margin-bottom: 0px !important;
-
           a {
             white-space: normal !important;
-            font-size: 1rem !important;
-            line-height: 1.2rem;
+            font-size: 1.1rem !important;
+            line-height: 1.3rem;
           }
         }
 
         ul.sectlevel2 {
           li {
-            white-space: normal !important;
+            white-space: nowrap !important;
 
             a {
-              font-size: 0.7rem !important;
-              line-height: 0.9rem !important;
+              font-size: 0.9rem !important;
+              line-height: 1.1rem !important;
             }
           }
 
@@ -44,9 +46,9 @@
           ul.sectlevel3 {
             li {
               a {
-                font-size: 0.5rem !important;
+                font-size: 0.8rem !important;
+                line-height: 1rem !important;
                 white-space: normal !important;
-                line-height: 0.7rem !important;
               }
             }
           }
@@ -59,7 +61,7 @@
 }
 
 @media (max-width: 600px) {
-  #toc {
+  navbar {
     display: none !important;
   }
 }
@@ -216,8 +218,7 @@ body {
       font-weight: 700;
       font-family: 'Yanone Kaffeesatz', sans-serif !important;
       margin: 10px 10px 10px 0 !important;
-      text-align: left;
-      ;
+      text-align: left;;
     }
 
     h1 {
@@ -331,7 +332,7 @@ body {
 
   #toc {
     top: 50px;
-    position: sticky !important;
+    position: sticky ;
     display: block;
     font-size: 1.1rem;
     margin-left: 0px;
@@ -341,18 +342,21 @@ body {
     opacity: 1;
     font-weight: 400;
     font-family: $font-menu;
+    padding-bottom: 0.5em;
+
+
     // text-shadow: 1px 1px 0px black;
 
     #content-toc,
     #asciidoc-toc {
       position: relative;
-      margin-left: 20px !important;
-      margin-top: 10px;
-      width: 92% !important;
-      overflow: hidden !important;
+      margin-left: 20px ;
+      padding-top: 30px;
+      width: 92% ;
+      overflow: hidden ;
 
       a:hover {
-        color: $active !important;
+        color: $active ;
       }
 
       // text-shadow: 5px 5px 15px rgba(60, 60, 60, 0.2);
@@ -366,7 +370,7 @@ body {
         position: relative;
         font-family: $font-menu;
         font-weight: 600;
-        font-size: 1.8rem !important;
+        font-size: 1.8rem ;
         letter-spacing: -0.1rem;
         margin-top: 10px;
         margin-bottom: -20px;
@@ -379,91 +383,97 @@ body {
         opacity: 0.8;
       }
 
-      a {
+      li a {
         font-family: $font-menu;
-        font-weight: 700 !important;
+        font-weight: 700 ;
         letter-spacing: -0.05rem;
-        color: $nav-level1 !important;
+        color: $nav-level1 ;
         text-decoration: none;
 
         &:hover {
           text-decoration: underline;
           font-weight: 500;
-          color: $active !important;
+          color: $active ;
         }
 
         &:active {
-          color: $active !important;
+          color: $active ;
         }
       }
 
       ul,
       ul.toc-entry,
       ul.section-nav {
-        margin: 0 !important;
-        padding-left: 0 !important;
+        margin-top: 7px;
+        margin-bottom: 3px;
+        padding: 0 ;
 
-        li a {
-          list-style-type: none !important;
-          padding-left: 0 !important;
-          font-size: 1.7rem !important;
-          line-height: 1.9rem !important;
-          margin-bottom: 5px !important;
-          margin-top: 5px !important;
+        li {
+          list-style-type: none ;
+          margin: 0;
+          padding: 0;
+
+          a {
+            padding: 0;
+            margin: 0;
+          }
+
+          //margin-bottom: 5px ;
+          //margin-top: 5px ;
         }
 
         ul.sectlevel1 {
+          margin-left: 10px ;
+          margin-top: 7px;
+          margin-bottom: 3px;
 
           li {
-            margin-bottom: 5px !important;
-            margin-top: 5px !important;
+            line-height: 1.6em ;
 
             a {
-              line-height: 1.6rem !important;
-              font-size: 1.3rem !important;
-              color: $nav-level1 - 30 !important;
+              font-size: 1.3rem ;
+              color: $nav-level1 - 30 ;
 
               &:hover {
                 text-decoration: underline;
                 font-weight: 500;
-                color: $active !important;
+                color: $active - 10 ;
               }
             }
           }
 
           ul.sectlevel2 {
+            margin-left: 10px ;
+            margin-top: 7px;
+            margin-bottom: 3px;
 
             li {
-              margin-left: 10px !important;
-              margin-bottom: 4px !important;
-              margin-top: 5px !important;
-
+              line-height: 1.4rem !important;
               a {
-                font-size: 1rem !important;
-                line-height: 1.2rem !important;
-                color: $nav-level2 - 20 !important;
+                font-size: 1.1rem ;
+                color: $nav-level2 - 20 ;
 
                 &:hover {
                   text-decoration: underline;
                   font-weight: 500;
-                  color: $active !important;
+                  color: $active - 30 ;
                 }
               }
             }
 
             ul.sectlevel3 {
               li {
-                // margin-bottom: 1px !important;
-                font-size: 0.8rem !important;
-
+                margin-left: 10px ;
+                line-height: 1.1rem ;
                 a {
-                  line-height: 0.9rem !important;
-                  color: $nav-level3 - 10 !important;
+
+                  font-size: 0.9rem ;
+                  color: $nav-level3 - 30 ;
 
                   &:hover {
                     text-decoration: underline;
                     font-weight: 500;
-                    color: $active !important;
+                    color: $active ;
                   }
                 }
               }
@@ -476,7 +486,8 @@ body {
     min-height: 500px;
     margin-top: 0;
 
-    a {}
+    a {
+    }
   }
 
 }

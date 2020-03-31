@@ -43,31 +43,32 @@ nav.navbar {
     font-weight: 400;
     position: relative;
     display: inline-block;
-    font: $font-blockquote;
     width: 70px;
+    padding: 0;
     border-right: 1px solid #eee;
   }
 
   .post-title {
-    display: inline-block;
     display: $font-menu;
-    margin-left: 10px;
+    padding: 0;
+    margin: 0 0 0 10px;
     font-family: $font-menu !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+
   }
 
-  .navbar-nav .nav-link {
-    padding: 8px !important;
+  .navbar-nav {
+    padding: 8px 8px 0px;
 
-    a {
-      color: $active !important;
-      font-family: $font-menu !important;
-    }
+    font-family: $font-menu !important;
 
     a.dropdown-item {
-      color: black !important;
+      color: #888 !important;
 
       &:hover {
         background-color: $hover !important;
+        color: white !important;
       }
     }
 
