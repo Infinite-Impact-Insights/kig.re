@@ -8,8 +8,6 @@
 :page-asciidoc_toc: true
 
 
-
-
 == Brief History of Yours Truly
 
 Konstantin is a veteran software engineer and architect, who had served as a CTO of four startups over the last decade and is a frequent speaker at tech conferences such as https://www.youtube.com/watch?v=fd9i0GAzZI8[RubyConf] and https://www.youtube.com/watch?v=9Hf8Bfvb3hE[PostgreSQL Silicon Valley.]
@@ -22,7 +20,7 @@ He writes a technology blog at https://kig.re/[kig.re], and actively contributes
 
 You should probably stop reading here. Otherwise, my life story is below.
 
-=== Short Tale of a Life-Long Software Career
+== Short Tale of a Life-Long Software Career
 
 {% lightbox_image { "url" : "posts/misc/arkanoid.jpg",  "title": "Arkanoid for MS-DOS" } %}
 
@@ -34,19 +32,20 @@ When I was about 13 my school received a set of new computers, mostly dumb graph
 
 A few years later, my mothers Physics department acquired a clone of IBM x86, and I instantly fell in love. For years, a 14 yo boy was the only one who knew how to use the new and expensive computer that the department acquired. And use it I did. In the process, becoming the grand master of the incredible game called "Arkanoid".
 
-=== College
+== College
 
 During the years 1992-1995 I completed a mathematics degree from the https://www.monash.edu.au[Monash University] in Melbourne Australia.
 
 I was hacking on computers the entire time, but still manage to pass my exams. As soon as I was done with college, I decided I want to write software for a living.
 
-____
 There was one particular influencer that I must acknowledge: sometime around 1995 I read a long and very detailed article about the career of Bill Gates. The very respectable magazine in question is... Playboy.
 
-Remarkably, I found the entire interview online, and so if you care to read an article that changed my life, go ahead, {{ site.url }}assets/pdfs/bill-gates-interview.pdf[Interview with Bill Gates].
-____
+[quote]
+"Remarkably, I found the entire interview online, and so if you care to read an article that changed my life, go ahead, {{ site.url }}assets/pdfs/bill-gates-interview.pdf[Interview with Bill Gates]".
 
-=== Software Engineering Career
+---
+
+== **Software Engineering Career**
 
 I started building applications professionally in 1996, when I was placed as a junior contractor in the operations group managing a very large-scale project. The goal was to rebuild the entire messaging and cargo tracking software for the Australian Railway Corporation named aptly https://en.wikipedia.org/wiki/National_Rail_Corporation[National Rail Corporation].  Back then, we used this fascinating commercial software called https://en.wikipedia.org/wiki/Tuxedo_(software)[Tuxedo]  as middleware, transaction manager, a queueing system, and so much more. Tuxedo has a fascinating history -- which could be a subject of an entirely separate post, but suffice it to say that it was developed by AT&T in the late 1970s, in a practically the same lab as UNIX itself! At some point in the 80s, it was then sold to Novell, then to BEA -- which eventually used it to build it's flagship product http://www.oracle.com/technetwork/middleware/weblogic/overview/index-085209.html[WebLogic] that now belongs to Oracle. I was told that there was a time where British Airways used Tuxedo to network over 20,000 stations together.
 

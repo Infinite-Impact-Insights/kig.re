@@ -219,6 +219,7 @@ Footer-area Css Here
   width: 100%;
   height: 100%;
   padding-top: 30px;
+
   .footer-logo {
     @include tablet {
       float: left;
@@ -354,8 +355,7 @@ Post-content-area
     padding: 15px;
 
     .tag-list {
-      span {
-      }
+      span {}
 
       p {
         float: left;
@@ -585,12 +585,14 @@ Comment area css
     position: relative;
     display: flex;
     align-items: center;
+
     iframe#gmap_canvas {
 
-       width: 100%;
-       margin: 20px auto;
-     }
+      width: 100%;
+      margin: 20px auto;
+    }
   }
+
   .comment-form {
     input[type=text] {
       width: 49%;
@@ -836,12 +838,17 @@ About-content-area Css
 }
 
 .about-content-area {
+  display: block;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   //border: 1px solid blue;
   //width: 80%;
-  //margin: 40px auto;
+  margin: 40px auto;
+
+  a {
+    color: $primary-link;
+  }
 
   .about-image {
     img {
@@ -886,6 +893,7 @@ Authors-area css
 
   .header-image {
     img {
+      display: block;
       max-width: 100%;
       height: 100%;
     }
@@ -961,6 +969,7 @@ Authors-area css
 }
 
 .tags-area {
+  padding-top: 30px !important;
   .tags-details {
     border: 1px solid #efebeb;
   }
@@ -1090,7 +1099,7 @@ body.paged .main-content-area .blog-list {
   @include numbered-blog-list;
 }
 
-.site-tag-archive > a {
+.site-tag-archive>a {
   display: block;
   font-size: 20px;
   background: $hover;
