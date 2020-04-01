@@ -3,7 +3,7 @@
 :page-comments: true
 :date: 2014-12-31 00:00:00 +08:00
 :doctype: book
-:page-excerpt: TODO
+:page-excerpt: Recent versions of cheap Arduino clones have been coming out with a different USB/Serial chip, which replaces the usual FTDI. The chipset is called CH340G and this post explains how to install the drivers for it on both Mac and Windows.
 :page-layout: post
 :page-post_image: /assets/images/posts/arduino/nano-ch340g-top.jpg
 :page-tags: ["arduino", "coding"]
@@ -26,6 +26,7 @@ My golden rule is that if something took me longer than 15 minutes to figure out
 * Updated Jan, 2016 with Windows Drivers
 * Updated Nov, 2015 with new driver for OS-X El Capitan & Yosemite
 ----
+
 Recent versions of cheap Chinese http://www.ebay.com/itm/381019048475[clones of Arduino boards] have been coming with a different USB/Serial chip, which replaces the usual FTDI. I read somewhere that licensing costs of FTDI make it prohibitive to companies selling boards for as little as $3, so I assume this is the main motivation. To be honest, as long as I can talk to my Arduino and buy it for $3 a piece, who cares? :)
 
 Below you'll find links to drivers for both Windows and Mac to make these work. Please leave a comment, if it worked or didn't work for you, especially if you had to do anything special or hacky to make it work :)

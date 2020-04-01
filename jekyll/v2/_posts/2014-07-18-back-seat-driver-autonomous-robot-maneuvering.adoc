@@ -5,9 +5,12 @@
 :page-comments: true
 :page-excerpt: Back Seat Driver is a library for programming autonomous (or not) Arduino based robots. This library provides a convenient non-blocking command API to programmatically drive an autonomous vehicle. Current implementation is aimed at a 2-wheeled robot, with the two Servo motors setup opposite each other. Therefore to move the robot forward (or backward), two Servos need to rotate in the opposite direction (this is certainly true in the current version of the library, but may be more flexible in the future if need arises).
 :page-layout: post
-:page-post_image: /assets/images/posts/back-seat-driver-autonomous-robot.png
+:page-post_image: /assets/images/posts/arduino/bot_dc_header.jpg
 :page-tags: ["robots", "arduino"]
 :page-asciidoc_toc: true
+
+
+== Self Driving Robots are Fun.
 
 Today I am introducing the Back Seat Driver -- a library for programming
 autonomous (or not) arduino based robots. https://github.com/kigster/back-seat-driver[Source Code on Github].
@@ -110,19 +113,25 @@ when specifying microseconds directly.
 
 Duratation based API calls, such as
 
-{% highlight clike %}
 
+[source,c++]
+----
 // load specific Adapter for our motors
-#include +++<BackSeatDriver_TwoServoAdapter.h>+++// now load the main library #include +++<BackSeatDriver.h>++++++</BackSeatDriver.h>++++++</BackSeatDriver_TwoServoAdapter.h>+++
+#include <BackSeatDriver_TwoServoAdapter.h>
+
+// now load the main library
+#include <BackSeatDriver.h>
 
 // initialize the adapter with two pins assigned to
 // the two servos
 BackSeatDriver_TwoServoAdapter adapter(13, 12);
-// intialize BackSeatDriver itself, passing it the driver.
+
+// initialize BackSeatDriver itself, passing it the driver.
 BackSeatDriver robot(&adapter);
+
 // now we can ask our robot to move...
 robot.goForward(100); // move forward at 100% speed
-{% endhighlight %}
+----
 
 is giving robot instructions that will stop the robot after the duration of time
 passes (defined in milliseconds from the start of the maneuver).
@@ -133,7 +142,9 @@ prohibit from effectively integrating other similar libraries.  In the world whe
 should be moving at once, nothing in the code path seems worthy of a dead pause of the `delay`,
 although for simple tasks it sure makes coding easy.
 
-=== Example
+== Example
+
+=== Self-Driving Robot in less than 100 lines of code...
 
 In this example the client uses Sonar sensor to detect objects ahead. If an object is found,
 the robot turns left (-)45 degrees, and then immediately checks again for distance.  If the distance
@@ -142,13 +153,14 @@ Otherwise it rotates 90 degrees, to now be at +45 degrees to the original direct
 direction isn't better than the front, it turns for additional 135 degrees, making it a full 180'
 degrees from the original direction.
 
-This example algorithm is setup in a just a few lines of code using C/c++ style function
+This example algorithm is setup in a just a few lines of code using C/C++ style function
 pointers used as callbacks at the end of each maneuver, but provide for a pretty effective
 obstacle avoidance strategy (but albeit a random direction).
 
 [source,c++]
 ----
-// Define the two pins used by the two Servos attached to the wheels (expected to be attached
+// Define the two pins used by the two Servos attached to
+// the wheels (expected to be attached
 // in an opposite direction to each other
 // load specific Adapter for our motors
 #include <BackSeatDriver_TwoServoAdapter.h>
@@ -162,48 +174,53 @@ BackSeatDriver_TwoServoAdapter adapter(13, 12);
 // intialize BackSeatDriver itself, passing it the driver.
 BackSeatDriver robot(&adapter);
 
-void setup()
-{
-	robot.attach();
+void setup() {
+  robot.attach();
 }
 
-void loop()
-{
-    // The most important check below serves two key purposes:
-    //
-    //   1. make sure that any existing maneuvering that may be happening should be
-    //      finished, and if so stop the robot and execute maneuver's callbacks()
-    //
-    //   2. avoids doing any instructions until the robot is out of the maneuver.
-    //      This could be optional, as many things can be done during the time
-    //      robot is maneuvering, perhaps with other arms or sensors.
-    //
+void loop() {
+  if (!bot.isManeuvering()) {
 
-	if (!bot.isManeuvering()) {
+    // this is the default motion
+    bot.goForward(100);
 
-	    // this is the default motion
-		bot.goForward(100);
-
-		// check distance to objects ahead
-		spaceAhead = detectSpaceAhead();
-		if (spaceAhead < 50) { // if under < 50cm start manuevering
-			// turn left 45 degrees, and when done call the checkLeft() function.
-			robot.turn(-45, &checkLeft);
-		}
-	}
+    // check distance to objects ahead
+    spaceAhead = detectSpaceAhead();
+    // if under < 50cm start manuevering
+    if (spaceAhead < 50) {
+      // turn left 45 degrees, and when done call
+      // the checkLeft() function.
+      robot.turn(-45, &checkLeft);
+    }
+  }
 }
 
 void checkLeft() {
-	int spaceAfterTurn = spaceAhead();
-	if (spaceAfterTurn < spaceAhead)
-		bot.turn(90, &checkRight);
+  int spaceAfterTurn = spaceAhead();
+  if (spaceAfterTurn < spaceAhead)
+    bot.turn(90, &checkRight);
 }
 
 void checkRight() {
-	int spaceAfterTurn = spaceAhead();
-	if (spaceAfterTurn < spaceAhead)
-		bot.turn(135, NULL);
+  int spaceAfterTurn = spaceAhead();
+  if (spaceAfterTurn < spaceAhead)
+    bot.turn(135, NULL);
 }
 ----
+
+The most critical logic happens inside the `loop()` method. The checks there do two things:
+
+1. They make sure that any existing maneuvering that may be happening should be
+ finished, and if so stop the robot and execute maneuver's callbacks()
+
+2. And they avoid doing any instructions until the robot is out of the maneuvering state.
+ This could be optional, as many things can be done during the time
+ robot is maneuvering, perhaps with other arms or sensors.
+
+=== Working Code
+
+A complete example that was implemented and drove around my house is available in https://github.com/kigster/obstacle-avoiding-robot[this Github Repository].
+
+The actual logic is in https://github.com/kigster/obstacle-avoiding-robot/blob/master/src/ObstacleAvoidance.cpp[this file].
 
 == Conclusion

@@ -3,7 +3,7 @@
 @import "variable";
 
 nav.navbar {
-  border-bottom: 2px solid #ddd !important;
+  border-bottom: 0px solid #ddd !important;
 }
 
 #top-nav {
@@ -25,15 +25,10 @@ nav.navbar {
     }
 
     a#site-logo {
-      position: absolute;
-      top: -10px;
-      right: 0;
-      float: right;
-
+      display: flex;
       img {
         width: 100px !important;
         height: auto !important;
-
       }
     }
   }
@@ -55,12 +50,10 @@ nav.navbar {
     font-family: $font-menu !important;
     font-size: 0.9rem;
     font-weight: 600;
-
   }
 
   .navbar-nav {
     padding: 8px 8px 0px;
-
     font-family: $font-menu !important;
 
     a.dropdown-item {

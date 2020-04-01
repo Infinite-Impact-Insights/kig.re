@@ -49,9 +49,9 @@ So this is how my tenure started, and during the first two weeks I had to dive i
 
 ==== The New Team
 
-As soon as the new engineering team had assembled, the question of whether or not we wanted to keep the Java stack was a heated topic of discussion. Most of us were familiar with Java and Java-based web frameworks. So muchhttp://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx[advice] around the web leaned toward http://www.joelonsoftware.com/articles/fog0000000069.html[not rewriting] the existing software, but rather extending it incrementally or simply embracing the old platform and "fixing it."
+As soon as the new engineering team had assembled, the question of whether or not we wanted to keep the Java stack was a heated topic of discussion. Most of us were familiar with Java and Java-based web frameworks. So much http://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx[advice] around the web leaned toward http://www.joelonsoftware.com/articles/fog0000000069.html[not rewriting] the existing software, but rather extending it incrementally or simply embracing the old platform and "fixing it."
 
-We were well aware though that since Wanelo was (and still is) a young and unproven startup, the most important objective of the technology powering it was the ability tohttp://en.wikipedia.org/wiki/Lean_Startup[move forward as rapidly as possible and learn], without compromising the future integrity of the underlying platform.
+We were well aware though that since Wanelo was (and still is) a young and unproven startup, the most important objective of the technology powering it was the ability to http://en.wikipedia.org/wiki/Lean_Startup[move forward as rapidly as possible and learn], without compromising the future integrity of the underlying platform.
 
 So in choosing our new stack, we were hoping to harness the immense http://programmers.stackexchange.com/questions/102090/why-isnt-java-used-for-modern-web-application-development[productivity gains] promised by the more modern options, in particular those offered by the dynamic languages.
 
@@ -89,10 +89,12 @@ We spent a fair amount of time deciding how to migrate the data, and writing dat
 
 Early on we chose the following approach for our data migration strategy:
 
-We would use an existing tool to migrate the schema mostly "`as is`" from MySQL to PostgreSQL. We'll call this PostgreSQL schema containing the old MySQL tables the "legacy schema.`"
+We would use an existing tool to migrate the schema mostly "as is" from MySQL to PostgreSQL. We'll call this PostgreSQL schema containing the old MySQL tables the "legacy schema."
 
 * Configure the legacy schema in database.yml to belong to the "legacy" Rails environment. Use host: localhost to prevent rake from dropping/recreating this schema automatically (only non-remote schemas are dropped automatically).
-* Create a project directory called db/legacy_migrations and add appropriate rake tasks to migrate the database schema using migrations inside that directory. This rake task was called "db:legacy:migrate" instead of the regular "db:migrate."
+
+* Create a project directory called db/legacy_migrations and add appropriate rake tasks to migrate the database schema using migrations inside that directory. This rake task was called `db:legacy:migrate` instead of the regular "db:migrate."
+
 * Start developing the new Ruby application, and while adding the new schema migrations for the new models, also add the legacy migrations to move the data from the old tables to the new. As we were pair programming, one pair could work on the new feature and a new model, while the other pair worked on migrating the data.
 
 One early finding we bumped into was that the old tables and new tables would have to live in the same PostgreSQL schema so that we could easily copy/transform data using SQL between tables. If we put the legacy tables in another database or schema, it was not as easy to move data between them. This might be a http://stackoverflow.com/questions/3049864/transfer-data-between-databases-with-postgres[limitation of PostgreSQL]. Luckily, our Java application used singular names of entities (such as "`user`") while the Rails app uses plural. So we could keep the same names and go from the "user" table to "users,`" within the same database schema.
@@ -106,10 +108,15 @@ The exported files used PostgreSQL's "COPY" command, which is very fast. So the 
 Our switch from from the old stack to the new one took place on June 27, with four hours of downtime (we could have done it faster, but we decided that four hours was acceptable for such a large migration). There were six steps:
 
 . Shut down the old site, and fire up a http://farm9.staticflickr.com/8155/7455480574_1365cb3bdd_b.jpg[live video chat on the placeholder page] to keep visitors entertained :)
+
 . Export from MySQL to files, then import those files to PostgreSQL (30 minutes), using several parallel processes and threads working at the same time on different tables.
+
 . Run the schema migrations (10 minutes) on the new schema.
+
 . Run the legacy data migrations (1-2 hours), moving data from old tables to the new.
+
 . Bring the new app up internally and do a quick smoke test.
+
 . Bring the new app live to the world.
 
 image::http://media.tumblr.com/tumblr_mactnrWk7s1qd6gic.jpg[image]

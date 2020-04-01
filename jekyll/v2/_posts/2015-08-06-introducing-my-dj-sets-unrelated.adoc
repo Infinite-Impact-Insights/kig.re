@@ -2,12 +2,12 @@
 :page-categories: ["music"]
 :page-comments: true
 :date: 2015-08-06 00:00:00 +08:00
-:page-excerpt: TODO
+:page-excerpt: "Its about time we talked about my other obsession — music. You might now this, but I've produced and released two albums on iTunes and CDBaby. More info inside."
 :page-layout: post
 :page-post_image: /assets/images/posts/traktor/moods-for-takeout.jpg
 :page-tags: ["music", "dj"]
 :page-asciidoc_toc: true
-:page-title: "Introducing My Dj Sets Unrelated"
+:page-title: "Electronic Music, DJ-ing, tracks and Moods for Take Out..."
 :page-liquid:
 
 

@@ -1,5 +1,38 @@
+
 (function ($) {
   "use strict";
+
+  hotkeys('ctrl+option+l,ctrl+command+l,ctrl+l,?', function (event, handler){
+    event.preventDefault();
+    $("#search-query").focus();
+  });
+
+
+  $(document).ready(function () {
+    $("#search-icon").on("click", function (event) {
+      $("#search-form").submit();
+    });
+
+    $("#search-form").on("submit", function (event) {
+      window.open(
+          "http://google.com/?site=kig.re&q=" +
+          $("#search-query")[0].value +
+          "&gws_rd=ssl#q=" +
+          $("#search-query")[0].value +
+          "+site:kig.re",
+          "_blank",
+          "width=700,height=1200,toolbar=1,resizable=1"
+      );
+      return false;
+    });
+
+    $(document).on('keypress', function (e) {
+      if (e.keyCode === 63) { // question mark
+        $("#search-query").focus();
+      }
+    });
+  });
+
 
   /* Mobile-menu	 */
   $("#nav-button").on("click", function () {

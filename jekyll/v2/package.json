@@ -43,5 +43,8 @@
     "run-sequence": "^2.2.1",
     "vinyl-fs": "^3.0.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "hotkeys-js": "^3.7.6"
+  }
 }

@@ -1,15 +1,17 @@
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
-:date: 2016-04-07 00:00:00 +08:00
-:page-excerpt: Mixmax And My First Nodejs App
+:page-excerpt: MixMax enhances, enriches, extends (EEE!) the standard Gmail functionality with a lot of goodies, accessible from both the GUI as well as via the slash commands while composing an email.
 :page-layout: post
 :page-post_image: /assets/images/posts/mixmax/mixmax.gif
 :page-tags: ["nodejs", "mixmax"]
 :page-asciidoc_toc: true
-:page-title: "Mixmax And My First Nodejs App"
+:page-title: "Mixmax And My First Nodejs App."
 :page-liquid:
 
+
+
+== Supercharge Your Gmail
 
 A few days ago I was blown away but what a (still) little-known startup called http://mixmax.com[MixMax] is doing with email --
 nothing short of revolutionizing it! If you haven't see it yet, do check it out, especially if you often find yourself scheduling
@@ -19,9 +21,8 @@ MixMax enhances, enriches, extends (EEE!) the standard Gmail functionality with 
 both the GUI as well as via the "slash" commands while composing an email.
 
 {% lightbox_image { "url" : "posts/mixmax/mixmax-slash-commands.png",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
-____
+
 Slash commands have been used for a very long time, to send "commands", like in age-old http://www.irc.org[IRC], as well as the much more recent app https://slack.com[Slack], or even, any multi-player online video games.
-____
 
 So imagine my joy, when I realized that with a simple `/cal` I can now insert a few
 available time slot options in my email, and request the recipient to choose one.
@@ -29,12 +30,14 @@ Once they do, the event is inserted into my calendar right away. This is magic!
 
 == Features
 
-{% lightbox_image { "url" : "posts/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
-
 I haven't gone through an exhaustive list of the features MixMax offers at this time,
 but a few stand out and are certainly going to be in my daily use.
 
+
 === Calendar Integration
+
+{% lightbox_image { "url" : "posts/mixmax/calendar_drag_preview.gif",  "title": "MixMax Slash Commands", "group":"mixmax" } %}
+
 
 `/cal`
 
@@ -87,17 +90,16 @@ receive commissions from JetBrains, I am simply a very enthusiastic user.
 
 === WebStorm
 
+{% lightbox_image { "url" : "posts/mixmax/webstorm-mixmax-resolver.png",  "title": "WebStorm IDE with MixMax project loaded", "group":"mixmax" } %}
+
 The IDE for building JavaScript and node applications is https://www.jetbrains.com/webstorm/[WebStorm].
 
-____
 If you like my environment below, I highly encourage you to link:/downloads/webstorm-2016.1-settings.jar[download and import my WebStorm Settings], as you'll get bunch of goodies with this settings file.
-____
 
 If you have never used JetBrains IDE -- just take a look at this screenshot, and
 try to comprehend just how much is going on there on my screen, all within the
 confines of my development environment.
 
-{% lightbox_image { "url" : "posts/mixmax/webstorm-mixmax-resolver.png",  "title": "WebStorm IDE with MixMax project loaded", "group":"mixmax" } %}
 
 == Project 'wanelo-mixmax-link-resolver'
 

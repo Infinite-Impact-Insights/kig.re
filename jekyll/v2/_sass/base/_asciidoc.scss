@@ -18,9 +18,10 @@
     font-size: 1.5rem;
     text-align: left;
     font-family: $font-cursive;
-    margin: 30px;
+    color: $primary-color + 60;
+    margin: 20px 0;
 
-    font-weight: 600;
+    font-weight: 200 !important;
     line-height: 1.7rem !important;
     font-style: italic !important;
   }

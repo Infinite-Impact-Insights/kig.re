@@ -41,8 +41,8 @@
             <div class="blog-list wow fadeIn" data-wow-delay="100ms" data-wow-duration=".5s">
               <div class="list-block block block-{{ counter | minus: 1 }}">
                 {% if post.post_image %}
-                  <div class="post-listing-image">
-                    <img src="{{ post.post_image }}" width="200"/>
+                  <div class="post-listing-image shadow rounded">
+                    <img src="{{ post.post_image }}"/>
                   </div>
                 {% endif %}
                 <span>{{ post.date | date_to_long_string }}</span>

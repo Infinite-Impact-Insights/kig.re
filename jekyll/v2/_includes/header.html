@@ -1,41 +1,44 @@
 <!--<div class="container">-->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="top-nav">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top pb-0" id="top-nav">
 
-  <div class="container align-content-end">
+  <div class="container d-flex flex-sm-wrap flex-row justify-content-center pb-0">
+
+    <a class="navbar-brand float-left" href="/" id="site-logo">
+      <img src="/assets/images/site/kigre-red-logo.png"/>
+    </a>
 
     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse navbar-light bg-light" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse align-content-center ml-auto pb-0" id="navbarSupportedContent">
 
-      <a class="navbar-brand" href="/" id="site-logo">
-        <img src="/assets/images/site/kigre-red-logo.png"/>
-      </a>
-
-      <ul class="navbar-nav nav-tabs navbar-light bg-light" id="nav-ul">
+      <ul class="navbar-nav nav-tabs navbar-light bg-light mb-0 pb-0" id="nav-ul">
         {% if page.url == "/index.html" %}
           {% assign active_class="active" %}
         {% endif %}
 
         <li class="nav-item">
-          <a class="nav-link {{ active_class }}" href="/">Home</a>
+          <a class="px-2 nav-link {{ active_class }}" href="/">Home</a>
         </li>
 
-        {% for menu_page in site.pages %}
-          {% if menu_page.add_to_menu == true %}
-            {% if page.title == menu_page.title %}
-              {% assign active_class="active" %}
-            {% else %}
-              {% assign active_class="" %}
-            {% endif %}
-            <li class="nav-item">
-              <a class="nav-link {{ active_class }}" href="{{ menu_page.url }}">{{
-            menu_page.title | truncatewords: 5 }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
+        <li class="nav-item dropdown">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link btn-outline-light dropdown-toggle px-2" data-toggle="dropdown" href="#" role="button">Pages</a>
+
+          <div class="dropdown-menu">
+            {% for menu_page in site.pages %}
+              {% if menu_page.add_to_menu == true %}
+                {% if page.title == menu_page.title %}
+                  {% assign active_class="active" %}
+                {% else %}
+                  {% assign active_class="" %}
+                {% endif %}
+                  <a class="dropdown-item small" href="{{ menu_page.url }}">{{ menu_page.title }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </li>
 
         {% if page.url contains 'category' %}
           {% assign cat_active_class="active" %}
@@ -44,39 +47,39 @@
         {% endif %}
 
         <li class="nav-item dropdown {{ cat_active_class }}">
-          <a aria-expanded="false" aria-haspopup="true" class="nav-link btn-outline-light dropdown-toggle " data-toggle="dropdown" href="#" role="button">Categories</a>
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link btn-outline-light dropdown-toggle px-2 " data-toggle="dropdown" href="#" role="button">Categories</a>
 
           <div class="dropdown-menu">
             {% assign categories = site.categories | sort "[0]" %}
             {% for category in categories %}
               {% assign category_name = category[0] %}
-              <a class="dropdown-item small" href="/category/{{ category_name }}/">{{ category_name |
-              replace: "-", " " }}
+              <a class="dropdown-item small w-auto" href="/category/{{ category_name }}/">{{ category_name | replace: "-", " " | capitalize }}
               </a>
             {% endfor %}
           </div>
         </li>
 
-        <li class="nav-item dropdown">
-          <a aria-expanded="false" aria-haspopup="true" class="nav-link btn-outline-light dropdown-toggle" data-toggle="dropdown" href="#" role="button">Post Archive</a>
+        <li class="nav-item dropdown mt-0">
+          <a aria-expanded="false" aria-haspopup="true" class="nav-link btn-outline-light dropdown-toggle px-2" data-toggle="dropdown" href="#" role="button">Post Archive</a>
 
-          <div class="dropdown-menu">
+          <div class="dropdown-menu pre-scrollable">
             {% for post in site.posts %}
               <a class="dropdown-item small" href="{{ post.url }}">
                 <div class="post-date-menu">
                   <strong>{{ post.date | date: '%b %Y' }}</strong>
                 </div>
-                <span class="post-title">{{ post.title | truncatewords: 6 }}</span>
+                <span class="post-title">{{ post.title | truncatewords: 5 }}</span>
               </a>
             {% endfor %}
           </div>
         </li>
-
       </ul>
 
-
+      <form class="form-inline d-flex flex-row flex-nowrap bd-highlight ml-auto float-right" id="search-form">
+        <input  id="search-query" class="form-control p-3 bd-highlight" type="search" placeholder="search" aria-label="Search">
+        <button class="btn btn-outline-success p-2 bd-highlight ml-2" type="submit"><i class="fas fa-search"></i></button>
+      </form>
     </div>
-
   </div>
 </nav>
 <!--</div>-->

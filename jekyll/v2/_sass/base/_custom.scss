@@ -5,77 +5,16 @@
 
 @import "variable";
 
-@media (max-width: 1040px) {
-  #toc {
-    overflow: hidden !important;
-    margin-left: -20px !important;
-
-    #content-toc,
-    #asciidoc-toc {
-      padding-left: 0 !important;
-      width: 90% !important;
-
-      ul.sectlevel1 {
-        > li {
-          padding-top: 10px !important;
-          white-space: normal !important;
-        }
-
-        padding-left: 0px !important;
-
-        li {
-          margin-bottom: 0px !important;
-          a {
-            white-space: normal !important;
-            font-size: 1.1rem !important;
-            line-height: 1.3rem;
-          }
-        }
-
-        ul.sectlevel2 {
-          li {
-            white-space: nowrap !important;
-
-            a {
-              font-size: 0.9rem !important;
-              line-height: 1.1rem !important;
-            }
-          }
-
-
-          ul.sectlevel3 {
-            li {
-              a {
-                font-size: 0.8rem !important;
-                line-height: 1rem !important;
-                white-space: normal !important;
-              }
-            }
-          }
-        }
-
-
-      }
+@media (min-width: 600px) and (max-width: 1000px) {
+  body {
+    iframe.video-frame {
+      width: 100%;
+      overflow: hidden;
     }
-  }
-}
 
-@media (max-width: 600px) {
-  navbar {
-    display: none !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .post-link {
-    width: 100%;
-  }
-
-  div.post-listing-image {
-    display: none;
-
-    img {
-      display: none;
+    main {
+      padding-left: 0px !important;
+      padding-right: 5px !important;
     }
   }
 }
@@ -237,16 +176,22 @@ body {
   }
 
   .google-maps {
+    text-align: center;
     float: none;
     display: block;
     position: relative;
     clear: both;
-    height: 600px;
-    width: 600px;
+    height: 700px;
+    width: 700px;
     margin: 20px auto;
     border-radius: 5px;
     border: 1px solid #503757;
     box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
+    align-content: center;
+
+    frame.google-map-frame {
+      position: relative;
+    }
   }
 
   .post-link-arrow {
@@ -277,11 +222,12 @@ body {
 
   .post-link {
     position: relative;
-    width: 70%;
+    display: block;
+    width: 60%;
 
     &:hover {
       a:before {
-        width: 100%;
+        width: 80%;
         opacity: 1;
         transform: scale(1);
         transition: all 0.2s ease-out;
@@ -312,182 +258,56 @@ body {
     }
   }
 
+  @media (max-width: 600px) {
+    .post-link {
+      width: 100%;
+    }
+
+    div.post-listing-image {
+      display: none;
+    }
+  }
+
   div.post-listing-image {
     float: right !important;
     width: 40% !important;
+    height: 150px !important;
+    overflow-y: hidden;
     margin: 20px 20px 40px 40px;
+    position: relative;
+    display: block;
+    padding: 0;
 
     img {
-      border-radius: 5px;
-      //border: 1px solid #503757;
-      //box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.5);
-      position: relative;
       display: block;
+      border-radius: 5px;
       width: 100%;
-      max-height: 150px;
-      overflow-y: hidden;
+      height: 100%;
     }
 
-  }
-
-  #toc {
-    top: 50px;
-    position: sticky ;
-    display: block;
-    font-size: 1.1rem;
-    margin-left: 0px;
-    padding-left: 20px;
-    width: 100%;
-    min-width: 400px;
-    opacity: 1;
-    font-weight: 400;
-    font-family: $font-menu;
-    padding-bottom: 0.5em;
-
-
-    // text-shadow: 1px 1px 0px black;
-
-    #content-toc,
-    #asciidoc-toc {
-      position: relative;
-      margin-left: 20px ;
-      padding-top: 30px;
-      width: 92% ;
-      overflow: hidden ;
-
-      a:hover {
-        color: $active ;
-      }
-
-      // text-shadow: 5px 5px 15px rgba(60, 60, 60, 0.2);
-
-      .section-nav {
-        margin: 5px 0;
-        padding: 10px 30px;
-      }
-
-      h2.toc-h2 {
-        position: relative;
-        font-family: $font-menu;
-        font-weight: 600;
-        font-size: 1.8rem ;
-        letter-spacing: -0.1rem;
-        margin-top: 10px;
-        margin-bottom: -20px;
-        padding-bottom: 0;
-        margin-left: 0;
-        color: $hover - 50;
-        display: none;
-        overflow: hidden;
-        width: 100%;
-        opacity: 0.8;
-      }
-
-      li a {
-        font-family: $font-menu;
-        font-weight: 700 ;
-        letter-spacing: -0.05rem;
-        color: $nav-level1 ;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-          font-weight: 500;
-          color: $active ;
-        }
-
-        &:active {
-          color: $active ;
-        }
-      }
-
-      ul,
-      ul.toc-entry,
-      ul.section-nav {
-        margin-top: 7px;
-        margin-bottom: 3px;
-        padding: 0 ;
-
-        li {
-          list-style-type: none ;
-          margin: 0;
-          padding: 0;
-
-          a {
-            padding: 0;
-            margin: 0;
-          }
-
-          //margin-bottom: 5px ;
-          //margin-top: 5px ;
-        }
-
-        ul.sectlevel1 {
-          margin-left: 10px ;
-          margin-top: 7px;
-          margin-bottom: 3px;
-
-          li {
-            line-height: 1.6em ;
-
-            a {
-              font-size: 1.3rem ;
-              color: $nav-level1 - 30 ;
-
-              &:hover {
-                text-decoration: underline;
-                font-weight: 500;
-                color: $active - 10 ;
-              }
-            }
-          }
-
-          ul.sectlevel2 {
-            margin-left: 10px ;
-            margin-top: 7px;
-            margin-bottom: 3px;
-
-            li {
-              line-height: 1.4rem !important;
-              a {
-                font-size: 1.1rem ;
-                color: $nav-level2 - 20 ;
-
-                &:hover {
-                  text-decoration: underline;
-                  font-weight: 500;
-                  color: $active - 30 ;
-                }
-              }
-            }
-
-            ul.sectlevel3 {
-              li {
-                margin-left: 10px ;
-                line-height: 1.1rem ;
-                a {
-
-                  font-size: 0.9rem ;
-                  color: $nav-level3 - 30 ;
-
-                  &:hover {
-                    text-decoration: underline;
-                    font-weight: 500;
-                    color: $active ;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    min-height: 500px;
-    margin-top: 0;
-
-    a {
+    &:after {
+      clear: right;
     }
   }
+}
 
+
+@media (max-width: 900px) {
+  body {
+    .quoteblock {
+      padding: 0 !important;
+      margin: 0 !important;
+
+      blockquote {
+        padding: 0 20px !important;
+
+        .paragraph p {
+          color: $primary-color + 50 !important;
+          font-weight: 300;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
 }

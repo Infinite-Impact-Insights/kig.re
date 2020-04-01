@@ -46,6 +46,7 @@ const paths = {
       '_vendor/js/owl.navigation.js',
       '_vendor/js/prism.js',
       '_vendor/js/wow.min.js',
+      '_vendor/js/hotkeys.min.js',
     ],
     sourcemaps: [
       '_vendor/js/lightbox.min.map',

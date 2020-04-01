@@ -12,7 +12,8 @@ twitter_username: kig
 
 # Build settings
 exclude:
-  - "**/.DS_Store"
+  - .DS_Store
+  - "**/*/.DS_Store"
   - README.md
   - Gemfile.lock
   - Gemfile
@@ -20,28 +21,25 @@ exclude:
   - package.json
   - package-lock.json
   - gulpfile.js
-  - lib/
-  - bin/
-  - graphics/**/*
-  - node_modules/**/*
+  - node_modules/
   - _drafts/
   - _markdown/
   - _templates/
-  - .git/**/*
+  - .git/
   - .gitignore
   - .editorconfig
-  - .idea/**/*
-  - _vendor/**/*
-  - _sass/**/*
+  - .idea/
+  - _vendor/
+  - _sass/
 
-toc:
-  min_level: 1
-  max_level: 4
-  no_toc_section_class: no_toc_section
-  list_class: section-nav
-  sublist_class: ''
-  item_class: toc-entry
-  item_prefix: toc-
+# toc:
+#   min_level: 1
+#   max_level: 4
+#   no_toc_section_class: no-toc-section-class
+#   list_class: list-class
+#   sublist_class: sublist-class
+#   item_class: item-class
+#   item_prefix: item-prefix-
 
 sass:
   sass_dir: _sass
@@ -55,13 +53,15 @@ asciidoctor:
   safe: unsafe
   require_front_matter_header: true
   attributes:
+    - doctype=book
     - hide-uri-scheme=true
+    - icons=font
+    - idprefix=_
     - idseparator=_
     - showtitle=@
-    - idprefix=_
     - source-highlighter=prism
-    - doctype=book
-    - icons=font
+    - toc-collapsable
+    - toclevels=4
 
 kramdown:
   auto_ids: true

@@ -7,11 +7,10 @@ layout: default
 <div class="post-content-area pb-100 clearfix">
   <div class="container">
     <div class="row">
-
       <main class="col-sm-12 col-md-8 col-lg-8 col-xl-9 d-content" role="main">
         <div class="s-post-details">
           {% if page.post_image %}
-            <div class="post-image mb-4 w-100">
+            <div class="post-image mx-auto w-75 mt-3 my-5 shadow p-0 mb-5 bg-white rounded">
               <img id="post-image" class="mx-auto d-block w-100" src="{{ page.post_image }}" alt="{{ page.title }}"/>
             </div>
           {% endif %}
@@ -46,12 +45,10 @@ layout: default
 
       </main>
 
-
       <div class="col-sm-0 col-md-3 col-lg-3 col-xl-2">
         <div class="small" id="toc">
           {% if page.asciidoc_toc %}
             <div id="content-toc">
-              <h2 class="toc-h2">Table of Contents</h2>
               <ul class="section-nav">
                 {{ page.document | tocify_asciidoc: 3 }}
               </ul>

@@ -1,18 +1,28 @@
 :page-title: "How It All Started"
 :page-liquid:
 :page-author_id: 1
-:page-categories: ["hardware"]
+:page-categories: ["hardware", "programming"]
 :page-comments: true
 :page-excerpt: In this post I share the story of how I got myself into Hardware programming with Arduino.
 :page-layout: post
-:page-post_image: /assets/images/posts/how-it-all-started.png
-:page-tags: ["arduino", "c++"]
+:page-post_image: /assets/images/posts/robots/robo-mania-header.jpg
+:page-tags: ["arduino", "c++", "robots",]
 :page-asciidoc_toc: true
+
+
+
+== When Everything You've Ever Done is... Digital
 
 I've been a software engineer or technical leader for most of my career, which approaches on 20 years (I just recently hit 40 earlier this year). I started coding when
 I still lived in Kharkov, Ukraine, not too far from where the war is raging right now (a fact I am still finding hard to believe). I wrote my first program sometime in
 1988, which was a keyboard driven version of "Paint": you could move a cursor that drew a line on your screen, and save and recall your creations. This was all before
 the mouse made it over there.
+
++++
+<iframe class="video-frame shadow mx-auto p-0 mb-5 bg-white rounded d-flex flex-nowrap border border-dark" width="560" height="315" src="https://www.youtube.com/embed/aA2tDJGnlRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
++++
+
+=== Birthday Boy
 
 Just around my 40th birthday I wanted to fix a subwoofer that I intended to use for the birthday party that day. It was a Mackie powered subwoofer, about 500W (plenty
 loud), but it's been broken since the last Burning Man, when it quietly died in the 110'F heat. I opened it up, found some wires that seem inappropriately disconnected,
@@ -25,7 +35,7 @@ In the end I was not successful in my quest. I've assembled the subwoofer back t
 someone with trained hands at JK Sound SF, someone who can _actually_ fix it. But in the meantime, I signed up for a soldering class at the TechShop, and
 purchased a "pro" level soldering iron -- http://amzn.to/1ndGWXi[Weller WES51] on Amazon. This is how it all began.
 
-'''
+=== Arduino
 
 Shortly after that I discovered Arduino, Arduino programming environment, Eclipse plugin for Arduino, Beaglebone Black running Debian Linux, sensors, robots, wheels,
 chassis, ... the list goes on. As I write this my obsession is exactly six weeks old, and on my desk I have exactly five robots, three of them assembled and in the full
@@ -40,13 +50,13 @@ it's most definitely not realistic to find any unit tests :)
 This is when I decided to start documenting my journey, so that if someone else gets this bug and finds my blog they might just have a slightly easier time getting up
 to speed in this fascinating world of hardware.
 
+{% lightbox_image { "title": "DC Racer", "url": "posts/robots/robo-mania.jpg", "a_class": "full-width w-100 float-none" } %}
+
+
 Given that most folks at work call me "KIG", after my initials, it only was a matter of time until Kiguino was born. I welcome you to read, participate and contribute
 to any of the projects or code I am working on. You know why? Because this is really fun. After decades of writing software and staring at the computer screen, I am
 working with my hands, dropping shit on the floor, swearing (although that part is common with software), and making real objects from atoms and molecules. It's a fascinating process and I am just a little bit obsessed.
 Perhaps you are too?
 
-image::/images/robo-mania.jpg[Small Robot Army on my desk]
 
-____
-Friday, August 1st, 2014, ---- Konstantin.
-____
+

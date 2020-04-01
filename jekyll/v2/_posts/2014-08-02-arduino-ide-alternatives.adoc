@@ -44,11 +44,10 @@ programming alternative, and so I started exploring.
 
 == Arduino IDE Alternatives
 
-____
+
 First off -- a tiny disclaimer: this is not a feature by feature comparison of Arduino-capable IDEs.
 It's a personal opinion of an experienced software engineer, who recently entered this domain. I work
 on Mac OSX, and so I only briefly mention the Windows options. But on a Mac I did end up trying most of the options listed here.
-____
 
 When I talk about software IDE, I generally _do not_ mean a fancy text editor. While I know
 that plenty of great developers love and use text editors on complicated software projects,
@@ -78,7 +77,7 @@ as the final destination:
  ** Visual Micro also sells a commercial debugger for Arduino, which seems to be rather unique.  The
 debugger uses serial port to allow some limited debugging functionality on the host computer.
 
-image::/images/ide-arduino-visual-studio.jpg[Arduino IDE for Visual Studio]
+image::/assets/images/posts/arduino/ide-arduino-visual-studio.jpg[Arduino IDE for Visual Studio]
 
 (_screenshot courtesy http://www.visualmicro.com/[VisualMicro]_)
 
@@ -88,7 +87,7 @@ But to be honest, I never loved XCode to begin with. It's gotten infinitely bett
 but something about it's Preferences screens is so incredibly daunting, that I never got really
 good at XCode.  Perhaps someday :)
 
-image::/images/ide-arduino-xcode.jpg[Arduino IDE for Visual Studio]
+image::/assets/images/posts/arduino/ide-arduino-xcode.jpg[Arduino IDE for Visual Studio]
 
 (_screenshot courtesy http://stackoverflow.com/questions/19605493/how-to-enable-intelligent-code-completion-in-embedxcode[StackOverflow]_)
 
@@ -186,4 +185,4 @@ and discuss using Eclipse for it's development in more details.
 
 I leave you with this beautiful screenshot of the Eclipse open with my library work in progress....
 
-image::/images/ide-arduino-eclipse.jpg[Eclipse IDE (Luna) with C/C++ and Arduino Plugin]
+image::/assets/images/posts/arduino/ide-arduino-eclipse.jpg[Eclipse IDE (Luna) with C/C++ and Arduino Plugin]

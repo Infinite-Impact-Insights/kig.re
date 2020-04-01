@@ -5,7 +5,7 @@
 :page-comments: true
 :page-excerpt: Review of the list of books on being a Maker that I've been reading and thoroughly enjoying.
 :page-layout: post
-:page-post_image: /assets/images/posts/maker-books.png
+:page-post_image: /assets/images/posts/misc/books-to-read.jpg
 :page-tags: ["arduino", "hardware", "books", "c++"]
 :page-asciidoc_toc: true
 
