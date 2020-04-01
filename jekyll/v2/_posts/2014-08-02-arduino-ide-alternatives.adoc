@@ -44,7 +44,6 @@ programming alternative, and so I started exploring.
 
 == Arduino IDE Alternatives
 
-
 First off -- a tiny disclaimer: this is not a feature by feature comparison of Arduino-capable IDEs.
 It's a personal opinion of an experienced software engineer, who recently entered this domain. I work
 on Mac OSX, and so I only briefly mention the Windows options. But on a Mac I did end up trying most of the options listed here.

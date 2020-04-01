@@ -84,9 +84,10 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-sass-converter
-  - jekyll-sitemap
   - jekyll-asciidoc
   - jekyll-liquify
+  - jekyll-last-modified-at
+  - jekyll-sitemap
 
 ###################################################################
 # Site configuration for the Jekyll 2 Pagination Gem

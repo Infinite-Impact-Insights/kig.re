@@ -21,21 +21,60 @@
 
 
 body {
-  .numberCircle {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    padding: 8px;
-    float: right;
-    margin-left: 10px;
+  .tag-post-counter {
+    h1 {
+      float: right;
+      font-family: $font-menu;
+      font-weight: 800;
+    }
 
-    background: #222;
-    border: 2px solid #666;
-    color: #eee;
-    text-align: center;
+    a span {
+      text-shadow: 1px 1px 2px rgba(46%, 46%, 46%, 1);
+    }
 
-    font-weight: 600;
-    font: 24px $font-preamble-family;
+    .numberCircle {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      padding: 15px;
+      background: #222;
+      border: 2px solid #666;
+      color: #eee;
+      text-align: center;
+      font-weight: 700;
+      font: 25px $font-preamble-family;
+    }
+
+    .popular .numberCircle {
+      background-color: rgba(0, 0, 0, 1);;
+    }
+
+    .mediocre .numberCircle {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .rare .numberCircle {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    a span {
+      font-family: $font-menu;
+      font-weight: 800;
+      font-size: 2rem;
+      padding: 10px;
+
+      &:hover {
+        background-color: $hover;
+      }
+    }
+  }
+
+  .tag-column-even {
+    padding-left: 50px !important;
+  }
+
+  .tag-column-odd {
+    padding-right: 50px !important;
   }
 
   .banner {
@@ -292,7 +331,7 @@ body {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   body {
     .quoteblock {
       padding: 0 !important;
@@ -307,6 +346,20 @@ body {
           padding: 0 !important;
           margin: 0 !important;
         }
+      }
+    }
+
+    .tag-post-counter {
+      .numberCircle {
+        width: 2rem;
+        height: 2rem;
+        padding: 10px;
+        font: 15px $font-preamble-family;
+      }
+
+      a span {
+        font-size: 1rem;
+        padding: 10px;
       }
     }
   }

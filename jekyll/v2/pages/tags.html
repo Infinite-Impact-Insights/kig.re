@@ -26,18 +26,18 @@ add_to_menu: true
 
         {% assign odd_even = forloop.index | modulo: 2 %}
         {% if odd_even == 1 %}
-        <div class="tag-column-odd col-6 mb-5 text-left mx-auto text-nowrap {{ popular_class }}">
-          <div class="float-right ml-3 numberCircle">{{ post_count }}</div>
+        <div class="col-6 mb-5 d-flex flex-row flex-nowrap align-items-end {{ popular_class }}">
+          <div class="mr-3 numberCircle d-flex">{{ post_count }}</div>
           <a href="/tag/{{ tag_name }}" class="mr-25">
-            <span class="text-nowrap badge-pill badge-success float-right ">#{{ tag_name }}
+            <span class="text-nowrap badge-success badge-pill badge-success">#{{ tag_name }}
             </span>
           </a>
         </div>
         {% else %}
-        <div class="tag-column-even col-6 mb-5 text-right mx-auto text-nowrap {{ popular_class }}">
-          <div class="float-left mr-3 numberCircle">{{ post_count }}</div>
+        <div class="col-6 mb-5 d-flex flex-row flex-nowrap align-content-start {{ popular_class }}">
+          <div class="mr-3 numberCircle d-flex">{{ post_count }}</div>
           <a href="/tag/{{ tag_name }}">
-            <span class="text-nowrap badge-pill badge-success float-left ">#{{ tag_name }}
+            <span class="text-nowrap badge-pill badge-success">#{{ tag_name }}
             </span>
           </a>
         </div>

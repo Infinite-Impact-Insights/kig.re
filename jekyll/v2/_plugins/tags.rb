@@ -23,6 +23,24 @@ module Jekyll
       end
     end
 
+    class IndexOff < Liquid::Tag
+      def render(_context)
+        '<!--noindex--><!--googleoff: all-->'
+      end
+    end
+
+    class IndexOn < IndexOff
+      def render(_context)
+        '<!--googleon: all--><!--/noindex-->'
+      end
+    end
+
+    class LinkToTag < Liquid::Tag
+      def render(_context)
+        %Q{+++<a name="##{@markup.gsub(/[" ]/, '')}"></a>+++}
+      end
+    end
+
     class MacroTag < Liquid::Tag
       MACROS = {
           read_more: %{&#8627; Keep reading &hellip;},
@@ -116,6 +134,9 @@ module Jekyll
     end
   end
 end
+
+Liquid::Template.register_tag('index_off', Jekyll::Tags::IndexOff)
+Liquid::Template.register_tag('index_on', Jekyll::Tags::IndexOn)
 
 Liquid::Template.register_tag('link_to', Jekyll::Tags::LinkToTag)
 Liquid::Template.register_tag('render_time', Jekyll::Tags::RenderTimeTag)

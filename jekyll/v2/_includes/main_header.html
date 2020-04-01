@@ -19,20 +19,22 @@
               {% endif %}
             </div>
             {% if page.layout == "post" %}
-              <div class="post-meta d-flex">
-                <ul class="post-sp-meta list-inline mx-auto my-0">
-                  <li class="list-inline-item">
-                    <i class="fa fa-clock-o"></i>
-                    {{ page.date | date_to_long_string }}
+              <div class="post-meta w-100">
+                <ul class="post-sp-meta list-inline mx-auto my-0 text-center">
+                  <li class="list-item">
+                    <i class="fa fa-clock-o"></i>  Posted:  <strong>{{ page.date | date_to_long_string }}</strong>
                   </li>
-                  <i class="fa fa-folder-o fa-orcid"></i>
-                  {% for category in page.categories limit:8 %}
-                    <li class="list-inline-item">
-                      <a href="/category/{{ category | slugize }}/">
-                        <span class="badge badge-pill badge-secondary">{{ category }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
+                  <li class="list-item">
+                    <i class="fa fa-clock-o"></i>  Updated: <strong>{{ page.last_modified_at | date_to_long_string }}</strong>
+                  </li>
+                  <li class="list-item d-flex flex-row justify-content-center mx-auto pt-2">
+                    <div><i class="py-2 fa fa-folder-o fa-orcid"></i></div>
+                    {% for category in page.categories limit:8 %}
+                    <a class="px-1 mx-1" href="/category/{{ category | slugize }}/">
+                      <span class="py-2 px-3 badge badge-pill badge-secondary">{{ category }}</span>
+                    </a>
+                    {% endfor %}
+                  </li>
                 </ul>
               </div>
               <div class="post-meta d-flex pt-30">

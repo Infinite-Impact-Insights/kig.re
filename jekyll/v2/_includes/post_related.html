@@ -1,8 +1,11 @@
 <div class="related-post-carousel owl-carousel">
+  {% index_off %}
+
   {% assign maxRelated = 6 %}
   {% assign minCommonTags =  2 %}
   {% assign maxRelatedCounter = 0 %}
 
+  
   {% for post in site.posts %}
     {% assign sameTagCount = 0 %}
     {% assign commonTags = '' %}
@@ -45,4 +48,5 @@
     {% endif %}
 
   {% endfor %}
+  {% index_on %}
 </div>
