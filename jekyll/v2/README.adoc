@@ -1,0 +1,66 @@
+= Jekyll kig.re Site v2
+
+:icons: font
+
+== Usage:
+
+=== Generating the Static Site Manually:
+
+[source,bash]
+----
+npm install
+gulp build
+bundle install
+bundle exec jekyll build
+----
+
+Serve from `_site` folder.
+
+=== Automated Way via `rake`
+
+We've put together a bunch of useful Rake tasks for all of your needs.
+
+==== Static Site Generation
+
+[source,bash]
+----
+bundle install
+bundle exec rake jekyll:generate
+----
+
+==== Live Editing
+
+[source,bash]
+----
+$ bundle install && bundle exec rake
+----
+
+The task being executed by the default is `jekyll:preview`, which runs `jekyll:serve` and `jekyll:browser`. The later one opens the browser after the assets are compiled, but it's not an exact science.
+
+The main Rake task `jekyll:serve` starts two long-running child processes:
+
+* `gulp watch`
+* `bundle exec jekyll serve --watch --trace`
+
+This will live-recompile all static assets, so that you can see what you get.
+
+You can Ctrl-C to shut it down.
+
+Enjoy!
+
+==== Faster Reload
+
+While running `rake` will install all dependencies, it does take some 30 seconds to run even when things are already built recently.
+
+For this reason there is another task:
+
+[source,bash]
+bundle exec rake jekyll:watch
+
+Which starts both Jekyll in a "watch" mode, as well as Gulp in the watch mode.
+
+=== Copyright
+
+This blog is © 2020 Konstantin Gredeskoul, all rights reserved.
+
+

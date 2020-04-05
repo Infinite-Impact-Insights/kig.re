@@ -14,7 +14,8 @@ twitter_username: kig
 exclude:
   - .DS_Store
   - "**/*/.DS_Store"
-  - README.md
+  - README.adoc
+  - README.html
   - Gemfile.lock
   - Gemfile
   - Rakefile
