@@ -5,7 +5,6 @@ subtitle: All Tags Used with Post Counts
 add_to_menu: true
 ---
 
-
 {% include main_header.html %}
 
 <div class="main-content-area clearfix mt-100">
@@ -13,7 +12,6 @@ add_to_menu: true
     <div class="row clearfix">
       {% assign tags = site.tags | sort "[0]" %}
       {% for tag in tags %}
-
         {% assign tag_name = tag[0] %}
         {% assign post_count = site.tags[tag_name].size %}
         {% if post_count <= 1 %}
