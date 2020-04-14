@@ -135,9 +135,9 @@ Once you reset your settings, you should once again be able to import Bazel Proj
 
 For more information on this error, see the following:
 
- * https://bazel.googlesource.com/intellij/+/015973d885a258d9b3921e5c06572bb4e1b30045%5E1..015973d885a258d9b3921e5c06572bb4e1b30045/[The original commit that introduced default workspace type check].
-
 {% link_to "building-the-plugin" %}
+
+ * https://bazel.googlesource.com/intellij/+/015973d885a258d9b3921e5c06572bb4e1b30045%5E1..015973d885a258d9b3921e5c06572bb4e1b30045/[The original commit that introduced default workspace type check].
 
  * https://github.com/bazelbuild/intellij/issues/1693[Currently open issue on Bazel Plugin Issue Tracker].
 
