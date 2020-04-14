@@ -30,7 +30,7 @@
                   <li class="list-item d-flex flex-row justify-content-center mx-auto pt-2">
                     <div><i class="py-2 fa fa-folder-o fa-orcid"></i></div>
                     {% for category in page.categories limit:8 %}
-                    <a class="px-1 mx-1" href="/category/{{ category | slugize }}/">
+                    <a rel="canonical" class="px-1 mx-1" href="/category/{{ category | slugize }}/">
                       <span class="py-2 px-3 badge badge-pill badge-secondary">{{ category }}</span>
                     </a>
                     {% endfor %}
@@ -41,7 +41,7 @@
                 <div class="post-sp-meta list-inline mx-auto my-0 text-center">
                   {% for tag in page.tags %}
                     {% capture tag_name %}{{ tag }}{% endcapture %}
-                    <a class="tag-link" href="/tag/{{ tag_name }}">
+                    <a rel="canonical" class="tag-link" href="/tag/{{ tag_name }}">
                       <span class="btn btn-info btn-sm mb-1">#{{ tag_name }}</span>
                     </a>
                   {% endfor %}

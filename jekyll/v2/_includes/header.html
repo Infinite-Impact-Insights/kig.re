@@ -33,7 +33,7 @@
                 {% else %}
                   {% assign active_class="" %}
                 {% endif %}
-                  <a class="dropdown-item small" href="{{ menu_page.url }}">{{ menu_page.title }}</a>
+                  <a class="dropdown-item small" rel="canonical" href="{{ menu_page.url }}">{{ menu_page.title }}</a>
               {% endif %}
             {% endfor %}
           </div>
@@ -52,7 +52,7 @@
             {% assign categories = site.categories | sort "[0]" %}
             {% for category in categories %}
               {% assign category_name = category[0] %}
-              <a class="dropdown-item small w-auto" href="/category/{{ category_name }}/">{{ category_name | replace: "-", " " | capitalize }}
+              <a rel="canonical" class="dropdown-item small w-auto" href="/category/{{ category_name }}/">{{ category_name | replace: "-", " " | capitalize }}
               </a>
             {% endfor %}
           </div>
@@ -63,7 +63,7 @@
 
           <div class="dropdown-menu pre-scrollable">
             {% for post in site.posts %}
-              <a class="dropdown-item small" href="{{ post.url }}">
+              <a class="dropdown-item small" rel="canonical" href="{{ post.url }}">
                 <div class="post-date-menu">
                   <strong>{{ post.date | date: '%b %Y' }}</strong>
                 </div>

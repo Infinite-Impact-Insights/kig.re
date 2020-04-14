@@ -21,7 +21,6 @@
     width: 92%;
     overflow: hidden;
 
-
     .section-nav {
       margin: 0;
       padding: 10px 0px;
@@ -34,7 +33,7 @@
 
         a {
           font-family: $font-menu;
-          letter-spacing: 0rem;
+          letter-spacing: 0.5px;
           color: $nav-level1;
           text-decoration: none;
           display: inline-block;
