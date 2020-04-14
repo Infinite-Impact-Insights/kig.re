@@ -19,7 +19,7 @@ module Jekyll
 
     class LinkToTag < Liquid::Tag
       def render(_context)
-        %Q{+++<a name="##{@markup.gsub(/[" ]/, '')}"></a>+++}
+        %{+++<a name="#{@markup.gsub(/[" ]/, '')}"></a>+++}
       end
     end
 
@@ -35,16 +35,10 @@ module Jekyll
       end
     end
 
-    class LinkToTag < Liquid::Tag
-      def render(_context)
-        %Q{+++<a name="##{@markup.gsub(/[" ]/, '')}"></a>+++}
-      end
-    end
-
     class MacroTag < Liquid::Tag
       MACROS = {
-          read_more: %{&#8627; Keep reading &hellip;},
-          clear_fix: CLEAR_FIX.to_s
+        read_more: %{&#8627; Keep reading &hellip;},
+        clear_fix: CLEAR_FIX.to_s
       }.freeze
 
       attr_accessor :macro, :asciidoc
@@ -112,10 +106,10 @@ module Jekyll
         HTML
 
         case clear
-          when 'before'
-            tag = CLEAR_FIX + tag
-          when 'after'
-            tag += CLEAR_FIX
+        when 'before'
+          tag = CLEAR_FIX + tag
+        when 'after'
+          tag += CLEAR_FIX
         end
 
         unless no_asciidoc

@@ -1,0 +1,43 @@
+:page-asciidoc_toc: true
+:page-author_id: 1
+:page-categories: [programming, intermediate]
+:page-comments: true
+:page-layout: post
+:page-liquid:
+:page-post_image: /assets/images/posts/bash/command_line_prompt.png
+:page-quote: "C is quirky, flawed, and an enormous success." ― Dennis M. Ritchie
+:page-tags: [bash, shell, unix, scripting, programming, frameworks]
+:page-excerpt: "BASH — we love it, we hate it, but more often than not - we use it. Should we keep using it? Replace it with something else? Adopt Google BASH Style Guide? Write BASH so obfuscated that nobody understands it, even you? In this post we explore the state of BASH, and long the way introduce more than a couple nifty BASH frameworks. Go ahead, read on. It won't bash your head, but it will help your BASH it later :)"
+:page-title: Bash-It, Bash-wat? BashMatic and You.
+
+:showtitle:
+:icons: font
+
+== What is BASH?
+
+image::/assets/images/posts/bash/bash-scripting-mindmap.jpg[BASH scripting Mind Map, width="100%"]
+
+=== The state of BASH
+
+=== What version to use?
+
+=== And... Why not Fish? Poosh? Smoosh? Etc?
+
+== BASHing Well
+
+=== How to BASH right.
+
+=== How to TDD in BASH
+
+=== How to be Cool in BASH
+
+=== How to write awesome BASH installers.
+
+=== BASH tips and tricks
+
+== BASH Frameworks
+
+=== BashMatic
+
+=== Bash-It
+

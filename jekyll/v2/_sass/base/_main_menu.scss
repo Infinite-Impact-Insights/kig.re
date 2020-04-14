@@ -26,10 +26,11 @@ nav.navbar {
 
     a#site-logo {
       display: flex;
-      img {
-        width: 100px !important;
-        height: auto !important;
-      }
+      width: 100px !important;
+      height: 45px !important;
+      background-image: url("/assets/images/site/kigre-red-logo-100x45.png");
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 
@@ -92,8 +93,29 @@ nav.navbar {
       }
     }
   }
+
+  #top-nav {
+    .container {
+      a#site-logo {
+        background-image: url("/assets/images/site/kigre-red-logo-80x36.png");
+        width: 80px !important;
+        height: 36px !important;
+      }
+    }
+  }
 }
 
+@media (min-width: 1200px) {
+  #top-nav {
+    .container {
+      a#site-logo {
+        background-image: url("/assets/images/site/kigre-red-logo-120x54.png");
+        width: 120px !important;
+        height: 54px !important;
+      }
+    }
+  }
+}
 
 #original-nav {
   .navbar.navbar-dark {

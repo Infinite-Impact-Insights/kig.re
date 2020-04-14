@@ -16,7 +16,13 @@
 
 == What is Bazel?
 
-INFO https://bazel.build[Bazel] is a powerful open-source build and test tool similar to Make, Maven, and Gradle. It uses a human-readable, high-level build language called Starlark, which is a strict subset of Python. Bazel can build projects in multiple languages and output results for multiple platforms. Bazel supports large code-bases across multiple repositories and large numbers of users. In fact, it is the build tool used by Google internally for all of their software.
+**https://bazel.build[Bazel]** is a powerful open-source build and test tool similar to Make, Maven, and Gradle. It uses a human-readable, high-level build language called Starlark, which is a strict subset of Python. Bazel can build projects in multiple languages and output results for multiple platforms. Bazel supports large code-bases across multiple repositories and large numbers of users. In fact, it is the build tool used by Google internally for all of their software.
+
+Bazel was open-sourced by Google several years ago, and has since become a dominant build system across a large list of companies. Most of these companies have engineering teams that are larger than a couple hundred engineers. Such teams are adopting Bazel because it can handle very large multi-lingual multi-repo projects with ease. After all, supposedly Bazel handles most of Googles internal code.
+
+Bazel comes with a CLI executable that is the interface to its commands and features, but using Bazel with a fully-featured IDE can be particularly enlightening and time-saving.
+
+I got introduced to Bazel while at Coinbase, where I got to work on Bazel build rules for Ruby language, an open source project available on Github.
 
 == Bazel IDE Support
 
@@ -77,7 +83,7 @@ However, sometimes the plugin is behind the most recent version of the IntelliJ 
 
  * Rollback IDE to a previous version
  * Or, build the plugin from sources.
- * Further below we'll show how to {{site.url}}{{page.url}}#building-the-plugin[how to build and install the plugin from sources]*.
+ * Further below we'll show how to {{site.url}}{{page.url}}#building-the-plugin[how to build and install the plugin from sources]*
 
 
 ==== Plugin Functionality
@@ -131,9 +137,10 @@ For more information on this error, see the following:
 
  * https://bazel.googlesource.com/intellij/+/015973d885a258d9b3921e5c06572bb4e1b30045%5E1..015973d885a258d9b3921e5c06572bb4e1b30045/[The original commit that introduced default workspace type check].
 
+{% link_to "building-the-plugin" %}
+
  * https://github.com/bazelbuild/intellij/issues/1693[Currently open issue on Bazel Plugin Issue Tracker].
 
-{% link_to "building-the-plugin" %}
 
 == Building the IntelliJ Plugin from Sources
 
