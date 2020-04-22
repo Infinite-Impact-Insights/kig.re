@@ -126,7 +126,6 @@ h3 {
   }
 }
 
-
 input[type="email"] {
   padding: 8px 15px;
   outline: 0;
@@ -268,7 +267,8 @@ input[type="search"] {
     max-height: 100px;
     padding-top: 10px;
 
-    @include tablet {}
+    @include tablet {
+    }
   }
 }
 
@@ -281,7 +281,6 @@ input[type="search"] {
   margin-bottom: -20px;
   margin-right: 50px;
   float: none;
-
 
   @include tablet {
     height: 300px;

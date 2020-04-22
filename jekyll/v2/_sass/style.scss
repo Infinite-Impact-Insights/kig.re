@@ -118,7 +118,6 @@ Banner-Area CSS
           }
         }
       }
-
     }
 
     &:last-child {
@@ -152,7 +151,6 @@ Banner-Area CSS
       border: 1px solid #eae4e45c;
       box-shadow: 1px 1px 9px 0px rgba(156, 202, 183, 0.27);
 
-
       &:before {
         position: absolute;
         top: 0;
@@ -184,27 +182,27 @@ Banner-Area CSS
     }
 
     .block-two:before {
-      background: #D2A9FC;
+      background: #d2a9fc;
       content: "02";
     }
 
     .block-three:before {
-      background: #F8D86B;
+      background: #f8d86b;
       content: "03";
     }
 
     .block-4:before {
-      background: #74CEE7;
+      background: #74cee7;
       content: "04";
     }
 
     .block-5:before {
-      background: #FE6061;
+      background: #fe6061;
       content: "05";
     }
 
     .block-6:before {
-      background: #55EFC4;
+      background: #55efc4;
       content: "06";
     }
   }
@@ -232,7 +230,6 @@ Footer-area Css Here
     img {
       max-height: 200px;
       max-width: 200px;
-
     }
   }
 
@@ -355,7 +352,8 @@ Post-content-area
     padding: 15px;
 
     .tag-list {
-      span {}
+      span {
+      }
 
       p {
         float: left;
@@ -447,16 +445,16 @@ Post-content-area
 
       i {
         margin-right: 10px;
-        color: #A2A2A2;
+        color: #a2a2a2;
       }
     }
   }
 
   .categories-carousel {
     .single-item {
-      border: 1px solid #E8EAED;
+      border: 1px solid #e8eaed;
       min-height: 260px;
-      background: #F5F5F5;
+      background: #f5f5f5;
       box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.03);
     }
 
@@ -464,7 +462,6 @@ Post-content-area
       position: relative;
 
       .categories-post-hover {
-
         padding: 15px;
 
         .post-link {
@@ -587,14 +584,13 @@ Comment area css
     align-items: center;
 
     iframe#gmap_canvas {
-
       width: 100%;
       margin: 20px auto;
     }
   }
 
   .comment-form {
-    input[type=text] {
+    input[type="text"] {
       width: 49%;
       padding: 11px 15px;
       border: $input-border;
@@ -729,8 +725,8 @@ Right-sidebar Css
 
     &:hover {
       a:before {
-        opacity: .57;
-        transition: all .4s linear 0s;
+        opacity: 0.57;
+        transition: all 0.4s linear 0s;
         transform: scale(1);
         width: 100%;
       }
@@ -749,7 +745,7 @@ Right-sidebar Css
         content: "";
         background: #000;
         opacity: 0;
-        transition: all .4s linear 0s;
+        transition: all 0.4s linear 0s;
         transform: scale(0);
 
         img {
@@ -804,22 +800,22 @@ Right-sidebar Css
     }
 
     a.paste {
-      color: #1DA1F3;
-      transition: all .4s linear 0s;
+      color: #1da1f3;
+      transition: all 0.4s linear 0s;
 
       &:hover {
         color: #096096;
-        transition: all .4s linear 0s;
+        transition: all 0.4s linear 0s;
       }
     }
 
     a.blue {
-      color: #3A5A9A;
-      transition: all .4s linear 0s;
+      color: #3a5a9a;
+      transition: all 0.4s linear 0s;
 
       &:hover {
         color: #192e58;
-        transition: all .4s linear 0s;
+        transition: all 0.4s linear 0s;
       }
     }
 
@@ -917,7 +913,7 @@ Authors-area css
 
   &:hover {
     box-shadow: 0px -1px 20px 4px rgba(156, 202, 183, 0.27);
-    transition: all .3s linear 0s;
+    transition: all 0.3s linear 0s;
     background: $hover;
     color: #fff;
 
@@ -956,7 +952,6 @@ Authors-area css
         &:hover {
           color: $white-text;
         }
-
       }
     }
   }
@@ -964,12 +959,11 @@ Authors-area css
   .social-link ul li a {
     color: $white-text;
   }
-
-
 }
 
 .tags-area {
   padding-top: 30px !important;
+
   .tags-details {
     border: 1px solid #efebeb;
   }
@@ -985,8 +979,38 @@ Authors-area css
 }
 
 .author-bio .author-details h3 a {
-
   color: #fff !important;
+}
+
+.author-widget-small {
+  border-top: 1px solid #aaa;
+  height: 200px;
+  width: 95%;
+  padding: 30px 0;
+  margin-bottom: 50px;
+  margin-top: 100px;
+
+  h3 {
+    font-size: $primary-font-size;
+    float: right;
+
+    strong {
+      display: flex;
+
+      a {
+        color: $hover;
+      }
+    }
+  }
+
+  .social-link {
+    margin-left: 40px;
+    float: right;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #aaa;
+  }
 }
 
 /* ################
@@ -1008,7 +1032,7 @@ Authors-area css
       display: inline-block;
       border-radius: 34px;
       box-shadow: 0px 15px 40px -5px rgba(42, 154, 108, 0.23);
-      transition: .4s;
+      transition: 0.4s;
 
       &:hover {
         color: #fff !important;
@@ -1028,7 +1052,6 @@ Style Guide Page
 .style-guide-area {
   .guide-wrapper {
     .style-details {
-
       h1,
       h2,
       h3,
@@ -1058,7 +1081,7 @@ Style Guide Page
       .hljs {
         display: block;
         overflow-x: auto;
-        padding: .5em;
+        padding: 0.5em;
         color: #abb2bf;
       }
     }
@@ -1090,7 +1113,6 @@ Contact Guide Page
   margin-bottom: 20px;
 }
 
-
 .main-content-area .blog-list {
   @include numbered-blog-list;
 }
@@ -1099,7 +1121,7 @@ body.paged .main-content-area .blog-list {
   @include numbered-blog-list;
 }
 
-.site-tag-archive>a {
+.site-tag-archive > a {
   display: block;
   font-size: 20px;
   background: $hover;

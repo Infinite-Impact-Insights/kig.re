@@ -346,5 +346,4 @@ We hope that you found this overview of Bazel IDE support, and specific instruct
 
 == Acknowledgements
 
- * Written by Konstantin Gredeskoul, &copy; Copyright 2020, All rights reserved.
- * The author wishes to thank kind folks at https://flare.build[Flare.Build] for contributing the Docker command line of the build script, and the encouragement.
+The author wishes to thank kind folks at https://flare.build[Flare.Build] for contributing the Docker command line of the build script, and the encouragement.

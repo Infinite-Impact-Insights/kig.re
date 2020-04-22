@@ -19,13 +19,34 @@
   }
 }
 
-
 body {
+  .min-w-500 {
+    min-width: 500px !important;
+  }
+  .min-w-450 {
+    min-width: 450px !important;
+  }
+  .min-w-350 {
+    min-width: 350px !important;
+  }
+  .min-w-250 {
+    min-width: 250px !important;
+  }
+  .min-w-150 {
+    min-width: 150px !important;
+  }
+  .min-w-100 {
+    min-width: 100px !important;
+  }
+  .min-w-50 {
+    min-width: 50px !important;
+  }
+
   .tag-post-counter {
     h1 {
       float: right;
       font-family: $font-menu;
-      font-weight: 800;
+      font-weight: 600;
     }
 
     a span {
@@ -33,20 +54,25 @@ body {
     }
 
     .numberCircle {
-      width: 3rem;
-      height: 3rem;
+      display: block;
+      position: relative;
+      width: 52px !important;
+      height: 50px !important;
+      margin: -5px 20px 5px 20px;
       border-radius: 50%;
-      padding: 15px;
+      padding: 0px;
+      padding-left: 2px;
       background: #222;
       border: 2px solid #666;
       color: #eee;
       text-align: center;
-      font-weight: 700;
-      font: 25px $font-preamble-family;
+      font-weight: 800;
+      font-size: 21pt;
+      // font: 22px $font-menu;
     }
 
     .popular .numberCircle {
-      background-color: rgba(0, 0, 0, 1);;
+      background-color: rgba(0, 0, 0, 1);
     }
 
     .mediocre .numberCircle {
@@ -60,8 +86,11 @@ body {
     a span {
       font-family: $font-menu;
       font-weight: 800;
-      font-size: 2rem;
-      padding: 10px;
+      font-size: 22px;
+      padding: 7px 20px;
+      height: 50px;
+      max-height: 70px;
+      overflow-y: hidden;
 
       &:hover {
         background-color: $hover;
@@ -121,14 +150,13 @@ body {
     width: 100% !important;
   }
 
-
   #preamble .sectionbody .paragraph p {
     margin: 30px 0;
     font-size: 1.8rem !important;
     line-height: auto;
     font-weight: 400;
     //color: #3c4449 !important;
-    color: #726F71 !important;
+    color: #726f71 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -138,13 +166,12 @@ body {
     font-size: 1.4rem !important;
     line-height: 1.6rem !important;
     font-weight: 400;
-    color: #726F71 !important;
+    color: #726f71 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   .index-page {
-
     .banner-text-wrap,
     .blog-list {
       .sectionbody {
@@ -158,7 +185,6 @@ body {
           line-height: 1.2rem !important;
           color: #333034 !important;
           text-shadow: none !important;
-
         }
       }
     }
@@ -184,19 +210,16 @@ body {
 
   .post-summary,
   #preamble .sectionbody .paragraph {
-
     p,
     h1,
     h2,
     h3 {
-
-
       font-size: 22pt;
       line-height: 26pt !important;
       font-weight: 700;
-      font-family: 'Yanone Kaffeesatz', sans-serif !important;
+      font-family: "Yanone Kaffeesatz", sans-serif !important;
       margin: 10px 10px 10px 0 !important;
-      text-align: left;;
+      text-align: left;
     }
 
     h1 {
@@ -246,7 +269,6 @@ body {
         color: $active !important;
       }
     }
-
   }
 
   h2.post-link {
@@ -330,7 +352,6 @@ body {
   }
 }
 
-
 @media (max-width: 700px) {
   body {
     .quoteblock {
@@ -346,20 +367,6 @@ body {
           padding: 0 !important;
           margin: 0 !important;
         }
-      }
-    }
-
-    .tag-post-counter {
-      .numberCircle {
-        width: 2rem;
-        height: 2rem;
-        padding: 10px;
-        font: 15px $font-preamble-family;
-      }
-
-      a span {
-        font-size: 1rem;
-        padding: 10px;
       }
     }
   }

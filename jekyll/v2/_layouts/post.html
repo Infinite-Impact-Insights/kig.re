@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{% include main_header.html %}
-{% assign author = site.authors | where: 'author_id', page.author_id | first %}
+
+{% include main_header.html %} {% assign author = site.authors | where: 'author_id', page.author_id | first %}
 
 <div class="post-content-area pb-100 clearfix">
   <div class="container">
@@ -10,16 +10,14 @@ layout: default
       <main class="col-sm-12 col-md-8 col-lg-8 col-xl-9 d-content" role="main">
         <div class="s-post-details">
           {% if page.post_image %}
-            <div class="post-image mx-auto w-75 mt-3 my-5 shadow p-0 mb-5 bg-white rounded">
-              <img id="post-image" class="mx-auto d-block w-100" src="{{ page.post_image }}" alt="{{ page.title }}"/>
-            </div>
+          <div class="post-image mx-auto w-75 mt-3 my-5 shadow p-0 mb-5 bg-white rounded">
+            <img id="post-image" class="mx-auto d-block w-100" src="{{ page.post_image }}" alt="{{ page.title }}" />
+          </div>
           {% endif %}
           <div class="entry-content">
             {{ page.content }}
           </div>
-          {% if author %}
-            {% include post_author.html %}
-          {% endif %}
+          {% if author %} {% include post_author_mini.html %} {% endif %}
         </div>
 
         <div class="categories-carousel pb-60 clearfix">
@@ -30,29 +28,28 @@ layout: default
         </div>
 
         {% if page.comments == true %}
-          <div class="comments-area pb-60 clearfix">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="post-comments">
-                    {% include post_comments.html %}
-                  </div>
+        <div class="comments-area pb-60 clearfix">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="post-comments">
+                  {% include post_comments.html %}
                 </div>
               </div>
             </div>
           </div>
+        </div>
         {% endif %}
-
       </main>
 
       <div class="col-sm-0 col-md-3 col-lg-3 col-xl-2">
         <div class="small" id="toc">
           {% if page.asciidoc_toc %}
-            <div id="content-toc">
-              <ul class="section-nav">
-                {{ page.document | tocify_asciidoc: 3 }}
-              </ul>
-            </div>
+          <div id="content-toc">
+            <ul class="section-nav">
+              {{ page.document | tocify_asciidoc: 3 }}
+            </ul>
+          </div>
           {% endif %}
         </div>
       </div>

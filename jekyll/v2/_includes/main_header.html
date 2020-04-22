@@ -6,47 +6,41 @@
           <div class="single-author-d w-100">
             <div class="title">
               {% if category %}
-                <h2 class="mb-0 text-center">
-                  <span class="badge badge-pill badge-secondary">{{ category }}</span>
-                </h2>
+              <h2 class="mb-0 text-center">
+                <span class="badge badge-pill badge-secondary">{{ category }}</span>
+              </h2>
               {% else %}
-                <h2 class="mb-5 text-center">{{ page.title | capitalize }}</h2>
-                {% if page.subtitle %}
-                  <h3 class="mb-1 text-center">
-                    <span class="badge badge-pill badge-secondary">{{ page.subtitle }}</span>
-                  </h3>
-                {% endif %}
-              {% endif %}
+              <h2 class="mb-5 text-center">{{ page.title | capitalize }}</h2>
+              {% if page.subtitle %}
+              <h3 class="mb-1 text-center">
+                <span class="badge badge-pill badge-secondary">{{ page.subtitle }}</span>
+              </h3>
+              {% endif %} {% endif %}
             </div>
             {% if page.layout == "post" %}
-              <div class="post-meta w-100">
-                <ul class="post-sp-meta list-inline mx-auto my-0 text-center">
-                  <li class="list-item">
-                    <i class="fa fa-clock-o"></i>  Posted:  <strong>{{ page.date | date_to_long_string }}</strong>
-                  </li>
-                  <li class="list-item">
-                    <i class="fa fa-clock-o"></i>  Updated: <strong>{{ page.last_modified_at | date_to_long_string }}</strong>
-                  </li>
-                  <li class="list-item d-flex flex-row justify-content-center mx-auto pt-2">
-                    <div><i class="py-2 fa fa-folder-o fa-orcid"></i></div>
-                    {% for category in page.categories limit:8 %}
-                    <a rel="canonical" class="px-1 mx-1" href="/category/{{ category | slugize }}/">
-                      <span class="py-2 px-3 badge badge-pill badge-secondary">{{ category }}</span>
-                    </a>
-                    {% endfor %}
-                  </li>
-                </ul>
-              </div>
-              <div class="post-meta d-flex pt-30">
-                <div class="post-sp-meta list-inline mx-auto my-0 text-center">
-                  {% for tag in page.tags %}
-                    {% capture tag_name %}{{ tag }}{% endcapture %}
-                    <a rel="canonical" class="tag-link" href="/tag/{{ tag_name }}">
-                      <span class="btn btn-info btn-sm mb-1">#{{ tag_name }}</span>
-                    </a>
+            <div class="post-meta w-100">
+              <ul class="post-sp-meta list-inline mx-auto my-0 text-center">
+                <li class="list-item"><i class="fa fa-clock-o"></i> Posted: <strong>{{ page.date | date_to_long_string }}</strong></li>
+                <li class="list-item"><i class="fa fa-clock-o"></i> Updated: <strong>{{ page.last_modified_at | date_to_long_string }}</strong></li>
+                <li class="list-item d-flex flex-row justify-content-center mx-auto pt-2">
+                  <div><i class="py-2 fa fa-folder-o fa-orcid"></i></div>
+                  {% for category in page.categories limit:8 %}
+                  <a rel="canonical" class="px-1 mx-1" href="/category/{{ category | slugize }}/">
+                    <span class="py-2 px-3 badge badge-pill badge-secondary">{{ category }}</span>
+                  </a>
                   {% endfor %}
-                </div>
+                </li>
+              </ul>
+            </div>
+            <div class="post-meta d-flex pt-30">
+              <div class="post-sp-meta list-inline mx-auto my-0 text-center">
+                {% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
+                <a rel="canonical" class="tag-link" href="/tag/{{ tag_name }}">
+                  <span class="btn btn-info btn-sm mb-1">#{{ tag_name }}</span>
+                </a>
+                {% endfor %}
               </div>
+            </div>
             {% endif %}
           </div>
         </div>

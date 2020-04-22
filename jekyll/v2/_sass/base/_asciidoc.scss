@@ -27,8 +27,8 @@
   }
 }
 
-ol>li p,
-ul>li p,
+ol > li p,
+ul > li p,
 ul dd,
 ol dd,
 .olist .olist,
@@ -40,7 +40,6 @@ ol dd,
 
 .ulist,
 .olist {
-
   ul,
   ol {
     li {
@@ -70,15 +69,15 @@ ol dd,
   border-radius: 4px;
 }
 
-.sidebarblock> :first-child {
+.sidebarblock > :first-child {
   margin-top: 0;
 }
 
-.sidebarblock> :last-child {
+.sidebarblock > :last-child {
   margin-bottom: 0;
 }
 
-.sidebarblock>.content>.title {
+.sidebarblock > .content > .title {
   color: #3c3d3f;
   margin-top: 0;
 }
@@ -130,7 +129,7 @@ p.tableblock {
   font-size: 1em;
 }
 
-.exampleblock>.content {
+.exampleblock > .content {
   // white
   //background-color: #fff;
   //border-color: $panel-border-color;
@@ -142,7 +141,7 @@ p.tableblock {
 }
 
 // trick to prevent caption from influencing width of an autowidth table
-table.tableblock.fit-content>caption.title {
+table.tableblock.fit-content > caption.title {
   white-space: normal;
   width: 0;
 }
@@ -159,8 +158,8 @@ table.tableblock.fit-content>caption.title {
 //}
 
 // matches %lead
-.paragraph.lead>p,
-#preamble>.sectionbody>[class="paragraph"]:first-of-type p {
+.paragraph.lead > p,
+#preamble > .sectionbody > [class="paragraph"]:first-of-type p {
   font-size: 1.3rem + em-calc(3.5);
 
   font-weight: 400;
@@ -172,7 +171,7 @@ table.tableblock.fit-content>caption.title {
 }
 
 // nested AsciiDoc document (should put "nested" class on surrounding div)
-table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p {
+table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p {
   font-size: inherit;
 }
 
@@ -180,7 +179,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p {
   margin-bottom: 0;
 }
 
-.sectionbody .admonitionblock>table {
+.sectionbody .admonitionblock > table {
   border-radius: 5px;
   box-shadow: 5px 5px 15px rgba(40, 9, 0, 0.2);
 
@@ -226,7 +225,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p {
 
     padding: 1rem !important;
 
-    > :last-child> :last-child {
+    > :last-child > :last-child {
       margin-bottom: 0;
     }
   }
@@ -253,7 +252,7 @@ conum[data-value] {
     color: $white !important;
   }
 
-  +b {
+  + b {
     display: none;
   }
 }
@@ -262,7 +261,7 @@ conum[data-value] {
   content: attr(data-value);
 }
 
-span.icon>.fa {
+span.icon > .fa {
   cursor: default;
 }
 
@@ -307,7 +306,7 @@ span.icon>.fa {
 
 s.conum[data-value] {
   position: relative;
-  top: -.125em;
+  top: -0.125em;
 }
 
 b.conum * {

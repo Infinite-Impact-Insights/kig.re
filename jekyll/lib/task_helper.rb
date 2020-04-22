@@ -37,6 +37,7 @@ module TaskHelper
     sh 'command -V node 2>/dev/null 1>&2 || brew install node'
     sh "[[ $(node --version) == '#{node_version}' ]] || brew upgrade node"
     sh 'command -V gulp 2>/dev/null 1>&2 || npm install --global gulp-cli'
+    sh 'command -V prettier 2>/dev/null 1>&2 || npm install --global prettier'
     sh 'bash -c "set +e; npm ls >/dev/null || npm install"'
     sh 'gulp build'
   end
@@ -78,5 +79,4 @@ module TaskHelper
   def container(config)
     "#{config.docker.container.name}-#{config.docker.image.name}"
   end
-
 end

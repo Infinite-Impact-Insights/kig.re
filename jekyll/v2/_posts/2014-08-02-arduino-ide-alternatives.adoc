@@ -9,11 +9,12 @@
 :page-tags: ["arduino", "ide", "c++"]
 :page-asciidoc_toc: true
 
+NOTE: This article was originally written in 2014. It had recently been updated for 2020.
 
-== Developing for Hardware using Arduino and Integrated Development Environments
+== Developing for Hardware using Arduino and Integrated Development Environmentss
 
-As a relative late comer to Arduino world, I went through the beginner tutorials and examples
-using the provided Arduino IDE.  I faithfully downloaded it from http://arduino.cc/en/Main/Software[arduino.cc]
+As a relative late comer to the Arduino world, I went through the beginner tutorials and examples
+using the provided Arduino IDE.  I faithfully downloaded it from the http://arduino.cc/en/Main/Software[arduino.cc]
 web site, took a quick tour and was pretty unimpressed with the set of features.  For one, I am
 very particular about the color scheme of my programming editors, and not having a choice
 was an immediate downer.

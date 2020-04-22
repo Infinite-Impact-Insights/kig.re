@@ -9,7 +9,6 @@ add_to_menu: true
 
 <div class="main-content-area clearfix mt-100">
   <div class="tag-post-counter container">
-    <div class="row clearfix">
       {% assign tags = site.tags | sort "[0]" %}
       {% for tag in tags %}
         {% assign tag_name = tag[0] %}
@@ -24,23 +23,23 @@ add_to_menu: true
 
         {% assign odd_even = forloop.index | modulo: 2 %}
         {% if odd_even == 1 %}
-        <div class="col-1"></div>
-        <div class="col-5 mb-5 d-flex flex-row flex-nowrap {{ popular_class }}">
-          <div class="mr-5 numberCircle d-flex float-right ">{{ post_count }}</div>
-          <a href="/tag/{{ tag_name }}" class="mr-5 float-right d-flex">
-            <span class="text-nowrap badge-success badge-pill badge-success">#{{ tag_name }}
-            </span>
-          </a>
-        </div>
+          <div class="row">
+            <div class="col-sm-0 col-md-0 col-lg-0 col-xl-2"></div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mb-5 d-flex flex-row flex-nowrap {{ popular_class }} min-w-450">
+              <div class="numberCircle">{{ post_count }}</div>
+              <a href="/tag/{{ tag_name }}">
+                <span class="text-nowrap badge-success badge-pill badge-success">#{{ tag_name }}</span>
+              </a>
+            </div>
         {% else %}
-        <div class="col-5 mb-5 d-flex flex-row flex-nowrap {{ popular_class }}">
-          <div class="ml-5 numberCircle d-flex float-left">{{ post_count }}</div>
-          <a href="/tag/{{ tag_name }}" class="d-flex float-left ml-5">
-            <span class="text-nowrap badge-pill badge-success">#{{ tag_name }}
-            </span>
-          </a>
-        </div>
-        <div class="col-1"></div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4 mb-5 d-flex flex-row flex-nowrap {{ popular_class }} min-w-450">
+              <div class="numberCircle">{{ post_count }}</div>
+              <a href="/tag/{{ tag_name }}">
+                <span class="text-nowrap badge-pill badge-success">#{{ tag_name }}</span>
+              </a>
+            </div>
+            <div class="col-sm-0 col-md-0 col-lg-0 col-xl-2"></div>
+          </div>
         {% endif %}
       {% endfor %}
     </div>

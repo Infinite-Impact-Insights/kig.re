@@ -75,11 +75,9 @@ nav.navbar {
     }
   }
 
-
-  .navbar-brand>img {
+  .navbar-brand > img {
     max-height: 55px;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -256,7 +254,6 @@ nav.navbar {
       i {
         color: $hover;
       }
-
     }
 
     &:active {

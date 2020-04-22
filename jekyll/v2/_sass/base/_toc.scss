@@ -52,7 +52,6 @@
     }
 
     ul.sectlevel1 {
-
       padding: 0;
 
       li > a {
@@ -89,11 +88,11 @@
 }
 
 .nav-bar .nav-item .dropdown-menu {
-  a.dropdown-item, a.small {
+  a.dropdown-item,
+  a.small {
     font-weight: 600 !important;
   }
 }
-
 
 @media (max-width: 800px) {
   #toc {

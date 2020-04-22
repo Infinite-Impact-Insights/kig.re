@@ -6,6 +6,13 @@ require 'childprocess'
 extend(TaskHelper)
 Rake.extend(TaskHelper)
 
+def ruby_environment
+  env = {}
+  env['RUBYOPT'] = /^2\.7/.match?(RUBY_VERSION) ?
+      '-W:no-deprecated -W:no-experimental -W0' :
+      'W0'
+  env
+end
 
 namespace :jekyll do
   desc 'Setup dependencies: NodeJS & Gulp'
@@ -32,13 +39,26 @@ namespace :jekyll do
     end
 
     threads << Thread.new do
-      TaskHelper::Executable.new('RUBYOPT="-W0" bundle exec jekyll build').start
+      TaskHelper::Executable.new('bundle exec jekyll build', **ruby_environment).start
     end
 
     threads.map(&:join)
 
     sh 'chmod -R 755 _site/'
   end
+
+  desc 'Prettify HTML'
+  task :prettify do
+    sh %\
+        for file in $(find _site -name '*.html'); do
+          echo "${file}";
+          sed -i'' -e  's#<p><div id="preamble">#<div id="preamble">#g; s#^</div></p>$#</div>#g' ${file};
+        done
+        \
+    sh 'cd _site && prettier --html-whitespace-sensitivity=css --end-of-line=lf --print-width=150 --prose-wrap=never --parser=html --write "**/*.html" || true'
+  end
+
+  task production: %w(jekyll:generate jekyll:prettify)
 
   desc 'Serve while live updating Jekyll and SASS content'
   task :watch do

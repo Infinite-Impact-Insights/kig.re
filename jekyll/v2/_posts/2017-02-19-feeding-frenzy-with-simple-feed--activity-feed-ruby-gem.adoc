@@ -1,13 +1,13 @@
-:page-title: "Feeding Frenzy With Simple Feed Activity Feed Ruby Gem"
-:page-liquid:
+:page-asciidoc_toc: true
 :page-author_id: 1
 :page-categories: ["programming"]
-:date: 2017-02-19 00:00:00 +08:00
+:page-comments: true
 :page-excerpt: This gem implements a flexible time-ordered activity feeds commonly used within social networking applications. As events occur, they are pushed into the Feed and distributed to all users that need to see the event. Upon the user visiting their 'feed page', a pre-populated ordered list of events is returned by the library.
 :page-layout: post
+:page-liquid:
 :page-post_image: /assets/images/posts/misc/social-connections.png
 :page-tags: ["activity-feed", "redis", "ruby-gem", "open-source"]
-:page-asciidoc_toc: true
+:page-title: "Feeding Frenzy With Simple Feed Activity Feed Ruby Gem"
 
 === For the Impatient
 

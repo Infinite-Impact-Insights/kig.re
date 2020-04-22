@@ -1,0 +1,35 @@
+<div class="social-link">
+  <ul>
+    {% if author.github %}
+    <li class="list-inline-item">
+      <a target="_blank" href="{{ author.github }}">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+    {% endif %} {% if author.linked_in %}
+    <li class="list-inline-item">
+      <a target="_blank" href="{{ author.linked_in }}">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    {% endif %} {% if author.facebook %}
+    <li class="list-inline-item">
+      <a target="_blank" href="{{ author.facebook }}">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    {% endif %} {% if author.twitter %}
+    <li class="list-inline-item">
+      <a target="_blank" href="{{ author.twitter }}">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    {% endif %} {% if author.instagram %}
+    <li class="list-inline-item">
+      <a target="_blank" href="{{ author.instagram }}">
+        <i class="fa fa-instagram"></i>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>

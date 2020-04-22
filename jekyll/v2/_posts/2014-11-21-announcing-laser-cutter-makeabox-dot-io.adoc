@@ -61,7 +61,7 @@ One of the key components of laser cut boxes is the tabs that make two sides sna
 
 === Kerfing
 
-link:/assets/images/posts/makeabox/box-speakers.jpg[image:/assets/images/posts/makeabox/box-speakers.jpg[\]]
+image::/assets/images/posts/makeabox/box-speakers.jpg[link="/assets/images/posts/makeabox/box-speakers.jpg", width="75%"]
 
 When laser cuts the material it usually burns a small portion of it.  This creates a cut with a non-zero width, called *http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf[kerf]*. If your box design does not account for kerf, your box will fit loose.  The stronger the laser, the bigger the cut, the looser the fit.
 

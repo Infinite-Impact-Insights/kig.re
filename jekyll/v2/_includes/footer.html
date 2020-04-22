@@ -1,102 +1,95 @@
+{% index_off %}
 <footer>
   <div class="footer-area clearfix">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="footer-logo pb-100 pt-100 text-center">
-            <a href="{{ site.url }}">
-              {% if site.alt_logo_url %}
-              <img src="{{ site.alt_logo_url }}" alt="{{ site.title }}"/>
-              {% else %}
-              <img src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }}"/>
-              {% endif %}
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row pb-60">
-        <div class="col-lg-2 col-md-2">
+        {% assign author = site.authors | where: 'author_id', 1 | first %}
+        <div class="col-lg-3 col-md-3">
           <div class="footer-widget">
             <div class="widget-title">
-              <h4>Pages</h4>
-            </div>
-            <div class="widget-text">
-              <div class="widget-link">
-                <ul>
-                  <ul>
-                    {% for page in site.pages %}
-                    {% if page.add_to_menu == true %}
-                    <li><a rel="canonical" href="{{ page.url }}">{{ page.title }}</a></li>
-                    {% endif %}
-                    {% endfor %}
-                  </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4">
-          <div class="footer-widget">
-            <div class="widget-title">
-              <h4> About </h4>
-            </div>
-            <div class="widget-text small">
-              <p>You are visiting a personal tech-blog of Konstantin Gredeskoul, who writes on a range
-                of topics — from Ruby, to BASH and C/C++, to Bazel Build system, and all the way to building
-                hardware using Arduino.</p>
-              <div class="social-link">
-                <ul>
-                  {% if site.facebook_username %}
-                  <li><a href="https://facebook.com/{{ site.facebook_username }}"><i class="fa fa-facebook-f"></i></a></li>
-                  {% endif %}
-                  {% if site.facebook_username %}
-                  <li><a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter"></i></a></li>
-                  {% endif %}
-                  {% if site.facebook_username %}
-                  <li><a href="https://plus.google.com/{{ site.google_plus_username }}"><i class="fa fa-google-plus"></i></a></li>
-                  {% endif %}
-                </ul>
-              </div>
+              <h4>About Kig.Re©</h4>
+              {% if author %} {% include post_author.html %} {% endif %}
             </div>
           </div>
         </div>
 
-        <div class="col-lg-5 col-md-6">
-          <div class="footer-widget">
-            <div class="widget-title">
-              <h4>Recent Post</h4>
+        <div class="col-lg-1 col-md-1"></div>
+
+        <div class="col-lg-8 col-md-8">
+          <div class="footer-logo pb-100 pt-100 text-left">
+            <a href="{{ site.url }}">
+              {% if site.alt_logo_url %}
+              <img src="{{ site.alt_logo_url }}" alt="{{ site.title }}" />
+              {% else %}
+              <img src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }}" />
+              {% endif %}
+            </a>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <div class="footer-widget">
+                <div class="widget-title">
+                  <h4>Pages</h4>
+                </div>
+
+                <div class="widget-text">
+                  <div class="widget-link">
+                    <ul>
+                      {%- for page in site.pages -%} {%- if page.add_to_menu == true %}
+                      <li><a rel="canonical" href="{{ page.url }}">{{ page.title }}</a></li>
+                      {%- endif %} {%- endfor %}
+                      <li><a rel="canonical" href="/pages/categories.html">Categories</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="widget-text">
-              <div class="r-post">
-                <ul>
-                  {% index_off %}
-                  {% for post in site.posts limit:4 %}
-                  <li><a href="{{ post.url }}">{{ post.title }} </a></li>
-                  {% endfor %}
-                  {% index_on %}
-                </ul>
+
+            <div class="col-lg-8 col-md-8">
+              <div class="footer-widget">
+                <div class="widget-title">
+                  <h4>Recent Post</h4>
+                </div>
+
+                <div class="widget-text">
+                  <div class="r-post">
+                    <ul>
+                      {% for post in site.posts limit:4 %}
+                      <li>
+                        <a href="{{ post.url }}">{{ post.title }} </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="footer-widget">
+                <div class="widget-title mt-5">
+                  <h4>Stay in touch...</h4>
+                </div>
+                <div class="widget-text mt-0">{% include mailchimp_form.html %}</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-2 col-md-3">
-          <div class="footer-widget">
-            <div class="widget-title">
-              <h4>Stay in touch...</h4>
-            </div>
-            <div class="widget-text">
-              {% include mailchimp_form.html %}
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="footer-text text-center">
-            <p class="footer-address"> &copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
-          </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="footer-text text-center">
+          <p class="footer-address">
+            &copy; {{ site.time | date: '%Y' }} {{ site.title }}
+          </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
+{% index_on %}
