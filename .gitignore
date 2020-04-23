@@ -10,6 +10,7 @@ pkg/
 **/coverage
 **/.ruby-version
 **/.sass-cache
+site-v*
 # gulp-generated files:
 #jekyll/v2/assets/js/vendor.min.js
 #jekyll/v2/assets/css/site.min.css
