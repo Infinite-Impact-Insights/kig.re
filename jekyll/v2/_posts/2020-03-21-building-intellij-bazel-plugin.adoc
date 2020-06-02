@@ -1,3 +1,4 @@
+= Building IntelliJ Bazel Plugin from Sources
 :page-asciidoc_toc: true
 :page-author_id: 1
 :page-categories: [programming]
@@ -9,10 +10,8 @@
 :page-quote: "I love deadlines. I like the whooshing sound they make as they fly by." - Douglas Adamso
 :page-tags: [bazel, intellij, docker, build-systems, ide]
 :page-title: Building IntelliJ Bazel Plugin from Sources
-
 :showtitle:
 :icons: font
-
 
 == What is Bazel?
 

@@ -6,7 +6,7 @@
 :page-excerpt: In this post I share the story of how I got myself into Hardware programming with Arduino.
 :page-layout: post
 :page-post_image: /assets/images/posts/robots/robo-mania-header.jpg
-:page-tags: ["arduino", "c++", "robots",]
+:page-tags: ["arduino", "c/c++", "robots",]
 :page-asciidoc_toc: true
 
 

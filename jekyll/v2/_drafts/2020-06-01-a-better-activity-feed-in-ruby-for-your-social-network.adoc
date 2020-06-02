@@ -1,0 +1,121 @@
+= Add a Social Activity Feed for your Site in Minutes with the simple-feed Ruby Gem, Now with Many-to-One Activity Feeds!
+:favicon: /assets/images/site/favicon.png
+:sectnums:
+:page-draft: true
+:toclevels: 5
+:page-asciidoc_toc: true
+:page-toc: true
+:page-author_id: 1
+:page-categories: ["programming"]
+:page-comments: true
+:page-excerpt: Update on SimpleFeed and how easy it is to integrate the gem with your site.
+:page-layout: post
+:page-liquid:
+:page-post_image: /assets/images/posts/misc/social-connections.png
+:page-tags: ["activity", "feed", "redis", "ruby-gem", "ruby", "gems", "open-source"]
+:page-title: Add a Social Activity Feed for your Site in Minutes with the simple-feed Ruby Gem, Now with Many-to-One Activity Feeds!
+:bl: pass:[ +]
+
+[NOTE]
+====
+This post is the follow up to https://kig.re/2017/02/19/feeding-frenzy-with-simple-feed-activity-feed-ruby-gem.html[the original post] launching the https://rubygems.org/gems/simple-feed[`SimpleFeed` Ruby Gem].
+====
+
+Today I released version 3.0.0 of the https://rubygems.org/gems/simple-feed[`SimpleFeed` Ruby Gem]. It's exciting for a couple reasons. 
+
+First, it's the second most popular project I've open sourced, and second, it has some killer new features. But I get ahead of myself.
+
+== What is an Activity Feed?
+
+In the simplest, perhaps the most familiar form — you can think of an activity feed as your personal Twitter® or Facebook® feeds: only you get to see the unique combination of posts, based on who your friends are, or who you follow.
+
+If we were to break this down, the feed comprises the following steps:
+
+ 1. Someone publishes an event that other people may be interested in. If "someone" is, say, Justin Bieber, the event (post, tweet, etc) will have to be shown to his multiple million followers.
+ 2. One of the followers, opening up their Twitter Home Page, sees this event in their stream. 
+
+But how did it get there? 
+
+There are two general approaches for implementing this functionality, which differ in both complexity and their trade-offs.
+
+=== Read-Time Rendered Feeds
+
+The first approach, called the **"Read Time Computed & Rendered Feed"** is the one used by Facebook (at least some number of years ago, remember — these giants experiment with their feeds all the time). 
+
+Basically, say your friend on Facebook posts a video. First, it gets inserted into their data store, and, in its simplest form, not much else has to happen at that point.
+
+However, when you go to Facebook and load your personalized feed, Facebook's software gets to work. 
+
+A complex, and a highly parallelized algorithm kicks in, which:
+
+  * **collects all of recent events** from your friends, your groups, your events, and the pages you follow. This can be a lot of data, and much of is is probably already cached from other friends of your friend rendering their own feeds.
+
+  * Next, the algorithm **filters the topics you don't like**, and removes posts by the people you've blocked, etc.
+
+  * Finaly, whatever the events are left are are **merged together** (this is like the "reduce" phase of a map-reduce algorithm), while aggressively caching both the whole thing and the pieces it's made of. 
+
+  * Importantly, the algorithm is optimized to focus first **on the most recent events**, so that they can be shown at the top of your feed, while software continues to load, filter and merge events that would show up below on your feed page — something you can't see until you start scrolling.
+
+Does this sound like a sound strategy? Yes. Is it easy to implement? Hell, no.
+
+This algorithm is heavily **optimized in favor of extreme product flexibility**: it allows Facebook to run multiple A/B tests at the same time, to try out different types of feeds, types of merges, types of filtering, and so on. It also allows them to change or adjust your activity feed on the fly. And this is very important for Facebook, because it allows them to serve you extremely targeted advertising. 
+
+_So what are the properties of this approach?_
+
+[big lime]#PROS# ::
+
+[NOTE]
+[icon="/assets/images/icons/green-check-mark-small.png"]
+====
+Flexible::: It's highly flexible from the product standpoint
+Tunable On the Fly::: It supports massive experimentation and A/B testing 
+Near Real-Time::: It instantly reflects things like "unfriending" and "unfollowing" people or pages.
+====
+
+[big red]#CONS# ::
+[NOTE]
+[icon="/assets/images/icons/red-cross-mark-small.png"]
+====
+Difficult::: It's a very challenging implementation, especially to make it render the feed quickly.
+Computationally Expensive at Scale::: To compute this type of feed at scale requires enormous computing power.
+Potentially Slow::: I've certainly seen the spinning wheel of death too many times to count.
+====
+
+=== Write-Time Computed Feeds
+
+This is a type of feed that Twitter® actually might have used some time ago. It's based on the concept that each user wants to be able to open and read their feed very quickly. That waiting for an algorithm to combine tweets in order to serve the tweeter feed — is just not what the product is about. Instead the user generally wants to be able to see their Twitter Feed loading very very quickly, so that they can interact, and reply to tweets. 
+
+And if, perhaps, a tweet from a very popular user, such as Justin Bieber, takes some number of minutes to arrive to your Twitter feed, you'd be fine, won't you?  What if it's hours? Or days?
+
+It's actually super useful to think about what user of a given service will tolerate in terms of the delay between when the events happen, and when they are pushed for your information, i.e. into your feed, or onto your smart phone. For so many things, we are not very tolerant of *any* delay whatsoever, think — password reset emails. Oh, no, it better be in my mailbox by the time I switch to the GMail app. OR ELSE! 😡
+
+Anyway, to get back the architecture: a pretty viable implementation of an activity feed, that puts higher value on being able to very very quickly render the feed for you, at the cost of waiting for popular events to get distributed to all feeds is based on a limited and time-ordered set of serialized events that's stored in some sort of memory store, but is capped per user in length. 
+
+In other words, you could use MemSQL or Redis, and create a unique feed per user based on their USER_ID. Whenever an event occurs that the user must see, it is inserted into their "pre-computed at the event publish time" feed. If the feed length exceeds the maximum, the feed is truncated. 
+
+Well, **this is exactly the architecture that Simple Feed implements**. It defaults to 1000 events, and the events are intended to be stored as a single string, which would either be an ID of a more complex object (such as a Tweet), or perhaps a JSON version of an object, or even a fully serialized event. Howevewr, the larger the string, the more memory the feed will require, so you'd be smart to do some quick over napkin calculations before trying to run a 100,000-event long activity feed for 1B users on a box with 32GB of RAM :) 
+
+_So what are the properties of this approach?_
+
+[big lime]#PROS# ::
+
+[NOTE]
+[icon="/assets/images/icons/green-check-mark-small.png"]
+====
+Relatively Easy::: In fact, `simple-feed` ruby gems is only 2500 lines of code (half of which are tests)
+Fast::: It offers constant read time of the feed.
+Flexible::: You can still render all sorts of events with this feed.
+====
+
+[big red]#CONS# ::
+[NOTE]
+[icon="/assets/images/icons/red-cross-mark-small.png"]
+====
+Potential Write Delays::: This solution heavily depends on how quickly you can push the events to a LOT of users.
+Less Flexible Ranking::: Once the feed is written, it's expensive to rewrite or reorder it 
+Potentially Less Resilient::: Unless you have a strong Redis backup strategy, you have a risk of loosing the feeds, at least for some users (if you are sharding your Redis instance).
+====
+
+== Simple Feed, Revisited
+
+TBD.

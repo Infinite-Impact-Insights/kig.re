@@ -2,6 +2,9 @@
 
 require 'json'
 
+# rubocop: disable Metrics/CyclomaticComplexity
+# rubocop: disable Metrics/MethodLength
+# rubocop: disable Style/Documentation
 module Jekyll
   module Tags
     CLEAR_FIX = '<div class="clear-fix"></div>'
@@ -19,7 +22,7 @@ module Jekyll
 
     class LinkToTag < Liquid::Tag
       def render(_context)
-        %{+++<a name="#{@markup.gsub(/[" ]/, '')}"></a>+++}
+        %(+++<a name="#{@markup.gsub(/[" ]/, '')}"></a>+++)
       end
     end
 
@@ -37,7 +40,7 @@ module Jekyll
 
     class MacroTag < Liquid::Tag
       MACROS = {
-        read_more: %{&#8627; Keep reading &hellip;},
+        read_more: %(&#8627; Keep reading &hellip;),
         clear_fix: CLEAR_FIX.to_s
       }.freeze
 
@@ -46,9 +49,7 @@ module Jekyll
       def initialize(tag_name, macro, options)
         super
         @macro = macro.strip
-        if options&.to_s && options.to_s.split(',').include?('asciidoc')
-          self.asciidoc = true
-        end
+        self.asciidoc = true if options&.to_s && options.to_s.split(',').include?('asciidoc')
       end
 
       def render(context)
@@ -77,33 +78,28 @@ module Jekyll
     #    <img src="https://raw.githubusercontent.com/kigster/Borat/master/images/module-observer/Observer-Final-SinglePCB-HandMade.jpg">
     # </a>
     class LightboxImageTag < Liquid::Tag
-      attr_accessor :group, :url, :title, :css_class_anchor, :css_class_image, :no_asciidoc, :clear
+      attr_reader :group, :url, :title,
+                  :a_class, :img_class, :a_style, :img_style,
+                  :no_asciidoc, :clear
+
+      ANCHOR_CLASS = 'lightbox-anchor'
+      IMAGE_CLASS = 'lightbox-img'
 
       def initialize(tag_name, markup, options = {})
         super
+
         options = JSON.parse(markup.gsub("'", '"').gsub('=>', ':'))
+
         options.keys.each do |k|
           options[k.to_sym] = options[k]
           options.delete(k.to_s)
         end
 
-        self.no_asciidoc      = options[:no_asciidoc]
-        self.clear            = options[:clear]
-        self.url              = options[:url]
-        self.title            = options[:title] || ''
-        self.group            = options[:group] || 'default-group'
-        self.css_class_anchor = options[:a_class] || 'lightbox-anchor'
-        self.css_class_image  = options[:img_class] || 'lightbox-img'
+        assign_parameters(options)
       end
 
       def render(context)
-        tag = <<~HTML
-          <a href="#{image_url}" class="#{css_class_anchor}"
-           data-lightbox="#{group}"
-           data-title="#{title}"><img
-             class="#{css_class_image}"
-             src="#{image_url}"/></a>
-        HTML
+        tag = generate_tag_html
 
         case clear
         when 'before'
@@ -112,9 +108,7 @@ module Jekyll
           tag += CLEAR_FIX
         end
 
-        unless no_asciidoc
-          tag = "+++#{tag}+++"
-        end
+        tag = "+++#{tag}+++" unless no_asciidoc
 
         tag.tap do |result|
           context.stack { result.to_s }
@@ -124,6 +118,34 @@ module Jekyll
 
       def image_url
         @image_url ||= url.start_with?('http') ? url : "/assets/images/#{url}"
+      end
+
+      private
+
+      def generate_tag_html
+        %(<a href="#{image_url}"
+             style="#{a_style}"
+             class="#{a_class}"
+             data-lightbox="#{group}"
+             data-title="#{title}"><img
+              class="#{img_class}"
+              style="#{img_style}"
+              src="#{image_url}"/></a>
+        ).gsub(/[\s+]/, ' ').delete("\n")
+      end
+
+      def assign_parameters(options)
+        @no_asciidoc      = options[:no_asciidoc]
+        @clear            = options[:clear] || ''
+        @url              = options[:url] || ''
+        @title            = options[:title] || ''
+        @group            = options[:group] || 'default-group'
+
+        @a_class          = "#{ANCHOR_CLASS} #{options[:a_class]}"
+        @a_style          = options[:a_style] || ''
+
+        @img_class        = "#{IMAGE_CLASS} #{options[:img_class]}"
+        @img_style        = options[:img_style] || ''
       end
     end
   end
@@ -136,3 +158,7 @@ Liquid::Template.register_tag('link_to', Jekyll::Tags::LinkToTag)
 Liquid::Template.register_tag('render_time', Jekyll::Tags::RenderTimeTag)
 Liquid::Template.register_tag('lightbox_image', Jekyll::Tags::LightboxImageTag)
 Liquid::Template.register_tag('macro', Jekyll::Tags::MacroTag)
+
+# rubocop: enable Metrics/CyclomaticComplexity
+# rubocop: enable Metrics/MethodLength
+# rubocop: enable Style/Documentation

@@ -1,3 +1,5 @@
+
+
 a.lightbox-anchor {
   border-radius: 5px;
   border: 1px solid #503757;
@@ -21,5 +23,19 @@ a.lightbox-anchor {
     margin-top: 0;
     margin-bottom: 10px;
     width: 31% !important;
+  } 
+  
+  img.lightbox-img-big {
+    float: none;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100% !important;
   }
+}
+
+a.anchor-full {
+  float: none;
+  width: 95% !important;
+  margin-left: 0;
+  margin-right: 0;
 }

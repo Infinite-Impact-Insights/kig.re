@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# vim: ft=ruby
 require_relative '../task_helper'
 require 'childprocess'
 

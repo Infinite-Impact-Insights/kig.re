@@ -1,0 +1,161 @@
+= Test your Understanding of Ruby Concurrency
+:favicon: /assets/images/site/favicon.png
+:page-toclevels: 5
+:page-sectnums:
+:page-asciidoc_toc: true
+:page-author_id: 1
+:page-categories: [programming]
+:page-comments: true
+:page-excerpt: "Test your Ruby Concurrency Knowledge with Two Questions"
+:page-layout: post
+:page-liquid:
+:page-post_image: /assets/images/posts/concurrency/header.png
+:page-quote: "I love deadlines. I like the whooshing sound they make as they fly by." - Douglas Adamso
+:page-tags: [bazel, intellij, docker, build-systems, ide]
+:page-title: Test your Understanding of Ruby Concurrency
+
+:showtitle:
+:icons: font
+
+
+== Maximizing A Server Utilization
+
+Let's say we are running a Rails website on AWS, and we purchased a beefy multi-core server with 8 cores and lots of RAM. Our site is popular, and so we need to squeeze as much throughput from the server as possible.
+
+If the server never exceeds 20% CPU we are wasting resources and money. Ideally we want to run the server closer to 80% of the total CPU on average, so that we **utilize** the allocated resources well.
+
+Assuming there is plenty of traffic available, we are trying to decide how to configure Puma on this server. In particular we are looking to decide on  two numbers for our 8-core server:
+
+=== Question(s)
+
+1. **What's the ideal number of workers processes?** +
+We'll call this number of workers — `W`. + 
+ +
+2. **What's the ideal number of threads per process?** — +
+We'll call this number of threads — `T`.
+
+Together, `W` and `T` define the number of processes and threads your application offers. This type of information is critical when tuning a multi-threaded/multi-process app server such as Puma, or Thin, or even the popular background jobs framework `Sidekiq`. 
+
+=== Answer
+
+To fully saturate this 8-core server and drive its utilization as high as possible, we should set:
+
+
+++++
+<style>
+
+form.choices-form {
+    margin-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 100px;
+}
+
+form.choices-form strong {
+    opacity: 0.5;
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    top: 3px;
+    margin-bottom: -20px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 20pt;
+}
+
+form.choices-form input {
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    opacity: 0;
+}
+
+form.choices-form label strong {
+    color: rgba(0%, 9%, 30%, 0.7) !important;
+    opacity: .8;
+}
+
+form.choices-form label input[type="radio"]:checked+strong {
+    color: rgba(19.6%, 80.4%, 19.6%, 1) !important;
+}
+
+form.choices-form label {
+    height: 50px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+form.choices-form label:hover {
+}
+
+form.choices-form button {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+</style>
+<div style="margin-left: 40px;">
+<h5>Choose Wisely:</h5>
+<div class="panel">
+<form id="problem-1" class="choices-form">
+    <label><input type="radio" name="problem-1" value="A"><strong>🅰</strong>&nbsp;&nbsp;<code>W  == 1 &&  T == 100</code></input></label>
+    <label><input type="radio" name="problem-1" value="B"><strong>🅱</strong>&nbsp;&nbsp;<code>W == 1 && (1 < T < 8)</code></input></label>
+    <label><input type="radio" name="problem-1" value="C"><strong>🅲</strong>&nbsp;&nbsp;<code>W == 4 && T == 2</code></input></label>
+    <label><input type="radio" name="problem-1" value="D"><strong>🅳</strong>&nbsp;&nbsp;<code>W == 4 && T == 4</code></input></label>
+    <label><input type="radio" name="problem-1" value="E"><strong>🅴</strong>&nbsp;&nbsp;<code>W == 8 && T == 8</code></input></label>
+    <label><input type="radio" name="problem-1" value="F"><strong>🅵</strong>&nbsp;&nbsp;<code>W == 8 && T == 1</code></input></label>
+    <label><input type="radio" name="problem-1" value="G"><strong>🅶</strong>&nbsp;&nbsp;Not enough information to choose <code>T</code>, but <code>W == 8</code></label>
+    <label><input type="radio" name="problem-1" value="G"><strong>🅷</strong>&nbsp;&nbsp;Not enough information to choose <code>W</code>, but <code>T == 8</code></label>
+    <label><input type="radio" name="problem-1" value="H"><strong>🅸</strong>&nbsp;&nbsp;<code>W + T == 8</code></label>
+    <label><input type="radio" name="problem-1" value="H"><strong>🅺</strong>&nbsp;&nbsp;None of the above</label>
+    <button type="button" class="btn btn-success">Submit Answer</button>
+
+</form>
+</div>
+++++
+
+== Problem 2. "Speeding up a Computation"
+
+In this problem, we have a large queue (i.e. an Array) pre-filled with various objects, and we need to compute a SHA256 of each object using a SHA-function provided to us.
+
+**What we know:**
+
+* Objects in the array are independent of each other, and SHA can be computed in any order.
+
+* Computing SHA is a pure "on-CPU" operation requiring no IO.
+
+**Constraints**:
+
+ * We are only allowed _one active/running Ruby process at a time._
+
+ * We can choose any Ruby implementation we like.
+
+ * We are still running on the same empty 8-core server.
+
+=== Question
+
+We would like to speed up the computation somehow.
+
+**Will the overall operation be faster if we created 8 threads within the Ruby process, and split the SHA computation across the 8 running threads until all of them are done?**
+
+=== Answers
+
+A. Yes, by approximately 8x, but only if we use MRI ("C") Ruby.
+
+B. Yes, but slightly, not as much as 8x.
+
+C. No, it will be exactly the same.
+
+D. No, the overall performance will decrease.
+
+E. Yes, it will be ~8x faster on JRuby, but slower on MRI.
+
+F. "Dude, where is my car?"
+
+G. None of the above.
+
+

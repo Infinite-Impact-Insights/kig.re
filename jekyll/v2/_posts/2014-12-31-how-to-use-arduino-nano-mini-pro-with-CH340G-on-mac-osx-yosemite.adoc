@@ -6,7 +6,7 @@
 :page-excerpt: Recent versions of cheap Arduino clones have been coming out with a different USB/Serial chip, which replaces the usual FTDI. The chipset is called CH340G and this post explains how to install the drivers for it on both Mac and Windows.
 :page-layout: post
 :page-post_image: /assets/images/posts/arduino/nano-ch340g-top.jpg
-:page-tags: ["arduino", "coding"]
+:page-tags: ["arduino", "coding", "c/c++"]
 :page-title: "How To Use Arduino Nano Mini Pro With CH340G On Mac Osx Yosemite"
 :page-liquid:
 :page-asciidoc_toc: true

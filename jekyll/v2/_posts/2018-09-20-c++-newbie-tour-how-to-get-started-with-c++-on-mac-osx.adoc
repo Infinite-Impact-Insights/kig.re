@@ -103,7 +103,7 @@ int main(){
   #elif __cplusplus==201103L
     std::cout << "C++11" << std::endl;
   #else
-    std::cout << "C++" << std::endl;
+    std::cout << "c/c++" << std::endl;
   #endif
   return 0;
 }

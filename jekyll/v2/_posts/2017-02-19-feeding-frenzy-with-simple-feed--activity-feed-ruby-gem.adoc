@@ -1,4 +1,8 @@
+:favicon: /assets/images/site/favicon.png
+:sectnums:
+:toclevels: 5
 :page-asciidoc_toc: true
+:page-toc: true
 :page-author_id: 1
 :page-categories: ["programming"]
 :page-comments: true
@@ -6,31 +10,40 @@
 :page-layout: post
 :page-liquid:
 :page-post_image: /assets/images/posts/misc/social-connections.png
-:page-tags: ["activity-feed", "redis", "ruby-gem", "open-source"]
-:page-title: "Feeding Frenzy With Simple Feed Activity Feed Ruby Gem"
+:page-tags: ["activity", "feed", "redis", "ruby-gem", "ruby", "gems", "open-source"]
+:page-title: Add a Social Activity Feed for your Site in Minutes with the simple-feed Ruby Gem
+:bl: pass:[ +]
 
-=== For the Impatient
+This post is the "official" announcement of the new open source https://rubygems.org/gems/simple-feed[ruby gem] called https://github.com/kigster/simple-feed[Simple Feed], released as a under the MIT License.
 
-I am very excited to announce the official release of the open source Ruby library called https://github.com/kigster/simple-feed[Simple Feed], released as a https://rubygems.org/gems/simple-feed[ruby gem].
+== What is an Activity Feed?
 
-I am the primary developer on this project, and my name is https://kig.re[Konstantin Gredeskoul] -- which you probably already knew. This library would not have been possible without the generosity and sponsorship of https://simbi.com[Simbi.com].
+In the simplest, perhaps the most familiar form — you can think of an activity feed as your personal Twitter® or Facebook® feeds: only you get to see the unique combination of posts, based on who your friends are, or who you follow.
 
-Simple Feed is running live in production, and is powering three separate social feeds on Simbi: the global feed, followers feed, and "own" feed -- events related the feed owner's actions:
+== SimpleFeed — Activity Feed Powering Social Sites
 
-image::https://raw.githubusercontent.com/kigster/simple-feed/master/man/activity-feed-action.png[,100%]
+This library powers several feeds, notably one on Simbi.COM (the sponsor of this gem):
 
-The software is distributed under the http://opensource.org/licenses/MIT[MIT License] and is available today. It's written in https://www.ruby-lang.org/en/[ruby] and does not depend on http://rubyonrails.org[Ruby on Rails]. Therefore it can power applications running on Rack, Sinatra and using alternative web frameworks. Having said that, at Simbi we are using it with Rails, and I may release a small Rails adapter for SimpleFeed in the future.
+image::/assets/images/posts/misc/simple-feed-black.png[Activity Feed,width="100%",link=https://simbi.com/kig]
 
 The short-list of its features is:
 
 * You can define any number of feeds per Ruby VM
+
 * SimpleFeed stores pure strings associated with a floating point number (typically -- time), and so does not assume any particular format of the data
+
 * The data is stored in pluggable backends, with `Redis` and `Hash` providers supplied.
+
  ** New providers can be easily built and used with the same API.
+
  ** Using https://github.com/twitter/twemproxy[Twemproxy], the backend can be transparently sharded to support millions of users.
+
  ** Redis provider is optimized for multi-user batch operations, such as posting an event to many users at once using Redis `pipeline`.
+
 * Rich API allowing both single-user (i.e., for reading the feed) and multi-user (i.e., for writing to feed) batch operations
+
 * Powerful DSL
+
 * Near 100% test coverage :)
 
 For information on how to use, install and other technical details I refer you to https://github.com/kigster/simple-feed[README] or the more detailed discussion below.
@@ -43,9 +56,10 @@ Wikipedia then goes into describing various types of feeds, such as the RSS or N
 
 This is why I feel that I have a particular responsibility to explain them to folks that may not fully get the concept, in a way that just makes sense. And there is no better place to start than to clarify that....
 
-____
+[TIP]
+====
 A feed is just a _list_. An ordered list of things, and typically -- similar looking things.
-____
+====
 
 -- Really? -- You might exclaim.
 
@@ -134,4 +148,4 @@ Happy Feeding!
 === References
 
 * https://hashnode.com/post/architecture-how-would-you-go-about-building-an-activity-feed-like-facebook-cioe6ea7q017aru53phul68t1/answer/ciol0lbaa02q52s530vfqea0t["How would you go about building an activity feed like Facebook?"] by https://hashnode.com/@leebyron[Lee Byron].
-* http://jeffterrace.com/docs/feeding-frenzy-sigmod10-web.pdf["Feeding Frenzy: Selectively Materializing Users`' Event Feeds"] (Yahoo! Research paper).
+* http://jeffterrace.com/docs/feeding-frenzy-sigmod10-web.pdf["Feeding Frenzy: Selectively Materializing Users`' Event Feeds"] (Yahoo! Research paper).`
