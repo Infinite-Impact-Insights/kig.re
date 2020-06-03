@@ -1,8 +1,7 @@
-
 (function ($) {
   "use strict";
 
-  hotkeys('ctrl+option+l,ctrl+command+l,ctrl+l,?', function (event, handler){
+  hotkeys('ctrl+option+l,ctrl+command+l,ctrl+l,?', function (event, handler) {
     event.preventDefault();
     $("#search-query").focus();
   });
@@ -31,7 +30,6 @@
       }
     });
   });
-
 
   /* Mobile-menu	 */
   $("#nav-button").on("click", function () {
@@ -62,21 +60,29 @@
     }
   });
 
-  $(document).ready(function () {
-  });
-
   new WOW().init();
 
-  const buttonToggler = function(buttonName, divName, openLabel, closedLabel) {
-    $(buttonName).on("click", function(_event) {
+  const buttonToggler = function (buttonName, divName, openLabel, closedLabel) {
+    $(buttonName).on("click", function (_event) {
       if ($(buttonName).html() === closedLabel) {
         $(divName).toggle('slow');
-        // $(divName).fadeOut("slow", function () {});
-        setTimeout(function(){  $(buttonName).html(openLabel); }, 200);
+        setTimeout(function () {
+          $(buttonName).html(openLabel);
+        }, 200);
       } else {
         $(divName).toggle('slow');
-        // $(divName).fadeIn("slow", function () {});
-        setTimeout(function(){  $(buttonName).html(closedLabel); }, 200);
+        setTimeout(function () {
+          $(buttonName).html(closedLabel);
+        }, 200);
+      }
+
+      if (ga != undefined) {
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'self-test',
+          eventAction: 'show-answer',
+          eventLabel: divName
+        });
       }
     })
   }
