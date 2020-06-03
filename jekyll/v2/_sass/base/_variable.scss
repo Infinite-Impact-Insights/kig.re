@@ -5,7 +5,15 @@
 */
 $primary-font-size: 1rem;
 $primary-font-size-small: 0.9rem;
+$primary-font-family: 'Titillium Web', 'Corbel', 'Tahoma', sans-serif;
+
+$font-family: $primary-font-family;
+$font-preamble-family: "Yanone Kaffeesatz", sans-serif;
+$font-family-serif: "Noto Serif Myanmar", serif;
+$font-monospace-family: "Consolas", "PT Mono", "Monaco", monospace;
+
 $code-font-size: 14px;
+
 $h1-font-size: 70px;
 $h2-font-size: 24px;
 $font-20: 20px;
@@ -16,11 +24,7 @@ $line-height-3: 36px;
 $font-bold: 700;
 $font-medium: 600;
 $font-normal: 400;
-$font-family: "poppins", sans-serif;
-$font-preamble-family: "Yanone Kaffeesatz", sans-serif;
-$font-family-serif: "Noto Serif Myanmar", serif;
 
-$font-monospace-family: "Consolas", "PT Mono", "Monaco", monospace;
 $primary-color: #404040;
 $primary-link: #ff8533;
 $white-text: #fff;

@@ -7,7 +7,6 @@
     $("#search-query").focus();
   });
 
-
   $(document).ready(function () {
     $("#search-icon").on("click", function (event) {
       $("#search-form").submit();
@@ -63,6 +62,36 @@
     }
   });
 
+  $(document).ready(function () {
+  });
+
   new WOW().init();
+
+  const buttonToggler = function(buttonName, divName, openLabel, closedLabel) {
+    $(buttonName).on("click", function(_event) {
+      if ($(buttonName).html() === closedLabel) {
+        $(divName).toggle('slow');
+        // $(divName).fadeOut("slow", function () {});
+        setTimeout(function(){  $(buttonName).html(openLabel); }, 200);
+      } else {
+        $(divName).toggle('slow');
+        // $(divName).fadeIn("slow", function () {});
+        setTimeout(function(){  $(buttonName).html(closedLabel); }, 200);
+      }
+    })
+  }
+
+  buttonToggler(
+      "#problem-1-button",
+      "#problem-1-solution",
+      "Show me the answer!",
+      "Hide the solution...");
+
+  buttonToggler(
+      "#problem-2-button",
+      "#problem-2-solution",
+      "Show me the answer!",
+      "Hide the solution...");
+
 
 })(jQuery);

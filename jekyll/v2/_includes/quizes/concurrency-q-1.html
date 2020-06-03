@@ -1,0 +1,83 @@
+<div class="quiz">
+  <strong>Choose one answer (if it's red — it's wrong). Keep clicking until you find the greeen :) :</strong>
+  <form id="problem-1" class="quiz-form">
+    <label class="AmQIW3Qb4YffNBQKVfK8e">
+      <input type="checkbox" value="A" name="A"/>
+      <strong>&#127344;</strong>
+      <code>W == 1 && T == 100</code>
+    </label>
+    <label class="QgOEASePcs4MggNz9WnBJ">
+      <input type="checkbox" value="B" name="B"/>
+      <strong>&#127345;</strong>
+      <code>W == 1 && (1 < T < 8)</code>
+    </label>
+    <label class="4jJQc83xIiyGtolXoBp1l">
+      <input type="checkbox" value="C" name="C"/>
+      <strong>&#127346;</strong>
+      <code>W == 4 && T == 2</code>
+    </label>
+    <label class="FHsWvpKLSqbUGFqK9UILJ">
+      <input type="checkbox" value="D" name="D"/>
+      <strong>&#127347;</strong>
+      <code>W == 4 && T == 4</code>
+    </label>
+    <label class="2LMAhLw2sC9hhD3zgUy4D">
+      <input type="checkbox" value="E" name="E"/>
+      <strong>&#127348;</strong>
+      <code>W == 8 && T == 8</code>
+    </label>
+    <label class="BlFFlYRQV9MKqC0agnQ8K">
+      <input type="checkbox" value="F" name="F"/>
+      <strong>&#127349;</strong>
+      <code>W == 8 && T == 1</code>
+    </label>
+    <label class="ZVgDMDBmxqRN1ECpEeHdA">
+      <input type="checkbox" value="G" name="G"/>
+      <strong>&#127350;</strong>
+      <span>Not enough information to choose <code>T</code>, but <code>W = 8</code></span>
+    </label>
+    <label class="4PrvsjLiWNSKLtxEJtItd">
+      <input type="checkbox" value="G" name="G"/>
+      <strong>&#127351;</strong>
+      <span>Not enough information to choose <code>W</code>, but <code>T = 8</code></span>
+    </label>
+    <label class="HBZf8tWhw6PDYqtZdISYK">
+      <input type="checkbox" value="H" name="H"/>
+      <strong>&#127352;</strong>
+      <code>W + T == 8</code>
+    </label>
+    <label class="6cJItIKUrPDBct33OxKNc">
+      <input type="checkbox" value="H" name="H"/>
+      <strong>&#127353;</strong>
+      <span>None of the above</span>
+    </label>
+
+    <button type="button" id="problem-1-button"
+            class="answer-button btn btn-success"> Show me the answer!
+    </button>
+
+    <div class="solution panel">
+      <div id="problem-1-solution" class="answer-content" style="display: none">
+        <h3>The correct answer is <strong class="correct-answer">&#127350;</strong></h3>
+        <p>Let's break this down: <code>W</code> — is the number of processes.</p>
+
+        <p>Since MRI Ruby can only max out a single CPU core, one process limits us to a single core. Therefore we typically want to run the same number of processes as we have CPU cores available to us.</p>
+
+        <p>If we are not able to push each process to the max, we might need to use more processes than we have cores available, but that is typically a sign that number of threads is insufficient.</p>
+
+        <p>This brings to the last value: <code>T</code>.</p>
+
+        <p>To properly determine how many threads per process we should run, we'd need some sort of monitoring like DataDog or NewRelic (it can also
+          be done without the monitoring giants, but it's much more involved).</p>
+
+        <p>What we want to know is how much time each process (running on 1 thread) spends in CPU versus IO. That gives us the ratio to figure out the
+          <code>T</code> in question.</p>
+
+        <p>But this is the subject of another post.</p>
+
+        <p>Thanks for playing!</p>
+      </div>
+    </div>
+  </form>
+
+</div>

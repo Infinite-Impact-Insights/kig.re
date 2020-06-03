@@ -1,0 +1,57 @@
+<div class="quiz">
+  <h5>Choose one:</h5>
+  <form id="problem-2" class="quiz-form">
+
+    <label class="AmQIW3Qb4YffNBQKVfK8e">
+      <input type="checkbox" value="A" name="A"/>
+      <strong>&#127344;</strong>
+      <span>Use C/MRI-Ruby, then it will be 8x faster.</span>
+    </label>
+
+    <label class="QgOEASePcs4MggNz9WnBJ">
+      <input type="checkbox" value="B" name="B"/>
+      <strong>&#127345;</strong>
+      <span>Eight threads might give us ~ 10% speed boost.</span>
+    </label>
+    <label class="4jJQc83xIiyGtolXoBp1l">
+      <input type="checkbox" value="C" name="C"/>
+      <strong>&#127346;</strong>
+      <span>Nope, threads or no threads, all the same.</span>
+    </label>
+    <label class="FHsWvpKLSqbUGFqK9UILJ">
+      <input type="checkbox" value="D" name="D"/>
+      <strong>&#127347;</strong>
+      <span>Actually, with 8 threads it will be slower.</span>
+    </label>
+    <label class="ZLMAhLw2sC9hhD3zgUy4D">
+      <input type="checkbox" value="E" name="E"/>
+      <strong>&#127348;</strong>
+      <span>On JRuby ~ 8x faster, on MRI ~ a bit slower.</span>
+    </label>
+    <label class="BlFFlYRQV9MKqC0agnQ8K">
+      <input type="checkbox" value="F" name="F"/>
+      <strong>&#127349;</strong>
+      <span>None of the above.</span>
+    </label>
+
+    <button type="button" id="problem-2-button"
+            class="answer-button btn btn-success">Show me the answer!
+    </button>
+
+    <div class="solution panel panel-info">
+      <div id="problem-2-solution" class="answer-content" style="display: none">
+        <h3>The correct answer is <strong class="correct-answer">&#127348;</strong></h3>
+        <p>Let's break this down:</p>
+
+        <p>Because the task at hand is CPU-bound, MRI Ruby (with it's GIL) will not be able to take advantage of multiple cores with just one Ruby
+          process. In fact, if we did introduce a thread-pool, Ruby will have to do _more_ work, since it will need spend some CPU cycles on context
+          switching: voluntary and involuntary.</p>
+
+        <p>JRuby, on the other hand, is able to fully utilize a multi-core environment with Java's <a
+          href="https://en.wikipedia.org/wiki/Green_threads" target="_blank">green threads</a>.</p>
+      </div>
+    </div>
+  </form>
+</div>
+
+
