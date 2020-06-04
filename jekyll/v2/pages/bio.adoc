@@ -1,0 +1,61 @@
+:page-asciidoc: true
+:page-author_id: 1
+:page-layout: page
+:page-liquid:
+:page-image_url: '/assets/images/posts/kig/kig-2015-geekcamp-328x328.png'
+:page-title: "Short Bio"
+:page-add_to_menu: true
+:page-asciidoc_toc: true
+
+== Short Bio
+
+Me — is Konstantin Gredeskoul.  This is a, not-so-formal BIO.
+
+{% lightbox_image { "url" : "posts/misc/arkanoid.jpg",  "title": "Arkanoid for MS-DOS" } %}
+
+My first foray into computers came through my Dad, who was a computer programmer back in the USSR. His job required programming giant mainframes that controlled Soviet Nuclear power stations. And, in case you are wondering, no, not Chernobyl.
+
+When I was about 13 my school received a set of new computers, mostly dumb graphical terminals connected to a central computer under the teachers desk. For the following year I mastered the entire network, and even managed to write a drawing program sort of like "Paint", except you had to use keyboard to draw, since we didnt' have the mouse just yet.
+
+{% lightbox_image { "url" : "pages/ibm-pc.jpg",  "title": "IBM X86" } %}
+
+A few years later, my mothers Physics department acquired a clone of IBM x86, and I instantly fell in love. For years, a 14 yo boy was the only one who knew how to use the new and expensive computer that the department acquired. And use it I did. In the process, becoming the grand master of the incredible game called "Arkanoid".
+
+== College
+
+During the years 1992-1995 I completed a mathematics degree from the https://www.monash.edu.au[Monash University] in Melbourne Australia.
+
+I was hacking on computers the entire time, but still manage to pass my exams. As soon as I was done with college, I decided I want to write software for a living.
+
+There was one particular influencer that I must acknowledge: sometime around 1995 I read a long and very detailed article about the career of Bill Gates. The very respectable magazine in question is... Playboy.
+
+[quote]
+"Remarkably, I found the entire interview online, and so if you care to read an article that changed my life, go ahead, {{ site.url }}assets/pdfs/bill-gates-interview.pdf[Interview with Bill Gates]".
+
+---
+
+== **Software Engineering Career**
+
+I started building applications professionally in 1996, when I was placed as a junior contractor in the operations group managing a very large-scale project. The goal was to rebuild the entire messaging and cargo tracking software for the Australian Railway Corporation named aptly https://en.wikipedia.org/wiki/National_Rail_Corporation[National Rail Corporation].  Back then, we used this fascinating commercial software called https://en.wikipedia.org/wiki/Tuxedo_(software)[Tuxedo]  as middleware, transaction manager, a queueing system, and so much more. Tuxedo has a fascinating history -- which could be a subject of an entirely separate post, but suffice it to say that it was developed by AT&T in the late 1970s, in a practically the same lab as UNIX itself! At some point in the 80s, it was then sold to Novell, then to BEA -- which eventually used it to build it's flagship product http://www.oracle.com/technetwork/middleware/weblogic/overview/index-085209.html[WebLogic] that now belongs to Oracle. I was told that there was a time where British Airways used Tuxedo to network over 20,000 stations together.
+
+This is where I learned how to build distributed applications -- with tenets such as _high availability, fault tolerance, load balancing, transactional queueing, distributed transactions_ spanning several databases, plus several queues. Oh my gosh, if it sounds complicated -- it' because it was! But once you get the main concepts behind how Tuxedo was constructed: each node had a server process that communicated with other nodes, and managed a local pool of services -- it sounds very reasonable. I stayed on this project for about a year and a half, long enough that all of the most senior people who understood the messaging component had left, leaving me -- 23-year-old junior programmer, the only person understanding the architecture and operational aspect of that system. That part of the waterfall was not predicted by their project managers ☺.
+
+Imagine being flown on a corporate helicopter across the gorgeous city of Sydney, just to attend the meeting with people five levels senior to explain how the multi-million dollar messaging infrastructure works :)  That was a good day.
+
+=== Distributing Email in San Francisco
+
+I took my knowledge of distributed systems to the US, where I was hired to build Topica, a hot new startup in San Francisco creating a new generation of listservs, or email groups (aka. mailing lists). The year was 1998, and there sure wasn't any open source distributed networking software that gave us the incredible reliability and versatility that the middleware like Tuxedo provided, so we bought a license. Whether this was the right choice for the company as at time is not for me to judge. But the system we built ended up using Tuxedo (ANSI C with Tuxedo SDK), Perl (with native bindings for C), and horizontally distributed Oracle databases. This beast ended up being so damn scalable that at a point in time someone mentioned Topica as a source of more than 1% of *all daily internet* at that time! And sure enough, we were sending several hundred million messages per day.  This second experience with Tuxedo forever changed the way I approach distributed application development.
+
+=== Ruby, I love you.
+
+Since about 2006 I've written more code in Ruby than in any other language.
+
+I love Ruby, and I love how terse it is, how expressive it is and how little code you need to do complicated things.
+
+But these are the same reasons others don't like Ruby.
+
+== To be continued...
+
+
+
+
