@@ -1,0 +1,113 @@
+:favicon: /assets/images/site/favicon.png
+:page-asciidoc_toc: true
+:page-author_id: 1
+:page-categories: ["politics", "social change", "race"]
+:page-comments: true
+:page-excerpt: "We are not makers of history. We are made by history. — MLK Jr.”
+:page-layout: post
+:page-liquid:
+:page-post_image: /assets/images/posts/race/racial.jpg
+:page-quote: "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that." — Martin Luther King JR
+:page-tags: [social commentary, race, politics, justice]
+:page-title: "History in the context of Racial Injustice and Social Change"
+:showtitle:
+:icons: font
+
+"Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that." — Martin Luther King JR
+
+== Statute of Christopher Columbus in San Francisco
+
+Today, San Francisco city authorities took down a statute of Christopher Columbus. 
+
+https://www.latimes.com/california/story/2020-06-18/christopher-columbus-statue-removed-san-franciscos-coit-tower[Los Angeles Times writes:]
+
+{% lightbox_image {
+    "clear": "before",
+    "asciidoc": true,
+    "url": "posts/race/columbus.jpg",
+    "title": "Defaced Statute of Christopher Columbus in San Francisco"
+} %}
+
+> The decision to remove the statue was at the direction of San Francisco Mayor London Breed, and the reasoning behind it was twofold. According to the San Francisco Arts Commission, which oversees the care of the city's civic art collection, the installation did not align with the city's "commitment to racial justice." At the same time, a planned protest had circulated online calling on citizens to assemble on Friday and remove the 2-ton, 12-foot tall statue from its pedestal. Because of the risk to residents, officials said they acted proactively to remove the statue.
+
+Having been born and, later, grown up in a totalitarian regime of the Soviet Union, I can not help but notice some disturbing parallels to what is happening around us today, that make me feel pretty uneasy.  
+
+This post is the exploration of what makes me feel uneasy and why. 
+
+
+== Disclaimer
+ 
+If you find any part of this narrative offensive, please allow me to I remind you that: 
+
+* I was not born in this country and, therefore, have a different context for my platform.
+* If you disagree or do not like what you are reading, remember that we are both entitled to our opinions.
+* I invite you to share your thoughts in the comments. I think of myself as someone open to new ideas and new information, so please feel free to share if you have something constructive to add. 
+* That said, any offensive comments or personal attacks will be trashed without hesitation. 
+
+
+I realize that by expressing my views (which some might find unpopular), I risk alienating some of you, and that would be very unfortunate. I only ask that you try to understand my point of view without resorting to trolling, shaming, or personal attacks. I am writing this because I want to both to express my solidarity with the racial injustive movement, but also some concerns about the related current events, while I also want to hear your thoughts on the subject, given that many of you were born in this country while I wasn't.
+
+== Born Jewish
+
+Some background first. 
+
+I am Jewish, so believe me, I know first hand what it's like to be on the other end of racism-like discrimination, or anti-semitism to be exact. I realize that my encounters with anti-semitism do not come anywjere close to the amount of racial injustice experienced by an African American living in the USA on a daily basis, especially in some parts of the South. I have no intention to trivialize other people's experiences. And yet I did encounter anti-semitism in the Ukrainian high schools, and later at the University. It was shocking to realize that someone hates you just for being born that way. It was incredibly frustrating, to realize that nothing I could do that would change their mind.
+
+It is just as absurd of an idea to me now, as it was back then. I always loved people, regardless. Admittedly, I love people a bit less today as compared to back then, because I am older, less patient, and more grumpy. But the idea of racial discrimination was entirely theoretical to me until I came to the USA and started to see it daily on the streets, on the TV, and, a few times, at a workplace.
+
+=== Friendship
+
+During my first year of college (still in the USSR), I made my first "foreign" friend. His name was Ottoo, and he was from Ghana, Africa. We became good friends with "tutoring benefits" — I helped him grasp the mind-bending depth of the abstract mathematics we were studying (in Russian), and he helped me with my English. I was translating the lecture notes from Russian so that Ottoo could read them. We both cried and hugged when I left Ukraine for Australia with my family. Ever since then, I've been genuinely interested in and fascinated by the African and African American cultures. 
+
+Fast forward to today. _The racial injustice and the police brutality towards black people is unacceptable_, and there is no way around this truth.  We are all either equal under the law, or not. And right now, we are very far from equality, and that has to change. That is something I can get behind 1000%. As much I struggled with the concept of White Privilege, I have researched, understood, and accepted it. Just as did with male privilege, young privilege, and so on.
+
+== Made in America
+
+=== Police Brutality in the USA
+
+A little detour — why is American Police so heavy-handed in general? Nowhere in the World have I seen Police so well trained, so well equipped, and trigger happy as in the US of A. You want to know why? The answer is trivial — guns. In Australia, gun laws are much tighter than in the US, and the way Police conduct themselves is night and day compared to here. They are polite, reserved, helpful, and rarely forceful. So, stepping back a bit — what does it all mean? 
+
+It means police brutality in the USA is a consequence of the increased risk that cops face, as everyone and their dog may shoot them back at any time. I would probably freak the fuck out if I were facing these odds daily. Now, let's are clear — none of that justifies racially targeted brutality — that is inexcusable. But at least we should level that cops in this country are facing shitty odds of long term survival and I imagine that has to get to your head someday. I think that it's unreasonable to be asking for the Police to show compassion and take steps to curb racial injustice without showing similar compassion towards thousands of honest, hard-working, non-discriminating and law-abiding cops.
+
+=== Rewriting History in the name of Social Justice
+
+It feels to me that many people in this country want to change or rewrite History. Maybe this is where I misunderstand the intention, but this is how it comes across. And that makes me draw parallels with the totalitarian regime I am familiar with, which practiced rewriting of the History as often as breathing or eating. 
+
+When the Soviet Union fell apart, Russia undertook a massive task to restore its rich cultural History. Many original street names were restored in Moscow and other cities. Cities that have been named after Stalin and their accomplices, in their attempt to squash any sign of the bourgeois or intelligentsia. It worked, you know? Bolsheviks did indeed rewrite the History and made it "truth" for about sixty-eight years. Ironically, the state-run newspaper that was a front to the KGB was called " Правда" (Pravda), which translates as "Truth." Funny, KGB, the joke is on you.
+
+Naturally, **we shouldn't celebrate generals that fought in the Civil War against what is today the USA**, so removing confederate monuments from the South seems like it should have been done about a century ago, to be honest.
+
+However, when it comes to folks like Christopher Columbus, I am not so sure. Let me elaborate.
+
+=== Christopher Columbus
+
+To me personally, Christopher Columbus represents the golden age of discovery — a historical turning point when Europe realized it wasn't the only continent on Earth. It represents the age of colonization, which in turn represents the expansions, economic, and cultural, as well as the oppression. I think these go hand in hand. You can't colonize without using some form of power, and in that sense, colonization is warfare. Therefore, Columbus was an Italian navigator and military commander — an admiral — who aided in Europe's quest to expand to the land where we all live today. When I was a kid, I read a ton of books on explorers, both fiction and non-fiction, authors like Jules Vernes, Robert Luis Stevenson, and so forth. The explorers were my heroes, brave and uncompromising, with the incredible resolve and determination. The explorers of that age were an inspiration to the young me. 
+
+And that brings us to today — when the San Francisco government took preemptive action to remove the statute of CC near the Coit Tower. 
+
+=== The Past is Often Horrible
+
+Having read the Wikipedia page about the https://en.wikipedia.org/wiki/Christopher_Columbus#Accusations_of_tyranny_and_brutality[torture, brutality, and tyranny] that Columbus unleashed on the colonies makes me cringe. It is horrific. 
+
+And yet, part of me feels like by denouncing these historical figures we are effectively judging their actions of five hundred years ago by today's social norms and standards. We lack the context, and we are devoid of any understanding of the pressures and challenges of that era, and yet we seem to have no issues with judging them as if they lived today.
+
+It is this that I take issue with.
+
+=== Getting Rid of the Monsters
+
+The call to take down a statue to a 500-year old explorer who discovered the continent where most of us live now, just because Columbus (like many others) owned slaves back then seems utterly ridiculous to me, and I am sorry if this is offensive to you. Deal with it. Comment if you must. But it makes no sense to me. 
+
+We should celebrate historical figures who did something unique, net-positive and challenging for that age and their generation. Not for what they did like everyone else at that time, that was entirely socially acceptable back then — yes, I am referring to owning slaves.
+
+I assume that there were lots of wealthy people back then, who engaged in the slave trade. We can both condemn slavery while also acknowledging the role Columbus played in the discovery of this country. Can we not do both of those things? If so, why not?
+
+If you feel so strongly that Columbus was Evil because he concurred unexplored lands, murdered indigenous population, and owned slaves, — to the point of taking down his statutes, — **how can you justify continuing to live on the land that he — Columbus — discovered? The discovery that directly benefited you, your friends, and your family? **
+
+And yet somehow, you do not find this conjecture hypocritical?
+
+== Back in the USSR
+
+This line of thinking reminds me of the https://www.palgrave.com/gp/book/9780333792094[Bolshevik's rewriting of Russia's History] after the October Revolution of 1917. 
+
+It also reminds of the heavily biased WWII history I learned in the Soviet Union, where the role of the Allies and the USA was barely (if at all) mentioned. From the Soviet History perspective, the victory was won by the USSR and USSR alone. Ironically, the Western version of WWII skips over the role that the Soviet Army played in that war. The vast majority of Americans have very little knowledge about Nazi's https://www.history.com/topics/world-war-ii/world-war-ii-history#section_4[Operation Barbarossa] and the Soviet Union's contribution to the fall of the Nazis. Millions of soldiers died defending Moscow while being outgunned, outnumbered, hungry, sick, tired. The epic six-months long Battle of Stalingrad was the first massive defeat of the Germans in the WWII and resulted in the German Army reshuffling its resources by moving solders
+

@@ -60,12 +60,11 @@ div.quiz {
       input[type="checkbox"]:checked + strong {
         color: red;
 
-        & + code {
-          color: red;
-        }
-
         & + span {
           color: red;
+          code {
+            color: red;
+          }
         }
       }
 
@@ -77,8 +76,8 @@ div.quiz {
             color: green;
             font-weight: 900;
 
-            & + code {
-              color: green !important;
+            code {
+              color: green;
               font-weight: 900;
             }
           }

@@ -413,14 +413,17 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .page-header {
-    .title h2 {
-      font-size: 30px !important;
-      margin-top: 0;
-      padding: 0;
+    .container { 
+      .row { 
+        .title h2 {
+          font-size: 30px !important;
+          margin-top: 0;
+          padding: auto 20px !important;
+        }    
+      }
     }
-
     padding-top: 20px;
     padding-bottom: 20px;
   }
